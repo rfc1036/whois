@@ -40,7 +40,7 @@ const char *ripe_servers_old[] = {
 };
 
 const char *hide_strings[] = {
-    "NOTICE AND TERMS OF USE: You", "VeriSign reserves",	/* VERISIGN */
+    "NOTICE AND TERMS OF USE: You", "Network Solutions reserves",/* VERISIGN */
     "NOTICE: Access to .ORG WHOIS", "time. By submitting",	/* org */
     "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
@@ -57,7 +57,7 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
-    "The data in this whois", "using our Whois information",	/* enom */
+    "The data in this whois", "Version 6.",			/* enom */
     "By submitting a WHOIS query,", "LACK OF A DOMAIN",		/* directNIC */
     "The Data in OnlineNIC", "\tBy starting this query",	/* OnlineNIC */
     "The data in Bulkregister.com", "you agree to abide", /* bulkregister */

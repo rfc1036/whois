@@ -1,0 +1,296 @@
+#
+# Traduction de whois.pot
+# Copyright © 2003 William Steve Applegate <wsapplegate@est.un.goret.info>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: whois 4.6.5\n"
+"POT-Creation-Date: 2003-05-05 18:21+0200\n"
+"PO-Revision-Date: 2003-06-13 04:16+0200\n"
+"Last-Translator: William Steve Applegate <wsapplegate@est.un.goret.info>\n"
+"Language-Team: French <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../whois.c:108
+#, c-format
+msgid ""
+"Version %s.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"Version %s.\n"
+"\n"
+"Rapportez les bugs à %s.\n"
+
+#: ../whois.c:151 ../whois.c:224
+#, c-format
+msgid "Using server %s.\n"
+msgstr "Le serveur %s est sélectionné.\n"
+
+#: ../whois.c:172
+#, c-format
+msgid "Using default server %s.\n"
+msgstr "Le serveur par défaut %s est sélectionné.\n"
+
+#: ../whois.c:175
+msgid "This TLD has no whois server, but you can access the whois database at"
+msgstr "Ce TLD n'a pas de serveur whois, mais vous pouvez accéder à la base de données à"
+
+#: ../whois.c:181
+msgid "This TLD has no whois server."
+msgstr "Ce TLD n'a pas de serveur whois."
+
+#: ../whois.c:185
+msgid "Connecting to whois.crsnic.net."
+msgstr "Connexion à whois.crsnic.net."
+
+#: ../whois.c:191 ../whois.c:202
+#, c-format
+msgid ""
+"\n"
+"Found a referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"Renvoi trouvé vers %s.\n"
+"\n"
+
+#: ../whois.c:196
+msgid "Connecting to whois.nic.cc."
+msgstr "Connexion à whois.nic.cc."
+
+#: ../whois.c:207
+msgid "Connecting to whois.publicinterestregistry.net."
+msgstr "Connexion à whois.publicinterestregistry.net."
+
+#: ../whois.c:213
+#, c-format
+msgid ""
+"\n"
+"Found referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"Renvoi trouvé vers %s.\n"
+"\n"
+
+#: ../whois.c:217
+msgid "No whois server is known for this kind of object."
+msgstr "Aucun serveur whois n'est connu pour ce type d'objet."
+
+#: ../whois.c:220
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr "Numéro d'AS ou réseau IP inconnu. Veuillez mettre à jour ce programme."
+
+#: ../whois.c:233
+#, c-format
+msgid ""
+"Query string: \"%s\"\n"
+"\n"
+msgstr ""
+"Requête : \"%s\"\n"
+"\n"
+
+#: ../whois.c:286 ../whois.c:289
+#, c-format
+msgid "Cannot parse this line: %s"
+msgstr "Impossible d'interpréter la ligne : %s"
+
+#: ../whois.c:428
+msgid "Warning: RIPE flags used with a traditional server."
+msgstr "Avertissement : des options RIPE ont été utilisées avec un serveur classique."
+
+#: ../whois.c:489
+#, c-format
+msgid "Detected referral to %s on %s.\n"
+msgstr "Renvoi trouvé vers %s depuis %s.\n"
+
+#: ../whois.c:506
+msgid ""
+"Catastrophic error: disclaimer text has been changed.\n"
+"Please upgrade this program.\n"
+msgstr ""
+"Erreur catastrophique : le texte de déni de responsabilité a changé.\n"
+"Veuillez mettre à jour ce programme.\n"
+
+#: ../whois.c:624
+#, c-format
+msgid "Host %s not found."
+msgstr "L'hôte %s est introuvable."
+
+#: ../whois.c:634
+#, c-format
+msgid "%s/tcp: unknown service"
+msgstr "%s/tcp : service inconnu"
+
+#: ../whois.c:646
+msgid "Timeout."
+msgstr "Temps limite dépassé."
+
+#: ../whois.c:652
+#, c-format
+msgid "Interrupted by signal %d..."
+msgstr "Interruption par le signal %d..."
+
+#: ../whois.c:701
+msgid ""
+"Usage: whois [OPTION]... OBJECT...\n"
+"\n"
+"-l                     one level less specific lookup [RPSL only]\n"
+"-L                     find all Less specific matches\n"
+"-m                     find first level more specific matches\n"
+"-M                     find all More specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL "
+"only]\n"
+"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned [RPSL only]\n"
+"-r                     turn off recursive lookups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     search all databases\n"
+"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE ('all' for a "
+"list)\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info [RPSL only]\n"
+"-F                     fast raw output (implies -r)\n"
+"-h HOST                connect to server HOST\n"
+"-p PORT                connect to PORT\n"
+"-H                     hide legal disclaimers\n"
+"      --verbose        explain what is being done\n"
+"      --help           display this help and exit\n"
+"      --version        output version information and exit\n"
+msgstr ""
+"Usage: whois [OPTION]... OBJET...\n"
+"\n"
+"-l                     réduit d'un niveau la spécificité de la recherche "
+"[RPSL seulement]\n"
+"-L                     trouver toutes les occurrences moins spécifiques\n"
+"-m                     trouver les occurrences de premier niveau plus "
+"spécifiques\n"
+"-M                     trouver toutes les occurrences plus spécifiques\n"
+"-c                     trouver l'occurrence la plus spécifique contenant un "
+"attribut mnt-irt\n"
+"-x                     occurrences exactes [RPSL seulement]\n"
+"-d                     renvoyer aussi les objets de délégation DNS inverse "
+"[RPSL seulement]\n"
+"-i ATTR[,ATTR]...      effectuer une recherche inverse pour les ATTRibuts "
+"spécifiés\n"
+"-T TYPE[,TYPE]...      chercher seulement les objets de ce TYPE\n"
+"-K                     seules les clés primaires sont renvoyées [RPSL "
+"seulement]\n"
+"-r                     désactiver la recherche récursive des informations "
+"de contact\n"
+"-R                     forcer l'affichage de la copie locale de l'objet de "
+"domaine,\n"
+"                       même s'il contient un renvoi\n"
+"-a                     rechercher dans toutes les bases de données\n"
+"-s SOURCE[,SOURCE]...  rechercher dans la base de la SOURCE\n"
+"-g SOURCE:PREM-DERN    trouver les mises à jour de la SOURCE ayant des "
+"numéros de série compris entre PREM et DERN\n"
+"-t TYPE                demander la syntaxe pour les objets de ce TYPE ('all' "
+"donne une liste)\n"
+"-v TYPE                demander la syntaxe détaillée pour les objets de ce "
+"TYPE\n"
+"-q [version|sources|types]  demander les informations spécifiées au serveur "
+"[RPSL seulement]\n"
+"-F                     sortie rapide au format brut (l'option -r est "
+"implicite)\n"
+"-h HOTE                se connecter au serveur HOTE\n"
+"-p PORT                se connecter à ce PORT\n"
+"-H                     cacher les textes légaux de déni de responsabilité\n"
+"      --verbose        détailler les actions entreprises\n"
+"      --help           afficher cette page d'aide et sortir\n"
+"      --version        afficher les informations de version et sortir\n"
+
+#: ../mkpasswd.c:55
+msgid "\tstandard 56 bit DES-based crypt(3)"
+msgstr "\tfonction crypt(3) standard, cryptage DES à 56 bits"
+
+#: ../mkpasswd.c:96
+#, c-format
+msgid "Invalid hash type '%s'.\n"
+msgstr "Le type de hachage '%s' est invalide.\n"
+
+#: ../mkpasswd.c:105
+#, c-format
+msgid "Invalid number '%s'.\n"
+msgstr "Le nombre '%s' est invalide.\n"
+
+#: ../mkpasswd.c:123
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Tapez '%s --help' pour plus d'informations.\n"
+
+# : ../mkpasswd.c:152
+#: ../mkpasswd.c:152
+#, c-format
+msgid "Wrong salt length: %d byte(s) when %d expected.\n"
+msgstr "Mauvaise taille de graine : %d octet(s) au lieu de %d.\n"
+
+#: ../mkpasswd.c:158
+#, c-format
+msgid "Illegal salt character '%c'.\n"
+msgstr "Le caractère '%c' est invalide dans la graine.\n"
+
+#: ../mkpasswd.c:172 ../mkpasswd.c:199
+msgid "Password: "
+msgstr "Mot de passe : "
+
+#: ../mkpasswd.c:193
+#, c-format
+msgid "Illegal password character '0x%hhx'.\n"
+msgstr "Le caractère '0x%hhx' est invalide dans le mot de passe.\n"
+
+#: ../mkpasswd.c:230
+msgid ""
+"Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
+"Crypts the PASSWORD using crypt(3).\n"
+"\n"
+msgstr ""
+"Usage : mkpasswd [OPTIONS]... [MOT DE PASSE [GRAINE]]\n"
+"Crypte le MOT DE PASSE à l'aide de la fonction crypt(3).\n"
+"\n"
+
+#: ../mkpasswd.c:233
+#, c-format
+msgid ""
+"      -H, --hash=TYPE       select hash TYPE\n"
+"      -S, --salt=SALT       use the specified SALT\n"
+"      -P, --password-fd=NUM read the password from file descriptor NUM\n"
+"                            instead of /dev/tty\n"
+"      -s, --stdin           like --password-fd=0\n"
+"      -h, --help            display this help and exit\n"
+"      -V, --version         output version information and exit\n"
+"\n"
+"If PASSWORD is missing then it is asked interactively.\n"
+"If no SALT is specified, a random one is generated.\n"
+"If TYPE is missing available algorithms are printed.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"      -H, --hash=TYPE       sélectionner ce TYPE de hachage\n"
+"      -S, --salt=GRAINE     utiliser cette GRAINE\n"
+"      -P, --password-fd=NUM lire le mot de passe depuis le descripteur de "
+"fichier NUM\n"
+"                            au lieu de /dev/tty\n"
+"      -s, --stdin           équivalent à --password-fd=0\n"
+"      -h, --help            afficher cette page d'aide et sortir\n"
+"      -V, --version         afficher les informations de version et sortir\n"
+"\n"
+"Si le MOT DE PASSE est manquant, il est demandé interactivement.\n"
+"Si aucune GRAINE n'est spécifiée, une graine aléatoire est générée.\n"
+"Si le TYPE est manquant, les algorithmes disponibles sont affichés.\n"
+"\n"
+"Rapportez les bugs à %s.\n"
+
+#: ../mkpasswd.c:260
+msgid "Available algorithms:\n"
+msgstr "Algorithmes disponibles :\n"

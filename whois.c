@@ -520,6 +520,8 @@ const char *query_crsnic(const int sock, const char *query)
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
     while (fgets(buf, sizeof(buf), fi)) {
+	if (strncmp(buf, "No match for \"", 14) == 0)	/* ugly */
+	    fputs(buf, stdout);
 	/* If there are multiple matches only the server of the first record
 	   is queried */
 	if (state == 0 && strncmp(buf, "   Domain Name:", 15) == 0)
@@ -563,10 +565,10 @@ const char *query_pir(const int sock, const char *query)
 	/* If there are multiple matches only the server of the first record
 	   is queried */
 	if (state == 0 &&
-    strncmp(buf, "Registrant Name:CONTACT NOT AUTHORITATIVE", 15) == 0)
+    strncmp(buf, "Registrant Name:SEE SPONSORING REGISTRAR", 40) == 0)
 	    state = 1;
 	if (state == 1 &&
-    strncmp(buf, "Registrant Street1:Whois Server:", 16) == 0) {
+		strncmp(buf, "Registrant Street1:Whois Server:", 32) == 0) {
 	    char *p, *q;
 
 	    for (p = buf; *p != ':'; p++);	/* skip until colon */
@@ -577,8 +579,7 @@ const char *query_pir(const int sock, const char *query)
 	    *q = '\0';
 	    state = 2;
 	}
-	if (verb)
-	    fputs(buf, stdout);
+	fputs(buf, stdout);
     }
     if (ferror(fi))
 	err_sys("fgets");

@@ -101,7 +101,7 @@
 .cy	NONE		# www.nic.cy
 .cz	whois.nic.cz
 .de	whois.denic.de
-.dj	NONE		# www.nic.dj (NOT YET)
+.dj	whois.domain.dj
 .dk	whois.dk-hostmaster.dk
 .dm	NONE		# www.domains.dm ?
 .do	WEB http://www.nic.do/whois-h.php3
@@ -159,7 +159,7 @@
 #.jm			# NIC? uwimona.edu.jm http://nic.jm
 .jo	WEB http://www.nis.jo/dns/	# old: http://amon.nic.gov.jo/dns/
 .jp	whois.nic.ad.jp
-.ke	NONE		# http://www.nbnet.co.ke/domain.htm
+.ke	NONE		# http://www.kenic.or.ke/
 .kg	whois.domain.kg
 .kh	NONE		# http://www.mptc.gov.kh/Reculation/DNS.htm
 #.ki			# NIC? www.tsk.net.ki
@@ -181,7 +181,7 @@
 .lu	whois.dns.lu
 .lv	whois.nic.lv
 .ly	WEB http://www.lydomains.com/whois.asp
-#.ma			# NIC? http://www.anrt.net.ma/
+#.ma			# NIC? http://www.anrt.net.ma/nic/
 .mc	whois.ripe.net
 .md	WEB http://www.nic.md/search.html
 .mg	NONE		# www.nic.mg
@@ -206,7 +206,7 @@
 .nc	whois.cctld.nc
 #.ne			# NIC? http://www.intnet.ne
 .nf	NONE		# http://www.names.nf
-.ng	whois.rg.net
+.ng	NONE		# http://psg.com/dns/ng/
 .ni	NONE		# www.nic.ni
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
@@ -237,7 +237,7 @@
 .sa	saudinic.net.sa
 .sb	WEB http://www.nic.net.sb/search.htm
 .sc	NONE		# www.nic.sc
-#.sd			# NIC? http://www.sudatel.sd
+.sd	NONE		# http://www.sudatel.sd - not functional
 .se	whois.nic-se.se
 .sg	whois.nic.net.sg
 .sh	whois.nic.sh
@@ -255,7 +255,7 @@
 #.sy			# NIC? (usually offline?)
 .sz	NONE		# http://www.sispa.org.sz/
 .tc	whois.adamsnames.tc
-#.td			# NIC? http://www.tit.td
+.td	NONE		# www.nic.td
 .tf	whois.adamsnames.tc
 .tg	WEB http://www.nic.tg/
 .th	whois.thnic.net
@@ -271,7 +271,7 @@
 .tw	whois.twnic.net
 .tz	NONE		# http://www.psg.com/dns/tz/
 .ua	whois.net.ua
-.ug	www.registry.co.ug
+.ug	WEB http://www.registry.co.ug/whois/
 .gov.uk	whois.ja.net
 .ac.uk	whois.ja.net
 .uk	whois.nic.uk

@@ -7,9 +7,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.6.3\n"
-"POT-Creation-Date: 2003-05-05 18:21+0200\n"
-"PO-Revision-Date: 2003-04-18 22:14+0200\n"
+"Project-Id-Version: whois 4.6.5\n"
+"POT-Creation-Date: 2003-05-10 08:39+0200\n"
+"PO-Revision-Date: 2003-05-10 08:40+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld.org.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -62,9 +62,8 @@ msgstr ""
 "\n"
 
 #: ../whois.c:196
-#, fuzzy
 msgid "Connecting to whois.nic.cc."
-msgstr "£±czenie z whois.crsnic.net."
+msgstr "£±czenie z whois.nic.cc."
 
 #: ../whois.c:207
 msgid "Connecting to whois.publicinterestregistry.net."
@@ -107,12 +106,12 @@ msgstr "Nie mo¿na przeanalizowaæ tej linii: %s"
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Uwaga: u¿yto flag RIPE ze starszym serwerem."
 
-#: ../whois.c:489
+#: ../whois.c:487
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Wykryto odniesienie do %s na %s.\n"
 
-#: ../whois.c:506
+#: ../whois.c:504
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -120,26 +119,26 @@ msgstr ""
 "Katastrofa! Tekst o¶wiadczenia zosta³ zmieniony.\n"
 "Proszê uaktualniæ ten program.\n"
 
-#: ../whois.c:624
+#: ../whois.c:622
 #, c-format
 msgid "Host %s not found."
 msgstr "Serwer %s nie zosta³ znaleziony."
 
-#: ../whois.c:634
+#: ../whois.c:632
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: us³uga nieznana"
 
-#: ../whois.c:646
+#: ../whois.c:644
 msgid "Timeout."
 msgstr "Up³yn±³ limit czasu."
 
-#: ../whois.c:652
+#: ../whois.c:650
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Przerwano sygna³em %d..."
 
-#: ../whois.c:701
+#: ../whois.c:699
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"

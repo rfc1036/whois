@@ -1,3 +1,13 @@
+whois (4.6.6) unstable; urgency=medium
+
+  * Updated polish translation, from Jakub Bogusz of PLD.
+  * Added french translation, from William Steve Applegate. (Closes: #197212)
+  * Added .dj TLD.
+  * Fixed netsol disclaimer strings. (Closes: #195898)
+  * Updated PIR server parser.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 15 Jun 2003 18:47:09 +0200
+
 whois (4.6.5) unstable; urgency=medium
 
   * Added may new ASN blocks from MILNET, LACNIC and JP-NIC.
