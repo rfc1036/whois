@@ -1,3 +1,11 @@
+whois (4.5.29) unstable; urgency=medium
+
+  * Fixed mkpasswd -H (Closes: #149071).
+  * Updated .dk and .pk TLD servers (Closes: #155897).
+  * Updated LANIC and telstra IP allocations.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 22 Jun 2002 13:02:43 +0200
+
 whois (4.5.28) unstable; urgency=medium
 
   * Updated .tt TLD server (Closes: #148771).

@@ -96,15 +96,15 @@
 .cz	whois.nic.cz
 .de	whois.denic.de
 .dj	NONE		# www.nic.dj (NOT YET)
-.dk	WEB http://www.dk-hostmaster.dk/dkwhois.php?lang=eng
+.dk	whois.dk-hostmaster.dk
 .dm	NONE		# www.domains.dm ?
 .do	WEB http://www.nic.do
 .dz	NONE
 .ec	WEB http://www.nic.ec
 .ee	WEB http://www.eenet.ee/info/
-#.eg	NONE		# NIC? http://www.frcu.eun.eg
+.eg	NONE		# http://www.ise.org.eg/domain.htm
 #.eh
-#.er	NONE		# NIC? www.noc.net.er (recently connected!)
+.er	NONE		# NO NIC http://www.afridns.org/er/
 .es	WEB http://www.nic.es/whois/
 #.et	NONE		# NIC? www.telecom.net.et
 .fi	WEB http://cgi.ficora.fi/wwwbin/domains.pl?language=eng
@@ -214,7 +214,7 @@
 #.pf			# NIC? mana.pf
 .pg	NONE	# http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm
 .ph	WEB http://www.names.ph/search.html
-#.pk	whois.pknic.net.pk	# the host does not exist anymore
+.pk	WEB www.pknic.net.pk
 .pl	whois.dns.pl
 .pm	whois.nic.fr
 .pn	NONE		# 2day.com www.nic.pn
@@ -302,6 +302,7 @@
 -arin	whois.arin.net
 -ripe	whois.ripe.net
 -mnt	whois.ripe.net
+-lacnic	whois.lacnic.net
 -gandi	whois.gandi.net
 -ap	whois.apnic.net
 -au	whois.aunic.net

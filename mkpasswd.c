@@ -33,14 +33,12 @@
 static struct option longopts[] = {
     {"hash",		optional_argument,	NULL, 'H'},
     {"help",		no_argument,		NULL, 'h'},
-    {"stdin",		no_argument,		NULL, 's'},
     {"password-fd",	required_argument,	NULL, 'P'},
+    {"stdin",		no_argument,		NULL, 's'},
     {"salt",		required_argument,	NULL, 'S'},
     {"version",		no_argument,		NULL, 'V'},
     {NULL,		0,			NULL, 0  }
 };
-#else
-#error xXXX
 #endif
 
 static char valid_salts[] = "abcdefghijklmnopqrstuvwxyz"
@@ -81,10 +79,10 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hHP:sS:V", longopts, 0)) > 0) {
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH:P:sS:V", longopts, 0)) > 0) {
 	switch (ch) {
 	case 'H':
-	    if (!optarg) {
+	    if (!optarg || strcasecmp("help", optarg) == 0) {
 		display_algorithms();
 		exit(0);
 	    }

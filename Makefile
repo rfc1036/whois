@@ -8,16 +8,20 @@ OPTS=-O2
 # linux (old libc)
 #LDFLAGS=-lintl
 
+# FreeBSD
+#LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
+#CFLAGS=-I/usr/local/include
+
 # OS/2 EMX
 #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
 
 all: whois #pos
 
 whois: whois.c whois.h config.h data.h as_del.h ip_del.h tld_serv.h
-	$(CC) $(OPTS) whois.c -o whois $(LDFLAGS)
+	$(CC) $(CFLAGS) $(OPTS) whois.c -o whois $(LDFLAGS)
 
 mkpasswd: mkpasswd.c
-	$(CC) $(OPTS) mkpasswd.c -o mkpasswd -lcrypt
+	$(CC) $(CFLAGS) $(OPTS) mkpasswd.c -o mkpasswd -lcrypt
 
 as_del.h: as_del_list make_as_del.pl
 	perl make_as_del.pl < as_del_list > as_del.h

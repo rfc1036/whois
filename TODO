@@ -8,3 +8,5 @@ Will anybody contribute it?
 Add Exodus rwhois server (e.g. 216.35.0.0/16).
 Add rwhois.verio.net:4321 (e.g. 192.204.0.0/16).
 
+Support queries for "AS8627:fltr-TRANSIT-OUT".
+

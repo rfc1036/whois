@@ -9,7 +9,7 @@
 # 63.208.0.0/13	rr.level3.net
 80.0.0.0/7	ripe
 0.0.0.0/2	arin	# all other A classes are managed by ARIN
-## The B class space is a mess :-( - something could still be missing
+## The B classes space is a mess :-( - something could still be missing
 ## I add here only netblocks allocated to multiple LIRs by the RIRs.
 133.0.0.0/8	whois.nic.ad.jp
 139.20.0.0/14	ripe
@@ -50,7 +50,7 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
-## The C class space is cleanly delegated and the data here should be complete
+## The C classes space is cleanly delegated and the data here should be complete
 192.71.0.0/16	ripe
 192.72.0.0/16	whois.seed.net.tw	# NETBLK-SEED-NETS
 192.106.0.0/16	ripe
@@ -68,7 +68,8 @@
 200.18.0.0/15	whois.nic.br
 200.20.0.0/16	whois.nic.br
 200.128.0.0/9	whois.nic.br
-200.0.0.0/7	arin
+200.0.0.0/8	lacnic
+#201.0.0.0/8	reserved
 202.11.0.0/16	whois.nic.ad.jp
 202.13.0.0/16	whois.nic.ad.jp
 202.15.0.0/16	whois.nic.ad.jp
@@ -82,19 +83,19 @@
 202.39.128.0/17	twnic
 202.208.0.0/12	whois.nic.ad.jp
 202.224.0.0/11	whois.nic.ad.jp		# => 202.255
-203.27.128.0/18	telstra
-203.35.0.0/16	telstra
-203.36.0.0/14	telstra
-203.40.0.0/13	telstra
-203.48.0.0/14	telstra
-203.52.0.0/15	telstra
-203.54.0.0/16	telstra
-203.58.128.0/17	telstra
-203.58.32.0/19	telstra
-203.58.64.0/19	telstra
-# 203.0.0.0/10 has been moved from aunic to apnic, but the records in
-# the telstra database appears to be more detailed.
-# See http://www.apnic.net/db/aunic/ for details.
+#203.27.128.0/18	telstra
+#203.35.0.0/16	telstra
+#203.36.0.0/14	telstra
+#203.40.0.0/13	telstra
+#203.48.0.0/14	telstra
+#203.52.0.0/15	telstra
+#203.54.0.0/16	telstra
+#203.58.128.0/17	telstra
+#203.58.32.0/19	telstra
+#203.58.64.0/19	telstra
+## 203.0.0.0/10 has been moved from aunic to apnic, but the records in
+## the telstra database appears to be more detailed.
+## See http://www.apnic.net/db/aunic/ for details.
 203.0.0.0/10	apnic
 203.66.0.0/16	twnic
 203.69.0.0/16	twnic
@@ -152,9 +153,7 @@
 214.0.0.0/7	arin	# DoD
 216.0.0.0/8	arin
 217.0.0.0/8	ripe
-218.216.0.0/13	apnic
-218.224.0.0/13	apnic
 218.40.0.0/13	whois.nic.ad.jp
 218.47.0.0/13	whois.nic.or.kr
 218.0.0.0/7	apnic
-220.0.0.0/8	apnic
+220.0.0.0/7	apnic

@@ -52,6 +52,7 @@ const char *rwhois_servers[] = {
 const char *hide_strings[] = {
     "The Data in the VeriSign", "terms at any time.",
     "The data in Register", "By submitting",
+    "The Data in the Tucows", "RECORD DOES NOT",
     " The data contained in Dotster", "Please limit your",
     "This whois service currently only", "top-level domains.",
     "Signature Domains' Whois Service", "agree to abide by the above",

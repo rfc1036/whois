@@ -1,6 +1,6 @@
 /* Program version */
 /* not for the inetutils version */
-#define VERSION "4.5.26"
+#define VERSION "4.5.29"
 
 /* Configurable features */
 
@@ -23,6 +23,14 @@
 # define ENABLE_NLS
 #endif
 
+#ifdef __FreeBSD__
+/* which versions? */
+# define HAVE_GETOPT_LONG
+# define HAVE_GETADDRINFO
+# define ENABLE_NLS
+# define LOCALEDIR "/usr/local/share/locale"
+#endif
+
 /* needs unistd.h */
 #ifdef _ISO_CPP_14882_1998
 /* Solaris 8 and better. What else? */
@@ -31,7 +39,7 @@
 
 #if defined __GLIBC__
 # define HAVE_GETOPT_LONG
-# if defined __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
+# if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
 #  define HAVE_GETADDRINFO
 # endif
 #endif
