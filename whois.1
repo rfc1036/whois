@@ -1,0 +1,90 @@
+.TH WHOIS 1 "8 October 1999" "Marco d'Itri" "Debian GNU/Linux"
+.SH NAME
+whois \- client for the whois directory service
+.SH SYNOPSIS
+.B whois
+[
+.BR \-h
+.I HOST
+] [
+.BR \-p
+.I PORT
+] [
+.BR -aCFLMmrRSV
+] [
+.BR \-g
+.I SOURCE:FIRST-LAST
+] [
+.BR \-i
+.I ATTR
+] [
+.BR \-S
+.I SOURCE
+] [
+.BR \-T
+.I TYPE
+]
+.I object
+
+.B whois
+[
+.I -t
+|
+.I -v
+|
+.I -i
+]
+.I template
+.PP
+.SH DESCRIPTION
+.B whois
+searches for an object in a
+.I RFC-812
+database.
+
+This version of the whois client tries to guess the right server to
+ask for the specified object. If no guess can be made it will connect
+to whois.internic.net for domains, whois.arin.net for IPv4 addresses
+and whois.6bone.net for IPv6 addresses.
+.PP
+.SH OPTIONS
+.TP 8
+.B \-h HOST
+Connect to HOST.
+.TP 8
+.B \-p PORT
+Connect to PORT.
+.TP 8
+.B \-C
+First query
+.I www.crsnic.net
+to find the registrar for a GTLD subdomain. This option overrides
+.I \-h.
+.TP 8
+.B \-V
+Be verbose.
+.TP 8
+Other options are flags understood by RIPE-like servers.
+.SH "SEE ALSO"
+.I RFC 812:
+NICNAME/WHOIS
+.PP
+.I RIPE-157, RIPE-189:
+RIPE NCC Database Documentation
+.PP
+Detailed help on available flags can be found in
+.I RIPE-157
+or in the help file, which can be downloaded with the command:
+.IP
+.B whois -h whois.ripe.net HELP
+.SH HISTORY
+This program closely tracks the user interface of the whois client
+developed at RIPE by Ambrose Magee and others on the base of the
+original BSD client.
+I also added support for the protocol extensions developed by David
+Kessens of QWest for the 6bone server.
+.SH AUTHOR
+.B Whois
+and this man page were written by Marco d'Itri <md@linux.it>
+and are licensed under the GPL.
+

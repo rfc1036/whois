@@ -1,0 +1,146 @@
+# Traduzione di whois.pot.
+# Copyright (C) 1999 Marco d'Itri
+# Marco d'Itri <md@linux.it>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: whois 3.0\n"
+"POT-Creation-Date: 1999-10-26 12:19+0200\n"
+"PO-Revision-Date: 1999-10-26 12:19+02:00\n"
+"Last-Translator: Marco d'Itri <md@linux.it>\n"
+"Language-Team: Italian <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../whois.c:95
+msgid "Connecting to whois.crsnic.net.\n"
+msgstr "Mi sto connettendo a whois.crsnic.net.\n"
+
+#: ../whois.c:103
+#, c-format
+msgid ""
+"\n"
+"Detected CRSNIC referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"Trovato un riferimento CRSNIC a %s.\n"
+"\n"
+
+#: ../whois.c:113
+#, c-format
+msgid "Using default server %s.\n"
+msgstr "Uso il server predefinito %s.\n"
+
+#: ../whois.c:115
+#, c-format
+msgid "Using server %s.\n"
+msgstr "Uso il server %s.\n"
+
+#: ../whois.c:120
+#, c-format
+msgid ""
+"Query string: \"%s\"\n"
+"\n"
+msgstr ""
+"Richiesta: \"%s\"\n"
+"\n"
+
+#: ../whois.c:156
+msgid ""
+"I don't know where this IP has been delegated.\n"
+"I'll try ARIN and hope for the best...\n"
+msgstr ""
+"Non so a chi è stato delegato questo IP.\n"
+"Proverò con ARIN sperando per il meglio...\n"
+
+#: ../whois.c:173
+msgid "I guess it's a netblock name but I don't know where to look it up.\n"
+msgstr "Credo che sia il nome di un netblock ma non so dove cercarlo.\n"
+
+#: ../whois.c:180
+msgid "I guess it's a domain but I don't know where to look it up.\n"
+msgstr "Credo che sia un dominio ma non so dove cercarlo.\n"
+
+#: ../whois.c:239
+#, c-format
+msgid "Detected referral to %s on %s.\n"
+msgstr "Trovato un riferimento a %s su %s.\n"
+
+#: ../whois.c:252
+msgid ""
+"Catastrophic error: INTERNIC changed the disclaimer text.\n"
+"Please upgrade this program.\n"
+msgstr ""
+"Errore catastrofico: INTERNIC ha cambiato il testo di avvertenze.\n"
+"Aggiorna questo programma.\n"
+
+#: ../whois.c:313
+#, c-format
+msgid "Host %s not found."
+msgstr "Host %s non trovato."
+
+#: ../whois.c:322
+#, c-format
+msgid "%s/tcp: unknown service"
+msgstr "%s/tcp: servizio sconosciuto"
+
+#: ../whois.c:339
+#, c-format
+msgid "Interrupted by signal %d..."
+msgstr "Interrotto dal segnale %d..."
+
+#: ../whois.c:379
+msgid ""
+"Usage: whois [OPTION]... OBJECT...\n"
+"\n"
+"-a                     search all databases\n"
+"-C                     first query CRSNIC to find GTLD registrar\n"
+"-F                     fast raw output (implies -r)\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-h HOST                connect to server HOST\n"
+"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+"-L                     find all Less specific matches\n"
+"-M                     find all More specific matches\n"
+"-m                     find first level more specific matches\n"
+"-r                     turn off recursive lookups\n"
+"-p PORT                connect to PORT\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-S                     tell server to leave out syntactic sugar\n"
+"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-t TYPE                requests template for object of TYPE ('all' for a "
+"list)\n"
+"-v TYPE                requests verbose template for object of TYPE\n"
+"-V                     explain what is being done\n"
+"\n"
+"Version "
+msgstr ""
+"Uso: whois [OPZIONE]... OGGETTO...\n"
+"\n"
+"-a                     cerca tutti i database\n"
+"-C                     interroga prima CRSNIC per trovare il registro di "
+"GTLD\n"
+"-F                     output grezzo veloce (implica -r)\n"
+"-g SOURCE:FIRST-LAST   trova gli aggiornamenti di SOURCE dal seriale F a L\n"
+"-h HOST                si connette al server HOST\n"
+"-i ATTR[,ATTR]...      fa una ricerca inversa per l'ATTRibuto specificato\n"
+"-L                     trova le corrispondenze meno specifiche\n"
+"-M                     trova le corrispondenze più specifiche\n"
+"-m                     trova le corrispondenze di primo livello più "
+"specifiche\n"
+"-r                     disabilita le ricerche ricorsive\n"
+"-p PORTA               si connette alla PORTA\n"
+"-R                     mostra la copia locale dell'oggetto domain anche se\n"
+"                       contiene un riferimento\n"
+"-S                     dice al server di non usare lo zucchero sintattico\n"
+"-s SOURCE[,SOURCE]...  cerca il database da SOURCE\n"
+"-T TIPO[,TIPO]...      cerca solo oggetti del TIPO\n"
+"-t TIPO       chiede il template per un oggetto del TIPO ('all' per una "
+"lista)\n"
+"-v TIPO                chiede il template prolisso per un oggetto del TIPO\n"
+"-V                     spiega cosa sta facendo\n"
+"\n"
+"Versione "

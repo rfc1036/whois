@@ -1,0 +1,20 @@
+.TH WHOIS 1 "7 October 1999" "Marco d'Itri" "Debian GNU/Linux"
+.SH NAME
+mkpasswd \- Very dumb front end to crypt(3)
+.SH SYNOPSIS
+.B mkpasswd
+.BR PASSWORD
+.BR SALT
+.PP
+.SH DESCRIPTION
+.B mkpasswd
+encrypts the given password with the
+.BR crypt(3)
+libc function using the given salt.
+.SH "SEE ALSO"
+.IR crypt(3)
+.SH AUTHOR
+.B mkpasswd
+and this man page were written by Marco d'Itri <md@linux.it>
+and put in the public domain.
+

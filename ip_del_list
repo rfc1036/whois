@@ -1,0 +1,45 @@
+24.192.0.0/14	apnic
+24.132.0.0/14	ripe
+61.0.0.0/8	apnic
+62.0.0.0/8	ripe
+0.0.0.0/2	arin	# all other A classes are managed by ARIN
+## The B class space is a mess :-(
+#? 139. 20-29
+145.224.0.0/12	ripe
+141.0.0.0/10	ripe
+141.64.0.0/11	ripe	# unsure
+149.192.0.0/10	ripe	# unsure
+#? 149. 202-251
+150.254.0.0/16	ripe
+151.0.0.0/8	ripe
+160.216.0.0/14	ripe
+160.220.0.0/8	ripe
+163.128.0.0/12	ripe
+164.40.0.0/16	ripe
+164.0.0.0/6	ripe
+169.208.0.0/12	apnic
+171.16.0.0/12	ripe
+## The C class space is cleanly delegated and the data here should be complete
+192.71.0.0/16	ripe
+192.72.1.1/24	arin
+192.72.1.2/24	arin
+192.72.1.253/24	arin
+192.72.1.254/24	arin
+192.72.0.0/16	whois.seed.net.tw	# NETBLK-SEED-NETS
+192.106.144.0/20 ripe
+192.162.0.0/16	ripe
+192.164.0.0/14	ripe
+192.0.0.0/8	arin	# the swamp
+193.0.0.0/8	ripe
+194.0.0.0/7	ripe
+196.0.0.0/6	arin
+200.0.0.0/7	arin
+203.0.0.0/10	aunic
+202.0.0.0/7	apnic
+204.0.0.0/6	arin
+208.0.0.0/7	arin
+210.0.0.0/7	apnic
+212.0.0.0/7	ripe
+214.0.0.0/7	arin	# DoD
+216.0.0.0/8	arin
+## Are class D networks listed somewhere?

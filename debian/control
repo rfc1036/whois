@@ -1,0 +1,18 @@
+Source: whois
+Section: net
+Priority: important
+Maintainer: Marco d'Itri <md@linux.it>
+Standards-Version: 3.0.1
+
+Package: whois
+Architecture: any
+Depends: ${shlibs:Depends}
+Replaces: bsdmainutils (<= 4.5.1), bsdutils (<< 3.0-0)
+Description: whois client
+ This is a new whois (RFC 954) client rewritten from scratch by me.
+ It is derived from and compatible with the usual BSD and RIPE whois(1)
+ programs.
+ It is intelligent and can automatically select the appropriate whois
+ server for most queries.
+ .
+ The package also contains mkpasswd, a simple front end to crypt(3).
