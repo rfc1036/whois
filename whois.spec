@@ -1,6 +1,6 @@
 Summary: Enhanced WHOIS client
 Name: whois
-Version: 4.6.3
+Version: 4.6.7
 Release: 1
 License: GPL
 Vendor: Marco d'Itri <md@linux.it>
@@ -29,16 +29,24 @@ mkdir -p ${RPM_BUILD_ROOT}%{_mandir}/man1
 make install BASEDIR=${RPM_BUILD_ROOT} prefix=%{prefix}/
 gzip ${RPM_BUILD_ROOT}%{_mandir}/man?/*
 
-find $RPM_BUILD_ROOT ! -type d | sed "s@^$RPM_BUILD_ROOT@@g" > %{name}-filelist
-
 %clean
 rm -rf ${RPM_BUILD_ROOT}
 
-%files -f %{name}-filelist
+%files
 %defattr(-,root,root)
-%doc [A-Z][A-Z]*
+%{prefix}/bin/whois
+%doc %{prefix}/share/man/man1/whois.1.gz
+%lang(de) %{prefix}/share/locale/de/LC_MESSAGES/whois.mo
+%lang(el) %{prefix}/share/locale/el/LC_MESSAGES/whois.mo
+%lang(es) %{prefix}/share/locale/es/LC_MESSAGES/whois.mo
+%lang(fr) %{prefix}/share/locale/fr/LC_MESSAGES/whois.mo
+%lang(it) %{prefix}/share/locale/it/LC_MESSAGES/whois.mo
+%lang(no) %{prefix}/share/locale/no/LC_MESSAGES/whois.mo
+%lang(pl) %{prefix}/share/locale/pl/LC_MESSAGES/whois.mo
 
 %changelog
+* Sun Jul 13 2003 Paul Mundt <lethal@linux-sh.org>
+- Updated spec for 4.6.6, fixed up doc/lang references.
 * Fri Feb 23 2001 Oren Tirosh <oren@hishome.net>
 - Initial spec based on skelgnu.spec                  
 

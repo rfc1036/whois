@@ -52,12 +52,15 @@ const char *hide_strings[] = {
     "Access to ASNIC", "by this policy.",			/* as */
     "**************", "**************",				/* sg */
     "The Data in Gabia", "you agree to abide",
-    "The data contained in Go Daddy", "is not the owner",	/* NEUSTAR */
+    "The data contained in Go Daddy", "is not the registrant",	/* Go Daddy */
     "Disclaimer: The Global Name Registry", "for any commercial",
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
-    "The data in this whois", "Version 6.",			/* enom */
+#if 0
+    // This must be disabled because whois.bizcn.com uses a similar text
+    "The data in this whois", "using our Whois information",	/* enom */
+#endif
     "By submitting a WHOIS query,", "LACK OF A DOMAIN",		/* directNIC */
     "The Data in OnlineNIC", "\tBy starting this query",	/* OnlineNIC */
     "The data in Bulkregister.com", "you agree to abide", /* bulkregister */
@@ -101,6 +104,7 @@ struct ip6_del {
     const char    *serv;
 };
 
+/* http://www.iana.org./assignments/ipv6-tla-assignments */
 struct ip6_del ip6_assign[] = {
     { 0x0200, "whois.apnic.net" },
     { 0x0400, "whois.arin.net" },
@@ -109,8 +113,11 @@ struct ip6_del ip6_assign[] = {
     { 0x0A00, "whois.ripe.net" },
     { 0x0C00, "whois.apnic.net" },
     { 0x0E00, "whois.apnic.net" },
+/*  { 0x1000, "" }, */
     { 0x1200, "whois.lacnic.net" },
     { 0x1400, "whois.ripe.net" },
+    { 0x1600, "whois.ripe.net" },
+    { 0x1800, "whois.arin.net" },
     { 0, NULL }
 };
 

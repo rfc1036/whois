@@ -1,3 +1,17 @@
+whois (4.6.7) unstable; urgency=medium
+
+  * Updated .hk, .sg TLDs.
+  * Updated Go Daddy disclaimer strings.
+  * Removed special processing for corenic queries, it's not needed anymore
+    and breaks some queries. (Closes: #208854)
+  * Always print the whois.crsnic.net output, or queries for host records
+    will have no output. Also, the Status line is important information
+    which should not be suppressed.
+  * Add a note to the man page to explain that this code sucks, has buffer
+    overflows and needs to be rewritten.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 10 Sep 2003 00:40:15 +0200
+
 whois (4.6.6) unstable; urgency=medium
 
   * Updated polish translation, from Jakub Bogusz of PLD.

@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 	}
 	if (strchr(ripeflagsp, ch)) {
 	    for (p = fstring; *p; p++);
-	    sprintf(p--, "-%c %s ", ch, optarg);
+	    snprintf(p--, sizeof(fstring), "-%c %s ", ch, optarg);
 	    if (ch == 't' || ch == 'v' || ch == 'q')
 		nopar = 1;
 	    continue;
@@ -402,9 +402,9 @@ char *queryformat(const char *server, const char *flags, const char *query)
     char *buf;
     int i, isripe = 0;
 
-    /* +10 for CORE; +2 for \r\n; +1 for NULL */
+    /* +2 for \r\n; +1 for NULL */
     buf = malloc(strlen(flags) + strlen(query) + strlen(client_tag) + 4
-	    + 10 + 2 + 1);
+	    + 2 + 1);
     *buf = '\0';
     for (i = 0; ripe_servers[i]; i++)
 	if (strcmp(server, ripe_servers[i]) == 0) {
@@ -433,8 +433,6 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    strcmp(server, "whois.nic.ad.jp") == 0) &&
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
-    else if (!isripe && strcmp(server, "whois.corenic.net") == 0)
-	sprintf(buf, "--machine %s", query);	/* machine readable output */
     else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
 	char *lang = getenv("LANG");	/* not a perfect check, but... */
 	if (!lang || (strncmp(lang, "ja", 2) != 0))
@@ -520,8 +518,6 @@ const char *query_crsnic(const int sock, const char *query)
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
     while (fgets(buf, sizeof(buf), fi)) {
-	if (strncmp(buf, "No match for \"", 14) == 0)	/* ugly */
-	    fputs(buf, stdout);
 	/* If there are multiple matches only the server of the first record
 	   is queried */
 	if (state == 0 && strncmp(buf, "   Domain Name:", 15) == 0)
@@ -537,8 +533,10 @@ const char *query_crsnic(const int sock, const char *query)
 	    *q = '\0';
 	    state = 2;
 	}
-	if (verb)
-	    fputs(buf, stdout);
+	/* the output must not be hidden or no data will be shown for
+	   host records and not-existing domains */
+	/* XXX feel free to send a patch to hide the long disclaimer */
+	fputs(buf, stdout);
     }
     if (ferror(fi))
 	err_sys("fgets");

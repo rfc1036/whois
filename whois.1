@@ -86,6 +86,10 @@ Detailed help on available flags can be found in \fIRIPE\-223\fP or in
 the help file which can be obtained with the command:
 .IP 
 .B whois \-h whois.ripe.net HELP
+.SH "BUGS"
+The program has many buffer overflows when parsing the command line
+parameters: be sure to not pass untrusted data to it.
+It will be rewritten to use a dynamic strings library.
 .SH "HISTORY"
 This program closely tracks the user interface of the whois client
 developed at RIPE by Ambrose Magee and others on the base of the
