@@ -1,3 +1,20 @@
+whois (4.5.33) unstable; urgency=medium
+
+  * Added another RIPE IPv6 allocation.
+  * Fixed .net.au SLD.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 20 Nov 2002 03:50:49 +0100
+
+whois (4.5.32) unstable; urgency=medium
+
+  * Fixed .in TLD code.
+  * Updated .hk, ky, .nz TLDs.
+  * Added LACNIC ASN block.
+  * Added -uanic NIC handles.
+  * RPSL flags are not stripped anymore even if the server is unrecognized.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 16 Nov 2002 04:25:08 +0100
+
 whois (4.5.31) unstable; urgency=medium
 
   * Added undocumented -V command line option.

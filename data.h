@@ -35,6 +35,7 @@ const char *ripe_servers[] = {
 const char *ripe_servers_old[] = {
     "whois.ra.net",
     "whois.domain.kg",
+    "whois.nic.ch",
     NULL
 };
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.5.29\n"
-"POT-Creation-Date: 2002-10-11 17:42+0200\n"
+"POT-Creation-Date: 2002-11-16 04:27+0100\n"
 "PO-Revision-Date: 2002-08-24 16:22+0200\n"
 "Last-Translator: Francisco Monteagudo <francisco@monteagudo.net>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:104
+#: ../whois.c:108
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -24,31 +24,31 @@ msgstr ""
 "\n"
 "Informar de bugs a %s.\n"
 
-#: ../whois.c:147 ../whois.c:184
+#: ../whois.c:151 ../whois.c:188
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Usando el servidor %s.\n"
 
-#: ../whois.c:161
+#: ../whois.c:165
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Usando el servidor predefinido %s.\n"
 
-#: ../whois.c:164
+#: ../whois.c:168
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Este TLD no dispone de servidor whois, pero puede acceder a la informacion "
 "de whois en"
 
-#: ../whois.c:170
+#: ../whois.c:174
 msgid "This TLD has no whois server."
 msgstr "No existe servidor whois para este TLD."
 
-#: ../whois.c:174
+#: ../whois.c:178
 msgid "Connecting to whois.crsnic.net."
 msgstr "Conectando a whois.crsnic.net."
 
-#: ../whois.c:180
+#: ../whois.c:184
 #, c-format
 msgid ""
 "\n"
@@ -59,7 +59,7 @@ msgstr ""
 "Se ha encontrado en crsnic una referencia a %s.\n"
 "\n"
 
-#: ../whois.c:193
+#: ../whois.c:197
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -68,12 +68,12 @@ msgstr ""
 "Consulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:243 ../whois.c:246
+#: ../whois.c:247 ../whois.c:250
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "No puedo procesar esta linea: %s"
 
-#: ../whois.c:322
+#: ../whois.c:330
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
@@ -81,30 +81,31 @@ msgstr ""
 "Ignoro a quien a sido delegada esta direccion IP.\n"
 "Voy a probar con ARIN a ver si hay suerte..."
 
-#: ../whois.c:339
+#: ../whois.c:347
 msgid "I guess it's a netblock name but I don't know where to look it up."
 msgstr ""
 "Aparentemente, es el nombre de un netblock, pero ignoro donde buscarlo."
 
-#: ../whois.c:346
+#: ../whois.c:354
 msgid "I guess it's a domain but I don't know where to look it up."
 msgstr "Aparentemente, es un nombre de dominio, pero ignoro donde buscarlo."
 
-#: ../whois.c:356
+#: ../whois.c:364
 msgid "Unknown AS number. Please upgrade this program."
 msgstr "Numero AS desconocido. Por favor, actualice este programa."
 
-#: ../whois.c:386
-msgid "Warning: RIPE flags ignored for a traditional server."
+#: ../whois.c:399
+#, fuzzy
+msgid "Warning: RIPE flags used with a traditional server."
 msgstr ""
 "Atencion: Los flags RIPE son ignorados por los servidores tradicionales."
 
-#: ../whois.c:448
+#: ../whois.c:457
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Detectada una referencia a %s en %s.\n"
 
-#: ../whois.c:465
+#: ../whois.c:474
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,22 +113,22 @@ msgstr ""
 "Error catastrofico: el texto de las condiciones de uso ha sido cambiado.\n"
 "Actualize este programa.\n"
 
-#: ../whois.c:539
+#: ../whois.c:548
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s no encontrado."
 
-#: ../whois.c:549
+#: ../whois.c:558
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servicio desconocido"
 
-#: ../whois.c:566
+#: ../whois.c:575
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrumpido por la señal %d..."
 
-#: ../whois.c:611
+#: ../whois.c:620
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -153,7 +154,7 @@ msgid ""
 "-t TYPE                request template for object of TYPE ('all' for a "
 "list)\n"
 "-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources]   query specified server info [RPSL only]\n"
+"-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
 "-h HOST                connect to server HOST\n"
 "-p PORT                connect to PORT\n"

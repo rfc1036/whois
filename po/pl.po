@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.5\n"
-"POT-Creation-Date: 2002-10-11 17:42+0200\n"
+"POT-Creation-Date: 2002-11-16 04:27+0100\n"
 "PO-Revision-Date: 1999-12-18 14:00:00\n"
 "Last-Translator: Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:104
+#: ../whois.c:108
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -22,31 +22,31 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../whois.c:147 ../whois.c:184
+#: ../whois.c:151 ../whois.c:188
 #, c-format
 msgid "Using server %s.\n"
 msgstr "U¿ywam serwera %s.\n"
 
-#: ../whois.c:161
+#: ../whois.c:165
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Uzywam domy¶lnego serwera %s.\n"
 
-#: ../whois.c:164
+#: ../whois.c:168
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 
-#: ../whois.c:170
+#: ../whois.c:174
 #, fuzzy
 msgid "This TLD has no whois server."
 msgstr "Nie ma serwera whois dla tej domeny."
 
-#: ../whois.c:174
+#: ../whois.c:178
 #, fuzzy
 msgid "Connecting to whois.crsnic.net."
 msgstr "£±czenie z hostem whois.internic.net."
 
-#: ../whois.c:180
+#: ../whois.c:184
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -57,7 +57,7 @@ msgstr ""
 "Znaleziono odniesienie z InterNIC do %s.\n"
 "\n"
 
-#: ../whois.c:193
+#: ../whois.c:197
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -66,12 +66,12 @@ msgstr ""
 "Zapytanie: \"%s\"\n"
 "\n"
 
-#: ../whois.c:243 ../whois.c:246
+#: ../whois.c:247 ../whois.c:250
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:322
+#: ../whois.c:330
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
@@ -79,28 +79,29 @@ msgstr ""
 "Nie mo¿na ustaliæ, do kogo ten adres IP zosta³ oddelegowany.\n"
 "Spróbujê ARIN i mam nadziejê, ¿e siê uda..."
 
-#: ../whois.c:339
+#: ../whois.c:347
 msgid "I guess it's a netblock name but I don't know where to look it up."
 msgstr "To nazwa bloku sieciowego, ale nie wiem, pod jak± nazw± szukaæ."
 
-#: ../whois.c:346
+#: ../whois.c:354
 msgid "I guess it's a domain but I don't know where to look it up."
 msgstr "To nazwa domeny, ale nie wiem, gdzie jej szukaæ."
 
-#: ../whois.c:356
+#: ../whois.c:364
 msgid "Unknown AS number. Please upgrade this program."
 msgstr "Nieznany numer AS. Zainstaluj nowsz± wersjê programu."
 
-#: ../whois.c:386
-msgid "Warning: RIPE flags ignored for a traditional server."
+#: ../whois.c:399
+#, fuzzy
+msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Uwaga: flagi RIPE s± ignorowane dla starszych serwerów."
 
-#: ../whois.c:448
+#: ../whois.c:457
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Wykryto odniesienie do %s na %s.\n"
 
-#: ../whois.c:465
+#: ../whois.c:474
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -108,22 +109,22 @@ msgstr ""
 "Katastrofa! Tekst disclaimera zosta³ zmieniony.\n"
 "¦ci±gnij nowsz± wersjê programu.\n"
 
-#: ../whois.c:539
+#: ../whois.c:548
 #, c-format
 msgid "Host %s not found."
 msgstr "Serwer %s nie zosta³ znaleziony."
 
-#: ../whois.c:549
+#: ../whois.c:558
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: us³uga nieznana"
 
-#: ../whois.c:566
+#: ../whois.c:575
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Przerwanie na sygna³ %d..."
 
-#: ../whois.c:611
+#: ../whois.c:620
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -149,7 +150,7 @@ msgid ""
 "-t TYPE                request template for object of TYPE ('all' for a "
 "list)\n"
 "-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources]   query specified server info [RPSL only]\n"
+"-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
 "-h HOST                connect to server HOST\n"
 "-p PORT                connect to PORT\n"

@@ -35,6 +35,7 @@
 20480	21503	ripe
 23552	24575	apnic
 24576	25599	ripe
+27648	28671	lacnic
 
 ###
 ### DO NOT FORGET TO UPDATE whereas()

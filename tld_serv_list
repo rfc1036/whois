@@ -49,8 +49,12 @@
 .ar	WEB http://www.nic.ar/consultas/consdom.htm
 .as	whois.nic.as
 .at	whois.aco.net
-.net.au	whois.connect.com.au
-.au	whois.aunic.net
+.asn.au	whois.ausregistry.net.au
+.com.au	whois.ausregistry.net.au
+.id.au	whois.ausregistry.net.au
+.net.au	whois.ausregistry.net.au
+.org.au	whois.ausregistry.net.au
+.au	whois.aunic.net	# edu gov
 #.aw			# NIC? www.setarnet.aw
 .az	NONE		# www.nic.az
 .ba	NONE		# http://www.utic.net.ba/domen/
@@ -67,7 +71,7 @@
 .bo	NONE		# www.nic.bo
 .br	whois.nic.br
 .bs	WEB http://www.nic.bs/cgi-bin/search.pl
-.bt	whois.nic.tm
+.bt	NONE
 .bv	NONE		# http://www.uninett.no/navn/bv-sj.html
 #.bw			# NIC? www.botsnet.bw btc.bw
 .by	WEB http://www.tld.by/indexeng.html
@@ -99,7 +103,7 @@
 .dm	NONE		# www.domains.dm ?
 .do	WEB http://www.nic.do
 .dz	NONE
-.ec	WEB http://www.nic.ec
+.ec	WEB http://www.nic.ec/consulta/whois.asp
 .ee	whois.eenet.ee
 .eg	NONE		# http://www.ise.org.eg/domain.htm
 #.eh
@@ -132,7 +136,7 @@
 .gu	WEB http://gadao.gov.gu/Scripts/wwsquery/wwsquery.dll?hois=guamquery
 #.gw			# no NIC?
 #.gy			# NIC? (UPR)
-.hk	WEB http://web.hkdnr.net.hk/hkdnr/
+.hk	whois.hkdnr.net.hk
 .hm	whois.registry.hm
 .hn	NONE		# www.nic.hn
 .hr	WEB http://www.dns.hr/pretrazivanje.html
@@ -142,8 +146,7 @@
 .ie	whois.domainregistry.ie
 .il	whois.isoc.org.il
 .im	WEB http://www.nic.im/exist.html
-#broken	.in	whois.ncst.ernet.in
-.in	WEB http://domain.ncst.ernet.in/search.php
+.in	whois.ncst.ernet.in
 .io	WEB http://www.io.io/whois.html
 #.iq			# NIC?
 .ir	whois.nic.ir
@@ -162,7 +165,7 @@
 #.kp
 .kr	whois.krnic.net
 .kw	WEB http://www.domainname.net.kw
-.ky	NONE		# www.nic.ky
+.ky	WEB http://146.115.157.215/whoisfrontend.asp
 .kz	whois.domain.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/search.html
@@ -170,7 +173,7 @@
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
-.ls	NONE
+.ls	NONE		# NIC?
 .lt	whois.ripe.net
 .lu	whois.restena.lu
 .lv	whois.ripe.net
@@ -207,7 +210,7 @@
 .np	WEB http://www.mos.com.np/domsearch.html
 #.nr			# NIC? www.cenpan.net.nr
 .nu	whois.nic.nu
-.nz	whois.domainz.net.nz
+.nz	whois.srs.net.nz
 #.om	NONE		# NIC? http://www.gto.net.om
 .pa	WEB http://www.nic.pa
 .pe	whois.nic.pe
@@ -255,7 +258,7 @@
 .th	whois.thnic.net
 .tj	whois.nic.tj
 .tk	whois.dot.tk
-.tm	whois.nic.tm
+.tm	NONE
 .tn	NONE		# http://www.ati.tn/Nic/
 .to	whois.tonic.to
 .tp	NONE		# www.nic.tp
@@ -326,3 +329,4 @@
 -lrms	whois.afilias.net
 -tw	whois.twnic.net
 -nicir	whois.nic.ir
+-uanic	whois.com.ua

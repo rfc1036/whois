@@ -284,14 +284,20 @@ const char *whichwhois(const char *s)
 
     /* IPv6 address */
     if (strchr(s, ':')) {
-	if (strncasecmp(s, "2001:2", 6) == 0 ||	/* XXX ugly hack! */
-	    strncasecmp(s, "2001:02", 6) == 0)
+	if (strncmp(s, "2001:2", 6) == 0 ||	/* XXX ugly hack! */
+	    strncmp(s, "2001:02", 6) == 0 ||
+	    strncasecmp(s, "2001:A",  6) == 0 ||
+	    strncasecmp(s, "2001:0A", 6) == 0 ||
+	    strncasecmp(s, "2001:C",  6) == 0 ||
+	    strncasecmp(s, "2001:0C", 6) == 0)
 	    return "whois.apnic.net";
-	if (strncasecmp(s, "2001:4", 6) == 0 ||
-	    strncasecmp(s, "2001:04", 6) == 0)
+	if (strncmp(s, "2001:4", 6) == 0 ||
+	    strncmp(s, "2001:04", 6) == 0)
 	    return "whois.arin.net";
-	if (strncasecmp(s, "2001:6", 6) == 0 ||
-	    strncasecmp(s, "2001:06", 6) == 0)
+	if (strncmp(s, "2001:6", 6) == 0 ||
+	    strncmp(s, "2001:06", 6) == 0 ||
+	    strncmp(s, "2001:8", 6) == 0 ||
+	    strncmp(s, "2001:08", 6) == 0)
 	    return "whois.ripe.net";
 	/* if (strncasecmp(s, "3ffe", 4) == 0) */
 	    return "whois.6bone.net";
@@ -356,7 +362,7 @@ const char *whereas(int asn, struct as_del aslist[])
 {
     int i;
 
-    if (asn > 27647)
+    if (asn > 28671)
 	puts(_("Unknown AS number. Please upgrade this program."));
     else for (i = 0; aslist[i].serv; i++)
 	if (asn >= aslist[i].first && asn <= aslist[i].last)
@@ -392,9 +398,8 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    }
     if (*flags) {
 	if (!isripe && strcmp(server, "whois.corenic.net") != 0)
-	    puts(_("Warning: RIPE flags ignored for a traditional server."));
-	else
-	    strcat(buf, flags);
+	    puts(_("Warning: RIPE flags used with a traditional server."));
+	strcat(buf, flags);
     }
     if (!isripe && strcmp(server, "whois.nic.mil") == 0 &&
 	    strncasecmp(query, "AS", 2) == 0 &&
@@ -402,9 +407,6 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
     else if (!isripe && strcmp(server, "whois.corenic.net") == 0)
 	sprintf(buf, "--machine %s", query);	/* machine readable output */
-    else if (!isripe && strcmp(server, "whois.ncst.ernet.in") == 0 &&
-	     !strchr(query, ' '))
-	sprintf(buf, "domain %s", query);	/* ask for a domain */
     else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
 	char *lang = getenv("LANG");	/* not a perfect check, but... */
 	if (!lang || (strncmp(lang, "ja", 2) != 0))
@@ -636,7 +638,7 @@ void usage(void)
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
 "-t TYPE                request template for object of TYPE ('all' for a list)\n"
 "-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources]   query specified server info [RPSL only]\n"
+"-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
 "-h HOST                connect to server HOST\n"
 "-p PORT                connect to PORT\n"

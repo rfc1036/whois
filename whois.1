@@ -41,8 +41,11 @@ Do not display the legal disclaimers some registries like to show you.
 .B \-p PORT
 Connect to PORT.
 .TP 8
-.B \-V
+.B \--verbose
 Be verbose.
+.TP 8
+.B \--help
+Display online help.
 .TP 8
 Other options are flags understood by RIPE-like servers.
 .SH NOTES
@@ -54,12 +57,9 @@ NIC handles or people names you have to prepend the appropriate keyword
 If the \fI!\fP character is prepended to a NIC handle, the default
 server becomes \fIwhois.networksolutions.com\fP.
 .P
-When querying \fIwhois.arin.net\fP for AS numbers, the program will
+When querying \fIwhois.nic.mil\fP for AS numbers, the program will
 automatically convert the request in the appropriate format, inserting
 a space after the string "AS".
-.P
-When querying \fIwhois.ncst.ernet.in\fP for a string without spaces, the
-\fIdomain\fP keyword is prepended.
 .P
 When querying \fIwhois.corenic.net\fP, machine readable output is requested.
 .P
@@ -80,9 +80,9 @@ the \fI-H\fP flag is not used.
 .SH "SEE ALSO"
 \fIRFC 812\fP: NICNAME/WHOIS
 .PP
-\fIRIPE-157\fP, \fIRIPE-189\fP: RIPE NCC Database Documentation
+\fIRIPE-223\fP: RIPE NCC Database Documentation
 .PP
-Detailed help on available flags can be found in \fIRIPE-157\fP or in
+Detailed help on available flags can be found in \fIRIPE-223\fP or in
 the help file which can be obtained with the command:
 .IP
 .B whois -h whois.ripe.net HELP
