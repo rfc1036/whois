@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
 	usage();
 
     /* On some systems realloc only works on non-NULL buffers */
-    qstring = malloc(1);
+    qstring = malloc(64);
     *qstring = '\0';
 
     /* parse other parameters, if any */
@@ -212,6 +212,12 @@ int main(int argc, char *argv[])
     strcat(p, "\r\n");
 
     sockfd = openconn(server, port);
+
+    /*
+     * Now we are connected and the query is supposed to complete quickly.
+     * This will help people who run whois ... | less
+     */
+    alarm(0);
     do_query(sockfd, p);
 
     exit(0);

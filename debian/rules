@@ -24,7 +24,7 @@ binary-arch: checkroot build
 	install whois mkpasswd debian/tmp/usr/bin/
 	cd po && make install BASEDIR=../debian/tmp
 	dh_installmanpages
-	dh_installdocs README TODO
+	dh_installdocs README
 	dh_installchangelogs 
 	dh_strip
 	dh_compress

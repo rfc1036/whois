@@ -1,34 +1,34 @@
-.TH WHOIS 1 "3 December 1999" "Marco d'Itri" "Debian GNU/Linux"
-.SH NAME
+.TH "WHOIS" "1" "3 December 1999" "Marco d'Itri" "Debian GNU/Linux"
+.SH "NAME"
 whois \- client for the whois directory service
-.SH SYNOPSIS
+.SH "SYNOPSIS"
 .B whois
-[\~\fB-h\fP\~\fIHOST\fP\~]
-[\~\fB-p\fP\~ \fIPORT\fP\~]
-[\~\fB-aCFHlLMmrRSVx\fP\~]
-[\~\fB-g\fP\~\fISOURCE:FIRST-LAST\fP\~]
-[\~\fB-i\fP\~\fIATTR\fP\~]
-[\~\fB-S\fP\~\fISOURCE\fP\~]
-[\~\fB-T\fP\~\fITYPE\fP\~]
+[\~\fB\-h\fP\~\fIHOST\fP\~]
+[\~\fB\-p\fP\~ \fIPORT\fP\~]
+[\~\fB\-aCFHlLMmrRSVx\fP\~]
+[\~\fB\-g\fP\~\fISOURCE:FIRST\-LAST\fP\~]
+[\~\fB\-i\fP\~\fIATTR\fP\~]
+[\~\fB\-S\fP\~\fISOURCE\fP\~]
+[\~\fB\-T\fP\~\fITYPE\fP\~]
 .I object
 
 .B whois
-[\~\fI-t\fP\~]
-[\~\fI-v\fP\~]
+[\~\fI\-t\fP\~]
+[\~\fI\-v\fP\~]
 .I template
 .B whois
-[\~\fI-q\fP\~]
+[\~\fI\-q\fP\~]
 .I keyword
-.PP
-.SH DESCRIPTION
-\fBwhois\fP searches for an object in a \fIRFC-812\fP database.
+.PP 
+.SH "DESCRIPTION"
+\fBwhois\fP searches for an object in a \fIRFC\-812\fP database.
 
 This version of the whois client tries to guess the right server to
 ask for the specified object. If no guess can be made it will connect
 to whois.networksolutions.com for nic handles or whois.arin.net for
 IPv4 addresses and network names.
-.PP
-.SH OPTIONS
+.PP 
+.SH "OPTIONS"
 .TP 8
 .B \-h HOST
 Connect to HOST.
@@ -39,14 +39,14 @@ Do not display the legal disclaimers some registries like to show you.
 .B \-p PORT
 Connect to PORT.
 .TP 8
-.B \--verbose
+.B \-\-verbose
 Be verbose.
 .TP 8
-.B \--help
+.B \-\-help
 Display online help.
 .TP 8
-Other options are flags understood by RIPE-like servers.
-.SH NOTES
+Other options are flags understood by RIPE\-like servers.
+.SH "NOTES"
 Please remember that \fIwhois.networksolutions.com\fP by default will
 only search in the domains database. If you want to search for NIC handles
 you have to prepend a \fI!\fP character. When you do this, the default
@@ -58,10 +58,15 @@ a space after the string "AS".
 .P
 When querying \fIwhois.corenic.net\fP, machine readable output is requested.
 .P
-RIPE-specific options are ignored when querying non-RIPE servers.
-.SH Files
+RIPE\-specific options are ignored when querying non\-RIPE servers.
+.P
+If the \fI/etc/whois.conf\fR config file exists, it will be consulted
+to find a server before applying the normal rules. Each line of the
+file should contain a regular expression to be matched against the query
+text and the whois server to use, separated by white space.
+.SH "Files"
 /etc/whois.conf
-.SH ENVIRONMENT
+.SH "ENVIRONMENT"
 .IP LANG
 When querying \fIwhois.nic.ad.jp\fP english text is requested unless the
 \fILANG\fP environment variable specifies a Japanese locale.
@@ -71,23 +76,23 @@ of objects are located. If the variable does not exist then
 \fIwhois.arin.net\fP will be queried.
 .IP "WHOIS_HIDE"
 If this variable is defined, legal disclaimers will be hidden even if
-the \fI-H\fP flag is not used.
+the \fI\-H\fP flag is not used.
 .SH "SEE ALSO"
 \fIRFC 812\fP: NICNAME/WHOIS
-.PP
-\fIRIPE-223\fP: RIPE NCC Database Documentation
-.PP
-Detailed help on available flags can be found in \fIRIPE-223\fP or in
+.PP 
+\fIRIPE\-223\fP: RIPE NCC Database Documentation
+.PP 
+Detailed help on available flags can be found in \fIRIPE\-223\fP or in
 the help file which can be obtained with the command:
-.IP
-.B whois -h whois.ripe.net HELP
-.SH HISTORY
+.IP 
+.B whois \-h whois.ripe.net HELP
+.SH "HISTORY"
 This program closely tracks the user interface of the whois client
 developed at RIPE by Ambrose Magee and others on the base of the
 original BSD client.
 I also added support for the protocol extensions developed by David
 Kessens of QWest for the 6bone server.
-.SH AUTHOR
+.SH "AUTHOR"
 .B Whois
 and this man page were written by Marco d'Itri <\fImd@linux.it\fP>
 and are licensed under the GPL.

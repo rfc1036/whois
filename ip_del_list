@@ -10,16 +10,14 @@
 61.80.0.0/14	whois.nic.or.kr
 61.84.0.0/15	whois.nic.or.kr
 61.112.0.0/12	whois.nic.ad.jp
-61.192.0.0/12	whois.nic.ad.jp		# => 61.207
-61.208.0.0/13	whois.nic.ad.jp		# => 61.215
+61.192.0.0/12	whois.nic.ad.jp		# => 61.207.255.255
+61.208.0.0/13	whois.nic.ad.jp		# => 61.215.255.255
 61.0.0.0/8	apnic
 62.0.0.0/8	ripe
-# broken?
-# 63.208.0.0/13	rr.level3.net
 80.0.0.0/7	ripe
 82.0.0.0/8	ripe
 96.0.0.0/3	UNALLOCATED
-0.0.0.0/2	arin	# all other A classes are managed by ARIN
+0.0.0.0/1	arin	# all other A classes are managed by ARIN
 133.0.0.0/8	whois.nic.ad.jp
 139.20.0.0/14	ripe
 139.24.0.0/14	ripe

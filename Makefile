@@ -5,7 +5,7 @@ OPTS=-O2
 # Solaris
 #LDFLAGS=-lnsl -lsocket
 
-# linux (old libc)
+# obsolete linux (libc 5)
 #LDFLAGS=-lintl
 
 # FreeBSD
@@ -50,7 +50,7 @@ test:
 	open -- sh -c "while nc -l -p 43 127.0.0.1; do echo END; done"
 
 gnu:
-	tar czvvf gnu-whois.tgz Makefile* README TODO *list *.h whois.*
+	tar czvvf gnu-whois.tgz Makefile* README *list *.h whois.*
 
 pos:
 	cd po && $(MAKE)

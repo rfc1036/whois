@@ -39,16 +39,6 @@ const char *ripe_servers_old[] = {
     NULL
 };
 
-#if 0
-const char *rwhois_servers[] = {
-    "whois.isi.edu",		/* V-1.0B9.2 */
-    "rwhois.rcp.net.pe",	/* V-1.5.3 */
-    "ns.twnic.net",		/* V-1.0B9 */
-    "dragon.seed.net.tw",	/* V-1.0B9.2 */
-    NULL
-};
-#endif
-
 const char *hide_strings[] = {
     "The Data in the VeriSign", "terms at any time.",		/* VERISIGN */
     "The data in Register", "By submitting",		    /* REGISTER.COM */
@@ -65,7 +55,7 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
-    "The data in this whois", "to abide by these terms.",	/* enom */
+    "The data in this whois", "using our Whois information",	/* enom */
     NULL, NULL
 };
 

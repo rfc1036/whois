@@ -1,7 +1,0 @@
-What about rwhois?
-
-Should support the refer attribute of RIPE-189 objects.
-
-Add Exodus rwhois server (e.g. 216.35.0.0/16).
-Add rwhois.verio.net:4321 (e.g. 192.204.0.0/16).
-
