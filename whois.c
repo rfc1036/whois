@@ -151,10 +151,10 @@ int main(int argc, char *argv[])
 #endif
 
     if (!server) {
-	char *p;
-	p = normalize_domain(qstring);
-	server = whichwhois(p);
-	free(p);
+	char *tmp;
+	tmp = normalize_domain(qstring);
+	server = whichwhois(tmp);
+	free(tmp);
 	switch (server[0]) {
 	    case 0:
 		if (!(server = getenv("WHOIS_SERVER")))
@@ -282,11 +282,14 @@ const char *whichwhois(const char *s)
 
     /* IPv6 address */
     if (strchr(s, ':')) {
-	if (strncasecmp(s, "2001:2", 6) == 0)	/* XXX ugly hack! */
+	if (strncasecmp(s, "2001:2", 6) == 0 ||	/* XXX ugly hack! */
+	    strncasecmp(s, "2001:02", 6) == 0)
 	    return "whois.apnic.net";
-	if (strncasecmp(s, "2001:4", 6) == 0)
+	if (strncasecmp(s, "2001:4", 6) == 0 ||
+	    strncasecmp(s, "2001:04", 6) == 0)
 	    return "whois.arin.net";
-	if (strncasecmp(s, "2001:6", 6) == 0)
+	if (strncasecmp(s, "2001:6", 6) == 0 ||
+	    strncasecmp(s, "2001:06", 6) == 0)
 	    return "whois.ripe.net";
 	/* if (strncasecmp(s, "3ffe", 4) == 0) */
 	    return "whois.6bone.net";

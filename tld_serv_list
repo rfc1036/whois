@@ -22,12 +22,19 @@
 .com	CRSNIC
 .net	CRSNIC
 .org	CRSNIC
-.edu	CRSNIC
+.edu	whois.educause.net
 .gov	whois.nic.gov
 .int	whois.icann.org
 .mil	whois.nic.mil
-.info	whois.afilias.info
+# whois server not yet available, see also http://www.nic.aero/whoswho.php
+.aero	whois.nic.aero
 .biz	whois.nic.biz
+.coop	whois.nic.coop
+.info	whois.afilias.info
+.museum	whois.museum
+.name	whois.nic.name
+# not yet delegated, I hope they will not screw up the hostname
+.pro	whois.nic.pro
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
 .ae	WEB http://cc.emirates.net.ae/Customer_care/cc_card/check_domains.choose_domains/
@@ -72,7 +79,7 @@
 .cf	WEB http://www.nic.cf/whois.php3
 .cg	WEB http://www.nic.cg/cgi-bin/whoiscg.pl
 .ch	whois.nic.ch
-.ci	NONE		# www.nic.ci
+.ci	www.nic.ci
 .ck	whois.nic.ck
 .cl	whois.nic.cl
 .cm	NONE		# http://info.intelcam.cm
@@ -89,7 +96,7 @@
 .cz	whois.nic.cz
 .de	whois.denic.de
 .dj	NONE		# www.nic.dj (NOT YET)
-.dk	whois.dk-hostmaster.dk
+.dk	WEB http://www.dk-hostmaster.dk/dkwhois.php?lang=eng
 .dm	NONE		# www.domains.dm ?
 .do	WEB http://www.nic.do
 .dz	NONE
@@ -116,7 +123,7 @@
 .gh	NONE		# http://www.ghana.com/domreg.html
 .gi	NONE		# http://www.gibnet.gi/nic/
 .gl	whois.ripe.net
-.gm	whois.ripe.net
+.gm	whois.ripe.net	# www.nic.gm
 .gn	NONE		# http://www.psg.com/dns/gn/
 #.gp			# www.nic.gp - broken like mq
 #.gq			# NO NIC http://www.intnet.gq
@@ -168,7 +175,7 @@
 .lu	whois.restena.lu
 .lv	whois.ripe.net
 .ly	WEB http://www.lydomains.com/whois.asp
-#.ma			# NIC?
+#.ma			# NIC? http://www.anrt.net.ma/
 .mc	whois.ripe.net
 .md	WEB http://www.nic.md/search.html
 .mg	NONE		# www.nic.mg
@@ -183,7 +190,7 @@
 .mr	NONE		# http://www.univ-nkc.mr/nic_mr.html
 .ms	whois.adamsnames.tc
 .mt	WEB http://www.um.edu.mt/nic/dir/
-.mu	NONE		# http://www.posix.co.za/mu/
+.mu	WEB http://www.nic.mu/cgi-bin/mu_whois.cgi
 #.mv			# NIC? dhiraagu.com.mv
 .mw	WEB http://www.tarsus.net/whois/
 .mx	whois.nic.mx
@@ -209,7 +216,7 @@
 .ph	WEB http://www.names.ph/search.html
 #.pk	whois.pknic.net.pk	# the host does not exist anymore
 .pl	whois.dns.pl
-#.pm			# NIC-FR! http://www.nic.pm
+.pm	whois.nic.fr
 .pn	NONE		# www.nic.pn
 .pr	NONE		# http://www.uprr.pr/main.html
 .ps	WEB http://www.nic.ps/whois/
@@ -217,7 +224,7 @@
 .pw	whois.nic.pw
 .py	WEB http://www.nic.py/consultas/
 .qa	NONE		# http://www.qatar.net.qa/services/virtual.htm
-#.re			# NIC-FR!
+.re	whois.nic.fr
 .ro	whois.rotld.ro
 .ru	whois.ripn.net
 .rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
@@ -235,7 +242,7 @@
 .sm	whois.ripe.net
 .sn	NONE		# www.nic.sn
 .so	NONE		# www.nic.so - no country, no NIC
-.sr	NONE		# www.nic.sr - opens september 2001
+.sr	whois.register.sr
 .st	whois.nic.st
 .su	whois.ripn.net
 .sv	WEB http://www.uca.edu.sv/dns/	# http://www.svnet.org.sv/
@@ -317,3 +324,4 @@
 -nicat	whois.nic.at
 -il	whois.isoc.org.il
 -lrms	whois.afilias.net
+-tw	whois.twnic.net

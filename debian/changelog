@@ -1,3 +1,49 @@
+whois (4.5.21) unstable; urgency=medium
+
+  * Fixed stupid bug. (Closes: #132067).
+  * Added .re and .pm TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Sun,  3 Feb 2002 17:28:02 +0100
+
+whois (4.5.20) unstable; urgency=medium
+
+  * Updated .dk TLD server (Closes: #130795).
+  * Added .ci, .mu and .sr TLD servers
+  * Fixed parsing of some IPv6 addresses.
+
+ -- Marco d'Itri <md@linux.it>  Sat,  2 Feb 2002 00:56:56 +0100
+
+whois (4.5.19) unstable; urgency=medium
+
+  * Added .aero, .coop, .name and .pro TLD servers.
+  * Added more APNIC and JPNIC netblocks.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 15 Jan 2002 21:55:45 +0100
+
+whois (4.5.18) unstable; urgency=medium
+
+  * Added more KRNIC netblocks.
+
+ -- Marco d'Itri <md@linux.it>  Tue,  8 Jan 2002 19:29:12 +0100
+
+whois (4.5.17) unstable; urgency=medium
+
+  * Updated .dk and .edu TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed,  2 Jan 2002 05:27:23 +0100
+
+whois (4.5.16) unstable; urgency=low
+
+  * Added 220.0.0.0/8.
+
+ -- Marco d'Itri <md@linux.it>  Fri,  7 Dec 2001 03:43:18 +0100
+
+whois (4.5.15) unstable; urgency=medium
+
+  * Added .museum TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 18 Nov 2001 15:12:52 +0100
+
 whois (4.5.14) unstable; urgency=medium
 
   * Added 219.0.0.0/8.
@@ -9,7 +55,7 @@ whois (4.5.14) unstable; urgency=medium
 whois (4.5.13) unstable; urgency=medium
 
   * Fixed "Password: " prompt printing when using mkpasswd --stdin.
-  * Update .hm TLD server (Closes: #115719).
+  * Updated .hm TLD server (Closes: #115719).
 
  -- Marco d'Itri <md@linux.it>  Fri,  5 Oct 2001 00:57:26 +0200
 

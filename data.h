@@ -59,6 +59,7 @@ const char *hide_strings[] = {
     "The Data in Gabia", "you agree to abide",
     "NeuLevel, Inc., the Registry Operator", "whatsoever, you agree",
     "NOTICE: Access to .INFO WHOIS", "time. By submitting",
+    "Disclaimer: The Global Name Registry", "for any commercial",
     NULL, NULL
 };
 

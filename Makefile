@@ -8,6 +8,9 @@ OPTS=-O2
 # linux (old libc)
 #LDFLAGS=-lintl
 
+# OS/2 EMX
+#LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
+
 all: whois #pos
 
 whois: whois.c whois.h config.h data.h as_del.h ip_del.h tld_serv.h
