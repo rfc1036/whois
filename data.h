@@ -63,6 +63,7 @@ const char *hide_strings[] = {
     "Disclaimer: The Global Name Registry", "for any commercial",
     "Access to America Online", "time. By accessing",
     "Access and use restricted", "http://www.icann", /* GANDI */
+    "NeuStar, Inc., the Registry", "whatsoever, you agree", /* us */
     NULL, NULL
 };
 

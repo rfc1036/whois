@@ -37,9 +37,9 @@
 .pro	whois.nic.pro
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
-.ae	WEB http://cc.emirates.net.ae/Customer_care/cc_card/check_domains.choose_domains/
+.ae	WEB http://www.uaenic.ae/
 .af	NONE		# was whois.nic.af
-.ag	WEB http://www.nic.ag/domain_search.htm
+.ag	whois.nic.ag
 .ai	NONE		# http://www.offshore.com.ai/domain_names/
 .al	NONE		# http://www.inima.al/Domains.html
 .am	whois.amnic.net		# down?
@@ -260,8 +260,8 @@
 .to	whois.tonic.to
 .tp	NONE		# www.nic.tp
 .tr	whois.metu.edu.tr
-.tt	WEB http://www.nic.tt/cgi-bin/whois.cgi
-.tv	NONE		# http://internet.tv
+.tt	WEB http://www.nic.tt/cgi-bin/search.pl
+.tv	whois.tv
 .tw	whois.twnic.net
 .tz	NONE		# http://www.psg.com/dns/tz/
 .ua	whois.com.ua
@@ -271,7 +271,7 @@
 .uk	whois.nic.uk
 .um	NONE		# see .us
 .fed.us	whois.nic.gov
-.us	NONE		# for info: usdomreg@nic.us
+.us	whois.nic.us
 .com.uy	WEB http://dns.antel.net.uy/clientes/consultar.htm
 .uy	WEB http://www.rau.edu.uy/rau/dom/reg.htm
 #.uz			# www.noc.uz (broken)

@@ -238,7 +238,7 @@ void display_help(void)
 "                            instead of /dev/tty\n"
 "      -s, --stdin           like --password-fd=0\n"
 "      -h, --help            display this help and exit\n"
-"      -v, --version         output version information and exit\n"
+"      -V, --version         output version information and exit\n"
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"

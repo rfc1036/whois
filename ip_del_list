@@ -54,6 +54,9 @@
 192.71.0.0/16	ripe
 192.72.0.0/16	whois.seed.net.tw	# NETBLK-SEED-NETS
 192.106.0.0/16	ripe
+192.114.0.0/15	ripe
+192.116.0.0/15	ripe
+192.118.0.0/16	ripe
 192.162.0.0/16	ripe
 192.164.0.0/14	ripe
 192.0.0.0/8	arin	# the swamp

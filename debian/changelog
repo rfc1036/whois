@@ -1,3 +1,22 @@
+whois (4.5.28) unstable; urgency=medium
+
+  * Updated .tt TLD server (Closes: #148771).
+
+ -- Marco d'Itri <md@linux.it>  Sat,  1 Jun 2002 23:03:49 +0200
+
+whois (4.5.27) unstable; urgency=medium
+
+  * Added .ae TLD server.
+  * Updated .ag TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 31 May 2002 13:36:21 +0200
+
+whois (4.5.26) unstable; urgency=medium
+
+  * Added .tv and .us TLD servers (Closes: #144257).
+
+ -- Marco d'Itri <md@linux.it>  Fri, 26 Apr 2002 03:31:48 +0200
+
 whois (4.5.25) unstable; urgency=medium
 
   * Updated data for -H option.
