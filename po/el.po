@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.5.3\n"
-"POT-Creation-Date: 2002-11-16 04:27+0100\n"
+"POT-Creation-Date: 2002-11-28 21:21+0100\n"
 "PO-Revision-Date: 2001-02-23 16:07:57+0900\n"
 "Last-Translator: Simos Xenitellis <simos@hellug.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -24,32 +24,32 @@ msgstr ""
 "\n"
 "Αναφέρατε σφάλματα στο %s.\n"
 
-#: ../whois.c:151 ../whois.c:188
+#: ../whois.c:151 ../whois.c:202
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Γίνεται χρήση του εξυπηρετητή %s.\n"
 
-#: ../whois.c:165
+#: ../whois.c:172
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Χρήση εξ' ορισμού εξυπηρετητή %s.\n"
 
-#: ../whois.c:168
+#: ../whois.c:175
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Αυτό το TLD δεν έχει εξυπηρετητή whois, ωστόσο μπορείτε να προσπελάσετε την "
 "βάση whois στο"
 
-#: ../whois.c:174
+#: ../whois.c:181
 msgid "This TLD has no whois server."
 msgstr "Αυτό το TLD δεν έχει εξυπηρετητή whois."
 
-#: ../whois.c:178
+#: ../whois.c:185
 #, fuzzy
 msgid "Connecting to whois.crsnic.net."
 msgstr "Γίνεται σύνδεση στο whois.internic.net."
 
-#: ../whois.c:184
+#: ../whois.c:191
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -60,7 +60,16 @@ msgstr ""
 "Βρέθηκε αναφορά από το InterNIC στο %s.\n"
 "\n"
 
-#: ../whois.c:197
+#: ../whois.c:195
+msgid "No whois server is known for this kind of object."
+msgstr ""
+
+#: ../whois.c:198
+#, fuzzy
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr "¶γνωστος αριθμός AS. Παρακαλώ ενημερώστε αυτό το πρόγραμμα."
+
+#: ../whois.c:211
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -69,44 +78,23 @@ msgstr ""
 "Αλφαριθμητικό ερώτησης: \"%s\"\n"
 "\n"
 
-#: ../whois.c:247 ../whois.c:250
+#: ../whois.c:258 ../whois.c:261
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:330
-msgid ""
-"I don't know where this IP has been delegated.\n"
-"I'll try ARIN and hope for the best..."
-msgstr ""
-"Δε γνωρίζε σε ποιον έχει αποδοθεί ευθύνη για αυτήν την διεύθυνση IP.\n"
-"Θα δοκιμάσω το ARIN και εύχομε για το καλύτερο..."
-
-#: ../whois.c:347
-msgid "I guess it's a netblock name but I don't know where to look it up."
-msgstr ""
-"Πιστεύω ότι είναι όνομα μπλοκ δικτύου αλλά δε γνωρίζω που να το αναζητήσω."
-
-#: ../whois.c:354
-msgid "I guess it's a domain but I don't know where to look it up."
-msgstr "Πιστεύω ότι είναι ένα επίθημα αλλά δε γνωρίζω που να το αναζητήσω."
-
-#: ../whois.c:364
-msgid "Unknown AS number. Please upgrade this program."
-msgstr "¶γνωστος αριθμός AS. Παρακαλώ ενημερώστε αυτό το πρόγραμμα."
-
-#: ../whois.c:399
+#: ../whois.c:400
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr ""
 "Προειδοποίηση: Η σημαίες του RIPE αγνοούνται σε έναν παραδοσιακό εξυπηρετητή."
 
-#: ../whois.c:457
+#: ../whois.c:460
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Ανιχνεύθηκε αναφορά του %s στο %s.\n"
 
-#: ../whois.c:474
+#: ../whois.c:477
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -114,22 +102,26 @@ msgstr ""
 "Καταστροφικό σφάλμα: το κείμενο της αποποίησης ευθυνών έχει τροποποιηθεί.\n"
 "Παρακαλώ αναβαθμίστε το πρόγραμμα.\n"
 
-#: ../whois.c:548
+#: ../whois.c:551
 #, c-format
 msgid "Host %s not found."
 msgstr "Το σύστημα %s δε βρέθηκε."
 
-#: ../whois.c:558
+#: ../whois.c:561
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: άγνωστη υπηρεσία"
 
-#: ../whois.c:575
+#: ../whois.c:573
+msgid "Timeout."
+msgstr ""
+
+#: ../whois.c:579
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Διακοπή από το σήμα %d..."
 
-#: ../whois.c:620
+#: ../whois.c:628
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -268,3 +260,17 @@ msgstr ""
 #: ../mkpasswd.c:260
 msgid "Available algorithms:\n"
 msgstr ""
+
+#~ msgid ""
+#~ "I don't know where this IP has been delegated.\n"
+#~ "I'll try ARIN and hope for the best..."
+#~ msgstr ""
+#~ "Δε γνωρίζε σε ποιον έχει αποδοθεί ευθύνη για αυτήν την διεύθυνση IP.\n"
+#~ "Θα δοκιμάσω το ARIN και εύχομε για το καλύτερο..."
+
+#~ msgid "I guess it's a netblock name but I don't know where to look it up."
+#~ msgstr ""
+#~ "Πιστεύω ότι είναι όνομα μπλοκ δικτύου αλλά δε γνωρίζω που να το αναζητήσω."
+
+#~ msgid "I guess it's a domain but I don't know where to look it up."
+#~ msgstr "Πιστεύω ότι είναι ένα επίθημα αλλά δε γνωρίζω που να το αναζητήσω."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.5\n"
-"POT-Creation-Date: 2002-11-16 04:27+0100\n"
+"POT-Creation-Date: 2002-11-28 21:21+0100\n"
 "PO-Revision-Date: 1999-12-18 14:00:00\n"
 "Last-Translator: Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -22,31 +22,31 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../whois.c:151 ../whois.c:188
+#: ../whois.c:151 ../whois.c:202
 #, c-format
 msgid "Using server %s.\n"
 msgstr "U¿ywam serwera %s.\n"
 
-#: ../whois.c:165
+#: ../whois.c:172
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Uzywam domy¶lnego serwera %s.\n"
 
-#: ../whois.c:168
+#: ../whois.c:175
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 
-#: ../whois.c:174
+#: ../whois.c:181
 #, fuzzy
 msgid "This TLD has no whois server."
 msgstr "Nie ma serwera whois dla tej domeny."
 
-#: ../whois.c:178
+#: ../whois.c:185
 #, fuzzy
 msgid "Connecting to whois.crsnic.net."
 msgstr "£±czenie z hostem whois.internic.net."
 
-#: ../whois.c:184
+#: ../whois.c:191
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -57,7 +57,16 @@ msgstr ""
 "Znaleziono odniesienie z InterNIC do %s.\n"
 "\n"
 
-#: ../whois.c:197
+#: ../whois.c:195
+msgid "No whois server is known for this kind of object."
+msgstr ""
+
+#: ../whois.c:198
+#, fuzzy
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr "Nieznany numer AS. Zainstaluj nowsz± wersjê programu."
+
+#: ../whois.c:211
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -66,42 +75,22 @@ msgstr ""
 "Zapytanie: \"%s\"\n"
 "\n"
 
-#: ../whois.c:247 ../whois.c:250
+#: ../whois.c:258 ../whois.c:261
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:330
-msgid ""
-"I don't know where this IP has been delegated.\n"
-"I'll try ARIN and hope for the best..."
-msgstr ""
-"Nie mo¿na ustaliæ, do kogo ten adres IP zosta³ oddelegowany.\n"
-"Spróbujê ARIN i mam nadziejê, ¿e siê uda..."
-
-#: ../whois.c:347
-msgid "I guess it's a netblock name but I don't know where to look it up."
-msgstr "To nazwa bloku sieciowego, ale nie wiem, pod jak± nazw± szukaæ."
-
-#: ../whois.c:354
-msgid "I guess it's a domain but I don't know where to look it up."
-msgstr "To nazwa domeny, ale nie wiem, gdzie jej szukaæ."
-
-#: ../whois.c:364
-msgid "Unknown AS number. Please upgrade this program."
-msgstr "Nieznany numer AS. Zainstaluj nowsz± wersjê programu."
-
-#: ../whois.c:399
+#: ../whois.c:400
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Uwaga: flagi RIPE s± ignorowane dla starszych serwerów."
 
-#: ../whois.c:457
+#: ../whois.c:460
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Wykryto odniesienie do %s na %s.\n"
 
-#: ../whois.c:474
+#: ../whois.c:477
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -109,22 +98,26 @@ msgstr ""
 "Katastrofa! Tekst disclaimera zosta³ zmieniony.\n"
 "¦ci±gnij nowsz± wersjê programu.\n"
 
-#: ../whois.c:548
+#: ../whois.c:551
 #, c-format
 msgid "Host %s not found."
 msgstr "Serwer %s nie zosta³ znaleziony."
 
-#: ../whois.c:558
+#: ../whois.c:561
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: us³uga nieznana"
 
-#: ../whois.c:575
+#: ../whois.c:573
+msgid "Timeout."
+msgstr ""
+
+#: ../whois.c:579
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Przerwanie na sygna³ %d..."
 
-#: ../whois.c:620
+#: ../whois.c:628
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -246,3 +239,16 @@ msgstr ""
 #: ../mkpasswd.c:260
 msgid "Available algorithms:\n"
 msgstr ""
+
+#~ msgid ""
+#~ "I don't know where this IP has been delegated.\n"
+#~ "I'll try ARIN and hope for the best..."
+#~ msgstr ""
+#~ "Nie mo¿na ustaliæ, do kogo ten adres IP zosta³ oddelegowany.\n"
+#~ "Spróbujê ARIN i mam nadziejê, ¿e siê uda..."
+
+#~ msgid "I guess it's a netblock name but I don't know where to look it up."
+#~ msgstr "To nazwa bloku sieciowego, ale nie wiem, pod jak± nazw± szukaæ."
+
+#~ msgid "I guess it's a domain but I don't know where to look it up."
+#~ msgstr "To nazwa domeny, ale nie wiem, gdzie jej szukaæ."

@@ -1,3 +1,26 @@
+whois (4.6.0) unstable; urgency=medium
+
+  * Added .ai .bo, .bt, .dz, .gi, .pn, .tp and .uz TLDs.
+  * Updated .ae, .ar, .at, .bi, .co, .cu, .do, .fm, .ge, .jo, .kr, .lu,
+    .lv, .mt, .mu, .mw, .nr, .ph, .pk, .sa, .sb, .ua, .uy, .vi, .vu TLDs
+    (courtesy of Frédéric L. W. Meunier).
+  * Rewritten the IPv6-matching code. Fixed a few bugs there too.
+  * Generalized and deuglyfied some parts of the code.
+  * Added support for RPSL objects like AS8627:fltr-TRANSIT-OUT.
+  * Objects with no dot or hyphen and beginning with a ! are looked up
+    in whois.networksolutions.com.
+  * The new default server is whois.arin.net since it will only be used
+    for network names.
+  * Implemented a 60 seconds timeout on queries (Closes: #170255).
+
+ -- Marco d'Itri <md@linux.it>  Thu, 28 Nov 2002 20:49:01 +0100
+
+whois (4.5.34) unstable; urgency=medium
+
+  * Added a new RIPE IPv4 allocation.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 24 Nov 2002 03:52:32 +0100
+
 whois (4.5.33) unstable; urgency=medium
 
   * Added another RIPE IPv6 allocation.

@@ -1,6 +1,6 @@
 /* Program version */
 /* not for the inetutils version */
-#define VERSION "4.5.32"
+#define VERSION "4.6.0"
 
 /* Configurable features */
 
@@ -11,7 +11,7 @@
 #undef ALWAYS_HIDE_DISCL
 
 /* Default server */
-#define DEFAULTSERVER   "whois.internic.net"
+#define DEFAULTSERVER   "whois.arin.net"
 
 /* Configuration file */
 /*

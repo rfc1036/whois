@@ -152,11 +152,18 @@ int main(int argc, char *argv[])
     }
 #endif
 
+    signal(SIGTERM, sighandler);
+    signal(SIGINT, sighandler);
+    signal(SIGALRM, alarm_handler);
+    alarm(60);
+
     if (!server) {
 	char *tmp;
+
 	tmp = normalize_domain(qstring);
 	server = whichwhois(tmp);
 	free(tmp);
+
 	switch (server[0]) {
 	    case 0:
 		if (!(server = getenv("WHOIS_SERVER")))
@@ -178,11 +185,18 @@ int main(int argc, char *argv[])
 		    puts(_("Connecting to whois.crsnic.net."));
 		sockfd = openconn("whois.crsnic.net", NULL);
 		server = query_crsnic(sockfd, qstring);
-		closeconn(sockfd);
+		close(sockfd);
 		if (!server)
 		    exit(0);
 		printf(_("\nFound crsnic referral to %s.\n\n"), server);
+		alarm(60);
 		break;
+	    case 5:
+		puts(_("No whois server is known for this kind of object."));
+		exit(0);
+	    case 6:
+		puts(_("Unknown AS number or IP network. Please upgrade this program."));
+		exit(0);
 	    default:
 		if (verb)
 		    printf(_("Using server %s.\n"), server);
@@ -196,9 +210,6 @@ int main(int argc, char *argv[])
     if (verb)
 	printf(_("Query string: \"%s\"\n\n"), p);
     strcat(p, "\r\n");
-
-    signal(SIGTERM, sighandler);
-    signal(SIGINT, sighandler);
 
     sockfd = openconn(server, port);
     do_query(sockfd, p);
@@ -284,28 +295,25 @@ const char *whichwhois(const char *s)
 
     /* IPv6 address */
     if (strchr(s, ':')) {
-	if (strncmp(s, "2001:2", 6) == 0 ||	/* XXX ugly hack! */
-	    strncmp(s, "2001:02", 6) == 0 ||
-	    strncasecmp(s, "2001:A",  6) == 0 ||
-	    strncasecmp(s, "2001:0A", 6) == 0 ||
-	    strncasecmp(s, "2001:C",  6) == 0 ||
-	    strncasecmp(s, "2001:0C", 6) == 0)
-	    return "whois.apnic.net";
-	if (strncmp(s, "2001:4", 6) == 0 ||
-	    strncmp(s, "2001:04", 6) == 0)
-	    return "whois.arin.net";
-	if (strncmp(s, "2001:6", 6) == 0 ||
-	    strncmp(s, "2001:06", 6) == 0 ||
-	    strncmp(s, "2001:8", 6) == 0 ||
-	    strncmp(s, "2001:08", 6) == 0)
-	    return "whois.ripe.net";
-	/* if (strncasecmp(s, "3ffe", 4) == 0) */
+	if (strncmp(s, "2001:",  5) == 0) {
+	    unsigned long v6net = strtol(s + 5, NULL, 16);
+	    v6net = v6net & 0xfe00;	/* we care about the first 7 bits */
+	    for (i = 0; ip6_assign[i].serv; i++)
+		if (v6net == ip6_assign[i].net)
+		    return ip6_assign[i].serv;
+	    return "\006";			/* unknown allocation */
+	} else if (strncasecmp(s, "3ffe:", 5) == 0)
 	    return "whois.6bone.net";
+	/* RPSL objects like AS8627:fltr-TRANSIT-OUT */
+	else if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
+	    return whereas(atoi(s + 2));
+	else
+	    return "\005";
     }
 
     /* email address */
     if (strchr(s, '@'))
-	return "";
+	return "\005";
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
@@ -313,14 +321,14 @@ const char *whichwhois(const char *s)
 
 	for (p = s; *p; p++);			/* go to the end of s */
 	if (strncasecmp(s, "as", 2) == 0 &&	/* it's an AS */
-	    ((s[2] >= '0' && s[2] <= '9') || s[2] == ' '))
-	    return whereas(atoi(s + 2), as_assign);
+		(isasciidigit(s[2]) || s[2] == ' '))
+	    return whereas(atoi(s + 2));
 	else if (strncasecmp(p - 2, "jp", 2) == 0) /* JP NIC handle */
 	    return "whois.nic.ad.jp";
-	if (*p == '!')	/* NSI NIC handle */
+	if (*s == '!')	/* NSI NIC handle */
 	    return "whois.networksolutions.com";
-	else /* it's a NSI NIC handle or something we don't know about */
-	    return "";
+	else
+	    return "\005";	/* probably a unknown kind of nic handle */
     }
 
     /* smells like an IP? */
@@ -328,13 +336,10 @@ const char *whichwhois(const char *s)
 	for (i = 0; ip_assign[i].serv; i++)
 	    if ((ip & ip_assign[i].mask) == ip_assign[i].net)
 		return ip_assign[i].serv;
-	if (verb)
-	    puts(_("I don't know where this IP has been delegated.\n"
-		   "I'll try ARIN and hope for the best..."));
-	return "whois.arin.net";
+	return "\005";			/* not in the unicast IPv4 space */
     }
 
-    /* check TLD list */
+    /* check the TLDs list */
     for (i = 0; tld_serv[i]; i += 2)
 	if (domcmp(s, tld_serv[i]))
 	    return tld_serv[i + 1];
@@ -345,29 +350,23 @@ const char *whichwhois(const char *s)
 	for (i = 0; nic_handles[i]; i += 2)
 	    if (strncasecmp(s, nic_handles[i], strlen(nic_handles[i])) == 0)
 		return nic_handles[i + 1];
-	if (verb)
-	    puts(_("I guess it's a netblock name but I don't know where to"
-		   " look it up."));
-	return "whois.arin.net";
+	/* it's probably a network name */
+	return "";
     }
 
-    /* has dot and hypen and it's not in tld_serv[], WTF is it? */
-    if (verb)
-	puts(_("I guess it's a domain but I don't know where to look it"
-	       " up."));
-    return "";
+    /* has dot and maybe a hypen and it's not in tld_serv[], WTF is it? */
+    /* either a TLD or a NIC handle we don't know about yet */
+    return "\005";
 }
 
-const char *whereas(int asn, struct as_del aslist[])
+const char *whereas(const unsigned short asn)
 {
     int i;
 
-    if (asn > 28671)
-	puts(_("Unknown AS number. Please upgrade this program."));
-    else for (i = 0; aslist[i].serv; i++)
-	if (asn >= aslist[i].first && asn <= aslist[i].last)
-	    return aslist[i].serv;
-    return "whois.arin.net";
+    for (i = 0; as_assign[i].serv; i++)
+	if (asn >= as_assign[i].first && asn <= as_assign[i].last)
+	    return as_assign[i].serv;
+    return "\006";
 }
 
 char *queryformat(const char *server, const char *flags, const char *query)
@@ -402,9 +401,11 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	strcat(buf, flags);
     }
     if (!isripe && strcmp(server, "whois.nic.mil") == 0 &&
-	    strncasecmp(query, "AS", 2) == 0 &&
-	    query[2] >= '0' && query[2] <= '9')
+	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
+    if (!isripe && strcmp(server, "whois.arin.net") == 0 &&
+	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
+	sprintf(buf, "A %s", query + 2);	/* always ask for a ASN */
     else if (!isripe && strcmp(server, "whois.corenic.net") == 0)
 	sprintf(buf, "--machine %s", query);	/* machine readable output */
     else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
@@ -566,14 +567,15 @@ int openconn(const char *server, const char *port)
     return fd;
 }
 
-void closeconn(const int fd)
+void alarm_handler(int signum)
 {
-    close(fd);
+    close(sockfd);
+    err_quit(_("Timeout."));
 }
 
 void sighandler(int signum)
 {
-    closeconn(sockfd);
+    close(sockfd);
     err_quit(_("Interrupted by signal %d..."), signum);
 }
 
@@ -612,6 +614,10 @@ unsigned long myinet_aton(const char *s)
     if (sscanf(s, "%d.%d.%d.%d", &a, &b, &c, &d) != 4)
 	return 0;
     return (a << 24) + (b << 16) + (c << 8) + d;
+}
+
+int isasciidigit(const char c) {
+    return (c >= '0' && c <= '9') ? 1 : 0;
 }
 
 /* http://www.ripe.net/ripe/docs/databaseref-manual.html */

@@ -65,13 +65,13 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
+    "The data in this whois", "to abide by these terms.",	/* enom */
     NULL, NULL
 };
 
 const char *nic_handles[] = {
     "net-",	"whois.arin.net",
     "netblk-",	"whois.arin.net",
-    "asn-",	"whois.arin.net",
     "lim-",	"whois.ripe.net",
     "coco-",	"whois.corenic.net",
     "coho-",	"whois.corenic.net",
@@ -95,6 +95,22 @@ struct ip_del {
 struct ip_del ip_assign[] = {
 #include "ip_del.h"
     { 0, 0, NULL }
+};
+
+struct ip6_del {
+    unsigned long net;		/* bits 16-22 of the address */
+    const char    *serv;
+};
+
+struct ip6_del ip6_assign[] = {
+    { 0x0200, "whois.apnic.net" },
+    { 0x0400, "whois.arin.net" },
+    { 0x0600, "whois.ripe.net" },
+    { 0x0800, "whois.ripe.net" },
+    { 0x0A00, "whois.ripe.net" },
+    { 0x0C00, "whois.apnic.net" },
+    { 0x1200, "whois.lacnic.net" },
+    { 0, NULL }
 };
 
 struct as_del {

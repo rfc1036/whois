@@ -2,11 +2,6 @@ What about rwhois?
 
 Should support the refer attribute of RIPE-189 objects.
 
-I need a procedure for looking up an IPv6 address in a list of prefixes.
-Will anybody contribute it?
-
 Add Exodus rwhois server (e.g. 216.35.0.0/16).
 Add rwhois.verio.net:4321 (e.g. 192.204.0.0/16).
-
-Support queries for "AS8627:fltr-TRANSIT-OUT".
 

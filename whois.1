@@ -25,10 +25,8 @@ whois \- client for the whois directory service
 
 This version of the whois client tries to guess the right server to
 ask for the specified object. If no guess can be made it will connect
-to whois.internic.net for domains,
-.\" whois.networksolutions.com for nic handles,
-whois.arin.net for IPv4 addresses and whois.6bone.net for
-IPv6 addresses.
+to whois.networksolutions.com for nic handles or whois.arin.net for
+IPv4 addresses and network names.
 .PP
 .SH OPTIONS
 .TP 8
@@ -50,11 +48,8 @@ Display online help.
 Other options are flags understood by RIPE-like servers.
 .SH NOTES
 Please remember that \fIwhois.networksolutions.com\fP by default will
-only search in the domains database. If you want to search for hostnames,
-NIC handles or people names you have to prepend the appropriate keyword
-(\fIHO\fPst, \fIHA\fPndle or \fINA\fPme).
-.P
-If the \fI!\fP character is prepended to a NIC handle, the default
+only search in the domains database. If you want to search for NIC handles
+you have to prepend a \fI!\fP character. When you do this, the default
 server becomes \fIwhois.networksolutions.com\fP.
 .P
 When querying \fIwhois.nic.mil\fP for AS numbers, the program will
@@ -71,9 +66,9 @@ RIPE-specific options are ignored when querying non-RIPE servers.
 When querying \fIwhois.nic.ad.jp\fP english text is requested unless the
 \fILANG\fP environment variable specifies a Japanese locale.
 .IP "WHOIS_SERVER"
-This server will be queried if the program cannot guess where the object
-is located. If the variable does not exist then
-\fIwhois.internic.net\fP will be queried.
+This server will be queried if the program cannot guess where some kind
+of objects are located. If the variable does not exist then
+\fIwhois.arin.net\fP will be queried.
 .IP "WHOIS_HIDE"
 If this variable is defined, legal disclaimers will be hidden even if
 the \fI-H\fP flag is not used.

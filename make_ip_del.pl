@@ -14,6 +14,8 @@ while (<>) {
 		(~(0xffffffff>>$m))."UL, \"";
 	if ($s =~ /\./) {
 		print "$s";
+	} elsif ($s eq 'UNALLOCATED') {
+		print "\006";
 	} else {
 		print "whois.$s.net";
 	}

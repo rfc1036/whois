@@ -2,7 +2,7 @@
 # contain historical allocations now scattered among all the RIRs.
 # Do not even try submitting such networks for inclusion in this list
 # unless they are very big and contains multiple assignments to different
-# customers.
+# customers documented in the whois database.
 #
 24.192.0.0/14	apnic
 24.132.0.0/14	ripe
@@ -17,6 +17,8 @@
 # broken?
 # 63.208.0.0/13	rr.level3.net
 80.0.0.0/7	ripe
+82.0.0.0/8	ripe
+96.0.0.0/3	UNALLOCATED
 0.0.0.0/2	arin	# all other A classes are managed by ARIN
 133.0.0.0/8	whois.nic.ad.jp
 139.20.0.0/14	ripe
@@ -57,6 +59,10 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
+## All other B class addresses are supposed to be allocated by ARIN
+## We know that many of them are not, but they can't all be listed here
+128.0.0.0/2	arin
+
 ## The C classes space is cleanly delegated and the data here should be complete
 192.71.0.0/16	ripe
 192.72.0.0/16	whois.seed.net.tw	# NETBLK-SEED-NETS
@@ -71,6 +77,7 @@
 194.0.0.0/7	ripe
 198.17.117.0/24	ripe
 196.0.0.0/6	arin
+
 200.17.0.0/16	whois.nic.br
 200.18.0.0/15	whois.nic.br
 200.20.0.0/16	whois.nic.br

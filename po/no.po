@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.5\n"
-"POT-Creation-Date: 2002-11-16 04:27+0100\n"
+"POT-Creation-Date: 2002-11-28 21:21+0100\n"
 "PO-Revision-Date: 1999-12-18 14:00:00\n"
 "Last-Translator: Egil Kvaleberg <egil@kvaleberg.no>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -22,30 +22,30 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../whois.c:151 ../whois.c:188
+#: ../whois.c:151 ../whois.c:202
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Bruker tjener %s.\n"
 
-#: ../whois.c:165
+#: ../whois.c:172
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Bruker standardtjener %s.\n"
 
-#: ../whois.c:168
+#: ../whois.c:175
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 
-#: ../whois.c:174
+#: ../whois.c:181
 msgid "This TLD has no whois server."
 msgstr ""
 
-#: ../whois.c:178
+#: ../whois.c:185
 #, fuzzy
 msgid "Connecting to whois.crsnic.net."
 msgstr "Kobler opp mot whois.internic.net."
 
-#: ../whois.c:184
+#: ../whois.c:191
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -56,7 +56,16 @@ msgstr ""
 "Fant InterNIC-referanse til %s.\n"
 "\n"
 
-#: ../whois.c:197
+#: ../whois.c:195
+msgid "No whois server is known for this kind of object."
+msgstr ""
+
+#: ../whois.c:198
+#, fuzzy
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr "Ukjent AS-nummer. Vennligst oppdater programmet."
+
+#: ../whois.c:211
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -65,42 +74,22 @@ msgstr ""
 "Forespørsel: \"%s\"\n"
 "\n"
 
-#: ../whois.c:247 ../whois.c:250
+#: ../whois.c:258 ../whois.c:261
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:330
-msgid ""
-"I don't know where this IP has been delegated.\n"
-"I'll try ARIN and hope for the best..."
-msgstr ""
-"Vet ikke hvor denne IP-adressen har blitt delegert.\n"
-"Prøver ARIN og håper det beste..."
-
-#: ../whois.c:347
-msgid "I guess it's a netblock name but I don't know where to look it up."
-msgstr "Gjetter at det er et netblock-navn, men vet ikke hvor det finnes."
-
-#: ../whois.c:354
-msgid "I guess it's a domain but I don't know where to look it up."
-msgstr "Gjetter at det er er domene, men vet ikke hvor det finnes."
-
-#: ../whois.c:364
-msgid "Unknown AS number. Please upgrade this program."
-msgstr "Ukjent AS-nummer. Vennligst oppdater programmet."
-
-#: ../whois.c:399
+#: ../whois.c:400
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Merk: RIPE-flaggene ignoreres for en tradisjonell tjener."
 
-#: ../whois.c:457
+#: ../whois.c:460
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Referanse til %s vedrørende %s.\n"
 
-#: ../whois.c:474
+#: ../whois.c:477
 #, fuzzy
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
@@ -109,22 +98,26 @@ msgstr ""
 "Alvorlig feil: INTERNIC har endret standardtekst.\n"
 "Vennligst oppdater programmet.\n"
 
-#: ../whois.c:548
+#: ../whois.c:551
 #, c-format
 msgid "Host %s not found."
 msgstr "Finner ikke verten %s."
 
-#: ../whois.c:558
+#: ../whois.c:561
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: ukjent port"
 
-#: ../whois.c:575
+#: ../whois.c:573
+msgid "Timeout."
+msgstr ""
+
+#: ../whois.c:579
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Avbrudt av signal %d..."
 
-#: ../whois.c:620
+#: ../whois.c:628
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -249,3 +242,16 @@ msgstr ""
 #: ../mkpasswd.c:260
 msgid "Available algorithms:\n"
 msgstr ""
+
+#~ msgid ""
+#~ "I don't know where this IP has been delegated.\n"
+#~ "I'll try ARIN and hope for the best..."
+#~ msgstr ""
+#~ "Vet ikke hvor denne IP-adressen har blitt delegert.\n"
+#~ "Prøver ARIN og håper det beste..."
+
+#~ msgid "I guess it's a netblock name but I don't know where to look it up."
+#~ msgstr "Gjetter at det er et netblock-navn, men vet ikke hvor det finnes."
+
+#~ msgid "I guess it's a domain but I don't know where to look it up."
+#~ msgstr "Gjetter at det er er domene, men vet ikke hvor det finnes."

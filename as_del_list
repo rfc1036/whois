@@ -26,18 +26,16 @@
 10074	10239	apnic
 12288	13311	ripe
 15360	16383	ripe
-16384	17407	arin
 17567	17616	whois.nic.or.kr
 17832	17880	whois.nic.or.kr
 17408	18431	apnic
-18432	19455	arin
-19456	20479	arin
 20480	21503	ripe
 23552	24575	apnic
 24576	25599	ripe
 27648	28671	lacnic
 
-###
-### DO NOT FORGET TO UPDATE whereas()
-###
+# catch all: everything else comes from ARIN
+0	28671	arin
 
+# EOL marker
+0	0	.
