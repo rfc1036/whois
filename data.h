@@ -16,7 +16,6 @@ const char *ripe_servers[] = {
     "whois.nic.fr",
     "whois.nic.it",
     "whois.telstra.net",
-    "whois.metu.edu.tr",
     "whois.restena.lu",
     "rr.level3.net",		/* 3.0.0a13 */
     "whois.ripn.net",

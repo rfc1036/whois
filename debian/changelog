@@ -1,3 +1,11 @@
+whois (4.7.2) unstable; urgency=high
+
+  * whois.metu.edu.tr does not accept anymore RIPE-like queries.
+  * Updated the .bg and .jp TLD servers. (Closes: #301187)
+  * Updated the IPv4 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 24 Mar 2005 14:33:10 +0100
+
 whois (4.7.1) unstable; urgency=medium
 
   * Added new ASN allocations.

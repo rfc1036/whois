@@ -59,7 +59,7 @@
 .bd	NONE		# http://www.bttb.net/
 .be	whois.dns.be
 .bf	NONE		# NIC? http://www.onatel.bf/
-.bg	whois.ripe.net
+.bg	whois.register.bg
 #.bh	NONE		# NIC? www.inet.com.bh
 .bi	WEB http://www.nic.bi/Nic_search.asp
 #.bj			# NIC? www.opt.bj
@@ -151,7 +151,7 @@
 .je	whois.channelisles.net
 #.jm			# NIC? uwimona.edu.jm http://nic.jm
 .jo	WEB http://www.nis.jo/dns/	# old: http://amon.nic.gov.jo/dns/
-.jp	whois.nic.ad.jp
+.jp	whois.jprs.jp
 .ke	whois.kenic.or.ke
 .kg	whois.domain.kg
 .kh	NONE		# http://www.mptc.gov.kh/ http://www.nic.net.kh/

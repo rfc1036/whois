@@ -379,8 +379,6 @@ const char *whichwhois(const char *s)
 	if (strncasecmp(s, "as", 2) == 0 &&	/* it's an AS */
 		(isasciidigit(s[2]) || s[2] == ' '))
 	    return whereas(atoi(s + 2));
-	else if (strncasecmp(p - 2, "jp", 2) == 0) /* JP NIC handle */
-	    return "whois.nic.ad.jp";
 	if (*s == '!')	/* NSI NIC handle */
 	    return "whois.networksolutions.com";
 	else
@@ -461,7 +459,8 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
 	/* FIXME: /e is not applied to .JP ASN */
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
-    else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
+    else if (!isripe && (strcmp(server, "whois.nic.ad.jp") == 0 ||
+	    strcmp(server, "whois.jprs.jp") == 0)) {
 	char *lang = getenv("LANG");	/* not a perfect check, but... */
 	if (!lang || (strncmp(lang, "ja", 2) != 0))
 	    sprintf(buf, "%s/e", query);	/* ask for english text */
