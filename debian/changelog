@@ -1,4 +1,51 @@
-whois (4.5.8) unstable; urgency=low
+whois (4.5.14) unstable; urgency=medium
+
+  * Added 219.0.0.0/8.
+  * Updated spanish translation.
+  * Updated .hk TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Fri,  17 Oct 2001 20:57:26 +0200
+
+whois (4.5.13) unstable; urgency=medium
+
+  * Fixed "Password: " prompt printing when using mkpasswd --stdin.
+  * Update .hm TLD server (Closes: #115719).
+
+ -- Marco d'Itri <md@linux.it>  Fri,  5 Oct 2001 00:57:26 +0200
+
+whois (4.5.12) unstable; urgency=medium
+
+  * Updated .af, .biz and .info TLD servers.
+  * Fixed NLS support in mkpasswd.
+  * Fixed spurious warning message about RIPE flags.
+  * Make server selection code ignore trailing dots (Closes: #65325).
+  * Follow crsnic referrals only for domains (Closes: #78568).
+
+ -- Marco d'Itri <md@linux.it>  Sun, 30 Sep 2001 16:06:37 +0200
+
+whois (4.5.11) unstable; urgency=medium
+
+  * Updated .vc TLD server.
+  * Fixed ugly stupid segfault (Closes: #113409).
+
+ -- Marco d'Itri <md@linux.it>  Tue, 25 Sep 2001 01:55:06 +0200
+
+whois (4.5.10) unstable; urgency=medium
+
+  * The configuration file is optional (Closes: #113340).
+  * Updated .fi TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 24 Sep 2001 17:58:18 +0200
+
+whois (4.5.9) unstable; urgency=medium
+
+  * Updated last known ASN (Closes: #112775).
+  * Updated .am, .bi, .bm, .bo, .bs, .cg, .jo, .mn, .mo, .ni, .np, .pt,
+    .rw, .pk, .pl, .ps, .sv, .ug, .vn, .net.za, .org.za TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 19 Sep 2001 21:45:22 +0200
+
+whois (4.5.8) unstable; urgency=medium
 
   * Use a bigger internal buffer to parse server output (Closes: #109919).
   * Added german translation (Closes: #103480).

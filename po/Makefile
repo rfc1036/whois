@@ -5,7 +5,7 @@ PACKAGE = whois
 
 CATALOGS = de.mo el.mo es.mo it.mo no.mo pl.mo
 
-POTFILES=../whois.c
+POTFILES=../whois.c ../mkpasswd.c
 
 all: $(PACKAGE).pot $(CATALOGS)
 

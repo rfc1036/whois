@@ -14,6 +14,9 @@
 #ifdef HAVE_GETOPT_LONG
 #include <getopt.h>
 #endif
+#ifdef HAVE_REGEXEC
+#include <regex.h>
+#endif
 #include <string.h>
 #include <ctype.h>
 #include <sys/types.h>
@@ -22,6 +25,8 @@
 #include <netdb.h>
 #include <errno.h>
 #include <signal.h>
+
+#undef ENABLE_NLS
 
 /* Application-specific */
 #include "data.h"
@@ -67,12 +72,12 @@ int main(int argc, char *argv[])
 				longopts, 0)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
-	    for (p = fstring; *p != '\0'; p++);
+	    for (p = fstring; *p; p++);
 	    sprintf(p--, "-%c ", ch);
 	    continue;
 	}
 	if (strchr(ripeflagsp, ch)) {
-	    for (p = fstring; *p != '\0'; p++);
+	    for (p = fstring; *p; p++);
 	    sprintf(p--, "-%c %s ", ch, optarg);
 	    if (ch == 't' || ch == 'v' || ch == 'q')
 		nopar = 1;
@@ -82,7 +87,7 @@ int main(int argc, char *argv[])
 	switch (ch) {
 	case 'h':
 	    server = q = malloc(strlen(optarg) + 1);
-	    for (p = optarg; *p != '\0' && *p != ':'; *q++ = tolower(*p++));
+	    for (p = optarg; *p && *p != ':'; *q++ = tolower(*p++));
 	    if (*p == ':')
 		port = p + 1;
 	    *q = '\0';
@@ -133,8 +138,23 @@ int main(int argc, char *argv[])
 	}
     }
 
+    /* -v or -t has been used */
+    if (!server && !*qstring)
+	server = "whois.ripe.net";
+
+#ifdef CONFIG_FILE
     if (!server) {
-	server = whichwhois(qstring);
+	server = match_config_file(qstring);
+	if (verb && server)
+	    printf(_("Using server %s.\n"), server);
+    }
+#endif
+
+    if (!server) {
+	char *p;
+	p = normalize_domain(qstring);
+	server = whichwhois(p);
+	free(p);
 	switch (server[0]) {
 	    case 0:
 		if (!(server = getenv("WHOIS_SERVER")))
@@ -180,19 +200,85 @@ int main(int argc, char *argv[])
 
     sockfd = openconn(server, port);
     do_query(sockfd, p);
-    closeconn(sockfd);
 
     exit(0);
 }
+
+#ifdef CONFIG_FILE
+const char *match_config_file(const char *s)
+{
+    FILE *fp;
+    char buf[512];
+    static const char delim[] = " \t";
+#ifdef HAVE_REGEXEC
+    regex_t re;
+#endif
+
+    if ((fp = fopen(CONFIG_FILE, "r")) == NULL) {
+	if (errno != ENOENT)
+	    err_sys("Cannot open " CONFIG_FILE);
+	return NULL;
+    }
+
+    while (fgets(buf, sizeof(buf), fp) != NULL) {
+	char *p;
+	const char *pattern, *server;
+#ifdef HAVE_REGEXEC
+	int i;
+#endif
+
+	for (p = buf; *p; p++)
+	    if (*p == '\n')
+		*p = '\0';
+
+	p = buf;
+	while (*p == ' ' || *p == '\t')	/* eat leading blanks */
+	    p++;
+	if (!*p)
+	    continue;		/* skip empty lines */
+	if (*p == '#')
+	    continue;		/* skip comments */
+
+	pattern = strtok(p, delim);
+	server = strtok(NULL, delim);
+	if (!pattern || !server)
+	    err_quit(_("Cannot parse this line: %s"), p);
+	p = strtok(NULL, delim);
+	if (p)
+	    err_quit(_("Cannot parse this line: %s"), p);
+
+#ifdef HAVE_REGEXEC
+	i = regcomp(&re, pattern, REG_EXTENDED|REG_ICASE|REG_NOSUB);
+	if (i != 0) {
+	    char m[1024];
+	    regerror(i, &re, m, sizeof(m));
+	    err_quit("Invalid regular expression '%s': %s", pattern, m);
+	}
+
+	i = regexec(&re, s, 0, NULL, 0);
+	if (i == 0) {
+	    regfree(&re);
+	    return strdup(server);
+	}
+	if (i != REG_NOMATCH) {
+	    char m[1024];
+	    regerror(i, &re, m, sizeof(m));
+	    err_quit("regexec: %s",  m);
+	}
+	regfree(&re);
+#else
+	if (domcmp(s, pattern))
+	    return strdup(server);
+#endif
+    }
+    return NULL;
+}
+#endif
 
 const char *whichwhois(const char *s)
 {
     unsigned long ip;
     unsigned int i;
-
-    /* -v or -t has been used */
-    if (*s == '\0')
-	return "whois.ripe.net";
 
     /* IPv6 address */
     if (strchr(s, ':')) {
@@ -214,7 +300,7 @@ const char *whichwhois(const char *s)
     if (!strpbrk(s, ".-")) {
 	const char *p;
 
-	for (p = s; *p != '\0'; p++);		/* go to the end of s */
+	for (p = s; *p; p++);			/* go to the end of s */
 	if (strncasecmp(s, "as", 2) == 0 &&	/* it's an AS */
 	    ((s[2] >= '0' && s[2] <= '9') || s[2] == ' '))
 	    return whereas(atoi(s + 2), as_assign);
@@ -265,7 +351,7 @@ const char *whereas(int asn, struct as_del aslist[])
 {
     int i;
 
-    if (asn > 16383)
+    if (asn > 23551)
 	puts(_("Unknown AS number. Please upgrade this program."));
     for (i = 0; aslist[i].serv; i++)
 	if (asn >= aslist[i].first && asn <= aslist[i].last)
@@ -294,7 +380,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
 		isripe = 1;
 		break;
 	    }
-    if (*flags != '\0') {
+    if (*flags) {
 	if (!isripe && strcmp(server, "whois.corenic.net") != 0)
 	    puts(_("Warning: RIPE flags ignored for a traditional server."));
 	else
@@ -364,7 +450,6 @@ void do_query(const int sock, const char *query)
 		strcat(nq, "\r\n");
 		fd = openconn(nh, np);
 		do_query(fd, nq);
-		closeconn(fd);
 		continue;
 	    }
 	}
@@ -375,6 +460,7 @@ void do_query(const int sock, const char *query)
     }
     if (ferror(fi))
 	err_sys("fgets");
+    fclose(fi);
 
     if (hide == 1)
 	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
@@ -385,6 +471,7 @@ const char *query_crsnic(const int sock, const char *query)
 {
     char *temp, buf[2000], *ret = NULL;
     FILE *fi;
+    int state = 0;
 
     temp = malloc(strlen(query) + 1 + 2 + 1);
     *temp = '=';
@@ -397,7 +484,9 @@ const char *query_crsnic(const int sock, const char *query)
     while (fgets(buf, sizeof(buf), fi)) {
 	/* If there are multiple matches only the server of the first record
 	   is queried */
-	if (strncmp(buf, "   Whois Server:", 16) == 0 && !ret) {
+	if (state == 0 && strncmp(buf, "   Domain Name:", 15) == 0)
+	    state = 1;
+	if (state == 1 && strncmp(buf, "   Whois Server:", 16) == 0) {
 	    char *p, *q;
 
 	    for (p = buf; *p != ':'; p++);	/* skip until colon */
@@ -405,6 +494,7 @@ const char *query_crsnic(const int sock, const char *query)
 	    ret = malloc(strlen(p) + 1);
 	    for (q = ret; *p != '\n' && *p != '\r'; *q++ = *p++); /*copy data*/
 	    *q = '\0';
+	    state = 2;
 	}
 	fputs(buf, stdout);
     }
@@ -463,7 +553,7 @@ int openconn(const char *server, const char *port)
     if (connect(fd, (struct sockaddr *)&saddr, sizeof(saddr)) < 0)
 	err_sys("connect");
 #endif
-    return (fd);
+    return fd;
 }
 
 void closeconn(const int fd)
@@ -482,14 +572,25 @@ int domcmp(const char *dom, const char *tld)
 {
     const char *p, *q;
 
-    for (p = dom; *p != '\0'; p++); p--;	/* move to the last char */
-    for (q = tld; *q != '\0'; q++); q--;
+    for (p = dom; *p; p++); p--;	/* move to the last char */
+    for (q = tld; *q; q++); q--;
     while (p >= dom && q >= tld && tolower(*p) == *q) {	/* compare backwards */
-	if (q == tld)				/* start of the second word? */
+	if (q == tld)			/* start of the second word? */
 	    return 1;
 	p--; q--;
     }
     return 0;
+}
+
+char *normalize_domain(const char *dom)
+{
+    char *p, *ret;
+
+    ret = strdup(dom);
+    for (p = ret; *p; p++); p--;	/* move to the last char */
+    for (; *p == '.' || p == ret; p--)	/* eat trailing dots */
+	*p = '\0';
+    return ret;
 }
 
 unsigned long myinet_aton(const char *s)

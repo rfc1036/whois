@@ -7,6 +7,7 @@
 
 /* prototypes */
 const char *whichwhois(const char *);
+const char *match_config_file(const char *);
 const char *whereas(int, struct as_del []);
 char *queryformat(const char *, const char *, const char *);
 void do_query(const int, const char *);
@@ -18,6 +19,7 @@ void sighandler(int);
 unsigned long myinet_aton(const char *);
 int domcmp(const char *, const char *);
 int domfind(const char *, const char *[]);
+char *normalize_domain(const char *);
 
 void err_quit(const char *,...);
 void err_sys(const char *,...);

@@ -22,7 +22,7 @@ const char *ripe_servers[] = {
     "whois.restena.lu",
     "rr.level3.net",		/* 3.0.0a13 */
     "whois.arnes.si",
-    "rpsl.ripe.net",
+    "www.registry.co.ug",
     NULL
 };
 
@@ -57,6 +57,8 @@ const char *hide_strings[] = {
     "Access to ASNIC", "by this policy.",
     "* Copyright (C) 1998 by SGNIC", "* modification.",
     "The Data in Gabia", "you agree to abide",
+    "NeuLevel, Inc., the Registry Operator", "whatsoever, you agree",
+    "NOTICE: Access to .INFO WHOIS", "time. By submitting",
     NULL, NULL
 };
 

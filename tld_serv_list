@@ -2,7 +2,6 @@
 # NIC-FR means the TLD is managed by AFNIC, but I could not find any info
 # UPR means the TLD is managed by UPR, but I could not find any info
 #
-# centralnic domains are currently not supported
 .br.com	whois.centralnic.net
 .cn.com	whois.centralnic.net
 .eu.com	whois.centralnic.net
@@ -25,20 +24,20 @@
 .org	CRSNIC
 .edu	CRSNIC
 .gov	whois.nic.gov
-.int	whois.isi.edu
+.int	whois.icann.org
 .mil	whois.nic.mil
-.info	whois.nic.info
-.biz	whois.biz.info
+.info	whois.afilias.info
+.biz	whois.nic.biz
 .ac	whois.nic.ac
-.ad	NONE		# http://www.nic.ad
+.ad	NONE		# www.nic.ad
 .ae	WEB http://cc.emirates.net.ae/Customer_care/cc_card/check_domains.choose_domains/
-.af	whois.nic.af
+.af	NONE		# was whois.nic.af
 .ag	WEB http://www.nic.ag/domain_search.htm
 .ai	NONE		# http://www.offshore.com.ai/domain_names/
 .al	NONE		# http://www.inima.al/Domains.html
 .am	whois.amnic.net		# down?
-.am	WEB http://www.amnic.net/cgi/engine/db/whois.html
-.an	NONE		# http://www.una.net/an_domreg
+.am	WEB https://www.amnic.net/whois/
+.an	NONE		# http://www.una.net/an_domreg/
 .ao	NONE		# www.dns.ao
 .aq	NONE		# 2day.com
 .ar	WEB http://www.nic.ar/consultas/consdom.htm
@@ -48,30 +47,30 @@
 .au	whois.aunic.net
 #.aw			# NIC? www.setarnet.aw
 .az	NONE		# www.nic.az
-.ba	NONE		# http://www.utic.net.ba
+.ba	NONE		# http://www.utic.net.ba/domen/
 .bb	WEB http://domains.org.bb/regsearch/
-.bd	NONE		# NIC? dns.org.bd
+.bd	NONE		# NIC?
 .be	whois.dns.be
 .bf	NONE		# http://www.onatel.bf/domaine.htm
 .bg	whois.ripe.net
-#.bh	NONE		# NIC? http://www.inet.com.bh
-.bi	WEB http://www.nic.cd/database/bi/
+#.bh	NONE		# NIC? www.inet.com.bh
+.bi	WEB http://www.nic.bi/cgi-bin/whoisbi.pl
 #.bj			# NIC? www.opt.bj
-.bm	NONE		# http://www.bermudanic.bm rwhois.ibl.bm:4321
-#.bn	NONE		# NIC? http://www.brunet.bn
-.bo	WEB http://www.nic.bo/listadom.phtml
+.bm	WEB http://www.bermudanic.bm/cgi-bin/BermudaNIC/rwhois_query.pl	# rwhois.bermudanic.bm:4321
+#.bn	NONE		# NIC? www.brunet.bn
+.bo	NONE		# www.nic.bo
 .br	whois.nic.br
-.bs	NONE		# www.nic.bs
+.bs	WEB http://www.nic.bs/cgi-bin/search.pl
 .bt	whois.nic.tm
 .bv	NONE		# http://www.uninett.no/navn/bv-sj.html
 #.bw			# NIC? www.botsnet.bw btc.bw
 .by	WEB http://www.tld.by/indexeng.html
-.bz	NONE		# http://www.psg.com/dns/bz/
+.bz	NONE		# www.nic.nz
 .ca	whois.cira.ca
 .cc	whois.nic.cc
-.cd	WEB http://www.nic.cd/database/cd/
+.cd	whois.nic.cd
 .cf	WEB http://www.nic.cf/whois.php3
-.cg	WEB http://www.nic.cd/database/cg/
+.cg	WEB http://www.nic.cg/cgi-bin/whoiscg.pl
 .ch	whois.nic.ch
 .ci	NONE		# www.nic.ci
 .ck	whois.nic.ck
@@ -86,12 +85,12 @@
 .cu	WEB http://www.nic.cu/consultas/consult.html
 #.cv			# NIC? dns.cv?
 .cx	whois.nic.cx
-.cy	NONE
+.cy	NONE		# www.nic.cy
 .cz	whois.nic.cz
 .de	whois.denic.de
 .dj	NONE		# www.nic.dj (NOT YET)
 .dk	whois.dk-hostmaster.dk
-#.dm			# NIC? (UPR)
+.dm	NONE		# www.domains.dm ?
 .do	WEB http://www.nic.do
 .dz	NONE
 .ec	WEB http://www.nic.ec
@@ -101,14 +100,14 @@
 #.er	NONE		# NIC? www.noc.net.er (recently connected!)
 .es	WEB http://www.nic.es/whois/
 #.et	NONE		# NIC? www.telecom.net.et
-.fi	WEB http://cgi.thk.fi/cgi-bin/domains.pl?language=eng
+.fi	WEB http://cgi.ficora.fi/wwwbin/domains.pl?language=eng
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.org.fk/domain-registration/home.htm
 .fm	WEB http://www.nic.fm/register.html
 .fo	whois.ripe.net	# www.nic.fo
 .fr	whois.nic.fr
 #.fx
-#.ga			# (not responding) NIC? www.inet.ga
+#.ga			# NIC? www.inet.ga
 .gb	NONE
 #.gd			# NO NIC (UPR)
 .ge	WEB http://www.nic.net.ge
@@ -119,7 +118,7 @@
 .gl	whois.ripe.net
 .gm	whois.ripe.net
 .gn	NONE		# http://www.psg.com/dns/gn/
-#.gp			# http://www.nic.gp broken like mq
+#.gp			# www.nic.gp - broken like mq
 #.gq			# NO NIC http://www.intnet.gq
 .gr	WEB http://www.hostmaster.gr/cgi-bin/webwhois
 .gs	whois.adamsnames.tc
@@ -127,8 +126,8 @@
 .gu	WEB http://gadao.gov.gu/Scripts/wwsquery/wwsquery.dll?hois=guamquery
 #.gw			# no NIC?
 #.gy			# NIC? (UPR)
-.hk	whois.hknic.net.hk
-.hm	whois.nic.hm
+.hk	whois.hkdnr.net.hk
+.hm	whois.registry.hm
 .hn	NONE		# www.nic.hn
 .hr	WEB http://noc.srce.hr/web-eng/searchdomain.htm
 #.ht			# NIC? http://www.haitiworld.com/
@@ -145,9 +144,8 @@
 .it	whois.nic.it
 .je	NONE 		# http://www.isles.net
 #.jm			# NIC? uwimona.edu.jm http://nic.jm
-.jo	NONE		# www.nic.gov.jo
+.jo	WEB http://amon.nic.gov.jo/dns/
 .jp	whois.nic.ad.jp
-# there is a server run by Randy bush, but I forgot the address!
 .ke	NONE		# http://www.nbnet.co.ke/domain.htm
 .kg	whois.domain.kg
 .kh	NONE		# http://www.mptc.gov.kh/Reculation/DNS.htm
@@ -157,7 +155,7 @@
 #.kp
 .kr	whois.krnic.net
 .kw	WEB http://www.domainname.net.kw
-.ky	NONE		# http://www.nic.ky
+.ky	NONE		# www.nic.ky
 .kz	whois.domain.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/search.html
@@ -170,18 +168,18 @@
 .lu	whois.restena.lu
 .lv	whois.ripe.net
 .ly	WEB http://www.lydomains.com/whois.asp
-#.ma			# (not reponding) NIC? www.nic.ma
+#.ma			# NIC?
 .mc	whois.ripe.net
 .md	WEB http://www.nic.md/search.html
 .mg	NONE		# www.nic.mg
-.mh	NONE		# http://www.nic.net.mh
+.mh	NONE		# www.nic.net.mh
 #.mk			# NIC? http://www.mpt.com.mk
-#.ml			# NIC? sotelma.ml
+#.ml			# NIC? www.sotelma.ml
 .mm	whois.nic.mm
-.mn	WEB http://www.nic.mn
-.mo	NONE		# http://www.umac.mo/other/
-.mp	NONE		# http://www.marketplace.mp
-#.mq			# http://www.nic.mq broken like gp
+.mn	WEB http://whois.nic.mn
+.mo	WEB http://www.monic.net.mo	# whois.umac.mo
+.mp	NONE		# www.marketplace.mp
+#.mq			# www.nic.mq broken like gp
 .mr	NONE		# http://www.univ-nkc.mr/nic_mr.html
 .ms	whois.adamsnames.tc
 .mt	WEB http://www.um.edu.mt/nic/dir/
@@ -192,15 +190,15 @@
 .my	NONE		# http://www.mynic.net
 #.mz			# NIC? www.uem.mz
 .na	WEB http://www.lisse.na/cgi-bin/whois.cgi
-.nc	NONE		# http://www.orstom.nc/BASE/IRD_NOUMEA/TLD_NC/
+.nc	whois.cctld.nc
 #.ne			# NIC? http://www.intnet.ne
 .nf	NONE		# http://www.names.nf
 .ng	whois.rg.net
-.ni	WEB http://ns.ni/whois.htm
+.ni	NONE		# www.nic.ni
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
-.np	WEB http://202.52.255.47/search.htm	# www.mos.com.np
-#.nr			# NIC? www.nauru01.nr wwc.nauru01.nr
+.np	WEB http://www.mos.com.np/domsearch.html
+#.nr			# NIC? www.cenpan.net.nr
 .nu	whois.nic.nu
 .nz	whois.domainz.net.nz
 #.om	NONE		# NIC? http://www.gto.net.om
@@ -209,23 +207,23 @@
 #.pf			# NIC? mana.pf
 .pg	NONE	# http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm
 .ph	WEB http://www.names.ph/search.html
-.pk	whois.pknic.net.pk
-.pl	NONE		# http://www.dns.pl
+#.pk	whois.pknic.net.pk	# the host does not exist anymore
+.pl	whois.dns.pl
 #.pm			# NIC-FR! http://www.nic.pm
-.pn	NONE		# http://www.nic.pn
+.pn	NONE		# www.nic.pn
 .pr	NONE		# http://www.uprr.pr/main.html
-.ps	NONE		# no NIC yet... www.gov.ps
-.pt	WEB http://www.dns.pt/dnsinfo.htm
+.ps	WEB http://www.nic.ps/whois/
+.pt	NONE		# www.dns.pt
 .pw	whois.nic.pw
 .py	WEB http://www.nic.py/consultas/
 .qa	NONE		# http://www.qatar.net.qa/services/virtual.htm
 #.re			# NIC-FR!
 .ro	whois.rotld.ro
 .ru	whois.ripn.net
-.rw	WEB http://www.nic.cd/database/rw/
+.rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
 .sa	WEB http://www.saudinic.net.sa/domain/whois.htm
 .sb	WEB http://www.sbnic.net.sb/search.html
-.sc	NONE		# http://www.seychelles.net/services/services-pay.htm
+.sc	NONE		# www.nic.sc
 #.sd			# NIC? http://www.sudatel.sd
 .se	whois.nic-se.se
 .sg	whois.nic.net.sg
@@ -236,57 +234,59 @@
 #.sl			# NIC? http://www.sierratel.sl/
 .sm	whois.ripe.net
 .sn	NONE		# www.nic.sn
-.so	NONE		# www.nic.so
-.sr	NONE		# http://www.sr.net/srnew/domein.html
+.so	NONE		# www.nic.so - no country, no NIC
+.sr	NONE		# www.nic.sr - opens september 2001
 .st	whois.nic.st
 .su	whois.ripn.net
-.sv	WEB http://www.conacyt.gob.sv/dns/
+.sv	WEB http://www.uca.edu.sv/dns/	# http://www.svnet.org.sv/
 #.sy			# NIC? (usually offline?)
 .sz	NONE		# http://www.iafrica.sz/domreg/
 .tc	whois.adamsnames.tc
 #.td			# NIC? http://www.tit.td
 .tf	whois.adamsnames.tc
-.tg	WEB www.nic.tg
+.tg	WEB http://www.nic.tg
 .th	whois.thnic.net
 .tj	whois.nic.tj
 .tk	NONE		# 2day.com
 .tm	whois.nic.tm
 .tn	NONE		# http://www.ati.tn/Nic/
 .to	whois.tonic.to
-.tp	NONE		# http://www.nic.tp
+.tp	NONE		# www.nic.tp
 .tr	whois.metu.edu.tr
 .tt	WEB http://www.nic.tt/cgi-bin/whois.cgi
 .tv	NONE		# http://internet.tv
 .tw	whois.twnic.net
 .tz	NONE		# http://www.psg.com/dns/tz/
 .ua	whois.com.ua
-.ug	NONE		# http://www.nic.ug
+.ug	www.registry.co.ug
 .gov.uk	whois.ja.net
 .ac.uk	whois.ja.net
 .uk	whois.nic.uk
-.um	whois.isi.edu	# not checked
+.um	NONE		# see .us
 .fed.us	whois.nic.gov
-.us	nii.isi.edu
+.us	NONE		# for info: usdomreg@nic.us
 .com.uy	WEB http://dns.antel.net.uy/clientes/consultar.htm
 .uy	WEB http://www.rau.edu.uy/rau/dom/reg.htm
 #.uz			# www.noc.uz (broken)
 .va	whois.ripe.net
-#.vc			# NIC? (UPR)
+.vc	whois.opensrs.net
 .ve	WEB http://www.nic.ve/nicwho01.html	# rwhois.reacciun.ve:4321
 .vg	whois.adamsnames.tc
 .vi	WEB http://208.30.96.227/whoisform.htm
-#.vn		http://www.batin.com.vn/	# NIC?
+.vn	WEB http://www.vnnic.net.vn/english/reg_domain/
 .vu	WEB http://www.vunic.vu/whois
 #.wf			# NIC-FR!
 .ws	whois.samoanic.ws
 #.ye			# NIC? www.y.net.ye
 #.yt			# NIC-FR!
 .yu	NONE		# www.nic.yu
-.ac.za	whois.frd.ac.za
-.co.za	WEB whois.co.za
-.edu.za	WEB edu.za
-.za	NONE
-.zm	NONE		# http://www.zamnet.zm/siteindex/Links/JoinZamnet.htm
+.ac.za	whois.ac.za
+#.bourse.za	whois.bourse.za	# broken
+.co.za	WEB http://whois.co.za/
+.net.za	whois.net.za
+.org.za	WEB http://www.org.za/	# rwhois.org.za:4321
+.za	NONE		# http://www2.frd.ac.za/uninet/zadomains.html
+.zm	NONE		# http://www.zamnet.zm/domain.shtml
 .zr	NONE		# obsoleted by cd
 #.zw			# NIC? zptc.co.zw http://www.zispa.co.zw/
 -au-dom	whois.aunic.net
@@ -316,3 +316,4 @@
 -frnic	whois.nic.fr
 -nicat	whois.nic.at
 -il	whois.isoc.org.il
+-lrms	whois.afilias.net

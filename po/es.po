@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.5.7\n"
-"POT-Creation-Date: 2001-08-26 20:47+0200\n"
+"Project-Id-Version: whois 4.5.12\n"
+"POT-Creation-Date: 2001-09-30 16:07+0200\n"
 "PO-Revision-Date: 2001-06-07 17:21+02:00\n"
 "Last-Translator: Francisco Monteagudo <francisco@monteagudo.net>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:100
+#: ../whois.c:106
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -24,11 +24,31 @@ msgstr ""
 "\n"
 "Informar de bugs a %s.\n"
 
-#: ../whois.c:137
+#: ../whois.c:149 ../whois.c:183
+#, c-format
+msgid "Using server %s.\n"
+msgstr "Usando el servidor %s.\n"
+
+#: ../whois.c:160
+#, c-format
+msgid "Using default server %s.\n"
+msgstr "Usando el servidor predefinido %s.\n"
+
+#: ../whois.c:163
+msgid "This TLD has no whois server, but you can access the whois database at"
+msgstr ""
+"Este TLD no dispone de servidor whois, pero puede acceder a la informacion "
+"de whois en"
+
+#: ../whois.c:169
+msgid "This TLD has no whois server."
+msgstr "No existe servidor whois para este TLD."
+
+#: ../whois.c:173
 msgid "Connecting to whois.internic.net."
 msgstr "Conectando a whois.internic.net."
 
-#: ../whois.c:143
+#: ../whois.c:179
 #, c-format
 msgid ""
 "\n"
@@ -39,27 +59,7 @@ msgstr ""
 "Se ha encontrado en InterNIC una referencia a %s.\n"
 "\n"
 
-#: ../whois.c:153
-#, c-format
-msgid "Using default server %s.\n"
-msgstr "Usando el servidor predefinido %s.\n"
-
-#: ../whois.c:156
-msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr ""
-"Este TLD no dispone de servidor whois, pero puede acceder a la informacion "
-"de whois en"
-
-#: ../whois.c:162
-msgid "This TLD has no whois server."
-msgstr "No existe servidor whois para este TLD."
-
-#: ../whois.c:166
-#, c-format
-msgid "Using server %s.\n"
-msgstr "Usando el servidor %s.\n"
-
-#: ../whois.c:175
+#: ../whois.c:192
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -68,7 +68,12 @@ msgstr ""
 "Consulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:235
+#: ../whois.c:242 ../whois.c:245
+#, c-format
+msgid "Cannot parse this line: %s"
+msgstr "No puedo procesar esta linea: %s"
+
+#: ../whois.c:318
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
@@ -76,30 +81,30 @@ msgstr ""
 "Ignoro a quien a sido delegada esta direccion IP.\n"
 "Voy a probar con ARIN a ver si hay suerte..."
 
-#: ../whois.c:252
+#: ../whois.c:335
 msgid "I guess it's a netblock name but I don't know where to look it up."
 msgstr ""
 "Aparentemente, es el nombre de un netblock, pero ignoro donde buscarlo."
 
-#: ../whois.c:259
+#: ../whois.c:342
 msgid "I guess it's a domain but I don't know where to look it up."
 msgstr "Aparentemente, es un nombre de dominio, pero ignoro donde buscarlo."
 
-#: ../whois.c:269
+#: ../whois.c:352
 msgid "Unknown AS number. Please upgrade this program."
 msgstr "Numero AS desconocido. Por favor, actualice este programa."
 
-#: ../whois.c:299
+#: ../whois.c:382
 msgid "Warning: RIPE flags ignored for a traditional server."
 msgstr ""
 "Atencion: Los flags RIPE son ignorados por los servidores tradicionales."
 
-#: ../whois.c:363
+#: ../whois.c:446
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Detectada una referencia a %s en %s.\n"
 
-#: ../whois.c:380
+#: ../whois.c:463
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -107,22 +112,22 @@ msgstr ""
 "Error catastrofico: el texto de las condiciones de uso ha sido cambiado.\n"
 "Actualize este programa.\n"
 
-#: ../whois.c:450
+#: ../whois.c:533
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s no encontrado."
 
-#: ../whois.c:460
+#: ../whois.c:543
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servicio desconocido"
 
-#: ../whois.c:477
+#: ../whois.c:560
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrumpido por la señal %d..."
 
-#: ../whois.c:520
+#: ../whois.c:592
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -187,3 +192,73 @@ msgstr ""
 "-V    --verbose    muestra lo que se esta haciendo\n"
 "      --help       muestra esta pantalla de ayuda y finaliza\n"
 "      --version    muestra la version del programa y finaliza\n"
+
+#: ../mkpasswd.c:101
+#, c-format
+msgid "Invalid hash type '%s'.\n"
+msgstr "La funcion de hash '%s' no es valida.\n"
+
+#: ../mkpasswd.c:112
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "%s --help para mas informacion.\n"
+
+#: ../mkpasswd.c:140
+#, c-format
+msgid "Wrong salt length: %d byte(s) instead of %d.\n"
+msgstr "Tamaño de semilla incorrecto: %d bytes en lugar de %d.\n"
+
+#: ../mkpasswd.c:146
+#, c-format
+msgid "Illegal salt character '%c'.\n"
+msgstr "El caracter '%c' ilegal en la semilla.\n"
+
+#: ../mkpasswd.c:157 ../mkpasswd.c:178
+msgid "Password: "
+msgstr "Clave: "
+
+#: ../mkpasswd.c:171
+#, c-format
+msgid "Illegal password character '0x%hhx'.\n"
+msgstr "El caracter '0x%hhx' es ilegal en la clave.\n"
+
+#: ../mkpasswd.c:206
+msgid ""
+"Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
+"Crypts the PASSWORD using crypt(3).\n"
+"\n"
+msgstr ""
+"Utilizacion: mkpasswd [OPCIONES]... [CLAVE [SEMILLA]]\n"
+"Encripta CLAVE utilizando crypt(3).\n"
+"\n"
+
+#: ../mkpasswd.c:209
+#, c-format
+msgid ""
+"      -H, --hash=TYPE       select hash TYPE\n"
+"      -S, --salt=SALT       use the specified SALT\n"
+"      -s, --stdin           read the password from stdin instead of /dev/"
+"tty\n"
+"      -h, --help            display this help and exit\n"
+"      -v, --version         output version information and exit\n"
+"\n"
+"If PASSWORD is missing then it is asked interactively.\n"
+"If no SALT is specified, a random one is generated.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"      -H, --hash=TIPO       selecciona la funcion hash TIPO\n"
+"      -S, --salt=SEMILLA    utiliza la SEMILLA indicada\n"
+"      -s, --stdin           lee la clave de stdin en lugar de /dev/"
+"tty\n"
+"      -h, --help            muestra este mensaje de ayuda\n"
+"      -v, --version         muestra la version del programa\n"
+"\n"
+"Si la CLAVE no es especificada, se pedira una de forma interactiva.\n"
+"Si no se especifica la SEMILLA, se generara una aleatoriamente.\n"
+"\n"
+"Informar de bugs a: %s.\n"
+
+#: ../mkpasswd.c:231
+msgid "Available algorithms:\n"
+msgstr "Algoritmos disponibles:\n"

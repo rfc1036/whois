@@ -1,6 +1,6 @@
 /* Program version */
 /* not for the inetutils version */
-#define VERSION "4.5.8"
+#define VERSION "4.5.11"
 
 /* Configurable features */
 
@@ -13,13 +13,14 @@
 /* Default server */
 #define DEFAULTSERVER   "whois.internic.net"
 
+/* Configuration file */
+/*
+#define CONFIG_FILE "/etc/whois.conf"
+*/
+
 /* autoconf in cpp macros */
 #ifdef linux
 # define ENABLE_NLS
-# define HAVE_GETOPT_LONG
-# if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
-#  define HAVE_GETADDRINFO
-# endif
 #endif
 
 /* needs unistd.h */
@@ -27,6 +28,18 @@
 /* Solaris 8 and better. What else? */
 # define HAVE_GETADDRINFO
 #endif
+
+#if defined __GLIBC__
+# define HAVE_GETOPT_LONG
+# if defined __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
+#  define HAVE_GETADDRINFO
+# endif
+#endif
+
+#if defined _POSIX_C_SOURCE && _POSIX_C_SOURCE >= 2
+# define HAVE_REGEXEC
+#endif
+
 
 /* system features */
 #ifdef ENABLE_NLS

@@ -20,14 +20,14 @@
 #define _BSD_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <unistd.h>
-#include <string.h>
-#include <time.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_LONG
 #include <getopt.h>
 #endif
+#include <string.h>
+#include <time.h>
+#include <sys/types.h>
 
 #ifdef HAVE_GETOPT_LONG
 static struct option longopts[] = {
@@ -69,6 +69,12 @@ int main(int argc, char *argv[])
     char *password = NULL;
     unsigned char *p;
 
+#ifdef ENABLE_NLS
+    setlocale(LC_ALL, "");
+    bindtextdomain(NLS_CAT_NAME, LOCALEDIR);
+    textdomain(NLS_CAT_NAME);
+#endif
+
     while ((ch = GETOPT_LONGISH(argc, argv, "hH:sS:V", longopts, 0)) > 0) {
 	switch (ch) {
 	case 's':
@@ -78,7 +84,7 @@ int main(int argc, char *argv[])
 	    salt = optarg;
 	    break;
 	case 'H':
-	    if (*optarg == '\0') {
+	    if (!*optarg) {
 		display_algorithms();
 		exit(0);
 	    }
@@ -89,7 +95,7 @@ int main(int argc, char *argv[])
 		    break;
 		}
 	    if (!salt_prefix) {
-		fprintf(stderr, "Invalid hash type `%s'.\n", optarg);
+		fprintf(stderr, _("Invalid hash type '%s'.\n"), optarg);
 		exit(1);
 	    }
 	    break;
@@ -100,7 +106,8 @@ int main(int argc, char *argv[])
 	    display_help();
 	    exit(0);
 	default:
-	    fprintf(stderr, "Try `%s --help' for more information.\n", argv[0]);
+	    fprintf(stderr, _("Try '%s --help' for more information.\n"),
+		    argv[0]);
 	    exit(1);
 	}
     }
@@ -127,13 +134,13 @@ int main(int argc, char *argv[])
     if (salt) {
 	i = strlen(salt);
 	if (i != salt_len) {
-	    fprintf(stderr, "Wrong salt length: %d byte(s) instead of %d.\n",
+	    fprintf(stderr, _("Wrong salt length: %d byte(s) instead of %d.\n"),
 		    i, salt_len);
 	    exit(1);
 	}
 	while (i-- > 0)
 	    if (strchr(valid_salts, salt[i]) == NULL) {
-		fprintf(stderr, "Illegal salt character `%c'.\n", salt[i]);
+		fprintf(stderr, _("Illegal salt character '%c'.\n"), salt[i]);
 		exit(1);
 	    }
     } else {
@@ -143,29 +150,29 @@ int main(int argc, char *argv[])
 
     if (!password) {
 	if (use_stdin) {
-	    if (!isatty(STDIN_FILENO))
-		fprintf(stderr, "Password: ");
+	    if (isatty(STDIN_FILENO))
+		fprintf(stderr, _("Password: "));
 	    password = malloc(128);
 	    if (!fgets(password, sizeof password, stdin)) {
 		perror("fgets:");
 		exit(2);
 	    }
 	    p = password;
-	    while (*p != '\0') {
+	    while (*p) {
 		if (*p == '\n') {
 		    *p = '\0';
 		    break;
 		}
 		/* which characters are valid? */
 		if (*p > 0x7f) {
-		    fprintf(stderr, "Illegal password character `0x%hhx'.\n",
+		    fprintf(stderr, _("Illegal password character '0x%hhx'.\n"),
 			    *p);
 		    exit(1);
 		}
 		p++;
 	    }
 	} else {
-	    password = getpass("Password: ");
+	    password = getpass(_("Password: "));
 	    if (!password) {
 		perror("getpass:");
 		exit(2);
@@ -193,9 +200,9 @@ void generate_salt(char *buf, const unsigned int len)
 
 void display_help(void)
 {
-    fprintf(stderr, "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
-	    "Crypts the PASSWORD using crypt(3).\n\n");
-    fprintf(stderr,
+    fprintf(stderr, _("Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
+	    "Crypts the PASSWORD using crypt(3).\n\n"));
+    fprintf(stderr, _(
 "      -H, --hash=TYPE       select hash TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 "      -s, --stdin           read the password from stdin instead of /dev/tty\n"
@@ -205,7 +212,7 @@ void display_help(void)
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
 "\n"
-"Report bugs to %s.\n", "<md+whois@linux.it>");
+"Report bugs to %s.\n"), "<md+whois@linux.it>");
 }
 
 void display_version(void)
@@ -218,5 +225,5 @@ void display_version(void)
 
 void display_algorithms(void)
 {
-    printf("Available algorithms:\n");
+    printf(_("Available algorithms:\n"));
 }
