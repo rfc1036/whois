@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.5\n"
-"POT-Creation-Date: 2002-04-26 04:09+0200\n"
+"POT-Creation-Date: 2002-10-11 17:42+0200\n"
 "PO-Revision-Date: 1999-12-18 14:00:00\n"
 "Last-Translator: Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:106
+#: ../whois.c:104
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -22,31 +22,31 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../whois.c:149 ../whois.c:186
+#: ../whois.c:147 ../whois.c:184
 #, c-format
 msgid "Using server %s.\n"
 msgstr "U¿ywam serwera %s.\n"
 
-#: ../whois.c:163
+#: ../whois.c:161
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Uzywam domy¶lnego serwera %s.\n"
 
-#: ../whois.c:166
+#: ../whois.c:164
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 
-#: ../whois.c:172
+#: ../whois.c:170
 #, fuzzy
 msgid "This TLD has no whois server."
 msgstr "Nie ma serwera whois dla tej domeny."
 
-#: ../whois.c:176
+#: ../whois.c:174
 #, fuzzy
 msgid "Connecting to whois.crsnic.net."
 msgstr "£±czenie z hostem whois.internic.net."
 
-#: ../whois.c:182
+#: ../whois.c:180
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -57,7 +57,7 @@ msgstr ""
 "Znaleziono odniesienie z InterNIC do %s.\n"
 "\n"
 
-#: ../whois.c:195
+#: ../whois.c:193
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -66,12 +66,12 @@ msgstr ""
 "Zapytanie: \"%s\"\n"
 "\n"
 
-#: ../whois.c:245 ../whois.c:248
+#: ../whois.c:243 ../whois.c:246
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:324
+#: ../whois.c:322
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
@@ -79,28 +79,28 @@ msgstr ""
 "Nie mo¿na ustaliæ, do kogo ten adres IP zosta³ oddelegowany.\n"
 "Spróbujê ARIN i mam nadziejê, ¿e siê uda..."
 
-#: ../whois.c:341
+#: ../whois.c:339
 msgid "I guess it's a netblock name but I don't know where to look it up."
 msgstr "To nazwa bloku sieciowego, ale nie wiem, pod jak± nazw± szukaæ."
 
-#: ../whois.c:348
+#: ../whois.c:346
 msgid "I guess it's a domain but I don't know where to look it up."
 msgstr "To nazwa domeny, ale nie wiem, gdzie jej szukaæ."
 
-#: ../whois.c:358
+#: ../whois.c:356
 msgid "Unknown AS number. Please upgrade this program."
 msgstr "Nieznany numer AS. Zainstaluj nowsz± wersjê programu."
 
-#: ../whois.c:388
+#: ../whois.c:386
 msgid "Warning: RIPE flags ignored for a traditional server."
 msgstr "Uwaga: flagi RIPE s± ignorowane dla starszych serwerów."
 
-#: ../whois.c:452
+#: ../whois.c:448
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Wykryto odniesienie do %s na %s.\n"
 
-#: ../whois.c:469
+#: ../whois.c:465
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -108,52 +108,53 @@ msgstr ""
 "Katastrofa! Tekst disclaimera zosta³ zmieniony.\n"
 "¦ci±gnij nowsz± wersjê programu.\n"
 
-#: ../whois.c:543
+#: ../whois.c:539
 #, c-format
 msgid "Host %s not found."
 msgstr "Serwer %s nie zosta³ znaleziony."
 
-#: ../whois.c:553
+#: ../whois.c:549
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: us³uga nieznana"
 
-#: ../whois.c:570
+#: ../whois.c:566
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Przerwanie na sygna³ %d..."
 
-#: ../whois.c:613
+#: ../whois.c:611
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-a                     search all databases\n"
-"-F                     fast raw output (implies -r)\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-h HOST                connect to server HOST\n"
-"-H                     hide legal disclaimers\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-x                     exact match [RPSL only]\n"
 "-l                     one level less specific lookup [RPSL only]\n"
 "-L                     find all Less specific matches\n"
-"-M                     find all More specific matches\n"
 "-m                     find first level more specific matches\n"
-"-r                     turn off recursive lookups\n"
-"-p PORT                connect to PORT\n"
+"-M                     find all More specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL "
+"only]\n"
+"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned [RPSL only]\n"
+"-r                     turn off recursive lookups for contact information\n"
 "-R                     force to show local copy of the domain object even\n"
 "                       if it contains referral\n"
-"-S                     tell server to leave out syntactic sugar\n"
+"-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
 "-t TYPE                request template for object of TYPE ('all' for a "
 "list)\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources]   query specified server info [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-V    --verbose        explain what is being done\n"
+"-F                     fast raw output (implies -r)\n"
+"-h HOST                connect to server HOST\n"
+"-p PORT                connect to PORT\n"
+"-H                     hide legal disclaimers\n"
+"      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
@@ -178,52 +179,52 @@ msgstr ""
 "\n"
 "Wersja %s. Informacje o b³êdach kieruj do %s. T³umaczenie: cefek.\n"
 
-#: ../mkpasswd.c:57
+#: ../mkpasswd.c:55
 msgid "\tstandard 56 bit DES-based crypt(3)"
 msgstr ""
 
-#: ../mkpasswd.c:98
+#: ../mkpasswd.c:96
 #, c-format
 msgid "Invalid hash type '%s'.\n"
 msgstr ""
 
-#: ../mkpasswd.c:107
+#: ../mkpasswd.c:105
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr ""
 
-#: ../mkpasswd.c:125
+#: ../mkpasswd.c:123
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr ""
 
-#: ../mkpasswd.c:154
+#: ../mkpasswd.c:152
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr ""
 
-#: ../mkpasswd.c:160
+#: ../mkpasswd.c:158
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr ""
 
-#: ../mkpasswd.c:174 ../mkpasswd.c:201
+#: ../mkpasswd.c:172 ../mkpasswd.c:199
 msgid "Password: "
 msgstr ""
 
-#: ../mkpasswd.c:195
+#: ../mkpasswd.c:193
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr ""
 
-#: ../mkpasswd.c:232
+#: ../mkpasswd.c:230
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
 
-#: ../mkpasswd.c:235
+#: ../mkpasswd.c:233
 #, c-format
 msgid ""
 "      -H, --hash=TYPE       select hash TYPE\n"
@@ -241,6 +242,6 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../mkpasswd.c:262
+#: ../mkpasswd.c:260
 msgid "Available algorithms:\n"
 msgstr ""

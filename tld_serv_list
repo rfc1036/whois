@@ -26,8 +26,7 @@
 .gov	whois.nic.gov
 .int	whois.icann.org
 .mil	whois.nic.mil
-# whois server not yet available, see also http://www.nic.aero/whoswho.php
-.aero	whois.nic.aero
+.aero	WEB http://www.nic.aero/whois.php
 .biz	whois.nic.biz
 .coop	whois.nic.coop
 .info	whois.afilias.info
@@ -101,7 +100,7 @@
 .do	WEB http://www.nic.do
 .dz	NONE
 .ec	WEB http://www.nic.ec
-.ee	WEB http://www.eenet.ee/info/
+.ee	whois.eenet.ee
 .eg	NONE		# http://www.ise.org.eg/domain.htm
 #.eh
 .er	NONE		# NO NIC http://www.afridns.org/er/
@@ -127,7 +126,7 @@
 .gn	NONE		# http://www.psg.com/dns/gn/
 #.gp			# www.nic.gp - broken like mq
 #.gq			# NO NIC http://www.intnet.gq
-.gr	WEB http://www.hostmaster.gr/cgi-bin/webwhois
+.gr	WEB https://grweb.ics.forth.gr/english/index.html
 .gs	whois.adamsnames.tc
 .gt	WEB http://www.gt/whois.htm
 .gu	WEB http://gadao.gov.gu/Scripts/wwsquery/wwsquery.dll?hois=guamquery
@@ -143,7 +142,8 @@
 .ie	whois.domainregistry.ie
 .il	whois.isoc.org.il
 .im	WEB http://www.nic.im/exist.html
-.in	whois.ncst.ernet.in
+#broken	.in	whois.ncst.ernet.in
+.in	WEB http://domain.ncst.ernet.in/search.php
 .io	WEB http://www.io.io/whois.html
 #.iq			# NIC?
 .ir	whois.nic.ir

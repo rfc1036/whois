@@ -16,25 +16,24 @@ const char *ripe_servers[] = {
     "whois.aunic.net",
     "whois.connect.com.au",	/* 3.0.0b1 */
     "whois.nic.fr",
+    "whois.nic.it",
+    "whois.cw.net",
     "whois.telstra.net",
     "whois.nic.net.sg",
     "whois.metu.edu.tr",
     "whois.restena.lu",
     "rr.level3.net",		/* 3.0.0a13 */
+    "whois.ripn.net",
     "whois.arnes.si",
     "www.registry.co.ug",
     "whois.nic.ir",
+    "whois.nic.ck",
     NULL
 };
 
 /* servers which do not accept the new syntax */
 const char *ripe_servers_old[] = {
     "whois.ra.net",
-    "whois.nic.it",
-    "whois.ans.net",
-    "whois.cw.net",
-    "whois.ripn.net",
-    "whois.nic.ck",
     "whois.domain.kg",
     NULL
 };
@@ -50,21 +49,21 @@ const char *rwhois_servers[] = {
 #endif
 
 const char *hide_strings[] = {
-    "The Data in the VeriSign", "terms at any time.",
-    "The data in Register", "By submitting",
-    "The Data in the Tucows", "RECORD DOES NOT",
-    " The data contained in Dotster", "Please limit your",
+    "The Data in the VeriSign", "terms at any time.",		/* VERISIGN */
+    "The data in Register", "By submitting",		    /* REGISTER.COM */
+    "The Data in the Tucows", "RECORD DOES NOT",		/* OPENSRS */
+    " The data contained in Dotster", "Please limit your",	/* DOTSTER */
     "This whois service currently only", "top-level domains.",
     "Signature Domains' Whois Service", "agree to abide by the above",
-    "Access to ASNIC", "by this policy.",
-    "* Copyright (C) 1998 by SGNIC", "* modification.",
+    "Access to ASNIC", "by this policy.",			/* as */
+    "**************", "**************",				/* sg */
     "The Data in Gabia", "you agree to abide",
-    "NeuLevel, Inc., the Registry Operator", "whatsoever, you agree",
-    "NOTICE: Access to .INFO WHOIS", "time. By submitting",
+    "The data contained in Go Daddy", "is not the owner",	/* NEUSTAR */
+    "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
     "Disclaimer: The Global Name Registry", "for any commercial",
-    "Access to America Online", "time. By accessing",
-    "Access and use restricted", "http://www.icann", /* GANDI */
-    "NeuStar, Inc., the Registry", "whatsoever, you agree", /* us */
+    "Access to America Online", "time. By accessing",		/* AOL */
+    "% Access and use restricted", "% http://www.icann",	/* GANDI */
+    "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
     NULL, NULL
 };
 

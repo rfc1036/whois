@@ -1,5 +1,14 @@
+# WARNING! Netblocks 128.0.0.0/2, 192.0.0.0/8, 196.0.0.0/8 and 198.0.0.0/8
+# contain historical allocations now scattered among all the RIRs.
+# Do not even try submitting such networks for inclusion in this list
+# unless they are very big and contains multiple assignments to different
+# customers.
+#
 24.192.0.0/14	apnic
 24.132.0.0/14	ripe
+61.72.0.0/13	whois.nic.or.kr
+61.80.0.0/14	whois.nic.or.kr
+61.84.0.0/15	whois.nic.or.kr
 61.112.0.0/12	whois.nic.ad.jp
 61.192.0.0/12	whois.nic.ad.jp		# => 61.207
 61.208.0.0/13	whois.nic.ad.jp		# => 61.215
@@ -9,8 +18,6 @@
 # 63.208.0.0/13	rr.level3.net
 80.0.0.0/7	ripe
 0.0.0.0/2	arin	# all other A classes are managed by ARIN
-## The B classes space is a mess :-( - something could still be missing
-## I add here only netblocks allocated to multiple LIRs by the RIRs.
 133.0.0.0/8	whois.nic.ad.jp
 139.20.0.0/14	ripe
 139.24.0.0/14	ripe
@@ -74,6 +81,7 @@
 202.13.0.0/16	whois.nic.ad.jp
 202.15.0.0/16	whois.nic.ad.jp
 202.16.0.0/14	whois.nic.ad.jp
+202.20.128.0/17	whois.nic.or.kr
 202.23.0.0/16	whois.nic.ad.jp
 202.24.0.0/15	whois.nic.ad.jp
 202.26.0.0/16	whois.nic.ad.jp
@@ -82,20 +90,7 @@
 202.48.0.0/16	whois.nic.ad.jp
 202.39.128.0/17	twnic
 202.208.0.0/12	whois.nic.ad.jp
-202.224.0.0/11	whois.nic.ad.jp		# => 202.255
-#203.27.128.0/18	telstra
-#203.35.0.0/16	telstra
-#203.36.0.0/14	telstra
-#203.40.0.0/13	telstra
-#203.48.0.0/14	telstra
-#203.52.0.0/15	telstra
-#203.54.0.0/16	telstra
-#203.58.128.0/17	telstra
-#203.58.32.0/19	telstra
-#203.58.64.0/19	telstra
-## 203.0.0.0/10 has been moved from aunic to apnic, but the records in
-## the telstra database appears to be more detailed.
-## See http://www.apnic.net/db/aunic/ for details.
+202.224.0.0/11	whois.nic.ad.jp # => 202.255.255.255
 203.0.0.0/10	apnic
 203.66.0.0/16	twnic
 203.69.0.0/16	twnic
@@ -104,7 +99,7 @@
 203.140.0.0/15	whois.nic.ad.jp
 203.178.0.0/15	whois.nic.ad.jp
 203.180.0.0/14	whois.nic.ad.jp
-203.232.0.0/13	whois.nic.or.kr
+203.224.0.0/11	whois.nic.or.kr # => 203.255.255.255
 202.0.0.0/7	apnic
 204.0.0.0/6	arin
 208.0.0.0/7	arin
@@ -115,13 +110,10 @@
 210.71.128.0/16	twnic
 210.90.0.0/15	whois.nic.or.kr
 210.92.0.0/14	whois.nic.or.kr
-210.96.0.0/13	whois.nic.or.kr
-210.104.0.0/13	whois.nic.or.kr
-210.112.0.0/13	whois.nic.or.kr
-210.120.0.0/14	whois.nic.or.kr	# => 210.123.255.255	
+210.96.0.0/11	whois.nic.or.kr # => 210.127.255.255
 210.128.0.0/11	whois.nic.ad.jp
 210.160.0.0/12	whois.nic.ad.jp
-210.178.0.0/15	whois.nic.or.kr
+210.178.0.0/14	whois.nic.or.kr
 210.180.0.0/14	whois.nic.or.kr
 210.188.0.0/14	whois.nic.ad.jp
 210.196.0.0/14	whois.nic.ad.jp
@@ -153,7 +145,16 @@
 214.0.0.0/7	arin	# DoD
 216.0.0.0/8	arin
 217.0.0.0/8	ripe
+218.36.0.0/14	whois.nic.or.kr
 218.40.0.0/13	whois.nic.ad.jp
-218.47.0.0/13	whois.nic.or.kr
+218.48.0.0/13	whois.nic.or.kr
+218.144.0.0/12	whois.nic.or.kr
+218.232.0.0/13	whois.nic.or.kr
 218.0.0.0/7	apnic
+219.240.0.0/15	whois.nic.or.kr
+219.248.0.0/13	whois.nic.or.kr
+220.64.0.0/13	whois.nic.or.kr
+220.72.0.0/13	whois.nic.or.kr
+220.80.0.0/14	whois.nic.or.kr
+220.84.0.0/15	whois.nic.or.kr
 220.0.0.0/7	apnic

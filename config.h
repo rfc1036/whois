@@ -1,6 +1,6 @@
 /* Program version */
 /* not for the inetutils version */
-#define VERSION "4.5.29"
+#define VERSION "4.5.31"
 
 /* Configurable features */
 

@@ -1,4 +1,4 @@
-.TH MKPASSWD 1 "5 June 2001" "Marco d'Itri" "Debian GNU/Linux"
+.TH MKPASSWD 1 "11 October 2002" "Marco d'Itri" "Debian GNU/Linux"
 .SH NAME
 mkpasswd \- Overfeatured front end to crypt(3)
 .SH SYNOPSIS
@@ -14,7 +14,7 @@ libc function using the given salt.
 .SH OPTIONS
 .TP
 .B -S, --salt=STRING
-Use the \fISTRING\fP as salt.
+Use the \fISTRING\fP as salt. It must not contain prefixes like \fI$1$\fP.
 .TP
 .B -H, --hash=TYPE
 Compute the password using the \fITYPE\fP algorithm.

@@ -1,3 +1,20 @@
+whois (4.5.31) unstable; urgency=medium
+
+  * Added undocumented -V command line option.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 11 Oct 2002 17:35:18 +0200
+
+whois (4.5.30) unstable; urgency=medium
+
+  * Added support for -c flag.
+  * Updated .aero, .dk, .ee, .gr and .in TLD servers.
+  * Updated spanish translation.
+  * Updated whois query code for the new ARIN server (Closes: #160693).
+  * Reviewed all hide_strings[] (Closes: #161462).
+  * Added many Korean IP and ASN allocations.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 11 Oct 2002 14:24:25 +0200
+
 whois (4.5.29) unstable; urgency=medium
 
   * Fixed mkpasswd -H (Closes: #149071).

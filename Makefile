@@ -35,7 +35,7 @@ tld_serv.h: tld_serv_list make_tld_serv.pl
 install: whois
 	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
 	strip $(BASEDIR)$(prefix)/bin/whois
-	install -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/
+	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 	cd po && $(MAKE) $@
 
 

@@ -1,6 +1,6 @@
 Summary: Enhanced WHOIS client
 Name: whois
-Version: 4.5.29
+Version: 4.5.30
 Release: 1
 License: GPL
 Vendor: Marco d'Itri <md@linux.it>
@@ -25,9 +25,9 @@ make OPTS="$RPM_OPT_FLAGS"
 %install
 rm -rf ${RPM_BUILD_ROOT}
 mkdir -p ${RPM_BUILD_ROOT}/usr/bin
-mkdir -p ${RPM_BUILD_ROOT}/usr/man/man1
+mkdir -p ${RPM_BUILD_ROOT}%{_mandir}/man1
 make install BASEDIR=${RPM_BUILD_ROOT} prefix=%{prefix}/
-gzip ${RPM_BUILD_ROOT}%{prefix}/man/man?/*
+gzip ${RPM_BUILD_ROOT}%{_mandir}/man?/*
 
 find $RPM_BUILD_ROOT ! -type d | sed "s@^$RPM_BUILD_ROOT@@g" > %{name}-filelist
 

@@ -26,8 +26,6 @@
 #include <errno.h>
 #include <signal.h>
 
-#undef ENABLE_NLS
-
 /* Application-specific */
 #include "data.h"
 #include "whois.h"
@@ -41,11 +39,13 @@ int hide_discl = 0;
 int hide_discl = 2;
 #endif
 
+char *client_tag = (char *)IDSTRING;
+
 #ifdef HAVE_GETOPT_LONG
 static struct option longopts[] = {
     {"help",	no_argument,		NULL, 0  },
     {"version",	no_argument,		NULL, 1  },
-    {"verbose",	no_argument,		NULL, 'V'},
+    {"verbose",	no_argument,		NULL, 2  },
     {"server",	required_argument,	NULL, 'h'},
     {"host",	required_argument,	NULL, 'h'},
     {"port",	required_argument,	NULL, 'p'},
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "acFg:h:Hi:lLmMp:q:rRs:St:T:v:Vx",
+    while ((ch = GETOPT_LONGISH(argc, argv, "acdFg:h:Hi:KlLmMp:q:rRs:St:T:v:V:x",
 				longopts, 0)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
@@ -92,13 +92,15 @@ int main(int argc, char *argv[])
 		port = p + 1;
 	    *q = '\0';
 	    break;
+	case 'V':
+	    client_tag = optarg;
 	case 'H':
 	    hide_discl = 0;	/* enable disclaimers hiding */
 	    break;
 	case 'p':
 	    port = optarg;
 	    break;
-	case 'V':
+	case 2:
 	    verb = 1;
 	    break;
 	case 1:
@@ -354,9 +356,9 @@ const char *whereas(int asn, struct as_del aslist[])
 {
     int i;
 
-    if (asn > 25599)
+    if (asn > 27647)
 	puts(_("Unknown AS number. Please upgrade this program."));
-    for (i = 0; aslist[i].serv; i++)
+    else for (i = 0; aslist[i].serv; i++)
 	if (asn >= aslist[i].first && asn <= aslist[i].last)
 	    return aslist[i].serv;
     return "whois.arin.net";
@@ -368,18 +370,23 @@ char *queryformat(const char *server, const char *flags, const char *query)
     int i, isripe = 0;
 
     /* +10 for CORE; +2 for \r\n; +1 for NULL */
-    buf = malloc(strlen(flags) + strlen(query) + 10 + 2 + 1);
+    buf = malloc(strlen(flags) + strlen(query) + strlen(client_tag) + 4
+	    + 10 + 2 + 1);
     *buf = '\0';
     for (i = 0; ripe_servers[i]; i++)
 	if (strcmp(server, ripe_servers[i]) == 0) {
-	    strcat(buf, "-V " IDSTRING " ");
+	    strcat(buf, "-V ");
+	    strcat(buf, client_tag);
+	    strcat(buf, " ");
 	    isripe = 1;
 	    break;
 	}
     if (!isripe)
 	for (i = 0; ripe_servers_old[i]; i++)
 	    if (strcmp(server, ripe_servers_old[i]) == 0) {
-		strcat(buf, "-V" IDSTRING " ");
+		strcat(buf, "-V");
+		strcat(buf, client_tag);
+		strcat(buf, " ");
 		isripe = 1;
 		break;
 	    }
@@ -389,12 +396,10 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	else
 	    strcat(buf, flags);
     }
-    if (!isripe &&
-	    (strcmp(server, "whois.arin.net") == 0 ||
-	     strcmp(server, "whois.nic.mil") == 0) &&
+    if (!isripe && strcmp(server, "whois.nic.mil") == 0 &&
 	    strncasecmp(query, "AS", 2) == 0 &&
 	    query[2] >= '0' && query[2] <= '9')
-	sprintf(buf, "AS %s", query + 2);	/* fix query for ARIN */
+	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
     else if (!isripe && strcmp(server, "whois.corenic.net") == 0)
 	sprintf(buf, "--machine %s", query);	/* machine readable output */
     else if (!isripe && strcmp(server, "whois.ncst.ernet.in") == 0 &&
@@ -607,34 +612,36 @@ unsigned long myinet_aton(const char *s)
     return (a << 24) + (b << 16) + (c << 8) + d;
 }
 
+/* http://www.ripe.net/ripe/docs/databaseref-manual.html */
+
 void usage(void)
 {
     fprintf(stderr, _(
 "Usage: whois [OPTION]... OBJECT...\n\n"
-"-a                     search all databases\n"
-"-F                     fast raw output (implies -r)\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-h HOST                connect to server HOST\n"
-"-H                     hide legal disclaimers\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-x                     exact match [RPSL only]\n"
 "-l                     one level less specific lookup [RPSL only]\n"
 "-L                     find all Less specific matches\n"
-"-M                     find all More specific matches\n"
 "-m                     find first level more specific matches\n"
-"-r                     turn off recursive lookups\n"
-"-p PORT                connect to PORT\n"
+"-M                     find all More specific matches\n"
+"-c                     find the smallest match containing a mnt-irt attribute\n"
+"-x                     exact match [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL only]\n"
+"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned [RPSL only]\n"
+"-r                     turn off recursive lookups for contact information\n"
 "-R                     force to show local copy of the domain object even\n"
 "                       if it contains referral\n"
-"-S                     tell server to leave out syntactic sugar\n"
+"-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
 "-t TYPE                request template for object of TYPE ('all' for a list)\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources]   query specified server info [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL only]\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-V    --verbose        explain what is being done\n"
+"-F                     fast raw output (implies -r)\n"
+"-h HOST                connect to server HOST\n"
+"-p PORT                connect to PORT\n"
+"-H                     hide legal disclaimers\n"
+"      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 ));
