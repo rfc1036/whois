@@ -1,3 +1,34 @@
+whois (4.6.13) unstable; urgency=medium
+
+  * Fix the DENIC code. (Closes: #242424)
+
+ -- Marco d'Itri <md@linux.it>  Thu,  8 Apr 2004 13:16:58 +0200
+
+whois (4.6.12) unstable; urgency=medium
+
+  * Added a workaround for DENIC brokeness. (Closes: #242424)
+  * Added the new IPv4 networks allocated to RIPE.
+
+ -- Marco d'Itri <md@linux.it>  Tue,  6 Apr 2004 19:25:20 +0200
+
+whois (4.6.11) unstable; urgency=medium
+
+  * Fix parsing of IPv4 addresses on 64 bit architectures, spotted by
+    Paul Slootman. (Closes: #229809)
+  * Add support for ARIN whois referrals. (Closes: #229810, #231694)
+  * Cleaned up some code and added support for ARIN referrals, based
+    on a patch by Kees Cook.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 31 Jan 2004 17:41:39 +0100
+
+whois (4.6.10) unstable; urgency=high
+
+  * Compiled with libidn11. (Closes: #227350)
+  * Fixed a disclaimer. (Closes: #226949)
+  * Updated Greek .po file from Velonis Petros.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 13 Jan 2004 12:55:51 +0100
+
 whois (4.6.9) unstable; urgency=medium
 
   * Removed .ac.cn SLD. (Closes: #219883)

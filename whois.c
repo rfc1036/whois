@@ -37,9 +37,9 @@
 int sockfd, verb = 0;
 
 #ifdef ALWAYS_HIDE_DISCL
-int hide_discl = 0;
+int hide_discl = HIDE_UNSTARTED;
 #else
-int hide_discl = 2;
+int hide_discl = HIDE_DISABLED;
 #endif
 
 char *client_tag = (char *)IDSTRING;
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 {
     int ch, nopar = 0;
     const char *server = NULL, *port = NULL;
-    char *p, *q, *qstring, fstring[64] = "\0";
+    char *p, *qstring, fstring[64] = "\0";
 
 #ifdef ENABLE_NLS
     setlocale(LC_ALL, "");
@@ -89,19 +89,15 @@ int main(int argc, char *argv[])
 	/* program flags */
 	switch (ch) {
 	case 'h':
-	    server = q = malloc(strlen(optarg) + 1);
-	    for (p = optarg; *p && *p != ':'; *q++ = tolower(*p++));
-	    if (*p == ':')
-		port = p + 1;
-	    *q = '\0';
+	    server = strdup(optarg);
 	    break;
 	case 'V':
 	    client_tag = optarg;
 	case 'H':
-	    hide_discl = 0;	/* enable disclaimers hiding */
+	    hide_discl = HIDE_UNSTARTED;	/* enable disclaimers hiding */
 	    break;
 	case 'p':
-	    port = optarg;
+	    port = strdup(optarg);
 	    break;
 	case 2:
 	    verb = 1;
@@ -143,9 +139,16 @@ int main(int argc, char *argv[])
 	}
     }
 
+    signal(SIGTERM, sighandler);
+    signal(SIGINT, sighandler);
+    signal(SIGALRM, alarm_handler);
+
+    if (getenv("WHOIS_HIDE"))
+	hide_discl = HIDE_UNSTARTED;
+
     /* -v or -t has been used */
     if (!server && !*qstring)
-	server = "whois.ripe.net";
+	server = strdup("whois.ripe.net");
 
 #ifdef CONFIG_FILE
     if (!server) {
@@ -155,11 +158,6 @@ int main(int argc, char *argv[])
     }
 #endif
 
-    signal(SIGTERM, sighandler);
-    signal(SIGINT, sighandler);
-    signal(SIGALRM, alarm_handler);
-    alarm(60);
-
     if (!server) {
 	char *tmp;
 
@@ -168,101 +166,100 @@ int main(int argc, char *argv[])
 	qstring = tmp;
 	server = whichwhois(qstring);
 
-retry:
-	switch (server[0]) {
-	    case 0:
-		if (!(server = getenv("WHOIS_SERVER")))
-		    server = DEFAULTSERVER;
-		if (verb)
-		    printf(_("Using default server %s.\n"), server);
-		break;
-	    case 1:
-		puts(_("This TLD has no whois server, but you can access the "
-			    "whois database at"));
-	    case 2:
-		puts(server + 1);
-		exit(0);
-	    case 3:
-		puts(_("This TLD has no whois server."));
-		exit(0);
-	    case 4:
-		if (verb)
-		    puts(_("Connecting to whois.crsnic.net."));
-		sockfd = openconn("whois.crsnic.net", NULL);
-		server = query_crsnic(sockfd, qstring);
-		close(sockfd);
-		if (!server)
-		    exit(0);
-		printf(_("\nFound a referral to %s.\n\n"), server);
-		alarm(60);
-		break;
-	    case 9:
-		if (verb)
-		    puts(_("Connecting to whois.nic.cc."));
-		sockfd = openconn("whois.nic.cc", NULL);
-		server = query_crsnic(sockfd, qstring);
-		close(sockfd);
-		if (!server)
-		    exit(0);
-		printf(_("\nFound a referral to %s.\n\n"), server);
-		alarm(60);
-		break;
-	    case 7:
-		if (verb)
-		    puts(_("Connecting to whois.publicinterestregistry.net."));
-		sockfd = openconn("whois.publicinterestregistry.net", NULL);
-		server = query_pir(sockfd, qstring);
-		close(sockfd);
-		if (!server)
-		    exit(0);
-		printf(_("\nFound referral to %s.\n\n"), server);
-		alarm(60);
-		break;
-	    case 5:
-		puts(_("No whois server is known for this kind of object."));
-		exit(0);
-	    case 6:
-		puts(_("Unknown AS number or IP network. Please upgrade this program."));
-		exit(0);
-	    case 0x0A:
-		{
-		char *tmp6 = convert_6to4(qstring);
-		free(qstring);
-		qstring = tmp6;
-		printf(_("\nQuerying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n\n"), qstring);
-		server = whichwhois(qstring);
-		/*
-		 * This code sucks enough that I can afford to use goto...
-		 * Some day whichwhois() and queryformat() will be merged
-		 * and will return a struct with status code, server name
-		 * and query string.
-		 */
-		goto retry;
-		}
-	    default:
-		if (verb)
-		    printf(_("Using server %s.\n"), server);
-	}
     }
 
-    if (getenv("WHOIS_HIDE"))
-	hide_discl = 0;
+    handle_query(server, port, qstring, fstring);
+
+    exit(0);
+}
+
+/* server may be a server name from the command line, a server name got
+ * from whichwhois or an encoded command/message from whichwhois.
+ * server and port are allocated with malloc.
+ */
+const char *handle_query(const char *hserver, const char *hport,
+	const char *qstring, const char *fstring)
+{
+    const char *server, *port = NULL;
+    char *p;
+
+    if (hport) {
+	server = strdup(hserver);
+	port = strdup(hport);
+    } else
+	split_server_port(hserver, &server, &port);
+
+    switch (server[0]) {
+	case 0:
+	    if (!(server = getenv("WHOIS_SERVER")))
+		server = DEFAULTSERVER;
+	    break;
+	case 1:
+	    puts(_("This TLD has no whois server, but you can access the "
+			"whois database at"));
+	    puts(server + 1);
+	    return NULL;
+	case 2:
+	    puts(server + 1);
+	    return NULL;
+	case 3:
+	    puts(_("This TLD has no whois server."));
+	    return NULL;
+	case 5:
+	    puts(_("No whois server is known for this kind of object."));
+	    return NULL;
+	case 6:
+	    puts(_("Unknown AS number or IP network. Please upgrade this program."));
+	    return NULL;
+	case 4:
+	    if (verb)
+		puts(_("Connecting to whois.crsnic.net."));
+	    sockfd = openconn("whois.crsnic.net", NULL);
+	    server = query_crsnic(sockfd, qstring);
+	    break;
+	case 7:
+	    if (verb)
+		puts(_("Connecting to whois.publicinterestregistry.net."));
+	    sockfd = openconn("whois.publicinterestregistry.net", NULL);
+	    server = query_pir(sockfd, qstring);
+	    break;
+	case 9:
+	    if (verb)
+		puts(_("Connecting to whois.nic.cc."));
+	    sockfd = openconn("whois.nic.cc", NULL);
+	    server = query_crsnic(sockfd, qstring);
+	    break;
+	case 0x0A:
+	    p = convert_6to4(qstring);
+	    printf(_("\nQuerying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n\n"), p);
+	    server = whichwhois(p);
+	    qstring = p;			/* XXX leak */
+	    break;
+	default:
+	    break;
+    }
+
+    if (!server)
+	return NULL;
 
     p = queryformat(server, fstring, qstring);
-    if (verb)
+    if (verb) {
+	printf(_("Using server %s.\n"), server);
 	printf(_("Query string: \"%s\"\n\n"), p);
-    strcat(p, "\r\n");
+    }
 
     sockfd = openconn(server, port);
 
-    /*
-     * Now we are connected and the query is supposed to complete quickly.
-     * This will help people who run whois ... | less
-     */
-    alarm(0);
-    do_query(sockfd, p);
+    strcat(p, "\r\n");
+    server = do_query(sockfd, p);
 
-    exit(0);
+    /* recursion is fun */
+    if (server) {
+	printf(_("\n\nFound a referral to %s.\n\n"), server);
+	handle_query(server, NULL, qstring, fstring);
+    }
+
+    return NULL;
 }
 
 #ifdef CONFIG_FILE
@@ -271,9 +268,6 @@ const char *match_config_file(const char *s)
     FILE *fp;
     char buf[512];
     static const char delim[] = " \t";
-#ifdef HAVE_REGEXEC
-    regex_t re;
-#endif
 
     if ((fp = fopen(CONFIG_FILE, "r")) == NULL) {
 	if (errno != ENOENT)
@@ -286,6 +280,7 @@ const char *match_config_file(const char *s)
 	const char *pattern, *server;
 #ifdef HAVE_REGEXEC
 	int i;
+	regex_t re;
 #endif
 
 	for (p = buf; *p; p++)
@@ -336,6 +331,9 @@ const char *match_config_file(const char *s)
 }
 #endif
 
+/* Parses an user-supplied string and tries to guess the right whois server.
+ * Returns a statically allocated buffer.
+ */
 const char *whichwhois(const char *s)
 {
     unsigned long ip;
@@ -424,9 +422,8 @@ char *queryformat(const char *server, const char *flags, const char *query)
     char *buf;
     int i, isripe = 0;
 
-    /* +2 for \r\n; +1 for NULL */
-    buf = malloc(strlen(flags) + strlen(query) + strlen(client_tag) + 4
-	    + 2 + 1);
+    /* 64 bytes reserved for server-specific flags added later */
+    buf = malloc(strlen(flags) + strlen(query) + strlen(client_tag) + 64);
     *buf = '\0';
     for (i = 0; ripe_servers[i]; i++)
 	if (strcmp(server, ripe_servers[i]) == 0) {
@@ -450,10 +447,17 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    puts(_("Warning: RIPE flags used with a traditional server."));
 	strcat(buf, flags);
     }
-    /* FIXME: /e is not applied to .JP ASN */
-    if (!isripe && (strcmp(server, "whois.nic.mil") == 0 ||
+
+    /* why, oh why DENIC had to make whois "user friendly"?
+     * I hope that adding -T dn,ace will not break some queries.
+     */
+    if (isripe && strcmp(server, "whois.denic.de") == 0 && domcmp(query, ".de")
+	    && !strchr(query, ' '))
+	sprintf(buf, "-T dn,ace -C US-ASCII %s", query);
+    else if (!isripe && (strcmp(server, "whois.nic.mil") == 0 ||
 	    strcmp(server, "whois.nic.ad.jp") == 0) &&
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
+	/* FIXME: /e is not applied to .JP ASN */
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
     else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
 	char *lang = getenv("LANG");	/* not a perfect check, but... */
@@ -466,11 +470,50 @@ char *queryformat(const char *server, const char *flags, const char *query)
     return buf;
 }
 
-void do_query(const int sock, const char *query)
+/* the first parameter contains the state of this simple state machine:
+ * HIDE_DISABLED: hidden text finished
+ * HIDE_UNSTARTED: hidden text not seen yet
+ * >= 0: currently hiding message hide_strings[*hiding]
+ */
+int hide_line(int *hiding, const char *const line)
+{
+    int i;
+
+    if (*hiding == HIDE_DISABLED) {
+	return 0;
+    } else if (*hiding == HIDE_UNSTARTED) {	/* looking for smtng to hide */
+	for (i = 0; hide_strings[i] != NULL; i += 2) {
+	    if (strncmp(line, hide_strings[i], strlen(hide_strings[i])) == 0) {
+		*hiding = i;			/* start hiding */
+		return 1;			/* and hide this line */
+	    }
+	}
+	return 0;				/* don't hide this line */
+    } else if (*hiding > HIDE_UNSTARTED) {	/* hiding something */
+	if (strncmp(line, hide_strings[*hiding + 1],
+		    strlen(hide_strings[*hiding + 1])) == 0) {
+	    *hiding = HIDE_DISABLED;		/* stop hiding */
+	    return 1;				/* but hide the last line */
+	}
+	return 1;				/* we are hiding, so do it */
+    }
+#if 0
+    /* XXX */
+    /* no match, the action depends on the state stored in *hiding */
+    if (*hiding > HIDE_UNSTARTED)
+	return 1;
+    else
+#endif
+	return 0;
+}
+
+/* returns a string which should be freed by the caller, or NULL */
+const char *do_query(const int sock, const char *query)
 {
     char buf[2000], *p;
     FILE *fi;
-    int i = 0, hide = hide_discl;
+    int hide = hide_discl;
+    char *referral_server = NULL;
 
     fi = fdopen(sock, "r");
     if (write(sock, query, strlen(query)) < 0)
@@ -479,39 +522,43 @@ void do_query(const int sock, const char *query)
     if (shutdown(sock, 1) < 0)
 	err_sys("shutdown");
 */
+
     while (fgets(buf, sizeof(buf), fi)) {
-	if (hide == 1) {
-	    if (strncmp(buf, hide_strings[i+1], strlen(hide_strings[i+1]))==0)
-		hide = 2;	/* stop hiding */
-	    continue;		/* hide this line */
-	}
-	if (hide == 0) {
-	    for (i = 0; hide_strings[i] != NULL; i += 2) {
-		if (strncmp(buf, hide_strings[i], strlen(hide_strings[i]))==0){
-		    hide = 1;	/* start hiding */
-		    break;
-		}
-	    }
-	    if (hide == 1)
-		continue;	/* hide the first line */
-	}
-#ifdef EXT_6BONE
-	/* % referto: whois -h whois.arin.net -p 43 as 1 */
-	if (strncmp(buf, "% referto:", 10) == 0) {
+	/* 6bone-style referral:
+	 * % referto: whois -h whois.arin.net -p 43 as 1
+	 */
+	if (!referral_server && strncmp(buf, "% referto:", 10) == 0) {
 	    char nh[256], np[16], nq[1024];
 
 	    if (sscanf(buf, REFERTO_FORMAT, nh, np, nq) == 3) {
-		int fd;
-
-		if (verb)
-		    printf(_("Detected referral to %s on %s.\n"), nq, nh);
-		strcat(nq, "\r\n");
-		fd = openconn(nh, np);
-		do_query(fd, nq);
-		continue;
+		/* XXX we are ignoring the new query string */
+		referral_server = malloc(300);
+		sprintf(referral_server, "%s:%s", nh, np);
 	    }
 	}
-#endif
+
+	/* ARIN referrals:
+	 * ReferralServer: rwhois://rwhois.fuse.net:4321/
+	 * ReferralServer: whois://whois.ripe.net
+	 */
+	if (!referral_server && strncmp(buf, "ReferralServer:", 15) == 0) {
+	    char *q;
+
+	    q = strstr(buf, "rwhois://");
+	    if ((q = strstr(buf, "rwhois://")))
+		referral_server = strdup(q + 9);
+	    else if ((q = strstr(buf, "whois://")))
+		referral_server = strdup(q + 8);
+	    if (referral_server) {
+		if ((q = strchr(referral_server, '/'))
+			|| (q = strchr(referral_server, '\n')))
+		    *q = '\0';
+	    }
+	}
+
+	if (hide_line(&hide, buf))
+	    continue;
+
 	for (p = buf; *p && *p != '\r' && *p != '\n'; p++);
 	*p = '\0';
 	fprintf(stdout, "%s\n", buf);
@@ -520,15 +567,18 @@ void do_query(const int sock, const char *query)
 	err_sys("fgets");
     fclose(fi);
 
-    if (hide == 1)
+    if (hide > HIDE_UNSTARTED)
 	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
 		   "Please upgrade this program.\n"));
+
+    return referral_server;
 }
 
 const char *query_crsnic(const int sock, const char *query)
 {
     char *temp, buf[2000], *ret = NULL;
     FILE *fi;
+    int hide = hide_discl;
     int state = 0;
 
     temp = malloc(strlen(query) + 1 + 2 + 1);
@@ -557,8 +607,8 @@ const char *query_crsnic(const int sock, const char *query)
 	}
 	/* the output must not be hidden or no data will be shown for
 	   host records and not-existing domains */
-	/* XXX feel free to send a patch to hide the long disclaimer */
-	fputs(buf, stdout);
+	if (!hide_line(&hide, buf))
+	    fputs(buf, stdout);
     }
     if (ferror(fi))
 	err_sys("fgets");
@@ -571,6 +621,7 @@ const char *query_pir(const int sock, const char *query)
 {
     char *temp, buf[2000], *ret = NULL;
     FILE *fi;
+    int hide = hide_discl;
     int state = 0;
 
     temp = malloc(strlen(query) + 5 + 2 + 1);
@@ -599,7 +650,8 @@ const char *query_pir(const int sock, const char *query)
 	    *q = '\0';
 	    state = 2;
 	}
-	fputs(buf, stdout);
+	if (!hide_line(&hide, buf))
+	    fputs(buf, stdout);
     }
     if (ferror(fi))
 	err_sys("fgets");
@@ -619,6 +671,8 @@ int openconn(const char *server, const char *port)
     struct servent *servinfo;
     struct sockaddr_in saddr;
 #endif
+
+    alarm(60);
 
 #ifdef HAVE_GETADDRINFO
     memset(&hints, 0, sizeof(struct addrinfo));
@@ -656,6 +710,13 @@ int openconn(const char *server, const char *port)
     if (connect(fd, (struct sockaddr *)&saddr, sizeof(saddr)) < 0)
 	err_sys("connect");
 #endif
+
+    /*
+     * Now we are connected and the query is supposed to complete quickly.
+     * This will help people who run whois ... | less
+     */
+    alarm(0);
+
     return fd;
 }
 
@@ -696,13 +757,29 @@ char *normalize_domain(const char *dom)
 	*p = '\0';
 
 #ifdef HAVE_LIBIDN
-    if (idna_to_ascii_from_locale(ret, &p, 0, 0) != IDNA_SUCCESS)
+    if (idna_to_ascii_lz(ret, &p, 0) != IDNA_SUCCESS) {
+	free(ret);
 	return ret;
+    }
 
     free(ret);
     ret = p;
 #endif
+
     return ret;
+}
+
+/* server and port have to be freed by the caller */
+void split_server_port(const char *const input,
+	const char **server, const char **port) {
+    char *q, *p;
+
+    *server = q = strdup(input);
+
+    for (p = q; *p && *p != ':'; *q++ = tolower(*p++));
+    if (*p == ':')
+	*port = strdup(p + 1);
+    *p = '\0';
 }
 
 char *convert_6to4(const char *s)
@@ -719,11 +796,13 @@ char *convert_6to4(const char *s)
 
 unsigned long myinet_aton(const char *s)
 {
-    int a, b, c, d;
+    unsigned long a, b, c, d;
 
     if (!s)
 	return 0;
-    if (sscanf(s, "%d.%d.%d.%d", &a, &b, &c, &d) != 4)
+    if (sscanf(s, "%lu.%lu.%lu.%lu", &a, &b, &c, &d) != 4)
+	return 0;
+    if (a > 255 || b > 255 || c > 255 || d > 255)
 	return 0;
     return (a << 24) + (b << 16) + (c << 8) + d;
 }

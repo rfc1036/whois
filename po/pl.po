@@ -1,17 +1,17 @@
 # cokolwi3k. whois.pot.
 # Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>, 1999
 # Przemys³aw Knycz <djrzulf@pld.org.pl>, 2003
-# Jakub Bogusz <qboosh@pld.org.pl>, 2003
+# Jakub Bogusz <qboosh@pld-linux.org>, 2003
 #
 # BUG: xxx
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.6.5\n"
+"Project-Id-Version: whois 4.6.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2003-12-01 18:31+0100\n"
-"PO-Revision-Date: 2003-05-10 08:40+0200\n"
-"Last-Translator: Jakub Bogusz <qboosh@pld.org.pl>\n"
+"PO-Revision-Date: 2003-12-02 20:41+0100\n"
+"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -96,6 +96,9 @@ msgid ""
 "Querying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n"
 "\n"
 msgstr ""
+"\n"
+"Pytanie o zakoñczenie IPv4 %s adresu IPv6 typu 6to4.\n"
+"\n"
 
 #: ../whois.c:249
 #, c-format

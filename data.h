@@ -40,7 +40,8 @@ const char *ripe_servers_old[] = {
 };
 
 const char *hide_strings[] = {
-    "NOTICE AND TERMS OF USE: You", "Network Solutions reserves",/* VERISIGN */
+    "NOTICE AND TERMS OF USE: You", "Network Solutions reserves",/* Verisign */
+    "NOTICE: The expiration date", "Registrars.",		/* crsnic */
     "NOTICE: Access to .ORG WHOIS", "time. By submitting",	/* org */
     "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
@@ -65,6 +66,7 @@ const char *hide_strings[] = {
     "The Data in OnlineNIC", "\tBy starting this query",	/* OnlineNIC */
     "The data in Bulkregister.com", "you agree to abide", /* bulkregister */
     "The Data in Alldomains.com's", "By submitting this query,",/*alldomains*/
+    "Interdomain's WHOIS", "DOES NOT SIGNIFY",
     NULL, NULL
 };
 
@@ -118,6 +120,7 @@ struct ip6_del ip6_assign[] = {
     { 0x1400, "whois.ripe.net" },
     { 0x1600, "whois.ripe.net" },
     { 0x1800, "whois.arin.net" },
+    { 0x1A00, "whois.ripe.net" },
     { 0, NULL }
 };
 

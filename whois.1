@@ -54,7 +54,10 @@ server becomes \fIwhois.networksolutions.com\fP.
 .P
 When querying \fIwhois.nic.mil\fP for AS numbers, the program will
 automatically convert the request in the appropriate format, inserting
-a space after the string "AS".
+a space after the string \fIAS\fP.
+.P
+When querying \fIwhois.denic.de\fP for domain names, the program will
+automatically add the flags \fI-T dn,ace -C US-ASCII\fP.
 .P
 When querying \fIwhois.corenic.net\fP, machine readable output is requested.
 .P
