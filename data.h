@@ -10,6 +10,7 @@ const char *ripe_servers[] = {
     "whois.ripe.net",
     "whois.apnic.net",
     "whois.oleane.net",
+    "whois.denic.de",
     "rr.arin.net",		/* does not accept the old syntax */
     "whois.6bone.net",		/* 3.0.0b1 */
     "whois.aunic.net",
@@ -46,14 +47,6 @@ const char *rwhois_servers[] = {
     NULL
 };
 #endif
-
-const char *gtlds[] = {
-    ".com",
-    ".net",
-    ".org",
-    ".edu",
-    NULL
-};
 
 const char *hide_strings[] = {
     "The Data in Network", "this query",

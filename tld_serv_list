@@ -20,9 +20,15 @@
 .uy.com	whois.centralnic.net
 .za.com	whois.centralnic.net
 .eu.org	whois.eu.org
+.com	CRSNIC
+.net	CRSNIC
+.org	CRSNIC
+.edu	CRSNIC
 .gov	whois.nic.gov
 .int	whois.isi.edu
 .mil	whois.nic.mil
+.info	whois.nic.info
+.biz	whois.biz.info
 .ac	whois.nic.ac
 .ad	NONE		# http://www.nic.ad
 .ae	WEB http://cc.emirates.net.ae/Customer_care/cc_card/check_domains.choose_domains/
@@ -189,7 +195,7 @@
 .nc	NONE		# http://www.orstom.nc/BASE/IRD_NOUMEA/TLD_NC/
 #.ne			# NIC? http://www.intnet.ne
 .nf	NONE		# http://www.names.nf
-.ng	pgebrehiwot.iat.cnr.it
+.ng	whois.rg.net
 .ni	WEB http://ns.ni/whois.htm
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
@@ -253,14 +259,14 @@
 .tv	NONE		# http://internet.tv
 .tw	whois.twnic.net
 .tz	NONE		# http://www.psg.com/dns/tz/
-.ua	WEB http://nic.ua.net/botik.cgi
+.ua	whois.com.ua
 .ug	NONE		# http://www.nic.ug
 .gov.uk	whois.ja.net
 .ac.uk	whois.ja.net
 .uk	whois.nic.uk
 .um	whois.isi.edu	# not checked
 .fed.us	whois.nic.gov
-.us	whois.isi.edu
+.us	nii.isi.edu
 .com.uy	WEB http://dns.antel.net.uy/clientes/consultar.htm
 .uy	WEB http://www.rau.edu.uy/rau/dom/reg.htm
 #.uz			# www.noc.uz (broken)
@@ -276,7 +282,10 @@
 #.ye			# NIC? www.y.net.ye
 #.yt			# NIC-FR!
 .yu	NONE		# www.nic.yu
-.za	whois.frd.ac.za
+.ac.za	whois.frd.ac.za
+.co.za	WEB whois.co.za
+.edu.za	WEB edu.za
+.za	NONE
 .zm	NONE		# http://www.zamnet.zm/siteindex/Links/JoinZamnet.htm
 .zr	NONE		# obsoleted by cd
 #.zw			# NIC? zptc.co.zw http://www.zispa.co.zw/

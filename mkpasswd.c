@@ -143,7 +143,8 @@ int main(int argc, char *argv[])
 
     if (!password) {
 	if (use_stdin) {
-	    fprintf(stderr, "Password: ");
+	    if (!isatty(STDIN_FILENO))
+		fprintf(stderr, "Password: ");
 	    password = malloc(128);
 	    if (!fgets(password, sizeof password, stdin)) {
 		perror("fgets:");

@@ -21,6 +21,8 @@ Compute the password using the \fITYPE\fP algorithm.
 .TP
 .B -s, --stdin
 Read the password from stdin instead of using \fIgetpass(3)\fP.
+If stdin is not connected to a tty then no other message than the hashed
+password is printed on stdout.
 .SH BUGS
 If the \fI--stdin\fP option is used, passwords containing some control
 characters may not be read correctly.

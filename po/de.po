@@ -1,17 +1,16 @@
-# cokolwi3k. whois.pot.
-# Micha³ 'CeFeK' Nazarewicz
-#
-# BUG: xxx
+# Abgeleitet von whois.pot.
+# Copyright (C) 2001 Simon Richter
+# Simon Richter <Simon.Richter@in.tum.de> 2001
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.4.5\n"
+"Project-Id-Version: whois 4.4.13\n"
 "POT-Creation-Date: 2001-08-26 20:47+0200\n"
-"PO-Revision-Date: 1999-12-18 14:00:00\n"
-"Last-Translator: Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>\n"
-"Language-Team: Polish <pl@li.org>\n"
+"PO-Revision-Date: 2001-07-04 15:15+01:00\n"
+"Last-Translator: Simon Richter <Simon.Richter@in.tum.de>\n"
+"Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../whois.c:100
@@ -21,10 +20,13 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
+"Version %s.\n"
+"\n"
+"Senden sie Bugreports an %s.\n"
 
 #: ../whois.c:137
 msgid "Connecting to whois.internic.net."
-msgstr "£±czenie z hostem whois.internic.net."
+msgstr "Verbinde zu whois.internic.net."
 
 #: ../whois.c:143
 #, c-format
@@ -34,27 +36,26 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Znaleziono odniesienie z InterNIC do %s.\n"
+"InterNIC verweist auf %s.\n"
 "\n"
 
 #: ../whois.c:153
 #, c-format
 msgid "Using default server %s.\n"
-msgstr "Uzywam domy¶lnego serwera %s.\n"
+msgstr "Benutze voreingestellten Server %s.\n"
 
 #: ../whois.c:156
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr ""
+msgstr "Diese TLD hat keinen whois-Server, aber eine whois-Datenbank unter"
 
 #: ../whois.c:162
-#, fuzzy
 msgid "This TLD has no whois server."
-msgstr "Nie ma serwera whois dla tej domeny."
+msgstr "Diese TLD hat keinen whois-Server."
 
 #: ../whois.c:166
 #, c-format
 msgid "Using server %s.\n"
-msgstr "U¿ywam serwera %s.\n"
+msgstr "Benutze Server %s.\n"
 
 #: ../whois.c:175
 #, c-format
@@ -62,7 +63,7 @@ msgid ""
 "Query string: \"%s\"\n"
 "\n"
 msgstr ""
-"Zapytanie: \"%s\"\n"
+"Suche nach: \"%s\"\n"
 "\n"
 
 #: ../whois.c:235
@@ -70,55 +71,58 @@ msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
 msgstr ""
-"Nie mo¿na ustaliæ, do kogo ten adres IP zosta³ oddelegowany.\n"
-"Spróbujê ARIN i mam nadziejê, ¿e siê uda..."
+"Es ließ sich nicht feststellen, wer diese IP vergeben hat.\n"
+"Versuche ARIN..."
 
 #: ../whois.c:252
 msgid "I guess it's a netblock name but I don't know where to look it up."
-msgstr "To nazwa bloku sieciowego, ale nie wiem, pod jak± nazw± szukaæ."
+msgstr ""
+"Vermutlich ist dies ein Netblock-Name, aber es gibt keinen\n"
+"voreingestellten Server."
 
 #: ../whois.c:259
 msgid "I guess it's a domain but I don't know where to look it up."
-msgstr "To nazwa domeny, ale nie wiem, gdzie jej szukaæ."
+msgstr ""
+"Vermutlich ist dies ein Domainname, aber es gibt keinen\n"
+"voreingestellten Server."
 
 #: ../whois.c:269
 msgid "Unknown AS number. Please upgrade this program."
-msgstr "Nieznany numer AS. Zainstaluj nowsz± wersjê programu."
+msgstr "Unbekannte AS-Nummer. Bitte upgraden Sie dieses Programm."
 
 #: ../whois.c:299
 msgid "Warning: RIPE flags ignored for a traditional server."
-msgstr "Uwaga: flagi RIPE s± ignorowane dla starszych serwerów."
+msgstr "Warnung: RIPE-Flags wurden ignoriert (\"traditioneller\" Server)."
 
 #: ../whois.c:363
 #, c-format
 msgid "Detected referral to %s on %s.\n"
-msgstr "Wykryto odniesienie do %s na %s.\n"
+msgstr "Verweis auf %s gefunden bei %s.\n"
 
 #: ../whois.c:380
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Katastrofa! Tekst disclaimera zosta³ zmieniony.\n"
-"¦ci±gnij nowsz± wersjê programu.\n"
+"Schwerer Fehler: Haftungsausschlusstext wurde geaendert.\n"
+"Bitte upgraden sie dieses Programm.\n"
 
 #: ../whois.c:450
 #, c-format
 msgid "Host %s not found."
-msgstr "Serwer %s nie zosta³ znaleziony."
+msgstr "Host %s nicht gefunden."
 
 #: ../whois.c:460
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: us³uga nieznana"
+msgstr "%s/tcp: unbekannter Dienst"
 
 #: ../whois.c:477
 #, c-format
 msgid "Interrupted by signal %d..."
-msgstr "Przerwanie na sygna³ %d..."
+msgstr "Erhielt Signal %d, unterbrochen..."
 
 #: ../whois.c:520
-#, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -151,23 +155,33 @@ msgid ""
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
-"U¿ycie: whois [OPCJA]... OBIEKT...\n"
+"Aufruf: whois [OPTION]... OBJEKT...\n"
 "\n"
-"-a                     przeszukuje wszystkie bazy danych\n"
-"-F                     szybki wydruk raw (wymusza u¿ycie -r)\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-h HOST                ³±czy z serwerem HOST\n"
-"-i ATTR[,ATTR]...      wykonuje odwrotne szukanie ATTRybutów\n"
-"-r                     wy³±cza przeszukiwanie rekursywne\n"
-"-p PORT                ³±czy z portem PORT\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-S                     tell server to leave out syntactic sugar\n"
-"-s SOURCE[,SOURCE]...  przeszukuje baze danych ze ¬RÓD£A\n"
-"-T TYPE[,TYPE]...      szuka tylko obiektów TYPE\n"
-"-t TYPE                requests template for object of TYPE ('all' for a\t\t"
-"\tlist)\n"
-"-v TYPE                requests verbose template for object of TYPE\n"
-"-V                     wyja¶nia, co siê dzieje\n"
-"\n"
-"Wersja %s. Informacje o b³êdach kieruj do %s. T³umaczenie: cefek.\n"
+"-a                     alle Datenbanken durchsuchen\n"
+"-F                     \"schnelle\" Rohdatenausgabe (impliziert -r)\n"
+"-g QUELLE:BEGINN-ENDE  zeige Aenderungen auf QUELLE von BEGINN bis ENDE\n"
+"-h HOST                Verbinde zum Server HOST\n"
+"-H                     Haftungsausschluss nicht anzeigen\n"
+"-i ATTR[,ATTR]...      angegebene ATTRibute rückauflösen\n"
+"-x                     exakte Suche [nur RPSL]\n"
+"-l                     eine Ebene unspezifischere Suche [nur RPSL]\n"
+"-L                     suche unspezifischere Treffer\n"
+"-M                     suche spezifischere Treffer\n"
+"-m                     eine Ebene spezifischere Suche\n"
+"-r                     keine Rückwärtsauflösung\n"
+"-p PORT                verbinde zu PORT\n"
+"-R                     zeige lokale Kopie des Domainobjekts, auch wenn es\n"
+"                       einen Verweis enthält\n"
+"-S                     erlaube dem Server, \"syntaktischen Zucker\" \n"
+"                       wegzulassen\n"
+"-s QUELLE[,QUELLE]...  suche in der Datenbank von QUELLE\n"
+"-T TYP[,TYP]...        suche nur nach Objekten vom Typ TYP\n"
+"-t TYP                 fordere Formular für Typ TYP an (\"all\" für eine \n"
+"                       Liste)-v TYP                 fordere ausführliches "
+"Formular für Typ TYP an\n"
+"-q [version|quellen]   frage nach angegebener Server-Information [nur RPSL]\n"
+"-d                     zeige auch DNS-Rückübertragungsobjekte [nur RPSL]\n"
+"-K                     zeige nur Primärschlüssel [nur RPSL]\n"
+"-V    --verbose        erkläre, was getan wird\n"
+"      --help           zeige diese Hilfe\n"
+"      --version        zeige Version\n"

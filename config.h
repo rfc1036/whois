@@ -1,6 +1,6 @@
 /* Program version */
 /* not for the inetutils version */
-#define VERSION "4.5.7"
+#define VERSION "4.5.8"
 
 /* Configurable features */
 
@@ -20,6 +20,12 @@
 # if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
 #  define HAVE_GETADDRINFO
 # endif
+#endif
+
+/* needs unistd.h */
+#ifdef _ISO_CPP_14882_1998
+/* Solaris 8 and better. What else? */
+# define HAVE_GETADDRINFO
 #endif
 
 /* system features */

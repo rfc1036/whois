@@ -1,3 +1,17 @@
+whois (4.5.8) unstable; urgency=low
+
+  * Use a bigger internal buffer to parse server output (Closes: #109919).
+  * Added german translation (Closes: #103480).
+  * Added support for domains like eu.org and uk.com.
+  * Fixed non-ASCII locales.
+  * Added another DDN AS block, .info and .biz servers.
+  * Updated .au netblocks data, .ng, .ua and .za TLD servers.
+  * When mkpasswd output is redirected to a file only the hashed password
+    is printed.
+  * Made some cosmetic changes for solaris.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 26 Aug 2001 16:46:23 +0200
+
 whois (4.5.7) unstable; urgency=low
 
   * Added -nicat and -il NIC handles (Closes: #94465).

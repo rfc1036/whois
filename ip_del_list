@@ -8,6 +8,7 @@
 80.0.0.0/7	ripe
 0.0.0.0/2	arin	# all other A classes are managed by ARIN
 ## The B class space is a mess :-( - something could still be missing
+## I add here only netblocks split among customers in the RIPE DB.
 139.20.0.0/14	ripe
 139.24.0.0/14	ripe
 139.28.0.0/15	ripe
@@ -62,6 +63,9 @@
 200.20.0.0/16	whois.nic.br
 200.128.0.0/9	whois.nic.br
 200.0.0.0/7	arin
+# 203.0.0.0/10 has been moved from aunic to apnic, but the records in
+# the telstra database appears to be more detailed.
+# See http://www.apnic.net/db/aunic/ for details.
 203.27.128.0/18	telstra
 203.35.0.0/16	telstra
 203.36.0.0/14	telstra
@@ -72,7 +76,7 @@
 203.58.128.0/17	telstra
 203.58.32.0/19	telstra
 203.58.64.0/19	telstra
-203.0.0.0/10	aunic
+203.0.0.0/10	apnic
 202.11.0.0/16	whois.nic.ad.jp
 202.13.0.0/16	whois.nic.ad.jp
 202.15.0.0/16	whois.nic.ad.jp

@@ -9,11 +9,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 #include "config.h"
 #ifdef HAVE_GETOPT_LONG
 #include <getopt.h>
 #endif
-#include <unistd.h>
 #include <string.h>
 #include <ctype.h>
 #include <sys/types.h>
@@ -43,8 +43,12 @@ static struct option longopts[] = {
     {"verbose",	no_argument,		NULL, 'V'},
     {"server",	required_argument,	NULL, 'h'},
     {"host",	required_argument,	NULL, 'h'},
+    {"port",	required_argument,	NULL, 'p'},
     {NULL,	0,			NULL, 0  }
 };
+#else
+extern char *optarg;
+extern int optind;
 #endif
 
 int main(int argc, char *argv[])
@@ -52,11 +56,9 @@ int main(int argc, char *argv[])
     int ch, nopar = 0;
     const char *server = NULL, *port = NULL;
     char *p, *q, *qstring, fstring[64] = "\0";
-    extern char *optarg;
-    extern int optind;
 
 #ifdef ENABLE_NLS
-    setlocale(LC_MESSAGES, "");
+    setlocale(LC_ALL, "");
     bindtextdomain(NLS_CAT_NAME, LOCALEDIR);
     textdomain(NLS_CAT_NAME);
 #endif
@@ -131,17 +133,6 @@ int main(int argc, char *argv[])
 	}
     }
 
-    if (!server && domfind(qstring, gtlds)) {
-	if (verb)
-	    puts(_("Connecting to whois.internic.net."));
-	sockfd = openconn("whois.internic.net", NULL);
-	server = query_crsnic(sockfd, qstring);
-	closeconn(sockfd);
-	if (!server)
-	    exit(0);
-	printf(_("\nFound InterNIC referral to %s.\n\n"), server);
-    }
-
     if (!server) {
 	server = whichwhois(qstring);
 	switch (server[0]) {
@@ -160,6 +151,16 @@ int main(int argc, char *argv[])
 	    case 3:
 		puts(_("This TLD has no whois server."));
 		exit(0);
+	    case 4:
+		if (verb)
+		    puts(_("Connecting to whois.internic.net."));
+		sockfd = openconn("whois.internic.net", NULL);
+		server = query_crsnic(sockfd, qstring);
+		closeconn(sockfd);
+		if (!server)
+		    exit(0);
+		printf(_("\nFound InterNIC referral to %s.\n\n"), server);
+		break;
 	    default:
 		if (verb)
 		    printf(_("Using server %s.\n"), server);
@@ -323,18 +324,18 @@ char *queryformat(const char *server, const char *flags, const char *query)
 
 void do_query(const int sock, const char *query)
 {
-    char buf[200], *p;
+    char buf[2000], *p;
     FILE *fi;
     int i = 0, hide = hide_discl;
 
     fi = fdopen(sock, "r");
     if (write(sock, query, strlen(query)) < 0)
 	err_sys("write");
-/* It has been reported this call breaks the client in some situations. Why?
+/* Using shutdown breaks the buggy RIPE server.
     if (shutdown(sock, 1) < 0)
 	err_sys("shutdown");
 */
-    while (fgets(buf, 200, fi)) {	/* XXX errors? */
+    while (fgets(buf, sizeof(buf), fi)) {
 	if (hide == 1) {
 	    if (strncmp(buf, hide_strings[i+1], strlen(hide_strings[i+1]))==0)
 		hide = 2;	/* stop hiding */
@@ -382,7 +383,7 @@ void do_query(const int sock, const char *query)
 
 const char *query_crsnic(const int sock, const char *query)
 {
-    char *temp, buf[100], *ret = NULL;
+    char *temp, buf[2000], *ret = NULL;
     FILE *fi;
 
     temp = malloc(strlen(query) + 1 + 2 + 1);
@@ -393,7 +394,7 @@ const char *query_crsnic(const int sock, const char *query)
     fi = fdopen(sock, "r");
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
-    while (fgets(buf, 100, fi)) {
+    while (fgets(buf, sizeof(buf), fi)) {
 	/* If there are multiple matches only the server of the first record
 	   is queried */
 	if (strncmp(buf, "   Whois Server:", 16) == 0 && !ret) {
@@ -436,7 +437,7 @@ int openconn(const char *server, const char *port)
     for (ressave = res; res; res = res->ai_next) {
 	if ((fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol))<0)
 	    continue;		/* ignore */
-	if (connect(fd, res->ai_addr, res->ai_addrlen) == 0)
+	if (connect(fd, (struct sockaddr *)res->ai_addr, res->ai_addrlen) == 0)
 	    break;		/* success */
 	close(fd);
     }
@@ -459,7 +460,7 @@ int openconn(const char *server, const char *port)
 	    err_quit(_("%s/tcp: unknown service"), port);
 	saddr.sin_port = servinfo->s_port;
     }
-    if (connect(fd, &saddr, sizeof(saddr)) < 0)
+    if (connect(fd, (struct sockaddr *)&saddr, sizeof(saddr)) < 0)
 	err_sys("connect");
 #endif
     return (fd);
@@ -488,17 +489,6 @@ int domcmp(const char *dom, const char *tld)
 	    return 1;
 	p--; q--;
     }
-    return 0;
-}
-
-/* check if dom ends with an element of tldlist[] */
-int domfind(const char *dom, const char *tldlist[])
-{
-    int i;
-
-    for (i = 0; tldlist[i]; i++)
-	if (domcmp(dom, tldlist[i]))
-	    return 1;
     return 0;
 }
 
