@@ -1,5 +1,5 @@
-# Oversatt fra whois.pot.
-# Egil Kvaleberg <egil@kvaleberg.no>, 1999.
+# cokolwi3k. whois.pot.
+# Micha³ 'CeFeK' Nazarewicz
 #
 # BUG: xxx
 #
@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: whois 4.4.5\n"
 "POT-Creation-Date: 2001-02-24 11:41+0100\n"
 "PO-Revision-Date: 1999-12-18 14:00:00\n"
-"Last-Translator: Egil Kvaleberg <egil@kvaleberg.no>\n"
-"Language-Team: Norwegian <no@li.org>\n"
+"Last-Translator: Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>\n"
+"Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../whois.c:99
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../whois.c:136
 msgid "Connecting to whois.internic.net."
-msgstr "Kobler opp mot whois.internic.net."
+msgstr "£±czenie z hostem whois.internic.net."
 
 #: ../whois.c:142
 #, c-format
@@ -34,26 +34,27 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Fant InterNIC-referanse til %s.\n"
+"Znaleziono odniesienie z InterNIC do %s.\n"
 "\n"
 
 #: ../whois.c:152
 #, c-format
 msgid "Using default server %s.\n"
-msgstr "Bruker standardtjener %s.\n"
+msgstr "Uzywam domy¶lnego serwera %s.\n"
 
 #: ../whois.c:155
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 
 #: ../whois.c:161
+#, fuzzy
 msgid "This TLD has no whois server."
-msgstr ""
+msgstr "Nie ma serwera whois dla tej domeny."
 
 #: ../whois.c:165
 #, c-format
 msgid "Using server %s.\n"
-msgstr "Bruker tjener %s.\n"
+msgstr "U¿ywam serwera %s.\n"
 
 #: ../whois.c:174
 #, c-format
@@ -61,7 +62,7 @@ msgid ""
 "Query string: \"%s\"\n"
 "\n"
 msgstr ""
-"Forespørsel: \"%s\"\n"
+"Zapytanie: \"%s\"\n"
 "\n"
 
 #: ../whois.c:234
@@ -69,53 +70,52 @@ msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
 msgstr ""
-"Vet ikke hvor denne IP-adressen har blitt delegert.\n"
-"Prøver ARIN og håper det beste..."
+"Nie mo¿na ustaliæ, do kogo ten adres IP zosta³ oddelegowany.\n"
+"Spróbujê ARIN i mam nadziejê, ¿e siê uda..."
 
 #: ../whois.c:251
 msgid "I guess it's a netblock name but I don't know where to look it up."
-msgstr "Gjetter at det er et netblock-navn, men vet ikke hvor det finnes."
+msgstr "To nazwa bloku sieciowego, ale nie wiem, pod jak± nazw± szukaæ."
 
 #: ../whois.c:258
 msgid "I guess it's a domain but I don't know where to look it up."
-msgstr "Gjetter at det er er domene, men vet ikke hvor det finnes."
+msgstr "To nazwa domeny, ale nie wiem, gdzie jej szukaæ."
 
 #: ../whois.c:268
 msgid "Unknown AS number. Please upgrade this program."
-msgstr "Ukjent AS-nummer. Vennligst oppdater programmet."
+msgstr "Nieznany numer AS. Zainstaluj nowsz± wersjê programu."
 
 #: ../whois.c:298
 msgid "Warning: RIPE flags ignored for a traditional server."
-msgstr "Merk: RIPE-flaggene ignoreres for en tradisjonell tjener."
+msgstr "Uwaga: flagi RIPE s± ignorowane dla starszych serwerów."
 
 #: ../whois.c:362
 #, c-format
 msgid "Detected referral to %s on %s.\n"
-msgstr "Referanse til %s vedrørende %s.\n"
+msgstr "Wykryto odniesienie do %s na %s.\n"
 
 #: ../whois.c:379
-#, fuzzy
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Alvorlig feil: INTERNIC har endret standardtekst.\n"
-"Vennligst oppdater programmet.\n"
+"Katastrofa! Tekst disclaimera zosta³ zmieniony.\n"
+"¦ci±gnij nowsz± wersjê programu.\n"
 
 #: ../whois.c:450
 #, c-format
 msgid "Host %s not found."
-msgstr "Finner ikke verten %s."
+msgstr "Serwer %s nie zosta³ znaleziony."
 
 #: ../whois.c:460
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: ukjent port"
+msgstr "%s/tcp: us³uga nieznana"
 
 #: ../whois.c:477
 #, c-format
 msgid "Interrupted by signal %d..."
-msgstr "Avbrudt av signal %d..."
+msgstr "Przerwanie na sygna³ %d..."
 
 #: ../whois.c:520
 #, fuzzy
@@ -151,26 +151,23 @@ msgid ""
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
-"Bruk: whois [OPSJONER]... OBJEKTER...\n"
+"U¿ycie: whois [OPCJA]... OBIEKT...\n"
 "\n"
-"-a                     søk i alle databaser\n"
-"-F                     full utskrift (impliserer -r)\n"
-"-g KILDE:FØRSTE-SISTE  finn oppdateringer fra KILDE fra serie FØRSTE til "
-"SISTE\n"
-"-h VERT                koble til tjener VERT\n"
-"-i ATTR[,ATTR]...      gjør reversoppslag for attributtene ATTR\n"
-"-L                     finn alle mindre spesifike treff\n"
-"-M                     finn alle mer spesifike treff\n"
-"-m                     finn første nivå av mer spesifike treff\n"
-"-r                     ikke foreta rekursive oppslag\n"
-"-p PORT                koble til PORT\n"
-"-R                     vis lokal kopi av objektet selv om det inneholder\n"
-"                       en referanse\n"
-"-S                     be tjeneren utelate syntaktisk \"sukker\"\n"
-"-s KILDE[,KILDE]...    søk i databasen fra KILDE\n"
-"-T TYPE[,TYPE]...      se bare på objekttype TYPE\n"
-"-t TYPE                be om mal for objekttype TYPE ('all' gir en liste)\n"
-"-v TYPE                be om utførlig mal for objekttype TYPE\n"
-"-V                     forklarer hva som skjer\n"
+"-a                     przeszukuje wszystkie bazy danych\n"
+"-F                     szybki wydruk raw (wymusza u¿ycie -r)\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-h HOST                ³±czy z serwerem HOST\n"
+"-i ATTR[,ATTR]...      wykonuje odwrotne szukanie ATTRybutów\n"
+"-r                     wy³±cza przeszukiwanie rekursywne\n"
+"-p PORT                ³±czy z portem PORT\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-S                     tell server to leave out syntactic sugar\n"
+"-s SOURCE[,SOURCE]...  przeszukuje baze danych ze ¬RÓD£A\n"
+"-T TYPE[,TYPE]...      szuka tylko obiektów TYPE\n"
+"-t TYPE                requests template for object of TYPE ('all' for "
+"a\t\t\tlist)\n"
+"-v TYPE                requests verbose template for object of TYPE\n"
+"-V                     wyja¶nia, co siê dzieje\n"
 "\n"
-"Versjon %s. Rapporter feil til %s.\n"
+"Wersja %s. Informacje o b³êdach kieruj do %s. T³umaczenie: cefek.\n"

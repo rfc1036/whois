@@ -42,6 +42,9 @@ clean:
 test:
 	open -- sh -c "while nc -l -p 43 127.0.0.1; do echo END; done"
 
+gnu:
+	tar czvvf gnu-whois.tgz Makefile* README TODO *list *.h whois.*
+
 pos:
 	cd po && $(MAKE)
 

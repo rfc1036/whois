@@ -1,0 +1,193 @@
+# Greek translation of the whois command.
+# Copyright (C) 1999-2000 Simos Xenitellis
+# Simos Xenitellis <simos@hellug.gr>\n"
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: whois 4.5.3\n"
+"POT-Creation-Date: 2001-02-24 11:41+0100\n"
+"PO-Revision-Date: 2001-02-23 16:07:57+0900\n"
+"Last-Translator: Simos Xenitellis <simos@hellug.gr>\n"
+"Language-Team: Greek <nls@tux.hellug.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-7\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../whois.c:99
+#, c-format
+msgid ""
+"Version %s.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"Έκδοση %s.\n"
+"\n"
+"Αναφέρατε σφάλματα στο %s.\n"
+
+#: ../whois.c:136
+msgid "Connecting to whois.internic.net."
+msgstr "Γίνεται σύνδεση στο whois.internic.net."
+
+#: ../whois.c:142
+#, c-format
+msgid ""
+"\n"
+"Found InterNIC referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"Βρέθηκε αναφορά από το InterNIC στο %s.\n"
+"\n"
+
+#: ../whois.c:152
+#, c-format
+msgid "Using default server %s.\n"
+msgstr "Χρήση εξ' ορισμού εξυπηρετητή %s.\n"
+
+#: ../whois.c:155
+msgid "This TLD has no whois server, but you can access the whois database at"
+msgstr ""
+"Αυτό το TLD δεν έχει εξυπηρετητή whois, ωστόσο μπορείτε να προσπελάσετε την "
+"βάση whois στο"
+
+#: ../whois.c:161
+msgid "This TLD has no whois server."
+msgstr "Αυτό το TLD δεν έχει εξυπηρετητή whois."
+
+#: ../whois.c:165
+#, c-format
+msgid "Using server %s.\n"
+msgstr "Γίνεται χρήση του εξυπηρετητή %s.\n"
+
+#: ../whois.c:174
+#, c-format
+msgid ""
+"Query string: \"%s\"\n"
+"\n"
+msgstr ""
+"Αλφαριθμητικό ερώτησης: \"%s\"\n"
+"\n"
+
+#: ../whois.c:234
+msgid ""
+"I don't know where this IP has been delegated.\n"
+"I'll try ARIN and hope for the best..."
+msgstr ""
+"Δε γνωρίζε σε ποιον έχει αποδοθεί ευθύνη για αυτήν την διεύθυνση IP.\n"
+"Θα δοκιμάσω το ARIN και εύχομε για το καλύτερο..."
+
+#: ../whois.c:251
+msgid "I guess it's a netblock name but I don't know where to look it up."
+msgstr ""
+"Πιστεύω ότι είναι όνομα μπλοκ δικτύου αλλά δε γνωρίζω που να το αναζητήσω."
+
+#: ../whois.c:258
+msgid "I guess it's a domain but I don't know where to look it up."
+msgstr "Πιστεύω ότι είναι ένα επίθημα αλλά δε γνωρίζω που να το αναζητήσω."
+
+#: ../whois.c:268
+msgid "Unknown AS number. Please upgrade this program."
+msgstr "¶γνωστος αριθμός AS. Παρακαλώ ενημερώστε αυτό το πρόγραμμα."
+
+#: ../whois.c:298
+msgid "Warning: RIPE flags ignored for a traditional server."
+msgstr ""
+"Προειδοποίηση: Η σημαίες του RIPE αγνοούνται σε έναν παραδοσιακό εξυπηρετητή."
+
+#: ../whois.c:362
+#, c-format
+msgid "Detected referral to %s on %s.\n"
+msgstr "Ανιχνεύθηκε αναφορά του %s στο %s.\n"
+
+#: ../whois.c:379
+msgid ""
+"Catastrophic error: disclaimer text has been changed.\n"
+"Please upgrade this program.\n"
+msgstr ""
+"Καταστροφικό σφάλμα: το κείμενο της αποποίησης ευθυνών έχει τροποποιηθεί.\n"
+"Παρακαλώ αναβαθμίστε το πρόγραμμα.\n"
+
+#: ../whois.c:450
+#, c-format
+msgid "Host %s not found."
+msgstr "Το σύστημα %s δε βρέθηκε."
+
+#: ../whois.c:460
+#, c-format
+msgid "%s/tcp: unknown service"
+msgstr "%s/tcp: άγνωστη υπηρεσία"
+
+#: ../whois.c:477
+#, c-format
+msgid "Interrupted by signal %d..."
+msgstr "Διακοπή από το σήμα %d..."
+
+#: ../whois.c:520
+msgid ""
+"Usage: whois [OPTION]... OBJECT...\n"
+"\n"
+"-a                     search all databases\n"
+"-F                     fast raw output (implies -r)\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-h HOST                connect to server HOST\n"
+"-H                     hide legal disclaimers\n"
+"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+"-x                     exact match [RPSL only]\n"
+"-l                     one level less specific lookup [RPSL only]\n"
+"-L                     find all Less specific matches\n"
+"-M                     find all More specific matches\n"
+"-m                     find first level more specific matches\n"
+"-r                     turn off recursive lookups\n"
+"-p PORT                connect to PORT\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-S                     tell server to leave out syntactic sugar\n"
+"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-t TYPE                request template for object of TYPE ('all' for a "
+"list)\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources]   query specified server info [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL "
+"only]\n"
+"-K                     only primary keys are returned [RPSL only\n"
+"-V    --verbose        explain what is being done\n"
+"      --help           display this help and exit\n"
+"      --version        output version information and exit\n"
+msgstr ""
+"Uso: whois [ΕΠΙΛΟΓΈΣ]... ΑΝΤΙΚΕΊΜΕΝΟ...\n"
+"\n"
+"-a                     αναζήτηση σε όλες τις βάσεις δεδομένων\n"
+"-F                     γρήγορη ακατέργαστη έξοδος (υπονοεί -r)\n"
+"-g ΠΗΓΉ:ΠΡΏΤΟ:ΤΕΛΕΥΤΑΊΟ   πρώτα αναβαθμίζει από την ΠΗΓΉ από το σειριακό     "
+"                     ΠΡΏΤΟ ως ΤΕΛΕΥΤΑΊΟ\n"
+"-h ΣΎΣΤΗΜΑ             σύνδεση στον εξυπηρετητή ΣΎΣΤΗΜΑ\n"
+"-H                     απόκρυψη του νομικού εγγράφου αποποίησης ευθύνης\n"
+"-i ΧΑΡΑΚ[,ΧΑΡΑΚ]...    να γίνει μια αντίστροφη αναζήτηση για το καθορισμένα  "
+"                        ΧΑΡΑΚτηριστικά\n"
+"-x                     ακριβές ταίριασμα [μόνο RPSL]\n"
+"-l                     ένα επίπεδο λιγότερο συγκεκριμένη αναζήτηση [μόνο "
+"RPSL]\n"
+"-L                     εύρεση όλων των Λιγότερο συγκεκριμένων ταιριασμάτων\n"
+"-M                     εύρεση όλων των Περισσότερο συγκεκριμένων             "
+"             ταιριασμάτων\n"
+"-m                     εύρεση όλων των πρώτου επιπέδου περισσότερο           "
+"               συγκεκριμένων ταιριασμάτων\n"
+"-r                     απενεργοποίηση των αναδρομικών αναζητήσεων\n"
+"-p ΘΎΡΑ                σύνδεση στη ΘΎΡΑ\n"
+"-R                     επιβολή εμφάνισης τοπικού αντιγράφου του αντικειμένου "
+"                         επιθήματος ακόμα και αν περιέχει αναφορές\n"
+"-S                     πες στον εξυπηρετητή να αποφύγει τη συντακτική        "
+"                  ζάχαρη\n"
+"-s ΠΗΓΉ[,ΠΗΓΉ]...      αναζήτηση στη βάση από την ΠΗΓΉ\n"
+"-T ΕΊΔΟΣ[,ΕΊΔΟΣ]...    αναζήτηση μόνο αντικειμένου του ΕΊΔΟΥΣ\n"
+"-t ΕΊΔΟΣ               αναζητά ένα πρότυπο για το αντικείμενο του ΕΊΔΟΥΣ     "
+"                     ('all' για για εμφάνιση λίστας)\n"
+"-v ΕΊΔΟΣ               αναζητά περιφραστικό πρότυπο για το αντικείμενο του   "
+"                       ΕΊΔΟΥΣ\n"
+"-d                     επιστροφή και των αντιστρόφων αντικειμένων DNS\n"
+"                         απόδοσης ευθύνης [μόνο RPSL]\n"
+"-K                     επιστροφή μόνο των πρωταρχικών κλειδιών [μόνο RPSL]\n"
+"-V  --verbose          εξήγηση του τί συμβαίνει\n"
+"    --help             εμφάνιση αυτής της βοήθειας και έξοδος\n"
+"    --version          εμφάνιση της έκδοσης και έξοδος\n"

@@ -5,7 +5,7 @@ whois \- client for the whois directory service
 .B whois
 [\~\fB-h\fP\~\fIHOST\fP\~]
 [\~\fB-p\fP\~ \fIPORT\fP\~]
-[\~\fB-aCFLMmrRSV\fP\~]
+[\~\fB-aCFHlLMmrRSVx\fP\~]
 [\~\fB-g\fP\~\fISOURCE:FIRST-LAST\fP\~]
 [\~\fB-i\fP\~\fIATTR\fP\~]
 [\~\fB-S\fP\~\fISOURCE\fP\~]
@@ -15,8 +15,10 @@ whois \- client for the whois directory service
 .B whois
 [\~\fI-t\fP\~]
 [\~\fI-v\fP\~]
-[\~\fI-i\fP\~]
 .I template
+.B whois
+[\~\fI-q\fP\~]
+.I keyword
 .PP
 .SH DESCRIPTION
 \fBwhois\fP searches for an object in a \fIRFC-812\fP database.
@@ -38,25 +40,19 @@ Do not display the legal disclaimers some registries like to show you.
 .TP 8
 .B \-p PORT
 Connect to PORT.
-.\" .TP 8
-.\" .B \-C
-.\" First query \fIwhois.internic.net\fP to find the registrar for a GTLD subdomain.
-.\" This option overrides \fB-h\fP.
 .TP 8
 .B \-V
 Be verbose.
 .TP 8
 Other options are flags understood by RIPE-like servers.
 .SH NOTES
-.\" The default server for gTLDs is \fIwhois.networksolutions.com\fP.
-.\" Unless the \fB-C\fP option is used the CRSNIC shared whois server is
-.\" \fBnot\fP queried and domains registered by other registrars will be
-.\" reported as unknown.
-.\" .P
 Please remember that \fIwhois.networksolutions.com\fP by default will
 only search in the domains database. If you want to search for hostnames,
 NIC handles or people names you have to prepend the appropriate keyword
 (\fIHO\fPst, \fIHA\fPndle or \fINA\fPme).
+.P
+If the \fI!\fP character is prepended to a NIC handle, the default
+server becomes \fIwhois.networksolutions.com\fP.
 .P
 When querying \fIwhois.arin.net\fP for AS numbers, the program will
 automatically convert the request in the appropriate format, inserting
@@ -76,8 +72,11 @@ When querying \fIwhois.nic.ad.jp\fP english text is requested unless the
 This server will be queried if the program cannot guess where the object
 is located. If the variable does not exist then
 \fIwhois.internic.net\fP will be queried.
+.IP "WHOIS_HIDE"
+If this variable is defined, legal disclaimers will be hidden even if
+the \fI-H\fP flag is not used.
 .SH "SEE ALSO"
-\fIRFC 812:\fP NICNAME/WHOIS
+\fIRFC 812\fP: NICNAME/WHOIS
 .PP
 \fIRIPE-157\fP, \fIRIPE-189\fP: RIPE NCC Database Documentation
 .PP

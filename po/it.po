@@ -5,19 +5,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.13\n"
-"POT-Creation-Date: 2000-05-03 01:25+0200\n"
-"PO-Revision-Date: 1999-10-26 12:19+02:00\n"
+"POT-Creation-Date: 2001-02-24 11:41+0100\n"
+"PO-Revision-Date: 2001-02-24 11:43+01:00\n"
 "Last-Translator: Marco d'Itri <md@linux.it>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:108
+#: ../whois.c:99
+#, c-format
+msgid ""
+"Version %s.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"Versione %s.\n"
+"\n"
+"Segnalare i bug a %s.\n"
+
+#: ../whois.c:136
 msgid "Connecting to whois.internic.net."
 msgstr "Mi sto connettendo a whois.internic.net."
 
-#: ../whois.c:114
+#: ../whois.c:142
 #, c-format
 msgid ""
 "\n"
@@ -28,27 +39,26 @@ msgstr ""
 "Trovato un riferimento di InterNIC a %s.\n"
 "\n"
 
-#: ../whois.c:122
+#: ../whois.c:152
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Uso il server predefinito %s.\n"
 
-#: ../whois.c:124
-msgid ""
-"This domain has no whois server, but you can access the whois database at"
+#: ../whois.c:155
+msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
-"Questo dominio non ha un server whois, ma si può accedere al database tramite"
+"Questo TLD non ha un server whois, ma si può accedere al database tramite"
 
-#: ../whois.c:132
-msgid "This domain has no whois server."
-msgstr "Per questo dominio non esiste un server whois."
+#: ../whois.c:161
+msgid "This TLD has no whois server."
+msgstr "Per questo TLD non esiste un server whois."
 
-#: ../whois.c:135
+#: ../whois.c:165
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Uso il server %s.\n"
 
-#: ../whois.c:140
+#: ../whois.c:174
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -57,7 +67,7 @@ msgstr ""
 "Richiesta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:188
+#: ../whois.c:234
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
@@ -65,28 +75,28 @@ msgstr ""
 "Non so a chi è stato delegato questo IP.\n"
 "Proverò con ARIN sperando per il meglio..."
 
-#: ../whois.c:206
+#: ../whois.c:251
 msgid "I guess it's a netblock name but I don't know where to look it up."
 msgstr "Credo che sia il nome di un netblock ma non so dove cercarlo."
 
-#: ../whois.c:213
+#: ../whois.c:258
 msgid "I guess it's a domain but I don't know where to look it up."
 msgstr "Credo che sia un dominio ma non so dove cercarlo."
 
-#: ../whois.c:223
+#: ../whois.c:268
 msgid "Unknown AS number. Please upgrade this program."
 msgstr "Numero dell'AS sconosciuto. Per favore aggiorna il programma."
 
-#: ../whois.c:253
+#: ../whois.c:298
 msgid "Warning: RIPE flags ignored for a traditional server."
 msgstr "Attenzione: i flag RIPE sono ignorati dai server tradizionali."
 
-#: ../whois.c:317
+#: ../whois.c:362
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Trovato un riferimento a %s su %s.\n"
 
-#: ../whois.c:333
+#: ../whois.c:379
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -94,23 +104,22 @@ msgstr ""
 "Errore catastrofico: il testo di avvertenze è cambiato.\n"
 "Aggiorna questo programma.\n"
 
-#: ../whois.c:405
+#: ../whois.c:450
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s non trovato."
 
-#: ../whois.c:415
+#: ../whois.c:460
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servizio sconosciuto"
 
-#: ../whois.c:432
+#: ../whois.c:477
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrotto dal segnale %d..."
 
-#: ../whois.c:475
-#, c-format
+#: ../whois.c:520
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -120,6 +129,8 @@ msgid ""
 "-h HOST                connect to server HOST\n"
 "-H                     hide legal disclaimers\n"
 "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+"-x                     exact match [RPSL only]\n"
+"-l                     one level less specific lookup [RPSL only]\n"
 "-L                     find all Less specific matches\n"
 "-M                     find all More specific matches\n"
 "-m                     find first level more specific matches\n"
@@ -130,35 +141,46 @@ msgid ""
 "-S                     tell server to leave out syntactic sugar\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-t TYPE                requests template for object of TYPE ('all' for a "
+"-t TYPE                request template for object of TYPE ('all' for a "
 "list)\n"
-"-v TYPE                requests verbose template for object of TYPE\n"
-"-V                     explain what is being done\n"
-"\n"
-"Version %s. Please report bugs to %s.\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources]   query specified server info [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL "
+"only]\n"
+"-K                     only primary keys are returned [RPSL only\n"
+"-V    --verbose        explain what is being done\n"
+"      --help           display this help and exit\n"
+"      --version        output version information and exit\n"
 msgstr ""
 "Uso: whois [OPZIONE]... OGGETTO...\n"
 "\n"
-"-a                     cerca tutti i database\n"
-"-F                     output grezzo veloce (implica -r)\n"
-"-g SOURCE:FIRST-LAST   trova gli aggiornamenti di SOURCE dal seriale F a L\n"
-"-h HOST                si connette al server HOST\n"
-"-H                     nasconde le avvertenze legali\n"
-"-i ATTR[,ATTR]...      fa una ricerca inversa per l'ATTRibuto specificato\n"
-"-L                     trova le corrispondenze meno specifiche\n"
-"-M                     trova le corrispondenze più specifiche\n"
-"-m                     trova le corrispondenze di primo livello più "
-"specifiche\n"
-"-r                     disabilita le ricerche ricorsive\n"
-"-p PORTA               si connette alla PORTA\n"
-"-R                     mostra la copia locale dell'oggetto domain anche se\n"
-"                       contiene un riferimento\n"
-"-S                     dice al server di non usare lo zucchero sintattico\n"
+"-a                 cerca in tutti i database\n"
+"-F                 output grezzo veloce (implica -r)\n"
+"-g SOURCE:FIRST-LAST  trova gli aggiornamenti di SOURCE dal seriale F a L\n"
+"-h HOST            si connette al server HOST\n"
+"-H                 nasconde le avvertenze legali\n"
+"-i ATTR[,ATTR]...  fa una ricerca inversa per l'ATTRibuto specificato\n"
+"-x                 trova le corrispondenze esatte [solo RPSL]\n"
+"-l                 trova le corrispondenze un livello meno specifiche "
+"[RPSL]\n"
+"-L                 trova le corrispondenze meno specifiche\n"
+"-M                 trova le corrispondenze più specifiche\n"
+"-m                 trova le corrispondenze di primo livello più specifiche\n"
+"-r                 disabilita le ricerche ricorsive\n"
+"-p PORTA           si connette alla PORTA\n"
+"-R                 mostra la copia locale dell'oggetto domain anche se\n"
+"                   contiene un riferimento\n"
+"-S                 dice al server di non usare zucchero sintattico\n"
 "-s SOURCE[,SOURCE]...  cerca il database da SOURCE\n"
-"-T TIPO[,TIPO]...      cerca solo oggetti del TIPO\n"
-"-t TIPO       chiede il template per un oggetto del TIPO ('all' per una "
+"-T TIPO[,TIPO]...  cerca solo oggetti del TIPO\n"
+"-t TIPO        chiede il template per un oggetto del TIPO ('all' per una "
 "lista)\n"
-"-v TIPO                chiede il template prolisso per un oggetto del TIPO\n"
-"-V                     spiega cosa sta facendo\n"
-"\n"
+"-v TIPO            chiede il template prolisso per un oggetto del TIPO\n"
+"-q [version|sources]  chiede al server le informazioni indicate [solo RPSL]\n"
+"-d           restituisce anche gli oggetti per la delega inversa del DNS "
+"[RPSL]\n"
+"-K                     restituisce solo le chiavi primarie [solo RPSL]\n"
+"-V    --verbose        spiega cosa sta facendo\n"
+"      --help           mostra questo aiuto ed esce\n"
+"      --version        stampa le informazioni sulla versione ed esce\n"
 "Versione %s. Segnala i bug a %s.\n"

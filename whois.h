@@ -2,21 +2,23 @@
 #define REFERTO_FORMAT	"%% referto: whois -h %255s -p %15s %1021[^\n\r]"
 
 /* String sent to RIPE servers - ONLY FIVE CHARACTERS! */
-#define IDSTRING "Md4.4"
+/* Do *NOT* change it if you don't know what you are doing! */
+#define IDSTRING "Md4.5"
 
 /* system features */
-#ifdef linux
-# define ENABLE_NLS
-# if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
-#  define HAVE_GETADDRINFO
-# endif
-#endif
-
 #ifdef ENABLE_NLS
-# define NLS_CAT_NAME   "whois"
+# ifndef NLS_CAT_NAME
+#  define NLS_CAT_NAME   "whois"
+# endif
 # ifndef LOCALEDIR
 #  define LOCALEDIR     "/usr/share/locale"
 # endif
+#endif
+
+#ifdef HAVE_GETOPT_LONG
+# define GETOPT_LONGISH(c, v, o, l, i) getopt_long(c, v, o, l, i)
+#else
+# define GETOPT_LONGISH(c, v, o, l, i) getopt(c, v, o)
 #endif
 
 
@@ -55,6 +57,6 @@ void err_sys(const char *,...);
 
 
 /* flags for RIPE-like servers */
-const char *ripeflags="acFLmMrRS";
-const char *ripeflagsp="gisTtv";
+const char *ripeflags="acFlLmMrRSx";
+const char *ripeflagsp="gisTtvq";
 

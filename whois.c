@@ -9,6 +9,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include "config.h"
+#ifdef HAVE_GETOPT_LONG
+#include <getopt.h>
+#endif
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
@@ -20,18 +24,36 @@
 #include <signal.h>
 
 /* Application-specific */
-#include "config.h"
 #include "data.h"
 #include "whois.h"
 
 /* Global variables */
-int sockfd, verb = 0, hide_discl = 2;
+int sockfd, verb = 0;
+
+#ifdef ALWAYS_HIDE_DISCL
+int hide_discl = 0;
+#else
+int hide_discl = 2;
+#endif
+
+#ifdef HAVE_GETOPT_LONG
+static struct option longopts[] = {
+    {"help",	no_argument,		NULL, 0  },
+    {"version",	no_argument,		NULL, 1  },
+    {"verbose",	no_argument,		NULL, 'V'},
+    {"server",	required_argument,	NULL, 'h'},
+    {"host",	required_argument,	NULL, 'h'},
+    {NULL,	0,			NULL, 0  }
+};
+#endif
 
 int main(int argc, char *argv[])
 {
-    int ch, nopar = 0, optC = 0;
+    int ch, nopar = 0;
     const char *server = NULL, *port = NULL;
-    char *p, *q, *qstring = NULL, fstring[64] = "\0";
+    char *p, *q, *qstring, fstring[64] = "\0";
+    extern char *optarg;
+    extern int optind;
 
 #ifdef ENABLE_NLS
     setlocale(LC_MESSAGES, "");
@@ -39,7 +61,8 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = getopt(argc, argv, "acCFg:h:Hi:LmMp:rRs:St:T:v:V")) > 0) {
+    while ((ch = GETOPT_LONGISH(argc, argv, "acFg:h:Hi:lLmMp:q:rRs:St:T:v:Vx",
+				longopts, 0)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
 	    for (p = fstring; *p != '\0'; p++);
@@ -49,7 +72,7 @@ int main(int argc, char *argv[])
 	if (strchr(ripeflagsp, ch)) {
 	    for (p = fstring; *p != '\0'; p++);
 	    sprintf(p--, "-%c %s ", ch, optarg);
-	    if (ch == 't' || ch == 'v')
+	    if (ch == 't' || ch == 'v' || ch == 'q')
 		nopar = 1;
 	    continue;
 	}
@@ -68,12 +91,17 @@ int main(int argc, char *argv[])
 	case 'p':
 	    port = optarg;
 	    break;
-	case 'C':
-	    optC = 1;
-	    break;
 	case 'V':
 	    verb = 1;
 	    break;
+	case 1:
+#ifdef VERSION
+	    fprintf(stderr, _("Version %s.\n\nReport bugs to %s.\n"),
+		    VERSION, "<md+whois@linux.it>");
+#else
+	    fprintf(stderr, "%s %s\n", inetutils_package, inetutils_version);
+#endif
+	    exit(0);
 	default:
 	    usage();
 	}
@@ -84,15 +112,16 @@ int main(int argc, char *argv[])
     if (argc == 0 && !nopar)	/* there is no parameter */
 	usage();
 
+    /* On some systems realloc only works on non-NULL buffers */
+    qstring = malloc(1);
+    *qstring = '\0';
+
     /* parse other parameters, if any */
-    if (nopar) {
-	qstring = malloc(1);
-	*qstring = '\0';
-    } else {
+    if (!nopar) {
 	int qslen = 0;
 
 	while (1) {
-	    qslen += strlen(*argv) + 1;
+	    qslen += strlen(*argv) + 1 + 1;
 	    qstring = realloc(qstring, qslen);
 	    strcat(qstring, *argv++);
 	    if (argc == 1)
@@ -102,11 +131,7 @@ int main(int argc, char *argv[])
 	}
     }
 
-    if (!server &&
-#ifndef FIRST_ASK_INTERNIC
-	    optC &&
-#endif
-	    domfind(qstring, gtlds)) {
+    if (!server && domfind(qstring, gtlds)) {
 	if (verb)
 	    puts(_("Connecting to whois.internic.net."));
 	sockfd = openconn("whois.internic.net", NULL);
@@ -118,30 +143,35 @@ int main(int argc, char *argv[])
     }
 
     if (!server) {
-	if (!(server = whichwhois(qstring))) {
-	    if (!(server = getenv("WHOIS_SERVER")))
-		server = DEFAULTSERVER;
-	    if (verb)
-		printf(_("Using default server %s.\n"), server);
-	} else if (server[0] == '\001') {
-	    puts(_("This domain has no whois server, but you can access the "
-			"whois database at"));
-	    puts(server + 1);
-	    exit(0);
-	} else if (server[0] == '\002') {
-	    puts(server + 1);
-	    exit(0);
-	} else if (server[0] == '\003') {
-	    puts(_("This domain has no whois server."));
-	    exit(0);
-	} else if (verb)
-	    printf(_("Using server %s.\n"), server);
+	server = whichwhois(qstring);
+	switch (server[0]) {
+	    case 0:
+		if (!(server = getenv("WHOIS_SERVER")))
+		    server = DEFAULTSERVER;
+		if (verb)
+		    printf(_("Using default server %s.\n"), server);
+		break;
+	    case 1:
+		puts(_("This TLD has no whois server, but you can access the "
+			    "whois database at"));
+	    case 2:
+		puts(server + 1);
+		exit(0);
+	    case 3:
+		puts(_("This TLD has no whois server."));
+		exit(0);
+	    default:
+		if (verb)
+		    printf(_("Using server %s.\n"), server);
+	}
     }
 
+    if (getenv("WHOIS_HIDE"))
+	hide_discl = 0;
+
     p = queryformat(server, fstring, qstring);
-    if (verb) {
+    if (verb)
 	printf(_("Query string: \"%s\"\n\n"), p);
-    }
     strcat(p, "\r\n");
 
     signal(SIGTERM, sighandler);
@@ -171,9 +201,13 @@ const char *whichwhois(const char *s)
 	    return "whois.arin.net";
 	if (strncasecmp(s, "2001:6", 6) == 0)
 	    return "whois.ripe.net";
-	//if (strncasecmp(s, "3ffe", 4) == 0)
+	/* if (strncasecmp(s, "3ffe", 4) == 0) */
 	    return "whois.6bone.net";
     }
+
+    /* email address */
+    if (strchr(s, '@'))
+	return "";
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
@@ -185,8 +219,10 @@ const char *whichwhois(const char *s)
 	    return whereas(atoi(s + 2), as_assign);
 	else if (strncasecmp(p - 2, "jp", 2) == 0) /* JP NIC handle */
 	    return "whois.nic.ad.jp";
+	if (*p == '!')	/* NSI NIC handle */
+	    return "whois.networksolutions.com";
 	else /* it's a NSI NIC handle or something we don't know about */
-	    return NULL;
+	    return "";
     }
 
     /* smells like an IP? */
@@ -221,7 +257,7 @@ const char *whichwhois(const char *s)
     if (verb)
 	puts(_("I guess it's a domain but I don't know where to look it"
 	       " up."));
-    return NULL;
+    return "";
 }
 
 const char *whereas(int asn, struct as_del aslist[])
@@ -241,7 +277,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
     char *buf;
     int i, isripe = 0;
 
-    /* +10 for CORE; +2 for \r\n; +1 for NULL*/
+    /* +10 for CORE; +2 for \r\n; +1 for NULL */
     buf = malloc(strlen(flags) + strlen(query) + 10 + 2 + 1);
     *buf = '\0';
     for (i = 0; ripe_servers[i]; i++)
@@ -272,7 +308,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
     else if (!isripe && strcmp(server, "whois.corenic.net") == 0)
 	sprintf(buf, "--machine %s", query);	/* machine readable output */
     else if (!isripe && strcmp(server, "whois.ncst.ernet.in") == 0 &&
-	    !strchr(query, ' '))
+	     !strchr(query, ' '))
 	sprintf(buf, "domain %s", query);	/* ask for a domain */
     else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
 	char *lang = getenv("LANG");	/* not a perfect check, but... */
@@ -287,19 +323,18 @@ char *queryformat(const char *server, const char *flags, const char *query)
 
 void do_query(const int sock, const char *query)
 {
-    char buf[200];
+    char buf[200], *p;
     FILE *fi;
-#ifdef HIDE_DISCL
     int i = 0, hide = hide_discl;
-#endif
 
     fi = fdopen(sock, "r");
     if (write(sock, query, strlen(query)) < 0)
 	err_sys("write");
+/* It has been reported this call breaks the client in some situations. Why?
     if (shutdown(sock, 1) < 0)
 	err_sys("shutdown");
+*/
     while (fgets(buf, 200, fi)) {	/* XXX errors? */
-#ifdef HIDE_DISCL
 	if (hide == 1) {
 	    if (strncmp(buf, hide_strings[i+1], strlen(hide_strings[i+1]))==0)
 		hide = 2;	/* stop hiding */
@@ -315,7 +350,6 @@ void do_query(const int sock, const char *query)
 	    if (hide == 1)
 		continue;	/* hide the first line */
 	}
-#endif
 #ifdef EXT_6BONE
 	/* % referto: whois -h whois.arin.net -p 43 as 1 */
 	if (strncmp(buf, "% referto:", 10) == 0) {
@@ -334,16 +368,16 @@ void do_query(const int sock, const char *query)
 	    }
 	}
 #endif
-	fputs(buf, stdout);
+	for (p = buf; *p && *p != '\r' && *p != '\n'; p++);
+	*p = '\0';
+	fprintf(stdout, "%s\n", buf);
     }
     if (ferror(fi))
 	err_sys("fgets");
 
-#ifdef HIDE_DISCL
     if (hide == 1)
 	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
 		   "Please upgrade this program.\n"));
-#endif
 }
 
 const char *query_crsnic(const int sock, const char *query)
@@ -382,8 +416,9 @@ const char *query_crsnic(const int sock, const char *query)
 
 int openconn(const char *server, const char *port)
 {
-    int s, fd;
+    int fd;
 #ifdef HAVE_GETADDRINFO
+    int i;
     struct addrinfo hints, *res, *ressave;
 #else
     struct hostent *hostinfo;
@@ -396,9 +431,8 @@ int openconn(const char *server, const char *port)
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
 
-    if ((s = getaddrinfo(server, port ? port : "whois", &hints, &res)) != 0)
-	err_quit("getaddrinfo: %s", gai_strerror(s));
-
+    if ((i = getaddrinfo(server, port ? port : "whois", &hints, &res)) != 0)
+	err_quit("getaddrinfo: %s", gai_strerror(i));
     for (ressave = res; res; res = res->ai_next) {
 	if ((fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol))<0)
 	    continue;		/* ignore */
@@ -406,10 +440,10 @@ int openconn(const char *server, const char *port)
 	    break;		/* success */
 	close(fd);
     }
+    freeaddrinfo(ressave);
 
     if (!res)
 	err_sys("connect");
-    freeaddrinfo(ressave);
 #else
     if ((hostinfo = gethostbyname(server)) == NULL)
 	err_quit(_("Host %s not found."), server);
@@ -489,6 +523,8 @@ void usage(void)
 "-h HOST                connect to server HOST\n"
 "-H                     hide legal disclaimers\n"
 "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+"-x                     exact match [RPSL only]\n"
+"-l                     one level less specific lookup [RPSL only]\n"
 "-L                     find all Less specific matches\n"
 "-M                     find all More specific matches\n"
 "-m                     find first level more specific matches\n"
@@ -499,12 +535,16 @@ void usage(void)
 "-S                     tell server to leave out syntactic sugar\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-t TYPE                requests template for object of TYPE ('all' for a list)\n"
-"-v TYPE                requests verbose template for object of TYPE\n"
-"-V                     explain what is being done\n\n"
-"Version %s. Please report bugs to %s.\n"
-	), VERSION, "<md+whois@linux.it>");
-    exit(1);
+"-t TYPE                request template for object of TYPE ('all' for a list)\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources]   query specified server info [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL only]\n"
+"-K                     only primary keys are returned [RPSL only\n"
+"-V    --verbose        explain what is being done\n"
+"      --help           display this help and exit\n"
+"      --version        output version information and exit\n"
+));
+    exit(0);
 }
 
 

@@ -21,6 +21,7 @@ const char *ripe_servers[] = {
     "whois.restena.lu",
     "rr.level3.net",		/* 3.0.0a13 */
     "whois.arnes.si",
+    "rpsl.ripe.net",
     NULL
 };
 
@@ -54,7 +55,6 @@ const char *gtlds[] = {
     NULL
 };
 
-#ifdef HIDE_DISCL
 const char *hide_strings[] = {
     "The Data in Network", "this query",
     "The data in Register", "By submitting",
@@ -63,19 +63,24 @@ const char *hide_strings[] = {
     "Signature Domains' Whois Service", "agree to abide by the above",
     "Access to ASNIC", "by this policy.",
     "* Copyright (C) 1998 by SGNIC", "* modification.",
+    "The Data in Gabia", "you agree to abide",
     NULL, NULL
 };
-#endif
 
 const char *nic_handles[] = {
     "net-",	"whois.arin.net",
     "netblk-",	"whois.arin.net",
     "asn-",	"whois.arin.net",
-    "as-",	"whois.ripe.net",
     "lim-",	"whois.ripe.net",
     "coco-",	"whois.corenic.net",
     "coho-",	"whois.corenic.net",
     "core-",	"whois.corenic.net",
+    /* RPSL objects */
+    "as-",	"whois.ripe.net",
+    "rs-",	"whois.ripe.net",
+    "rtrs-",	"whois.ripe.net",
+    "fltr-",	"whois.ripe.net",
+    "prng-",	"whois.ripe.net",
     NULL,	NULL
 };
 
