@@ -1,24 +1,38 @@
 /*
  * RIPE-like servers.
  * All of them do not understand -V2.0Md with the exception of RA and RIPN.
- * 6bone-like servers will accept the flag with a warning (the flag must
+ * 6bone-derived servers will accept the flag with a warning (the flag must
  * match /^V [a-zA-Z]{1,4}\d+[\d\.]{0,5}$/).
  */
+
+/* servers which accept the new syntax (-V XXn.n) */
 const char *ripe_servers[] = {
-    /* will accept the new syntax (-V wp3.0) */
     "whois.ripe.net",
     "whois.apnic.net",
+    "whois.oleane.net",
+    "rr.arin.net",		/* does not accept the old syntax */
     "whois.6bone.net",		/* 3.0.0b1 */
     "whois.aunic.net",
     "whois.connect.com.au",	/* 3.0.0b1 */
     "whois.nic.fr",
+    "whois.telstra.net",
     "whois.nic.net.sg",
     "whois.metu.edu.tr",
-    /* end of servers accepting new syntax */
+    "whois.restena.lu",
+    "rr.level3.net",		/* 3.0.0a13 */
+    "whois.arnes.si",
+    NULL
+};
+
+/* servers which do not accept the new syntax */
+const char *ripe_servers_old[] = {
+    "whois.ra.net",
     "whois.nic.it",
     "whois.ans.net",
-    "whois.ra.net",
+    "whois.cw.net",
     "whois.ripn.net",
+    "whois.nic.ck",
+    "whois.domain.kg",
     NULL
 };
 
@@ -40,11 +54,29 @@ const char *gtlds[] = {
     NULL
 };
 
-const char *arin_nets[] = {
-    "net-",
-    "netblk-",
-    "asn-",
-    NULL,
+#ifdef HIDE_DISCL
+const char *hide_strings[] = {
+    "The Data in Network", "this query",
+    "The data in Register", "By submitting",
+    "The data contained in Dotster", "to these terms of usage and",
+    "This whois service currently only", "top-level domains.",
+    "Signature Domains' Whois Service", "agree to abide by the above",
+    "Access to ASNIC", "by this policy.",
+    "* Copyright (C) 1998 by SGNIC", "* modification.",
+    NULL, NULL
+};
+#endif
+
+const char *nic_handles[] = {
+    "net-",	"whois.arin.net",
+    "netblk-",	"whois.arin.net",
+    "asn-",	"whois.arin.net",
+    "as-",	"whois.ripe.net",
+    "lim-",	"whois.ripe.net",
+    "coco-",	"whois.corenic.net",
+    "coho-",	"whois.corenic.net",
+    "core-",	"whois.corenic.net",
+    NULL,	NULL
 };
 
 struct ip_del {

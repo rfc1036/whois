@@ -1,9 +1,123 @@
+whois (4.4.14) frozen unstable; urgency=medium
+
+  * !=> HIDE_DISCL has been disabled (VERY IMPORTANT!).
+  * !=> Fixed -h option for gTLDs (Closes: 65001).
+  * !=> Priority changed from important to standard (Closes: #64460).
+  * !=> Added server for net.au (Closes: #64574).
+  * Fixed longstanding bug in RIPE-style referrals handling.
+  * Added telstra netblocks, NIC handles and whois server.
+  * Added fed.us domain.
+  * Added nic.mil AS block.
+  * Added production IPv6 TLA.
+
+ -- Marco d'Itri <md@linux.it>  Sun,  4 Jun 2000 20:00:20 +0200
+
+whois (4.4.13) frozen unstable; urgency=high
+
+  * Fixed .dk and .nl servers (IMPORTANT!).
+  * Added many, many domains in tld_serv_list.
+  * A message is displayed if only a WWW gateway is available.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 21 Apr 2000 17:59:19 +0200
+
+whois (4.4.12) frozen unstable; urgency=medium
+
+  * Fixed queries for *.jp domains (Closes: #60861).
+  * Will hide disclaimers of many registries.
+  * Added support for level3.net registry.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 25 Mar 2000 11:51:01 +0100
+
+whois (4.4.11) frozen unstable; urgency=low
+
+  * Enlarged a buffer. This bug silently corrupted queries for some CORE
+    objects (Closes: #60612).
+
+ -- Marco d'Itri <md@linux.it>  Fri, 17 Mar 2000 23:33:38 +0100
+
+whois (4.4.10) frozen unstable; urgency=low
+
+  * RIPE-like flags are allowed for CORENIC too.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 17 Mar 2000 23:30:46 +0100
+
+whois (4.4.9) frozen unstable; urgency=low
+
+  * Fixed segfault when requesting a RIPE template (Closes: #59030).
+
+ -- Marco d'Itri <md@linux.it>  Sat, 26 Feb 2000 14:53:32 +0100
+
+whois (4.4.8) frozen unstable; urgency=low
+
+  * Fixed two off-by-one in mallocs and a buffer overflow.
+  * Fixed ugly bug in parsing of multi argument command lines.
+  * Fixed domcmp() to deal with -au-dom, .uk.net and so on.
+  * Added support for corenic and GANDI handles.
+  * Now automatically request machine parseable output from corenic.
+  * rr.arin.net added to the list of RIPE-like servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 23 Feb 2000 19:50:50 +0100
+
+whois (4.4.7) frozen unstable; urgency=low
+
+  * Updated .no ccTLD entry.
+  * Added RIPE as default server for limerick objects.
+  * Fixed $LANG parsing.
+  * Fixed false positive for netblock handles matching /^as/ and
+    another bug regarding parsing of AS queries.
+    (Dark, please allow this upload to go in frozen because users will
+     be bitten by these bug and will not understand what's happening.)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 16 Jan 2000 14:45:00 +0100
+
+whois (4.4.6) unstable; urgency=low
+
+  * Fixed bug in parsing the argument of -h.
+  * Added new ccTLDs: cl, kg, lu.
+  * Added AS-* netblocks. I assume only RIPE uses this format.
+  * Some additions to ripe_servers[].
+
+ -- Marco d'Itri <md@linux.it>  Thu, 13 Jan 2000 01:16:51 +0100
+
+whois (4.4.5) unstable; urgency=low
+
+  * The InterNIC server is always asked to return complete records when a
+    query matches more than one object.
+  * s/CRSNIC/InterNIC/. Oh, how much I hate NSI!
+  * Added support for *jp NIC handles and *-MNT RIPE handles.
+  * Norwegian translation.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 18 Dec 1999 21:00:36 +0100
+
+whois (4.4.4) unstable; urgency=low
+
+  * The default server is read from $WHOIS_SERVER.
+
+ -- Marco d'Itri <md@linux.it>  Sun,  5 Dec 1999 11:36:52 +0100
+
+whois (4.4.3) unstable; urgency=low
+
+  * s/whois.internic.net/whois.networksolutions.com/
+  * Added Oleane to ripe_servers[].
+
+ -- Marco d'Itri <md@linux.it>  Thu,  2 Dec 1999 21:50:59 +0100
+
+whois (4.4.2) unstable; urgency=low
+
+  * Fixed the test for the use of RIPE-style options with non RIPE-like
+    servers.
+  * Cleanup of man page source.
+  * Fixed mkpasswd(1) header (closes: #51401).
+
+ -- Marco d'Itri <md@linux.it>  Sun, 28 Nov 1999 12:51:25 +0100
+
 whois (4.4.1) unstable; urgency=low
 
-  * A space is added after "AS" when querying ARIN.
   * Converted some strcmp to strcasecmp.
+  * A space is added after "AS" when querying ARIN.
+  * The "domain" command keyword is added by default when querying ERNET.
 
- -- Marco d'Itri <md@linux.it>  Mon, 15 Nov 1999 00:59:07 +0100
+ -- Marco d'Itri <md@linux.it>  Tue, 16 Nov 1999 11:57:55 +0100
 
 whois (4.4.0) unstable; urgency=low
 
@@ -58,8 +172,3 @@ whois (4.0) unstable; urgency=low
   * cryptpw become mkpasswd and now has a man page (closes: #46855).
 
  -- Marco d'Itri <md@linux.it>  Sun,  3 Oct 1999 19:43:35 +0200
-
-Local variables:
-mode: debian-changelog
-add-log-mailing-address: "md@linux.it"
-End:

@@ -1,93 +1,88 @@
-.TH WHOIS 1 "15 November 1999" "Marco d'Itri" "Debian GNU/Linux"
+.TH WHOIS 1 "3 December 1999" "Marco d'Itri" "Debian GNU/Linux"
 .SH NAME
 whois \- client for the whois directory service
 .SH SYNOPSIS
 .B whois
-[
-.BR \-h
-.I HOST
-] [
-.BR \-p
-.I PORT
-] [
-.BR -aCFLMmrRSV
-] [
-.BR \-g
-.I SOURCE:FIRST-LAST
-] [
-.BR \-i
-.I ATTR
-] [
-.BR \-S
-.I SOURCE
-] [
-.BR \-T
-.I TYPE
-]
+[\~\fB-h\fP\~\fIHOST\fP\~]
+[\~\fB-p\fP\~ \fIPORT\fP\~]
+[\~\fB-aCFLMmrRSV\fP\~]
+[\~\fB-g\fP\~\fISOURCE:FIRST-LAST\fP\~]
+[\~\fB-i\fP\~\fIATTR\fP\~]
+[\~\fB-S\fP\~\fISOURCE\fP\~]
+[\~\fB-T\fP\~\fITYPE\fP\~]
 .I object
 
 .B whois
-[
-.I -t
-|
-.I -v
-|
-.I -i
-]
+[\~\fI-t\fP\~]
+[\~\fI-v\fP\~]
+[\~\fI-i\fP\~]
 .I template
 .PP
 .SH DESCRIPTION
-.B whois
-searches for an object in a
-.I RFC-812
-database.
+\fBwhois\fP searches for an object in a \fIRFC-812\fP database.
 
 This version of the whois client tries to guess the right server to
 ask for the specified object. If no guess can be made it will connect
-to whois.internic.net for domains, whois.arin.net for IPv4 addresses
-and whois.6bone.net for IPv6 addresses.
+to whois.internic.net for domains,
+.\" whois.networksolutions.com for nic handles,
+whois.arin.net for IPv4 addresses and whois.6bone.net for
+IPv6 addresses.
 .PP
 .SH OPTIONS
 .TP 8
 .B \-h HOST
 Connect to HOST.
 .TP 8
+.B \-H
+Do not display the legal disclaimers some registries like to show you.
+.TP 8
 .B \-p PORT
 Connect to PORT.
-.TP 8
-.B \-C
-First query
-.I www.crsnic.net
-to find the registrar for a GTLD subdomain. This option overrides
-.I \-h.
+.\" .TP 8
+.\" .B \-C
+.\" First query \fIwhois.internic.net\fP to find the registrar for a GTLD subdomain.
+.\" This option overrides \fB-h\fP.
 .TP 8
 .B \-V
 Be verbose.
 .TP 8
 Other options are flags understood by RIPE-like servers.
-.SH FEATURES
-When querying
-.I whois.arin.net
-for AS numbers, the program will automatically convert the request in
-the appropriate format, inserting a space after the string "AS".
+.SH NOTES
+.\" The default server for gTLDs is \fIwhois.networksolutions.com\fP.
+.\" Unless the \fB-C\fP option is used the CRSNIC shared whois server is
+.\" \fBnot\fP queried and domains registered by other registrars will be
+.\" reported as unknown.
+.\" .P
+Please remember that \fIwhois.networksolutions.com\fP by default will
+only search in the domains database. If you want to search for hostnames,
+NIC handles or people names you have to prepend the appropriate keyword
+(\fIHO\fPst, \fIHA\fPndle or \fINA\fPme).
 .P
-When querying
-.I whois.nic.ad.jp
-english text is requested unless the
-.I LANG
-environment variable specifies a Japanese locale.
+When querying \fIwhois.arin.net\fP for AS numbers, the program will
+automatically convert the request in the appropriate format, inserting
+a space after the string "AS".
+.P
+When querying \fIwhois.ncst.ernet.in\fP for a string without spaces, the
+\fIdomain\fP keyword is prepended.
+.P
+When querying \fIwhois.corenic.net\fP, machine readable output is requested.
 .P
 RIPE-specific options are ignored when querying non-RIPE servers.
+.SH ENVIRONMENT
+.IP LANG
+When querying \fIwhois.nic.ad.jp\fP english text is requested unless the
+\fILANG\fP environment variable specifies a Japanese locale.
+.IP "WHOIS_SERVER"
+This server will be queried if the program cannot guess where the object
+is located. If the variable does not exist then
+\fIwhois.internic.net\fP will be queried.
 .SH "SEE ALSO"
-.I RFC 812:
-NICNAME/WHOIS
+\fIRFC 812:\fP NICNAME/WHOIS
 .PP
-.I RIPE-157, RIPE-189:
-RIPE NCC Database Documentation
+\fIRIPE-157\fP, \fIRIPE-189\fP: RIPE NCC Database Documentation
 .PP
-Detailed help on available flags can be found in
-.I RIPE-157
-or in the help file, which can be obtained with the command:
+Detailed help on available flags can be found in \fIRIPE-157\fP or in
+the help file which can be obtained with the command:
 .IP
 .B whois -h whois.ripe.net HELP
 .SH HISTORY
@@ -98,5 +93,5 @@ I also added support for the protocol extensions developed by David
 Kessens of QWest for the 6bone server.
 .SH AUTHOR
 .B Whois
-and this man page were written by Marco d'Itri <md@linux.it>
+and this man page were written by Marco d'Itri <\fImd@linux.it\fP>
 and are licensed under the GPL.

@@ -1,140 +1,291 @@
-# Servers in lines with a trailing hash mark have been tested and found
-# not working at the time of my survey (19991109).
-# Servers with the comment "wrong" have been tested as well but are wrong.
+# NIC? means I have not been able to find the registry
+# NIC-FR means the TLD is managed by AFNIC, but I could not find any info
+# UPR means the TLD is managed by UPR, but I could not find any info
+######## means I haven't checked yet this TLD
+#
 .gb.com	whois.nomination.net
 .gb.net	whois.nomination.net
+.uk.com	whois.nomination.net
 .uk.net	whois.nomination.net
-.uk.net	whois.nomination.net
-.com	whois.internic.net
-.net	whois.internic.net
-.org	whois.internic.net
-.edu	whois.internic.net
+.se.com	whois.centralnic.com
+.se.net	whois.centralnic.com
+#.com	whois.networksolutions.com
+#.net	whois.networksolutions.com
+#.org	whois.networksolutions.com
+#.edu	whois.networksolutions.com
 .gov	whois.nic.gov
 .int	whois.isi.edu
 .mil	whois.nic.mil
 .ac	whois.nic.ac
-.ad	whois.ripe.net
-.af	whois.nic.tm
-#.al	whois.ripe.net	#wrong
-.am	whois.amnic.net
+.ad	NONE		# http://www.nic.ad
+.ae	WEB http://cc.emirates.net.ae/Customer_care/cc_card/check_domains.choose_domains/
+.af	whois.nic.af
+.ag	WEB http://www.nic.ag/domain_search.htm
+.ai	NONE		# http://www.offshore.com.ai/domain_names/
+.al	NONE		# http://www.inima.al/Domains.html
+.am	whois.amnic.net		# down?
+.am	WEB http://www.amnic.net/cgi/engine/db/whois.html
+#.an			# NIC?
+#.ao	NONE		# NIC? diee.fe.uan.ao
+.aq	NONE		# 2day.com
+.ar	WEB http://www.nic.ar/consultas/consdom.htm
 .as	whois.nic.as
-.at	whois.univie.ac.at	# CNAME whois.ripe.net
-#.net.au	whois.connect.com.au # obsolete?
+.at	whois.ripe.net
+.net.au	whois.connect.com.au
 .au	whois.aunic.net
-#.az	whois.ripe.net	#wrong
-.ba	whois.ripe.net
+#.aw			# NIC? www.setarnet.aw
+#.az	NONE		# NIC? http://www.az/ www.domain.az
+.ba	NONE		# http://www.utic.net.ba
+.bb	WEB http://domains.org.bb/regsearch/
+#.bd
 .be	whois.ripe.net
+.bf	NONE		# http://www.onatel.bf/domaine.htm
 .bg	whois.ripe.net
+#.bh	NONE		# NIC? http://www.batelco.com.bh
+.bi	WEB http://www.nic.cd/database/bi/
+#.bj			# NIC? www.opt.bj
 #.bm	rwhois.ibl.bm:4321
+.bm	NONE		# http://www.bermudanic.bm
+#.bn	NONE		# NIC? http://jtb.brunet.bn/brunet/brunet.htm
+.bo	WEB http://www.nic.bo/listadom.phtml
 .br	whois.nic.br
+#.bs			# NIC? (UPR)
 .bt	whois.nic.tm
-#.by	whois.ripe.net	#wrong
+.bv	NONE		# http://www.uninett.no/navn/bv-sj.html
+#.bw			# NIC? www.botsnet.bw
+#.by	NONE		# NIC? http://unibel.by www.open.by
+.bz	NONE		# http://www.psg.com/dns/bz/
 .ca	whois.cdnnet.ca
 .cc	whois.nic.cc
+.cd	WEB http://www.nic.cd/database/cd/
+#.cf	NONE		# NIC? http://www.socatel.intnet.cf
+.cg	WEB http://www.nic.cd/database/cg/
 .ch	whois.nic.ch
-.ck	whois.ck-nic.org.ck
+.ci	NONE		# www.nic.ci
+.ck	whois.nic.ck
+.cl	whois.nic.cl
+.cm	NONE		# http://info.intelcam.cm
 .ac.cn	whois.cnc.ac.cn
 .cn	whois.cnnic.net.cn
 .uk.co	whois.uk.co
-#.co	whois.ripe.net	#wrong
-#.cx	whois.nic.cx	#
+.co	WEB http://daimon.uniandes.edu.co:8890/dominio/plsql/PConsulta.ConsultarDominio
+.cr	WEB http://www.nic.cr/consulta-dns.html
+.cu	WEB http://www.nic.cu/consultas/consult.html
+#.cv			# NIC?
+.cx	whois.nic.cx
 .cy	whois.ripe.net
 .cz	whois.ripe.net
 .de	whois.ripe.net
-.dk	whois.ripe.net
-#.dz	whois.ripe.net	#wrong
-#.ee	whois.ripe.net	#wrong
-#.eg	whois.ripe.net	#wrong
-.es	whois.ripe.net
-#.fi	whois.ripe.net	#wrong
+#.dj	NONE		# NIC? http://www.intnet.dj
+.dk	whois.dk-hostmaster.dk
+#.dm			# NIC? (UPR)
+.do	WEB http://www.nic.do
+.dz	NONE
+.ec	WEB http://www.nic.ec
+.ee	NONE		# http://www.eenet.ee/services/subdomains.html
+#.eg	NONE		# NIC? http://www.frcu.eun.eg
+#.eh
+#.er	NONE		# do they have internet there?
+.es	WEB http://www.nic.es/whois/
+#.et	NONE		# NIC? http://www.telecom.net.et
+.fi	WEB http://cgi.thk.fi/cgi-bin/domains.pl?language=eng
+.fj	whois.usp.ac.fj
+.fk	NONE		# http://www.fidc.org.fk/domain-registration/home.htm
+.fm	WEB http://www.nic.fm/register.html
 .fo	whois.ripe.net
 .fr	whois.nic.fr
-#.ga	whois.ripe.net	#wrong
-#.gb	whois.ripe.net	#wrong
-#.ge	whois.ripe.net	#wrong
-#.gf	whois.nplus.gf	#
-#.gi	whois.nic.gi	#
+#.ga		######### www.inet.ga	#broken
+.gb	NONE
+#.gd			# NIC? (UPR)
+.ge	WEB http://www.nic.net.ge
+.gf	whois.nplus.gf
+.gg	NONE		# http://www.isles.net
+.gh	NONE		# http://www.ghana.com/domreg.html
+.gi	NONE		# http://www.gibnet.gi/nic/
 .gl	whois.ripe.net
 .gm	whois.ripe.net
-.gr	whois.ripe.net
+.gn	NONE		# http://www.psg.com/dns/gn/
+#.gp		######### http://www.nic.gp broken like mq
+#.gq			# NIC? http://www.getesa.gq
+.gr	whois.ripe.net	# http://www.hostmaster.gr
 .gs	whois.adamsnames.tc
+#.gt		######### http://www.gt/cir/cir.htm	# NIC? - broken URL
+.gu	WEB http://gadao.gov.gu/Scripts/wwsquery/wwsquery.dll?hois=guamquery
+#.gw			# no NIC?
+#.gy			# NIC? (UPR)
 .hk	whois.hknic.net.hk
 .hm	whois.nic.hm
-.hr	whois.ripe.net
-.hu	whois.ripe.net
-.id	whois.idnic.net.id	# broken
+.hn	NONE		# www.nic.hn
+.hr	WEB http://www.CARNet.hr/DNS/
+#.ht			# NIC? http://www.haitiworld.com/
+.hu	whois.nic.hu
+.id	whois.idnic.net.id	# broken - WEB tukang.access.net.id/domain
+.ie	WEB http://www.domainregistry.ie/search/whois.html
 .ie	whois.ripe.net
 .il	whois.ripe.net
-.in	whois.ncst.ernet.in	# empty?
-#.io	whois.io	#
+.im	WEB http://www.nic.im/exist.html
+.in	whois.ncst.ernet.in
+.io	WEB http://www.io.io/whois.html
+#.iq			# NIC?
+.ir	WEB http://aria.nic.ir/forms/whois.html
 .is	whois.ripe.net
 .it	whois.nic.it
-.jo	whois.ripe.net
+.je	NONE 		# http://www.isles.net
+#.jm			# NIC? uwimona.edu.jm ns.jm
+.jo	NONE		# www.nic.gov.jo
 .jp	whois.nic.ad.jp
+.ke	NONE		# http://www.nbnet.co.ke/domain.htm
+.kg	whois.domain.kg
+#.kh			# NIC? http://www.camnet.com.kh
+#.ki			# NIC?
+#.km			# NIC?
+#.kn			# NIC? (UPR)
+#.kp
 .kr	whois.krnic.net
+.kw	WEB http://www.domainname.net.kw
+.ky	NONE		# http://www.nic.ky
 .kz	whois.domain.kz
+#.la			# no IP connectivity
+.lb	WEB http://www.aub.edu.lb/lbdr/search.html
+.lc	NONE		# http://www.isisworld.lc/domains/
 .li	whois.nic.li
 .lk	whois.nic.lk
+.lr	NONE		# http://www.psg.com/dns/lr/
+.ls	NONE
 .lt	whois.ripe.net
-.lu	whois.ripe.net
+.lu	whois.restena.lu
 .lv	whois.ripe.net
-#.ly	whois.nic.ly	#
-#.ma	whois.ripe.net	#wrong
+.ly	WEB http://www.lydomains.com/whois.asp
+#.ma		######### NIC? www.nic.ma
 .mc	whois.ripe.net
-.md	whois.ripe.net
-#.mk	whois.ripe.net	#wrong
-#.mm	whois.nic.mm	#
+.md	WEB http://www.nic.md/search.html
+.mg	NONE		# www.nic.mg
+.mh	NONE		# http://www.nic.net.mh
+#.mk			# NIC? http://www.mpt.com.mk
+#.ml			# NIC? sotelma.ml
+.mm	whois.nic.mm
+.mn	WEB http://www.nic.mn
+.mo	NONE		# http://www.umac.mo/other/
+.mp	NONE		# http://www.marketplace.mp
+#.mq		######## http://www.nic.mq	# broken
+.mr	NONE		# http://www.univ-nkc.mr/nic_mr.html
 .ms	whois.adamsnames.tc
-#.mt	whois.ripe.net	#wrong
+.mt	WEB http://www.um.edu.mt/nic/dir/
+.mu	NONE		# http://www.posix.co.za/mu/
+#.mv			# NIC? dhiraagu.com.mv
+.mw	WEB http://www.tarsus.net/whois/
 .mx	whois.nic.mx
+.my	NONE		# http://www.mynic.net
+#.mz			# NIC? dzowo.uem.mz
+.na	WEB http://www.lisse.na/cgi-bin/whois.cgi
+.nc	NONE		# http://www.orstom.nc/BASE/IRD_NOUMEA/TLD_NC/
+#.ne			# NIC? http://www.intnet.ne
+.nf	NONE		# http://www.names.nf
 .ng	pgebrehiwot.iat.cnr.it
-.nl	www.domain-registry.nl
-.no	whois.ripe.net
+.ni	WEB http://ns.ni/whois.htm
+.nl	whois.domain-registry.nl
+.no	whois.norid.no
+.np	WEB http://202.52.255.47/search.htm	# www.mos.com.np
+#.nr		######### NIC? cenpac.net.nr
 .nu	whois.nic.nu
 .nz	tardis.patho.gen.nz
+#.om	NONE		# NIC? http://www.gto.net.om
+.pa	WEB http://www.nic.pa
 .pe	whois.rcp.net.pe
-.pl	whois.ripe.net
-#.pr	whois.uprr.pr	#
+#.pf			# NIC? nic.pf
+.pg	NONE	# http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm
+.ph	WEB http://www.names.ph/search.html
 .pk	whois.pknic.net.pk
-#.pt	whois.dns.pt		# disabled - use http://www.dns.pt/info/
+.pl	whois.ripe.net
+#.pm			# NIC-FR! http://www.nic.pm
+.pn	NONE		# http://www.nic.pn
+.pr	NONE		# http://www.uprr.pr/main.html
+.ps	NONE		# no NIC yet... www.gov.ps
+.pt	WEB http://www.dns.pt/dnsinfo.htm
 .pw	whois.nic.pw
+.py	WEB http://www.nic.py/consultas/
+#.qa			# NIC? http://www.qatar.net.qa
+#.re			# NIC-FR!
 .ro	whois.ripe.net
 .ru	whois.ripn.net
+.rw	WEB http://www.nic.cd/database/rw/
+.sa	WEB http://www.saudinic.net.sa/domain/whois.htm
+.sb	WEB http://www.sbnic.net.sb/search.html
+#.sc	NONE		# NIC? http://www.sc/
+#.sd			# NIC? http://www.sudatel.sd
 .se	whois.nic-se.se
 .sg	whois.nic.net.sg
 .sh	whois.nic.sh
-#.si	whois.ripe.net	#wrong
+.si	whois.arnec.si
+.sj	NONE		# http://www.uninett.no/navn/bv-sj.html
 .sk	whois.ripe.net
+#.sl			# NIC? http://www.sierratel.sl/
 .sm	whois.ripe.net
-#.so	whois.nic.so	#
+.sn	NONE		# www.nic.sn
+.so	NONE		# www.nic.so
+#.sr			# NIC? sr.net
 .st	whois.nic.st
 .su	whois.ripn.net
+.sv	WEB http://www.conacyt.gob.sv/dns/
+#.sy			# NIC? syriatel.net
+.sz	NONE		# http://www.iafrica.sz/domreg/
 .tc	whois.adamsnames.tc
+#.td			# NIC? http://www.tit.td
 .tf	whois.adamsnames.tc
+.tg	WEB www.nic.tg
 .th	whois.thnic.net
 .tj	whois.nic.tj
+.tk	NONE		# 2day.com
 .tm	whois.nic.tm
-.tn	whois.ripe.net
+.tn	NONE		# http://www.ati.tn/Nic/
 .to	whois.tonic.to
+.tp	NONE		# http://www.nic.tp
 .tr	whois.metu.edu.tr
+.tt	WEB http://www.nic.tt/cgi-bin/whois.cgi
+.tv	NONE		# http://internet.tv
 .tw	whois.twnic.net
-.ua	whois.ripe.net
+.tz	NONE		# http://www.psg.com/dns/tz/
+.ua	WEB http://nic.ua.net/botik.cgi
+.ug	NONE		# http://www.nic.ug
 .ac.uk	whois.ja.net
 .uk	whois.nic.uk
+.um	whois.isi.edu	# not checked
+.fed.us	whois.nic.gov
 .us	whois.isi.edu
+.uy	WEB http://www.rau.edu.uy/rau/dom/reg.htm
+#.uz			# NIC? http://www.freenet.uz
 .va	whois.ripe.net
+#.vc			# NIC?
 #.ve	rwhois.reacciun.ve:4321
+.ve	WEB http://www.nic.ve/nicwho01.html
 .vg	whois.adamsnames.tc
-.yu	whois.ripe.net
+#.vi			# NIC? http://www.usvi.net/cobex/
+#.vn		http://www.batin.com.vn/	# NIC?
+.vu	WEB http://www.vunic.vu/whois?
+#.wf			# NIC-FR!
+.ws	whois.samoanic.ws
+#.ye			# NIC? www.y.net.ye
+#.yt			# NIC-FR!
+.yu	NONE		# whois.nic.yu
 .za	whois.frd.ac.za
--dom	whois.internic.net
--org	whois.internic.net
--hst	whois.internic.net
+.zm	NONE		# http://www.zamnet.zm/siteindex/Links/JoinZamnet.htm
+.zr	NONE		# obsoleted by cd
+#.zw			# NIC? zptc.co.zw http://www.zispa.co.zw/
+-au-dom	whois.aunic.net
+-dom	whois.networksolutions.com
+-org	whois.networksolutions.com
+-hst	whois.networksolutions.com
 -arin	whois.arin.net
 -ripe	whois.ripe.net
+-mnt	whois.ripe.net
+-gandi	whois.gandi.net
 -ap	whois.apnic.net
 -au	whois.aunic.net
+-ti	whois.telstra.net
 -6bone	whois.6bone.net
+-norid	whois.norid.no
 -ripn	whois.ripn.net
 -sgnic	whois.nic.net.sg
 -metu	whois.metu.edu.tr
+-cknic	whois.nic.ck
+-kg	whois.domain.kg

@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	puts("Usage: mkpasswd PASSWORD SALT\n");
 	exit(1);
     }
-    printf("%s", crypt(argv[1], argv[2]));
+    printf("%s\n", crypt(argv[1], argv[2]));
     exit(0);
 }
 

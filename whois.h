@@ -1,14 +1,8 @@
-/* Size of the buffer where the query is built */
-#define QUERYBUFSIZE 1024
-
-/* Protocol data which could change */
-/* First and last lines of the Internic disclaimer */
-#define DISCL_BEGIN	"The Data in"
-#define DISCL_END	"this query"
-
 /* 6bone referto: extension */
-#define REFERTO_FORMAT	"%% referto: whois -h %255s -p %15s %1023[^\n\r]"
+#define REFERTO_FORMAT	"%% referto: whois -h %255s -p %15s %1021[^\n\r]"
 
+/* String sent to RIPE servers - ONLY FIVE CHARACTERS! */
+#define IDSTRING "Md4.4"
 
 /* system features */
 #ifdef linux
@@ -44,7 +38,7 @@
 
 /* prototypes */
 const char *whichwhois(const char *);
-const char *whereas(unsigned short, struct as_del []);
+const char *whereas(int, struct as_del []);
 char *queryformat(const char *, const char *, const char *);
 void do_query(const int, const char *);
 const char *query_crsnic(const int, const char *);

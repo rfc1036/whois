@@ -1,21 +1,22 @@
-# Traduzione di whois.pot.
-# Copyright (C) 1999-2000 Marco d'Itri
-# Marco d'Itri <md@linux.it>, 2000.
+# Oversatt fra whois.pot.
+# Egil Kvaleberg <egil@kvaleberg.no>, 1999.
+#
+# BUG: xxx
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.4.13\n"
+"Project-Id-Version: whois 4.4.5\n"
 "POT-Creation-Date: 2000-05-03 01:25+0200\n"
-"PO-Revision-Date: 1999-10-26 12:19+02:00\n"
-"Last-Translator: Marco d'Itri <md@linux.it>\n"
-"Language-Team: Italian <it@li.org>\n"
+"PO-Revision-Date: 1999-12-18 14:00:00\n"
+"Last-Translator: Egil Kvaleberg <egil@kvaleberg.no>\n"
+"Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../whois.c:108
 msgid "Connecting to whois.internic.net."
-msgstr "Mi sto connettendo a whois.internic.net."
+msgstr "Kobler opp mot whois.internic.net."
 
 #: ../whois.c:114
 #, c-format
@@ -25,28 +26,27 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Trovato un riferimento di InterNIC a %s.\n"
+"Fant InterNIC-referanse til %s.\n"
 "\n"
 
 #: ../whois.c:122
 #, c-format
 msgid "Using default server %s.\n"
-msgstr "Uso il server predefinito %s.\n"
+msgstr "Bruker standardtjener %s.\n"
 
 #: ../whois.c:124
 msgid ""
 "This domain has no whois server, but you can access the whois database at"
 msgstr ""
-"Questo dominio non ha un server whois, ma si può accedere al database tramite"
 
 #: ../whois.c:132
 msgid "This domain has no whois server."
-msgstr "Per questo dominio non esiste un server whois."
+msgstr ""
 
 #: ../whois.c:135
 #, c-format
 msgid "Using server %s.\n"
-msgstr "Uso il server %s.\n"
+msgstr "Bruker tjener %s.\n"
 
 #: ../whois.c:140
 #, c-format
@@ -54,7 +54,7 @@ msgid ""
 "Query string: \"%s\"\n"
 "\n"
 msgstr ""
-"Richiesta: \"%s\"\n"
+"Forespørsel: \"%s\"\n"
 "\n"
 
 #: ../whois.c:188
@@ -62,52 +62,53 @@ msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
 msgstr ""
-"Non so a chi è stato delegato questo IP.\n"
-"Proverò con ARIN sperando per il meglio..."
+"Vet ikke hvor denne IP-adressen har blitt delegert.\n"
+"Prøver ARIN og håper det beste..."
 
 #: ../whois.c:206
 msgid "I guess it's a netblock name but I don't know where to look it up."
-msgstr "Credo che sia il nome di un netblock ma non so dove cercarlo."
+msgstr "Gjetter at det er et netblock-navn, men vet ikke hvor det finnes."
 
 #: ../whois.c:213
 msgid "I guess it's a domain but I don't know where to look it up."
-msgstr "Credo che sia un dominio ma non so dove cercarlo."
+msgstr "Gjetter at det er er domene, men vet ikke hvor det finnes."
 
 #: ../whois.c:223
 msgid "Unknown AS number. Please upgrade this program."
-msgstr "Numero dell'AS sconosciuto. Per favore aggiorna il programma."
+msgstr "Ukjent AS-nummer. Vennligst oppdater programmet."
 
 #: ../whois.c:253
 msgid "Warning: RIPE flags ignored for a traditional server."
-msgstr "Attenzione: i flag RIPE sono ignorati dai server tradizionali."
+msgstr "Merk: RIPE-flaggene ignoreres for en tradisjonell tjener."
 
 #: ../whois.c:317
 #, c-format
 msgid "Detected referral to %s on %s.\n"
-msgstr "Trovato un riferimento a %s su %s.\n"
+msgstr "Referanse til %s vedrørende %s.\n"
 
 #: ../whois.c:333
+#, fuzzy
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Errore catastrofico: il testo di avvertenze è cambiato.\n"
-"Aggiorna questo programma.\n"
+"Alvorlig feil: INTERNIC har endret standardtekst.\n"
+"Vennligst oppdater programmet.\n"
 
 #: ../whois.c:405
 #, c-format
 msgid "Host %s not found."
-msgstr "Host %s non trovato."
+msgstr "Finner ikke verten %s."
 
 #: ../whois.c:415
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: servizio sconosciuto"
+msgstr "%s/tcp: ukjent port"
 
 #: ../whois.c:432
 #, c-format
 msgid "Interrupted by signal %d..."
-msgstr "Interrotto dal segnale %d..."
+msgstr "Avbrudt av signal %d..."
 
 #: ../whois.c:475
 #, c-format
@@ -118,7 +119,6 @@ msgid ""
 "-F                     fast raw output (implies -r)\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
 "-h HOST                connect to server HOST\n"
-"-H                     hide legal disclaimers\n"
 "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
 "-L                     find all Less specific matches\n"
 "-M                     find all More specific matches\n"
@@ -137,28 +137,26 @@ msgid ""
 "\n"
 "Version %s. Please report bugs to %s.\n"
 msgstr ""
-"Uso: whois [OPZIONE]... OGGETTO...\n"
+"Bruk: whois [OPSJONER]... OBJEKTER...\n"
 "\n"
-"-a                     cerca tutti i database\n"
-"-F                     output grezzo veloce (implica -r)\n"
-"-g SOURCE:FIRST-LAST   trova gli aggiornamenti di SOURCE dal seriale F a L\n"
-"-h HOST                si connette al server HOST\n"
-"-H                     nasconde le avvertenze legali\n"
-"-i ATTR[,ATTR]...      fa una ricerca inversa per l'ATTRibuto specificato\n"
-"-L                     trova le corrispondenze meno specifiche\n"
-"-M                     trova le corrispondenze più specifiche\n"
-"-m                     trova le corrispondenze di primo livello più "
-"specifiche\n"
-"-r                     disabilita le ricerche ricorsive\n"
-"-p PORTA               si connette alla PORTA\n"
-"-R                     mostra la copia locale dell'oggetto domain anche se\n"
-"                       contiene un riferimento\n"
-"-S                     dice al server di non usare lo zucchero sintattico\n"
-"-s SOURCE[,SOURCE]...  cerca il database da SOURCE\n"
-"-T TIPO[,TIPO]...      cerca solo oggetti del TIPO\n"
-"-t TIPO       chiede il template per un oggetto del TIPO ('all' per una "
-"lista)\n"
-"-v TIPO                chiede il template prolisso per un oggetto del TIPO\n"
-"-V                     spiega cosa sta facendo\n"
+"-a                     søk i alle databaser\n"
+"-F                     full utskrift (impliserer -r)\n"
+"-g KILDE:FØRSTE-SISTE  finn oppdateringer fra KILDE fra serie FØRSTE til "
+"SISTE\n"
+"-h VERT                koble til tjener VERT\n"
+"-i ATTR[,ATTR]...      gjør reversoppslag for attributtene ATTR\n"
+"-L                     finn alle mindre spesifike treff\n"
+"-M                     finn alle mer spesifike treff\n"
+"-m                     finn første nivå av mer spesifike treff\n"
+"-r                     ikke foreta rekursive oppslag\n"
+"-p PORT                koble til PORT\n"
+"-R                     vis lokal kopi av objektet selv om det inneholder\n"
+"                       en referanse\n"
+"-S                     be tjeneren utelate syntaktisk \"sukker\"\n"
+"-s KILDE[,KILDE]...    søk i databasen fra KILDE\n"
+"-T TYPE[,TYPE]...      se bare på objekttype TYPE\n"
+"-t TYPE                be om mal for objekttype TYPE ('all' gir en liste)\n"
+"-v TYPE                be om utførlig mal for objekttype TYPE\n"
+"-V                     forklarer hva som skjer\n"
 "\n"
-"Versione %s. Segnala i bug a %s.\n"
+"Versjon %s. Rapporter feil til %s.\n"

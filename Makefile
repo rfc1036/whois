@@ -5,6 +5,9 @@ OPTS=-O2
 # Solaris
 #LDFLAGS=-lnsl -lsocket
 
+# linux (old libc)
+#LDFLAGS=-lintl
+
 all: whois #pos
 
 whois: whois.c whois.h config.h data.h as_del.h ip_del.h tld_serv.h
@@ -23,8 +26,9 @@ tld_serv.h: tld_serv_list make_tld_serv.pl
 	perl make_tld_serv.pl < tld_serv_list > tld_serv.h
 
 install: whois
-	install --strip -m 0755 whois $(BASEDIR)$(prefix)/bin/
-	install --strip -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/
+	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
+	strip $(BASEDIR)$(prefix)/bin/whois
+	install -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/
 	cd po && $(MAKE) $@
 
 

@@ -1,14 +1,17 @@
+/* Program version */
+#define VERSION "4.4.13"
+
 /* Configurable features */
 
 /* 6bone referto: support */
 #define EXT_6BONE
 
-/* Suppress lame Internic disclaimer */
+/* Suppress lame NSI disclaimer */
 #define HIDE_DISCL
 
-/* Program version */
-#define VERSION "4.4.1"
+/* Always ask INTERNIC about gTLDs */
+#define FIRST_ASK_INTERNIC
 
-/* String sent to RIPE servers - ONLY FIVE CHARACTERS! */
-#define IDSTRING "Md4.4"
+/* Default server */
+#define DEFAULTSERVER   "whois.internic.net"
 

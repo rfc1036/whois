@@ -1,7 +1,18 @@
 Still to sort:
-*NETBLK-RIPE* *NET-RIPE* *APNIC* *AUNIC-AU* [a-z][a-z][0-9][0-9][0-9]jp
+*NETBLK-RIPE* *NET-RIPE* *APNIC* *AUNIC-AU*
 
 Is MNT-* a standard of some registry?
 
 What about rwhois?
+
+Should support the refer attribute of RIPE-189 objects.
+
+I need a procedure for searching an IPv6 address in a list.
+Will anybody contribute it?
+
+Can ARIN netblock names have a dash?
+
+Should "=" be prepended by default when an NSI-style NIC handle is detected?
+
+Add Exodus rwhois server (e.g. 216.35.0.0/16).
 

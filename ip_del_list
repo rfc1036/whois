@@ -2,8 +2,9 @@
 24.132.0.0/14	ripe
 61.0.0.0/8	apnic
 62.0.0.0/8	ripe
+63.208.0.0/13	rr.level3.net
 0.0.0.0/2	arin	# all other A classes are managed by ARIN
-## The B class space is a mess :-( - something could be still missing
+## The B class space is a mess :-( - something could still be missing
 139.20.0.0/14	ripe
 139.24.0.0/14	ripe
 139.28.0.0/15	ripe
@@ -62,6 +63,7 @@
 198.17.117.0/24	ripe
 196.0.0.0/6	arin
 200.0.0.0/7	arin
+203.0.0.0/10	aunic
 202.0.0.0/7	apnic
 204.0.0.0/6	arin
 208.0.0.0/7	arin
@@ -69,4 +71,3 @@
 212.0.0.0/7	ripe
 214.0.0.0/7	arin	# DoD
 216.0.0.0/8	arin
-## Are class D networks listed somewhere?
