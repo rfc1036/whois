@@ -23,6 +23,7 @@ const char *ripe_servers[] = {
     "rr.level3.net",		/* 3.0.0a13 */
     "whois.arnes.si",
     "www.registry.co.ug",
+    "whois.nic.ir",
     NULL
 };
 
@@ -49,9 +50,9 @@ const char *rwhois_servers[] = {
 #endif
 
 const char *hide_strings[] = {
-    "The Data in Network", "this query",
+    "The Data in the VeriSign", "terms at any time.",
     "The data in Register", "By submitting",
-    "The data contained in Dotster", "to these terms of usage and",
+    " The data contained in Dotster", "Please limit your",
     "This whois service currently only", "top-level domains.",
     "Signature Domains' Whois Service", "agree to abide by the above",
     "Access to ASNIC", "by this policy.",
@@ -60,6 +61,8 @@ const char *hide_strings[] = {
     "NeuLevel, Inc., the Registry Operator", "whatsoever, you agree",
     "NOTICE: Access to .INFO WHOIS", "time. By submitting",
     "Disclaimer: The Global Name Registry", "for any commercial",
+    "Access to America Online", "time. By accessing",
+    "Access and use restricted", "http://www.icann", /* GANDI */
     NULL, NULL
 };
 
@@ -71,6 +74,7 @@ const char *nic_handles[] = {
     "coco-",	"whois.corenic.net",
     "coho-",	"whois.corenic.net",
     "core-",	"whois.corenic.net",
+    "denic-",	"whois.denic.de",
     /* RPSL objects */
     "as-",	"whois.ripe.net",
     "rs-",	"whois.ripe.net",

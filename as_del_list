@@ -25,6 +25,8 @@
 18432	19455	arin
 19456	20479	arin
 20480	21503	ripe
+23552	24575	apnic
+24576	25599	ripe
 
 ###
 ### DO NOT FORGET TO UPDATE whereas()

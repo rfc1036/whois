@@ -1,5 +1,5 @@
 /*
- *    Copyright (C) 2001  Marco d'Itri
+ *    Copyright (C) 2001-2002  Marco d'Itri
  *
  *    This program is free software; you can redistribute it and/or modify
  *    it under the terms of the GNU General Public License as published by
@@ -31,13 +31,16 @@
 
 #ifdef HAVE_GETOPT_LONG
 static struct option longopts[] = {
-    {"stdin",		no_argument,		NULL, 's'},
-    {"salt",		required_argument,	NULL, 'S'},
-    {"hash",		required_argument,	NULL, 'H'},
+    {"hash",		optional_argument,	NULL, 'H'},
     {"help",		no_argument,		NULL, 'h'},
+    {"stdin",		no_argument,		NULL, 's'},
+    {"password-fd",	required_argument,	NULL, 'P'},
+    {"salt",		required_argument,	NULL, 'S'},
     {"version",		no_argument,		NULL, 'V'},
     {NULL,		0,			NULL, 0  }
 };
+#else
+#error xXXX
 #endif
 
 static char valid_salts[] = "abcdefghijklmnopqrstuvwxyz"
@@ -47,11 +50,15 @@ struct salt_prefix {
     const char *algo;
     const char *prefix;
     unsigned int len;
+    const char *desc;
 };
 
 struct salt_prefix salt_prefixes[] = {
-    { "des",	"",	2 },
-    { "md5",	"$1$",	8 },
+    { "des",		"",	2, N_("\tstandard 56 bit DES-based crypt(3)") },
+    { "md5",		"$1$",	8, "\tMD5" },
+#if defined OpenBSD || defined FreeBSD
+    { "blf",		"$2$", 16, "\tBlowfish" },
+#endif
 };
 
 void generate_salt(char *buf, const unsigned int len);
@@ -62,12 +69,11 @@ void display_algorithms(void);
 int main(int argc, char *argv[])
 {
     int ch;
-    int use_stdin = 0;
+    int password_fd = -1;
     unsigned int i, salt_len = 0;
     const char *salt_prefix = NULL;
     char *salt = NULL;
     char *password = NULL;
-    unsigned char *p;
 
 #ifdef ENABLE_NLS
     setlocale(LC_ALL, "");
@@ -75,16 +81,10 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH:sS:V", longopts, 0)) > 0) {
+    while ((ch = GETOPT_LONGISH(argc, argv, "hHP:sS:V", longopts, 0)) > 0) {
 	switch (ch) {
-	case 's':
-	    use_stdin = 1;
-	    break;
-	case 'S':
-	    salt = optarg;
-	    break;
 	case 'H':
-	    if (!*optarg) {
+	    if (!optarg) {
 		display_algorithms();
 		exit(0);
 	    }
@@ -98,6 +98,22 @@ int main(int argc, char *argv[])
 		fprintf(stderr, _("Invalid hash type '%s'.\n"), optarg);
 		exit(1);
 	    }
+	    break;
+	case 'P':
+	    {
+		char *p;
+		password_fd = strtol(optarg, &p, 10);
+		if (p == NULL || *p != '\0' || password_fd < 0) {
+		    fprintf(stderr, _("Invalid number '%s'.\n"), optarg);
+		    exit(1);
+		}
+	    }
+	    break;
+	case 's':
+	    password_fd = 0;
+	    break;
+	case 'S':
+	    salt = optarg;
 	    break;
 	case 'V':
 	    display_version();
@@ -132,15 +148,16 @@ int main(int argc, char *argv[])
     }
 
     if (salt) {
-	i = strlen(salt);
-	if (i != salt_len) {
-	    fprintf(stderr, _("Wrong salt length: %d byte(s) instead of %d.\n"),
-		    i, salt_len);
+	unsigned int c = strlen(salt);
+	if (c != salt_len) {
+	    fprintf(stderr,
+		    _("Wrong salt length: %d byte(s) when %d expected.\n"),
+		    c, salt_len);
 	    exit(1);
 	}
-	while (i-- > 0)
-	    if (strchr(valid_salts, salt[i]) == NULL) {
-		fprintf(stderr, _("Illegal salt character '%c'.\n"), salt[i]);
+	while (c-- > 0)
+	    if (strchr(valid_salts, salt[c]) == NULL) {
+		fprintf(stderr, _("Illegal salt character '%c'.\n"), salt[c]);
 		exit(1);
 	    }
     } else {
@@ -149,14 +166,23 @@ int main(int argc, char *argv[])
     }
 
     if (!password) {
-	if (use_stdin) {
-	    if (isatty(STDIN_FILENO))
+	if (password_fd != -1) {
+	    FILE *fp;
+	    unsigned char *p;
+
+	    if (isatty(password_fd))
 		fprintf(stderr, _("Password: "));
 	    password = malloc(128);
-	    if (!fgets(password, sizeof password, stdin)) {
-		perror("fgets:");
+	    fp = fdopen(password_fd, "r");
+	    if (!fp) {
+		perror("fdopen");
 		exit(2);
 	    }
+	    if (!fgets(password, 128, fp)) {
+		perror("fgets");
+		exit(2);
+	    }
+
 	    p = password;
 	    while (*p) {
 		if (*p == '\n') {
@@ -165,8 +191,8 @@ int main(int argc, char *argv[])
 		}
 		/* which characters are valid? */
 		if (*p > 0x7f) {
-		    fprintf(stderr, _("Illegal password character '0x%hhx'.\n"),
-			    *p);
+		    fprintf(stderr,
+			    _("Illegal password character '0x%hhx'.\n"), *p);
 		    exit(1);
 		}
 		p++;
@@ -174,17 +200,20 @@ int main(int argc, char *argv[])
 	} else {
 	    password = getpass(_("Password: "));
 	    if (!password) {
-		perror("getpass:");
+		perror("getpass");
 		exit(2);
 	    }
 	}
     }
 
-    p = malloc(strlen(salt_prefix) + strlen(salt) + 1);
-    *p = '\0';
-    strcat(p, salt_prefix);
-    strcat(p, salt);
-    printf("%s\n", crypt(password, p));
+    {
+	unsigned char *pw;
+	pw = malloc(strlen(salt_prefix) + strlen(salt) + 1);
+	*pw = '\0';
+	strcat(pw, salt_prefix);
+	strcat(pw, salt);
+	printf("%s\n", crypt(password, pw));
+    }
     exit(0);
 }
 
@@ -205,12 +234,15 @@ void display_help(void)
     fprintf(stderr, _(
 "      -H, --hash=TYPE       select hash TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
-"      -s, --stdin           read the password from stdin instead of /dev/tty\n"
+"      -P, --password-fd=NUM read the password from file descriptor NUM\n"
+"                            instead of /dev/tty\n"
+"      -s, --stdin           like --password-fd=0\n"
 "      -h, --help            display this help and exit\n"
 "      -v, --version         output version information and exit\n"
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
+"If TYPE is missing available algorithms are printed.\n"
 "\n"
 "Report bugs to %s.\n"), "<md+whois@linux.it>");
 }
@@ -218,12 +250,16 @@ void display_help(void)
 void display_version(void)
 {
     printf("GNU mkpasswd %s\n\n", VERSION);
-    puts("Copyright (C) 2001 Marco d'Itri\n"
+    puts("Copyright (C) 2001-2002 Marco d'Itri\n"
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.");
 }
 
 void display_algorithms(void)
 {
+    int i;
+
     printf(_("Available algorithms:\n"));
+    for (i = 0; salt_prefixes[i].algo != NULL; i++)
+	printf("%s%s\n", salt_prefixes[i].algo, salt_prefixes[i].desc);
 }

@@ -1,3 +1,23 @@
+whois (4.5.25) unstable; urgency=medium
+
+  * Updated data for -H option.
+  * Updated .tk and .hr TLD servers (Closes: #140517).
+  * Updated mkpasswd (added --password-fd).
+
+ -- Marco d'Itri <md@linux.it>  Fri,  5 Apr 2002 15:20:23 +0200
+
+whois (4.5.22) unstable; urgency=medium
+
+  * Added .bz, .gg, .ir, .je, .my TLD servers.
+  * Added -nicir and -denic NIC handles.
+  * Updated .hk TLD server.
+  * Updated ASN list.
+  * netsol-managed gTLD server changed to whois.crsnic.net (Closes: #132221).
+  * Updated hide_strings[] for netsol.
+  * Fixed bug which truncates password read from stdin (Closes: #137377).
+
+ -- Marco d'Itri <md@linux.it>  Fri,  8 Mar 2002 18:00:11 +0100
+
 whois (4.5.21) unstable; urgency=medium
 
   * Fixed stupid bug. (Closes: #132067).

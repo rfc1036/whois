@@ -18,7 +18,6 @@ The home of the program is http://www.linux.it/~md/software/
 Other information sources:
 - RIPE-187 and RIPE-189 (from ftp://ftp.ripe.net/ripe/docs/ or
   http://www.ripe.net/docs/)
-- Greg Woods' awhois script (from ftp.weird.com)
 - the www.geektools.org CGI proxy
 - home of the 6bone client: http://www.ip.qwest.net/~david/software/
 - http://www.apnic.net/db/RIRs.html and
@@ -26,6 +25,8 @@ Other information sources:
 - http://www.uninett.no/navn/domreg.html
 - http://www.iahc.org/dns-refs/registry.html
 - http://www.iana.org/root-whois/xx.htm
+- http://www.afrinic.org
+- http://www.aftld.org
 
 Marco d'Itri
 <md@linux.it>

@@ -72,7 +72,7 @@
 .bv	NONE		# http://www.uninett.no/navn/bv-sj.html
 #.bw			# NIC? www.botsnet.bw btc.bw
 .by	WEB http://www.tld.by/indexeng.html
-.bz	NONE		# www.nic.nz
+.bz	whois.belizenic.bz
 .ca	whois.cira.ca
 .cc	whois.nic.cc
 .cd	whois.nic.cd
@@ -101,7 +101,7 @@
 .do	WEB http://www.nic.do
 .dz	NONE
 .ec	WEB http://www.nic.ec
-.ee	WEB http://www.eenet.ee/info/index.html
+.ee	WEB http://www.eenet.ee/info/
 #.eg	NONE		# NIC? http://www.frcu.eun.eg
 #.eh
 #.er	NONE		# NIC? www.noc.net.er (recently connected!)
@@ -119,7 +119,7 @@
 #.gd			# NO NIC (UPR)
 .ge	WEB http://www.nic.net.ge
 .gf	whois.nplus.gf
-.gg	NONE		# http://www.isles.net
+.gg	whois.channelisles.net
 .gh	NONE		# http://www.ghana.com/domreg.html
 .gi	NONE		# http://www.gibnet.gi/nic/
 .gl	whois.ripe.net
@@ -133,10 +133,10 @@
 .gu	WEB http://gadao.gov.gu/Scripts/wwsquery/wwsquery.dll?hois=guamquery
 #.gw			# no NIC?
 #.gy			# NIC? (UPR)
-.hk	whois.hkdnr.net.hk
+.hk	WEB http://web.hkdnr.net.hk/hkdnr/
 .hm	whois.registry.hm
 .hn	NONE		# www.nic.hn
-.hr	WEB http://noc.srce.hr/web-eng/searchdomain.htm
+.hr	WEB http://www.dns.hr/pretrazivanje.html
 #.ht			# NIC? http://www.haitiworld.com/
 .hu	whois.nic.hu
 .id	whois.idnic.net.id
@@ -146,10 +146,10 @@
 .in	whois.ncst.ernet.in
 .io	WEB http://www.io.io/whois.html
 #.iq			# NIC?
-.ir	WEB http://aria.nic.ir/forms/whois.html
+.ir	whois.nic.ir
 .is	whois.isnet.is
 .it	whois.nic.it
-.je	NONE 		# http://www.isles.net
+.je	whois.channelisles.net
 #.jm			# NIC? uwimona.edu.jm http://nic.jm
 .jo	WEB http://amon.nic.gov.jo/dns/
 .jp	whois.nic.ad.jp
@@ -194,7 +194,7 @@
 #.mv			# NIC? dhiraagu.com.mv
 .mw	WEB http://www.tarsus.net/whois/
 .mx	whois.nic.mx
-.my	NONE		# http://www.mynic.net
+.my	WEB http://www.mynic.net.my/newhp/mynic-lookup.htm
 #.mz			# NIC? www.uem.mz
 .na	WEB http://www.lisse.na/cgi-bin/whois.cgi
 .nc	whois.cctld.nc
@@ -210,14 +210,14 @@
 .nz	whois.domainz.net.nz
 #.om	NONE		# NIC? http://www.gto.net.om
 .pa	WEB http://www.nic.pa
-.pe	whois.rcp.net.pe
+.pe	whois.nic.pe
 #.pf			# NIC? mana.pf
 .pg	NONE	# http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm
 .ph	WEB http://www.names.ph/search.html
 #.pk	whois.pknic.net.pk	# the host does not exist anymore
 .pl	whois.dns.pl
 .pm	whois.nic.fr
-.pn	NONE		# www.nic.pn
+.pn	NONE		# 2day.com www.nic.pn
 .pr	NONE		# http://www.uprr.pr/main.html
 .ps	WEB http://www.nic.ps/whois/
 .pt	NONE		# www.dns.pt
@@ -254,7 +254,7 @@
 .tg	WEB http://www.nic.tg
 .th	whois.thnic.net
 .tj	whois.nic.tj
-.tk	NONE		# 2day.com
+.tk	whois.dot.tk
 .tm	whois.nic.tm
 .tn	NONE		# http://www.ati.tn/Nic/
 .to	whois.tonic.to
@@ -294,7 +294,6 @@
 .org.za	WEB http://www.org.za/	# rwhois.org.za:4321
 .za	NONE		# http://www2.frd.ac.za/uninet/zadomains.html
 .zm	NONE		# http://www.zamnet.zm/domain.shtml
-.zr	NONE		# obsoleted by cd
 #.zw			# NIC? zptc.co.zw http://www.zispa.co.zw/
 -au-dom	whois.aunic.net
 -dom	whois.networksolutions.com
@@ -325,3 +324,4 @@
 -il	whois.isoc.org.il
 -lrms	whois.afilias.net
 -tw	whois.twnic.net
+-nicir	whois.nic.ir

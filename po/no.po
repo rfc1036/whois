@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.5\n"
-"POT-Creation-Date: 2001-09-30 16:07+0200\n"
+"POT-Creation-Date: 2002-04-05 15:26+0200\n"
 "PO-Revision-Date: 1999-12-18 14:00:00\n"
 "Last-Translator: Egil Kvaleberg <egil@kvaleberg.no>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -22,40 +22,41 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../whois.c:149 ../whois.c:183
+#: ../whois.c:149 ../whois.c:186
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Bruker tjener %s.\n"
 
-#: ../whois.c:160
+#: ../whois.c:163
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Bruker standardtjener %s.\n"
 
-#: ../whois.c:163
+#: ../whois.c:166
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 
-#: ../whois.c:169
+#: ../whois.c:172
 msgid "This TLD has no whois server."
 msgstr ""
 
-#: ../whois.c:173
-msgid "Connecting to whois.internic.net."
+#: ../whois.c:176
+#, fuzzy
+msgid "Connecting to whois.crsnic.net."
 msgstr "Kobler opp mot whois.internic.net."
 
-#: ../whois.c:179
-#, c-format
+#: ../whois.c:182
+#, fuzzy, c-format
 msgid ""
 "\n"
-"Found InterNIC referral to %s.\n"
+"Found crsnic referral to %s.\n"
 "\n"
 msgstr ""
 "\n"
 "Fant InterNIC-referanse til %s.\n"
 "\n"
 
-#: ../whois.c:192
+#: ../whois.c:195
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -64,12 +65,12 @@ msgstr ""
 "Forespørsel: \"%s\"\n"
 "\n"
 
-#: ../whois.c:242 ../whois.c:245
+#: ../whois.c:245 ../whois.c:248
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:318
+#: ../whois.c:324
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
@@ -77,28 +78,28 @@ msgstr ""
 "Vet ikke hvor denne IP-adressen har blitt delegert.\n"
 "Prøver ARIN og håper det beste..."
 
-#: ../whois.c:335
+#: ../whois.c:341
 msgid "I guess it's a netblock name but I don't know where to look it up."
 msgstr "Gjetter at det er et netblock-navn, men vet ikke hvor det finnes."
 
-#: ../whois.c:342
+#: ../whois.c:348
 msgid "I guess it's a domain but I don't know where to look it up."
 msgstr "Gjetter at det er er domene, men vet ikke hvor det finnes."
 
-#: ../whois.c:352
+#: ../whois.c:358
 msgid "Unknown AS number. Please upgrade this program."
 msgstr "Ukjent AS-nummer. Vennligst oppdater programmet."
 
-#: ../whois.c:382
+#: ../whois.c:388
 msgid "Warning: RIPE flags ignored for a traditional server."
 msgstr "Merk: RIPE-flaggene ignoreres for en tradisjonell tjener."
 
-#: ../whois.c:446
+#: ../whois.c:452
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Referanse til %s vedrørende %s.\n"
 
-#: ../whois.c:463
+#: ../whois.c:469
 #, fuzzy
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
@@ -107,22 +108,22 @@ msgstr ""
 "Alvorlig feil: INTERNIC har endret standardtekst.\n"
 "Vennligst oppdater programmet.\n"
 
-#: ../whois.c:533
+#: ../whois.c:543
 #, c-format
 msgid "Host %s not found."
 msgstr "Finner ikke verten %s."
 
-#: ../whois.c:543
+#: ../whois.c:553
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: ukjent port"
 
-#: ../whois.c:560
+#: ../whois.c:570
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Avbrudt av signal %d..."
 
-#: ../whois.c:592
+#: ../whois.c:613
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -180,58 +181,69 @@ msgstr ""
 "\n"
 "Versjon %s. Rapporter feil til %s.\n"
 
-#: ../mkpasswd.c:101
+#: ../mkpasswd.c:57
+msgid "\tstandard 56 bit DES-based crypt(3)"
+msgstr ""
+
+#: ../mkpasswd.c:98
 #, c-format
 msgid "Invalid hash type '%s'.\n"
 msgstr ""
 
-#: ../mkpasswd.c:112
+#: ../mkpasswd.c:107
+#, c-format
+msgid "Invalid number '%s'.\n"
+msgstr ""
+
+#: ../mkpasswd.c:125
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr ""
 
-#: ../mkpasswd.c:140
+#: ../mkpasswd.c:154
 #, c-format
-msgid "Wrong salt length: %d byte(s) instead of %d.\n"
+msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr ""
 
-#: ../mkpasswd.c:146
+#: ../mkpasswd.c:160
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr ""
 
-#: ../mkpasswd.c:157 ../mkpasswd.c:178
+#: ../mkpasswd.c:174 ../mkpasswd.c:201
 msgid "Password: "
 msgstr ""
 
-#: ../mkpasswd.c:171
+#: ../mkpasswd.c:195
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr ""
 
-#: ../mkpasswd.c:206
+#: ../mkpasswd.c:232
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
 
-#: ../mkpasswd.c:209
+#: ../mkpasswd.c:235
 #, c-format
 msgid ""
 "      -H, --hash=TYPE       select hash TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
-"      -s, --stdin           read the password from stdin instead of /dev/"
-"tty\n"
+"      -P, --password-fd=NUM read the password from file descriptor NUM\n"
+"                            instead of /dev/tty\n"
+"      -s, --stdin           like --password-fd=0\n"
 "      -h, --help            display this help and exit\n"
 "      -v, --version         output version information and exit\n"
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
+"If TYPE is missing available algorithms are printed.\n"
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../mkpasswd.c:231
+#: ../mkpasswd.c:262
 msgid "Available algorithms:\n"
 msgstr ""

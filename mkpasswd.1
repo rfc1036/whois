@@ -18,11 +18,16 @@ Use the \fISTRING\fP as salt.
 .TP
 .B -H, --hash=TYPE
 Compute the password using the \fITYPE\fP algorithm.
+If \fITYPE\fP is missing available algorithms are printed.
+.TP
+.B -P, --password-fd=NUM
+Read the password from file descriptor \fINUM\fP instead of using
+\fIgetpass(3)\fP.
+If the file descriptor is not connected to a tty then no other message
+than the hashed password is printed on stdout.
 .TP
 .B -s, --stdin
-Read the password from stdin instead of using \fIgetpass(3)\fP.
-If stdin is not connected to a tty then no other message than the hashed
-password is printed on stdout.
+Like \fI--password-fd=0\fP.
 .SH BUGS
 If the \fI--stdin\fP option is used, passwords containing some control
 characters may not be read correctly.

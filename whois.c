@@ -173,13 +173,13 @@ int main(int argc, char *argv[])
 		exit(0);
 	    case 4:
 		if (verb)
-		    puts(_("Connecting to whois.internic.net."));
-		sockfd = openconn("whois.internic.net", NULL);
+		    puts(_("Connecting to whois.crsnic.net."));
+		sockfd = openconn("whois.crsnic.net", NULL);
 		server = query_crsnic(sockfd, qstring);
 		closeconn(sockfd);
 		if (!server)
 		    exit(0);
-		printf(_("\nFound InterNIC referral to %s.\n\n"), server);
+		printf(_("\nFound crsnic referral to %s.\n\n"), server);
 		break;
 	    default:
 		if (verb)
@@ -354,7 +354,7 @@ const char *whereas(int asn, struct as_del aslist[])
 {
     int i;
 
-    if (asn > 23551)
+    if (asn > 25599)
 	puts(_("Unknown AS number. Please upgrade this program."));
     for (i = 0; aslist[i].serv; i++)
 	if (asn >= aslist[i].first && asn <= aslist[i].last)
@@ -512,8 +512,8 @@ int openconn(const char *server, const char *port)
 {
     int fd;
 #ifdef HAVE_GETADDRINFO
-    int i;
-    struct addrinfo hints, *res, *ressave;
+    int err;
+    struct addrinfo hints, *res, *ai;
 #else
     struct hostent *hostinfo;
     struct servent *servinfo;
@@ -525,18 +525,18 @@ int openconn(const char *server, const char *port)
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
 
-    if ((i = getaddrinfo(server, port ? port : "whois", &hints, &res)) != 0)
-	err_quit("getaddrinfo: %s", gai_strerror(i));
-    for (ressave = res; res; res = res->ai_next) {
-	if ((fd = socket(res->ai_family, res->ai_socktype, res->ai_protocol))<0)
+    if ((err = getaddrinfo(server, port ? port : "whois", &hints, &res)) != 0)
+	err_quit("getaddrinfo: %s", gai_strerror(err));
+    for (ai = res; ai; ai = ai->ai_next) {
+	if ((fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) < 0)
 	    continue;		/* ignore */
-	if (connect(fd, (struct sockaddr *)res->ai_addr, res->ai_addrlen) == 0)
+	if (connect(fd, (struct sockaddr *)ai->ai_addr, ai->ai_addrlen) == 0)
 	    break;		/* success */
 	close(fd);
     }
-    freeaddrinfo(ressave);
+    freeaddrinfo(res);
 
-    if (!res)
+    if (!ai)
 	err_sys("connect");
 #else
     if ((hostinfo = gethostbyname(server)) == NULL)

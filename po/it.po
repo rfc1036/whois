@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.13\n"
-"POT-Creation-Date: 2001-09-30 16:07+0200\n"
-"PO-Revision-Date: 2001-09-23 18:32+0200\n"
+"POT-Creation-Date: 2002-04-05 15:26+0200\n"
+"PO-Revision-Date: 2002-04-05 15:26+0200\n"
 "Last-Translator: Marco d'Itri <md@linux.it>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,41 +24,41 @@ msgstr ""
 "\n"
 "Segnalare i bug a %s.\n"
 
-#: ../whois.c:149 ../whois.c:183
+#: ../whois.c:149 ../whois.c:186
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Uso il server %s.\n"
 
-#: ../whois.c:160
+#: ../whois.c:163
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Uso il server predefinito %s.\n"
 
-#: ../whois.c:163
+#: ../whois.c:166
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Questo TLD non ha un server whois, ma si può accedere al database tramite"
 
-#: ../whois.c:169
+#: ../whois.c:172
 msgid "This TLD has no whois server."
 msgstr "Per questo TLD non esiste un server whois."
 
-#: ../whois.c:173
-msgid "Connecting to whois.internic.net."
-msgstr "Mi sto connettendo a whois.internic.net."
+#: ../whois.c:176
+msgid "Connecting to whois.crsnic.net."
+msgstr "Mi sto connettendo a whois.crsnic.net."
 
-#: ../whois.c:179
+#: ../whois.c:182
 #, c-format
 msgid ""
 "\n"
-"Found InterNIC referral to %s.\n"
+"Found crsnic referral to %s.\n"
 "\n"
 msgstr ""
 "\n"
-"Trovato un riferimento di InterNIC a %s.\n"
+"Trovato un riferimento di CRSNIC a %s.\n"
 "\n"
 
-#: ../whois.c:192
+#: ../whois.c:195
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -67,12 +67,12 @@ msgstr ""
 "Richiesta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:242 ../whois.c:245
+#: ../whois.c:245 ../whois.c:248
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Impossibile interpretare questa riga: %s"
 
-#: ../whois.c:318
+#: ../whois.c:324
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best..."
@@ -80,28 +80,28 @@ msgstr ""
 "Non so a chi è stato delegato questo IP.\n"
 "Proverò con ARIN sperando per il meglio..."
 
-#: ../whois.c:335
+#: ../whois.c:341
 msgid "I guess it's a netblock name but I don't know where to look it up."
 msgstr "Credo che sia il nome di un netblock ma non so dove cercarlo."
 
-#: ../whois.c:342
+#: ../whois.c:348
 msgid "I guess it's a domain but I don't know where to look it up."
 msgstr "Credo che sia un dominio ma non so dove cercarlo."
 
-#: ../whois.c:352
+#: ../whois.c:358
 msgid "Unknown AS number. Please upgrade this program."
 msgstr "Numero dell'AS sconosciuto. Per favore aggiorna il programma."
 
-#: ../whois.c:382
+#: ../whois.c:388
 msgid "Warning: RIPE flags ignored for a traditional server."
 msgstr "Attenzione: i flag RIPE sono ignorati dai server tradizionali."
 
-#: ../whois.c:446
+#: ../whois.c:452
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Trovato un riferimento a %s su %s.\n"
 
-#: ../whois.c:463
+#: ../whois.c:469
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -109,22 +109,22 @@ msgstr ""
 "Errore catastrofico: il testo di avvertenze è cambiato.\n"
 "Aggiorna questo programma.\n"
 
-#: ../whois.c:533
+#: ../whois.c:543
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s non trovato."
 
-#: ../whois.c:543
+#: ../whois.c:553
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servizio sconosciuto"
 
-#: ../whois.c:560
+#: ../whois.c:570
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrotto dal segnale %d..."
 
-#: ../whois.c:592
+#: ../whois.c:613
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -189,36 +189,45 @@ msgstr ""
 "      --help           mostra questo aiuto ed esce\n"
 "      --version        stampa le informazioni sulla versione ed esce\n"
 
-#: ../mkpasswd.c:101
+#: ../mkpasswd.c:57
+msgid "\tstandard 56 bit DES-based crypt(3)"
+msgstr "\tcrypt(3) standard a 56 bit basata su DES"
+
+#: ../mkpasswd.c:98
 #, c-format
 msgid "Invalid hash type '%s'.\n"
 msgstr "Il tipo di hash '%s' non è valido.\n"
 
-#: ../mkpasswd.c:112
+#: ../mkpasswd.c:107
+#, c-format
+msgid "Invalid number '%s'.\n"
+msgstr "Il numero '%s' non è valido.\n"
+
+#: ../mkpasswd.c:125
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Per maggior informazioni prova '%s --help'.\n"
 
-#: ../mkpasswd.c:140
+#: ../mkpasswd.c:154
 #, c-format
-msgid "Wrong salt length: %d byte(s) instead of %d.\n"
+msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr "Lunghezza del sale sbagliata: %d byte invece di %d.\n"
 
-#: ../mkpasswd.c:146
+#: ../mkpasswd.c:160
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Il carattere '%c' non è valido in un sale.\n"
 
-#: ../mkpasswd.c:157 ../mkpasswd.c:178
+#: ../mkpasswd.c:174 ../mkpasswd.c:201
 msgid "Password: "
 msgstr "Password: "
 
-#: ../mkpasswd.c:171
+#: ../mkpasswd.c:195
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Il carattere '0x%hhx' non è valido in una password.\n"
 
-#: ../mkpasswd.c:206
+#: ../mkpasswd.c:232
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
@@ -228,32 +237,38 @@ msgstr ""
 "Cifra la PASSWORD usando crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:209
+#: ../mkpasswd.c:235
 #, c-format
 msgid ""
 "      -H, --hash=TYPE       select hash TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
-"      -s, --stdin           read the password from stdin instead of /dev/"
-"tty\n"
+"      -P, --password-fd=NUM read the password from file descriptor NUM\n"
+"                            instead of /dev/tty\n"
+"      -s, --stdin           like --password-fd=0\n"
 "      -h, --help            display this help and exit\n"
 "      -v, --version         output version information and exit\n"
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
+"If TYPE is missing available algorithms are printed.\n"
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
 "      -H, --hash=TIPO       seleziona il TIPO di hash\n"
 "      -S, --salt=SALE       usa il SALE specificato\n"
-"      -s, --stdin           legge la password da stdin invece che da /dev/"
-"tty\n"
+"      -P, --password-fd=NUM legge la password dal file descriptor NUM\n"
+"                            invece che da /dev/tty\n"
+"      -s, --stdin           come --password-fd=0\n"
 "      -h, --help            mostra questo aiuto ed esce\n"
+"      -v, --version         mostra le informazioni sulla versione ed esce\n"
 "\n"
 "Se la PASSWORD non è specificata allora viene chiesta interattivamente.\n"
 "Se il SALE non è specificato ne viene generato uno casuale.\n"
+"Se il TIPO non è specificato viene stampata la lista degli algoritmi\n"
+"disponibili.\n"
 "\n"
 "Segnalare i bug a %s.\n"
 
-#: ../mkpasswd.c:231
+#: ../mkpasswd.c:262
 msgid "Available algorithms:\n"
 msgstr "Algoritmi disponibili:\n"
