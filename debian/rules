@@ -41,4 +41,4 @@ binary: binary-arch
 checkroot:
 	test root = "`whoami`"
 
-.PHONY: binary binary-arch binary-indep clean checkroot
+.PHONY: binary binary-arch binary-indep build clean checkroot

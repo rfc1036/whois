@@ -1,12 +1,3 @@
-This version of whois is compiled without idn-support (means: it cannot
-directly resolve domains with non-ascii characters). If you need a version
-with idn-support, please use any of the floating backports.
-
-
-Andreas Barth <aba@not.so.argh.org>, 2004-12-23
-
-
-
 Why another whois client? Because the RIPE client is a mess of hacks and
 #ifdefs and more complex programs lack features or are bloated.
 

@@ -1,9 +1,9 @@
 /* 6bone referto: extension */
 #define REFERTO_FORMAT	"%% referto: whois -h %255s -p %15s %1021[^\n\r]"
 
-/* String sent to RIPE servers - ONLY FIVE CHARACTERS! */
+/* String sent to RIPE servers - MUST NOT BE LONGER THAN FIVE CHARACTERS! */
 /* Do *NOT* change it if you don't know what you are doing! */
-#define IDSTRING "Md4.6"
+#define IDSTRING "Md4.7"
 
 #define HIDE_DISABLED  -2
 #define HIDE_UNSTARTED -1
@@ -37,6 +37,6 @@ void err_sys(const char *,...);
 
 
 /* flags for RIPE-like servers */
-const char *ripeflags="acFKlLmMrRSx";
+const char *ripeflags="acdFKlLmMrRSx";
 const char *ripeflagsp="gisTtvq";
 

@@ -341,36 +341,28 @@ const char *whichwhois(const char *s)
 {
     unsigned long ip;
     unsigned int i;
+    char *colon;
 
     /* IPv6 address */
-    if (strchr(s, ':')) {
+    if ((colon = strchr(s, ':'))) {
 	unsigned long v6prefix, v6net;
-	const struct ip6_del *ip6_assign;
+
+	/* RPSL hierarchical objects like AS8627:fltr-TRANSIT-OUT */
+	if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
+	    return whereas(atoi(s + 2));
 
 	v6prefix = strtol(s, NULL, 16);
 
-	if (v6prefix == 0) {
-	    /* RPSL hierarchical object like AS8627:fltr-TRANSIT-OUT */
-	    if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
-		return whereas(atoi(s + 2));
-	    return "\x05";
-	} else if (v6prefix == 0x3FFE) {
-	    return "whois.6bone.net";
-	} else if (v6prefix == 0x2002) {
-	    return "\x0A";
-	} else if (v6prefix == 0x2001) {
-	    v6net = strtol(s + 5, NULL, 16);	/* second u16 */
-	    v6net = (v6net & 0xFE00) >> 8;	/* first 7 bits */
-	    ip6_assign = ip6_assign_misc;
-	} else if (v6prefix >= 0x2400 && v6prefix <= 0x3A00) {
-	    v6net = (v6prefix & 0xFC00) >> 8;	/* first 6 bits */
-	    ip6_assign = ip6_assign_rirs;
-	} else
-	    return "\x06";
+	if (v6prefix == 0)
+	    return "\x05";			/* unknown */
 
-	for (i = 0; ip6_assign[i].serv; i++)
-	    if (v6net == ip6_assign[i].net)
+	v6net = (v6prefix << 16) + strtol(colon + 1, NULL, 16);/* second u16 */
+
+	for (i = 0; ip6_assign[i].serv; i++) {
+	    if ((v6net & (~0UL << (32 - ip6_assign[i].masklen)))
+		    == ip6_assign[i].net)
 		return ip6_assign[i].serv;
+	}
 
 	return "\x06";			/* unknown allocation */
     }

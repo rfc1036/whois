@@ -9,7 +9,7 @@ Package: whois
 Architecture: any
 Depends: ${shlibs:Depends}
 Replaces: bsdmainutils (<= 4.5.1), bsdutils (<< 3.0-0)
-Description: The GNU whois client
+Description: the GNU whois client
  This is a new whois (RFC 3912) client rewritten from scratch.
  It is inspired from and compatible with the usual BSD and RIPE whois(1)
  programs.

@@ -39,7 +39,7 @@
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
 .ae	whois.uaenic.ae
-.af	NONE		# whois.nic.af
+.af	whois.nic.af	# whois.nic.cx
 .ag	whois.nic.ag
 .ai	WEB http://whois.offshore.ai/
 .al	NONE		# http://www.inima.al/Domains.html
@@ -48,7 +48,7 @@
 .an	NONE		# http://www.una.net/an_domreg/
 .ao	NONE		# www.dns.ao
 .aq	NONE		# 2day.com
-.ar	WEB http://www.nic.ar/consultas/consdom.html
+.ar	WEB http://www.nic.ar/
 .as	whois.nic.as
 .at	whois.nic.at
 .au	whois.ausregistry.net.au
@@ -76,13 +76,13 @@
 .ca	whois.cira.ca
 .cc	NICCC
 .cd	whois.nic.cd
-.cf	WEB http://www.nic.cf/whois.php3
-.cg	WEB http://www.nic.cg/cgi-bin/whoiscg.pl
+.cf	NONE		# was: WEB http://www.nic.cf/whois.php3
+.cg	WEB http://www.nic.cg/cgi-bin/whois.pl
 .ch	whois.nic.ch
 .ci	www.nic.ci
 .ck	whois.nic.ck
 .cl	whois.nic.cl
-.cm	NONE		# http://info.intelcam.cm
+.cm	NONE		# http://info.intelcam.cm http://www.camnet.cm/
 .edu.cn	whois.edu.cn
 .cn	whois.cnnic.net.cn
 .uk.co	whois.uk.co
@@ -96,15 +96,15 @@
 .de	whois.denic.de
 .dj	whois.domain.dj
 .dk	whois.dk-hostmaster.dk
-.dm	NONE		# www.domains.dm
+.dm	WEB https://secure.domains.dm/tools/whois.jsp
 .do	WEB http://www.nic.do/whois-h.php3
 .dz	WEB http://www.nic.dz/anglais/dom-attr-eng.htm
-.ec	WEB http://www.nic.ec/consulta/whois.asp
+.ec	WEB http://www.nic.ec/eng/nicec.htm
 .ee	whois.eenet.ee
 .eg	NONE		# http://www.ise.org.eg/domain.htm http://www.frcu.eun.eg/docs/e/dns.php
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
-.es	WEB https://www.nic.es/esnic/jsp/whois_ctos.jsp
+.es	WEB https://www.nic.es/ingles/
 #.et	NONE		# NIC? www.telecom.net.et
 .fi	whois.ficora.fi
 .fj	whois.usp.ac.fj
@@ -113,7 +113,7 @@
 .fo	whois.ripe.net	# www.nic.fo
 .fr	whois.nic.fr
 #.fx
-#.ga			# NIC? www.inet.ga
+.ga	NONE		# www.nic.ga
 .gb	NONE
 #.gd			# NO NIC (UPR)
 .ge	WEB http://whois.sanet.ge/
@@ -129,7 +129,7 @@
 .gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
 .gs	whois.adamsnames.tc
 .gt	WEB http://www.gt/whois.htm
-.gu	WEB http://gadao.gov.gu/Scripts/wwsquery/wwsquery.dll?hois=guamquery
+.gu	WEB http://gadao.gov.gu/domainsearch.htm
 #.gw			# no NIC?
 #.gy			# NIC? (UPR)
 .hk	whois.hkdnr.net.hk
@@ -154,14 +154,14 @@
 .jp	whois.nic.ad.jp
 .ke	whois.kenic.or.ke
 .kg	whois.domain.kg
-.kh	NONE		# http://www.mptc.gov.kh/Reculation/DNS.htm
+.kh	NONE		# http://www.mptc.gov.kh/ http://www.nic.net.kh/
 .ki	WEB http://www.ki/dns/
 .km	NONE		# NO NIC
 #.kn			# NO NIC (UPR)
 #.kp
 .kr	whois.nic.or.kr
 .kw	WEB http://www.domainname.net.kw
-.ky	WEB http://146.115.157.215/whoisfrontend.asp
+.ky	NONE		# http://www.icta.ky/dev/da_ky_reg_dom.php www.nic.ky
 .kz	whois.domain.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/search.html
@@ -169,8 +169,8 @@
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
-.ls	NONE		# NIC? http://www.co.ls/
-.lt	whois.ripe.net
+.ls	NONE		# http://www.co.ls/
+.lt	whois.domreg.lt
 .lu	whois.dns.lu
 .lv	whois.nic.lv
 .ly	WEB http://www.lydomains.com/
@@ -190,7 +190,7 @@
 .ms	whois.adamsnames.tc
 .mt	WEB http://www.nic.org.mt/dir/home.html
 .mu	WEB http://www.nic.mu/mauritius/domain.whois.php
-#.mv			# NIC? dhiraagu.com.mv
+#.mv			# NIC? www.dhiraagu.com.mv
 .mw	WEB http://www.registrar.mw/
 .mx	whois.nic.mx
 .my	whois.mynic.net.my
@@ -211,14 +211,14 @@
 .pa	WEB http://www.nic.pa/
 .pe	whois.nic.pe
 #.pf			# NIC? mana.pf
-.pg	NONE	# http://www.unitech.ac.pg/Unitech_General/ITS/ITS_Dns.htm
+.pg	NONE	# http://www.npi.gov.pg/DNS/DNS-Application-form.htm
 .ph	WEB http://www.domains.ph/DomainSearch.asp
 .pk	WEB http://www.pknic.net.pk/
 .pl	whois.dns.pl
 .pm	whois.nic.fr
 .pn	WEB http://www.pitcairn.pn/PnRegistry/CheckAvailability.html
 .pr	WEB http://www.nic.pr/domain/whois.asp
-.ps	WEB http://www.nic.ps/whois/
+.ps	WEB http://www.nic.ps/whois/whois.html
 .pt	whois.dns.pt
 .pw	whois.nic.pw
 .py	WEB http://www.nic.py/consultas/
@@ -229,7 +229,7 @@
 .ru	whois.ripn.net
 .rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
 .sa	saudinic.net.sa
-.sb	WEB http://www.nic.net.sb/search.htm
+.sb	WEB http://whois.nic.net.sb/
 .sc	NONE		# www.nic.sc
 .sd	NONE		# http://www.isoc.sd/sd.php
 .se	whois.nic-se.se
@@ -258,7 +258,9 @@
 .tm	whois.nic.tm
 .tn	NONE		# http://www.ati.tn/Nic/
 .to	whois.tonic.to
-.tp	WEB http://cgi.connect.ie/cgi-bin/tplookup.cgi
+#.tp	WEB http://cgi.connect.ie/cgi-bin/tplookup.cgi
+# also see whois.cocca.cx ALSO RELEVANT FOR .tl
+.tp	WEB http://www.nic.tp/whois.jsp
 .tr	whois.metu.edu.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
 .tv	whois.tv
@@ -277,23 +279,22 @@
 .uz	WEB http://www.noc.uz/dom_01.htm
 .va	whois.ripe.net
 .vc	whois.opensrs.net
-.ve	WEB http://www.nic.ve/nicwho01.html	# rwhois.reacciun.ve:4321
+.ve	WEB http://www.nic.ve/		# rwhois.reacciun.ve:4321
 .vg	whois.adamsnames.tc
 .vi	WEB http://www.nic.vi/whoisform.htm
 .vn	WEB http://www.vnnic.net.vn/english/reg_domain/
 .vu	WEB http://www.vunic.vu/whois.htm
-#.wf			# NIC-FR!
+.wf	whois.nic.wf
 .ws	whois.samoanic.ws
 #.ye			# NIC? www.y.net.ye
-#.yt			# NIC-FR!
+.yt	whois.nic.yt
 .yu	NONE		# www.nic.yu
 .ac.za	whois.ac.za
-#.bourse.za	whois.bourse.za	# broken
 .co.za	WEB http://whois.co.za/
 .net.za	whois.net.za
 .org.za	WEB http://www.org.za/	# rwhois.org.za:4321
-.za	NONE		# http://www2.frd.ac.za/uninet/zadomains.html
-.zm	NONE		# http://www.zamnet.zm/domain.shtml
+.za	NONE	# http://www2.frd.ac.za/uninet/zadomains.html whois.frd.ac.za
+.zm	NONE		# NIC? http://www.zamnet.zm/domain.shtml
 #.zw			# NIC? zptc.co.zw http://www.zispa.co.zw/
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com

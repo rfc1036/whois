@@ -1,3 +1,21 @@
+whois (4.7.0) unstable; urgency=medium
+
+  * Updated the .af, .ar, .cf, .dm, .ec, .es, .ga, .gu, .ky, .lt, .sb, .wf
+    and .yt TLD servers.
+  * Updated the IPv6 allocations and added support for a generic list of
+    IPv6 prefixes.
+  * Updated the IPv4 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 30 Jan 2005 13:51:30 +0100
+
+whois (4.6.26) unstable; urgency=medium
+
+  * Fixed switch -d. (Closes: #287487)
+  * Fixed RPSL hierarchical objects.
+  * Updated the IPv6 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 28 Dec 2004 10:42:12 +0100
+
 whois (4.6.25) unstable; urgency=medium
 
   * Added the .fi TLD server. (Closes: #283714)
