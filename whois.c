@@ -428,13 +428,11 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    puts(_("Warning: RIPE flags used with a traditional server."));
 	strcat(buf, flags);
     }
-    if (!isripe && strcmp(server, "whois.nic.mil") == 0 &&
+    /* FIXME: /e is not applied to .JP ASN */
+    if (!isripe && (strcmp(server, "whois.nic.mil") == 0 ||
+	    strcmp(server, "whois.nic.ad.jp") == 0) &&
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
-    else if (!isripe && (strcmp(server, "whois.arin.net") == 0 ||
-	    strcmp(server, "whois.nic.ad.jp")) &&
-	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
-	sprintf(buf, "AS %s", query + 2);	/* always ask for a ASN */
     else if (!isripe && strcmp(server, "whois.corenic.net") == 0)
 	sprintf(buf, "--machine %s", query);	/* machine readable output */
     else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {

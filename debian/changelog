@@ -1,4 +1,4 @@
-whois (4.6.4) unstable; urgency=medium
+whois (4.6.5) unstable; urgency=medium
 
   * Added may new ASN blocks from MILNET, LACNIC and JP-NIC.
   * Fixed a bug which broke ASN queries to whois.nic.mil.
