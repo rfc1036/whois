@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH:P:sS:V", longopts, 0)) > 0) {
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH::P:sS:V", longopts, 0)) > 0) {
 	switch (ch) {
 	case 'H':
 	    if (!optarg || strcasecmp("help", optarg) == 0) {

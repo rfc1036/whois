@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.13\n"
-"POT-Creation-Date: 2002-11-28 21:21+0100\n"
-"PO-Revision-Date: 2002-11-28 21:22+0100\n"
+"POT-Creation-Date: 2003-03-16 15:37+0100\n"
+"PO-Revision-Date: 2003-03-16 15:38+0100\n"
 "Last-Translator: Marco d'Itri <md@linux.it>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 "\n"
 "Segnalare i bug a %s.\n"
 
-#: ../whois.c:151 ../whois.c:202
+#: ../whois.c:151 ../whois.c:213
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Uso il server %s.\n"
@@ -51,22 +51,27 @@ msgstr "Mi sto connettendo a whois.crsnic.net."
 #, c-format
 msgid ""
 "\n"
-"Found crsnic referral to %s.\n"
+"Found a referral to %s.\n"
 "\n"
 msgstr ""
 "\n"
-"Trovato un riferimento di CRSNIC a %s.\n"
+"Trovato un riferimento a %s.\n"
 "\n"
 
-#: ../whois.c:195
+#: ../whois.c:196
+msgid "Connecting to whois.publicinterestregistry.net."
+msgstr "Mi sto connettendo a whois.publicinterestregistry.net."
+
+#: ../whois.c:206
 msgid "No whois server is known for this kind of object."
 msgstr "Non è noto alcun server whois per questo tipo di oggetto."
 
-#: ../whois.c:198
+#: ../whois.c:209
 msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr "Numero dell'AS o della rete IP sconosciuto. Per favore aggiorna il programma."
+msgstr ""
+"Numero dell'AS o della rete IP sconosciuto. Per favore aggiorna il programma."
 
-#: ../whois.c:211
+#: ../whois.c:222
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -75,21 +80,21 @@ msgstr ""
 "Richiesta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:258 ../whois.c:261
+#: ../whois.c:275 ../whois.c:278
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Impossibile interpretare questa riga: %s"
 
-#: ../whois.c:400
+#: ../whois.c:417
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Attenzione: sono stati usati dei flag RIPE con un server tradizionale."
 
-#: ../whois.c:460
+#: ../whois.c:477
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Trovato un riferimento a %s su %s.\n"
 
-#: ../whois.c:477
+#: ../whois.c:494
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -97,26 +102,26 @@ msgstr ""
 "Errore catastrofico: il testo di avvertenze è cambiato.\n"
 "Aggiorna questo programma.\n"
 
-#: ../whois.c:551
+#: ../whois.c:611
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s non trovato."
 
-#: ../whois.c:561
+#: ../whois.c:621
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servizio sconosciuto"
 
-#: ../whois.c:573
+#: ../whois.c:633
 msgid "Timeout."
 msgstr "Tempo scaduto."
 
-#: ../whois.c:579
+#: ../whois.c:639
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrotto dal segnale %d..."
 
-#: ../whois.c:628
+#: ../whois.c:688
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"

@@ -1,6 +1,6 @@
 Summary: Enhanced WHOIS client
 Name: whois
-Version: 4.6.1
+Version: 4.6.3
 Release: 1
 License: GPL
 Vendor: Marco d'Itri <md@linux.it>
@@ -10,7 +10,7 @@ BuildRoot: /var/tmp/%{name}-root
 Prefix: /usr
 
 %description
-This is a new whois (RFC 954) client rewritten from scratch by me.
+This is a new whois (RFC 954) client rewritten from scratch.
 It is derived from and compatible with the usual BSD and RIPE whois(1)
 programs.
 It is intelligent and can automatically select the appropriate whois

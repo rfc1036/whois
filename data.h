@@ -40,7 +40,9 @@ const char *ripe_servers_old[] = {
 };
 
 const char *hide_strings[] = {
-    "The Data in the VeriSign", "terms at any time.",		/* VERISIGN */
+    "NOTICE AND TERMS OF USE: You", "VeriSign reserves",	/* VERISIGN */
+    "NOTICE: Access to .ORG WHOIS", "time. By submitting",	/* org */
+    "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
     "The data in Register", "By submitting",		    /* REGISTER.COM */
     "The Data in the Tucows", "RECORD DOES NOT",		/* OPENSRS */
     " The data contained in Dotster", "Please limit your",	/* DOTSTER */
@@ -50,12 +52,14 @@ const char *hide_strings[] = {
     "**************", "**************",				/* sg */
     "The Data in Gabia", "you agree to abide",
     "The data contained in Go Daddy", "is not the owner",	/* NEUSTAR */
-    "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
     "Disclaimer: The Global Name Registry", "for any commercial",
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
     "The data in this whois", "Version 6.3",			/* enom */
+    "By submitting a WHOIS query,", "LACK OF A DOMAIN",		/* directNIC */
+    "The Data in OnlineNIC", "\tBy starting this query",	/* OnlineNIC */
+    "The data in Bulkregister.com", "you agree to abide", /* bulkregister */
     NULL, NULL
 };
 
@@ -101,6 +105,7 @@ struct ip6_del ip6_assign[] = {
     { 0x0C00, "whois.apnic.net" },
     { 0x0E00, "whois.apnic.net" },
     { 0x1200, "whois.lacnic.net" },
+    { 0x1400, "whois.ripe.net" },
     { 0, NULL }
 };
 

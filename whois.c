@@ -1,4 +1,4 @@
-/* Copyright 1999 by Marco d'Itri <md@linux.it>.
+/* Copyright 1999-2003 by Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -188,7 +188,18 @@ int main(int argc, char *argv[])
 		close(sockfd);
 		if (!server)
 		    exit(0);
-		printf(_("\nFound crsnic referral to %s.\n\n"), server);
+		printf(_("\nFound a referral to %s.\n\n"), server);
+		alarm(60);
+		break;
+	    case 7:
+		if (verb)
+		    puts(_("Connecting to whois.publicinterestregistry.net."));
+		sockfd = openconn("whois.publicinterestregistry.net", NULL);
+		server = query_pir(sockfd, qstring);
+		close(sockfd);
+		if (!server)
+		    exit(0);
+		printf(_("\nFound referral to %s.\n\n"), server);
 		alarm(60);
 		break;
 	    case 5:
@@ -310,7 +321,7 @@ const char *whichwhois(const char *s)
 	    return "\006";			/* unknown allocation */
 	} else if (strncasecmp(s, "3ffe:", 5) == 0)
 	    return "whois.6bone.net";
-	/* RPSL objects like AS8627:fltr-TRANSIT-OUT */
+	/* RPSL hierarchical object like AS8627:fltr-TRANSIT-OUT */
 	else if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
 	    return whereas(atoi(s + 2));
 	else
@@ -513,7 +524,50 @@ const char *query_crsnic(const int sock, const char *query)
 	    *q = '\0';
 	    state = 2;
 	}
-	fputs(buf, stdout);
+	if (verb)
+	    fputs(buf, stdout);
+    }
+    if (ferror(fi))
+	err_sys("fgets");
+
+    free(temp);
+    return ret;
+}
+
+const char *query_pir(const int sock, const char *query)
+{
+    char *temp, buf[2000], *ret = NULL;
+    FILE *fi;
+    int state = 0;
+
+    temp = malloc(strlen(query) + 5 + 2 + 1);
+    strcpy(temp, "FULL ");
+    strcat(temp, query);
+    strcat(temp, "\r\n");
+
+    fi = fdopen(sock, "r");
+    if (write(sock, temp, strlen(temp)) < 0)
+	err_sys("write");
+    while (fgets(buf, sizeof(buf), fi)) {
+	/* If there are multiple matches only the server of the first record
+	   is queried */
+	if (state == 0 &&
+    strncmp(buf, "Registrant Name:CONTACT NOT AUTHORITATIVE", 15) == 0)
+	    state = 1;
+	if (state == 1 &&
+    strncmp(buf, "Registrant Street1:Whois Server:", 16) == 0) {
+	    char *p, *q;
+
+	    for (p = buf; *p != ':'; p++);	/* skip until colon */
+	    for (p++; *p != ':'; p++);		/* skip until 2nd colon */
+	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
+	    ret = malloc(strlen(p) + 1);
+	    for (q = ret; *p != '\n' && *p != '\r'; *q++ = *p++); /*copy data*/
+	    *q = '\0';
+	    state = 2;
+	}
+	if (verb)
+	    fputs(buf, stdout);
     }
     if (ferror(fi))
 	err_sys("fgets");

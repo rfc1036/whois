@@ -1,3 +1,15 @@
+whois (4.6.3) unstable; urgency=low
+
+  * Added support for .org referrals. (Closes: #182192, #179539)
+  * Fix mkpasswd -H. (Closes: #181696)
+  * Added new RIPE IPv6 block.
+  * Added again old changelog entries to make Adrian Bunk stop complaining.
+    (Closes: #179316).
+  * Do not show anymore the output of CRSNIC and PIR servers unless the
+    --verbose flag is used.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 16 Mar 2003 15:30:18 +0100
+
 whois (4.6.2) unstable; urgency=high
 
   * Added APNIC block 2001:e00::/23.
@@ -31,3 +43,445 @@ whois (4.6.0) unstable; urgency=medium
   * Changelog trimmed.
 
  -- Marco d'Itri <md@linux.it>  Thu, 28 Nov 2002 20:49:01 +0100
+
+whois (4.5.34) unstable; urgency=medium
+
+  * Added a new RIPE IPv4 allocation.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 24 Nov 2002 03:52:32 +0100
+
+whois (4.5.33) unstable; urgency=medium
+
+  * Added another RIPE IPv6 allocation.
+  * Fixed .net.au SLD.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 20 Nov 2002 03:50:49 +0100
+
+whois (4.5.32) unstable; urgency=medium
+
+  * Fixed .in TLD code.
+  * Updated .hk, ky, .nz TLDs.
+  * Added LACNIC ASN block.
+  * Added -uanic NIC handles.
+  * RPSL flags are not stripped anymore even if the server is unrecognized.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 16 Nov 2002 04:25:08 +0100
+
+whois (4.5.31) unstable; urgency=medium
+
+  * Added undocumented -V command line option.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 11 Oct 2002 17:35:18 +0200
+
+whois (4.5.30) unstable; urgency=medium
+
+  * Added support for -c flag.
+  * Updated .aero, .dk, .ee, .gr and .in TLD servers.
+  * Updated spanish translation.
+  * Updated whois query code for the new ARIN server (Closes: #160693).
+  * Reviewed all hide_strings[] (Closes: #161462).
+  * Added many Korean IP and ASN allocations.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 11 Oct 2002 14:24:25 +0200
+
+whois (4.5.29) unstable; urgency=medium
+
+  * Fixed mkpasswd -H (Closes: #149071).
+  * Updated .dk and .pk TLD servers (Closes: #155897).
+  * Updated LANIC and telstra IP allocations.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 22 Jun 2002 13:02:43 +0200
+
+whois (4.5.28) unstable; urgency=medium
+
+  * Updated .tt TLD server (Closes: #148771).
+
+ -- Marco d'Itri <md@linux.it>  Sat,  1 Jun 2002 23:03:49 +0200
+
+whois (4.5.27) unstable; urgency=medium
+
+  * Added .ae TLD server.
+  * Updated .ag TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 31 May 2002 13:36:21 +0200
+
+whois (4.5.26) unstable; urgency=medium
+
+  * Added .tv and .us TLD servers (Closes: #144257).
+
+ -- Marco d'Itri <md@linux.it>  Fri, 26 Apr 2002 03:31:48 +0200
+
+whois (4.5.25) unstable; urgency=medium
+
+  * Updated data for -H option.
+  * Updated .tk and .hr TLD servers (Closes: #140517).
+  * Updated mkpasswd (added --password-fd).
+
+ -- Marco d'Itri <md@linux.it>  Fri,  5 Apr 2002 15:20:23 +0200
+
+whois (4.5.22) unstable; urgency=medium
+
+  * Added .bz, .gg, .ir, .je, .my TLD servers.
+  * Added -nicir and -denic NIC handles.
+  * Updated .hk TLD server.
+  * Updated ASN list.
+  * netsol-managed gTLD server changed to whois.crsnic.net (Closes: #132221).
+  * Updated hide_strings[] for netsol.
+  * Fixed bug which truncates password read from stdin (Closes: #137377).
+
+ -- Marco d'Itri <md@linux.it>  Fri,  8 Mar 2002 18:00:11 +0100
+
+whois (4.5.21) unstable; urgency=medium
+
+  * Fixed stupid bug. (Closes: #132067).
+  * Added .re and .pm TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Sun,  3 Feb 2002 17:28:02 +0100
+
+whois (4.5.20) unstable; urgency=medium
+
+  * Updated .dk TLD server (Closes: #130795).
+  * Added .ci, .mu and .sr TLD servers
+  * Fixed parsing of some IPv6 addresses.
+
+ -- Marco d'Itri <md@linux.it>  Sat,  2 Feb 2002 00:56:56 +0100
+
+whois (4.5.19) unstable; urgency=medium
+
+  * Added .aero, .coop, .name and .pro TLD servers.
+  * Added more APNIC and JPNIC netblocks.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 15 Jan 2002 21:55:45 +0100
+
+whois (4.5.18) unstable; urgency=medium
+
+  * Added more KRNIC netblocks.
+
+ -- Marco d'Itri <md@linux.it>  Tue,  8 Jan 2002 19:29:12 +0100
+
+whois (4.5.17) unstable; urgency=medium
+
+  * Updated .dk and .edu TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed,  2 Jan 2002 05:27:23 +0100
+
+whois (4.5.16) unstable; urgency=low
+
+  * Added 220.0.0.0/8.
+
+ -- Marco d'Itri <md@linux.it>  Fri,  7 Dec 2001 03:43:18 +0100
+
+whois (4.5.15) unstable; urgency=medium
+
+  * Added .museum TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 18 Nov 2001 15:12:52 +0100
+
+whois (4.5.14) unstable; urgency=medium
+
+  * Added 219.0.0.0/8.
+  * Updated spanish translation.
+  * Updated .hk TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Fri,  17 Oct 2001 20:57:26 +0200
+
+whois (4.5.13) unstable; urgency=medium
+
+  * Fixed "Password: " prompt printing when using mkpasswd --stdin.
+  * Updated .hm TLD server (Closes: #115719).
+
+ -- Marco d'Itri <md@linux.it>  Fri,  5 Oct 2001 00:57:26 +0200
+
+whois (4.5.12) unstable; urgency=medium
+
+  * Updated .af, .biz and .info TLD servers.
+  * Fixed NLS support in mkpasswd.
+  * Fixed spurious warning message about RIPE flags.
+  * Make server selection code ignore trailing dots (Closes: #65325).
+  * Follow crsnic referrals only for domains (Closes: #78568).
+
+ -- Marco d'Itri <md@linux.it>  Sun, 30 Sep 2001 16:06:37 +0200
+
+whois (4.5.11) unstable; urgency=medium
+
+  * Updated .vc TLD server.
+  * Fixed ugly stupid segfault (Closes: #113409).
+
+ -- Marco d'Itri <md@linux.it>  Tue, 25 Sep 2001 01:55:06 +0200
+
+whois (4.5.10) unstable; urgency=medium
+
+  * The configuration file is optional (Closes: #113340).
+  * Updated .fi TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 24 Sep 2001 17:58:18 +0200
+
+whois (4.5.9) unstable; urgency=medium
+
+  * Updated last known ASN (Closes: #112775).
+  * Updated .am, .bi, .bm, .bo, .bs, .cg, .jo, .mn, .mo, .ni, .np, .pt,
+    .rw, .pk, .pl, .ps, .sv, .ug, .vn, .net.za, .org.za TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 19 Sep 2001 21:45:22 +0200
+
+whois (4.5.8) unstable; urgency=medium
+
+  * Use a bigger internal buffer to parse server output (Closes: #109919).
+  * Added german translation (Closes: #103480).
+  * Added support for domains like eu.org and uk.com.
+  * Fixed non-ASCII locales.
+  * Added another DDN AS block, .info and .biz servers.
+  * Updated .au netblocks data, .ng, .ua and .za TLD servers.
+  * When mkpasswd output is redirected to a file only the hashed password
+    is printed.
+  * Made some cosmetic changes for solaris.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 26 Aug 2001 16:46:23 +0200
+
+whois (4.5.7) unstable; urgency=low
+
+  * Added -nicat and -il NIC handles (Closes: #94465).
+  * Greatly bloated mkpasswd now can read the password from the console
+    (Closes: #94826).
+
+ -- Marco d'Itri <md@linux.it>  Tue,  5 Jun 2001 14:01:56 +0200
+
+whois (4.5.6) unstable; urgency=medium
+
+  * Fixed typo in the server name for .si.
+  * Added 80.0.0.0/7 allocation and -frnic NIC handles.
+  * Added Build-Depends (Closes: #90205).
+
+ -- Marco d'Itri <md@linux.it>  Wed,  4 Apr 2001 01:27:53 +0200
+
+whois (4.5.5) unstable; urgency=low
+
+  * Added -itnic NIC handles.
+  * Updated AS list (Closes: #88920).
+
+ -- Marco d'Itri <md@linux.it>  Sun,  1 Apr 2001 22:14:04 +0200
+
+whois (4.5.4) unstable; urgency=low
+
+  * Updated .at, .be, .cy, .cz, .ee, .gr, .il, .pl, .ro, .vi and .nz ccTLDs.
+  * Added -cz, -nicat, and -rotld NIC handles.
+  * Added telstra IP allocations.
+  * Fixed fencepost error (Closes: #83661).
+
+ -- Marco d'Itri <md@linux.it>  Wed,  7 Mar 2001 00:45:33 +0100
+
+whois (4.5.3) unstable; urgency=low
+
+  * Updated .hr and level3 servers.
+  * Added .la and .by servers and updated some other data.
+  * Many RPSL fixes.
+  * Added BRAZIL-BLK[12] networks.
+  * Rechecked all missing ccTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Tue,  6 Feb 2001 18:29:37 +0100
+
+whois (4.5.2) unstable; urgency=low
+
+  * Added TWNIC netblocks.
+  * Fixed server name for .ca, .gr, .edu.cn and .ie (Closes: #77127, #78322).
+  * Added *-CN and *-DK NIC handles.
+  * Added servers for .cf and .gt.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 17 Dec 2000 02:16:11 +0100
+
+whois (4.5.1) unstable; urgency=low
+
+  * Portability fixes.
+  * Added KRNIC and JPNIC netblocks.
+  * Added new RIPE assignment.
+  * Fixed use of uninitialised memory (Closes: #76045, #76060).
+
+ -- Marco d'Itri <md@linux.it>  Sun,  5 Nov 2000 13:11:37 +0100
+
+whois (4.5.0) unstable; urgency=low
+
+  * Added CentralNic (formerly NomiNation.net) servers.
+  * Added 151.99.0.0/16 prefix.
+  * Changed de and is TLD servers.
+  * Email addresses are not mistaken for domains anymore.
+  * Added $WHOIS_HIDE variable.
+  * Added getopt_long support and rearranged .h files.
+  * Removed obsolete #ifndef FIRST_ASK_INTERNIC.
+  * Added support for new RPSL query switches: -l, -x, -q.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 24 Jul 2000 23:47:26 +0200
+
+whois (4.4.14) frozen unstable; urgency=medium
+
+  * !=> HIDE_DISCL has been disabled (VERY IMPORTANT!).
+  * !=> Fixed -h option for gTLDs (Closes: 65001).
+  * !=> Priority changed from important to standard (Closes: #64460).
+  * !=> Added server for net.au (Closes: #64574).
+  * Fixed longstanding bug in RIPE-style referrals handling.
+  * Added telstra netblocks, NIC handles and whois server.
+  * Added fed.us domain.
+  * Added nic.mil AS block.
+  * Added production IPv6 TLA.
+
+ -- Marco d'Itri <md@linux.it>  Sun,  4 Jun 2000 20:00:20 +0200
+
+whois (4.4.13) frozen unstable; urgency=high
+
+  * Fixed .dk and .nl servers (IMPORTANT!).
+  * Added many, many domains in tld_serv_list.
+  * A message is displayed if only a WWW gateway is available.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 21 Apr 2000 17:59:19 +0200
+
+whois (4.4.12) frozen unstable; urgency=medium
+
+  * Fixed queries for *.jp domains (Closes: #60861).
+  * Will hide disclaimers of many registries.
+  * Added support for level3.net registry.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 25 Mar 2000 11:51:01 +0100
+
+whois (4.4.11) frozen unstable; urgency=low
+
+  * Enlarged a buffer. This bug silently corrupted queries for some CORE
+    objects (Closes: #60612).
+
+ -- Marco d'Itri <md@linux.it>  Fri, 17 Mar 2000 23:33:38 +0100
+
+whois (4.4.10) frozen unstable; urgency=low
+
+  * RIPE-like flags are allowed for CORENIC too.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 17 Mar 2000 23:30:46 +0100
+
+whois (4.4.9) frozen unstable; urgency=low
+
+  * Fixed segfault when requesting a RIPE template (Closes: #59030).
+
+ -- Marco d'Itri <md@linux.it>  Sat, 26 Feb 2000 14:53:32 +0100
+
+whois (4.4.8) frozen unstable; urgency=low
+
+  * Fixed two off-by-one in mallocs and a buffer overflow.
+  * Fixed ugly bug in parsing of multi argument command lines.
+  * Fixed domcmp() to deal with -au-dom, .uk.net and so on.
+  * Added support for corenic and GANDI handles.
+  * Now automatically request machine parseable output from corenic.
+  * rr.arin.net added to the list of RIPE-like servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 23 Feb 2000 19:50:50 +0100
+
+whois (4.4.7) frozen unstable; urgency=low
+
+  * Updated .no ccTLD entry.
+  * Added RIPE as default server for limerick objects.
+  * Fixed $LANG parsing.
+  * Fixed false positive for netblock handles matching /^as/ and
+    another bug regarding parsing of AS queries.
+    (Dark, please allow this upload to go in frozen because users will
+     be bitten by these bug and will not understand what's happening.)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 16 Jan 2000 14:45:00 +0100
+
+whois (4.4.6) unstable; urgency=low
+
+  * Fixed bug in parsing the argument of -h.
+  * Added new ccTLDs: cl, kg, lu.
+  * Added AS-* netblocks. I assume only RIPE uses this format.
+  * Some additions to ripe_servers[].
+
+ -- Marco d'Itri <md@linux.it>  Thu, 13 Jan 2000 01:16:51 +0100
+
+whois (4.4.5) unstable; urgency=low
+
+  * The InterNIC server is always asked to return complete records when a
+    query matches more than one object.
+  * s/CRSNIC/InterNIC/. Oh, how much I hate NSI!
+  * Added support for *jp NIC handles and *-MNT RIPE handles.
+  * Norwegian translation.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 18 Dec 1999 21:00:36 +0100
+
+whois (4.4.4) unstable; urgency=low
+
+  * The default server is read from $WHOIS_SERVER.
+
+ -- Marco d'Itri <md@linux.it>  Sun,  5 Dec 1999 11:36:52 +0100
+
+whois (4.4.3) unstable; urgency=low
+
+  * s/whois.internic.net/whois.networksolutions.com/
+  * Added Oleane to ripe_servers[].
+
+ -- Marco d'Itri <md@linux.it>  Thu,  2 Dec 1999 21:50:59 +0100
+
+whois (4.4.2) unstable; urgency=low
+
+  * Fixed the test for the use of RIPE-style options with non RIPE-like
+    servers.
+  * Cleanup of man page source.
+  * Fixed mkpasswd(1) header (closes: #51401).
+
+ -- Marco d'Itri <md@linux.it>  Sun, 28 Nov 1999 12:51:25 +0100
+
+whois (4.4.1) unstable; urgency=low
+
+  * Converted some strcmp to strcasecmp.
+  * A space is added after "AS" when querying ARIN.
+  * The "domain" command keyword is added by default when querying ERNET.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 16 Nov 1999 11:57:55 +0100
+
+whois (4.4.0) unstable; urgency=low
+
+  * Now the program automatically select the right server for AS queries.
+  * Added RIPE allocations of netblocks in the B class space.
+  * Extensive survey of all known whois servers and update of tld_serv_list.
+  * Now the flag -VMd4.4 is sent to RIPE-like servers.
+  * Written a test program for checking if all servers work.
+
+ -- Marco d'Itri <md@linux.it>  Tue,  9 Nov 1999 22:53:35 +0100
+
+whois (4.3.3) unstable; urgency=low
+
+  * Fixed man page (closes: #49195).
+
+ -- Marco d'Itri <md@linux.it>  Sun,  7 Nov 1999 14:07:59 +0100
+
+whois (4.3.2) unstable; urgency=low
+
+  * Fixed version reporting code. Now the string is "-VMd2.0".
+
+ -- Marco d'Itri <md@linux.it>  Tue,  2 Nov 1999 19:50:33 +0100
+
+whois (4.3.1) unstable; urgency=low
+
+  * CRSNIC code parsed the wrong field (closes: #48590).
+
+ -- Marco d'Itri <md@linux.it>  Thu, 28 Oct 1999 22:21:55 +0200
+
+whois (4.3) unstable; urgency=low
+
+  * Corrected CRSNIC server hostname (closes: #48197).
+  * Updated delegation lists.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 26 Oct 1999 11:43:38 +0200
+
+whois (4.2) unstable; urgency=low
+
+  * Added support for the CRSNIC registry of GTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 20 Oct 1999 20:19:06 +0200
+
+whois (4.1) unstable; urgency=low
+
+  * Fixed $LANG parsing (closes: #47233).
+
+ -- Marco d'Itri <md@linux.it>  Thu, 14 Oct 1999 22:23:13 +0200
+
+whois (4.0) unstable; urgency=low
+
+  * Initial Release of the new code: I rewrote the program from scratch.
+  * cryptpw become mkpasswd and now has a man page (closes: #46855).
+
+ -- Marco d'Itri <md@linux.it>  Sun,  3 Oct 1999 19:43:35 +0200

@@ -57,6 +57,7 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
+188.0.0.0/8	ripe # transferred from ARIN to to RIPE
 ## All other B class addresses are supposed to be allocated by ARIN
 ## We know that many of them are not, but they can't all be listed here
 128.0.0.0/2	arin
@@ -162,4 +163,5 @@
 220.72.0.0/13	whois.nic.or.kr
 220.80.0.0/14	whois.nic.or.kr
 220.84.0.0/15	whois.nic.or.kr
-220.0.0.0/7	apnic
+220.0.0.0/6	apnic
+# that's all... here starts the multicast space

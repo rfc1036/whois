@@ -12,6 +12,7 @@ const char *whereas(const unsigned short);
 char *queryformat(const char *, const char *, const char *);
 void do_query(const int, const char *);
 const char *query_crsnic(const int, const char *);
+const char *query_pir(const int, const char *);
 int openconn(const char *, const char *);
 void usage(void);
 void alarm_handler(int);

@@ -1,0 +1,90 @@
+From ripe-dbm@ripe.net  Mon Jan 27 10:09:59 2003
+Return-Path: <ripe-dbm@ripe.net>
+Delivered-To: md@wonderland.linux.it
+Received: from attila.bofh.it (localhost [127.0.0.1])
+	by wonderland.linux.it (Postfix/Md) with ESMTP id 582BA33CD5
+	for <md@wonderland.linux.it>; Mon, 27 Jan 2003 10:09:59 +0100 (CET)
+Received: from picard.linux.it (picard.linux.it [::ffff:62.177.1.107])
+	by attila.bofh.it (Postfix) with ESMTP id 46AE15F966
+	for <md@wonderland.linux.it>; Mon, 27 Jan 2003 09:03:25 +0100 (CET)
+Received: from birch.ripe.net (birch.ripe.net [::ffff:193.0.1.96])
+	by picard.linux.it (Postfix) with ESMTP id 4A76942B2
+	for <md@Linux.IT>; Mon, 27 Jan 2003 09:05:01 +0100 (CET)
+Received: from x24.ripe.net (x24.ripe.net [193.0.1.24])
+	by birch.ripe.net (8.12.5/8.11.6) with ESMTP id h0R83NAq030231;
+	Mon, 27 Jan 2003 09:03:23 +0100
+Received: (from ripe-dbm@localhost)
+	by x24.ripe.net (8.12.4/8.12.6) id h0R83M5k002263;
+	Mon, 27 Jan 2003 09:03:22 +0100
+Message-Id: <200301270803.h0R83M5k002263@x24.ripe.net>
+From: RIPE Database Administration <ripe-dbm@ripe.net>
+Cc: Can Bican <can@ripe.net>
+To: md@Linux.IT
+FCC: cur
+Subject: Re: NCC#2003013332 Re: [db-wg] IPv6 Whois update
+Reply-To: ripe-dbm@ripe.net
+X-Organization: RIPE Network Coordination Centre
+X-Phone: +31 20 535 4444
+X-Fax: +31 20 535 4341
+X-Mailer: BaT/0.67
+Sender: RIPE Database Manager <ripe-dbm@ripe.net>
+Date: Mon, 27 Jan 2003 09:03:21 +0100
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Spam-Status: No, hits=0.6 required=5.0
+	tests=DEAR_SOMEBODY,QUOTED_EMAIL_TEXT,SIGNATURE_SHORT_DENSE,
+	      SPAM_PHRASE_05_08
+	version=2.43
+X-Spam-Level: 
+Status: RO
+Content-Length: 1239
+Lines: 46
+
+
+Dear Marco d'Itri,
+
+For the month October, 2002:
+We had 55 milion queries, 4.3 milion done with your client.
+
+This number is probably not the best indicator as some IPs do a lot of
+queries so here are also the statistics for different IP addresses using
+your client:
+31364 (of 853385) different IP addresses used your client.
+
+If you have any more questions, please contact <ripe-dbm@ripe.net>.
+
+Regards,
+
+Tiago Antao
+____________________________
+RIPE Database Administration.
+
+
+
+Original message follows:
+------------------------
+
+On Thursday 23 January 2003 18:52, Marco d'Itri wrote:
+> On Jan 23, Can Bican <can@ripe.net> wrote:
+>  >This is a feature we supported, and we'll keep supporting it. It's a
+>  > mistake on our side that we'll change promptly, so please don't change
+>  > the behaviour. We'll make the proxy accept -V switches of these types.
+>
+> Thank you for your prompt reply.
+> BTW, is any statistics about -V arguments available? I wonder how many
+> queries are made with my client (i.e. the -V argument matches /^Md/).
+
+   I have forwarded your request to ripe-dbm@ripe.net. You can contact that 
+address if you'd like more/less specific requirements about the counts.
+
+   Regards,
+
+-- 
+Can Bican
+DB Group
+RIPE NCC
+
+
+
+
