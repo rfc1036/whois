@@ -102,6 +102,7 @@
 .fm	WEB http://www.nic.fm/register.html
 .fo	whois.ripe.net	# www.nic.fo
 .fr	whois.nic.fr
+#.fx
 #.ga			# (not responding) NIC? www.inet.ga
 .gb	NONE
 #.gd			# NO NIC (UPR)
@@ -224,7 +225,7 @@
 .se	whois.nic-se.se
 .sg	whois.nic.net.sg
 .sh	whois.nic.sh
-.si	whois.arnec.si
+.si	whois.arnes.si
 .sj	NONE		# http://www.uninett.no/navn/bv-sj.html
 .sk	whois.ripe.net
 #.sl			# NIC? http://www.sierratel.sl/
@@ -303,3 +304,4 @@
 -kg	whois.domain.kg
 -norid	whois.norid.no
 -rotld	whois.rotld.ro
+-itnic	whois.nic.it

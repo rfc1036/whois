@@ -1,10 +1,22 @@
+whois (4.5.6) unstable; urgency=low
+
+  * Fixed typo in the server name for .si.
+
+ -- Marco d'Itri <md@linux.it>  Wed,  4 Apr 2001 01:27:53 +0200
+
+whois (4.5.5) unstable; urgency=low
+
+  * Added -itnic NIC handles.
+  * Updated AS list (Closes: #88920).
+
+ -- Marco d'Itri <md@linux.it>  Sun,  1 Apr 2001 22:14:04 +0200
+
 whois (4.5.4) unstable; urgency=low
 
   * Updated .at, .be, .cy, .cz, .ee, .gr, .il, .pl, .ro, .vi and .nz ccTLDs.
-  * Added -cz, -nicat, -norid and -rotld nic handles.
+  * Added -cz, -nicat, -norid and -rotld NIC handles.
   * Added telstra IP allocations.
   * Fixed fencepost error (Closes: #83661).
-  * Added .gov.uk server (Closes: #89501).
 
  -- Marco d'Itri <md@linux.it>  Wed,  7 Mar 2001 00:45:33 +0100
 
