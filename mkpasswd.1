@@ -14,11 +14,11 @@ libc function using the given salt.
 .SH OPTIONS
 .TP
 .B -S, --salt=STRING
-Use the \fISTRING\fP as salt. It must not contain prefixes like \fI$1$\fP.
+Use the \fISTRING\fP as salt. It must not contain prefixes such as \fI$1$\fP.
 .TP
 .B -H, --hash=TYPE
 Compute the password using the \fITYPE\fP algorithm.
-If \fITYPE\fP is missing available algorithms are printed.
+If \fITYPE\fP is \fIhelp\fP available algorithms are printed.
 .TP
 .B -P, --password-fd=NUM
 Read the password from file descriptor \fINUM\fP instead of using

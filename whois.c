@@ -186,7 +186,9 @@ const char *handle_query(const char *hserver, const char *hport,
     if (hport) {
 	server = strdup(hserver);
 	port = strdup(hport);
-    } else
+    } else if (hserver[0] < ' ')
+	server = strdup(hserver);
+    else
 	split_server_port(hserver, &server, &port);
 
     switch (server[0]) {
@@ -231,6 +233,7 @@ const char *handle_query(const char *hserver, const char *hport,
 	    break;
 	case 0x0A:
 	    p = convert_6to4(qstring);
+	    /* XXX should fail if p = 0.0.0.0 */
 	    printf(_("\nQuerying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n\n"), p);
 	    server = whichwhois(p);
 	    qstring = p;			/* XXX leak */
@@ -341,22 +344,35 @@ const char *whichwhois(const char *s)
 
     /* IPv6 address */
     if (strchr(s, ':')) {
-	if (strncmp(s, "2001:",  5) == 0) {
-	    unsigned long v6net = strtol(s + 5, NULL, 16);
-	    v6net = v6net & 0xfe00;	/* we care about the first 7 bits */
-	    for (i = 0; ip6_assign[i].serv; i++)
-		if (v6net == ip6_assign[i].net)
-		    return ip6_assign[i].serv;
-	    return "\x06";			/* unknown allocation */
-	} else if (strncmp(s, "2002:", 5) == 0) {
-	    return "\x0A";
-	} else if (strncasecmp(s, "3ffe:", 5) == 0)
-	    return "whois.6bone.net";
-	/* RPSL hierarchical object like AS8627:fltr-TRANSIT-OUT */
-	else if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
-	    return whereas(atoi(s + 2));
-	else
+	unsigned long v6prefix, v6net;
+	const struct ip6_del *ip6_assign;
+
+	v6prefix = strtol(s, NULL, 16);
+
+	if (v6prefix == 0) {
+	    /* RPSL hierarchical object like AS8627:fltr-TRANSIT-OUT */
+	    if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
+		return whereas(atoi(s + 2));
 	    return "\x05";
+	} else if (v6prefix == 0x3FFE) {
+	    return "whois.6bone.net";
+	} else if (v6prefix == 0x2002) {
+	    return "\x0A";
+	} else if (v6prefix == 0x2001) {
+	    v6net = strtol(s + 5, NULL, 16);	/* second u16 */
+	    v6net = (v6net & 0xFE00) >> 8;	/* first 7 bits */
+	    ip6_assign = ip6_assign_misc;
+	} else if (v6prefix >= 0x2400 && v6prefix <= 0x3A00) {
+	    v6net = (v6prefix & 0xFC00) >> 8;	/* first 6 bits */
+	    ip6_assign = ip6_assign_rirs;
+	} else
+	    return "\x06";
+
+	for (i = 0; ip6_assign[i].serv; i++)
+	    if (v6net == ip6_assign[i].net)
+		return ip6_assign[i].serv;
+
+	return "\x06";			/* unknown allocation */
     }
 
     /* email address */
@@ -433,15 +449,6 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    isripe = 1;
 	    break;
 	}
-    if (!isripe)
-	for (i = 0; ripe_servers_old[i]; i++)
-	    if (strcmp(server, ripe_servers_old[i]) == 0) {
-		strcat(buf, "-V");
-		strcat(buf, client_tag);
-		strcat(buf, " ");
-		isripe = 1;
-		break;
-	    }
     if (*flags) {
 	if (!isripe && strcmp(server, "whois.corenic.net") != 0)
 	    puts(_("Warning: RIPE flags used with a traditional server."));

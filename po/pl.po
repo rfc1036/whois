@@ -1,23 +1,21 @@
-# cokolwi3k. whois.pot.
+# Polish translation for whois.
 # Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>, 1999
 # Przemys³aw Knycz <djrzulf@pld.org.pl>, 2003
-# Jakub Bogusz <qboosh@pld-linux.org>, 2003
-#
-# BUG: xxx
+# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2004
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.6.9\n"
+"Project-Id-Version: whois 4.6.24\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-12-01 18:31+0100\n"
-"PO-Revision-Date: 2003-12-02 20:41+0100\n"
+"POT-Creation-Date: 2004-11-28 15:03+0100\n"
+"PO-Revision-Date: 2004-11-28 15:09+0100\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:108
+#: ../whois.c:107
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -28,68 +26,42 @@ msgstr ""
 "\n"
 "B³êdy proszê zg³aszaæ na adres %s.\n"
 
-#: ../whois.c:151 ../whois.c:240
+#: ../whois.c:157 ../whois.c:250
 #, c-format
 msgid "Using server %s.\n"
 msgstr "U¿ycie serwera %s.\n"
 
-#: ../whois.c:173
-#, c-format
-msgid "Using default server %s.\n"
-msgstr "U¿ycie domy¶lnego serwera %s.\n"
-
-#: ../whois.c:176
+#: ../whois.c:200
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Ta g³ówna domena nie ma serwera whois, ale mo¿na u¿yæ bazy danych whois pod"
 
-#: ../whois.c:182
+#: ../whois.c:208
 msgid "This TLD has no whois server."
 msgstr "Ta g³ówna domena nie ma serwera whois."
 
-#: ../whois.c:186
-msgid "Connecting to whois.crsnic.net."
-msgstr "£±czenie z whois.crsnic.net."
-
-#: ../whois.c:192 ../whois.c:203
-#, c-format
-msgid ""
-"\n"
-"Found a referral to %s.\n"
-"\n"
-msgstr ""
-"\n"
-"Znaleziono odniesienie do %s.\n"
-"\n"
-
-#: ../whois.c:197
-msgid "Connecting to whois.nic.cc."
-msgstr "£±czenie z whois.nic.cc."
-
-#: ../whois.c:208
-msgid "Connecting to whois.publicinterestregistry.net."
-msgstr "£±czenie z whois.publicinterestregistry.net."
-
-#: ../whois.c:214
-#, c-format
-msgid ""
-"\n"
-"Found referral to %s.\n"
-"\n"
-msgstr ""
-"\n"
-"Znaleziono odniesienie do %s.\n"
-"\n"
-
-#: ../whois.c:218
+#: ../whois.c:211
 msgid "No whois server is known for this kind of object."
 msgstr "Dla tego rodzaju obiektu nie jest znany ¿aden serwer whois."
 
-#: ../whois.c:221
+#: ../whois.c:214
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Nieznany numer AS lub sieæ IP. Proszê uaktualniæ ten program."
 
-#: ../whois.c:228
+#: ../whois.c:218
+msgid "Connecting to whois.crsnic.net."
+msgstr "£±czenie z whois.crsnic.net."
+
+#: ../whois.c:224
+msgid "Connecting to whois.publicinterestregistry.net."
+msgstr "£±czenie z whois.publicinterestregistry.net."
+
+#: ../whois.c:230
+msgid "Connecting to whois.nic.cc."
+msgstr "£±czenie z whois.nic.cc."
+
+#. XXX should fail if p = 0.0.0.0
+#: ../whois.c:237
 #, c-format
 msgid ""
 "\n"
@@ -100,7 +72,7 @@ msgstr ""
 "Pytanie o zakoñczenie IPv4 %s adresu IPv6 typu 6to4.\n"
 "\n"
 
-#: ../whois.c:249
+#: ../whois.c:251
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -109,21 +81,29 @@ msgstr ""
 "Zapytanie: \"%s\"\n"
 "\n"
 
-#: ../whois.c:302 ../whois.c:305
+#: ../whois.c:261
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Found a referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Znaleziono odniesienie do %s.\n"
+"\n"
+
+#: ../whois.c:304 ../whois.c:307
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Nie mo¿na przeanalizowaæ tej linii: %s"
 
-#: ../whois.c:446
+#: ../whois.c:454
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Uwaga: u¿yto flag RIPE ze starszym serwerem."
 
-#: ../whois.c:503
-#, c-format
-msgid "Detected referral to %s on %s.\n"
-msgstr "Wykryto odniesienie do %s na %s.\n"
-
-#: ../whois.c:520
+#: ../whois.c:578
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -131,26 +111,27 @@ msgstr ""
 "Katastrofa! Tekst o¶wiadczenia zosta³ zmieniony.\n"
 "Proszê uaktualniæ ten program.\n"
 
-#: ../whois.c:639
+#: ../whois.c:704
 #, c-format
 msgid "Host %s not found."
 msgstr "Serwer %s nie zosta³ znaleziony."
 
-#: ../whois.c:649
+#: ../whois.c:714
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: us³uga nieznana"
 
-#: ../whois.c:661
+#: ../whois.c:733
 msgid "Timeout."
 msgstr "Up³yn±³ limit czasu."
 
-#: ../whois.c:667
+#: ../whois.c:739
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Przerwano sygna³em %d..."
 
-#: ../whois.c:728
+#: ../whois.c:826
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -227,42 +208,44 @@ msgstr ""
 msgid "\tstandard 56 bit DES-based crypt(3)"
 msgstr "\tstandardowa 56-bitowa, oparta o DES funkcja crypt(3)"
 
-#: ../mkpasswd.c:96
+#: ../mkpasswd.c:97
 #, c-format
 msgid "Invalid hash type '%s'.\n"
 msgstr "Nieprawid³owy rodzaj skrótu '%s'.\n"
 
-#: ../mkpasswd.c:105
+#: ../mkpasswd.c:106
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Nieprawid³owa liczba '%s'.\n"
 
-#: ../mkpasswd.c:123
+#: ../mkpasswd.c:124
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "'%s --help' poda wiêcej informacji.\n"
 
 # : ../mkpasswd.c:152
-#: ../mkpasswd.c:152
+#: ../mkpasswd.c:153
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr "B³êdna d³ugo¶æ zarodka: %d bajtów kiedy oczekiwano %d.\n"
 
-#: ../mkpasswd.c:158
+#: ../mkpasswd.c:159
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "B³êdny znak zarodka '%c'.\n"
 
-#: ../mkpasswd.c:172 ../mkpasswd.c:199
+#: ../mkpasswd.c:173 ../mkpasswd.c:200
+#, c-format
 msgid "Password: "
 msgstr "Has³o: "
 
-#: ../mkpasswd.c:193
+#: ../mkpasswd.c:194
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "B³êdny znak w ha¶le '0x%hhx'.\n"
 
-#: ../mkpasswd.c:230
+#: ../mkpasswd.c:231
+#, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
@@ -272,7 +255,7 @@ msgstr ""
 "Koduje HAS£O przy u¿yciu funkcji crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:233
+#: ../mkpasswd.c:234
 #, c-format
 msgid ""
 "      -H, --hash=TYPE       select hash TYPE\n"
@@ -285,7 +268,7 @@ msgid ""
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
-"If TYPE is missing available algorithms are printed.\n"
+"If TYPE is 'help', available algorithms are printed.\n"
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
@@ -300,10 +283,11 @@ msgstr ""
 "\n"
 "Je¶li nie podano HAS£A, pobierane jest interaktywnie.\n"
 "Je¶li nie podano ZARODKA, generowany jest losowy.\n"
-"Je¶li nie podano TYPU, wypisywane s± dostêpne algorytmy.\n"
+"Je¶li podano TYP 'help', wypisywane s± dostêpne algorytmy.\n"
 "\n"
 "B³êdy proszê zg³aszaæ na adres %s.\n"
 
-#: ../mkpasswd.c:260
+#: ../mkpasswd.c:261
+#, c-format
 msgid "Available algorithms:\n"
 msgstr "Dostêpne algorytmy:\n"

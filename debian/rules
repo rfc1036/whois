@@ -1,44 +1,40 @@
 #!/usr/bin/make -f
-# Original version Copyright by Ian Jackson.
-
 SHELL+= -e
 
 #export DH_VERBOSE=1
 
+D := $(shell pwd)/debian/whois
+
 build:
-	$(checkdir)
+	dh_testdir
 	make whois mkpasswd \
 		OPTS="-O2 -g -DCONFIG_FILE=\\\"/etc/whois.conf\\\"" \
 		HAVE_LIBIDN=1
-	touch build
+	touch $@
 
 clean:
-	$(checkdir)
+	dh_testdir
 	-rm -f build
 	-make distclean
-	-cd debian && rm -rf tmp files* substvars *debhelper
+	dh_clean
 
 binary-arch: checkroot build
-	$(checkdir)
-	-rm -rf debian/tmp
+	dh_testdir
+	dh_clean
 
 	dh_installdirs usr/bin
-	install whois mkpasswd debian/tmp/usr/bin/
-	cd po && make install BASEDIR=../debian/tmp
-	dh_installmanpages
+	install whois mkpasswd $D/usr/bin/
+	cd po && make install BASEDIR=$D
+	dh_installman whois.1 mkpasswd.1
 	dh_installdocs README
 	dh_installchangelogs 
 	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_shlibdeps
-	dh_gencontrol
 	dh_installdeb
+	dh_gencontrol
 	dh_builddeb
-
-define checkdir
-	test -f debian/rules
-endef
 
 binary: binary-arch
 

@@ -57,6 +57,7 @@ struct salt_prefix salt_prefixes[] = {
 #if defined OpenBSD || defined FreeBSD
     { "blf",		"$2$", 16, "\tBlowfish" },
 #endif
+    { NULL,		NULL,	0, NULL }
 };
 
 void generate_salt(char *buf, const unsigned int len);
@@ -79,7 +80,7 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH::P:sS:V", longopts, 0)) > 0) {
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH:P:sS:V", longopts, 0)) > 0) {
 	switch (ch) {
 	case 'H':
 	    if (!optarg || strcasecmp("help", optarg) == 0) {
@@ -240,7 +241,7 @@ void display_help(void)
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
-"If TYPE is missing available algorithms are printed.\n"
+"If TYPE is 'help', available algorithms are printed.\n"
 "\n"
 "Report bugs to %s.\n"), "<md+whois@linux.it>");
 }
@@ -248,7 +249,7 @@ void display_help(void)
 void display_version(void)
 {
     printf("GNU mkpasswd %s\n\n", VERSION);
-    puts("Copyright (C) 2001-2002 Marco d'Itri\n"
+    puts("Copyright (C) 2001-2004 Marco d'Itri\n"
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.");
 }

@@ -1,11 +1,11 @@
 Summary: Enhanced WHOIS client
 Name: whois
-Version: 4.6.11
+Version: 4.6.25
 Release: 1
 License: GPL
 Vendor: Marco d'Itri <md@linux.it>
 Group: Applications/Internet
-Source: http://www.linux.it/~md/software/whois_%{version}.tar.gz
+Source: http://ftp.debian.org/debian/pool/main/w/whois/whois_%{version}.tar.gz
 BuildRoot: /var/tmp/%{name}-root
 Prefix: /usr
 

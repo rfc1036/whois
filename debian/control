@@ -2,15 +2,15 @@ Source: whois
 Section: net
 Priority: standard
 Maintainer: Marco d'Itri <md@linux.it>
-Standards-Version: 3.6.1
-Build-Depends: debhelper, gettext, libidn11-dev
+Standards-Version: 3.6.1.1
+Build-Depends: debhelper (>= 4), gettext, libidn11-dev
 
 Package: whois
 Architecture: any
 Depends: ${shlibs:Depends}
 Replaces: bsdmainutils (<= 4.5.1), bsdutils (<< 3.0-0)
 Description: The GNU whois client
- This is a new whois (RFC 954) client rewritten from scratch.
+ This is a new whois (RFC 3912) client rewritten from scratch.
  It is inspired from and compatible with the usual BSD and RIPE whois(1)
  programs.
  It is intelligent and can automatically select the appropriate whois

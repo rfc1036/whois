@@ -1,3 +1,94 @@
+whois (4.6.25) unstable; urgency=medium
+
+  * Added the .fi TLD server. (Closes: #283714)
+  * Updated the IPv6 allocations.
+  * Updated the Polish translation.
+
+ -- Marco d'Itri <md@linux.it>  Sat,  4 Dec 2004 16:06:42 +0100
+
+whois (4.6.24) unstable; urgency=medium
+
+  * Updated the .tf server. (Closes: #279647)
+  * Removed whois.nic.net.sg from the list of RIPE-like servers, because it's
+    not one anymore. Congratulations to SGNIC for breaking backward
+    compatibility. (Closes: #282931)
+  * Updated the RFC number in the man page. (Closes: #279645)
+  * Removed the ripe_servers_old list, because there is none left.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 27 Nov 2004 00:43:53 +0100
+
+whois (4.6.23) unstable; urgency=medium
+
+  * Fixed the moniker.com disclaimer strings.
+  * Updated the IPv6 allocations.
+  * Fixed some IPv4 allocations. (Closes: #272721, #274565)
+
+ -- Marco d'Itri <md@linux.it>  Thu, 21 Oct 2004 14:21:42 +0200
+
+whois (4.6.22) unstable; urgency=medium
+
+  * Updated the onlinenic.com disclaimer strings. (Closes: #270721)
+  * Updated the IPv6 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 29 Aug 2004 20:19:58 +0200
+
+whois (4.6.21) unstable; urgency=medium
+
+  * Fixed a segfault in mkpasswd -H, made the argument of -H mandatory.
+  * Updated IPv6 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 25 Aug 2004 12:34:29 +0200
+
+whois (4.6.20) testing-proposed-updates; urgency=medium
+
+  * Updated IPv6 allocations, added support for the new allocations system.
+  * Added edu.ru TLD server.
+  * Updated es TLD server. (Closes: #264386)
+
+ -- Marco d'Itri <md@linux.it>  Mon,  9 Aug 2004 18:48:32 +0200
+
+whois (4.6.19) unstable; urgency=high
+
+  * Updated IPv4 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 28 Jul 2004 00:50:00 +0200
+
+whois (4.6.18) unstable; urgency=medium
+
+  * Fix displaying of URLs of HTTP servers. (Closes: #258308)
+
+ -- Marco d'Itri <md@linux.it>  Thu,  8 Jul 2004 22:24:18 +0200
+
+whois (4.6.17) unstable; urgency=medium
+
+  * Added new ASN allocation.
+  * Updated the German translation. (Closes: #254486)
+  * Removed whois.aunic.net from the list of RIPE-like servers, because
+    apparently it's not one anymore. (Closes: #257609, #257610)
+  * Updated .az, .au, .ba, .cy, .gl, .gr, .io, .ke, .ki, .la, .mn, .mo, .my,
+    .nf, .pr, .td, .tm, .uz TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed,  7 Jul 2004 13:51:29 +0200
+
+whois (4.6.16) unstable; urgency=medium
+
+  * Added new IPv6 and ASN allocations.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 12 Jun 2004 12:36:45 +0200
+
+whois (4.6.15) unstable; urgency=medium
+
+  * Added new IPv4 and IPv6 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 13 May 2004 21:40:57 +0200
+
+whois (4.6.14) unstable; urgency=medium
+
+  * Removed whois.oleane.net from the list of RIPE-like servers, because
+    apparently it's not one anymore.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 16 Apr 2004 18:39:21 +0200
+
 whois (4.6.13) unstable; urgency=medium
 
   * Fix the DENIC code. (Closes: #242424)

@@ -4,8 +4,8 @@
 # unless they are very big and contains multiple assignments to different
 # customers documented in the whois database.
 #
-24.192.0.0/14	apnic
 24.132.0.0/14	ripe
+58.0.0.0/7	apnic
 61.72.0.0/13	whois.nic.or.kr
 61.80.0.0/14	whois.nic.or.kr
 61.84.0.0/15	whois.nic.or.kr
@@ -35,6 +35,7 @@
 149.224.0.0/12	ripe
 149.240.0.0/13	ripe
 149.248.0.0/14	ripe
+150.183.0.0/16	whois.nic.or.kr
 150.254.0.0/16	ripe
 151.0.0.0/10	ripe
 151.64.0.0/11	ripe
@@ -78,6 +79,7 @@
 200.17.0.0/16	whois.nic.br
 200.18.0.0/15	whois.nic.br
 200.20.0.0/16	whois.nic.br
+200.96.0.0/13	whois.nic.br
 200.128.0.0/9	whois.nic.br
 200.0.0.0/7	lacnic
 202.11.0.0/16	whois.nic.ad.jp
@@ -155,13 +157,22 @@
 218.48.0.0/13	whois.nic.or.kr
 218.144.0.0/12	whois.nic.or.kr
 218.232.0.0/13	whois.nic.or.kr
-218.0.0.0/7	apnic
 219.240.0.0/15	whois.nic.or.kr
 219.248.0.0/13	whois.nic.or.kr
-220.64.0.0/13	whois.nic.or.kr
-220.72.0.0/13	whois.nic.or.kr
-220.80.0.0/14	whois.nic.or.kr
-220.84.0.0/15	whois.nic.or.kr
+218.0.0.0/7	apnic
+220.64.0.0/11	whois.nic.or.kr
+220.96.0.0/14	whois.nic.ad.jp
+220.103.0.0/16	whois.nic.or.kr
+220.104.0.0/13	whois.nic.ad.jp
+220.149.0.0/16	whois.nic.or.kr
+221.138.0.0/13	whois.nic.or.kr
+221.144.0.0/12	whois.nic.or.kr
+221.160.0.0/13	whois.nic.or.kr
+222.96.0.0/12	whois.nic.or.kr
+222.112.0.0/13	whois.nic.or.kr
+222.120.0.0/15	whois.nic.or.kr
+222.122.0.0/16	whois.nic.or.kr
+222.232.0.0/13	whois.nic.or.kr
 223.0.0.0/8	UNALLOCATED	# returned from APNIC to IANA
 220.0.0.0/6	apnic
 # that's all... here starts the multicast space
