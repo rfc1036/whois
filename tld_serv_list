@@ -1,3 +1,6 @@
+# Servers in lines with a trailing hash mark have been tested and found
+# not working at the time of my survey (19991109).
+# Servers with the comment "wrong" have been tested as well but are wrong.
 .gb.com	whois.nomination.net
 .gb.net	whois.nomination.net
 .uk.net	whois.nomination.net
@@ -11,18 +14,21 @@
 .mil	whois.nic.mil
 .ac	whois.nic.ac
 .ad	whois.ripe.net
-.al	whois.ripe.net
+.af	whois.nic.tm
+#.al	whois.ripe.net	#wrong
 .am	whois.amnic.net
 .as	whois.nic.as
 .at	whois.univie.ac.at	# CNAME whois.ripe.net
-.net.au	whois.connect.com.au
+#.net.au	whois.connect.com.au # obsolete?
 .au	whois.aunic.net
-.az	whois.ripe.net
+#.az	whois.ripe.net	#wrong
 .ba	whois.ripe.net
 .be	whois.ripe.net
 .bg	whois.ripe.net
+#.bm	rwhois.ibl.bm:4321
 .br	whois.nic.br
-.by	whois.ripe.net
+.bt	whois.nic.tm
+#.by	whois.ripe.net	#wrong
 .ca	whois.cdnnet.ca
 .cc	whois.nic.cc
 .ch	whois.nic.ch
@@ -30,33 +36,37 @@
 .ac.cn	whois.cnc.ac.cn
 .cn	whois.cnnic.net.cn
 .uk.co	whois.uk.co
-.co	whois.ripe.net
+#.co	whois.ripe.net	#wrong
+#.cx	whois.nic.cx	#
 .cy	whois.ripe.net
 .cz	whois.ripe.net
 .de	whois.ripe.net
 .dk	whois.ripe.net
-.dz	whois.ripe.net
-.ee	whois.ripe.net
-.eg	whois.ripe.net
+#.dz	whois.ripe.net	#wrong
+#.ee	whois.ripe.net	#wrong
+#.eg	whois.ripe.net	#wrong
 .es	whois.ripe.net
-.fi	whois.ripe.net
+#.fi	whois.ripe.net	#wrong
 .fo	whois.ripe.net
 .fr	whois.nic.fr
-.ga	whois.ripe.net
-.gb	whois.ripe.net
-.ge	whois.ripe.net
+#.ga	whois.ripe.net	#wrong
+#.gb	whois.ripe.net	#wrong
+#.ge	whois.ripe.net	#wrong
+#.gf	whois.nplus.gf	#
+#.gi	whois.nic.gi	#
 .gl	whois.ripe.net
 .gm	whois.ripe.net
 .gr	whois.ripe.net
 .gs	whois.adamsnames.tc
-.hk	whois.apnic.net
+.hk	whois.hknic.net.hk
 .hm	whois.nic.hm
 .hr	whois.ripe.net
 .hu	whois.ripe.net
-.id	whois.idnic.net.id
+.id	whois.idnic.net.id	# broken
 .ie	whois.ripe.net
 .il	whois.ripe.net
-.in	whois.ncst.ernet.in
+.in	whois.ncst.ernet.in	# empty?
+#.io	whois.io	#
 .is	whois.ripe.net
 .it	whois.nic.it
 .jo	whois.ripe.net
@@ -68,13 +78,14 @@
 .lt	whois.ripe.net
 .lu	whois.ripe.net
 .lv	whois.ripe.net
-.ma	whois.ripe.net
+#.ly	whois.nic.ly	#
+#.ma	whois.ripe.net	#wrong
 .mc	whois.ripe.net
 .md	whois.ripe.net
-.mk	whois.ripe.net
-.mm	whois.nic.mm
+#.mk	whois.ripe.net	#wrong
+#.mm	whois.nic.mm	#
 .ms	whois.adamsnames.tc
-.mt	whois.ripe.net
+#.mt	whois.ripe.net	#wrong
 .mx	whois.nic.mx
 .ng	pgebrehiwot.iat.cnr.it
 .nl	www.domain-registry.nl
@@ -83,17 +94,21 @@
 .nz	tardis.patho.gen.nz
 .pe	whois.rcp.net.pe
 .pl	whois.ripe.net
+#.pr	whois.uprr.pr	#
 .pk	whois.pknic.net.pk
-.pt	whois.dns.pt
-.ro	whois.nic.ro
+#.pt	whois.dns.pt		# disabled - use http://www.dns.pt/info/
+.pw	whois.nic.pw
+.ro	whois.ripe.net
 .ru	whois.ripn.net
 .se	whois.nic-se.se
 .sg	whois.nic.net.sg
 .sh	whois.nic.sh
-.si	whois.ripe.net
+#.si	whois.ripe.net	#wrong
 .sk	whois.ripe.net
 .sm	whois.ripe.net
-.su	whois.ripe.net
+#.so	whois.nic.so	#
+.st	whois.nic.st
+.su	whois.ripn.net
 .tc	whois.adamsnames.tc
 .tf	whois.adamsnames.tc
 .th	whois.thnic.net
@@ -108,12 +123,18 @@
 .uk	whois.nic.uk
 .us	whois.isi.edu
 .va	whois.ripe.net
+#.ve	rwhois.reacciun.ve:4321
+.vg	whois.adamsnames.tc
 .yu	whois.ripe.net
 .za	whois.frd.ac.za
--arin	whois.arin.net
--ripe	whois.ripe.net
--ap	whois.apnic.net
 -dom	whois.internic.net
 -org	whois.internic.net
 -hst	whois.internic.net
+-arin	whois.arin.net
+-ripe	whois.ripe.net
+-ap	whois.apnic.net
+-au	whois.aunic.net
 -6bone	whois.6bone.net
+-ripn	whois.ripn.net
+-sgnic	whois.nic.net.sg
+-metu	whois.metu.edu.tr

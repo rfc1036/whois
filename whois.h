@@ -1,7 +1,3 @@
-/* Identification string */
-/* #define IDSTRING "-VMd" VERSION */
-#define IDSTRING "-VwC2.0"
-
 /* Size of the buffer where the query is built */
 #define QUERYBUFSIZE 1024
 
@@ -16,7 +12,6 @@
 
 /* system features */
 #ifdef linux
-# define HAVE_GNU_GETOPT
 # define ENABLE_NLS
 # if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
 #  define HAVE_GETADDRINFO
@@ -47,16 +42,9 @@
 #endif
 
 
-/* If needed, disable GNU getopt "features" */
-#ifdef HAVE_GNU_GETOPT
-# define GETOPT(argc, argv, str) getopt((argc), (argv), "+" str)
-#else
-# define GETOPT(argc, argv, str) getopt((argc), (argv), (str))
-#endif
-
-
 /* prototypes */
 const char *whichwhois(const char *);
+const char *whereas(unsigned short, struct as_del []);
 char *queryformat(const char *, const char *, const char *);
 void do_query(const int, const char *);
 const char *query_crsnic(const int, const char *);
@@ -70,4 +58,9 @@ int domfind(const char *, const char *[]);
 
 void err_quit(const char *,...);
 void err_sys(const char *,...);
+
+
+/* flags for RIPE-like servers */
+const char *ripeflags="acFLmMrRS";
+const char *ripeflagsp="gisTtv";
 

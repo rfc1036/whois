@@ -7,7 +7,7 @@ while (<>) {
 	s/^\s*(.*)\s*$/$1/;
 	s/\s*#.*$//;
 	next if /^$/;
-	die "format error: $_" unless (/^([\w\d\.-]+)\s+([\w\d\.-]+)$/);
+	die "format error: $_" unless (/^([\w\d\.-]+)\s+([\w\d\.:-]+)$/);
 	print "    \"$1\",\t\"$2\",\n";
 }
 

@@ -1,4 +1,4 @@
-.TH WHOIS 1 "8 October 1999" "Marco d'Itri" "Debian GNU/Linux"
+.TH WHOIS 1 "15 November 1999" "Marco d'Itri" "Debian GNU/Linux"
 .SH NAME
 whois \- client for the whois directory service
 .SH SYNOPSIS
@@ -65,6 +65,19 @@ to find the registrar for a GTLD subdomain. This option overrides
 Be verbose.
 .TP 8
 Other options are flags understood by RIPE-like servers.
+.SH FEATURES
+When querying
+.I whois.arin.net
+for AS numbers, the program will automatically convert the request in
+the appropriate format, inserting a space after the string "AS".
+.P
+When querying
+.I whois.nic.ad.jp
+english text is requested unless the
+.I LANG
+environment variable specifies a Japanese locale.
+.P
+RIPE-specific options are ignored when querying non-RIPE servers.
 .SH "SEE ALSO"
 .I RFC 812:
 NICNAME/WHOIS
@@ -74,7 +87,7 @@ RIPE NCC Database Documentation
 .PP
 Detailed help on available flags can be found in
 .I RIPE-157
-or in the help file, which can be downloaded with the command:
+or in the help file, which can be obtained with the command:
 .IP
 .B whois -h whois.ripe.net HELP
 .SH HISTORY
@@ -87,4 +100,3 @@ Kessens of QWest for the 6bone server.
 .B Whois
 and this man page were written by Marco d'Itri <md@linux.it>
 and are licensed under the GPL.
-

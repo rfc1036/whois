@@ -19,18 +19,19 @@
 #include <errno.h>
 #include <signal.h>
 
+/* Application-specific */
 #include "config.h"
-#include "whois.h"
 #include "data.h"
+#include "whois.h"
 
+/* Global variables */
 int sockfd, verb = 0;
-
 
 int main(int argc, char *argv[])
 {
     int ch, nopar = 0, optC = 0;
     const char *server = NULL;
-    char *p, qstring[256] = "\0", fstring[64] = "\0", *port = NULL,
+    char *p, *q, qstring[256] = "\0", fstring[64] = "\0", *port = NULL,
      defaultserv[] = "whois.internic.net";
 
 #ifdef ENABLE_NLS
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = GETOPT(argc, argv, "acCFg:h:i:LmMp:rRs:St:T:v:V")) > 0) {
+    while ((ch = getopt(argc, argv, "acCFg:h:i:LmMp:rRs:St:T:v:V")) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
 	    for (p = fstring; *p != '\0'; p++);
@@ -56,7 +57,8 @@ int main(int argc, char *argv[])
 	/* program flags */
 	switch (ch) {
 	case 'h':
-	    server = optarg;
+	    server = q = malloc(strlen(optarg) + 1);
+	    for (p = optarg; *p != '\0'; *q++ = tolower(*p++));
 	    break;
 	case 'p':
 	    port = optarg;
@@ -89,7 +91,7 @@ int main(int argc, char *argv[])
 
     if (optC && domfind(qstring, gtlds)) {
 	if (verb)
-	    printf(_("Connecting to whois.crsnic.net.\n"));
+	    fputs(_("Connecting to whois.crsnic.net.\n"), stdout);
 	sockfd = openconn("whois.crsnic.net", "43");
 	server = query_crsnic(sockfd, qstring);
 	if (verb && server)
@@ -107,8 +109,9 @@ int main(int argc, char *argv[])
     }
 
     p = queryformat(server, fstring, qstring);
-    if (verb)
+    if (verb) {
 	printf(_("Query string: \"%s\"\n\n"), p);
+    }
     strcat(p, "\r\n");
 
     signal(SIGTERM, sighandler);
@@ -130,13 +133,17 @@ const char *whichwhois(const char *s)
     if (*s == '\0')
 	return "whois.ripe.net";
 
+    /* no dot and no hyphen means it's a internic NIC handle or an AS (?) */
+    if (!strpbrk(s, ".-")) {
+	if (strncasecmp(s, "AS", 2) == 0) {	/* it's an AS */
+	    return whereas(atoi(s + 2), as_assign);
+	} else			/* it's an internic NIC handle (?) */
+	    return "whois.internic.net";
+    }
+
     /* IPv6 address */
     if (strchr(s, ':'))
 	return "whois.6bone.net";
-
-    /* no dot and no hyphen means it's a internic NIC handle or an AS (?) */
-    if (!strpbrk(s, ".-"))
-	return "whois.internic.net";
 
     /* smells like an IP? */
     if ((ip = myinet_aton(s))) {
@@ -144,8 +151,8 @@ const char *whichwhois(const char *s)
 	    if ((ip & ip_assign[i].mask) == ip_assign[i].net)
 		return ip_assign[i].serv;
 	if (verb)
-	    printf(_("I don't know where this IP has been delegated.\n"
-		     "I'll try ARIN and hope for the best...\n"));
+	    fputs(_("I don't know where this IP has been delegated.\n"
+		    "I'll try ARIN and hope for the best...\n"), stdout);
 	return "whois.arin.net";
     }
 
@@ -157,35 +164,62 @@ const char *whichwhois(const char *s)
     /* no dot but hyphen, check for ARIN netblock names */
     if (!strchr(s, '.')) {
 	for (i = 0; arin_nets[i]; i++)
-	    if (!strncmp(s, arin_nets[i], strlen(arin_nets[i])))
+	    if (!strncasecmp(s, arin_nets[i], strlen(arin_nets[i])))
 		return "whois.arin.net";
 	/* could be one of *NETBLK-RIPE* *NET-RIPE* *APNIC* *AUNIC-AU* */
 	if (verb)
-	    printf(_("I guess it's a netblock name but I don't know where to"
-		     " look it up.\n"));
+	    fputs(_("I guess it's a netblock name but I don't know where to"
+		    " look it up.\n"), stdout);
 	return "whois.arin.net";
     }
 
     /* has dot and hypen and it's not in tld_serv[], WTF is it? */
     if (verb)
-	printf(_("I guess it's a domain but I don't know where to look it"
-		 " up.\n"));
+	fputs(_("I guess it's a domain but I don't know where to look it"
+		" up.\n"), stdout);
 
     return NULL;
+}
+
+const char *whereas(unsigned short asn, struct as_del aslist[])
+{
+    int i;
+
+    if (asn > 14335)
+	puts(_("Unknown AS number. Please upgrade this program."));
+    for (i = 0; aslist[i].serv; i++)
+	if (asn >= aslist[i].first && asn <= aslist[i].last)
+	    return aslist[i].serv;
+    return "whois.arin.net";
 }
 
 char *queryformat(const char *server, const char *flags, const char *query)
 {
     char *buf;
-    int i;
+    int i, isripe = 0;
 
-    buf = malloc(QUERYBUFSIZE);
-    strcpy(buf, flags);
+    buf = malloc(QUERYBUFSIZE + 1);	/* +1 is for ARIN AS queries */
+    //*buf = '\0';
     for (i = 0; ripe_servers[i]; i++)
-	if (strcmp(server, ripe_servers[i]) == 0)
-	    strcat(buf, VERSION " ");
-    strcat(buf, query);
-    if (strcmp(server, "whois.nic.ad.jp") == 0) {
+	if (strcmp(server, ripe_servers[i]) == 0) {
+	    strcat(buf, "-V" IDSTRING " ");
+	    isripe = 1;
+	    break;
+	}
+    if (*flags != '\0') {
+	if (isripe && *flags != '\0')
+	    puts(_("Warning: RIPE flags ignored for a traditional server."));
+	else
+	    strcat(buf, flags);
+    }
+    if (!isripe && strcmp(server, "whois.arin.net") == 0 &&
+	    strncasecmp(query, "AS", 2) == 0 &&
+	    query[2] >= '0' && query[2] <= '9') {
+	sprintf(buf, "AS ");
+	strcat(buf, query + 2);
+    } else
+	strcat(buf, query);
+    if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
 	char *lang = getenv("LANG");	/* not a perfect check, but... */
 	if (lang && (strncmp(getenv("LANG"), "ja", 2) != 0))
 	    strcat(buf, "/e");	/* ask for english text */
@@ -206,9 +240,9 @@ void do_query(const int sock, const char *query)
 	err_sys("write");
     while (fgets(buf, 100, fi)) {	/* XXX errors? */
 #ifdef HIDE_DISCL
-	if (hide == 1 &&
-		strncmp(buf, DISCL_END, sizeof(DISCL_END) - 1) == 0) {
-	    hide = 2;		/* stop hiding */
+	if (hide == 1) {
+	    if (strncmp(buf, DISCL_END, sizeof(DISCL_END) - 1) == 0)
+		hide = 2;	/* stop hiding */
 	    continue;
 	}
 	if (hide == 0 &&
@@ -235,7 +269,7 @@ void do_query(const int sock, const char *query)
 	    }
 	}
 #endif
-	printf("%s", buf);
+	fputs(buf, stdout);
     }
 #ifdef HIDE_DISCL
     if (hide == 1)
@@ -267,7 +301,7 @@ const char *query_crsnic(const int sock, const char *query)
 	    for (; *p != '\n' && *p != '\r'; *q++ = *p++); /* copy data */
 	    *q = '\0';
 	}
-	printf("%s", buf);
+	fputs(buf, stdout);
     }
 
     free(temp);
@@ -336,11 +370,12 @@ void sighandler(int signum)
     err_quit(_("Interrupted by signal %d..."), signum);
 }
 
+/* check if dom ends with tld */
 int domcmp(const char *dom, const char *tld)
 {
     const char *p, *q;
 
-    if (!(p = rindex(dom, *tld)))
+    if (!(p = strrchr(dom, *tld)))
 	return 0;
     q = tld;
     while (tolower(*p) == *q)
@@ -349,6 +384,7 @@ int domcmp(const char *dom, const char *tld)
     return 0;
 }
 
+/* check if dom ends with an element of tldlist[] */
 int domfind(const char *dom, const char *tldlist[])
 {
     int i;
@@ -372,7 +408,7 @@ unsigned long myinet_aton(const char *s)
 
 void usage(void)
 {
-    fprintf(stderr, _(
+    fputs(_(
 "Usage: whois [OPTION]... OBJECT...\n\n"
 "-a                     search all databases\n"
 "-C                     first query CRSNIC to find GTLD registrar\n"
@@ -394,7 +430,7 @@ void usage(void)
 "-v TYPE                requests verbose template for object of TYPE\n"
 "-V                     explain what is being done\n\n"
 "Version " VERSION ". Please report bugs to <md@linux.it>.\n"
-	));
+	), stderr);
     exit(1);
 }
 

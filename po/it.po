@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 3.0\n"
-"POT-Creation-Date: 1999-10-26 12:19+0200\n"
+"Project-Id-Version: whois 4.4.0\n"
+"POT-Creation-Date: 1999-11-09 22:15+0100\n"
 "PO-Revision-Date: 1999-10-26 12:19+02:00\n"
 "Last-Translator: Marco d'Itri <md@linux.it>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:95
+#: ../whois.c:93
 msgid "Connecting to whois.crsnic.net.\n"
 msgstr "Mi sto connettendo a whois.crsnic.net.\n"
 
-#: ../whois.c:103
+#: ../whois.c:97
 #, c-format
 msgid ""
 "\n"
@@ -25,20 +25,20 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Trovato un riferimento CRSNIC a %s.\n"
+"Trovato un riferimento di CRSNIC a %s.\n"
 "\n"
 
-#: ../whois.c:113
+#: ../whois.c:105
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Uso il server predefinito %s.\n"
 
-#: ../whois.c:115
+#: ../whois.c:107
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Uso il server %s.\n"
 
-#: ../whois.c:120
+#: ../whois.c:112
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Richiesta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:156
+#: ../whois.c:153
 msgid ""
 "I don't know where this IP has been delegated.\n"
 "I'll try ARIN and hope for the best...\n"
@@ -55,20 +55,28 @@ msgstr ""
 "Non so a chi è stato delegato questo IP.\n"
 "Proverò con ARIN sperando per il meglio...\n"
 
-#: ../whois.c:173
+#: ../whois.c:170
 msgid "I guess it's a netblock name but I don't know where to look it up.\n"
 msgstr "Credo che sia il nome di un netblock ma non so dove cercarlo.\n"
 
-#: ../whois.c:180
+#: ../whois.c:177
 msgid "I guess it's a domain but I don't know where to look it up.\n"
 msgstr "Credo che sia un dominio ma non so dove cercarlo.\n"
 
-#: ../whois.c:239
+#: ../whois.c:188
+msgid "Unknown AS number. Please upgrade this program."
+msgstr ""
+
+#: ../whois.c:211
+msgid "Warning: RIPE flags ignored for a traditional server."
+msgstr ""
+
+#: ../whois.c:254
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Trovato un riferimento a %s su %s.\n"
 
-#: ../whois.c:252
+#: ../whois.c:267
 msgid ""
 "Catastrophic error: INTERNIC changed the disclaimer text.\n"
 "Please upgrade this program.\n"
@@ -76,22 +84,22 @@ msgstr ""
 "Errore catastrofico: INTERNIC ha cambiato il testo di avvertenze.\n"
 "Aggiorna questo programma.\n"
 
-#: ../whois.c:313
+#: ../whois.c:335
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s non trovato."
 
-#: ../whois.c:322
+#: ../whois.c:344
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servizio sconosciuto"
 
-#: ../whois.c:339
+#: ../whois.c:361
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrotto dal segnale %d..."
 
-#: ../whois.c:379
+#: ../whois.c:403
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"

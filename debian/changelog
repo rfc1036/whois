@@ -1,3 +1,32 @@
+whois (4.4.1) unstable; urgency=low
+
+  * A space is added after "AS" when querying ARIN.
+  * Converted some strcmp to strcasecmp.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 15 Nov 1999 00:59:07 +0100
+
+whois (4.4.0) unstable; urgency=low
+
+  * Now the program automatically select the right server for AS queries.
+  * Added RIPE delegations of netblocks in the B class space.
+  * Extensive survey of all known whois servers and update of tld_serv_list.
+  * Now the flag -VMd4.4 is sent to RIPE-like servers.
+  * Written a test program for checking if all servers work.
+
+ -- Marco d'Itri <md@linux.it>  Tue,  9 Nov 1999 22:53:35 +0100
+
+whois (4.3.3) unstable; urgency=low
+
+  * Fixed man page (closes: #49195).
+
+ -- Marco d'Itri <md@linux.it>  Sun,  7 Nov 1999 14:07:59 +0100
+
+whois (4.3.2) unstable; urgency=low
+
+  * Fixed version reporting code. Now the string is "-VMd2.0".
+
+ -- Marco d'Itri <md@linux.it>  Tue,  2 Nov 1999 19:50:33 +0100
+
 whois (4.3.1) unstable; urgency=low
 
   * CRSNIC code parsed the wrong field (closes: #48590).

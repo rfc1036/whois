@@ -24,8 +24,10 @@ Other information sources:
 - RIPE-187 and RIPE-189 (from ftp://ftp.ripe.net/ripe/docs/ or
   http://www.ripe.net/docs/)
 - Greg Woods' awhois script (from ftp.weird.com)
+- the www.geektools.org CGI proxy
 - home of the 6bone client: http://www.ip.qwest.net/~david/software/
-
+- http://www.apnic.net/db/RIRs.html and
+  http://www.apnic.net/maps/tld-list.html
 
 Marco d'Itri
 <md@linux.it>
