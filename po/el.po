@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.5.3\n"
-"POT-Creation-Date: 2003-03-16 15:37+0100\n"
+"POT-Creation-Date: 2003-05-05 18:21+0200\n"
 "PO-Revision-Date: 2001-02-23 16:07:57+0900\n"
 "Last-Translator: Simos Xenitellis <simos@hellug.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "\n"
 "Αναφέρατε σφάλματα στο %s.\n"
 
-#: ../whois.c:151 ../whois.c:213
+#: ../whois.c:151 ../whois.c:224
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Γίνεται χρήση του εξυπηρετητή %s.\n"
@@ -49,7 +49,7 @@ msgstr "Αυτό το TLD δεν έχει εξυπηρετητή whois."
 msgid "Connecting to whois.crsnic.net."
 msgstr "Γίνεται σύνδεση στο whois.internic.net."
 
-#: ../whois.c:191
+#: ../whois.c:191 ../whois.c:202
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -62,10 +62,15 @@ msgstr ""
 
 #: ../whois.c:196
 #, fuzzy
+msgid "Connecting to whois.nic.cc."
+msgstr "Γίνεται σύνδεση στο whois.internic.net."
+
+#: ../whois.c:207
+#, fuzzy
 msgid "Connecting to whois.publicinterestregistry.net."
 msgstr "Γίνεται σύνδεση στο whois.internic.net."
 
-#: ../whois.c:202
+#: ../whois.c:213
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -76,16 +81,16 @@ msgstr ""
 "Βρέθηκε αναφορά από το InterNIC στο %s.\n"
 "\n"
 
-#: ../whois.c:206
+#: ../whois.c:217
 msgid "No whois server is known for this kind of object."
 msgstr ""
 
-#: ../whois.c:209
+#: ../whois.c:220
 #, fuzzy
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "¶γνωστος αριθμός AS. Παρακαλώ ενημερώστε αυτό το πρόγραμμα."
 
-#: ../whois.c:222
+#: ../whois.c:233
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -94,23 +99,23 @@ msgstr ""
 "Αλφαριθμητικό ερώτησης: \"%s\"\n"
 "\n"
 
-#: ../whois.c:275 ../whois.c:278
+#: ../whois.c:286 ../whois.c:289
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:417
+#: ../whois.c:428
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr ""
 "Προειδοποίηση: Η σημαίες του RIPE αγνοούνται σε έναν παραδοσιακό εξυπηρετητή."
 
-#: ../whois.c:477
+#: ../whois.c:489
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Ανιχνεύθηκε αναφορά του %s στο %s.\n"
 
-#: ../whois.c:494
+#: ../whois.c:506
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -118,26 +123,26 @@ msgstr ""
 "Καταστροφικό σφάλμα: το κείμενο της αποποίησης ευθυνών έχει τροποποιηθεί.\n"
 "Παρακαλώ αναβαθμίστε το πρόγραμμα.\n"
 
-#: ../whois.c:611
+#: ../whois.c:624
 #, c-format
 msgid "Host %s not found."
 msgstr "Το σύστημα %s δε βρέθηκε."
 
-#: ../whois.c:621
+#: ../whois.c:634
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: άγνωστη υπηρεσία"
 
-#: ../whois.c:633
+#: ../whois.c:646
 msgid "Timeout."
 msgstr ""
 
-#: ../whois.c:639
+#: ../whois.c:652
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Διακοπή από το σήμα %d..."
 
-#: ../whois.c:688
+#: ../whois.c:701
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"

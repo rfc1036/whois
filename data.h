@@ -43,9 +43,10 @@ const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "VeriSign reserves",	/* VERISIGN */
     "NOTICE: Access to .ORG WHOIS", "time. By submitting",	/* org */
     "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
+    "This Registry database contains ONLY .EDU", "type: help",	/* edu */
     "The data in Register", "By submitting",		    /* REGISTER.COM */
     "The Data in the Tucows", "RECORD DOES NOT",		/* OPENSRS */
-    " The data contained in Dotster", "Please limit your",	/* DOTSTER */
+    " The data contained in the WHOIS", "Please limit your",	/* DOTSTER */
     "This whois service currently only", "top-level domains.",
     "Signature Domains' Whois Service", "agree to abide by the above",
     "Access to ASNIC", "by this policy.",			/* as */
@@ -56,10 +57,11 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
-    "The data in this whois", "Version 6.3",			/* enom */
+    "The data in this whois", "using our Whois information",	/* enom */
     "By submitting a WHOIS query,", "LACK OF A DOMAIN",		/* directNIC */
     "The Data in OnlineNIC", "\tBy starting this query",	/* OnlineNIC */
     "The data in Bulkregister.com", "you agree to abide", /* bulkregister */
+    "The Data in Alldomains.com's", "By submitting this query,",/*alldomains*/
     NULL, NULL
 };
 
@@ -67,9 +69,12 @@ const char *nic_handles[] = {
     "net-",	"whois.arin.net",
     "netblk-",	"whois.arin.net",
     "lim-",	"whois.ripe.net",
+#if 0
+    // commented until somebody will explain the query format for these
     "coco-",	"whois.corenic.net",
     "coho-",	"whois.corenic.net",
     "core-",	"whois.corenic.net",
+#endif
     "denic-",	"whois.denic.de",
     /* RPSL objects */
     "as-",	"whois.ripe.net",

@@ -11,7 +11,7 @@ Depends: ${shlibs:Depends}
 Replaces: bsdmainutils (<= 4.5.1), bsdutils (<< 3.0-0)
 Description: The GNU whois client
  This is a new whois (RFC 954) client rewritten from scratch.
- It is derived from and compatible with the usual BSD and RIPE whois(1)
+ It is inspired from and compatible with the usual BSD and RIPE whois(1)
  programs.
  It is intelligent and can automatically select the appropriate whois
  server for most queries.

@@ -12,11 +12,11 @@
 61.112.0.0/12	whois.nic.ad.jp
 61.192.0.0/12	whois.nic.ad.jp		# => 61.207.255.255
 61.208.0.0/13	whois.nic.ad.jp		# => 61.215.255.255
-61.0.0.0/8	apnic
+60.0.0.0/7	apnic
 62.0.0.0/8	ripe
 80.0.0.0/7	ripe
 82.0.0.0/8	ripe
-96.0.0.0/3	UNALLOCATED
+96.0.0.0/3	UNALLOCATED		# 96 -> 127 reserved
 0.0.0.0/1	arin	# all other A classes are managed by ARIN
 133.0.0.0/8	whois.nic.ad.jp
 139.20.0.0/14	ripe
@@ -57,6 +57,7 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
+# 173 -> 190 reserved
 188.0.0.0/8	ripe # transferred from ARIN to to RIPE
 ## All other B class addresses are supposed to be allocated by ARIN
 ## We know that many of them are not, but they can't all be listed here
@@ -81,8 +82,7 @@
 200.18.0.0/15	whois.nic.br
 200.20.0.0/16	whois.nic.br
 200.128.0.0/9	whois.nic.br
-200.0.0.0/8	lacnic
-#201.0.0.0/8	reserved
+200.0.0.0/7	lacnic
 202.11.0.0/16	whois.nic.ad.jp
 202.13.0.0/16	whois.nic.ad.jp
 202.15.0.0/16	whois.nic.ad.jp
@@ -163,5 +163,6 @@
 220.72.0.0/13	whois.nic.or.kr
 220.80.0.0/14	whois.nic.or.kr
 220.84.0.0/15	whois.nic.or.kr
+223.0.0.0/8	UNALLOCATED	# returned from APNIC to IANA
 220.0.0.0/6	apnic
 # that's all... here starts the multicast space

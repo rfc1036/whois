@@ -26,9 +26,10 @@
 .org	PIR
 .edu	whois.educause.net
 .gov	whois.nic.gov
-.int	whois.icann.org
+.int	whois.iana.org
 .mil	whois.nic.mil
-.aero	WEB http://www.nic.aero/whois.php
+.aero	whois.information.aero
+.arpa	whois.iana.org
 .biz	whois.nic.biz
 .coop	whois.nic.coop
 .info	whois.afilias.info
@@ -79,7 +80,7 @@
 .by	WEB http://www.tld.by/indexeng.html
 .bz	whois.belizenic.bz
 .ca	whois.cira.ca
-.cc	whois.nic.cc
+.cc	NICCC
 .cd	whois.nic.cd
 .cf	WEB http://www.nic.cf/whois.php3
 .cg	WEB http://www.nic.cg/cgi-bin/whoiscg.pl
@@ -150,7 +151,7 @@
 .im	WEB http://www.nic.im/exist.html
 .in	whois.ncst.ernet.in
 .io	WEB http://www.io.io/whois.html
-#.iq			# NIC?
+#.iq			# see http://nic-iq.nic-naa.net/
 .ir	whois.nic.ir
 .is	whois.isnet.is
 .it	whois.nic.it
@@ -169,7 +170,7 @@
 .kw	WEB http://www.domainname.net.kw
 .ky	WEB http://146.115.157.215/whoisfrontend.asp
 .kz	whois.domain.kz
-.la	whois.nic.la
+#.la	# was whois.nic.la. See lacnic.net too
 .lb	WEB http://www.aub.edu.lb/lbdr/search.html
 .lc	NONE		# http://www.isisworld.lc/domains/
 .li	whois.nic.li

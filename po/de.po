@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.4.13\n"
-"POT-Creation-Date: 2003-03-16 15:37+0100\n"
+"POT-Creation-Date: 2003-05-05 18:21+0200\n"
 "PO-Revision-Date: 2001-07-04 15:15+01:00\n"
 "Last-Translator: Simon Richter <Simon.Richter@in.tum.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "\n"
 "Senden sie Bugreports an %s.\n"
 
-#: ../whois.c:151 ../whois.c:213
+#: ../whois.c:151 ../whois.c:224
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Benutze Server %s.\n"
@@ -47,7 +47,7 @@ msgstr "Diese TLD hat keinen whois-Server."
 msgid "Connecting to whois.crsnic.net."
 msgstr "Verbinde zu whois.internic.net."
 
-#: ../whois.c:191
+#: ../whois.c:191 ../whois.c:202
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -60,10 +60,15 @@ msgstr ""
 
 #: ../whois.c:196
 #, fuzzy
+msgid "Connecting to whois.nic.cc."
+msgstr "Verbinde zu whois.internic.net."
+
+#: ../whois.c:207
+#, fuzzy
 msgid "Connecting to whois.publicinterestregistry.net."
 msgstr "Verbinde zu whois.internic.net."
 
-#: ../whois.c:202
+#: ../whois.c:213
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -74,16 +79,16 @@ msgstr ""
 "InterNIC verweist auf %s.\n"
 "\n"
 
-#: ../whois.c:206
+#: ../whois.c:217
 msgid "No whois server is known for this kind of object."
 msgstr ""
 
-#: ../whois.c:209
+#: ../whois.c:220
 #, fuzzy
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Unbekannte AS-Nummer. Bitte upgraden Sie dieses Programm."
 
-#: ../whois.c:222
+#: ../whois.c:233
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -92,22 +97,22 @@ msgstr ""
 "Suche nach: \"%s\"\n"
 "\n"
 
-#: ../whois.c:275 ../whois.c:278
+#: ../whois.c:286 ../whois.c:289
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr ""
 
-#: ../whois.c:417
+#: ../whois.c:428
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Warnung: RIPE-Flags wurden ignoriert (\"traditioneller\" Server)."
 
-#: ../whois.c:477
+#: ../whois.c:489
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Verweis auf %s gefunden bei %s.\n"
 
-#: ../whois.c:494
+#: ../whois.c:506
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -115,26 +120,26 @@ msgstr ""
 "Schwerer Fehler: Haftungsausschlusstext wurde geaendert.\n"
 "Bitte upgraden sie dieses Programm.\n"
 
-#: ../whois.c:611
+#: ../whois.c:624
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s nicht gefunden."
 
-#: ../whois.c:621
+#: ../whois.c:634
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: unbekannter Dienst"
 
-#: ../whois.c:633
+#: ../whois.c:646
 msgid "Timeout."
 msgstr ""
 
-#: ../whois.c:639
+#: ../whois.c:652
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Erhielt Signal %d, unterbrochen..."
 
-#: ../whois.c:688
+#: ../whois.c:701
 #, fuzzy
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"

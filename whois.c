@@ -191,6 +191,17 @@ int main(int argc, char *argv[])
 		printf(_("\nFound a referral to %s.\n\n"), server);
 		alarm(60);
 		break;
+	    case 9:
+		if (verb)
+		    puts(_("Connecting to whois.nic.cc."));
+		sockfd = openconn("whois.nic.cc", NULL);
+		server = query_crsnic(sockfd, qstring);
+		close(sockfd);
+		if (!server)
+		    exit(0);
+		printf(_("\nFound a referral to %s.\n\n"), server);
+		alarm(60);
+		break;
 	    case 7:
 		if (verb)
 		    puts(_("Connecting to whois.publicinterestregistry.net."));
@@ -318,19 +329,19 @@ const char *whichwhois(const char *s)
 	    for (i = 0; ip6_assign[i].serv; i++)
 		if (v6net == ip6_assign[i].net)
 		    return ip6_assign[i].serv;
-	    return "\006";			/* unknown allocation */
+	    return "\x06";			/* unknown allocation */
 	} else if (strncasecmp(s, "3ffe:", 5) == 0)
 	    return "whois.6bone.net";
 	/* RPSL hierarchical object like AS8627:fltr-TRANSIT-OUT */
 	else if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
 	    return whereas(atoi(s + 2));
 	else
-	    return "\005";
+	    return "\x05";
     }
 
     /* email address */
     if (strchr(s, '@'))
-	return "\005";
+	return "\x05";
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
@@ -345,7 +356,7 @@ const char *whichwhois(const char *s)
 	if (*s == '!')	/* NSI NIC handle */
 	    return "whois.networksolutions.com";
 	else
-	    return "\005";	/* probably a unknown kind of nic handle */
+	    return "\x05";	/* probably a unknown kind of nic handle */
     }
 
     /* smells like an IP? */
@@ -353,7 +364,7 @@ const char *whichwhois(const char *s)
 	for (i = 0; ip_assign[i].serv; i++)
 	    if ((ip & ip_assign[i].mask) == ip_assign[i].net)
 		return ip_assign[i].serv;
-	return "\005";			/* not in the unicast IPv4 space */
+	return "\x05";			/* not in the unicast IPv4 space */
     }
 
     /* check the TLDs list */
@@ -371,9 +382,9 @@ const char *whichwhois(const char *s)
 	return "";
     }
 
-    /* has dot and maybe a hypen and it's not in tld_serv[], WTF is it? */
+    /* has dot and maybe a hyphen and it's not in tld_serv[], WTF is it? */
     /* either a TLD or a NIC handle we don't know about yet */
-    return "\005";
+    return "\x05";
 }
 
 const char *whereas(const unsigned short asn)
@@ -383,7 +394,7 @@ const char *whereas(const unsigned short asn)
     for (i = 0; as_assign[i].serv; i++)
 	if (asn >= as_assign[i].first && asn <= as_assign[i].last)
 	    return as_assign[i].serv;
-    return "\006";
+    return "\x06";
 }
 
 char *queryformat(const char *server, const char *flags, const char *query)
@@ -420,9 +431,10 @@ char *queryformat(const char *server, const char *flags, const char *query)
     if (!isripe && strcmp(server, "whois.nic.mil") == 0 &&
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
-    if (!isripe && strcmp(server, "whois.arin.net") == 0 &&
+    else if (!isripe && (strcmp(server, "whois.arin.net") == 0 ||
+	    strcmp(server, "whois.nic.ad.jp")) &&
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
-	sprintf(buf, "A %s", query + 2);	/* always ask for a ASN */
+	sprintf(buf, "AS %s", query + 2);	/* always ask for a ASN */
     else if (!isripe && strcmp(server, "whois.corenic.net") == 0)
 	sprintf(buf, "--machine %s", query);	/* machine readable output */
     else if (!isripe && strcmp(server, "whois.nic.ad.jp") == 0) {
@@ -520,7 +532,8 @@ const char *query_crsnic(const int sock, const char *query)
 	    for (p = buf; *p != ':'; p++);	/* skip until colon */
 	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
 	    ret = malloc(strlen(p) + 1);
-	    for (q = ret; *p != '\n' && *p != '\r'; *q++ = *p++); /*copy data*/
+	    for (q = ret; *p != '\n' && *p != '\r' && *p != ' '; *q++ = *p++)
+		; /*copy data*/
 	    *q = '\0';
 	    state = 2;
 	}

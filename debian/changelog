@@ -1,3 +1,15 @@
+whois (4.6.4) unstable; urgency=medium
+
+  * Added may new ASN blocks from MILNET, LACNIC and JP-NIC.
+  * Fixed a bug which broke ASN queries to whois.nic.mil.
+  * Added .arpa TLD.
+  * Update .aero, .int, .la TLD. (Closes: #187007)
+  * Updated Polish translation, courtesy of Jakub Bogusz.
+  * Removed CORE NIC handles until the query format will be documented.
+  * Added support for nic.cc referrals (patch from Kevin Stone).
+
+ -- Marco d'Itri <md@linux.it>  Mon,  5 May 2003 18:14:46 +0200
+
 whois (4.6.3) unstable; urgency=low
 
   * Added support for .org referrals. (Closes: #182192, #179539)

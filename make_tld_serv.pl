@@ -9,11 +9,12 @@ while (<>) {
 	next if /^$/;
 	die "format error: $_" unless
 		(my ($a, $b) = /^([\w\d\.-]+)\s+([\w\d\.:-]+|[A-Z]+\s+.*)$/);
-	$b =~ s/^W(?:EB)?\s+/\\001/;
-	$b =~ s/^M(?:SG)?\s+/\\002/;
-	$b = "\\003" if $b eq 'NONE';
-	$b = "\\004" if $b eq 'CRSNIC';
-	$b = "\\007" if $b eq 'PIR';
+	$b =~ s/^W(?:EB)?\s+/\\x01/;
+	$b =~ s/^M(?:SG)?\s+/\\x02/;
+	$b = "\\x03" if $b eq 'NONE';
+	$b = "\\x04" if $b eq 'CRSNIC';
+	$b = "\\x07" if $b eq 'PIR';
+	$b = "\\x09" if $b eq 'NICCC';
 	print "    \"$a\",\t\"$b\",\n";
 }
 
