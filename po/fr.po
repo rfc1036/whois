@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.5\n"
-"POT-Creation-Date: 2003-05-05 18:21+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-12-01 18:31+0100\n"
 "PO-Revision-Date: 2003-06-13 04:16+0200\n"
 "Last-Translator: William Steve Applegate <wsapplegate@est.un.goret.info>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -24,29 +25,31 @@ msgstr ""
 "\n"
 "Rapportez les bugs à %s.\n"
 
-#: ../whois.c:151 ../whois.c:224
+#: ../whois.c:151 ../whois.c:240
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Le serveur %s est sélectionné.\n"
 
-#: ../whois.c:172
+#: ../whois.c:173
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "Le serveur par défaut %s est sélectionné.\n"
 
-#: ../whois.c:175
+#: ../whois.c:176
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Ce TLD n'a pas de serveur whois, mais vous pouvez accéder à la base de données à"
+msgstr ""
+"Ce TLD n'a pas de serveur whois, mais vous pouvez accéder à la base de "
+"données à"
 
-#: ../whois.c:181
+#: ../whois.c:182
 msgid "This TLD has no whois server."
 msgstr "Ce TLD n'a pas de serveur whois."
 
-#: ../whois.c:185
+#: ../whois.c:186
 msgid "Connecting to whois.crsnic.net."
 msgstr "Connexion à whois.crsnic.net."
 
-#: ../whois.c:191 ../whois.c:202
+#: ../whois.c:192 ../whois.c:203
 #, c-format
 msgid ""
 "\n"
@@ -57,15 +60,15 @@ msgstr ""
 "Renvoi trouvé vers %s.\n"
 "\n"
 
-#: ../whois.c:196
+#: ../whois.c:197
 msgid "Connecting to whois.nic.cc."
 msgstr "Connexion à whois.nic.cc."
 
-#: ../whois.c:207
+#: ../whois.c:208
 msgid "Connecting to whois.publicinterestregistry.net."
 msgstr "Connexion à whois.publicinterestregistry.net."
 
-#: ../whois.c:213
+#: ../whois.c:214
 #, c-format
 msgid ""
 "\n"
@@ -76,15 +79,23 @@ msgstr ""
 "Renvoi trouvé vers %s.\n"
 "\n"
 
-#: ../whois.c:217
+#: ../whois.c:218
 msgid "No whois server is known for this kind of object."
 msgstr "Aucun serveur whois n'est connu pour ce type d'objet."
 
-#: ../whois.c:220
+#: ../whois.c:221
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Numéro d'AS ou réseau IP inconnu. Veuillez mettre à jour ce programme."
 
-#: ../whois.c:233
+#: ../whois.c:228
+#, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n"
+"\n"
+msgstr ""
+
+#: ../whois.c:249
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -93,21 +104,22 @@ msgstr ""
 "Requête : \"%s\"\n"
 "\n"
 
-#: ../whois.c:286 ../whois.c:289
+#: ../whois.c:302 ../whois.c:305
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Impossible d'interpréter la ligne : %s"
 
-#: ../whois.c:428
+#: ../whois.c:446
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr "Avertissement : des options RIPE ont été utilisées avec un serveur classique."
+msgstr ""
+"Avertissement : des options RIPE ont été utilisées avec un serveur classique."
 
-#: ../whois.c:489
+#: ../whois.c:503
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Renvoi trouvé vers %s depuis %s.\n"
 
-#: ../whois.c:506
+#: ../whois.c:520
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -115,26 +127,26 @@ msgstr ""
 "Erreur catastrophique : le texte de déni de responsabilité a changé.\n"
 "Veuillez mettre à jour ce programme.\n"
 
-#: ../whois.c:624
+#: ../whois.c:639
 #, c-format
 msgid "Host %s not found."
 msgstr "L'hôte %s est introuvable."
 
-#: ../whois.c:634
+#: ../whois.c:649
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp : service inconnu"
 
-#: ../whois.c:646
+#: ../whois.c:661
 msgid "Timeout."
 msgstr "Temps limite dépassé."
 
-#: ../whois.c:652
+#: ../whois.c:667
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interruption par le signal %d..."
 
-#: ../whois.c:701
+#: ../whois.c:728
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -186,8 +198,8 @@ msgstr ""
 "-T TYPE[,TYPE]...      chercher seulement les objets de ce TYPE\n"
 "-K                     seules les clés primaires sont renvoyées [RPSL "
 "seulement]\n"
-"-r                     désactiver la recherche récursive des informations "
-"de contact\n"
+"-r                     désactiver la recherche récursive des informations de "
+"contact\n"
 "-R                     forcer l'affichage de la copie locale de l'objet de "
 "domaine,\n"
 "                       même s'il contient un renvoi\n"

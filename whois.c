@@ -11,12 +11,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "config.h"
-#ifdef HAVE_GETOPT_LONG
-#include <getopt.h>
-#endif
-#ifdef HAVE_REGEXEC
-#include <regex.h>
-#endif
 #include <string.h>
 #include <ctype.h>
 #include <sys/types.h>
@@ -25,6 +19,15 @@
 #include <netdb.h>
 #include <errno.h>
 #include <signal.h>
+#ifdef HAVE_GETOPT_LONG
+#include <getopt.h>
+#endif
+#ifdef HAVE_REGEXEC
+#include <regex.h>
+#endif
+#ifdef HAVE_LIBIDN
+#include <idna.h>
+#endif
 
 /* Application-specific */
 #include "data.h"
@@ -161,9 +164,11 @@ int main(int argc, char *argv[])
 	char *tmp;
 
 	tmp = normalize_domain(qstring);
-	server = whichwhois(tmp);
-	free(tmp);
+	free(qstring);
+	qstring = tmp;
+	server = whichwhois(qstring);
 
+retry:
 	switch (server[0]) {
 	    case 0:
 		if (!(server = getenv("WHOIS_SERVER")))
@@ -219,6 +224,21 @@ int main(int argc, char *argv[])
 	    case 6:
 		puts(_("Unknown AS number or IP network. Please upgrade this program."));
 		exit(0);
+	    case 0x0A:
+		{
+		char *tmp6 = convert_6to4(qstring);
+		free(qstring);
+		qstring = tmp6;
+		printf(_("\nQuerying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n\n"), qstring);
+		server = whichwhois(qstring);
+		/*
+		 * This code sucks enough that I can afford to use goto...
+		 * Some day whichwhois() and queryformat() will be merged
+		 * and will return a struct with status code, server name
+		 * and query string.
+		 */
+		goto retry;
+		}
 	    default:
 		if (verb)
 		    printf(_("Using server %s.\n"), server);
@@ -330,6 +350,8 @@ const char *whichwhois(const char *s)
 		if (v6net == ip6_assign[i].net)
 		    return ip6_assign[i].serv;
 	    return "\x06";			/* unknown allocation */
+	} else if (strncmp(s, "2002:", 5) == 0) {
+	    return "\x0A";
 	} else if (strncasecmp(s, "3ffe:", 5) == 0)
 	    return "whois.6bone.net";
 	/* RPSL hierarchical object like AS8627:fltr-TRANSIT-OUT */
@@ -588,7 +610,7 @@ const char *query_pir(const int sock, const char *query)
 
 int openconn(const char *server, const char *port)
 {
-    int fd;
+    int fd = -1;
 #ifdef HAVE_GETADDRINFO
     int err;
     struct addrinfo hints, *res, *ai;
@@ -672,7 +694,27 @@ char *normalize_domain(const char *dom)
     for (p = ret; *p; p++); p--;	/* move to the last char */
     for (; *p == '.' || p == ret; p--)	/* eat trailing dots */
 	*p = '\0';
+
+#ifdef HAVE_LIBIDN
+    if (idna_to_ascii_from_locale(ret, &p, 0, 0) != IDNA_SUCCESS)
+	return ret;
+
+    free(ret);
+    ret = p;
+#endif
     return ret;
+}
+
+char *convert_6to4(const char *s)
+{
+    char *new = malloc(sizeof("255.255.255.255"));
+    unsigned int a, b;
+
+    if (sscanf(s, "2002:%x:%x:", &a, &b) != 2)
+	return (char *) "0.0.0.0";
+
+    sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
+    return new;
 }
 
 unsigned long myinet_aton(const char *s)

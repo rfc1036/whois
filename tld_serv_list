@@ -69,7 +69,7 @@
 #.bh	NONE		# NIC? www.inet.com.bh
 .bi	WEB http://www.nic.bi/Nic_search.asp
 #.bj			# NIC? www.opt.bj
-.bm	WEB http://www.bermudanic.bm/cgi-bin/BermudaNIC/rwhois_query.pl	# rwhois.bermudanic.bm:4321
+.bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
 #.bn	NONE		# NIC? www.brunet.bn
 .bo	WEB http://www.nic.bo/
 .br	whois.nic.br
@@ -89,12 +89,11 @@
 .ck	whois.nic.ck
 .cl	whois.nic.cl
 .cm	NONE		# http://info.intelcam.cm
-.ac.cn	whois.cnc.ac.cn
 .edu.cn	whois.edu.cn
 .cn	whois.cnnic.net.cn
 .uk.co	whois.uk.co
 .co	WEB https://www.nic.co/
-.cr	WEB http://www.nic.cr/consulta-dns.html
+.cr	WEB http://www.nic.cr/servlet/niccr?tid=TWhois&Lng=5&Act=NEW
 .cu	WEB http://www.nic.cu/consult.html
 #.cv			# NIC? dns.cv?
 .cx	whois.nic.cx
@@ -113,7 +112,7 @@
 .er	NONE		# NO NIC http://www.afridns.org/er/
 .es	WEB http://www.nic.es/cgi-bin/consulta.whois
 #.et	NONE		# NIC? www.telecom.net.et
-.fi	WEB http://cgi.ficora.fi/wwwbin/domains.pl?language=eng
+.fi	WEB https://domain.ficora.fi/fiDomain/aca.aspx
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.org.fk/domain-registration/home.htm
 .fm	WEB http://www.dot.fm/whois.html
@@ -180,10 +179,10 @@
 .lt	whois.ripe.net
 .lu	whois.dns.lu
 .lv	whois.nic.lv
-.ly	WEB http://www.lydomains.com/whois.asp
+.ly	WEB http://www.lydomains.com/
 #.ma			# NIC? http://www.anrt.net.ma/nic/
 .mc	whois.ripe.net
-.md	WEB http://www.nic.md/search.html
+.md	WEB http://www.dns.md/whois.html
 .mg	NONE		# www.nic.mg
 .mh	NONE		# www.nic.net.mh
 #.mk			# NIC? http://www.mpt.com.mk

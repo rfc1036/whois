@@ -7,7 +7,9 @@ SHELL+= -e
 
 build:
 	$(checkdir)
-	make whois mkpasswd OPTS="-O2 -g -DCONFIG_FILE=\\\"/etc/whois.conf\\\""
+	make whois mkpasswd \
+		OPTS="-O2 -g -DCONFIG_FILE=\\\"/etc/whois.conf\\\"" \
+		HAVE_LIBIDN=1
 	touch build
 
 clean:

@@ -3,7 +3,7 @@ Section: net
 Priority: standard
 Maintainer: Marco d'Itri <md@linux.it>
 Standards-Version: 3.6.1
-Build-Depends: debhelper, gettext
+Build-Depends: debhelper, gettext, libidn9-dev
 
 Package: whois
 Architecture: any

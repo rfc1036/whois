@@ -22,6 +22,7 @@ int isasciidigit(const char);
 int domcmp(const char *, const char *);
 int domfind(const char *, const char *[]);
 char *normalize_domain(const char *);
+char *convert_6to4(const char *);
 
 void err_quit(const char *,...);
 void err_sys(const char *,...);

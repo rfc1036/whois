@@ -1,3 +1,20 @@
+whois (4.6.9) unstable; urgency=medium
+
+  * Removed .ac.cn SLD. (Closes: #219883)
+  * Added support for 6to4 IPv6 addresses. (Closes: #219028)
+  * Updated 145/8 after ERX transfer. (Closes: #220400)
+  * Added IDN support.
+
+ -- Marco d'Itri <md@linux.it>  Mon,  1 Dec 2003 18:58:54 +0100
+
+whois (4.6.8) unstable; urgency=medium
+
+  * Update the version number. (Closes: #211550)
+  * Updated .cr, .fi, .ly and .md TLDs.
+  * Added new ASN block for APNIC.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 24 Oct 2003 22:37:22 +0200
+
 whois (4.6.7) unstable; urgency=medium
 
   * Updated .hk, .sg TLDs.
@@ -67,7 +84,7 @@ whois (4.6.0) unstable; urgency=medium
   * Added .ai .bo, .bt, .dz, .gi, .pn, .tp and .uz TLDs.
   * Updated .ae, .ar, .at, .bi, .co, .cu, .do, .fm, .ge, .jo, .kr, .lu,
     .lv, .mt, .mu, .mw, .nr, .ph, .pk, .sa, .sb, .ua, .uy, .vi, .vu TLDs
-    (courtesy of Frédéric L. W. Meunier).
+    (courtesy of FrÃ©dÃ©ric L. W. Meunier).
   * Rewritten the IPv6-matching code. Fixed a few bugs there too.
   * Generalized and deuglyfied some parts of the code.
   * Added support for RPSL objects like AS8627:fltr-TRANSIT-OUT.

@@ -1,4 +1,4 @@
-prefix=/usr/local
+prefix ?= /usr/local
 
 OPTS=-O2
 
@@ -15,10 +15,15 @@ OPTS=-O2
 # OS/2 EMX
 #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
 
+ifdef HAVE_LIBIDN
+LIBIDN += -lidn
+CFLAGS += -DHAVE_LIBIDN
+endif
+
 all: whois #pos
 
 whois: whois.c whois.h config.h data.h as_del.h ip_del.h tld_serv.h
-	$(CC) $(CFLAGS) $(OPTS) whois.c -o whois $(LDFLAGS)
+	$(CC) $(CFLAGS) $(OPTS) whois.c -o whois $(LDFLAGS) $(LIBIDN)
 
 mkpasswd: mkpasswd.c
 	$(CC) $(CFLAGS) $(OPTS) mkpasswd.c -o mkpasswd -lcrypt

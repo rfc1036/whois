@@ -8,7 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.5\n"
-"POT-Creation-Date: 2003-05-10 08:39+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-12-01 18:31+0100\n"
 "PO-Revision-Date: 2003-05-10 08:40+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld.org.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -27,30 +28,30 @@ msgstr ""
 "\n"
 "B³êdy proszê zg³aszaæ na adres %s.\n"
 
-#: ../whois.c:151 ../whois.c:224
+#: ../whois.c:151 ../whois.c:240
 #, c-format
 msgid "Using server %s.\n"
 msgstr "U¿ycie serwera %s.\n"
 
-#: ../whois.c:172
+#: ../whois.c:173
 #, c-format
 msgid "Using default server %s.\n"
 msgstr "U¿ycie domy¶lnego serwera %s.\n"
 
-#: ../whois.c:175
+#: ../whois.c:176
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Ta g³ówna domena nie ma serwera whois, ale mo¿na u¿yæ bazy danych whois pod"
 
-#: ../whois.c:181
+#: ../whois.c:182
 msgid "This TLD has no whois server."
 msgstr "Ta g³ówna domena nie ma serwera whois."
 
-#: ../whois.c:185
+#: ../whois.c:186
 msgid "Connecting to whois.crsnic.net."
 msgstr "£±czenie z whois.crsnic.net."
 
-#: ../whois.c:191 ../whois.c:202
+#: ../whois.c:192 ../whois.c:203
 #, c-format
 msgid ""
 "\n"
@@ -61,15 +62,15 @@ msgstr ""
 "Znaleziono odniesienie do %s.\n"
 "\n"
 
-#: ../whois.c:196
+#: ../whois.c:197
 msgid "Connecting to whois.nic.cc."
 msgstr "£±czenie z whois.nic.cc."
 
-#: ../whois.c:207
+#: ../whois.c:208
 msgid "Connecting to whois.publicinterestregistry.net."
 msgstr "£±czenie z whois.publicinterestregistry.net."
 
-#: ../whois.c:213
+#: ../whois.c:214
 #, c-format
 msgid ""
 "\n"
@@ -80,15 +81,23 @@ msgstr ""
 "Znaleziono odniesienie do %s.\n"
 "\n"
 
-#: ../whois.c:217
+#: ../whois.c:218
 msgid "No whois server is known for this kind of object."
 msgstr "Dla tego rodzaju obiektu nie jest znany ¿aden serwer whois."
 
-#: ../whois.c:220
+#: ../whois.c:221
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Nieznany numer AS lub sieæ IP. Proszê uaktualniæ ten program."
 
-#: ../whois.c:233
+#: ../whois.c:228
+#, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n"
+"\n"
+msgstr ""
+
+#: ../whois.c:249
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -97,21 +106,21 @@ msgstr ""
 "Zapytanie: \"%s\"\n"
 "\n"
 
-#: ../whois.c:286 ../whois.c:289
+#: ../whois.c:302 ../whois.c:305
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Nie mo¿na przeanalizowaæ tej linii: %s"
 
-#: ../whois.c:428
+#: ../whois.c:446
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Uwaga: u¿yto flag RIPE ze starszym serwerem."
 
-#: ../whois.c:487
+#: ../whois.c:503
 #, c-format
 msgid "Detected referral to %s on %s.\n"
 msgstr "Wykryto odniesienie do %s na %s.\n"
 
-#: ../whois.c:504
+#: ../whois.c:520
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -119,26 +128,26 @@ msgstr ""
 "Katastrofa! Tekst o¶wiadczenia zosta³ zmieniony.\n"
 "Proszê uaktualniæ ten program.\n"
 
-#: ../whois.c:622
+#: ../whois.c:639
 #, c-format
 msgid "Host %s not found."
 msgstr "Serwer %s nie zosta³ znaleziony."
 
-#: ../whois.c:632
+#: ../whois.c:649
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: us³uga nieznana"
 
-#: ../whois.c:644
+#: ../whois.c:661
 msgid "Timeout."
 msgstr "Up³yn±³ limit czasu."
 
-#: ../whois.c:650
+#: ../whois.c:667
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Przerwano sygna³em %d..."
 
-#: ../whois.c:699
+#: ../whois.c:728
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
