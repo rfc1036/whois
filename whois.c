@@ -71,8 +71,8 @@ int main(int argc, char *argv[])
     textdomain(NLS_CAT_NAME);
 #endif
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "acdFg:h:Hi:KlLmMp:q:rRs:St:T:v:V:x",
-				longopts, 0)) > 0) {
+    while ((ch = GETOPT_LONGISH(argc, argv,
+		"acdFg:h:Hi:KlLmMp:q:rRs:St:T:v:V:x", longopts, 0)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
 	    for (p = fstring; *p; p++);
@@ -447,13 +447,16 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	strcat(buf, flags);
     }
 
+#ifdef HAVE_LIBIDN
     /* why, oh why DENIC had to make whois "user friendly"?
-     * I hope that adding -T dn,ace will not break some queries.
+     * Do this only if the user did not use any flag.
      */
     if (isripe && strcmp(server, "whois.denic.de") == 0 && domcmp(query, ".de")
-	    && !strchr(query, ' '))
+	    && !strchr(query, ' ') && !*flags)
 	sprintf(buf, "-T dn,ace -C US-ASCII %s", query);
-    else if (!isripe && (strcmp(server, "whois.nic.mil") == 0 ||
+    else
+#endif
+    if (!isripe && (strcmp(server, "whois.nic.mil") == 0 ||
 	    strcmp(server, "whois.nic.ad.jp") == 0) &&
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
 	/* FIXME: /e is not applied to .JP ASN */

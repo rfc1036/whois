@@ -48,8 +48,8 @@
 27648	28671	lacnic
 28672	29695	ripe
 30720	31743	ripe
-33792	34815	ripe
+33792	35839	ripe
 
 # catch all: everything else comes from ARIN
-1	34815	arin
+1	35839	arin
 

@@ -1,3 +1,14 @@
+whois (4.7.1) unstable; urgency=medium
+
+  * Added new ASN allocations.
+  * Updated the IPv4 allocations. (Closes: #289459)
+  * Updated the French translation, by Mohammed Adnène Trojette.
+    (Closes: #298005)
+  * Added another workaround for DENIC brokeness, flags will not be
+    automatically added for *any* query which has flags. (Closes: #295353)
+
+ -- Marco d'Itri <md@linux.it>  Fri,  4 Mar 2005 00:58:31 +0100
+
 whois (4.7.0) unstable; urgency=medium
 
   * Updated the .af, .ar, .cf, .dm, .ec, .es, .ga, .gu, .ky, .lt, .sb, .wf

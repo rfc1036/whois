@@ -1,4 +1,4 @@
-.TH "WHOIS" "1" "27 November 2004" "Marco d'Itri" "Debian GNU/Linux"
+.TH "WHOIS" "1" "4 March 2005" "Marco d'Itri" "Debian GNU/Linux"
 .SH "NAME"
 whois \- client for the whois directory service
 .SH "SYNOPSIS"
@@ -25,8 +25,8 @@ whois \- client for the whois directory service
 
 This version of the whois client tries to guess the right server to
 ask for the specified object. If no guess can be made it will connect
-to whois.networksolutions.com for nic handles or whois.arin.net for
-IPv4 addresses and network names.
+to \fIwhois.networksolutions.com\fP for NIC handles or \fIwhois.arin.net\fP
+for IPv4 addresses and network names.
 .PP 
 .SH "OPTIONS"
 .TP 8
@@ -45,7 +45,7 @@ Be verbose.
 .B \-\-help
 Display online help.
 .TP 8
-Other options are flags understood by RIPE\-like servers.
+Other options are flags understood by RIPE-like servers.
 .SH "NOTES"
 Please remember that \fIwhois.networksolutions.com\fP by default will
 only search in the domains database. If you want to search for NIC handles
@@ -56,17 +56,27 @@ When querying \fIwhois.nic.mil\fP for AS numbers, the program will
 automatically convert the request in the appropriate format, inserting
 a space after the string \fIAS\fP.
 .P
-When querying \fIwhois.denic.de\fP for domain names, the program will
-automatically add the flags \fI-T dn,ace -C US-ASCII\fP.
+If the program is compiled with IDN support, when querying
+\fIwhois.denic.de\fP for domain names it will automatically add the flags
+\fI\-T dn,ace \-C US\-ASCII\fP if no flags have been specified by the user.
+The domain name will \fBalways\fP be IDN-encoded.
 .P
-When querying \fIwhois.corenic.net\fP, machine readable output is requested.
+When querying \fIwhois.corenic.net\fP, the program will automatically
+request machine-readable output.
 .P
-RIPE\-specific options are ignored when querying non\-RIPE servers.
+RIPE-specific command line options are ignored when querying non-RIPE
+servers. This may or may not be the behaviour intended by the user.
+When querying a non-standard server, command line options which are not
+to be interpreted by the client should always follow the \fI\-\-\fP
+separator (which marks the beginning of the query string).
 .P
 If the \fI/etc/whois.conf\fR config file exists, it will be consulted
 to find a server before applying the normal rules. Each line of the
 file should contain a regular expression to be matched against the query
 text and the whois server to use, separated by white space.
+.P
+Command line arguments will always be interpreted accordingly to the
+current system locale and converted to the IDN ASCII Compatible Encoding.
 .SH "Files"
 /etc/whois.conf
 .SH "ENVIRONMENT"
@@ -102,4 +112,4 @@ Kessens of QWest for the 6bone server.
 .SH "AUTHOR"
 .B Whois
 and this man page were written by Marco d'Itri <\fImd@linux.it\fP>
-and are licensed under the GPL.
+and are licensed under the terms of the GNU General Public License.
