@@ -55,7 +55,7 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
-    "The data in this whois", "using our Whois information",	/* enom */
+    "The data in this whois", "Version 6.3",			/* enom */
     NULL, NULL
 };
 
@@ -99,6 +99,7 @@ struct ip6_del ip6_assign[] = {
     { 0x0800, "whois.ripe.net" },
     { 0x0A00, "whois.ripe.net" },
     { 0x0C00, "whois.apnic.net" },
+    { 0x0E00, "whois.apnic.net" },
     { 0x1200, "whois.lacnic.net" },
     { 0, NULL }
 };

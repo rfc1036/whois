@@ -23,7 +23,7 @@
 .eu.org	whois.eu.org
 .com	CRSNIC
 .net	CRSNIC
-.org	CRSNIC
+.org	whois.publicinterestregistry.net
 .edu	whois.educause.net
 .gov	whois.nic.gov
 .int	whois.icann.org
@@ -201,7 +201,7 @@
 .mx	whois.nic.mx
 .my	WEB http://www.mynic.net.my/newhp/mynic-lookup.htm
 #.mz			# NIC? www.uem.mz
-.na	WEB http://www.lisse.na/cgi-bin/whois.cgi
+.na	whois.na-nic.com.na
 .nc	whois.cctld.nc
 #.ne			# NIC? http://www.intnet.ne
 .nf	NONE		# http://www.names.nf
@@ -225,7 +225,7 @@
 .pn	WEB http://www.pitcairn.pn/PnRegistry/CheckAvailability.html
 .pr	NONE		# http://www.uprr.pr/
 .ps	WEB http://www.nic.ps/whois/
-.pt	NONE		# www.dns.pt
+.pt	whois.dns.pt
 .pw	whois.nic.pw
 .py	WEB http://www.nic.py/consultas/
 .qa	NONE		# http://www.qatar.net.qa/services/virtual.htm

@@ -118,7 +118,7 @@
 210.96.0.0/11	whois.nic.or.kr # => 210.127.255.255
 210.128.0.0/11	whois.nic.ad.jp
 210.160.0.0/12	whois.nic.ad.jp
-210.178.0.0/14	whois.nic.or.kr
+210.178.0.0/15	whois.nic.or.kr
 210.180.0.0/14	whois.nic.or.kr
 210.188.0.0/14	whois.nic.ad.jp
 210.196.0.0/14	whois.nic.ad.jp

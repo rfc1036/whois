@@ -1,3 +1,11 @@
+whois (4.6.2) unstable; urgency=high
+
+  * Added APNIC block 2001:e00::/23.
+  * Added .pt TLD.
+  * Updated .na and .org TLDs.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 23 Jan 2003 18:51:48 +0100
+
 whois (4.6.1) unstable; urgency=medium
 
   * Oops... queries for 64.0.0.0/2 were broken (Closes: #171575).
