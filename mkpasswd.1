@@ -1,6 +1,6 @@
-.TH MKPASSWD 1 "7 October 1999" "Marco d'Itri" "Debian GNU/Linux"
+.TH MKPASSWD 1 "5 June 2001" "Marco d'Itri" "Debian GNU/Linux"
 .SH NAME
-mkpasswd \- Very dumb front end to crypt(3)
+mkpasswd \- Overfeatured front end to crypt(3)
 .SH SYNOPSIS
 .B mkpasswd
 .BR PASSWORD
@@ -11,10 +11,28 @@ mkpasswd \- Very dumb front end to crypt(3)
 encrypts the given password with the
 .BR crypt(3)
 libc function using the given salt.
+.SH OPTIONS
+.TP
+.B -S, --salt=STRING
+Use the \fISTRING\fP as salt.
+.TP
+.B -H, --hash=TYPE
+Compute the password using the \fITYPE\fP algorithm.
+.TP
+.B -s, --stdin
+Read the password from stdin instead of using \fIgetpass(3)\fP.
+.SH BUGS
+If the \fI--stdin\fP option is used, passwords containing some control
+characters may not be read correctly.
+.TP
+This programs suffers of a bad case of featuritis.
 .SH "SEE ALSO"
-.IR crypt(3)
+.IR passwd(1),
+.IR passwd(5),
+.IR crypt(3),
+.IR getpass(3)
 .SH AUTHOR
 .B mkpasswd
 and this man page were written by Marco d'Itri <md@linux.it>
-and put in the public domain.
+and are licensed under the terms of the GNU GPL.
 

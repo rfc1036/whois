@@ -13,7 +13,7 @@ all: whois #pos
 whois: whois.c whois.h config.h data.h as_del.h ip_del.h tld_serv.h
 	$(CC) $(OPTS) whois.c -o whois $(LDFLAGS)
 
-mkpasswd:
+mkpasswd: mkpasswd.c
 	$(CC) $(OPTS) mkpasswd.c -o mkpasswd -lcrypt
 
 as_del.h: as_del_list make_as_del.pl

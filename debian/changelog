@@ -1,6 +1,16 @@
-whois (4.5.6) unstable; urgency=low
+whois (4.5.7) unstable; urgency=low
+
+  * Added -nicat and -il NIC handles (Closes: #94465).
+  * Greatly bloated mkpasswd now can read the password from the console
+    (Closes: #94826).
+
+ -- Marco d'Itri <md@linux.it>  Tue,  5 Jun 2001 14:01:56 +0200
+
+whois (4.5.6) unstable; urgency=medium
 
   * Fixed typo in the server name for .si.
+  * Added 80.0.0.0/7 allocation and -frnic NIC handles.
+  * Added Build-Depends (Closes: #90205).
 
  -- Marco d'Itri <md@linux.it>  Wed,  4 Apr 2001 01:27:53 +0200
 
@@ -14,7 +24,7 @@ whois (4.5.5) unstable; urgency=low
 whois (4.5.4) unstable; urgency=low
 
   * Updated .at, .be, .cy, .cz, .ee, .gr, .il, .pl, .ro, .vi and .nz ccTLDs.
-  * Added -cz, -nicat, -norid and -rotld NIC handles.
+  * Added -cz, -nicat, and -rotld NIC handles.
   * Added telstra IP allocations.
   * Fixed fencepost error (Closes: #83661).
 
@@ -185,7 +195,7 @@ whois (4.4.1) unstable; urgency=low
 whois (4.4.0) unstable; urgency=low
 
   * Now the program automatically select the right server for AS queries.
-  * Added RIPE delegations of netblocks in the B class space.
+  * Added RIPE allocations of netblocks in the B class space.
   * Extensive survey of all known whois servers and update of tld_serv_list.
   * Now the flag -VMd4.4 is sent to RIPE-like servers.
   * Written a test program for checking if all servers work.

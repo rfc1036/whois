@@ -539,7 +539,7 @@ void usage(void)
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources]   query specified server info [RPSL only]\n"
 "-d                     return DNS reverse delegation objects too [RPSL only]\n"
-"-K                     only primary keys are returned [RPSL only\n"
+"-K                     only primary keys are returned [RPSL only]\n"
 "-V    --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"

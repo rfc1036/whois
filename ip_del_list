@@ -5,6 +5,7 @@
 62.0.0.0/8	ripe
 # broken?
 # 63.208.0.0/13	rr.level3.net
+80.0.0.0/7	ripe
 0.0.0.0/2	arin	# all other A classes are managed by ARIN
 ## The B class space is a mess :-( - something could still be missing
 139.20.0.0/14	ripe
@@ -145,4 +146,3 @@
 214.0.0.0/7	arin	# DoD
 216.0.0.0/8	arin
 217.0.0.0/8	ripe
-

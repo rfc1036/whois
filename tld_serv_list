@@ -3,7 +3,6 @@
 # UPR means the TLD is managed by UPR, but I could not find any info
 #
 # centralnic domains are currently not supported
-# http://www.iana.org/root-whois/xx.htm
 .br.com	whois.centralnic.net
 .cn.com	whois.centralnic.net
 .eu.com	whois.centralnic.net
@@ -262,6 +261,7 @@
 .um	whois.isi.edu	# not checked
 .fed.us	whois.nic.gov
 .us	whois.isi.edu
+.com.uy	WEB http://dns.antel.net.uy/clientes/consultar.htm
 .uy	WEB http://www.rau.edu.uy/rau/dom/reg.htm
 #.uz			# www.noc.uz (broken)
 .va	whois.ripe.net
@@ -302,6 +302,8 @@
 -cknic	whois.nic.ck
 -cz	whois.nic.cz
 -kg	whois.domain.kg
--norid	whois.norid.no
 -rotld	whois.rotld.ro
 -itnic	whois.nic.it
+-frnic	whois.nic.fr
+-nicat	whois.nic.at
+-il	whois.isoc.org.il

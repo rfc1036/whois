@@ -5,39 +5,6 @@
 /* Do *NOT* change it if you don't know what you are doing! */
 #define IDSTRING "Md4.5"
 
-/* system features */
-#ifdef ENABLE_NLS
-# ifndef NLS_CAT_NAME
-#  define NLS_CAT_NAME   "whois"
-# endif
-# ifndef LOCALEDIR
-#  define LOCALEDIR     "/usr/share/locale"
-# endif
-#endif
-
-#ifdef HAVE_GETOPT_LONG
-# define GETOPT_LONGISH(c, v, o, l, i) getopt_long(c, v, o, l, i)
-#else
-# define GETOPT_LONGISH(c, v, o, l, i) getopt(c, v, o)
-#endif
-
-
-/* NLS stuff */
-#ifdef ENABLE_NLS
-# include <libintl.h>
-# include <locale.h>
-# define _(a) (gettext (a))
-# ifdef gettext_noop
-#  define N_(a) gettext_noop (a)
-# else
-#  define N_(a) (a)
-# endif
-#else
-# define _(a) (a)
-# define N_(a) a
-#endif
-
-
 /* prototypes */
 const char *whichwhois(const char *);
 const char *whereas(int, struct as_del []);
