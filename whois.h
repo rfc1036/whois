@@ -37,6 +37,6 @@ void err_sys(const char *,...);
 
 
 /* flags for RIPE-like servers */
-const char *ripeflags="acdFKlLmMrRSx";
+const char *ripeflags="abBcdFGKlLmMrRSx";
 const char *ripeflagsp="gisTtvq";
 

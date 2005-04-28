@@ -42,6 +42,7 @@
 18259	18290	whois.nic.ad.jp
 20480	21503	ripe
 23552	24575	apnic
+23552	23601	whois.nic.or.kr
 23612	23643	whois.nic.ad.jp
 24576	25599	ripe
 26592	26623	lacnic
@@ -49,7 +50,8 @@
 28672	29695	ripe
 30720	31743	ripe
 33792	35839	ripe
+36864	37887	afrinic
 
 # catch all: everything else comes from ARIN
-1	35839	arin
+1	37887	arin
 

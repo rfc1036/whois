@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 #endif
 
     while ((ch = GETOPT_LONGISH(argc, argv,
-		"acdFg:h:Hi:KlLmMp:q:rRs:St:T:v:V:x", longopts, 0)) > 0) {
+		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:St:T:v:V:x", longopts, 0)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
 	    for (p = fstring; *p; p++);

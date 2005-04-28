@@ -39,7 +39,7 @@
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
 .ae	whois.uaenic.ae
-.af	whois.nic.af	# whois.nic.cx
+.af	whois.nic.af
 .ag	whois.nic.ag
 .ai	WEB http://whois.offshore.ai/
 .al	NONE		# http://www.inima.al/Domains.html
@@ -96,7 +96,7 @@
 .de	whois.denic.de
 .dj	whois.domain.dj
 .dk	whois.dk-hostmaster.dk
-.dm	WEB https://secure.domains.dm/tools/whois.jsp
+.dm	whois.nic.dm
 .do	WEB http://www.nic.do/whois-h.php3
 .dz	WEB http://www.nic.dz/anglais/dom-attr-eng.htm
 .ec	WEB http://www.nic.ec/eng/nicec.htm
@@ -198,7 +198,7 @@
 .na	whois.na-nic.com.na
 .nc	whois.cctld.nc
 #.ne			# NIC? http://www.intnet.ne
-.nf	WEB http://whois.nic.nf/whois.jsp
+.nf	whois.nic.nf
 .ng	NONE		# http://psg.com/dns/ng/
 .ni	NONE		# www.nic.ni
 .nl	whois.domain-registry.nl
@@ -237,7 +237,7 @@
 .sh	whois.nic.sh
 .si	whois.arnes.si
 .sj	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
-.sk	whois.ripe.net
+.sk	whois.sk-nic.sk
 #.sl			# NIC? http://www.sierratel.sl/
 .sm	whois.ripe.net
 .sn	NONE		# www.nic.sn
@@ -255,12 +255,11 @@
 .th	whois.thnic.net
 .tj	whois.nic.tj
 .tk	whois.dot.tk
+.tl	whois.nic.tl
 .tm	whois.nic.tm
 .tn	NONE		# http://www.ati.tn/Nic/
 .to	whois.tonic.to
-#.tp	WEB http://cgi.connect.ie/cgi-bin/tplookup.cgi
-# also see whois.cocca.cx ALSO RELEVANT FOR .tl
-.tp	WEB http://www.nic.tp/whois.jsp
+.tp	whois.nic.tp
 .tr	whois.metu.edu.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
 .tv	whois.tv

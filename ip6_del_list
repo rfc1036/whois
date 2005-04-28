@@ -34,13 +34,13 @@
 
 2003:0000::/18	ripe
 
-# not yet formally accepted
-# http://www.ripe.net/ripe/draft-documents/ipv6.html
-2400:0000::/6	apnic
-2800:0000::/6	afrinic
-2A00:0000::/6	arin
-3000:0000::/6	lacnic
-3400:0000::/6	ripe
+2600:0000::/12	arin
+#2600:0000::/22	arin
+#2604:0000::/22	arin
+#2608:0000::/22	arin
+#260C:0000::/22	arin
+
+2A00:0000::/21	ripe
 
 3FFE:0000::/16	6bone
 

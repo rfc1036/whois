@@ -5,6 +5,7 @@
 # customers documented in the whois database.
 #
 24.132.0.0/14	ripe
+41.0.0.0/8	afrinic
 43.0.0.0/8	v6nic
 58.0.0.0/7	apnic
 61.72.0.0/13	whois.nic.or.kr
@@ -44,16 +45,30 @@
 151.64.0.0/11	ripe
 151.96.0.0/14	ripe
 151.100.0.0/16	ripe
+155.232.0.0/13	afrinic
+155.240.0.0/16	afrinic
 160.216.0.0/14	ripe
 160.220.0.0/16	ripe
 160.44.0.0/14	ripe
 160.48.0.0/12	ripe
+160.115.0.0/16	afrinic
+160.116.0.0/14	afrinic
+160.120.0.0/14	afrinic
+160.124.0.0/16	afrinic
 163.156.0.0/14	ripe
 163.160.0.0/12	ripe
+163.195.0.0/16	afrinic
+163.196.0.0/14	afrinic
+163.200.0.0/14	afrinic
 164.0.0.0/11	ripe
 164.32.0.0/13	ripe
 164.40.0.0/16	ripe
 164.128.0.0/12	ripe
+164.146.0.0/15	afrinic
+164.148.0.0/14	afrinic
+165.143.0.0/16	afrinic
+165.144.0.0/14	afrinic
+165.148.0.0/15	afrinic
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
@@ -65,7 +80,9 @@
 
 ## The C classes space is cleanly delegated and the data here should be complete
 192.71.0.0/16	ripe
-192.72.0.0/16	whois.seed.net.tw	# NETBLK-SEED-NETS
+192.72.253.0/24	arin
+192.72.254.0/24	arin	# how annoying...
+192.72.0.0/16	apnic
 192.106.0.0/16	ripe
 192.114.0.0/15	ripe
 192.116.0.0/15	ripe
@@ -76,7 +93,7 @@
 193.0.0.0/8	ripe
 194.0.0.0/7	ripe
 198.17.117.0/24	ripe
-196.200.0.0/13	ripe
+196.0.0.0/8	afrinic
 196.0.0.0/6	arin
 
 200.17.0.0/16	whois.nic.br

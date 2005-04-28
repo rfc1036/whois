@@ -1,3 +1,20 @@
+whois (4.7.4) unstable; urgency=high
+
+  * Implemented the new b, B and G flags of the RIPE server.
+  * Updated the version number. (Closes: #304395)
+  * Updated the .dm, .nf, .tl, .tp TLD servers.
+  * Added new IPv4 and ASN allocations for Afrinic. (Closes: #306525)
+  * Added new IPv6 allocations.
+  * Added the .ja translation, by Satoru SATOH. (Closes: #306300)
+
+ -- Marco d'Itri <md@linux.it>  Fri, 29 Apr 2005 00:55:16 +0200
+
+whois (4.7.3) unstable; urgency=medium
+
+  * Updated the .sk TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Sat,  9 Apr 2005 10:40:08 +0200
+
 whois (4.7.2) unstable; urgency=high
 
   * whois.metu.edu.tr does not accept anymore RIPE-like queries.
