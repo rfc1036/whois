@@ -1,3 +1,10 @@
+whois (4.7.5) unstable; urgency=high
+
+  * Updated the .in TLD server. (Closes: #308609)
+  * Added the ASN allocations for Afrinic.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 18 May 2005 14:51:25 +0200
+
 whois (4.7.4) unstable; urgency=high
 
   * Implemented the new b, B and G flags of the RIPE server.

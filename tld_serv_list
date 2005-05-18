@@ -142,7 +142,7 @@
 .ie	whois.domainregistry.ie
 .il	whois.isoc.org.il
 .im	WEB http://www.nic.im/exist.html
-.in	whois.ncst.ernet.in
+.in	whois.registry.in
 .io	whois.nic.io
 #.iq			# see http://nic-iq.nic-naa.net/
 .ir	whois.nic.ir
