@@ -53,6 +53,7 @@
 34515	34519	afrinic
 33792	35839	ripe
 36864	37887	afrinic
+37888	38911	apnic
 
 # catch all: everything else comes from ARIN
 1	37887	arin

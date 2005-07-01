@@ -1,3 +1,11 @@
+whois (4.7.6) unstable; urgency=medium
+
+  * Added new ASN and IP allocations.
+  * Updated the .tv TLD server.
+  * Added support for poem- and form- RIPE objects.
+
+ -- Marco d'Itri <md@linux.it>  Fri,  1 Jul 2005 18:42:03 +0200
+
 whois (4.7.5) unstable; urgency=high
 
   * Updated the .in TLD server. (Closes: #308609)

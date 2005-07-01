@@ -182,7 +182,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	    }
 
-	    p = password;
+	    p = (unsigned char *)password;
 	    while (*p) {
 		if (*p == '\n') {
 		    *p = '\0';
@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
     }
 
     {
-	unsigned char *pw;
+	char *pw;
 	pw = malloc(strlen(salt_prefix) + strlen(salt) + 1);
 	*pw = '\0';
 	strcat(pw, salt_prefix);

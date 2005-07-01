@@ -30,12 +30,12 @@ const char *ripe_servers[] = {
 
 const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "Network Solutions reserves",/* Verisign */
-    "NOTICE: The expiration date", "Registrars.",		/* crsnic */
+    "NOTICE: The expiration date", "reserves the right to",	/* crsnic */
     "NOTICE: Access to .ORG WHOIS", "time. By submitting",	/* org */
     "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
     "The data in Register", "By submitting",		    /* REGISTER.COM */
-    "The Data in the Tucows", "RECORD DOES NOT",		/* OPENSRS */
+    "The Data in the Tucows", "RECORD DOES NOT",		/* tucows */
     " The data contained in the WHOIS", "Please limit your",	/* DOTSTER */
     "This whois service currently only", "top-level domains.",
     "Signature Domains' Whois Service", "agree to abide by the above",
@@ -46,10 +46,7 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "% http://www.icann",	/* GANDI */
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
-#if 0
-    // This must be disabled because whois.bizcn.com uses a similar text
-    "The data in this whois", "using our Whois information",	/* enom */
-#endif
+    "The data in this whois database is", "Version 6.",		/* enom */
     "By submitting a WHOIS query, you agree you will", "LACK OF A DOMAIN",		/* directNIC */
     "The Data in Moniker.com", "this query, you agree",
     "The Data in OnlineNIC", "    By starting this query",	/* OnlineNIC */
@@ -64,7 +61,8 @@ const char *hide_strings[] = {
 const char *nic_handles[] = {
     "net-",	"whois.arin.net",
     "netblk-",	"whois.arin.net",
-    "lim-",	"whois.ripe.net",
+    "poem-",	"whois.ripe.net",
+    "form-",	"whois.ripe.net",
 #if 0
     // commented until somebody will explain the query format for these
     "coco-",	"whois.corenic.net",

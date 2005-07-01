@@ -262,7 +262,7 @@
 .tp	whois.nic.tp
 .tr	whois.metu.edu.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
-.tv	whois.tv
+.tv	whois.nic.tv
 .tw	whois.twnic.net
 .tz	NONE		# http://www.psg.com/dns/tz/
 .ua	whois.net.ua
