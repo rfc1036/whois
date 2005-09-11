@@ -180,6 +180,9 @@
 218.40.0.0/13	whois.nic.ad.jp
 218.48.0.0/13	whois.nic.or.kr
 218.144.0.0/12	whois.nic.or.kr
+218.160.0.0/12	twnic
+218.216.0.0/13	whois.nic.ad.jp
+218.224.0.0/13	whois.nic.ad.jp
 218.232.0.0/13	whois.nic.or.kr
 219.240.0.0/15	whois.nic.or.kr
 219.248.0.0/13	whois.nic.or.kr

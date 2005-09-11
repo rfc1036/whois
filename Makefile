@@ -1,12 +1,9 @@
 prefix ?= /usr/local
 
-OPTS=-O2
+OPTS := -O2
 
 # Solaris
-#LDFLAGS=-lnsl -lsocket
-
-# obsolete linux (libc 5)
-#LDFLAGS=-lintl
+#whois_LDADD += -lnsl -lsocket
 
 # FreeBSD
 #LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
@@ -16,8 +13,15 @@ OPTS=-O2
 #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
 
 ifdef HAVE_LIBIDN
-LIBIDN += -lidn
-CFLAGS += -DHAVE_LIBIDN
+whois_LDADD += -lidn
+whois_CFLAGS += -DHAVE_LIBIDN
+endif
+
+ifdef HAVE_XCRYPT
+mkpasswd_LDADD += -lxcrypt
+mkpasswd_CFLAGS += -DHAVE_XCRYPT
+else
+mkpasswd_LDADD += -lcrypt
 endif
 
 PERL := perl
@@ -25,10 +29,12 @@ PERL := perl
 all: whois #pos
 
 whois: whois.c whois.h config.h data.h as_del.h ip_del.h ip6_del.h tld_serv.h
-	$(CC) $(CFLAGS) $(OPTS) whois.c -o whois $(LDFLAGS) $(LIBIDN)
+	$(CC) $(CFLAGS) $(whois_CFLAGS) $(OPTS) whois.c -o whois \
+		$(LDFLAGS) $(whois_LDADD)
 
 mkpasswd: mkpasswd.c
-	$(CC) $(CFLAGS) $(OPTS) mkpasswd.c -o mkpasswd -lcrypt
+	$(CC) $(CFLAGS) $(mkpasswd_CFLAGS) $(OPTS) mkpasswd.c -o mkpasswd \
+		$(LDFLAGS) $(mkpasswd_LDADD)
 
 as_del.h: as_del_list make_as_del.pl
 	$(PERL) -w make_as_del.pl < as_del_list > as_del.h

@@ -45,17 +45,23 @@ static char valid_salts[] = "abcdefghijklmnopqrstuvwxyz"
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./";
 
 struct salt_prefix {
-    const char *algo;
-    const char *prefix;
-    unsigned int len;
-    const char *desc;
+    const char *algo;	/* short name used by the command line option */
+    const char *prefix;	/* salt prefix */
+    unsigned int len;	/* salt lenght */
+    const char *desc;	/* long description for the algorithms list */
 };
 
 struct salt_prefix salt_prefixes[] = {
     { "des",		"",	2, N_("\tstandard 56 bit DES-based crypt(3)") },
     { "md5",		"$1$",	8, "\tMD5" },
+/* untested! is the salt correctly generated? */
 #if defined OpenBSD || defined FreeBSD
     { "blf",		"$2$", 16, "\tBlowfish" },
+#endif
+/* untested too, and does not even compile */
+#if defined HAVE_XCRYPT
+    { "blf",		"$2a$", 16, "\tBlowfish" },
+    { "sha",		"{SHA}", , "\tSHA-1" },
 #endif
     { NULL,		NULL,	0, NULL }
 };
@@ -160,8 +166,18 @@ int main(int argc, char *argv[])
 		exit(1);
 	    }
     } else {
+#ifdef HAVE_XCRYPT
+	char *entropy = gather_entropy(4096);
+	salt = crypt_gensalt(salt_prefix, 0, entropy, 4096);
+	if (!salt) {
+		perror("crypt");
+		exit(2);
+	}
+	free(entropy);
+#else
 	salt = malloc(salt_len + 1);
 	generate_salt(salt, salt_len);
+#endif
     }
 
     if (!password) {
@@ -206,16 +222,22 @@ int main(int argc, char *argv[])
     }
 
     {
-	char *pw;
+	char *pw, *result;
 	pw = malloc(strlen(salt_prefix) + strlen(salt) + 1);
 	*pw = '\0';
 	strcat(pw, salt_prefix);
 	strcat(pw, salt);
-	printf("%s\n", crypt(password, pw));
+	result = crypt(password, pw);
+	if (!result) {
+		perror("crypt");
+		exit(2);
+	}
+	printf("%s\n", result);
     }
     exit(0);
 }
 
+#ifndef HAVE_XCRYPT
 void generate_salt(char *buf, const unsigned int len)
 {
     unsigned int i;
@@ -225,6 +247,7 @@ void generate_salt(char *buf, const unsigned int len)
 	buf[i] = valid_salts[rand() % (sizeof valid_salts - 1)];
     buf[i] = '\0';
 }
+#endif
 
 void display_help(void)
 {

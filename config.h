@@ -1,6 +1,6 @@
 /* Program version */
 /* not for the inetutils version */
-#define VERSION "4.7.6"
+#define VERSION "4.7.7"
 
 /* Configurable features */
 
@@ -41,7 +41,12 @@
 # endif
 #endif
 
-#if defined _POSIX_C_SOURCE && _POSIX_C_SOURCE >= 2
+/* Linux, Solaris 5, FreeBSD 5.x. What else? */
+#if defined _POSIX_VERSION && _POSIX_VERSION >= 200112L
+# define HAVE_WORDEXP
+#endif
+
+#if defined _POSIX2_VERSION
 # define HAVE_REGEXEC
 #endif
 

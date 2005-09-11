@@ -491,20 +491,20 @@ int hide_line(int *hiding, const char *const line)
 	}
 	return 0;				/* don't hide this line */
     } else if (*hiding > HIDE_UNSTARTED) {	/* hiding something */
-	if (strncmp(line, hide_strings[*hiding + 1],
-		    strlen(hide_strings[*hiding + 1])) == 0) {
-	    *hiding = HIDE_DISABLED;		/* stop hiding */
-	    return 1;				/* but hide the last line */
+	if (*hide_strings[*hiding + 1] == '\0')	{ /*look for a blank line?*/
+	    if (*line == '\n' || *line == '\r' || *line == '\0') {
+		*hiding = HIDE_DISABLED;	/* stop hiding */
+		return 0;		/* but do not hide the blank line */
+	    }
+	} else {				/*look for a matching string*/
+	    if (strncmp(line, hide_strings[*hiding + 1],
+			strlen(hide_strings[*hiding + 1])) == 0) {
+		*hiding = HIDE_DISABLED;	/* stop hiding */
+		return 1;			/* but hide the last line */
+	    }
 	}
 	return 1;				/* we are hiding, so do it */
-    }
-#if 0
-    /* XXX */
-    /* no match, the action depends on the state stored in *hiding */
-    if (*hiding > HIDE_UNSTARTED)
-	return 1;
-    else
-#endif
+    } else
 	return 0;
 }
 
@@ -519,7 +519,7 @@ const char *do_query(const int sock, const char *query)
     fi = fdopen(sock, "r");
     if (write(sock, query, strlen(query)) < 0)
 	err_sys("write");
-/* Using shutdown breaks the buggy RIPE server.
+/* Using shutdown used to break the buggy RIPE server. Would this work now?
     if (shutdown(sock, 1) < 0)
 	err_sys("shutdown");
 */

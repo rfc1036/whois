@@ -29,32 +29,32 @@ const char *ripe_servers[] = {
 };
 
 const char *hide_strings[] = {
-    "NOTICE AND TERMS OF USE: You", "Network Solutions reserves",/* Verisign */
+    "NOTICE AND TERMS OF USE: You", "",				/* NetSol */
     "NOTICE: The expiration date", "reserves the right to",	/* crsnic */
-    "NOTICE: Access to .ORG WHOIS", "time. By submitting",	/* org */
-    "NOTICE: Access to .INFO WHOIS", "time. By submitting",	/* info */
+    "NOTICE: Access to .ORG WHOIS", "",				/* org */
+    "NOTICE: Access to .INFO WHOIS", "",			/* info */
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
-    "The data in Register", "By submitting",		    /* REGISTER.COM */
-    "The Data in the Tucows", "RECORD DOES NOT",		/* tucows */
-    " The data contained in the WHOIS", "Please limit your",	/* DOTSTER */
+    "The data in Register", "",				    /* Register.Com */
+    "The Data in the Tucows", "RECORD DOES NOT",
+    " The data contained in the WHOIS", "",			/* DOTSTER */
     "This whois service currently only", "top-level domains.",
     "Signature Domains' Whois Service", "agree to abide by the above",
     "Access to ASNIC", "by this policy.",			/* as */
     "The Data in Gabia", "you agree to abide",
-    "The data contained in Go Daddy", "is not the registrant",	/* Go Daddy */
+    "The data contained in Go Daddy", "is not the registrant",
     "Disclaimer: The Global Name Registry", "for any commercial",
     "Access to America Online", "time. By accessing",		/* AOL */
-    "% Access and use restricted", "% http://www.icann",	/* GANDI */
+    "% Access and use restricted", "",				/* GANDI */
+    "% The data in the WHOIS database of Schlund", "",
     "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
-    "The data in this whois database is", "Version 6.",		/* enom */
+    "The data in this whois database is", "",			/* enom */
     "By submitting a WHOIS query, you agree you will", "LACK OF A DOMAIN",		/* directNIC */
-    "The Data in Moniker.com", "this query, you agree",
-    "The Data in OnlineNIC", "    By starting this query",	/* OnlineNIC */
-    "The data in Bulkregister.com", "you agree to abide", /* bulkregister */
-    "The Data in Alldomains.com's", "By submitting this query,",/*alldomains*/
+    "The Data in Moniker.Com", "",
+    "The Data in OnlineNIC", "    By starting this query",
+    "The data in Bulkregister", "",
     "Interdomain's WHOIS", "DOES NOT SIGNIFY",
-    "The Data provided by Stargate.com", "(2) enable any",
-    "; This data is provided by dd24", "; By submitting this query",
+    "The Data provided by Stargate Holdings", "(2) enable any",
+    "; This data is provided by domaindiscount24.com", "",
     NULL, NULL
 };
 

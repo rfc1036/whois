@@ -62,7 +62,7 @@
 .bg	whois.register.bg
 #.bh	NONE		# NIC? www.inet.com.bh
 .bi	WEB http://www.nic.bi/Nic_search.asp
-#.bj			# NIC? www.opt.bj
+.bj	whois.nic.bj
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
 #.bn	NONE		# NIC? www.brunet.bn
 .bo	WEB http://www.nic.bo/
@@ -108,7 +108,7 @@
 #.et	NONE		# NIC? www.telecom.net.et
 .fi	whois.ficora.fi
 .fj	whois.usp.ac.fj
-.fk	NONE		# http://www.fidc.org.fk/domain-registration/home.htm
+.fk	NONE		# http://www.fidc.org.fk/
 .fm	WEB http://www.dot.fm/whois.html
 .fo	whois.ripe.net	# www.nic.fo
 .fr	whois.nic.fr
@@ -136,7 +136,7 @@
 .hm	whois.registry.hm
 .hn	NONE		# http://www.nic.hn/busquedas/
 .hr	WEB http://www.dns.hr/pretrazivanje.html
-.ht	NONE		# http://www.nic.ht/
+.ht	WEB http://www.nic.ht/info/whois.cfm
 .hu	whois.nic.hu
 .id	whois.idnic.net.id
 .ie	whois.domainregistry.ie
@@ -161,8 +161,8 @@
 #.kp
 .kr	whois.nic.or.kr
 .kw	WEB http://www.domainname.net.kw
-.ky	NONE		# http://www.icta.ky/dev/da_ky_reg_dom.php www.nic.ky
-.kz	whois.domain.kz
+.ky	WEB http://kynseweb.messagesecure.com/kywebadmin/ # http://www.icta.ky/
+.kz	whois.nic.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/search.html
 .lc	NONE		# http://www.isisworld.lc/domains/
@@ -275,7 +275,7 @@
 .us	whois.nic.us
 .com.uy	WEB http://dns.antel.net.uy/clientes/consultar.htm
 .uy	WEB http://www.rau.edu.uy/rau/dom/
-.uz	WEB http://www.noc.uz/dom_01.htm
+.uz	whois.cctld.uz
 .va	whois.ripe.net
 .vc	whois.opensrs.net
 .ve	WEB http://www.nic.ve/		# rwhois.reacciun.ve:4321
@@ -302,6 +302,7 @@
 -ripe	whois.ripe.net
 -mnt	whois.ripe.net
 -lacnic	whois.lacnic.net
+-afrinic whois.afrinic.net
 -gandi	whois.gandi.net
 -ap	whois.apnic.net
 -ar	whois.aunic.net
