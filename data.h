@@ -31,8 +31,9 @@ const char *ripe_servers[] = {
 const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "",				/* NetSol */
     "NOTICE: The expiration date", "reserves the right to",	/* crsnic */
-    "NOTICE: Access to .ORG WHOIS", "",				/* org */
-    "NOTICE: Access to .INFO WHOIS", "",			/* info */
+    "NOTICE: Access to .ORG WHOIS", "",
+    "NOTICE: Access to .INFO WHOIS", "",
+    "NOTICE: Access to the .aero", "",
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
     "The data in Register", "",				    /* Register.Com */
     "The Data in the Tucows", "RECORD DOES NOT",

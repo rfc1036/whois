@@ -1,13 +1,13 @@
-whois (4.7.7) unstable; urgency=medium
+whois (4.7.8) unstable; urgency=medium
 
-  * Added the .bj, .ht and .ky TLD servers.
-  * Updated the .kz and .uz TLD servers.
-  * Added support for -afrinic NIC handles.
+  * Added the .jpn.com, .web.com, .bj, .ht and .ky TLD servers.
+  * Updated the .kz, .mo, .sb, .sn, .uy and .uz TLD servers.
+  * Added support for -afrinic, -idnic and -uynic NIC handles.
   * Checked the whole hide_strings[], updated when needed. (Closes: #317583)
   * Added to mkpasswd some preliminary and non-working support for libxcrypt.
     Patches are welcome.
 
- -- Marco d'Itri <md@linux.it>  Sun, 11 Sep 2005 16:04:48 +0200
+ -- Marco d'Itri <md@linux.it>  Mon, 12 Sep 2005 13:47:46 +0200
 
 whois (4.7.6) unstable; urgency=medium
 

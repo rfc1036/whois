@@ -1,5 +1,4 @@
 # NIC? means I have not been able to find the registry
-# NIC-FR means the TLD is managed by AFNIC, but I could not find any info
 # UPR means the TLD is managed by UPR, but I could not find any info
 #
 .br.com	whois.centralnic.net
@@ -20,6 +19,8 @@
 .us.com	whois.centralnic.net
 .uy.com	whois.centralnic.net
 .za.com	whois.centralnic.net
+.jpn.com whois.centralnic.net
+.web.com whois.centralnic.net
 .eu.org	whois.eu.org
 .com	CRSNIC
 .net	CRSNIC
@@ -43,8 +44,7 @@
 .ag	whois.nic.ag
 .ai	WEB http://whois.offshore.ai/
 .al	NONE		# http://www.inima.al/Domains.html
-.am	whois.amnic.net
-.am	WEB https://www.amnic.net/whois/
+.am	whois.nic.am
 .an	NONE		# http://www.una.net/an_domreg/
 .ao	NONE		# www.dns.ao
 .aq	NONE		# 2day.com
@@ -124,7 +124,7 @@
 .gl	NONE		# www.nic.gl
 .gm	whois.ripe.net	# www.nic.gm
 .gn	NONE		# http://www.psg.com/dns/gn/
-#.gp			# www.nic.gp - broken like mq
+#.gp			# www.nic.gp broken
 #.gq			# NO NIC http://www.intnet.gq/ http://www.getesa.gq/
 .gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
 .gs	whois.adamsnames.tc
@@ -183,9 +183,9 @@
 #.ml			# NIC? www.sotelma.ml
 .mm	whois.nic.mm
 .mn	whois.nic.mn
-.mo	NONE		# http://www.monic.net.mo/
+.mo	WEB http://www.monic.net.mo/
 .mp	NONE		# www.nic.mp
-#.mq			# www.nic.mq broken like gp
+#.mq			# www.nic.mq broken
 .mr	NONE		# http://www.univ-nkc.mr/nic_mr.html
 .ms	whois.adamsnames.tc
 .mt	WEB http://www.nic.org.mt/dir/home.html
@@ -229,18 +229,18 @@
 .ru	whois.ripn.net
 .rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
 .sa	saudinic.net.sa
-.sb	WEB http://whois.nic.net.sb/
+.sb	whois.nic.net.sb
 .sc	NONE		# www.nic.sc
-.sd	NONE		# http://www.isoc.sd/sd.php
+.sd	NONE		# http://sudanic.isoc.sd/
 .se	whois.nic-se.se
 .sg	whois.nic.net.sg
 .sh	whois.nic.sh
 .si	whois.arnes.si
 .sj	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .sk	whois.sk-nic.sk
-#.sl			# NIC? http://www.sierratel.sl/
+.sl	NONE		# http://www.sierratel.sl/domain/
 .sm	whois.ripe.net
-.sn	NONE		# www.nic.sn
+.sn	WEB www.nic.sn
 .so	NONE		# www.nic.so - no country, no NIC
 .sr	whois.register.sr
 .st	whois.nic.st
@@ -274,7 +274,7 @@
 .fed.us	whois.nic.gov
 .us	whois.nic.us
 .com.uy	WEB http://dns.antel.net.uy/clientes/consultar.htm
-.uy	WEB http://www.rau.edu.uy/rau/dom/
+.uy	www.rau.edu.uy	# this is a whois server too
 .uz	whois.cctld.uz
 .va	whois.ripe.net
 .vc	whois.opensrs.net
@@ -303,27 +303,29 @@
 -mnt	whois.ripe.net
 -lacnic	whois.lacnic.net
 -afrinic whois.afrinic.net
--gandi	whois.gandi.net
 -ap	whois.apnic.net
 -ar	whois.aunic.net
 -cn	whois.cnnic.net.cn
--dk	whois.dk-hostmaster.dk
--ti	whois.telstra.net
--is	whois.isnet.is
--6bone	whois.6bone.net
--norid	whois.norid.no
--ripn	whois.ripn.net
--sgnic	whois.nic.net.sg
--metu	whois.metu.edu.tr
--cknic	whois.nic.ck
 -cz	whois.nic.cz
+-dk	whois.dk-hostmaster.dk
+-il	whois.isoc.org.il
+-is	whois.isnet.is
 -kg	whois.domain.kg
--rotld	whois.rotld.ro
+-ti	whois.telstra.net
+-tw	whois.twnic.net
+-6bone	whois.6bone.net
+-cknic	whois.nic.ck
+-idnic	whois.idnic.net.id
 -itnic	whois.nic.it
 -frnic	whois.nic.fr
--nicat	whois.nic.at
--il	whois.isoc.org.il
+-gandi	whois.gandi.net
 -lrms	whois.afilias.net
--tw	whois.twnic.net
+-metu	whois.metu.edu.tr
+-nicat	whois.nic.at
 -nicir	whois.nic.ir
+-norid	whois.norid.no
+-ripn	whois.ripn.net
+-rotld	whois.rotld.ro
+-sgnic	whois.nic.net.sg
 -uanic	whois.com.ua
+-uynic	www.rau.edu.uy
