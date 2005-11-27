@@ -1,3 +1,9 @@
+whois (4.7.9) unstable; urgency=medium
+
+  * Added new IPv6 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 27 Nov 2005 13:43:35 +0100
+
 whois (4.7.8) unstable; urgency=medium
 
   * Added the .jpn.com, .web.com, .bj, .ht and .ky TLD servers.

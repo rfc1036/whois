@@ -5,6 +5,8 @@ SHELL+= -e
 
 D := $(shell pwd)/debian/whois
 
+VERSION := $(shell dpkg-parsechangelog | sed -n '/^Version/s/.* //p')
+
 build:
 	dh_testdir
 	make whois mkpasswd \
@@ -21,6 +23,9 @@ clean:
 binary-arch: checkroot build
 	dh_testdir
 	dh_clean
+
+	# sanity check
+	egrep -q '^#define VERSION "$(VERSION)"$$' config.h
 
 	dh_installdirs usr/bin
 	install whois mkpasswd $D/usr/bin/
