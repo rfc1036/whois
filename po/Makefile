@@ -3,7 +3,7 @@ INSTALLNLSDIR=$(BASEDIR)/usr/share/locale
 
 PACKAGE = whois
 
-CATALOGS = de.mo el.mo es.mo fr.mo it.mo ja.mo no.mo pl.mo
+CATALOGS = de.mo el.mo es.mo fr.mo it.mo ja.mo no.mo pl.mo ru.mo
 
 POTFILES=../whois.c ../mkpasswd.c
 

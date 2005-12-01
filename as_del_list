@@ -1,3 +1,5 @@
+# http://www.iana.org/assignments/as-numbers
+
 379	508	whois.nic.mil
 1101	1200	ripe
 1877	1901	ripe
@@ -54,6 +56,7 @@
 33792	35839	ripe
 36864	37887	afrinic
 37888	38911	apnic
+38912	39935	ripe
 
 # catch all: everything else comes from ARIN
 1	37887	arin

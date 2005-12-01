@@ -1,3 +1,10 @@
+whois (4.7.10) unstable; urgency=medium
+
+  * Added new ASN allocations. (Closes: #341560)
+  * Added russian translation, by Andy Shevchenko.
+
+ -- Marco d'Itri <md@linux.it>  Thu,  1 Dec 2005 13:35:09 +0100
+
 whois (4.7.9) unstable; urgency=medium
 
   * Added new IPv6 allocations.
