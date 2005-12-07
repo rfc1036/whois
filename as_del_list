@@ -12,7 +12,7 @@
 2773	2822	ripe
 2830	2879	ripe
 3154	3353	ripe
-4608	4863	apnic
+4608	4864	apnic
 5120	5376	whois.nic.mil
 5377	5631	ripe
 5800	6055	whois.nic.mil
@@ -59,5 +59,5 @@
 38912	39935	ripe
 
 # catch all: everything else comes from ARIN
-1	37887	arin
+1	39935	arin
 

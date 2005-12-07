@@ -36,6 +36,7 @@ const char *hide_strings[] = {
     "NOTICE: Access to .INFO WHOIS", "",
     "NOTICE: Access to the .aero", "",
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
+    "% .eu Whois Server", "% of the database",
     "The data in Register", "",				    /* Register.Com */
     "The Data in the Tucows", "RECORD DOES NOT",
     " The data contained in the WHOIS", "",			/* DOTSTER */

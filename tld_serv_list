@@ -101,11 +101,12 @@
 .dz	WEB http://www.nic.dz/anglais/dom-attr-eng.htm
 .ec	WEB http://www.nic.ec/eng/nicec.htm
 .ee	whois.eenet.ee
-.eg	NONE		# http://www.ise.org.eg/domain.htm http://www.frcu.eun.eg/docs/e/dns.php
+.eg	NONE		# http://www.ise.org.eg/domain.htm http://www.frcu.eun.eg/docs-n/e-dns.php
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
 .es	WEB https://www.nic.es/ingles/
-#.et	NONE		# NIC? www.telecom.net.et
+#.et	NONE	# http://www.telecom.net.et/EthioInternet/domainname.html
+.eu	whois.eu
 .fi	whois.ficora.fi
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.org.fk/

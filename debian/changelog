@@ -1,3 +1,11 @@
+whois (4.7.11) unstable; urgency=medium
+
+  * Added the .eu TLD server. (Closes: #342546)
+  * Added swedish translation, by Daniel Nylander. (Closes: #344019)
+  * Added new IPv6 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Wed,  7 Dec 2005 13:55:37 +0100
+
 whois (4.7.10) unstable; urgency=medium
 
   * Added new ASN allocations. (Closes: #341560)
