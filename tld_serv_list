@@ -52,11 +52,11 @@
 .as	whois.nic.as
 .at	whois.nic.at
 .au	whois.ausregistry.net.au
-#.aw			# NIC? www.setarnet.aw
+.aw	NONE		# www.setarnet.aw
 .az	WEB http://www.nic.az/AzCheck.htm
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://domains.org.bb/regsearch/
-.bd	NONE		# http://www.bttb.net/
+.bd	NONE		# http://www.bttb.net/home/main/internet/dot-bd-faq.htm
 .be	whois.dns.be
 .bf	NONE		# NIC? http://www.onatel.bf/
 .bg	whois.register.bg
@@ -104,7 +104,7 @@
 .eg	NONE		# http://www.ise.org.eg/domain.htm http://www.frcu.eun.eg/docs-n/e-dns.php
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
-.es	WEB https://www.nic.es/ingles/
+.es	WEB https://www.nic.es/
 #.et	NONE	# http://www.telecom.net.et/EthioInternet/domainname.html
 .eu	whois.eu
 .fi	whois.ficora.fi
@@ -267,11 +267,11 @@
 .tw	whois.twnic.net
 .tz	NONE		# http://www.psg.com/dns/tz/
 .ua	whois.net.ua
-.ug	WEB http://www.registry.co.ug/whois/
+.ug	www.registry.co.ug	# this is a whois server too
 .gov.uk	whois.ja.net
 .ac.uk	whois.ja.net
 .uk	whois.nic.uk
-.um	NONE		# see .us
+.um	NONE		# www.nic.um
 .fed.us	whois.nic.gov
 .us	whois.nic.us
 .com.uy	WEB http://dns.antel.net.uy/clientes/consultar.htm
@@ -291,11 +291,12 @@
 .yu	NONE		# www.nic.yu
 .ac.za	whois.ac.za
 .co.za	WEB http://whois.co.za/
-.net.za	whois.net.za
+.gov.za	whois.gov.za
+#.net.za	whois.net.za
 .org.za	WEB http://www.org.za/	# rwhois.org.za:4321
-.za	NONE	# http://www2.frd.ac.za/uninet/zadomains.html whois.frd.ac.za
-.zm	NONE		# NIC? http://www.zamnet.zm/domain.shtml
-#.zw			# NIC? zptc.co.zw http://www.zispa.co.zw/
+.za	NONE		# http://www.internet.org.za/slds.html many more SLD...
+.zm	NONE		# NIC? http://www.zamnet.zm/
+.zw	NONE		# http://www.zispa.co.zw/
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com
 -hst	whois.networksolutions.com

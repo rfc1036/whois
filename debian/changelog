@@ -1,3 +1,12 @@
+whois (4.7.12) unstable; urgency=medium
+
+  * Added new IPv4 allocations.
+  * Added the .ve TLD server.
+  * Updated the .es and .ug TLD servers. (Closes: #345428)
+  * Updated some .za SLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Mon,  9 Jan 2006 14:56:06 +0100
+
 whois (4.7.11) unstable; urgency=medium
 
   * Added the .eu TLD server. (Closes: #342546)

@@ -4,6 +4,8 @@
 # unless they are very big and contains multiple assignments to different
 # customers documented in the whois database.
 #
+# http://www.iana.org/assignments/ipv4-address-space
+#
 24.132.0.0/14	ripe
 41.0.0.0/8	afrinic
 43.0.0.0/8	v6nic
@@ -18,6 +20,8 @@
 62.0.0.0/8	ripe
 80.0.0.0/5	ripe			# => 87.255.255.255
 88.0.0.0/6	ripe			# => 91.255.255.254
+121.0.0.0/8	apnic
+122.0.0.0/7	apnic
 124.0.0.0/7	apnic
 126.0.0.0/8	apnic
 96.0.0.0/3	UNALLOCATED		# => 127.215.255.255

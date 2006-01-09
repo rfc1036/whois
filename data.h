@@ -58,6 +58,8 @@ const char *hide_strings[] = {
     "Interdomain's WHOIS", "DOES NOT SIGNIFY",
     "The Data provided by Stargate Holdings", "(2) enable any",
     "; This data is provided by domaindiscount24.com", "",
+    "%% BookMyName Whois", "%% this policy",
+    "The .coop registry WHOIS", "VERIFICATION, NOR DO",
     NULL, NULL
 };
 
