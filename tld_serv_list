@@ -32,11 +32,15 @@
 .aero	whois.information.aero
 .arpa	whois.iana.org
 .biz	whois.nic.biz
+.cat	whois.cat
 .coop	whois.nic.coop
 .info	whois.afilias.info
+.jobs	whois.jobs
+.mobi	NONE
 .museum	whois.museum
 .name	whois.nic.name
 .pro	whois.registrypro.pro
+.travel	whois.nic.travel
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
 .ae	whois.uaenic.ae
@@ -215,6 +219,7 @@
 .pg	NONE	# http://www.npi.gov.pg/DNS/DNS-Application-form.htm
 .ph	WEB http://www.domains.ph/DomainSearch.asp
 .pk	WEB http://www.pknic.net.pk/
+.co.pl	whois.co.pl	# "unofficial" SLD
 .pl	whois.dns.pl
 .pm	whois.nic.fr
 .pn	WEB http://www.pitcairn.pn/PnRegistry/CheckAvailability.html

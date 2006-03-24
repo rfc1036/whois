@@ -31,7 +31,7 @@ const char *ripe_servers[] = {
 
 const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "",				/* NetSol */
-    "NOTICE: The expiration date", "reserves the right to",	/* crsnic */
+    "TERMS OF USE: You are not", "",				/* crsnic */
     "NOTICE: Access to .ORG WHOIS", "",
     "NOTICE: Access to .INFO WHOIS", "",
     "NOTICE: Access to the .aero", "",
@@ -60,6 +60,9 @@ const char *hide_strings[] = {
     "; This data is provided by domaindiscount24.com", "",
     "%% BookMyName Whois", "%% this policy",
     "The .coop registry WHOIS", "VERIFICATION, NOR DO",
+    "Tralliance, Inc., the Registry", "",			/* travel */
+    "NOTICE: Access to the domains information", "",		/* CORE */
+    "%% puntCAT Whois Server", "%% any time.",
     NULL, NULL
 };
 

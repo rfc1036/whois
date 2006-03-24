@@ -453,6 +453,13 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    && !strchr(query, ' ') && !*flags)
 	sprintf(buf, "-T dn,ace -C US-ASCII %s", query);
     else
+    /* here we have another registrar who could not make things simple
+     * -C sets the language for both input and output
+     */
+    if (!isripe && strcmp(server, "whois.cat") == 0 && domcmp(query, ".cat")
+	    && !strchr(query, ' '))
+	sprintf(buf, "-C US-ASCII ace %s", query);
+    else
 #endif
     if (!isripe && (strcmp(server, "whois.nic.mil") == 0 ||
 	    strcmp(server, "whois.nic.ad.jp") == 0) &&
