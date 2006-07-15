@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.9\n"
-"POT-Creation-Date: 2003-12-01 18:31+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-15 19:18+0200\n"
 "PO-Revision-Date: 2003-12-10 08:51+0200\n"
 "Last-Translator: Velonis Petros <velonis@freemail.gr>\n"
 "Language-Team: Greek <velonis@freemail.gr>\n"
@@ -13,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:108
+#: ../whois.c:114
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -24,69 +25,46 @@ msgstr ""
 "\n"
 "Αναφέρατε σφάλματα στο %s.\n"
 
-#: ../whois.c:151
-#: ../whois.c:240
+#: ../whois.c:164 ../whois.c:257
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Γίνεται χρήση του εξυπηρετητή %s.\n"
 
-#: ../whois.c:173
-#, c-format
-msgid "Using default server %s.\n"
-msgstr "Χρήση εξ' ορισμού εξυπηρετητή %s.\n"
-
-#: ../whois.c:176
+#: ../whois.c:206
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Αυτό το TLD δεν έχει εξυπηρετητή whois, ωστόσο μπορείτε να προσπελάσετε την βάση whois στο"
+msgstr ""
+"Αυτό το TLD δεν έχει εξυπηρετητή whois, ωστόσο μπορείτε να προσπελάσετε την "
+"βάση whois στο"
 
-#: ../whois.c:182
+#: ../whois.c:214
 msgid "This TLD has no whois server."
 msgstr "Αυτό το TLD δεν έχει εξυπηρετητή whois."
 
-#: ../whois.c:186
+#: ../whois.c:217
+msgid "No whois server is known for this kind of object."
+msgstr ""
+"Κανένας εξυπηρετητής whois δεν είναι γνωστός για αυτού του είδους το "
+"αντικείμενο."
+
+#: ../whois.c:220
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr ""
+"Άγνωστος αριθμός AS ή IP δικτύου. Παρακαλώ αναβαθμίστε αυτό το πρόγραμμα."
+
+#: ../whois.c:224
 msgid "Connecting to whois.crsnic.net."
 msgstr "Γίνεται σύνδεση στο whois.crsnic.net."
 
-#: ../whois.c:192
-#: ../whois.c:203
-#, c-format
-msgid ""
-"\n"
-"Found a referral to %s.\n"
-"\n"
-msgstr ""
-"\n"
-"Βρέθηκε αναφορά στο %s.\n"
-"\n"
-
-#: ../whois.c:197
-msgid "Connecting to whois.nic.cc."
-msgstr "Γίνεται σύνδεση στο whois.nic.cc."
-
-#: ../whois.c:208
+#: ../whois.c:230
 msgid "Connecting to whois.publicinterestregistry.net."
 msgstr "Γίνεται σύνδεση στο whois.publicinterestregistry.net."
 
-#: ../whois.c:214
-#, c-format
-msgid ""
-"\n"
-"Found referral to %s.\n"
-"\n"
-msgstr ""
-"\n"
-"Βρέθηκε αναφορά στο %s.\n"
-"\n"
+#: ../whois.c:236
+msgid "Connecting to whois.nic.cc."
+msgstr "Γίνεται σύνδεση στο whois.nic.cc."
 
-#: ../whois.c:218
-msgid "No whois server is known for this kind of object."
-msgstr "Κανένας εξυπηρετητής whois δεν είναι γνωστός για αυτού του είδους το αντικείμενο."
-
-#: ../whois.c:221
-msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr "Άγνωστος αριθμός AS ή IP δικτύου. Παρακαλώ αναβαθμίστε αυτό το πρόγραμμα."
-
-#: ../whois.c:228
+#. XXX should fail if p = 0.0.0.0
+#: ../whois.c:243
 #, c-format
 msgid ""
 "\n"
@@ -97,7 +75,7 @@ msgstr ""
 "Άντληση πληροφοριών για το σημείο τέλους IPv4 %s μιας διεύθυνσης 6to4 IPv6.\n"
 "\n"
 
-#: ../whois.c:249
+#: ../whois.c:258
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -106,22 +84,31 @@ msgstr ""
 "Αλφαριθμητικό ερώτησης: \"%s\"\n"
 "\n"
 
-#: ../whois.c:302
-#: ../whois.c:305
+#: ../whois.c:268
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Found a referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Βρέθηκε αναφορά στο %s.\n"
+"\n"
+
+#: ../whois.c:311 ../whois.c:314
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Αδύνατη η ανάλυση αυτής της γραμμής: %s"
 
-#: ../whois.c:446
+#: ../whois.c:451
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr "Προειδοποίηση: Η σημαίες του RIPE χρησιμοποιούνται σε έναν παραδοσιακό εξυπηρετητή."
+msgstr ""
+"Προειδοποίηση: Η σημαίες του RIPE χρησιμοποιούνται σε έναν παραδοσιακό "
+"εξυπηρετητή."
 
-#: ../whois.c:503
-#, c-format
-msgid "Detected referral to %s on %s.\n"
-msgstr "Ανιχνεύθηκε αναφορά του %s στο %s.\n"
-
-#: ../whois.c:520
+#: ../whois.c:586
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -129,26 +116,27 @@ msgstr ""
 "Καταστροφικό σφάλμα: το κείμενο της αποποίησης ευθυνών έχει τροποποιηθεί.\n"
 "Παρακαλώ αναβαθμίστε το πρόγραμμα.\n"
 
-#: ../whois.c:639
+#: ../whois.c:713
 #, c-format
 msgid "Host %s not found."
 msgstr "Το σύστημα %s δε βρέθηκε."
 
-#: ../whois.c:649
+#: ../whois.c:723
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: άγνωστη υπηρεσία"
 
-#: ../whois.c:661
+#: ../whois.c:742
 msgid "Timeout."
 msgstr "Διάλειμμα."
 
-#: ../whois.c:667
+#: ../whois.c:748
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Διακοπή από το σήμα %d..."
 
-#: ../whois.c:728
+#: ../whois.c:860
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -156,9 +144,11 @@ msgid ""
 "-L                     find all Less specific matches\n"
 "-m                     find first level more specific matches\n"
 "-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt attribute\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
 "-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL "
+"only]\n"
 "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
 "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
 "-K                     only primary keys are returned [RPSL only]\n"
@@ -168,7 +158,8 @@ msgid ""
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a list)\n"
+"-t TYPE                request template for object of TYPE ('all' for a "
+"list)\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
@@ -181,24 +172,35 @@ msgid ""
 msgstr ""
 "Χρήση: whois [ΕΠΙΛΟΓΕΣ]... ΑΝΤΙΚΕΙΜΕΝΟ...\n"
 "\n"
-"-l                     ένα επίπεδο λιγότερο συγκεκριμένη αναζήτηση [μόνο RPSL]\n"
+"-l                     ένα επίπεδο λιγότερο συγκεκριμένη αναζήτηση [μόνο "
+"RPSL]\n"
 "-L                    εύρεση όλων των Λιγότερο συγκεκριμένων ταιριασμάτων\n"
-"-m                   εύρεση όλων των πρώτου επιπέδου περισσότερο συγκεκριμένων ταιριασμάτων\n"
+"-m                   εύρεση όλων των πρώτου επιπέδου περισσότερο "
+"συγκεκριμένων ταιριασμάτων\n"
 "-M                   εύρεση όλων των Περισσότερο συγκεκριμένων ταιριασμάτων\n"
-"-c                     εύρεση του μικρότερου ταιριάσματος που να περιέχει μια ένα χαρακτηριστικό mnt-irt \n"
+"-c                     εύρεση του μικρότερου ταιριάσματος που να περιέχει "
+"μια ένα χαρακτηριστικό mnt-irt \n"
 "-x                     ακριβές ταίριασμα [μόνο RPSL]\n"
-"-d                     επιστροφή και των αντίστροφων αντικειμένων DNS [μόνο RPSL]\n"
-"-i ΧΑΡΑΚ[,ΧΑΡΑΚ]...    να γίνει μια αντίστροφη αναζήτηση για τα καθορισμένα ΧΑΡΑΚτηριστικά\n"
+"-d                     επιστροφή και των αντίστροφων αντικειμένων DNS [μόνο "
+"RPSL]\n"
+"-i ΧΑΡΑΚ[,ΧΑΡΑΚ]...    να γίνει μια αντίστροφη αναζήτηση για τα καθορισμένα "
+"ΧΑΡΑΚτηριστικά\n"
 "-T ΕΙΔΟΣ[,ΕΊΔΟΣ]...    αναζήτηση μόνο αντικειμένου του ΕΙΔΟΥΣ\n"
 "-K                    επιστροφή μόνο των πρωταρχικών κλειδιών [μόνο RPSL]\n"
-"-r                     απενεργοποίηση των αναδρομικών αναζητήσεων  για πληροφορίες επικοινωνίας\n"
-"-R                    επιβολή εμφάνισης τοπικού αντιγράφου του αντικειμένου επιθήματος ακόμα και αν περιέχει αναφορές\n"
+"-r                     απενεργοποίηση των αναδρομικών αναζητήσεων  για "
+"πληροφορίες επικοινωνίας\n"
+"-R                    επιβολή εμφάνισης τοπικού αντιγράφου του αντικειμένου "
+"επιθήματος ακόμα και αν περιέχει αναφορές\n"
 "-a                     αναζήτηση σε όλες τις βάσεις δεδομένων\n"
 "-s ΠΗΓΗ[,ΠΗΓΉ]...      αναζήτηση της βάσης δεδομένων από την ΠΗΓΗ\n"
-"-g ΠΗΓΗ:ΠΡΩΤΟ:ΤΕΛΕΥΤΑΙΟ   εμφάνιση αναβαθμίσεων από την ΠΗΓΗ από το σειριακό ΠΡΏΤΟ ως ΤΕΛΕΥΤΑΙΟ\n"
-"-t ΕΙΔΟΣ                αναζήτηση προτύπου για το αντικείμενο του ΕΊΔΟΥΣ ('all' για εμφάνιση λίστας)\n"
-"-v ΕΙΔΟΣ               αναζήτηση περιφραστικού προτύπου για το αντικείμενο του ΕΙΔΟΥΣ\n"
-"-q [έκδοση|πηγές|τύποι]  συγκεκριμένο ερώτημα πληροφοριών εξυπηρετητή [μόνο RPSL]\n"
+"-g ΠΗΓΗ:ΠΡΩΤΟ:ΤΕΛΕΥΤΑΙΟ   εμφάνιση αναβαθμίσεων από την ΠΗΓΗ από το σειριακό "
+"ΠΡΏΤΟ ως ΤΕΛΕΥΤΑΙΟ\n"
+"-t ΕΙΔΟΣ                αναζήτηση προτύπου για το αντικείμενο του ΕΊΔΟΥΣ "
+"('all' για εμφάνιση λίστας)\n"
+"-v ΕΙΔΟΣ               αναζήτηση περιφραστικού προτύπου για το αντικείμενο "
+"του ΕΙΔΟΥΣ\n"
+"-q [έκδοση|πηγές|τύποι]  συγκεκριμένο ερώτημα πληροφοριών εξυπηρετητή [μόνο "
+"RPSL]\n"
 "-F                       γρήγορη ακατέργαστη έξοδος (υπονοεί -r)\n"
 "-h ΣΥΣΤΗΜΑ   σύνδεση στον εξυπηρετητή ΣΎΣΤΗΜΑ\n"
 "-p ΘΥΡΑ            σύνδεση στη ΘΥΡΑ\n"
@@ -211,42 +213,43 @@ msgstr ""
 msgid "\tstandard 56 bit DES-based crypt(3)"
 msgstr "\tκαθεριερωμένη 56 bit με βάση το DES crypt(3)"
 
-#: ../mkpasswd.c:96
+#: ../mkpasswd.c:103
 #, c-format
 msgid "Invalid hash type '%s'.\n"
 msgstr "Άκυρος τύπος hash '%s'.\n"
 
-#: ../mkpasswd.c:105
+#: ../mkpasswd.c:112
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Μη αποδεκτό νούμερο '%s'.\n"
 
-#: ../mkpasswd.c:123
+#: ../mkpasswd.c:130
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Προσπάθησε '%s --help' για περισσότερες πληροφορίες.\n"
 
-#: ../mkpasswd.c:152
+#: ../mkpasswd.c:159
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr "Εσφαλμένο μήκος salt : %d byte(s) όταν αναμένεται %d .\n"
 
-#: ../mkpasswd.c:158
+#: ../mkpasswd.c:165
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Μη αποδεκτός χαρακτήρας salt  '%c'.\n"
 
-#: ../mkpasswd.c:172
-#: ../mkpasswd.c:199
+#: ../mkpasswd.c:189 ../mkpasswd.c:216
+#, c-format
 msgid "Password: "
 msgstr "Συνθηματικό: "
 
-#: ../mkpasswd.c:193
+#: ../mkpasswd.c:210
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Μη αποδεκτός χαρακτήρας συνθηματικού '0x%hhx'.\n"
 
-#: ../mkpasswd.c:230
+#: ../mkpasswd.c:254
+#, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
@@ -256,7 +259,7 @@ msgstr ""
 "Κρυπτογραφεί το ΣΥΝΘΗΜΑΤΙΚΟ χρησιμοποιώντας το crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:233
+#: ../mkpasswd.c:257
 #, c-format
 msgid ""
 "      -H, --hash=TYPE       select hash TYPE\n"
@@ -269,13 +272,14 @@ msgid ""
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
-"If TYPE is missing available algorithms are printed.\n"
+"If TYPE is 'help', available algorithms are printed.\n"
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
 "      -H, --hash=ΤΥΠΟΣ       επιλογή hash ΤΥΠΟΣ\n"
 "      -S, --salt=SALT       χρήση του συγκεκριμένου SALT\n"
-"      -P, --password-fd=NUM ανάγνωση του συνθηματικού από αρχείο περιγραφής NUM\n"
+"      -P, --password-fd=NUM ανάγνωση του συνθηματικού από αρχείο περιγραφής "
+"NUM\n"
 "                            αντί από το /dev/tty\n"
 "      -s, --stdin           σαν το --password-fd=0\n"
 "      -h, --help            εμφάνιση αυτής της βοήθειας και έξοδος\n"
@@ -287,7 +291,8 @@ msgstr ""
 "\n"
 "Αναφέρατε σφάλματα στο %s.\n"
 
-#: ../mkpasswd.c:260
+#: ../mkpasswd.c:284
+#, c-format
 msgid "Available algorithms:\n"
 msgstr "Διαθέσιμοι αλγόριθμοι:\n"
 

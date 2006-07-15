@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-29 14:05+0200\n"
+"POT-Creation-Date: 2006-07-15 19:18+0200\n"
 "PO-Revision-Date: 2005-11-29 15:15+0200\n"
 "Last-Translator: Andy Shevchenko <andy@smile.org.ua>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: ../whois.c:107
+#: ../whois.c:114
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,41 +27,42 @@ msgstr ""
 "\n"
 "Замечания отправляйте на %s.\n"
 
-#: ../whois.c:157 ../whois.c:250
+#: ../whois.c:164 ../whois.c:257
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Используется сервер %s.\n"
 
-#: ../whois.c:200
+#: ../whois.c:206
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Этот ДВУ не имеет whois-сервера, но можно получить доступ к базе whois на"
+msgstr ""
+"Этот ДВУ не имеет whois-сервера, но можно получить доступ к базе whois на"
 
-#: ../whois.c:208
+#: ../whois.c:214
 msgid "This TLD has no whois server."
 msgstr "Этот ДВУ не имеет whois-сервера."
 
-#: ../whois.c:211
+#: ../whois.c:217
 msgid "No whois server is known for this kind of object."
 msgstr "Нет whois-сервера для объектов данного вида."
 
-#: ../whois.c:214
+#: ../whois.c:220
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Неизвестный номер AS или IP-сети. Пожалуйста, обновите программу."
 
-#: ../whois.c:218
+#: ../whois.c:224
 msgid "Connecting to whois.crsnic.net."
 msgstr "Соединение с whois.crsnic.net."
 
-#: ../whois.c:224
+#: ../whois.c:230
 msgid "Connecting to whois.publicinterestregistry.net."
 msgstr "Соединение с whois.publicinterestregistry.net."
 
-#: ../whois.c:230
+#: ../whois.c:236
 msgid "Connecting to whois.nic.cc."
 msgstr "Соединение с whois.nic.cc."
 
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:237
+#: ../whois.c:243
 #, c-format
 msgid ""
 "\n"
@@ -72,7 +73,7 @@ msgstr ""
 "Запрашивается конечная IPv4-точка %s для IPv6-адреса 6-в-4.\n"
 "\n"
 
-#: ../whois.c:251
+#: ../whois.c:258
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +82,7 @@ msgstr ""
 "Строка запроса: \"%s\"\n"
 "\n"
 
-#: ../whois.c:261
+#: ../whois.c:268
 #, c-format
 msgid ""
 "\n"
@@ -94,16 +95,16 @@ msgstr ""
 "Найдено перенаправление на %s.\n"
 "\n"
 
-#: ../whois.c:304 ../whois.c:307
+#: ../whois.c:311 ../whois.c:314
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Невозможно разобрать строку: %s"
 
-#: ../whois.c:444
+#: ../whois.c:451
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Предупреждение: флаги RIPE используются с традиционным сервером."
 
-#: ../whois.c:572
+#: ../whois.c:586
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,26 +112,26 @@ msgstr ""
 "Катастрофическая ошибка: текст отказа был изменён.\n"
 "Пожалуйста, обновите программу.\n"
 
-#: ../whois.c:698
+#: ../whois.c:713
 #, c-format
 msgid "Host %s not found."
 msgstr "Узел %s не найден."
 
-#: ../whois.c:708
+#: ../whois.c:723
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: неизвестный сервис"
 
-#: ../whois.c:727
+#: ../whois.c:742
 msgid "Timeout."
 msgstr "Задержка."
 
-#: ../whois.c:733
+#: ../whois.c:748
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Прервано по сигналу %d..."
 
-#: ../whois.c:820
+#: ../whois.c:860
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -169,23 +170,30 @@ msgstr ""
 "\n"
 "-l                     одноуровневый минимальный поиск [только RPSL]\n"
 "-L                     найти всё при минимуме указанных совпадений\n"
-"-m                     найти первый уровень при максимуме указанных совпадений\n"
+"-m                     найти первый уровень при максимуме указанных "
+"совпадений\n"
 "-M                     найти всё при максимуме указанных совпадений\n"
-"-c                     найти наименьшее совпадение, содержащее атрибут mnt-irt\n"
+"-c                     найти наименьшее совпадение, содержащее атрибут mnt-"
+"irt\n"
 "-x                     точное совпадение [только RPSL]\n"
-"-d                     возвращать также реверсные делегированные объекты DNS [только RPSL]\n"
+"-d                     возвращать также реверсные делегированные объекты DNS "
+"[только RPSL]\n"
 "-i АТР[,АТР]...        выполнить инверсный поиск для указанных АТРибутов\n"
 "-T ТИП[,ТИП]...        поиск только объектов с типом ТИП\n"
 "-K                     возвращать только основные ключи [только RPSL]\n"
 "-r                     выключить рекурсивный просмотр контактной информации\n"
-"-R                     всегда показывать локальную копию объекта домена даже\n"
+"-R                     всегда показывать локальную копию объекта домена "
+"даже\n"
 "                       если она содержит перенаправление\n"
 "-a                     искать во всех базах\n"
 "-s ИСТОЧНИК[,ИСТОЧНИК]... искать в базе ИСТОЧНИКА\n"
-"-g ИСТОЧНИК:ПЕРВЫЙ-ПОСЛЕДНИЙ найти обновления ИСТОЧНИКА от ПЕРВОГО до ПОСЛЕДНЕГО\n"
-"-t ТИП                 запросить шаблон для объекта с типом ТИП ('all' для списка)\n"
+"-g ИСТОЧНИК:ПЕРВЫЙ-ПОСЛЕДНИЙ найти обновления ИСТОЧНИКА от ПЕРВОГО до "
+"ПОСЛЕДНЕГО\n"
+"-t ТИП                 запросить шаблон для объекта с типом ТИП ('all' для "
+"списка)\n"
 "-v ТИП                 запросить расширенный шаблон для объекта с типом ТИП\n"
-"-q [version|sources|types]  запросить указанную информацию о сервере [только RPSL]\n"
+"-q [version|sources|types]  запросить указанную информацию о сервере [только "
+"RPSL]\n"
 "-F                     быстрый сырой вывод (включает также -r)\n"
 "-h УЗЕЛ                присоединиться к УЗЛУ\n"
 "-p ПОРТ                присоединиться к ПОРТУ\n"
@@ -263,7 +271,8 @@ msgid ""
 msgstr ""
 "      -H, --hash=ТИП        выбрать ТИП хэша\n"
 "      -S, --salt=SALT       использовать указанный SALT\n"
-"      -P, --password-fd=НОМЕР прочитать пароль из дескриптора файла с номером НОМЕР\n"
+"      -P, --password-fd=НОМЕР прочитать пароль из дескриптора файла с "
+"номером НОМЕР\n"
 "                            вместо /dev/tty\n"
 "      -s, --stdin           аналогично --password-fd=0\n"
 "      -h, --help            отобразить эту помощь и выйти\n"
@@ -279,4 +288,3 @@ msgstr ""
 #, c-format
 msgid "Available algorithms:\n"
 msgstr "Доступные алгоритмы:\n"
-

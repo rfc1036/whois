@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.16\n"
-"POT-Creation-Date: 2003-12-01 18:31+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-15 19:18+0200\n"
 "PO-Revision-Date: 2004-06-15 00:08+0100\n"
 "Last-Translator: Adrian Bunk <bunk@fs.tum.de>\n"
 "Language-Team: \n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:108
+#: ../whois.c:114
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -25,69 +26,42 @@ msgstr ""
 "\n"
 "Senden Sie Bugreports an %s.\n"
 
-#: ../whois.c:151
-#: ../whois.c:240
+#: ../whois.c:164 ../whois.c:257
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Benutze Server %s.\n"
 
-#: ../whois.c:173
-#, c-format
-msgid "Using default server %s.\n"
-msgstr "Benutze voreingestellten Server %s.\n"
-
-#: ../whois.c:176
+#: ../whois.c:206
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr "Diese TLD hat keinen whois-Server, aber eine whois-Datenbank unter"
 
-#: ../whois.c:182
+#: ../whois.c:214
 msgid "This TLD has no whois server."
 msgstr "Diese TLD hat keinen whois-Server."
 
-#: ../whois.c:186
-msgid "Connecting to whois.crsnic.net."
-msgstr "Verbinde mit whois.crsnic.net."
-
-#: ../whois.c:192
-#: ../whois.c:203
-#, c-format
-msgid ""
-"\n"
-"Found a referral to %s.\n"
-"\n"
-msgstr ""
-"\n"
-"Verweis auf %s gefunden.\n"
-"\n"
-
-#: ../whois.c:197
-msgid "Connecting to whois.nic.cc."
-msgstr "Verbinde mit whois.nic.cc."
-
-#: ../whois.c:208
-msgid "Connecting to whois.publicinterestregistry.net."
-msgstr "Verbinde mit whois.publicinterestregistry.net."
-
-#: ../whois.c:214
-#, c-format
-msgid ""
-"\n"
-"Found referral to %s.\n"
-"\n"
-msgstr ""
-"\n"
-"Verweis auf %s gefunden.\n"
-"\n"
-
-#: ../whois.c:218
+#: ../whois.c:217
 msgid "No whois server is known for this kind of object."
 msgstr "Hierfür ist kein Whois-Server bekannt."
 
-#: ../whois.c:221
+#: ../whois.c:220
 msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr "Unbekannte AS- oder IP-Netzwerk-Nummer. Bitte upgraden Sie dieses Programm."
+msgstr ""
+"Unbekannte AS- oder IP-Netzwerk-Nummer. Bitte upgraden Sie dieses Programm."
 
-#: ../whois.c:228
+#: ../whois.c:224
+msgid "Connecting to whois.crsnic.net."
+msgstr "Verbinde mit whois.crsnic.net."
+
+#: ../whois.c:230
+msgid "Connecting to whois.publicinterestregistry.net."
+msgstr "Verbinde mit whois.publicinterestregistry.net."
+
+#: ../whois.c:236
+msgid "Connecting to whois.nic.cc."
+msgstr "Verbinde mit whois.nic.cc."
+
+#. XXX should fail if p = 0.0.0.0
+#: ../whois.c:243
 #, c-format
 msgid ""
 "\n"
@@ -95,10 +69,10 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Frage nach dem IPv4 Endpunkt %s einer 6to3 IPv6-Adresse.\n"
+"Frage nach dem IPv4 Endpunkt %s einer 6to4 IPv6-Adresse.\n"
 "\n"
 
-#: ../whois.c:249
+#: ../whois.c:258
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -107,22 +81,30 @@ msgstr ""
 "Suche nach: \"%s\"\n"
 "\n"
 
-#: ../whois.c:302
-#: ../whois.c:305
+#: ../whois.c:268
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Found a referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Verweis auf %s gefunden.\n"
+"\n"
+
+#: ../whois.c:311 ../whois.c:314
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Kann diese Zeile nicht parsen: %s"
 
-#: ../whois.c:446
+#: ../whois.c:451
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr "Warnung: RIPE-Flags wurden mit einem \"traditionellen\" Server verwendet."
+msgstr ""
+"Warnung: RIPE-Flags wurden mit einem \"traditionellen\" Server verwendet."
 
-#: ../whois.c:503
-#, c-format
-msgid "Detected referral to %s on %s.\n"
-msgstr "Verweis auf %s gefunden bei %s.\n"
-
-#: ../whois.c:520
+#: ../whois.c:586
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -130,27 +112,27 @@ msgstr ""
 "Schwerer Fehler: Haftungsausschlusstext wurde geaendert.\n"
 "Bitte upgraden sie dieses Programm.\n"
 
-#: ../whois.c:639
+#: ../whois.c:713
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s nicht gefunden."
 
-#: ../whois.c:649
+#: ../whois.c:723
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: unbekannter Dienst"
 
-#: ../whois.c:661
+#: ../whois.c:742
 msgid "Timeout."
 msgstr "Timeout."
 
-#: ../whois.c:667
+#: ../whois.c:748
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Erhielt Signal %d, unterbrochen..."
 
-#: ../whois.c:728
-#, fuzzy
+#: ../whois.c:860
+#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -158,9 +140,11 @@ msgid ""
 "-L                     find all Less specific matches\n"
 "-m                     find first level more specific matches\n"
 "-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt attribute\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
 "-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL "
+"only]\n"
 "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
 "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
 "-K                     only primary keys are returned [RPSL only]\n"
@@ -170,7 +154,8 @@ msgid ""
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a list)\n"
+"-t TYPE                request template for object of TYPE ('all' for a "
+"list)\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
@@ -203,7 +188,8 @@ msgstr ""
 "-s QUELLE[,QUELLE]...  suche in der Datenbank von QUELLE\n"
 "-T TYP[,TYP]...        suche nur nach Objekten vom Typ TYP\n"
 "-t TYP                 fordere Formular für Typ TYP an (\"all\" für eine \n"
-"                       Liste)-v TYP                 fordere ausführliches Formular für Typ TYP an\n"
+"                       Liste)-v TYP                 fordere ausführliches "
+"Formular für Typ TYP an\n"
 "-q [version|quellen]   frage nach angegebener Server-Information [nur RPSL]\n"
 "-d                     zeige auch DNS-Rückübertragungsobjekte [nur RPSL]\n"
 "-K                     zeige nur Primärschlüssel [nur RPSL]\n"
@@ -215,52 +201,53 @@ msgstr ""
 msgid "\tstandard 56 bit DES-based crypt(3)"
 msgstr "\tStandard 56 Bit DES-basiertes crypt(3)"
 
-#: ../mkpasswd.c:96
+#: ../mkpasswd.c:103
 #, c-format
 msgid "Invalid hash type '%s'.\n"
 msgstr "Falscher Hash-Typ '%s'.\n"
 
-#: ../mkpasswd.c:105
+#: ../mkpasswd.c:112
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Falsche Nummer '%s'.\n"
 
-#: ../mkpasswd.c:123
+#: ../mkpasswd.c:130
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Versuchen Sie '%s --help' für mehr Informationen.\n"
 
-#: ../mkpasswd.c:152
+#: ../mkpasswd.c:159
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr "Falsche Salt-Länge: %d Byte(s), aber%d wurden erwartet.\n"
 
-#: ../mkpasswd.c:158
+#: ../mkpasswd.c:165
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Illegaler Salt-Buchstabe '%c'.\n"
 
-#: ../mkpasswd.c:172
-#: ../mkpasswd.c:199
+#: ../mkpasswd.c:189 ../mkpasswd.c:216
+#, c-format
 msgid "Password: "
 msgstr "Passwort:"
 
-#: ../mkpasswd.c:193
+#: ../mkpasswd.c:210
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Illegaler Passwort-Buchstabe '0x%hhx'.\n"
 
-#: ../mkpasswd.c:230
+#: ../mkpasswd.c:254
+#, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
-"Aufruf: mkpasswd [OPTIONEN] ... {PASSWORT] [SALT]]\n"
+"Aufruf: mkpasswd [OPTIONEN] ... [PASSWORT] [SALT]]\n"
 "Verschluesselt das PASWORT mit crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:233
+#: ../mkpasswd.c:257
 #, c-format
 msgid ""
 "      -H, --hash=TYPE       select hash TYPE\n"
@@ -273,12 +260,27 @@ msgid ""
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
-"If TYPE is missing available algorithms are printed.\n"
+"If TYPE is 'help', available algorithms are printed.\n"
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
 
-#: ../mkpasswd.c:260
+#: ../mkpasswd.c:284
+#, c-format
 msgid "Available algorithms:\n"
 msgstr "Verfügbare Algorithmen:\n"
 
+#~ msgid "Using default server %s.\n"
+#~ msgstr "Benutze voreingestellten Server %s.\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Found referral to %s.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Verweis auf %s gefunden.\n"
+#~ "\n"
+
+#~ msgid "Detected referral to %s on %s.\n"
+#~ msgstr "Verweis auf %s gefunden bei %s.\n"

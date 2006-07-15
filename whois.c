@@ -5,6 +5,9 @@
  * published by the Free Software Foundation.
  */
 
+/* for AI_IDN */
+#define _GNU_SOURCE
+
 /* System library */
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,6 +30,10 @@
 #endif
 #ifdef HAVE_LIBIDN
 #include <idna.h>
+#endif
+
+#ifndef AI_IDN
+#define AI_IDN 0
 #endif
 
 /* Application-specific */
@@ -165,7 +172,6 @@ int main(int argc, char *argv[])
 	free(qstring);
 	qstring = tmp;
 	server = whichwhois(qstring);
-
     }
 
     handle_query(server, port, qstring, fstring);
@@ -180,7 +186,7 @@ int main(int argc, char *argv[])
 const char *handle_query(const char *hserver, const char *hport,
 	const char *qstring, const char *fstring)
 {
-    const char *server, *port = NULL;
+    const char *server = NULL, *port = NULL;
     char *p;
 
     if (hport) {
@@ -236,6 +242,7 @@ const char *handle_query(const char *hserver, const char *hport,
 	    /* XXX should fail if p = 0.0.0.0 */
 	    printf(_("\nQuerying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n\n"), p);
 	    server = whichwhois(p);
+	    /* XXX should fail if server[0] < ' ' */
 	    qstring = p;			/* XXX leak */
 	    break;
 	default:
@@ -686,9 +693,10 @@ int openconn(const char *server, const char *port)
     memset(&hints, 0, sizeof(struct addrinfo));
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags = AI_IDN;
 
-    if ((err = getaddrinfo(server, port ? port : "whois", &hints, &res)) != 0)
-	err_quit("getaddrinfo: %s", gai_strerror(err));
+    if ((err = getaddrinfo(server, port ? port : "nicname", &hints, &res)) != 0)
+	err_quit("getaddrinfo(%s): %s", server, gai_strerror(err));
     for (ai = res; ai; ai = ai->ai_next) {
 	if ((fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) < 0)
 	    continue;		/* ignore */
@@ -780,14 +788,39 @@ char *normalize_domain(const char *dom)
 /* server and port have to be freed by the caller */
 void split_server_port(const char *const input,
 	const char **server, const char **port) {
-    char *q, *p;
+    char *p;
 
-    *server = q = strdup(input);
+    if (*input == '[' && (p = strchr(input, ']'))) {	/* IPv6 */
+	char *s;
+	int len = p - input - 1;
 
-    for (p = q; *p && *p != ':'; *q++ = tolower(*p++));
-    if (*p == ':')
-	*port = strdup(p + 1);
-    *p = '\0';
+	*server = s = malloc(len + 1);
+	memcpy(s, input + 1, len);
+	*(s + len) = '\0';
+
+	p = strchr(p, ':');
+	if (p && *(p + 1) != '\0')
+	    *port = strdup(p + 1);			/* IPv6 + port */
+    } else if ((p = strchr(input, ':')) &&		/* IPv6, no port */
+	    strchr(p, ':')) {				/*   and no brackets */
+	*server = strdup(input);
+    } else if ((p = strchr(input, ':'))) {		/* IPv4 + port */
+	char *s;
+	int len = p - input;
+
+	*server = s = malloc(len + 1);
+	memcpy(s, input, len);
+	*(s + len) = '\0';
+
+	if (*(p + 1) != '\0')
+	    *port = strdup(p + 1);
+    } else {						/* IPv4, no port */
+	*server = strdup(input);
+    }
+
+    /* change the server name to lower case */
+    for (p = (char *) *server; *p && *p != '\0'; p++)
+	*p = tolower(*p);
 }
 
 char *convert_6to4(const char *s)

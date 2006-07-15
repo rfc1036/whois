@@ -1,3 +1,16 @@
+whois (4.7.14) unstable; urgency=medium
+
+  * Added the .coop, .mobi TLD and e164.arpa servers.
+  * Added new ASN allocations. (Closes: #377953)
+  * Added support for resolution of IDN server hostnames using AI_IDN.
+  * Fixed the parsing of IPv6 server addresses on the command line.
+  * Use the official "nicname" service name instead of "whois".
+  * Added whois.pot to the source package.
+  * Fixed a typo in the german translation. (Closes: #363550)
+  * Do not FTBFS on binNMUs. (Closes: #360741)
+
+ -- Marco d'Itri <md@linux.it>  Sat, 15 Jul 2006 19:22:42 +0200
+
 whois (4.7.13) unstable; urgency=medium
 
   * Added the .cat, .jobs, and .travel TLD servers.

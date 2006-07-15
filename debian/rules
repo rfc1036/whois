@@ -5,19 +5,20 @@ SHELL+= -e
 
 D := $(shell pwd)/debian/whois
 
-VERSION := $(shell dpkg-parsechangelog | sed -n '/^Version/s/.* //p')
+VERSION := $(shell dpkg-parsechangelog | sed -n 's/\+.*$$//; /^Version/s/.* //p')
 
 build:
 	dh_testdir
-	make whois mkpasswd \
+	$(MAKE) whois mkpasswd \
 		OPTS="-O2 -g -DCONFIG_FILE=\\\"/etc/whois.conf\\\"" \
 		HAVE_LIBIDN=1
+	cd po && $(MAKE) whois.pot
 	touch $@
 
 clean:
 	dh_testdir
 	-rm -f build
-	-make distclean
+	-$(MAKE) distclean
 	dh_clean
 
 binary-arch: checkroot build
@@ -29,7 +30,7 @@ binary-arch: checkroot build
 
 	dh_installdirs usr/bin
 	install whois mkpasswd $D/usr/bin/
-	cd po && make install BASEDIR=$D
+	cd po && $(MAKE) install BASEDIR=$D
 	dh_installman whois.1 mkpasswd.1
 	dh_installdocs README
 	dh_installchangelogs 
@@ -42,6 +43,8 @@ binary-arch: checkroot build
 	dh_builddeb
 
 binary: binary-arch
+
+binary-indep:
 
 checkroot:
 	test root = "`whoami`"

@@ -30,13 +30,14 @@
 .int	whois.iana.org
 .mil	whois.nic.mil
 .aero	whois.information.aero
+e164.arpa whois.ripe.net
 .arpa	whois.iana.org
 .biz	whois.nic.biz
 .cat	whois.cat
 .coop	whois.nic.coop
 .info	whois.afilias.info
 .jobs	whois.jobs
-.mobi	NONE
+.mobi	WEB http://pc.mtld.mobi/whois/
 .museum	whois.museum
 .name	whois.nic.name
 .pro	whois.registrypro.pro
@@ -321,6 +322,7 @@
 -ti	whois.telstra.net
 -tw	whois.twnic.net
 -6bone	whois.6bone.net
+-coop	whois.nic.coop
 -cknic	whois.nic.ck
 -idnic	whois.idnic.net.id
 -itnic	whois.nic.it
