@@ -1,3 +1,12 @@
+whois (4.7.15) unstable; urgency=high
+
+  * Fixed the parsing of hostname+port, which was broken by 4.7.14.
+  * Added the .gp, .ni and .tn TLD servers.
+  * Updated the .bh, .bn, .ec, .gy, .im, .kw, .mu, .ph, .pr, .py, .ve and .vu
+    TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 19 Jul 2006 21:01:32 +0200
+
 whois (4.7.14) unstable; urgency=medium
 
   * Added the .coop, .mobi TLD and e164.arpa servers.

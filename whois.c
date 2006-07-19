@@ -802,7 +802,7 @@ void split_server_port(const char *const input,
 	if (p && *(p + 1) != '\0')
 	    *port = strdup(p + 1);			/* IPv6 + port */
     } else if ((p = strchr(input, ':')) &&		/* IPv6, no port */
-	    strchr(p, ':')) {				/*   and no brackets */
+	    strchr(p + 1, ':')) {			/*   and no brackets */
 	*server = strdup(input);
     } else if ((p = strchr(input, ':'))) {		/* IPv4 + port */
 	char *s;
@@ -812,8 +812,9 @@ void split_server_port(const char *const input,
 	memcpy(s, input, len);
 	*(s + len) = '\0';
 
-	if (*(p + 1) != '\0')
-	    *port = strdup(p + 1);
+	p++;
+	if (*p != '\0')
+	    *port = strdup(p);
     } else {						/* IPv4, no port */
 	*server = strdup(input);
     }
