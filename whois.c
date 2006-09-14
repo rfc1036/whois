@@ -432,7 +432,7 @@ const char *whereas(const unsigned short asn)
 
 char *queryformat(const char *server, const char *flags, const char *query)
 {
-    char *buf;
+    char *buf, *p;
     int i, isripe = 0;
 
     /* 64 bytes reserved for server-specific flags added later */
@@ -480,6 +480,9 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    sprintf(buf, "%s/e", query);	/* ask for english text */
 	else
 	    strcat(buf, query);
+    } else if (!isripe && strcmp(server, "whois.arin.net") == 0 &&
+	    (p = strrchr(query, '/'))) {
+	strncat(buf, query, p - query);		/* strip CIDR */
     } else
 	strcat(buf, query);
     return buf;

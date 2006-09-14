@@ -1,3 +1,11 @@
+whois (4.7.16) unstable; urgency=medium
+
+  * Added new IPv6 allocations.
+  * Strip CIDR prefix length from queries to whois.arin.net.
+  * whois.denic.de does not understand the RIPE protocol anymore.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 15 Sep 2006 00:07:49 +0200
+
 whois (4.7.15) unstable; urgency=high
 
   * Fixed the parsing of hostname+port, which was broken by 4.7.14.
