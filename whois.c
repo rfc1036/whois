@@ -40,6 +40,9 @@
 #include "data.h"
 #include "whois.h"
 
+#define streq(a, b) (strcmp(a, b) == 0)
+#define strneq(a, b, n) (strncmp(a, b, n) == 0)
+
 /* Global variables */
 int sockfd, verb = 0;
 
@@ -439,7 +442,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
     buf = malloc(strlen(flags) + strlen(query) + strlen(client_tag) + 64);
     *buf = '\0';
     for (i = 0; ripe_servers[i]; i++)
-	if (strcmp(server, ripe_servers[i]) == 0) {
+	if (streq(server, ripe_servers[i])) {
 	    strcat(buf, "-V ");
 	    strcat(buf, client_tag);
 	    strcat(buf, " ");
@@ -447,7 +450,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    break;
 	}
     if (*flags) {
-	if (!isripe && strcmp(server, "whois.corenic.net") != 0)
+	if (!isripe && !streq(server, "whois.corenic.net"))
 	    puts(_("Warning: RIPE flags used with a traditional server."));
 	strcat(buf, flags);
     }
@@ -456,31 +459,31 @@ char *queryformat(const char *server, const char *flags, const char *query)
     /* why, oh why DENIC had to make whois "user friendly"?
      * Do this only if the user did not use any flag.
      */
-    if (isripe && strcmp(server, "whois.denic.de") == 0 && domcmp(query, ".de")
+    if (streq(server, "whois.denic.de") && domcmp(query, ".de")
 	    && !strchr(query, ' ') && !*flags)
 	sprintf(buf, "-T dn,ace -C US-ASCII %s", query);
     else
     /* here we have another registrar who could not make things simple
      * -C sets the language for both input and output
      */
-    if (!isripe && strcmp(server, "whois.cat") == 0 && domcmp(query, ".cat")
+    if (!isripe && streq(server, "whois.cat") && domcmp(query, ".cat")
 	    && !strchr(query, ' '))
 	sprintf(buf, "-C US-ASCII ace %s", query);
     else
 #endif
-    if (!isripe && (strcmp(server, "whois.nic.mil") == 0 ||
-	    strcmp(server, "whois.nic.ad.jp") == 0) &&
+    if (!isripe && (streq(server, "whois.nic.mil") ||
+	    streq(server, "whois.nic.ad.jp")) &&
 	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
 	/* FIXME: /e is not applied to .JP ASN */
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
-    else if (!isripe && (strcmp(server, "whois.nic.ad.jp") == 0 ||
-	    strcmp(server, "whois.jprs.jp") == 0)) {
+    else if (!isripe && (streq(server, "whois.nic.ad.jp") ||
+	    streq(server, "whois.jprs.jp"))) {
 	char *lang = getenv("LANG");	/* not a perfect check, but... */
-	if (!lang || (strncmp(lang, "ja", 2) != 0))
+	if (!lang || !strneq(lang, "ja", 2))
 	    sprintf(buf, "%s/e", query);	/* ask for english text */
 	else
 	    strcat(buf, query);
-    } else if (!isripe && strcmp(server, "whois.arin.net") == 0 &&
+    } else if (!isripe && streq(server, "whois.arin.net") &&
 	    (p = strrchr(query, '/'))) {
 	strncat(buf, query, p - query);		/* strip CIDR */
     } else
@@ -501,7 +504,7 @@ int hide_line(int *hiding, const char *const line)
 	return 0;
     } else if (*hiding == HIDE_UNSTARTED) {	/* looking for smtng to hide */
 	for (i = 0; hide_strings[i] != NULL; i += 2) {
-	    if (strncmp(line, hide_strings[i], strlen(hide_strings[i])) == 0) {
+	    if (strneq(line, hide_strings[i], strlen(hide_strings[i]))) {
 		*hiding = i;			/* start hiding */
 		return 1;			/* and hide this line */
 	    }
@@ -514,8 +517,8 @@ int hide_line(int *hiding, const char *const line)
 		return 0;		/* but do not hide the blank line */
 	    }
 	} else {				/*look for a matching string*/
-	    if (strncmp(line, hide_strings[*hiding + 1],
-			strlen(hide_strings[*hiding + 1])) == 0) {
+	    if (strneq(line, hide_strings[*hiding + 1],
+			strlen(hide_strings[*hiding + 1]))) {
 		*hiding = HIDE_DISABLED;	/* stop hiding */
 		return 1;			/* but hide the last line */
 	    }
@@ -545,7 +548,7 @@ const char *do_query(const int sock, const char *query)
 	/* 6bone-style referral:
 	 * % referto: whois -h whois.arin.net -p 43 as 1
 	 */
-	if (!referral_server && strncmp(buf, "% referto:", 10) == 0) {
+	if (!referral_server && strneq(buf, "% referto:", 10)) {
 	    char nh[256], np[16], nq[1024];
 
 	    if (sscanf(buf, REFERTO_FORMAT, nh, np, nq) == 3) {
@@ -559,7 +562,7 @@ const char *do_query(const int sock, const char *query)
 	 * ReferralServer: rwhois://rwhois.fuse.net:4321/
 	 * ReferralServer: whois://whois.ripe.net
 	 */
-	if (!referral_server && strncmp(buf, "ReferralServer:", 15) == 0) {
+	if (!referral_server && strneq(buf, "ReferralServer:", 15)) {
 	    char *q;
 
 	    q = strstr(buf, "rwhois://");
@@ -610,9 +613,9 @@ const char *query_crsnic(const int sock, const char *query)
     while (fgets(buf, sizeof(buf), fi)) {
 	/* If there are multiple matches only the server of the first record
 	   is queried */
-	if (state == 0 && strncmp(buf, "   Domain Name:", 15) == 0)
+	if (state == 0 && strneq(buf, "   Domain Name:", 15))
 	    state = 1;
-	if (state == 1 && strncmp(buf, "   Whois Server:", 16) == 0) {
+	if (state == 1 && strneq(buf, "   Whois Server:", 16)) {
 	    char *p, *q;
 
 	    for (p = buf; *p != ':'; p++);	/* skip until colon */
@@ -654,10 +657,10 @@ const char *query_pir(const int sock, const char *query)
 	/* If there are multiple matches only the server of the first record
 	   is queried */
 	if (state == 0 &&
-    strncmp(buf, "Registrant Name:SEE SPONSORING REGISTRAR", 40) == 0)
+		strneq(buf, "Registrant Name:SEE SPONSORING REGISTRAR", 40))
 	    state = 1;
 	if (state == 1 &&
-		strncmp(buf, "Registrant Street1:Whois Server:", 32) == 0) {
+		strneq(buf, "Registrant Street1:Whois Server:", 32)) {
 	    char *p, *q;
 
 	    for (p = buf; *p != ':'; p++);	/* skip until colon */
