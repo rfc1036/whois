@@ -248,6 +248,12 @@ const char *handle_query(const char *hserver, const char *hport,
 	    /* XXX should fail if server[0] < ' ' */
 	    qstring = p;			/* XXX leak */
 	    break;
+	case 0x0B:
+	    p = convert_teredo(qstring);
+	    printf(_("\nQuerying for the IPv4 endpoint %s of a Teredo IPv6 address.\n\n"), p);
+	    server = whichwhois(p);
+	    qstring = p ;
+	    break;
 	default:
 	    break;
     }
@@ -838,6 +844,20 @@ char *convert_6to4(const char *s)
     if (sscanf(s, "2002:%x:%x:", &a, &b) != 2)
 	return (char *) "0.0.0.0";
 
+    sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
+    return new;
+}
+
+char *convert_teredo(const char *s)
+{
+    char *new = malloc(sizeof("255.255.255.255"));
+    unsigned int a, b;
+
+    if (sscanf(s, "2001:%*[^:]:%*[^:]:%*[^:]:%*[^:]:%*[^:]:%x:%x", &a, &b) != 2)
+	return (char *) "0.0.0.0";
+
+    a ^= 0xffff;
+    b ^= 0xffff;
     sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
     return new;
 }

@@ -1,3 +1,13 @@
+whois (4.7.18) unstable; urgency=medium
+
+  * whois.radb.net does not understand the RIPE protocol anymore.
+  * Added support for IPv6 Teredo addresses, contributed by Rémi
+    Denis-Courmont. (Closes: #384373)
+  * Updated the .mobi and .gs TLD servers. (Closes: #389880, 391447)
+  * Added the .gd TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Fri,  6 Oct 2006 18:47:53 +0200
+
 whois (4.7.17) unstable; urgency=medium
 
   * 4.7.16 did not ask whois.denic.de for the complete data. Fixed.

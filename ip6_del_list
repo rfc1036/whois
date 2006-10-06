@@ -2,6 +2,7 @@
 # The parser is very simple-minded and wants the two first components of
 # addresses. It does not deal with networks == 0 or > 24 bit.
 
+2001:0000::/32	teredo
 2001:0200::/23	apnic
 2001:0400::/23	arin
 2001:0600::/23	ripe

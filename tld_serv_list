@@ -37,7 +37,7 @@ e164.arpa whois.ripe.net
 .coop	whois.nic.coop
 .info	whois.afilias.info
 .jobs	whois.jobs
-.mobi	WEB http://pc.mtld.mobi/whois/
+.mobi	whois.dotmobiregistry.net
 .museum	whois.museum
 .name	whois.nic.name
 .pro	whois.registrypro.pro
@@ -121,7 +121,7 @@ e164.arpa whois.ripe.net
 #.fx
 .ga	NONE		# www.nic.ga
 .gb	NONE
-#.gd			# NO NIC (UPR)
+.gd	whois.adamsnames.tc
 .ge	WEB http://whois.sanet.ge/
 .gf	whois.nplus.gf
 .gg	whois.channelisles.net
@@ -133,7 +133,7 @@ e164.arpa whois.ripe.net
 .gp	whois.nic.gp
 #.gq			# NO NIC http://www.getesa.gq/
 .gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
-.gs	whois.adamsnames.tc
+.gs	whois.nic.gs
 .gt	WEB http://www.gt/whois.htm
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
 #.gw			# no NIC?

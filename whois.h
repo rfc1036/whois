@@ -27,6 +27,7 @@ int domcmp(const char *, const char *);
 int domfind(const char *, const char *[]);
 char *normalize_domain(const char *);
 char *convert_6to4(const char *);
+char *convert_teredo(const char *);
 const char *handle_query(const char *server, const char *port,
 		   const char *qstring, const char *fstring);
 void split_server_port(const char *const input, const char **server,

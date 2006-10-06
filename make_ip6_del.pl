@@ -26,6 +26,8 @@ while (<>) {
 		print $s;
 	} elsif ($s eq '6to4') {
 		print "\\x0A";
+	} elsif ($s eq 'teredo') {
+		print "\\x0B";
 	} elsif ($s eq 'UNALLOCATED') {
 		print "\\006";
 	} else {
