@@ -9,6 +9,8 @@
 24.132.0.0/14	ripe
 41.0.0.0/8	afrinic
 43.0.0.0/8	v6nic
+# whois -r -K -h whois.apnic.net -i admin-c IM76-AP
+59.0.0.0/11	whois.nic.or.kr
 58.0.0.0/7	apnic
 61.72.0.0/13	whois.nic.or.kr
 61.80.0.0/14	whois.nic.or.kr
@@ -22,10 +24,13 @@
 78.0.0.0/7	ripe
 80.0.0.0/5	ripe			# => 87.255.255.255
 88.0.0.0/6	ripe			# => 91.255.255.254
+121.128.0.0/10	whois.nic.or.kr
 121.0.0.0/8	apnic
 122.0.0.0/7	apnic
+125.128.0.0/11	whois.nic.or.kr
 124.0.0.0/7	apnic
 126.0.0.0/8	apnic
+96.0.0.0/6	arin
 96.0.0.0/3	UNALLOCATED		# => 127.215.255.255
 0.0.0.0/1	arin	# all other A classes are managed by ARIN
 133.0.0.0/8	whois.nic.ad.jp

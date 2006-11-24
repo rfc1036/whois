@@ -57,6 +57,7 @@ e164.arpa whois.ripe.net
 .as	whois.nic.as
 .at	whois.nic.at
 .au	whois.ausregistry.net.au
+.ax	NONE		# www.ax
 .aw	NONE		# www.setarnet.aw
 .az	WEB http://www.nic.az/AzCheck.htm
 .ba	WEB http://www.nic.ba/stream/whois/
@@ -78,6 +79,7 @@ e164.arpa whois.ripe.net
 #.bw			# NIC? btc.bw www.info.bw/resource/local/index.shtml
 .by	WEB http://www.tld.by/indexeng.html
 .bz	whois.belizenic.bz
+.co.ca	whois.co.ca
 .ca	whois.cira.ca
 .cc	NICCC
 .cd	whois.nic.cd
@@ -183,6 +185,7 @@ e164.arpa whois.ripe.net
 #.ma			# NIC? http://www.anrt.net.ma/nic/
 .mc	whois.ripe.net
 .md	WEB http://www.dns.md/whois.html
+#.me
 .mg	NONE		# www.nic.mg
 .mh	NONE		# www.nic.net.mh
 #.mk			# NIC? http://www.mpt.com.mk
@@ -232,6 +235,7 @@ e164.arpa whois.ripe.net
 .qa	NONE		# http://www.qatar.net.qa/services/virtual.htm
 .re	whois.nic.fr
 .ro	whois.rotld.ro
+#.rs
 .edu.ru	whois.informika.ru
 .ru	whois.ripn.net
 .rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
@@ -338,3 +342,4 @@ e164.arpa whois.ripe.net
 -sgnic	whois.nic.net.sg
 -uanic	whois.com.ua
 -uynic	www.rau.edu.uy
+-sixxs	whois.sixxs.net
