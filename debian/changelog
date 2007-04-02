@@ -1,3 +1,14 @@
+whois (4.7.21) unstable; urgency=medium
+
+  * Improved myinet_aton to not parse addresses with trailing junk
+  * Added APNIC and RIPE allocations.
+  * Updated the name of the Verio whois server. (Closes: #410449)
+  * Removed references to whois.nic.mil, which apparently is gone.
+  * Removed whois.nic.it from ripe_servers, because it does not even
+    pretend to be one anymore.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 02 Apr 2007 04:23:45 +0200
+
 whois (4.7.20) unstable; urgency=medium
 
   * Added more krnic allocations.

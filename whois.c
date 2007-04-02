@@ -865,10 +865,11 @@ char *convert_teredo(const char *s)
 unsigned long myinet_aton(const char *s)
 {
     unsigned long a, b, c, d;
+    char junk;
 
     if (!s)
 	return 0;
-    if (sscanf(s, "%lu.%lu.%lu.%lu", &a, &b, &c, &d) != 4)
+    if (sscanf(s, "%lu.%lu.%lu.%lu%c", &a, &b, &c, &d, &junk) != 4)
 	return 0;
     if (a > 255 || b > 255 || c > 255 || d > 255)
 	return 0;

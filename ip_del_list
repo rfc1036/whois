@@ -24,10 +24,11 @@
 78.0.0.0/7	ripe
 80.0.0.0/5	ripe			# => 87.255.255.255
 88.0.0.0/6	ripe			# => 91.255.255.254
+92.0.0.0/7	ripe
+116.0.0.0/6	apnic
 121.128.0.0/10	whois.nic.or.kr
-121.0.0.0/8	apnic
-122.0.0.0/7	apnic
 125.128.0.0/11	whois.nic.or.kr
+120.0.0.0/6	apnic
 124.0.0.0/7	apnic
 126.0.0.0/8	apnic
 96.0.0.0/6	arin
@@ -138,7 +139,7 @@
 203.180.0.0/14	whois.nic.ad.jp
 203.224.0.0/11	whois.nic.or.kr # => 203.255.255.255
 202.0.0.0/7	apnic
-204.0.0.0/14	verio		# rwhois too
+204.0.0.0/14	rwhois.gin.ntt.net	# rwhois too
 204.0.0.0/6	arin
 208.0.0.0/7	arin
 209.94.192.0/19	lacnic
