@@ -1,4 +1,4 @@
-/* Copyright 1999-2003 by Marco d'Itri <md@linux.it>.
+/* Copyright 1999-2007 by Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -363,9 +363,13 @@ const char *whichwhois(const char *s)
     if ((colon = strchr(s, ':'))) {
 	unsigned long v6prefix, v6net;
 
-	/* RPSL hierarchical objects like AS8627:fltr-TRANSIT-OUT */
-	if (strncasecmp(s, "as", 2) == 0 && isasciidigit(s[2]))
-	    return whereas(atoi(s + 2));
+	/* RPSL hierarchical objects */
+	if (strncasecmp(s, "as", 2) == 0) {
+	    if (isasciidigit(s[2]))
+		return whereas(atoi(s + 2));
+	    else
+		return "";
+	}
 
 	v6prefix = strtol(s, NULL, 16);
 
@@ -778,23 +782,49 @@ int domcmp(const char *dom, const char *tld)
 char *normalize_domain(const char *dom)
 {
     char *p, *ret;
+    char *domain_start = NULL;
 
     ret = strdup(dom);
     for (p = ret; *p; p++); p--;	/* move to the last char */
-    for (; *p == '.' || p == ret; p--)	/* eat trailing dots */
+    /* eat trailing dots and blanks */
+    for (; *p == '.' || *p == ' ' || *p == '\t' || p == ret; p--)
 	*p = '\0';
 
 #ifdef HAVE_LIBIDN
-    if (idna_to_ascii_lz(ret, &p, 0) != IDNA_SUCCESS) {
+    /* find the start of the last word if there are spaces in the query */
+    for (p = ret; *p; p++)
+	if (*p == ' ')
+	    domain_start = p + 1;
+
+    if (domain_start) {
+	char *q, *r;
+	int prefix_len;
+
+	if (idna_to_ascii_lz(domain_start, &q, 0) != IDNA_SUCCESS)
+	    return ret;
+
+	/* reassemble the original query in a new buffer */
+	prefix_len = domain_start - ret;
+	r = malloc(prefix_len + strlen(q) + 1);
+	strncpy(r, ret, prefix_len);
+	r[prefix_len] = '\0';
+	strcat(r, q);
+
+	free(q);
 	free(ret);
-	return ret;
+	return r;
+    } else {
+	char *q;
+
+	if (idna_to_ascii_lz(ret, &q, 0) != IDNA_SUCCESS)
+	    return ret;
+
+	free(ret);
+	return q;
     }
-
-    free(ret);
-    ret = p;
-#endif
-
+#else
     return ret;
+#endif
 }
 
 /* server and port have to be freed by the caller */

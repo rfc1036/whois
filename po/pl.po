@@ -1,21 +1,21 @@
 # Polish translation for whois.
 # Micha³ 'CeFeK' Nazarewicz <cefek@career.pl>, 1999
 # Przemys³aw Knycz <djrzulf@pld.org.pl>, 2003
-# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2004
+# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2007
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.6.24\n"
+"Project-Id-Version: whois 4.7.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-15 19:18+0200\n"
-"PO-Revision-Date: 2004-11-28 15:09+0100\n"
+"POT-Creation-Date: 2007-04-07 14:31+0200\n"
+"PO-Revision-Date: 2007-04-07 14:32+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:114
+#: ../whois.c:117
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -26,42 +26,42 @@ msgstr ""
 "\n"
 "B³êdy proszê zg³aszaæ na adres %s.\n"
 
-#: ../whois.c:164 ../whois.c:257
+#: ../whois.c:167 ../whois.c:266
 #, c-format
 msgid "Using server %s.\n"
 msgstr "U¿ycie serwera %s.\n"
 
-#: ../whois.c:206
+#: ../whois.c:209
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Ta g³ówna domena nie ma serwera whois, ale mo¿na u¿yæ bazy danych whois pod"
 
-#: ../whois.c:214
+#: ../whois.c:217
 msgid "This TLD has no whois server."
 msgstr "Ta g³ówna domena nie ma serwera whois."
 
-#: ../whois.c:217
+#: ../whois.c:220
 msgid "No whois server is known for this kind of object."
 msgstr "Dla tego rodzaju obiektu nie jest znany ¿aden serwer whois."
 
-#: ../whois.c:220
+#: ../whois.c:223
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Nieznany numer AS lub sieæ IP. Proszê uaktualniæ ten program."
 
-#: ../whois.c:224
+#: ../whois.c:227
 msgid "Connecting to whois.crsnic.net."
 msgstr "£±czenie z whois.crsnic.net."
 
-#: ../whois.c:230
+#: ../whois.c:233
 msgid "Connecting to whois.publicinterestregistry.net."
 msgstr "£±czenie z whois.publicinterestregistry.net."
 
-#: ../whois.c:236
+#: ../whois.c:239
 msgid "Connecting to whois.nic.cc."
 msgstr "£±czenie z whois.nic.cc."
 
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:243
+#: ../whois.c:246
 #, c-format
 msgid ""
 "\n"
@@ -72,7 +72,18 @@ msgstr ""
 "Pytanie o zakoñczenie IPv4 %s adresu IPv6 typu 6to4.\n"
 "\n"
 
-#: ../whois.c:258
+#: ../whois.c:253
+#, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a Teredo IPv6 address.\n"
+"\n"
+msgstr ""
+"\n"
+"Pytanie o zakoñczenie IPv4 %s adresu IPv6 Teredo.\n"
+"\n"
+
+#: ../whois.c:267
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +92,7 @@ msgstr ""
 "Zapytanie: \"%s\"\n"
 "\n"
 
-#: ../whois.c:268
+#: ../whois.c:277
 #, c-format
 msgid ""
 "\n"
@@ -94,16 +105,16 @@ msgstr ""
 "Znaleziono odniesienie do %s.\n"
 "\n"
 
-#: ../whois.c:311 ../whois.c:314
+#: ../whois.c:320 ../whois.c:323
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Nie mo¿na przeanalizowaæ tej linii: %s"
 
-#: ../whois.c:451
+#: ../whois.c:460
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Uwaga: u¿yto flag RIPE ze starszym serwerem."
 
-#: ../whois.c:586
+#: ../whois.c:598
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,26 +122,26 @@ msgstr ""
 "Katastrofa! Tekst o¶wiadczenia zosta³ zmieniony.\n"
 "Proszê uaktualniæ ten program.\n"
 
-#: ../whois.c:713
+#: ../whois.c:725
 #, c-format
 msgid "Host %s not found."
 msgstr "Serwer %s nie zosta³ znaleziony."
 
-#: ../whois.c:723
+#: ../whois.c:735
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: us³uga nieznana"
 
-#: ../whois.c:742
+#: ../whois.c:754
 msgid "Timeout."
 msgstr "Up³yn±³ limit czasu."
 
-#: ../whois.c:748
+#: ../whois.c:760
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Przerwano sygna³em %d..."
 
-#: ../whois.c:860
+#: ../whois.c:888
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"

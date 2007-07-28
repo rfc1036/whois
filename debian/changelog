@@ -1,3 +1,15 @@
+whois (4.7.22) unstable; urgency=medium
+
+  * Added new IPv4 allocations.
+  * Added new ASN allocations.
+  * Updated the Polish translation.
+  * Updated the .jobs, .ai and .tn TLD and za.net servers.
+  * Added the za.net server. (Closes: #423549)
+  * Stop misparsing <as-set>:<hierarchical-name> as an IPv6 address.
+  * Stop mangling IDN queries with in-query flags. (Closes: #422895)
+
+ -- Marco d'Itri <md@linux.it>  Sat, 28 Jul 2007 23:53:00 +0200
+
 whois (4.7.21) unstable; urgency=medium
 
   * Improved myinet_aton to not parse addresses with trailing junk

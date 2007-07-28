@@ -58,7 +58,7 @@
 36864	37887	afrinic
 37888	38911	apnic
 38912	39935	ripe
-40960	41983	ripe
+40960	44031	ripe
 
 # catch all: everything else comes from ARIN
 1	40959	arin

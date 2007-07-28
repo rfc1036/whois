@@ -18,6 +18,7 @@
 .uk.net	whois.centralnic.net
 .us.com	whois.centralnic.net
 .uy.com	whois.centralnic.net
+.za.net	whois.centralnic.net
 .za.com	whois.centralnic.net
 .jpn.com whois.centralnic.net
 .web.com whois.centralnic.net
@@ -36,7 +37,7 @@ e164.arpa whois.ripe.net
 .cat	whois.cat
 .coop	whois.nic.coop
 .info	whois.afilias.info
-.jobs	whois.jobs
+.jobs	jobswhois.verisign-grs.com
 .mobi	whois.dotmobiregistry.net
 .museum	whois.museum
 .name	whois.nic.name
@@ -47,7 +48,7 @@ e164.arpa whois.ripe.net
 .ae	whois.uaenic.ae
 .af	whois.nic.af
 .ag	whois.nic.ag
-.ai	WEB http://whois.offshore.ai/
+.ai	whois.ai
 .al	NONE		# http://www.inima.al/Domains.html
 .am	whois.nic.am
 .an	NONE		# http://www.una.net/an_domreg/
