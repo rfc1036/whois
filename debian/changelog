@@ -1,3 +1,11 @@
+whois (4.7.23) unstable; urgency=medium
+
+  * Fixed myinet_aton to not reject CIDR networks.
+  * Added support for ASN32.
+  * Added the za.net and za.org pseudo-TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 13 Sep 2007 03:28:21 +0200
+
 whois (4.7.22) unstable; urgency=medium
 
   * Added new IPv4 allocations.

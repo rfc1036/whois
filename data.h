@@ -117,6 +117,17 @@ const struct as_del as_assign[] = {
     { 0, 0, NULL }
 };
 
+struct as32_del {
+    const unsigned long first;
+    const unsigned long last;
+    const char         *serv;
+};
+
+const struct as32_del as32_assign[] = {
+#include "as32_del.h"
+    { 0, 0, NULL }
+};
+
 const char *tld_serv[] = {
 #include "tld_serv.h"
     NULL,	NULL

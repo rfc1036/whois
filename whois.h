@@ -12,6 +12,7 @@
 const char *whichwhois(const char *);
 const char *match_config_file(const char *);
 const char *whereas(const unsigned short);
+const char *whereas32(const unsigned long);
 char *queryformat(const char *, const char *, const char *);
 int hide_line(int *hiding, const char *const line);
 const char *do_query(const int, const char *);
@@ -22,6 +23,7 @@ void usage(void);
 void alarm_handler(int);
 void sighandler(int);
 unsigned long myinet_aton(const char *);
+unsigned long asn32_to_long(const char *);
 int isasciidigit(const char);
 int domcmp(const char *, const char *);
 int domfind(const char *, const char *[]);

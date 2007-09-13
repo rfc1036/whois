@@ -1,0 +1,10 @@
+# http://www.iana.org/assignments/as-numbers
+
+# actually I listed here also the unallocated space reserved for each RIR
+
+2.0	2.65535	apnic
+3.0	3.65535	ripe
+4.0	4.65535	lacnic
+5.0	5.65535	afrinic
+6.0	6.65535	arin
+

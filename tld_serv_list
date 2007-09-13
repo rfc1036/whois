@@ -1,6 +1,7 @@
 # NIC? means I have not been able to find the registry
 # UPR means the TLD is managed by UPR, but I could not find any info
 #
+
 .br.com	whois.centralnic.net
 .cn.com	whois.centralnic.net
 .de.com	whois.centralnic.net
@@ -18,21 +19,28 @@
 .uk.net	whois.centralnic.net
 .us.com	whois.centralnic.net
 .uy.com	whois.centralnic.net
-.za.net	whois.centralnic.net
 .za.com	whois.centralnic.net
 .jpn.com whois.centralnic.net
 .web.com whois.centralnic.net
-.eu.org	whois.eu.org
+
 .com	CRSNIC
+
+.za.net	whois.za.net
 .net	CRSNIC
+
+.eu.org	whois.eu.org
+.za.org	whois.za.org
 .org	PIR
+
 .edu	whois.educause.net
 .gov	whois.nic.gov
 .int	whois.iana.org
 .mil	NONE
-.aero	whois.information.aero
+
 e164.arpa whois.ripe.net
 .arpa	whois.iana.org
+
+.aero	whois.information.aero
 .biz	whois.nic.biz
 .cat	whois.cat
 .coop	whois.nic.coop
@@ -43,6 +51,7 @@ e164.arpa whois.ripe.net
 .name	whois.nic.name
 .pro	whois.registrypro.pro
 .travel	whois.nic.travel
+
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
 .ae	whois.uaenic.ae
@@ -308,6 +317,7 @@ e164.arpa whois.ripe.net
 .za	NONE		# http://www.internet.org.za/slds.html many more SLD...
 .zm	NONE		# NIC? http://www.zamnet.zm/
 .zw	NONE		# http://www.zispa.co.zw/
+
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com
 -hst	whois.networksolutions.com

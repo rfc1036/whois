@@ -355,7 +355,7 @@ const char *match_config_file(const char *s)
  */
 const char *whichwhois(const char *s)
 {
-    unsigned long ip;
+    unsigned long ip, as32;
     unsigned int i;
     char *colon;
 
@@ -393,9 +393,6 @@ const char *whichwhois(const char *s)
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
-	const char *p;
-
-	for (p = s; *p; p++);			/* go to the end of s */
 	if (strncasecmp(s, "as", 2) == 0 &&	/* it's an AS */
 		(isasciidigit(s[2]) || s[2] == ' '))
 	    return whereas(atoi(s + 2));
@@ -404,6 +401,11 @@ const char *whichwhois(const char *s)
 	else
 	    return "\x05";	/* probably a unknown kind of nic handle */
     }
+
+    /* ASN32? */
+    if (strncasecmp(s, "as", 2) == 0 && s[2] &&
+	    (as32 = asn32_to_long(s + 2)) != 0)
+	return whereas32(as32);
 
     /* smells like an IP? */
     if ((ip = myinet_aton(s))) {
@@ -431,6 +433,16 @@ const char *whichwhois(const char *s)
     /* has dot and maybe a hyphen and it's not in tld_serv[], WTF is it? */
     /* either a TLD or a NIC handle we don't know about yet */
     return "\x05";
+}
+
+const char *whereas32(const unsigned long asn)
+{
+    int i;
+
+    for (i = 0; as32_assign[i].serv; i++)
+	if (asn >= as32_assign[i].first && asn <= as32_assign[i].last)
+	    return as32_assign[i].serv;
+    return "\x06";
 }
 
 const char *whereas(const unsigned short asn)
@@ -895,15 +907,31 @@ char *convert_teredo(const char *s)
 unsigned long myinet_aton(const char *s)
 {
     unsigned long a, b, c, d;
+    int elements;
     char junk;
 
     if (!s)
 	return 0;
-    if (sscanf(s, "%lu.%lu.%lu.%lu%c", &a, &b, &c, &d, &junk) != 4)
+    elements = sscanf(s, "%lu.%lu.%lu.%lu%c", &a, &b, &c, &d, &junk);
+    if (!(elements == 4 || (elements == 5 && junk == '/')))
 	return 0;
     if (a > 255 || b > 255 || c > 255 || d > 255)
 	return 0;
     return (a << 24) + (b << 16) + (c << 8) + d;
+}
+
+unsigned long asn32_to_long(const char *s)
+{
+    unsigned long a, b;
+    char junk;
+
+    if (!s)
+	return 0;
+    if (sscanf(s, "%lu.%lu%c", &a, &b, &junk) != 2)
+	return 0;
+    if (a > 65535 || b > 65535)
+	return 0;
+    return (a << 16) + b;
 }
 
 int isasciidigit(const char c) {
