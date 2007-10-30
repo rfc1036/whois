@@ -1,3 +1,11 @@
+whois (4.7.24) unstable; urgency=medium
+
+  * Added new ASN allocations.
+  * Added new IPv4 allocations.
+  * Added the .asia, .kp and .mq TLD servers. (Closes: #445747)
+
+ -- Marco d'Itri <md@linux.it>  Tue, 30 Oct 2007 11:06:25 +0100
+
 whois (4.7.23) unstable; urgency=medium
 
   * Fixed myinet_aton to not reject CIDR networks.

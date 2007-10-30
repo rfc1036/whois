@@ -41,6 +41,7 @@ e164.arpa whois.ripe.net
 .arpa	whois.iana.org
 
 .aero	whois.information.aero
+.asia	whois.nic.asia
 .biz	whois.nic.biz
 .cat	whois.cat
 .coop	whois.nic.coop
@@ -148,7 +149,7 @@ e164.arpa whois.ripe.net
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/whois.htm
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
-#.gw			# no NIC?
+.gw	NONE		# www.nic.gw
 .gy	NONE		# http://www.uog.edu.gy/domain/cit.html
 .hk	whois.hkdnr.net.hk
 .hm	whois.registry.hm
@@ -176,7 +177,7 @@ e164.arpa whois.ripe.net
 .ki	WEB http://www.ki/dns/
 .km	NONE		# NO NIC
 #.kn			# NO NIC (UPR)
-#.kp
+.kp	whois.kcce.kp
 .kr	whois.nic.or.kr
 .kw	WEB http://www.kw/
 .ky	WEB http://kynseweb.messagesecure.com/kywebadmin/ # http://www.icta.ky/
@@ -204,7 +205,7 @@ e164.arpa whois.ripe.net
 .mn	whois.nic.mn
 .mo	WEB http://www.monic.net.mo/
 .mp	NONE		# www.nic.mp
-#.mq			# www.nic.mq broken
+.mq	whois.nic.mq
 .mr	NONE		# http://www.univ-nkc.mr/nic_mr.html www.nic.mr ?
 .ms	whois.adamsnames.tc
 .mt	WEB http://www.nic.org.mt/dir/home.html

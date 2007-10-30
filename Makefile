@@ -1,4 +1,4 @@
-prefix ?= /usr/local
+prefix = /usr/local
 
 OPTS := -O2
 
@@ -53,11 +53,15 @@ tld_serv.h: tld_serv_list make_tld_serv.pl
 	$(PERL) -w make_tld_serv.pl < tld_serv_list > $@
 
 install: whois
+	install -d $(BASEDIR)$(prefix)/bin/
+	install -d $(BASEDIR)$(prefix)/share/man/man1/
 	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
 	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 	cd po && $(MAKE) $@
 
 install-mkpasswd: mkpasswd
+	install -d $(BASEDIR)$(prefix)/bin/
+	install -d $(BASEDIR)$(prefix)/share/man/man1/
 	install -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
 	install -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
 
