@@ -30,7 +30,6 @@ const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "",				/* NetSol */
     "TERMS OF USE: You are not", "",				/* crsnic */
     "NOTICE: Access to .ORG WHOIS", "",
-    "NOTICE: Access to .INFO WHOIS", "",
     "NOTICE: Access to the .aero", "",
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
     "% .eu Whois Server", "% of the database",
@@ -57,9 +56,14 @@ const char *hide_strings[] = {
     "; This data is provided by domaindiscount24.com", "",
     "%% BookMyName Whois", "%% this policy",
     "The .coop registry WHOIS", "VERIFICATION, NOR DO",
-    "Tralliance, Inc., the Registry", "",			/* travel */
+    "Tralliance, Inc., the Registry", "",			/* .travel */
     "NOTICE: Access to the domains information", "",		/* CORE */
     "%% puntCAT Whois Server", "%% any time.",
+    "Access to INFO WHOIS information is provided", "",		/* Afilias */
+    "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
+    "DotAsia WHOIS LEGAL STATEMENT", "integrity of the database.",
+    "mTLD WHOIS LEGAL STATEMENT", "integrity of the database."	/* .mobi */
+    "Access to RegistryPro's Whois", "All rights",		/* .pro */
     NULL, NULL
 };
 

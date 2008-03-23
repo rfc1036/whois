@@ -1,16 +1,16 @@
-# Traduzione di whois.pot.
-# Copyright (C) 1999-2006 Marco d'Itri
+# Czech translation for whois
+# Petr Pisar <petr.pisar@atlas.cz>, 2008
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.7.14\n"
+"Project-Id-Version: whois 4.7.24\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-23 22:06+0100\n"
-"PO-Revision-Date: 2006-07-15 19:18+0200\n"
-"Last-Translator: Marco d'Itri <md@linux.it>\n"
-"Language-Team: Italian <tp@lists.linux.it>\n"
+"PO-Revision-Date: 2008-01-29 00:38+0100\n"
+"Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
+"Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../whois.c:117
@@ -20,33 +20,35 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
-"Versione %s.\n"
+"Verze %s.\n"
 "\n"
-"Segnalare i bug a %s.\n"
+"Chyby programu hlaste na %s (anglicky), chyby překladu na\n"
+"<translation-team-cs@lists.sourceforge.net> (česky).\n"
 
 #: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
 #: ../whois.c:273
 #, c-format
 msgid "Using server %s.\n"
-msgstr "Uso il server %s.\n"
+msgstr "Používám server %s.\n"
 
 #: ../whois.c:209
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
-"Questo TLD non ha un server whois, ma si pu� accedere al database tramite"
+"Tato TLD nemá žádný whoisový server, ale k whoisové databázi se lze dostat na"
 
 #: ../whois.c:217
 msgid "This TLD has no whois server."
-msgstr "Per questo TLD non esiste un server whois."
+msgstr "Tato TLD nemá žádný whoisový server."
 
 #: ../whois.c:220
 msgid "No whois server is known for this kind of object."
-msgstr "Non � noto alcun server whois per questo tipo di oggetto."
+msgstr "Pro tento druh objektu není znám žádný whoisový server."
 
 #: ../whois.c:223
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr ""
-"Numero dell'AS o della rete IP sconosciuto. Per favore aggiorna il programma."
+"Neznémé číslo AS nebo neznámá IP síť.\n"
+"Prosím, pořiďte si novou verzi tohoto programu."
 
 #. XXX should fail if p = 0.0.0.0
 #: ../whois.c:253
@@ -57,7 +59,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Cerco l'endpoint IPv4 %s di un indirizzo IPv6 6to4.\n"
+"Dotazuji se na IPv4 konec %s příslušející 6to4 IPv6 adrese.\n"
 "\n"
 
 #: ../whois.c:260
@@ -68,7 +70,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Cerco l'endpoint IPv4 %s di un indirizzo IPv6 Teredo.\n"
+"Dotazuji se na IPv4 konec %s příslušející Teredo IPv6 adrese.\n"
 "\n"
 
 #: ../whois.c:274
@@ -77,7 +79,7 @@ msgid ""
 "Query string: \"%s\"\n"
 "\n"
 msgstr ""
-"Richiesta: \"%s\"\n"
+"Znění dotazu: „%s“\n"
 "\n"
 
 #: ../whois.c:284
@@ -90,44 +92,44 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Trovato un riferimento a %s.\n"
+"Nalezen odkaz na %s.\n"
 "\n"
 
 #: ../whois.c:327 ../whois.c:330
 #, c-format
 msgid "Cannot parse this line: %s"
-msgstr "Impossibile interpretare questa riga: %s"
+msgstr "Tento řádek nemohu rozebrat: %s"
 
 #: ../whois.c:483
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr "Attenzione: sono stati usati dei flag RIPE con un server tradizionale."
+msgstr "Varování: RIPE příznak použit s tradičním serverem."
 
 #: ../whois.c:621 ../whois.c:754
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Errore catastrofico: il testo di avvertenze � cambiato.\n"
-"Aggiorna questo programma.\n"
+"Katastrofální chyba: text prohlášení byl pozměněn.\n"
+"Prosím, pořiďte si novou verzi tohoto programu.\n"
 
 #: ../whois.c:795
 #, c-format
 msgid "Host %s not found."
-msgstr "Host %s non trovato."
+msgstr "Jméno počítače %s nenalezeno."
 
 #: ../whois.c:805
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: servizio sconosciuto"
+msgstr "%s/TCP: neznámá služba"
 
 #: ../whois.c:824
 msgid "Timeout."
-msgstr "Tempo scaduto."
+msgstr "Čas vypršel."
 
 #: ../whois.c:830
 #, c-format
 msgid "Interrupted by signal %d..."
-msgstr "Interrotto dal segnale %d..."
+msgstr "Přerušeno signálem %d…"
 
 #: ../whois.c:1000
 #, c-format
@@ -164,83 +166,83 @@ msgid ""
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
-"Uso: whois [OPZIONE]... OGGETTO...\n"
+"Použití: whois [VOLBA]… OBJEKT…\n"
 "\n"
-"-l                 trova le corrispondenze un livello meno specifiche "
-"[RPSL]\n"
-"-L                 trova le corrispondenze meno specifiche\n"
-"-m                 trova le corrispondenze di primo livello pi� specifiche\n"
-"-M                 trova le corrispondenze pi� specifiche\n"
-"-c                 trova le corrispondenze pi� specifica contenente un\n"
-"                   attributo mnt-irt [solo RPSL]\n"
-"-x                 trova solo la corrispondenza esatta [solo RPSL]\n"
-"-d                 restituisce anche gli oggetti della delega del DNS "
-"[RPSL]\n"
-"-i ATTR[,ATTR]...  fa una ricerca inversa per l'ATTRibuto specificato\n"
-"-T TIPO[,TIPO]...  cerca solo oggetti del TIPO\n"
-"-K                 restituisce solo le chiavi primarie [solo RPSL]\n"
-"-r                 disabilita le ricerche ricorsive\n"
-"-R                 mostra la copia locale dell'oggetto domain anche se\n"
-"                   contiene un riferimento\n"
-"-a                 cerca in tutti i database\n"
-"-s SOURCE[,SOURCE]...  cerca il database da SOURCE\n"
-"-g SOURCE:FIRST-LAST  trova gli aggiornamenti di SOURCE dal seriale F a L\n"
-"-t TIPO        chiede il template per un oggetto del TIPO ('all' per una "
-"lista)\n"
-"-v TIPO            chiede il template prolisso per un oggetto del TIPO\n"
-"-q [version|sources|types]  chiede al server le informazioni indicate "
-"[RPSL]\n"
-"-F                 output grezzo veloce (implica -r)\n"
-"-h HOST            si connette al server HOST\n"
-"-p PORTA           si connette alla PORTA\n"
-"-H                 nasconde le avvertenze legali\n"
-"      --verbose    spiega cosa sta facendo\n"
-"      --help       mostra questo aiuto ed esce\n"
-"      --version    stampa le informazioni sulla versione ed esce\n"
+"-l                     o jednu úroveň širší dotaz [jen RPSL]\n"
+"-L                     nalezne všechny širší shody\n"
+"-m                     nalezne nejbližší širší shody\n"
+"-M                     nalezne všechny užší shody\n"
+"-c                     nalezne nejužší shodu obsahující atribut mnt-irt\n"
+"-x                     přesná shoda [jen RPSL]\n"
+"-d                     vrací též objekty delegace reverzního DNS [jen RPSL]\n"
+"-i ATR[,ATR]…          provede inverzní dotaz k daným ATRIBUTŮM\n"
+"-T TYP[,TYP]…          zajímá se jen o objekty daného TYPU\n"
+"-K                     vrátí pouze primární klíče [jen RPSL]\n"
+"-r                     vypne rekurzivní dohledávání kontaktů\n"
+"-R                     vynutí zobrazení místní kopie doménového objektu,\n"
+"                       i když obsahuje odkaz\n"
+"-a                     prohledá všechny databáze\n"
+"-s ZDROJ[,ZDROJ]…      prohledá databázi ze ZDROJE\n"
+"-g ZDROJ:PRVNÍ-POSLEDNÍ\n"
+"                       nalezne aktualizace ze ZDROJE se sériovým číslem\n"
+"                       mezi PRVNÍM a POSLEDNÍM\n"
+"-t TYP                 požaduje šablonu pro objekt druhu TYP („all“ pro "
+"seznam)\n"
+"-v TYP                 požaduje podrobnou šablonu pro objekt druhu TYP\n"
+"-q [verze|zdroje|typy]\n"
+"                       dotáže se na zadané informace o serveru [jen RPSL]\n"
+"-F                     rychlý neopracovaný výstup (implikuje -r)\n"
+"-h STROJ               připojí se na server STROJ\n"
+"-p PORT                připojí se na PORT\n"
+"-H                     skryje právní prohlášení\n"
+"      --verbose        vysvětlí, co se právě provádí\n"
+"      --help           zobrazí tuto nápovědu a skončí\n"
+"      --version        vypíše informace o verzi a skončí\n"
 
 #: ../mkpasswd.c:65
+#, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "crypt(3) standard a 56 bit basata su DES"
+msgstr "\tstandardní crypt(3) založený na 56bitové šifře DES"
 
 #: ../mkpasswd.c:134
-#, c-format
+#, fuzzy, c-format
 msgid "Invalid method '%s'.\n"
-msgstr "Il metodo '%s' non � valido.\n"
+msgstr "Neplatné číslo „%s“.\n"
 
 #: ../mkpasswd.c:143 ../mkpasswd.c:153
 #, c-format
 msgid "Invalid number '%s'.\n"
-msgstr "Il numero '%s' non � valido.\n"
+msgstr "Neplatné číslo „%s“.\n"
 
 #: ../mkpasswd.c:171
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr "Per maggior informazioni prova '%s --help'.\n"
+msgstr "Pro podrobnosti zkuste příkaz „%s --help“.\n"
 
 #: ../mkpasswd.c:211
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
-msgstr "Lunghezza del sale sbagliata: %d byte invece di %d.\n"
+msgstr "Chybná délka soli: %d bajty(ů), zatímco očekáváno %d.\n"
 
 #: ../mkpasswd.c:217
 #, c-format
 msgid "Illegal salt character '%c'.\n"
-msgstr "Il carattere '%c' non � valido in un sale.\n"
+msgstr "Neplatný znak v soli „%c“.\n"
 
 #: ../mkpasswd.c:254 ../mkpasswd.c:281
 #, c-format
 msgid "Password: "
-msgstr "Password: "
+msgstr "Heslo: "
 
 #: ../mkpasswd.c:275
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
-msgstr "Il carattere '0x%hhx' non � valido in una password.\n"
+msgstr "Zakázaný znak v hesle „0x%hhx“.\n"
 
 #: ../mkpasswd.c:297
 #, c-format
 msgid "Method not supported by crypt(3).\n"
-msgstr "Metodo non gestito da crypt(3).\n"
+msgstr ""
 
 #: ../mkpasswd.c:360
 #, c-format
@@ -249,12 +251,12 @@ msgid ""
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
-"Uso: mkpasswd [OPZIONI]... [PASSWORD [SALE]]\n"
-"Cifra la PASSWORD usando crypt(3).\n"
+"Použití: mkpasswd [VOLBY]… [HESLO [SŮL]]\n"
+"Zašifruje HESLO pomocí funkce crypt(3).\n"
 "\n"
 
 #: ../mkpasswd.c:363
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
@@ -271,22 +273,25 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
-"      -m, --metodo=TIPO     seleziona il TIPO di metodo\n"
-"      -S, --salt=SALE       usa il SALE specificato\n"
-"      -R, --rounds=NUMBER   usa il NUMERO indicato di iterazioni\n"
-"      -P, --password-fd=NUM legge la password dal file descriptor NUM\n"
-"                            invece che da /dev/tty\n"
-"      -s, --stdin           come --password-fd=0\n"
-"      -h, --help            mostra questo aiuto ed esce\n"
-"      -v, --version         mostra le informazioni sulla versione ed esce\n"
+"      -H, --hash=DRUH       vybere DRUH hashe\n"
+"      -S, --salt=SŮL        použije zadanou SŮL\n"
+"      -P, --password-fd=Č   přečte heslo z deskriptoru souboru Č\n"
+"                            místo z /dev/tty\n"
+"      -s, --stdin           jako --password-fd=0\n"
+"      -h, --help            zobrazí tuto nápovědu a skončí\n"
+"      -V, --version         vypíše informace o verzi a skončí\n"
 "\n"
-"Se la PASSWORD non � specificata viene chiesta interattivamente.\n"
-"Se il SALE non � specificato ne viene generato uno casuale.\n"
-"Se il TIPO � 'help' viene stampata la lista degli algoritmi disponibili.\n"
+"Chybí-li HESLO, bude na něj požádáno interaktivně.\n"
+"Nebude-li zadána SŮL, vygeneruje se náhodná.\n"
+"Bude-li DRUH „help“, vypíšou se dostupné algoritmy.\n"
 "\n"
-"Segnalare i bug a %s.\n"
+"Chyby programu hlaste na %s (anglicky), chyby překladu na\n"
+"<translation-team-cs@lists.sourceforge.net> (česky).\n"
 
 #: ../mkpasswd.c:391
-#, c-format
+#, fuzzy, c-format
 msgid "Available methods:\n"
-msgstr "Metodi disponibili:\n"
+msgstr "Dostupné algoritmy:\n"
+
+#~ msgid "Invalid hash type '%s'.\n"
+#~ msgstr "Neplatný druh hashe „%s“.\n"

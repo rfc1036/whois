@@ -1,18 +1,18 @@
-# Abgeleitet von whois.pot.
-# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>
-# Copyright (C) 2004 Adrian Bunk <bunk@fs.tum.de>
-#
-#
+# translation of whois to Euskara
+# Aitor Ibañez <aitiba@gmail.com>,2007
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Aitor Ibañez <aitiba@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.6.16\n"
+"Project-Id-Version: whois 4.5.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-23 22:06+0100\n"
-"PO-Revision-Date: 2004-06-15 00:08+0100\n"
-"Last-Translator: Adrian Bunk <bunk@fs.tum.de>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2002-08-24 16:22+0200\n"
+"Last-Translator: Aitor Ibaez <aitiba@gmail.com>\n"
+"Language-Team: Euskara <Librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../whois.c:117
@@ -22,32 +22,34 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
-"Version %s.\n"
+"%s bertsioa.\n"
 "\n"
-"Senden Sie Bugreports an %s.\n"
+"Bug berri baten jakinarazpena: %s.\n"
 
 #: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
 #: ../whois.c:273
 #, c-format
 msgid "Using server %s.\n"
-msgstr "Benutze Server %s.\n"
+msgstr "%s zerbitzaria erabiltzen.\n"
 
 #: ../whois.c:209
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Diese TLD hat keinen whois-Server, aber eine whois-Datenbank unter"
+msgstr ""
+"TLD honek ez du whois zerbitzaririk, baina whois databasera sarbidea "
+"daukazu..."
 
 #: ../whois.c:217
 msgid "This TLD has no whois server."
-msgstr "Diese TLD hat keinen whois-Server."
+msgstr "TLD honek ez du whois zerbitzaririk."
 
 #: ../whois.c:220
 msgid "No whois server is known for this kind of object."
-msgstr "Hierfür ist kein Whois-Server bekannt."
+msgstr "Objetu mota horrentzako, ez da whois zerbitzaririk ezagutzen."
 
 #: ../whois.c:223
+#, fuzzy
 msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr ""
-"Unbekannte AS- oder IP-Netzwerk-Nummer. Bitte upgraden Sie dieses Programm."
+msgstr "AS zenbaki edo IP sarea ezezaguna. Mesedez, programa eguneratu."
 
 #. XXX should fail if p = 0.0.0.0
 #: ../whois.c:253
@@ -58,7 +60,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Frage nach dem IPv4 Endpunkt %s einer 6to4 IPv6-Adresse.\n"
+"Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
 #: ../whois.c:260
@@ -69,7 +71,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Frage nach dem IPv4 Endpunkt %s einer 6to4 IPv6-Adresse.\n"
+"Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
 #: ../whois.c:274
@@ -78,11 +80,11 @@ msgid ""
 "Query string: \"%s\"\n"
 "\n"
 msgstr ""
-"Suche nach: \"%s\"\n"
+"Kontsulta: \"%s\"\n"
 "\n"
 
 #: ../whois.c:284
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
 "\n"
@@ -90,46 +92,45 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"\n"
-"Verweis auf %s gefunden.\n"
+"$s-ra erreferentzia aurkituta.\n"
 "\n"
 
 #: ../whois.c:327 ../whois.c:330
 #, c-format
 msgid "Cannot parse this line: %s"
-msgstr "Kann diese Zeile nicht parsen: %s"
+msgstr "Lerro hau, %s , ezin da prozesatu."
 
 #: ../whois.c:483
+#, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr ""
-"Warnung: RIPE-Flags wurden mit einem \"traditionellen\" Server verwendet."
+msgstr "Oharra: RIPE flags-ak ohiko zerbitzariengatik ezikusiak izaten dira."
 
 #: ../whois.c:621 ../whois.c:754
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Schwerer Fehler: Haftungsausschlusstext wurde geaendert.\n"
-"Bitte upgraden sie dieses Programm.\n"
+"Hondamen arriskua: erabilpen balditzen textua aldatu egin da.\n"
+"Programa eguneratu.\n"
 
 #: ../whois.c:795
 #, c-format
 msgid "Host %s not found."
-msgstr "Host %s nicht gefunden."
+msgstr "%s Host-a ez da aurkitu."
 
 #: ../whois.c:805
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: unbekannter Dienst"
+msgstr "%s/tcp: zerbitzu ezezaguna"
 
 #: ../whois.c:824
 msgid "Timeout."
-msgstr "Timeout."
+msgstr "Denbora muga."
 
 #: ../whois.c:830
 #, c-format
 msgid "Interrupted by signal %d..."
-msgstr "Erhielt Signal %d, unterbrochen..."
+msgstr "%d seinalearengatik etena..."
 
 #: ../whois.c:1000
 #, fuzzy, c-format
@@ -166,76 +167,81 @@ msgid ""
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
-"Aufruf: whois [OPTION]... OBJEKT...\n"
+"Erabilpena: whois [AUKERAK]... OBJETUA...\n"
 "\n"
-"-a                     alle Datenbanken durchsuchen\n"
-"-F                     \"schnelle\" Rohdatenausgabe (impliziert -r)\n"
-"-g QUELLE:BEGINN-ENDE  zeige Aenderungen auf QUELLE von BEGINN bis ENDE\n"
-"-h HOST                Verbinde zum Server HOST\n"
-"-H                     Haftungsausschluss nicht anzeigen\n"
-"-i ATTR[,ATTR]...      angegebene ATTRibute rückauflösen\n"
-"-x                     exakte Suche [nur RPSL]\n"
-"-l                     eine Ebene unspezifischere Suche [nur RPSL]\n"
-"-L                     suche unspezifischere Treffer\n"
-"-M                     suche spezifischere Treffer\n"
-"-m                     eine Ebene spezifischere Suche\n"
-"-r                     keine Rückwärtsauflösung\n"
-"-p PORT                verbinde zu PORT\n"
-"-R                     zeige lokale Kopie des Domainobjekts, auch wenn es\n"
-"                       einen Verweis enthält\n"
-"-S                     erlaube dem Server, \"syntaktischen Zucker\" \n"
-"                       wegzulassen\n"
-"-s QUELLE[,QUELLE]...  suche in der Datenbank von QUELLE\n"
-"-T TYP[,TYP]...        suche nur nach Objekten vom Typ TYP\n"
-"-t TYP                 fordere Formular für Typ TYP an (\"all\" für eine \n"
-"                       Liste)-v TYP                 fordere ausführliches "
-"Formular für Typ TYP an\n"
-"-q [version|quellen]   frage nach angegebener Server-Information [nur RPSL]\n"
-"-d                     zeige auch DNS-Rückübertragungsobjekte [nur RPSL]\n"
-"-K                     zeige nur Primärschlüssel [nur RPSL]\n"
-"-V    --verbose        erkläre, was getan wird\n"
-"      --help           zeige diese Hilfe\n"
-"      --version        zeige Version\n"
+"-a                 data base guztietan bilatzen du\n"
+"-F                 modo azkarra (-r inplikatzen du)\n"
+"-g SOURCE:HASIERA-BUKAERA  H eta B tarteko serietan,SOURCE-ren agerraldiak "
+"bilatzen ditu\n"
+"-h HOST            HOST zerbitzarira konektatzen da\n"
+"-H                 abisu-legala ezkutatzen du\n"
+"-i ATTR[,ATTR]...  adierazitako ATTRibute-arentzat alderantzizko bilaketa "
+"egin du\n"
+"-x                 bilaketa zehatza [RPSL bakarrik]\n"
+"-l                 adierazitako [RPSL] bilaketarentzat, maila bat jeisten "
+"du\n"
+"-L                 mapeketa gutxien espezifikoenak bilatzen ditu\n"
+"-M                 mapeketa espezifikoenak bilatzen ditu\n"
+"-m                 lehen maila espezifikoena bilatzen du\n"
+"-r                 alderantzizko bilaketa ezgaitzen du\n"
+"-p PORTUA          PORTUA konektatzen du\n"
+"-R                 Objektu zehatzaren kopia lokala eraskuten "
+"du,                    erreferentzia bat eduki ere\n"
+"-S                 zerbitzariari adierazten dio pekulariedade sintaktikoak \t"
+"\t    ez erabiltzea \n"
+"-s SOURCE[,SOURCE]...  SOURCE data basea bilatzen du\n"
+"-T TIPO[,TIPO]...  TIPO objektu motak bakarrik bilatzen ditu\n"
+"-t TIPO        TIPO objektu mota batentzako, txantiloiak                "
+"lortzen ditu ('all' lista batentzako)\n"
+"-v TIPO            TIPO objektu baten txantiloi zehatza lortzen du\n"
+"-q [bertsioa|sources]  zerbitzariaren informazioa kontsultatzen "
+"du                        [RPSL bakarrik]\n"
+"-d                 alderantizko DNSaren ordezkaritza itzultzen du "
+"[RPSL                    bakarrik]\n"
+"-K                 oinarrizko-gakoak bakarrik [RPSL bakarrik]\n"
+"      --verbose    egiten ari dena bakarrik, eraskusten du\n"
+"      --help       laguntza pantaila hau erakusten du eta amaitzen du\n"
+"      --version    programaren bertsioa erakusten du eta amaitzen du\n"
 
 #: ../mkpasswd.c:65
 #, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "\tStandard 56 Bit DES-basiertes crypt(3)"
+msgstr "56 bits-etako DESan oinarritutako \tcrypt(3)-a"
 
 #: ../mkpasswd.c:134
 #, fuzzy, c-format
 msgid "Invalid method '%s'.\n"
-msgstr "Falsche Nummer '%s'.\n"
+msgstr "'%s' zenbakia ez da baliozkoa.\n"
 
 #: ../mkpasswd.c:143 ../mkpasswd.c:153
 #, c-format
 msgid "Invalid number '%s'.\n"
-msgstr "Falsche Nummer '%s'.\n"
+msgstr "'%s' zenbakia ez da baliozkoa.\n"
 
 #: ../mkpasswd.c:171
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr "Versuchen Sie '%s --help' für mehr Informationen.\n"
+msgstr "%s --help informazio gehiagorako.\n"
 
 #: ../mkpasswd.c:211
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
-msgstr "Falsche Salt-Länge: %d Byte(s), aber%d wurden erwartet.\n"
+msgstr "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 
 #: ../mkpasswd.c:217
 #, c-format
 msgid "Illegal salt character '%c'.\n"
-msgstr "Illegaler Salt-Buchstabe '%c'.\n"
+msgstr "'%c' karakterea, hazian, ilegala da.\n"
 
 #: ../mkpasswd.c:254 ../mkpasswd.c:281
 #, c-format
 msgid "Password: "
-msgstr "Passwort:"
+msgstr "Pasahitza: "
 
 #: ../mkpasswd.c:275
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
-msgstr "Illegaler Passwort-Buchstabe '0x%hhx'.\n"
+msgstr "'0x%hhx' password karakterea ilegala da.\n"
 
 #: ../mkpasswd.c:297
 #, c-format
@@ -249,12 +255,12 @@ msgid ""
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
-"Aufruf: mkpasswd [OPTIONEN] ... [PASSWORT] [SALT]]\n"
-"Verschluesselt das PASWORT mit crypt(3).\n"
+"Erabilpena: mkpasswd [AUKERAK]... [PASAHITZA [HAZIA]]\n"
+"PASAHITZA crypt(3) erabiliz enkriptatu.\n"
 "\n"
 
 #: ../mkpasswd.c:363
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
@@ -271,26 +277,54 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
+"      -H, --hash=MOTA       Hash MOTA funtzioa aukeratu\n"
+"      -S, --salt=HAZI    HAZI egokia erabili\n"
+"      -P, --password-fd=NUM   /dev/tty-ak irakurri ordez, NUM deskriptore-"
+"gakoa irakurtzen du\n"
+"      -s, --stdin           /dev/tty-ak irakurri ordez, stdin-gakoa "
+"irakurtzen du\n"
+"      -h, --help           laguntza pantaila erakusten du\n"
+"      -v, --version        programaren bertsioa erakusten du\n"
+"\n"
+"GAKOA zehazten ez bada, modu interaktiboan eskatuko da.\n"
+"HAZIa zehazten ez bada, aleatorioki bat sortuko da.\n"
+"MOTA zehazten ez bada, erabilgarri dauden algoritmoak inprimituko dira.\n"
+"\n"
+"Bug berri baten jakinarazpena: %s.\n"
 
 #: ../mkpasswd.c:391
 #, fuzzy, c-format
 msgid "Available methods:\n"
-msgstr "Verfügbare Algorithmen:\n"
+msgstr "Algoritmo erabilgarriak:\n"
 
 #~ msgid "Invalid hash type '%s'.\n"
-#~ msgstr "Falscher Hash-Typ '%s'.\n"
+#~ msgstr "'%s' hash funtzioa ez da baliozkoa.\n"
 
 #~ msgid "Using default server %s.\n"
-#~ msgstr "Benutze voreingestellten Server %s.\n"
+#~ msgstr "Aurredefinitutako %s zerbitzaria erabiltzen.\n"
 
+#, fuzzy
 #~ msgid ""
 #~ "\n"
 #~ "Found referral to %s.\n"
 #~ "\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Verweis auf %s gefunden.\n"
+#~ "crsnic-en %s-ri, erreferentzi bat aurkitu zaio.\n"
 #~ "\n"
 
 #~ msgid "Detected referral to %s on %s.\n"
-#~ msgstr "Verweis auf %s gefunden bei %s.\n"
+#~ msgstr "%s-en %s-ri erreferentzia detektatua.\n"
+
+#~ msgid ""
+#~ "I don't know where this IP has been delegated.\n"
+#~ "I'll try ARIN and hope for the best..."
+#~ msgstr ""
+#~ "Ez dakit zeineri delegatua izan zaion IP helbidea hori.\n"
+#~ "ARIN-ekin porbatuko dut, zorte gehiagoren bila..."
+
+#~ msgid "I guess it's a netblock name but I don't know where to look it up."
+#~ msgstr "netblock-en izen bat dirudi, baina ez dakit, non bilatu dezakedan."
+
+#~ msgid "I guess it's a domain but I don't know where to look it up."
+#~ msgstr "Domeinu izen bat dirudi, baina ez dakit, non bilatu dezakedan."

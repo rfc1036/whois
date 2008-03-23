@@ -2,12 +2,12 @@
 # Copyright (C) 2006 THE whois'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the whois package.
 # Anderson Goulart <globalx@gmail.com>, 2006.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-15 19:18+0200\n"
+"POT-Creation-Date: 2008-03-23 22:06+0100\n"
 "PO-Revision-Date: 2006-04-26 21:03-0300\n"
 "Last-Translator: Anderson Goulart <globalx@gmail.com>\n"
 "Language-Team: Portuguese/Brazil\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:114
+#: ../whois.c:117
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -26,43 +26,32 @@ msgstr ""
 "\n"
 "Reporte bugs para %s \n"
 
-#: ../whois.c:164 ../whois.c:257
+#: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
+#: ../whois.c:273
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Utilizando servidor %s.\n"
 
-#: ../whois.c:206
+#: ../whois.c:209
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Este TLD não tem servidor whois, mas você pode acessar a base de dados do "
 "whois em"
 
-#: ../whois.c:214
+#: ../whois.c:217
 msgid "This TLD has no whois server."
 msgstr "Não existe servidor whois para este TLD."
 
-#: ../whois.c:217
+#: ../whois.c:220
 msgid "No whois server is known for this kind of object."
 msgstr "Nenhum servidor whois é conhecido para este tipo de objeto."
 
-#: ../whois.c:220
+#: ../whois.c:223
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Número AS ou rede IP desconhecidos. Por favor, atualize este programa."
 
-#: ../whois.c:224
-msgid "Connecting to whois.crsnic.net."
-msgstr "Conectando em whois.crsnic.net."
-
-#: ../whois.c:230
-msgid "Connecting to whois.publicinterestregistry.net."
-msgstr "Conectando em whois.publicinterestregistry.net."
-
-#: ../whois.c:236
-msgid "Connecting to whois.nic.cc."
-msgstr "Conectando em whois.nic.cc."
-
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:243
+#: ../whois.c:253
 #, c-format
 msgid ""
 "\n"
@@ -73,7 +62,18 @@ msgstr ""
 "Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
 "\n"
 
-#: ../whois.c:258
+#: ../whois.c:260
+#, fuzzy, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a Teredo IPv6 address.\n"
+"\n"
+msgstr ""
+"\n"
+"Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
+"\n"
+
+#: ../whois.c:274
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Consulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:268
+#: ../whois.c:284
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "Uma referência para·%s encontrada.\n"
 "\n"
 
-#: ../whois.c:311 ../whois.c:314
+#: ../whois.c:327 ../whois.c:330
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Não pôde processar esta linha: %s"
 
-#: ../whois.c:451
+#: ../whois.c:483
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Aviso: RIPE flags utilizados com um servidor tradicional."
 
-#: ../whois.c:586
+#: ../whois.c:621 ../whois.c:754
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,26 +112,26 @@ msgstr ""
 "Erro catastrófico: o texto das condições de uso foi alterado.\n"
 "Por favor, atualize este programa. \n"
 
-#: ../whois.c:713
+#: ../whois.c:795
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s não encontrado."
 
-#: ../whois.c:723
+#: ../whois.c:805
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: serviço desconhecido"
 
-#: ../whois.c:742
+#: ../whois.c:824
 msgid "Timeout."
 msgstr "Tempo esgotado."
 
-#: ../whois.c:748
+#: ../whois.c:830
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrompido pelo sinal %d..."
 
-#: ../whois.c:860
+#: ../whois.c:1000
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -202,47 +202,53 @@ msgstr ""
 "      --help           exibe essa ajuda e sai\n"
 "      --version        exibe informações sobre a versão e sai\n"
 
-#: ../mkpasswd.c:55
-msgid "\tstandard 56 bit DES-based crypt(3)"
+#: ../mkpasswd.c:65
+#, fuzzy
+msgid "standard 56 bit DES-based crypt(3)"
 msgstr "\tstandard 56 bit DES-based crypt(3)"
 
-#: ../mkpasswd.c:103
-#, c-format
-msgid "Invalid hash type '%s'.\n"
-msgstr "Hash-type inválido '%s'.\n"
+#: ../mkpasswd.c:134
+#, fuzzy, c-format
+msgid "Invalid method '%s'.\n"
+msgstr "Número inválido '%s'.\n"
 
-#: ../mkpasswd.c:112
+#: ../mkpasswd.c:143 ../mkpasswd.c:153
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Número inválido '%s'.\n"
 
-#: ../mkpasswd.c:130
+#: ../mkpasswd.c:171
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Tente '%s --help para maiores informações.\n"
 
-#: ../mkpasswd.c:159
+#: ../mkpasswd.c:211
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr ""
 "Tamanho do salt incorreto: %d byte(s) enquanto %d era(m) esperado(s).\n"
 
-#: ../mkpasswd.c:165
+#: ../mkpasswd.c:217
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Caractere salt ilegal '%c'.\n"
 
-#: ../mkpasswd.c:189 ../mkpasswd.c:216
+#: ../mkpasswd.c:254 ../mkpasswd.c:281
 #, c-format
 msgid "Password: "
 msgstr "Senha: "
 
-#: ../mkpasswd.c:210
+#: ../mkpasswd.c:275
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Caractere de senha ilegal '0x%hhx'.\n"
 
-#: ../mkpasswd.c:254
+#: ../mkpasswd.c:297
+#, c-format
+msgid "Method not supported by crypt(3).\n"
+msgstr ""
+
+#: ../mkpasswd.c:360
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -253,11 +259,12 @@ msgstr ""
 "Encripta a PASSWORD utilizando crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:257
-#, c-format
+#: ../mkpasswd.c:363
+#, fuzzy, c-format
 msgid ""
-"      -H, --hash=TYPE       select hash TYPE\n"
+"      -m, --method=TYPE     select method TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
+"      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
 "      -P, --password-fd=NUM read the password from file descriptor NUM\n"
 "                            instead of /dev/tty\n"
 "      -s, --stdin           like --password-fd=0\n"
@@ -266,7 +273,7 @@ msgid ""
 "\n"
 "If PASSWORD is missing then it is asked interactively.\n"
 "If no SALT is specified, a random one is generated.\n"
-"If TYPE is 'help', available algorithms are printed.\n"
+"If TYPE is 'help', available methods are printed.\n"
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
@@ -284,7 +291,10 @@ msgstr ""
 "\n"
 "Reporte bugs para %s.\n"
 
-#: ../mkpasswd.c:284
-#, c-format
-msgid "Available algorithms:\n"
+#: ../mkpasswd.c:391
+#, fuzzy, c-format
+msgid "Available methods:\n"
 msgstr "Algoritmos disponíveis: \n"
+
+#~ msgid "Invalid hash type '%s'.\n"
+#~ msgstr "Hash-type inválido '%s'.\n"

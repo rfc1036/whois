@@ -3,6 +3,7 @@
 306	371	whois.nic.mil
 379	508	whois.nic.mil
 1101	1200	ripe
+1267	1275	ripe
 1877	1901	ripe
 2043	2043	ripe
 2047	2047	ripe
@@ -27,7 +28,7 @@
 9840	9871	whois.nic.or.kr
 9943	9982	whois.nic.or.kr
 9990	10021	whois.nic.ad.jp
-9261	10067	apnic
+9216	10067	apnic
 10034	10073	whois.nic.or.kr
 10154	10198	whois.nic.or.kr
 10074	10239	apnic
@@ -59,6 +60,7 @@
 37888	38911	apnic
 38912	39935	ripe
 40960	45055	ripe
+45056	46079	apnic
 
 # catch all: everything else comes from ARIN
 1	40959	arin

@@ -1,4 +1,4 @@
-/* Copyright 1999-2007 by Marco d'Itri <md@linux.it>.
+/* Copyright 1999-2008 by Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -224,19 +224,26 @@ const char *handle_query(const char *hserver, const char *hport,
 	    return NULL;
 	case 4:
 	    if (verb)
-		puts(_("Connecting to whois.crsnic.net."));
+		printf(_("Using server %s.\n"), "whois.crsnic.net");
 	    sockfd = openconn("whois.crsnic.net", NULL);
 	    server = query_crsnic(sockfd, qstring);
 	    break;
 	case 7:
 	    if (verb)
-		puts(_("Connecting to whois.publicinterestregistry.net."));
+		printf(_("Using server %s.\n"),
+			"whois.publicinterestregistry.net");
 	    sockfd = openconn("whois.publicinterestregistry.net", NULL);
 	    server = query_pir(sockfd, qstring);
 	    break;
+	case 8:
+	    if (verb)
+		printf(_("Using server %s.\n"), "whois.afilias-grs.info");
+	    sockfd = openconn("whois.afilias-grs.info", NULL);
+	    server = query_afilias(sockfd, qstring);
+	    break;
 	case 9:
 	    if (verb)
-		puts(_("Connecting to whois.nic.cc."));
+		printf(_("Using server %s.\n"), "whois.nic.cc");
 	    sockfd = openconn("whois.nic.cc", NULL);
 	    server = query_crsnic(sockfd, qstring);
 	    break;
@@ -700,6 +707,53 @@ const char *query_pir(const int sock, const char *query)
 	err_sys("fgets");
 
     free(temp);
+    return ret;
+}
+
+const char *query_afilias(const int sock, const char *query)
+{
+    char *temp, buf[2000], *p, *ret = NULL;
+    FILE *fi;
+    int hide = hide_discl;
+    int state = 0;
+
+    temp = malloc(strlen(query) + 2 + 1);
+    strcpy(temp, query);
+    strcat(temp, "\r\n");
+
+    fi = fdopen(sock, "r");
+    if (write(sock, temp, strlen(temp)) < 0)
+	err_sys("write");
+
+    while (fgets(buf, sizeof(buf), fi)) {
+	if (state == 0 && strneq(buf, "Domain Name:", 12))
+	    state = 1;
+	if (state == 1 && strneq(buf, "Whois Server:", 13)) {
+	    char *p, *q;
+
+	    for (p = buf; *p != ':'; p++);	/* skip until colon */
+	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
+	    ret = malloc(strlen(p) + 1);
+	    for (q = ret; *p != '\n' && *p != '\r' && *p != ' '; *q++ = *p++)
+		; /*copy data*/
+	    *q = '\0';
+	}
+
+	if (hide_line(&hide, buf))
+	    continue;
+
+	for (p = buf; *p && *p != '\r' && *p != '\n'; p++);
+	*p = '\0';
+	fprintf(stdout, "%s\n", buf);
+    }
+    if (ferror(fi))
+	err_sys("fgets");
+    fclose(fi);
+
+    if (hide > HIDE_UNSTARTED)
+	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
+		   "Please upgrade this program.\n"));
+
     return ret;
 }
 

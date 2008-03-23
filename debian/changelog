@@ -1,3 +1,21 @@
+whois (4.7.25) unstable; urgency=low
+
+  * mkpasswd: added support for the SHA-256 and SHA-512 methods from
+    glibc 2.7.
+  * mkpasswd: added support for FreeBSD-style Blowfish and NT-Hash methods.
+  * mkpasswd: added support for variable-rounds methods (OpenBSD-style
+    Blowfish and SHA-256/SHA-512).
+  * mkpasswd: renamed -H/--hash to -m/--method.
+  * mkpasswd: finished support for libxcrypt (not enabled by default).
+  * Added NONE entries for the rest of .uk SLD. (Closes: #471963)
+  * Added the .bd, .gh, .lc, .sc, .ma, .me, .om and .rs TLD servers.
+  * Updated the .aero, .bb and .bz TLD servers. (Closes: #448683)
+  * Added another RIPE ERX ASN block. (Closes: #452328)
+  * Added a new ASN allocation.
+  * Added Basque and Czech translations.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 23 Mar 2008 19:18:34 +0100
+
 whois (4.7.24) unstable; urgency=medium
 
   * Added new ASN allocations.

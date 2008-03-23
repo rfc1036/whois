@@ -18,6 +18,7 @@ int hide_line(int *hiding, const char *const line);
 const char *do_query(const int, const char *);
 const char *query_crsnic(const int, const char *);
 const char *query_pir(const int, const char *);
+const char *query_afilias(const int, const char *);
 int openconn(const char *, const char *);
 void usage(void);
 void alarm_handler(int);
