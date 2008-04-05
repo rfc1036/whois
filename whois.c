@@ -32,16 +32,14 @@
 #include <idna.h>
 #endif
 
-#ifndef AI_IDN
-#define AI_IDN 0
-#endif
-
 /* Application-specific */
 #include "data.h"
 #include "whois.h"
+#include "utils.h"
 
-#define streq(a, b) (strcmp(a, b) == 0)
-#define strneq(a, b, n) (strncmp(a, b, n) == 0)
+/* hack */
+#define malloc(s) NOFAIL(malloc(s))
+#define realloc(p, s) NOFAIL(realloc(p, s))
 
 /* Global variables */
 int sockfd, verb = 0;
@@ -52,10 +50,10 @@ int hide_discl = HIDE_UNSTARTED;
 int hide_discl = HIDE_DISABLED;
 #endif
 
-char *client_tag = (char *)IDSTRING;
+const char *client_tag = (char *)IDSTRING;
 
 #ifdef HAVE_GETOPT_LONG
-static struct option longopts[] = {
+static const struct option longopts[] = {
     {"help",	no_argument,		NULL, 0  },
     {"version",	no_argument,		NULL, 1  },
     {"verbose",	no_argument,		NULL, 2  },
@@ -80,6 +78,9 @@ int main(int argc, char *argv[])
     bindtextdomain(NLS_CAT_NAME, LOCALEDIR);
     textdomain(NLS_CAT_NAME);
 #endif
+
+    /* prepend options from environment */
+    argv = merge_args(getenv("WHOIS_OPTIONS"), argv, &argc);
 
     while ((ch = GETOPT_LONGISH(argc, argv,
 		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:St:T:v:V:x", longopts, 0)) > 0) {
@@ -364,14 +365,14 @@ const char *whichwhois(const char *s)
 {
     unsigned long ip, as32;
     unsigned int i;
-    char *colon;
+    const char *colon;
 
     /* IPv6 address */
     if ((colon = strchr(s, ':'))) {
 	unsigned long v6prefix, v6net;
 
 	/* RPSL hierarchical objects */
-	if (strncasecmp(s, "as", 2) == 0) {
+	if (strncaseeq(s, "as", 2)) {
 	    if (isasciidigit(s[2]))
 		return whereas(atoi(s + 2));
 	    else
@@ -400,7 +401,7 @@ const char *whichwhois(const char *s)
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
-	if (strncasecmp(s, "as", 2) == 0 &&	/* it's an AS */
+	if (strncaseeq(s, "as", 2) &&		/* it's an AS */
 		(isasciidigit(s[2]) || s[2] == ' '))
 	    return whereas(atoi(s + 2));
 	if (*s == '!')	/* NSI NIC handle */
@@ -410,8 +411,7 @@ const char *whichwhois(const char *s)
     }
 
     /* ASN32? */
-    if (strncasecmp(s, "as", 2) == 0 && s[2] &&
-	    (as32 = asn32_to_long(s + 2)) != 0)
+    if (strncaseeq(s, "as", 2) && s[2] && (as32 = asn32_to_long(s + 2)) != 0)
 	return whereas32(as32);
 
     /* smells like an IP? */
@@ -431,7 +431,7 @@ const char *whichwhois(const char *s)
     if (!strchr(s, '.')) {
 	/* search for strings at the start of the word */
 	for (i = 0; nic_handles[i]; i += 2)
-	    if (strncasecmp(s, nic_handles[i], strlen(nic_handles[i])) == 0)
+	    if (strncaseeq(s, nic_handles[i], strlen(nic_handles[i])))
 		return nic_handles[i + 1];
 	/* it's probably a network name */
 	return "";
@@ -502,7 +502,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
 #endif
     if (!isripe && (streq(server, "whois.nic.mil") ||
 	    streq(server, "whois.nic.ad.jp")) &&
-	    strncasecmp(query, "AS", 2) == 0 && isasciidigit(query[2]))
+	    strncaseeq(query, "AS", 2) && isasciidigit(query[2]))
 	/* FIXME: /e is not applied to .JP ASN */
 	sprintf(buf, "AS %s", query + 2);	/* fix query for DDN */
     else if (!isripe && (streq(server, "whois.nic.ad.jp") ||
@@ -712,7 +712,7 @@ const char *query_pir(const int sock, const char *query)
 
 const char *query_afilias(const int sock, const char *query)
 {
-    char *temp, buf[2000], *p, *ret = NULL;
+    char *temp, buf[2000], *ret = NULL;
     FILE *fi;
     int hide = hide_discl;
     int state = 0;
@@ -739,12 +739,14 @@ const char *query_afilias(const int sock, const char *query)
 	    *q = '\0';
 	}
 
-	if (hide_line(&hide, buf))
-	    continue;
+	if (!hide_line(&hide, buf)) {
+	    char *p;
 
-	for (p = buf; *p && *p != '\r' && *p != '\n'; p++);
-	*p = '\0';
-	fprintf(stdout, "%s\n", buf);
+	    for (p = buf; *p && *p != '\r' && *p != '\n'; p++)
+		;
+	    *p = '\0';
+	    fprintf(stdout, "%s\n", buf);
+	}
     }
     if (ferror(fi))
 	err_sys("fgets");
@@ -1026,29 +1028,5 @@ void usage(void)
 "      --version        output version information and exit\n"
 ));
     exit(0);
-}
-
-
-/* Error routines */
-void err_sys(const char *fmt, ...)
-{
-    va_list ap;
-
-    va_start(ap, fmt);
-    vfprintf(stderr, fmt, ap);
-    fprintf(stderr, ": %s\n", strerror(errno));
-    va_end(ap);
-    exit(2);
-}
-
-void err_quit(const char *fmt, ...)
-{
-    va_list ap;
-
-    va_start(ap, fmt);
-    vfprintf(stderr, fmt, ap);
-    fputs("\n", stderr);
-    va_end(ap);
-    exit(2);
 }
 

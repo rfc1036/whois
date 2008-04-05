@@ -1,6 +1,4 @@
 # NIC? means I have not been able to find the registry
-# UPR means the TLD is managed by UPR, but I could not find any info
-#
 
 .br.com	whois.centralnic.net
 .cn.com	whois.centralnic.net
@@ -321,7 +319,7 @@
 .yt	whois.nic.yt
 .yu	NONE		# www.nic.yu
 .ac.za	whois.ac.za
-.co.za	WEB http://whois.co.za/
+.co.za	WEB http://whois.co.za/	# whois.coza.net.za contains much less data
 .gov.za	whois.gov.za
 #.net.za	whois.net.za
 .org.za	WEB http://www.org.za/	# rwhois.org.za:4321

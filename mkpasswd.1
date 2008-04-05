@@ -33,6 +33,10 @@ than the hashed password is printed on stdout.
 .TP
 .B -s, --stdin
 Like \fI--password-fd=0\fP.
+.SH "ENVIRONMENT"
+.IP "MKPASSWD_OPTIONS"
+A list of options which will be evalued before the ones specified on the
+command line.
 .SH BUGS
 If the \fI--stdin\fP option is used, passwords containing some control
 characters may not be read correctly.

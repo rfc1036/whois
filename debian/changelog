@@ -1,3 +1,11 @@
+whois (4.7.26) unstable; urgency=medium
+
+  * Added support for passing command line options in the environment
+    variables WHOIS_OPTIONS and MKPASSWD_OPTIONS. (Closes: #324858)
+  * Updated the French translation. (Closes: #474307)
+
+ -- Marco d'Itri <md@linux.it>  Sat, 05 Apr 2008 04:53:26 +0200
+
 whois (4.7.25) unstable; urgency=low
 
   * mkpasswd: added support for the SHA-256 and SHA-512 methods from

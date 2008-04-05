@@ -9,7 +9,7 @@ VERSION := $(shell dpkg-parsechangelog | sed -n 's/\+.*$$//; /^Version/s/.* //p'
 
 build:
 	dh_testdir
-	$(MAKE) whois mkpasswd \
+	$(MAKE) \
 		OPTS="-O2 -g -DCONFIG_FILE=\\\"/etc/whois.conf\\\"" \
 		HAVE_LIBIDN=1
 	cd po && $(MAKE) whois.pot

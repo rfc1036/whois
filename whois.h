@@ -36,9 +36,6 @@ const char *handle_query(const char *server, const char *port,
 void split_server_port(const char *const input, const char **server,
 		       const char **port);
 
-void err_quit(const char *,...);
-void err_sys(const char *,...);
-
 
 /* flags for RIPE-like servers */
 const char *ripeflags="abBcdFGKlLmMrRSx";

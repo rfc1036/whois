@@ -84,13 +84,13 @@ current system locale and converted to the IDN ASCII Compatible Encoding.
 When querying \fIwhois.nic.ad.jp\fP and \fIwhois.jprs.jp\fP english text
 is requested unless the
 \fILANG\fP environment variable specifies a Japanese locale.
+.IP "WHOIS_OPTIONS"
+A list of options which will be evalued before the ones specified on the
+command line.
 .IP "WHOIS_SERVER"
 This server will be queried if the program cannot guess where some kind
 of objects are located. If the variable does not exist then
 \fIwhois.arin.net\fP will be queried.
-.IP "WHOIS_HIDE"
-If this variable is defined, legal disclaimers will be hidden even if
-the \fI\-H\fP flag is not used.
 .SH "SEE ALSO"
 \fIRFC 3912\fP: WHOIS Protocol Specification
 .PP 

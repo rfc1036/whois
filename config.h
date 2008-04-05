@@ -1,6 +1,6 @@
 /* Program version */
 /* not for the inetutils version */
-#define VERSION "4.7.25"
+#define VERSION "4.7.26"
 
 /* Configurable features */
 
@@ -39,6 +39,9 @@
 # if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
 #  define HAVE_GETADDRINFO
 # endif
+# if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 7
+#  define HAVE_SHA_CRYPT
+# endif
 #endif
 
 /* Linux, Solaris 5, FreeBSD 5.x. What else? */
@@ -59,27 +62,5 @@
 # ifndef LOCALEDIR
 #  define LOCALEDIR     "/usr/share/locale"
 # endif
-#endif
-
-#ifdef HAVE_GETOPT_LONG
-# define GETOPT_LONGISH(c, v, o, l, i) getopt_long(c, v, o, l, i)
-#else
-# define GETOPT_LONGISH(c, v, o, l, i) getopt(c, v, o)
-#endif
-
-
-/* NLS stuff */
-#ifdef ENABLE_NLS
-# include <libintl.h>
-# include <locale.h>
-# define _(a) (gettext (a))
-# ifdef gettext_noop
-#  define N_(a) gettext_noop (a)
-# else
-#  define N_(a) (a)
-# endif
-#else
-# define _(a) (a)
-# define N_(a) a
 #endif
 
