@@ -194,8 +194,8 @@
 .ly	WEB http://www.lydomains.com/
 .ma	whois.iam.net.ma # www.nic.ma
 .mc	whois.ripe.net
-.md	WEB http://www.dns.md/whois.html
-.me	WEB http://whois.nic.me/
+.md	WEB http://www.dns.md/wh1.php
+.me	whois.meregistry.net
 .mg	NONE		# www.nic.mg
 .mh	NONE		# www.nic.net.mh
 .mk	NONE		# NIC? http://www.mpt.com.mk
@@ -205,7 +205,7 @@
 .mo	WEB http://www.monic.net.mo/
 .mp	NONE		# www.nic.mp
 .mq	whois.nic.mq
-.mr	NONE		# http://www.univ-nkc.mr/nic_mr.html www.nic.mr ?
+.mr	NONE		# www.nic.mr
 .ms	whois.adamsnames.tc
 .mt	WEB http://www.nic.org.mt/dir/home.html
 .mu	WEB http://www.nic.mu/whois.jsp

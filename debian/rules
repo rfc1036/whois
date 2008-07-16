@@ -9,9 +9,7 @@ VERSION := $(shell dpkg-parsechangelog | sed -n 's/\+.*$$//; /^Version/s/.* //p'
 
 build:
 	dh_testdir
-	$(MAKE) \
-		OPTS="-O2 -g -DCONFIG_FILE=\\\"/etc/whois.conf\\\"" \
-		HAVE_LIBIDN=1
+	$(MAKE) CONFIG_FILE="/etc/whois.conf" HAVE_LIBIDN=1
 	cd po && $(MAKE) whois.pot
 	touch $@
 
@@ -40,6 +38,7 @@ binary-arch: checkroot build
 	dh_shlibdeps
 	dh_installdeb
 	dh_gencontrol
+	dh_md5sums
 	dh_builddeb
 
 binary: binary-arch

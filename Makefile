@@ -1,42 +1,50 @@
 prefix = /usr/local
 
-OPTS := -O2
+CFLAGS = -g -O2
+
+PERL = perl
 
 # Solaris
 #whois_LDADD += -lnsl -lsocket
 
 # FreeBSD
-#LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
-#CFLAGS=-I/usr/local/include
+#LIBS += -L/usr/local/lib -lintl
+#INCLUDES += -I/usr/local/include
 
 # OS/2 EMX
-#LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
+#whois_LDADD += -lsocket
+#LDFLAGS += -Zexe -Dstrncasecmp=strnicmp
+
+ifdef CONFIG_FILE
+DEFS += -DCONFIG_FILE=\"$(CONFIG_FILE)\"
+endif
 
 ifdef HAVE_LIBIDN
 whois_LDADD += -lidn
-CFLAGS += -DHAVE_LIBIDN
+DEFS += -DHAVE_LIBIDN
 endif
 
 ifdef HAVE_XCRYPT
 mkpasswd_LDADD += -lxcrypt
-CFLAGS += -DHAVE_XCRYPT
+DEFS += -DHAVE_XCRYPT
 else
 mkpasswd_LDADD += -lcrypt
 endif
 
-PERL := perl
-
 all: Makefile.depend whois mkpasswd #pos
+
+whois_OBJECTS := whois.o utils.o
+mkpasswd_OBJECTS := mkpasswd.o utils.o
 
 ##############################################################################
 %.o: %.c
-	$(CC) $(CFLAGS) $(OPTS) -c $<
+	$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) -c $<
 
-whois: whois.o utils.o
-	$(CC) $(LDFLAGS) $(whois_LDADD) -o $@ $^
+whois: $(whois_OBJECTS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(whois_LDADD) $(LIBS)
 
-mkpasswd: mkpasswd.o utils.o
-	$(CC) $(LDFLAGS) $(mkpasswd_LDADD) -o $@ $^
+mkpasswd: $(mkpasswd_OBJECTS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(mkpasswd_LDADD) $(LIBS)
 
 ##############################################################################
 as_del.h: as_del_list make_as_del.pl
@@ -55,18 +63,22 @@ tld_serv.h: tld_serv_list make_tld_serv.pl
 	$(PERL) -w make_tld_serv.pl < tld_serv_list > $@
 
 ##############################################################################
-install: whois
+install: install-whois install-mkpasswd install-pos
+
+install-whois: whois
 	install -d $(BASEDIR)$(prefix)/bin/
 	install -d $(BASEDIR)$(prefix)/share/man/man1/
 	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
 	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
-	cd po && $(MAKE) $@
 
 install-mkpasswd: mkpasswd
 	install -d $(BASEDIR)$(prefix)/bin/
 	install -d $(BASEDIR)$(prefix)/share/man/man1/
 	install -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
 	install -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
+
+install-pos:
+	cd po && $(MAKE) $@
 
 distclean: clean
 	rm -f po/whois.pot
@@ -76,17 +88,11 @@ clean:
 		*.o whois mkpasswd
 	rm -f po/*.mo
 
-test:
-	open -- sh -c "while nc -l -p 43 127.0.0.1; do echo END; done"
-
-gnu:
-	tar czvvf gnu-whois.tgz Makefile* README *list *.h whois.*
-
 pos:
 	cd po && $(MAKE)
 
 depend: Makefile.depend
 Makefile.depend:
-	$(CC) $(CFLAGS) -MM -MG *.c > $@
+	$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) -MM -MG *.c > $@
 
 -include Makefile.depend

@@ -3,10 +3,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.7.24\n"
+"Project-Id-Version: whois 4.7.26\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-23 22:06+0100\n"
-"PO-Revision-Date: 2008-01-29 00:38+0100\n"
+"PO-Revision-Date: 2008-07-01 09:40+0200\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -170,7 +170,7 @@ msgstr ""
 "\n"
 "-l                     o jednu úroveň širší dotaz [jen RPSL]\n"
 "-L                     nalezne všechny širší shody\n"
-"-m                     nalezne nejbližší širší shody\n"
+"-m                     nalezne nejbližší užší shody\n"
 "-M                     nalezne všechny užší shody\n"
 "-c                     nalezne nejužší shodu obsahující atribut mnt-irt\n"
 "-x                     přesná shoda [jen RPSL]\n"
@@ -189,8 +189,9 @@ msgstr ""
 "-t TYP                 požaduje šablonu pro objekt druhu TYP („all“ pro "
 "seznam)\n"
 "-v TYP                 požaduje podrobnou šablonu pro objekt druhu TYP\n"
-"-q [verze|zdroje|typy]\n"
+"-q [version|sources|types]\n"
 "                       dotáže se na zadané informace o serveru [jen RPSL]\n"
+"                       („version“–verze, „sources“–zdroje, „types“–typy)\n"
 "-F                     rychlý neopracovaný výstup (implikuje -r)\n"
 "-h STROJ               připojí se na server STROJ\n"
 "-p PORT                připojí se na PORT\n"
@@ -200,14 +201,13 @@ msgstr ""
 "      --version        vypíše informace o verzi a skončí\n"
 
 #: ../mkpasswd.c:65
-#, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "\tstandardní crypt(3) založený na 56bitové šifře DES"
+msgstr "standardní crypt(3) založený na 56bitové šifře DES"
 
 #: ../mkpasswd.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "Invalid method '%s'.\n"
-msgstr "Neplatné číslo „%s“.\n"
+msgstr "Neplatná metoda „%s“.\n"
 
 #: ../mkpasswd.c:143 ../mkpasswd.c:153
 #, c-format
@@ -242,7 +242,7 @@ msgstr "Zakázaný znak v hesle „0x%hhx“.\n"
 #: ../mkpasswd.c:297
 #, c-format
 msgid "Method not supported by crypt(3).\n"
-msgstr ""
+msgstr "Metoda není podporována funkcí crypt(3).\n"
 
 #: ../mkpasswd.c:360
 #, c-format
@@ -256,7 +256,7 @@ msgstr ""
 "\n"
 
 #: ../mkpasswd.c:363
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
 "      -S, --salt=SALT       use the specified SALT\n"
@@ -275,13 +275,14 @@ msgid ""
 msgstr ""
 "      -H, --hash=DRUH       vybere DRUH hashe\n"
 "      -S, --salt=SŮL        použije zadanou SŮL\n"
+"      -R, --rounds=POČET    použije zadaný POČET kol\n"
 "      -P, --password-fd=Č   přečte heslo z deskriptoru souboru Č\n"
 "                            místo z /dev/tty\n"
 "      -s, --stdin           jako --password-fd=0\n"
 "      -h, --help            zobrazí tuto nápovědu a skončí\n"
 "      -V, --version         vypíše informace o verzi a skončí\n"
 "\n"
-"Chybí-li HESLO, bude na něj požádáno interaktivně.\n"
+"Chybí-li HESLO, bude o něj požádáno interaktivně.\n"
 "Nebude-li zadána SŮL, vygeneruje se náhodná.\n"
 "Bude-li DRUH „help“, vypíšou se dostupné algoritmy.\n"
 "\n"
@@ -289,9 +290,18 @@ msgstr ""
 "<translation-team-cs@lists.sourceforge.net> (česky).\n"
 
 #: ../mkpasswd.c:391
-#, fuzzy, c-format
+#, c-format
 msgid "Available methods:\n"
-msgstr "Dostupné algoritmy:\n"
+msgstr "Dostupné metody:\n"
 
 #~ msgid "Invalid hash type '%s'.\n"
 #~ msgstr "Neplatný druh hashe „%s“.\n"
+
+#~ msgid "Connecting to whois.crsnic.net."
+#~ msgstr "Připojuji se k whois.crsnic.net."
+
+#~ msgid "Connecting to whois.publicinterestregistry.net."
+#~ msgstr "Připojuji se k whois.publicinterestregistry.net."
+
+#~ msgid "Connecting to whois.nic.cc."
+#~ msgstr "Připojuji se k whois.nic.cc."

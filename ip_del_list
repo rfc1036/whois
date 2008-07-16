@@ -23,9 +23,8 @@
 77.0.0.0/8	ripe
 78.0.0.0/7	ripe
 80.0.0.0/4	ripe			# => 95.255.255.255
-96.0.0.0/6	arin
-114.0.0.0/7	apnic
-116.0.0.0/6	apnic
+96.0.0.0/6	arin			# => 99.255.255.255
+112.0.0.0/5	apnic
 121.128.0.0/10	whois.nic.or.kr
 125.128.0.0/11	whois.nic.or.kr
 120.0.0.0/6	apnic
@@ -83,7 +82,7 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
-# 173 -> 185 reserved
+# 175 -> 185 reserved
 186.0.0.0/7	lacnic
 188.0.0.0/8	ripe # transferred from ARIN to to RIPE
 189.0.0.0/8	lacnic

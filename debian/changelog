@@ -1,3 +1,12 @@
+whois (4.7.27) unstable; urgency=medium
+
+  * Updated the .md and .me TLD servers.
+  * Added a new ASN allocation.
+  * Added a new IPv4 allocation.
+  * Updated the Polish and Czech translations.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 17 Jul 2008 00:54:55 +0200
+
 whois (4.7.26) unstable; urgency=medium
 
   * Added support for passing command line options in the environment

@@ -114,12 +114,8 @@ int main(int argc, char *argv[])
 	    verb = 1;
 	    break;
 	case 1:
-#ifdef VERSION
 	    fprintf(stderr, _("Version %s.\n\nReport bugs to %s.\n"),
 		    VERSION, "<md+whois@linux.it>");
-#else
-	    fprintf(stderr, "%s %s\n", inetutils_package, inetutils_version);
-#endif
 	    exit(0);
 	default:
 	    usage();

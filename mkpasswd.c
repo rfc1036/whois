@@ -31,7 +31,6 @@
 #include <string.h>
 #include <time.h>
 #include <sys/types.h>
-/*#define HAVE_XCRYPT 0*/
 #ifdef HAVE_XCRYPT
 #include <xcrypt.h>
 #include <sys/stat.h>
@@ -378,7 +377,7 @@ void display_help(void)
 
 void display_version(void)
 {
-    printf("GNU mkpasswd %s\n\n", VERSION);
+    printf("mkpasswd %s\n\n", VERSION);
     puts("Copyright (C) 2001-2008 Marco d'Itri\n"
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.");

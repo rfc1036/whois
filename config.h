@@ -1,6 +1,5 @@
 /* Program version */
-/* not for the inetutils version */
-#define VERSION "4.7.26"
+#define VERSION "4.7.27"
 
 /* Configurable features */
 
@@ -14,6 +13,7 @@
 /*
 #define CONFIG_FILE "/etc/whois.conf"
 */
+
 
 /* autoconf in cpp macros */
 #ifdef linux
@@ -34,6 +34,10 @@
 # define HAVE_GETADDRINFO
 #endif
 
+#if defined __APPLE__ && defined __MACH__
+# define HAVE_GETADDRINFO
+#endif
+
 #if defined __GLIBC__
 # define HAVE_GETOPT_LONG
 # if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
@@ -44,17 +48,11 @@
 # endif
 #endif
 
-/* Linux, Solaris 5, FreeBSD 5.x. What else? */
-#if defined _POSIX_VERSION && _POSIX_VERSION >= 200112L
-# define HAVE_WORDEXP
-#endif
-
 #if defined _POSIX2_VERSION
 # define HAVE_REGEXEC
 #endif
 
 
-/* system features */
 #ifdef ENABLE_NLS
 # ifndef NLS_CAT_NAME
 #  define NLS_CAT_NAME   "whois"
