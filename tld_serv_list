@@ -38,7 +38,7 @@
 .e164.arpa whois.ripe.net
 .arpa	whois.iana.org
 
-.aero	WEB http://www.nic.aero/
+.aero	whois.aero
 .asia	whois.nic.asia
 .biz	whois.nic.biz
 .cat	whois.cat

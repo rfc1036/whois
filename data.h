@@ -72,6 +72,7 @@ const char *nic_handles[] = {
     "netblk-",	"whois.arin.net",
     "poem-",	"whois.ripe.net",
     "form-",	"whois.ripe.net",
+    "pgpkey-",	"whois.ripe.net",
 #if 0
     // commented until somebody will explain the query format for these
     "coco-",	"whois.corenic.net",

@@ -1,3 +1,11 @@
+whois (4.7.28) unstable; urgency=medium
+
+  * Updated the .aero TLD server.
+  * Added a new ASN allocation.
+  * Search PGPKEY-* objects in the RIPE database.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 10 Sep 2008 18:49:37 +0200
+
 whois (4.7.27) unstable; urgency=medium
 
   * Updated the .md and .me TLD servers.
