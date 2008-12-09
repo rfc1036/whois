@@ -1,8 +1,9 @@
-prefix = /usr/local
+prefix = /usr
 
 CFLAGS = -g -O2
 
 PERL = perl
+INSTALL = install
 
 # Solaris
 #whois_LDADD += -lnsl -lsocket
@@ -17,6 +18,10 @@ PERL = perl
 
 ifdef CONFIG_FILE
 DEFS += -DCONFIG_FILE=\"$(CONFIG_FILE)\"
+endif
+
+ifdef LOCALEDIR
+DEFS += -DLOCALEDIR=\"$(BASEDIR)$(prefix)/share/locale\"
 endif
 
 ifdef HAVE_LIBIDN
@@ -63,22 +68,22 @@ tld_serv.h: tld_serv_list make_tld_serv.pl
 	$(PERL) -w make_tld_serv.pl < tld_serv_list > $@
 
 ##############################################################################
-install: install-whois install-mkpasswd install-pos
+install: install-whois install-mkpasswd #install-pos
 
 install-whois: whois
-	install -d $(BASEDIR)$(prefix)/bin/
-	install -d $(BASEDIR)$(prefix)/share/man/man1/
-	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
-	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
+	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
+	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
+	$(INSTALL) -m 0755 whois $(BASEDIR)$(prefix)/bin/
+	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 
 install-mkpasswd: mkpasswd
-	install -d $(BASEDIR)$(prefix)/bin/
-	install -d $(BASEDIR)$(prefix)/share/man/man1/
-	install -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
-	install -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
+	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
+	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
+	$(INSTALL) -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
+	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
 
 install-pos:
-	cd po && $(MAKE) $@
+	cd po && $(MAKE) install
 
 distclean: clean
 	rm -f po/whois.pot

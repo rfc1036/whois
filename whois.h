@@ -11,7 +11,7 @@
 /* prototypes */
 const char *whichwhois(const char *);
 const char *match_config_file(const char *);
-const char *whereas(const unsigned short);
+const char *whereas(const unsigned long);
 const char *whereas32(const unsigned long);
 char *queryformat(const char *, const char *, const char *);
 int hide_line(int *hiding, const char *const line);

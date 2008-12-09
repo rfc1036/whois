@@ -1,5 +1,5 @@
 /* Program version */
-#define VERSION "4.7.28"
+#define VERSION "4.7.29"
 
 /* Configurable features */
 
@@ -25,7 +25,9 @@
 # define HAVE_GETOPT_LONG
 # define HAVE_GETADDRINFO
 # define ENABLE_NLS
-# define LOCALEDIR "/usr/local/share/locale"
+# ifndef LOCALEDIR
+#  define LOCALEDIR "/usr/local/share/locale"
+# endif
 #endif
 
 /* needs unistd.h */

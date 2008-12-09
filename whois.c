@@ -370,7 +370,7 @@ const char *whichwhois(const char *s)
 	/* RPSL hierarchical objects */
 	if (strncaseeq(s, "as", 2)) {
 	    if (isasciidigit(s[2]))
-		return whereas(atoi(s + 2));
+		return whereas(atol(s + 2));
 	    else
 		return "";
 	}
@@ -399,7 +399,7 @@ const char *whichwhois(const char *s)
     if (!strpbrk(s, ".-")) {
 	if (strncaseeq(s, "as", 2) &&		/* it's an AS */
 		(isasciidigit(s[2]) || s[2] == ' '))
-	    return whereas(atoi(s + 2));
+	    return whereas(atol(s + 2));
 	if (*s == '!')	/* NSI NIC handle */
 	    return "whois.networksolutions.com";
 	else
@@ -448,9 +448,12 @@ const char *whereas32(const unsigned long asn)
     return "\x06";
 }
 
-const char *whereas(const unsigned short asn)
+const char *whereas(const unsigned long asn)
 {
     int i;
+
+    if (asn > 65535)
+	return whereas32(asn);
 
     for (i = 0; as_assign[i].serv; i++)
 	if (asn >= as_assign[i].first && asn <= as_assign[i].last)
@@ -811,7 +814,9 @@ int openconn(const char *server, const char *port)
      * Now we are connected and the query is supposed to complete quickly.
      * This will help people who run whois ... | less
      */
+    /* Disabled, because in the real world this is not true. :-(
     alarm(0);
+    */
 
     return fd;
 }

@@ -1,3 +1,19 @@
+whois (4.7.29) unstable; urgency=medium
+
+  * Fixed the short option -S which I broke in 4.7.25.
+  * Added support for ASN32 in the ASPLAIN notation.
+  * Do not disable the timeout after the connection to the server, because
+    it can still hang forever.
+  * Added the .gy, .hn, .ng and .sl TLD servers.
+  * Updated the .tel, .cr, .dz, .ht, .im, .jo, .ly, .mt, .mu, .pr, .rs, .sn,
+    .com.uy, .vc and .vn TLD servers.
+  * Added support for -kenic NIC handles.
+  * Added new IPv4 allocations.
+  * Little portability fixes.
+  * Added Finnish translation contributed by Sami Kerola.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 09 Dec 2008 02:08:35 +0100
+
 whois (4.7.28) unstable; urgency=medium
 
   * Updated the .aero TLD server.

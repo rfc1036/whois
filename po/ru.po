@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-23 22:06+0100\n"
+"POT-Creation-Date: 2008-12-09 02:03+0100\n"
 "PO-Revision-Date: 2005-11-29 15:15+0200\n"
 "Last-Translator: Andy Shevchenko <andy@smile.org.ua>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -27,31 +27,31 @@ msgstr ""
 "\n"
 "Замечания отправляйте на %s.\n"
 
-#: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
-#: ../whois.c:273
+#: ../whois.c:164 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:243
+#: ../whois.c:270
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Используется сервер %s.\n"
 
-#: ../whois.c:209
+#: ../whois.c:206
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Этот ДВУ не имеет whois-сервера, но можно получить доступ к базе whois на"
 
-#: ../whois.c:217
+#: ../whois.c:214
 msgid "This TLD has no whois server."
 msgstr "Этот ДВУ не имеет whois-сервера."
 
-#: ../whois.c:220
+#: ../whois.c:217
 msgid "No whois server is known for this kind of object."
 msgstr "Нет whois-сервера для объектов данного вида."
 
-#: ../whois.c:223
+#: ../whois.c:220
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Неизвестный номер AS или IP-сети. Пожалуйста, обновите программу."
 
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:253
+#: ../whois.c:250
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Запрашивается конечная IPv4-точка %s для IPv6-адреса 6-в-4.\n"
 "\n"
 
-#: ../whois.c:260
+#: ../whois.c:257
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Запрашивается конечная IPv4-точка %s для IPv6-адреса 6-в-4.\n"
 "\n"
 
-#: ../whois.c:274
+#: ../whois.c:271
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Строка запроса: \"%s\"\n"
 "\n"
 
-#: ../whois.c:284
+#: ../whois.c:281
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "Найдено перенаправление на %s.\n"
 "\n"
 
-#: ../whois.c:327 ../whois.c:330
+#: ../whois.c:324 ../whois.c:327
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Невозможно разобрать строку: %s"
 
-#: ../whois.c:483
+#: ../whois.c:482
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Предупреждение: флаги RIPE используются с традиционным сервером."
 
-#: ../whois.c:621 ../whois.c:754
+#: ../whois.c:620 ../whois.c:755
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,26 +112,26 @@ msgstr ""
 "Катастрофическая ошибка: текст отказа был изменён.\n"
 "Пожалуйста, обновите программу.\n"
 
-#: ../whois.c:795
+#: ../whois.c:796
 #, c-format
 msgid "Host %s not found."
 msgstr "Узел %s не найден."
 
-#: ../whois.c:805
+#: ../whois.c:806
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: неизвестный сервис"
 
-#: ../whois.c:824
+#: ../whois.c:827
 msgid "Timeout."
 msgstr "Задержка."
 
-#: ../whois.c:830
+#: ../whois.c:833
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Прервано по сигналу %d..."
 
-#: ../whois.c:1000
+#: ../whois.c:1003
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -202,52 +202,52 @@ msgstr ""
 "      --help           отобразить эту помощь и выйти\n"
 "      --version        вывести информацию о версии и выйти\n"
 
-#: ../mkpasswd.c:65
+#: ../mkpasswd.c:76
 #, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "\tстандартный 56 битный, базирующийся на DES, алгоритм crypt(3)"
 
-#: ../mkpasswd.c:134
+#: ../mkpasswd.c:148
 #, fuzzy, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "Неверный номер '%s'.\n"
 
-#: ../mkpasswd.c:143 ../mkpasswd.c:153
+#: ../mkpasswd.c:157 ../mkpasswd.c:167
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Неверный номер '%s'.\n"
 
-#: ../mkpasswd.c:171
+#: ../mkpasswd.c:185
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Выполните '%s --help' для дополнительной информации.\n"
 
-#: ../mkpasswd.c:211
+#: ../mkpasswd.c:225
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr "Испорченная длина salt: %d байт(а) при ожидаемой %d.\n"
 
-#: ../mkpasswd.c:217
+#: ../mkpasswd.c:231
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Неверный salt-символ '%c'.\n"
 
-#: ../mkpasswd.c:254 ../mkpasswd.c:281
+#: ../mkpasswd.c:269 ../mkpasswd.c:296
 #, c-format
 msgid "Password: "
 msgstr "Пароль: "
 
-#: ../mkpasswd.c:275
+#: ../mkpasswd.c:290
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Неверный символ пароля '0x%hhx'.\n"
 
-#: ../mkpasswd.c:297
+#: ../mkpasswd.c:312
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr ""
 
-#: ../mkpasswd.c:360
+#: ../mkpasswd.c:363
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -258,7 +258,7 @@ msgstr ""
 "Кодирует ПАРОЛЬ, используя алгоритм crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:363
+#: ../mkpasswd.c:366
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -291,7 +291,7 @@ msgstr ""
 "\n"
 "Замечания отправляйте на %s.\n"
 
-#: ../mkpasswd.c:391
+#: ../mkpasswd.c:394
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "Доступные алгоритмы:\n"

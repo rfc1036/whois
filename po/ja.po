@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.7.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-23 22:06+0100\n"
+"POT-Creation-Date: 2008-12-09 02:03+0100\n"
 "PO-Revision-Date: 2005-04-26 00:20+0900\n"
 "Last-Translator: Satoru SATOH <ss@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -26,32 +26,32 @@ msgstr ""
 "\n"
 "バグ報告は %s へ.\n"
 
-#: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
-#: ../whois.c:273
+#: ../whois.c:164 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:243
+#: ../whois.c:270
 #, c-format
 msgid "Using server %s.\n"
 msgstr "サーバー %s を使用\n"
 
-#: ../whois.c:209
+#: ../whois.c:206
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "この TLD には whois サーバーがありませんが、次のサーバーで whois データベース"
 "にアクセスできます"
 
-#: ../whois.c:217
+#: ../whois.c:214
 msgid "This TLD has no whois server."
 msgstr "この TLD には whois サーバーがありません"
 
-#: ../whois.c:220
+#: ../whois.c:217
 msgid "No whois server is known for this kind of object."
 msgstr "この種のオブジェクトに対する既知の whois サーバーはありません"
 
-#: ../whois.c:223
+#: ../whois.c:220
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "不明な AS 番号または IP ネットワーク. アップグレードして下さい"
 
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:253
+#: ../whois.c:250
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "6to4 IPv6 アドレスの IPv4 終端 %s を問い合わせ中\n"
 "\n"
 
-#: ../whois.c:260
+#: ../whois.c:257
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "6to4 IPv6 アドレスの IPv4 終端 %s を問い合わせ中\n"
 "\n"
 
-#: ../whois.c:274
+#: ../whois.c:271
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "問い合わせ文字列: \"%s\"\n"
 "\n"
 
-#: ../whois.c:284
+#: ../whois.c:281
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "%s への照会をみつけました\n"
 "\n"
 
-#: ../whois.c:327 ../whois.c:330
+#: ../whois.c:324 ../whois.c:327
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "この行を解析できません: %s"
 
-#: ../whois.c:483
+#: ../whois.c:482
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "警告: 旧来のサーバーについて RIPE フラグが使用されています"
 
-#: ../whois.c:621 ../whois.c:754
+#: ../whois.c:620 ../whois.c:755
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,26 +112,26 @@ msgstr ""
 "破滅的なエラー: 免責条項テキストが変更されました\n"
 "このプログラムをアップグレードして下さい\n"
 
-#: ../whois.c:795
+#: ../whois.c:796
 #, c-format
 msgid "Host %s not found."
 msgstr "ホスト %s はみつかりませんでした"
 
-#: ../whois.c:805
+#: ../whois.c:806
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: 不明なサービス"
 
-#: ../whois.c:824
+#: ../whois.c:827
 msgid "Timeout."
 msgstr "時間切れ"
 
-#: ../whois.c:830
+#: ../whois.c:833
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "シグナル %d が割込み..."
 
-#: ../whois.c:1000
+#: ../whois.c:1003
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -197,52 +197,52 @@ msgstr ""
 "      --help           このヘルプを表示して終了\n"
 "      --version        バージョン情報を表示して終了\n"
 
-#: ../mkpasswd.c:65
+#: ../mkpasswd.c:76
 #, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "\t標準 56 ビット DES ベース暗号(3)"
 
-#: ../mkpasswd.c:134
+#: ../mkpasswd.c:148
 #, fuzzy, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "不正な数字 '%s'\n"
 
-#: ../mkpasswd.c:143 ../mkpasswd.c:153
+#: ../mkpasswd.c:157 ../mkpasswd.c:167
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "不正な数字 '%s'\n"
 
-#: ../mkpasswd.c:171
+#: ../mkpasswd.c:185
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "さらなる詳細については '%s --help' を実行\n"
 
-#: ../mkpasswd.c:211
+#: ../mkpasswd.c:225
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr "間違ったソルト長: %d バイト(s) (%d を期待)\n"
 
-#: ../mkpasswd.c:217
+#: ../mkpasswd.c:231
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "不正なソルト文字 '%c'\n"
 
-#: ../mkpasswd.c:254 ../mkpasswd.c:281
+#: ../mkpasswd.c:269 ../mkpasswd.c:296
 #, c-format
 msgid "Password: "
 msgstr "パスワード: "
 
-#: ../mkpasswd.c:275
+#: ../mkpasswd.c:290
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "不正なパスワード文字 '0x%hhx'\n"
 
-#: ../mkpasswd.c:297
+#: ../mkpasswd.c:312
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr ""
 
-#: ../mkpasswd.c:360
+#: ../mkpasswd.c:363
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -253,7 +253,7 @@ msgstr ""
 "PASSWORD を crypt(3) で暗号化\n"
 "\n"
 
-#: ../mkpasswd.c:363
+#: ../mkpasswd.c:366
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -285,7 +285,7 @@ msgstr ""
 "\n"
 "バグ報告は %s へ.\n"
 
-#: ../mkpasswd.c:391
+#: ../mkpasswd.c:394
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "利用可能なアルゴリズム:\n"

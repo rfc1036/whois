@@ -54,6 +54,9 @@ static const struct option longopts[] = {
     {"version",		no_argument,		NULL, 'V'},
     {NULL,		0,			NULL, 0  }
 };
+#else
+extern char *optarg;
+extern int optind;
 #endif
 
 static const char valid_salts[] = "abcdefghijklmnopqrstuvwxyz"
@@ -125,7 +128,8 @@ int main(int argc, char *argv[])
     /* prepend options from environment */
     argv = merge_args(getenv("MKPASSWD_OPTIONS"), argv, &argc);
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:P:R:sSV", longopts, 0)) > 0) {
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:P:R:sS:V", longopts, 0))
+	    > 0) {
 	switch (ch) {
 	case 'm':
 	case 'H':
