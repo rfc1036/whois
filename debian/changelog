@@ -1,3 +1,9 @@
+whois (4.7.30) unstable; urgency=high
+
+  * Updated the .gi, .lc and .mn TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 16 Dec 2008 18:49:28 +0100
+
 whois (4.7.29) unstable; urgency=medium
 
   * Fixed the short option -S which I broke in 4.7.25.

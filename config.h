@@ -1,5 +1,5 @@
 /* Program version */
-#define VERSION "4.7.29"
+#define VERSION "4.7.30"
 
 /* Configurable features */
 

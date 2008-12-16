@@ -137,7 +137,7 @@
 .gf	whois.nplus.gf
 .gg	whois.channelisles.net
 .gh	WEB http://www.nic.gh/customer/search_c.htm
-.gi	WEB http://whois.gibnet.gi/
+.gi	AFILIAS
 .gl	NONE		# www.nic.gl
 .gm	whois.ripe.net	# www.nic.gm
 .gn	NONE		# http://www.psg.com/dns/gn/
@@ -159,7 +159,7 @@
 .ie	whois.domainregistry.ie
 .il	whois.isoc.org.il
 .im	whois.nic.im
-.in	whois.registry.in
+.in	whois.registry.in	# afilias
 .io	whois.nic.io
 .iq	NONE		# NIC?
 .ir	whois.nic.ir
@@ -182,7 +182,7 @@
 .kz	whois.nic.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/search.html
-.lc	WEB http://www.nic.lc/whois.htm
+.lc	AFILIAS
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
@@ -194,13 +194,13 @@
 .ma	whois.iam.net.ma # www.nic.ma
 .mc	whois.ripe.net
 .md	WEB http://www.dns.md/wh1.php # whois.nic.md is restricted
-.me	whois.meregistry.net
+.me	whois.meregistry.net	# afilias
 .mg	NONE		# www.nic.mg
 .mh	NONE		# www.nic.net.mh
 .mk	NONE		# http://dns.marnet.net.mk/
 .ml	NONE		# NIC? www.sotelma.ml
 .mm	whois.nic.mm
-.mn	whois.nic.mn
+.mn	AFILIAS
 .mo	WEB http://www.monic.net.mo/
 .mp	NONE		# get.mp
 .mq	whois.nic.mq
