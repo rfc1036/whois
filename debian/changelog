@@ -1,3 +1,14 @@
+whois (4.7.31) unstable; urgency=low
+
+  * Implemented a 10 seconds timeout on connect(2) to allow querying
+    servers with broken IPv6 connectivity. (Closes: #408096)
+  * Added support for automatically determining the server for in-addr.arpa
+    domains.
+  * Added new IPv4 allocations.
+  * Fixed a typo in de.po. (Closes: #514619)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 01 Mar 2009 19:39:42 +0100
+
 whois (4.7.30) unstable; urgency=high
 
   * Updated the .gi, .lc and .mn TLD servers.

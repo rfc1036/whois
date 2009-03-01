@@ -250,7 +250,7 @@ msgid ""
 "\n"
 msgstr ""
 "Aufruf: mkpasswd [OPTIONEN] ... [PASSWORT] [SALT]]\n"
-"Verschluesselt das PASWORT mit crypt(3).\n"
+"Verschluesselt das PASSWORT mit crypt(3).\n"
 "\n"
 
 #: ../mkpasswd.c:366

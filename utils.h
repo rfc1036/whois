@@ -20,6 +20,10 @@
 # define AI_IDN 0
 #endif
 
+#ifndef AI_ADDRCONFIG
+# define AI_ADDRCONFIG 0
+#endif
+
 #ifdef HAVE_GETOPT_LONG
 # define GETOPT_LONGISH(c, v, o, l, i) getopt_long(c, v, o, l, i)
 #else

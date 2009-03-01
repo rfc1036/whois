@@ -24,14 +24,20 @@
 78.0.0.0/7	ripe
 80.0.0.0/4	ripe			# => 95.255.255.255
 96.0.0.0/6	arin			# => 99.255.255.255
+108.0.0.0/8	arin
+109.0.0.0/8	ripe
 110.0.0.0/7	apnic
+96.0.0.0/4	UNALLOCATED		# => 112.215.255.255
+118.32.0.0/11	whois.nic.or.kr
+119.192.0.0/11	whois.nic.or.kr
+115.0.0.0/12	whois.nic.or.kr
+115.16.0.0/13	whois.nic.or.kr
 112.0.0.0/5	apnic
 121.128.0.0/10	whois.nic.or.kr
 125.128.0.0/11	whois.nic.or.kr
 120.0.0.0/6	apnic
 124.0.0.0/7	apnic
 126.0.0.0/8	apnic
-96.0.0.0/3	UNALLOCATED		# => 127.215.255.255
 0.0.0.0/1	arin	# all other A class addresses are managed by ARIN
 133.0.0.0/8	whois.nic.ad.jp
 139.20.0.0/14	ripe
@@ -83,6 +89,7 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
+178.0.0.0/8	ripe
 # 175 -> 185 reserved
 186.0.0.0/7	lacnic
 188.0.0.0/8	ripe # transferred from ARIN to to RIPE

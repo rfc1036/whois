@@ -1,8 +1,10 @@
-/* Copyright 1999-2008 by Marco d'Itri <md@linux.it>.
+/*
+ * Copyright 1999-2009 by Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation.
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
  */
 
 /* for AI_IDN */
@@ -21,6 +23,7 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <errno.h>
+#include <fcntl.h>
 #include <signal.h>
 #ifdef HAVE_GETOPT_LONG
 #include <getopt.h>
@@ -258,6 +261,10 @@ const char *handle_query(const char *hserver, const char *hport,
 	    server = whichwhois(p);
 	    qstring = p ;
 	    break;
+	case 0x0C:
+	    p = convert_inaddr(qstring);
+	    server = whichwhois(p);
+	    break;
 	default:
 	    break;
     }
@@ -327,7 +334,7 @@ const char *match_config_file(const char *s)
 	    err_quit(_("Cannot parse this line: %s"), p);
 
 #ifdef HAVE_REGEXEC
-	i = regcomp(&re, pattern, REG_EXTENDED|REG_ICASE|REG_NOSUB);
+	i = regcomp(&re, pattern, REG_EXTENDED | REG_ICASE | REG_NOSUB);
 	if (i != 0) {
 	    char m[1024];
 	    regerror(i, &re, m, sizeof(m));
@@ -761,6 +768,7 @@ const char *query_afilias(const int sock, const char *query)
 int openconn(const char *server, const char *port)
 {
     int fd = -1;
+    int timeout = 10;
 #ifdef HAVE_GETADDRINFO
     int err;
     struct addrinfo hints, *res, *ai;
@@ -776,14 +784,24 @@ int openconn(const char *server, const char *port)
     memset(&hints, 0, sizeof(struct addrinfo));
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags = AI_IDN;
+    hints.ai_flags = AI_ADDRCONFIG | AI_IDN;
 
-    if ((err = getaddrinfo(server, port ? port : "nicname", &hints, &res)) != 0)
-	err_quit("getaddrinfo(%s): %s", server, gai_strerror(err));
+    if ((err = getaddrinfo(server, port ? port : "nicname", &hints, &res))
+	    != 0) {
+	if (err == EAI_SYSTEM)
+	    err_sys("getaddrinfo(%s)", server);
+	else
+	    err_quit("getaddrinfo(%s): %s", server, gai_strerror(err));
+    }
+
     for (ai = res; ai; ai = ai->ai_next) {
+	/* no timeout for the last address. is this a good idea? */
+	if (!ai->ai_next)
+	    timeout = 0;
 	if ((fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) < 0)
 	    continue;		/* ignore */
-	if (connect(fd, (struct sockaddr *)ai->ai_addr, ai->ai_addrlen) == 0)
+	if (connect_with_timeout(fd, (struct sockaddr *)ai->ai_addr,
+		    ai->ai_addrlen, timeout) == 0)
 	    break;		/* success */
 	close(fd);
     }
@@ -806,19 +824,73 @@ int openconn(const char *server, const char *port)
 	    err_quit(_("%s/tcp: unknown service"), port);
 	saddr.sin_port = servinfo->s_port;
     }
-    if (connect(fd, (struct sockaddr *)&saddr, sizeof(saddr)) < 0)
+    if (connect_with_timeout(fd, (struct sockaddr *)&saddr, sizeof(saddr),
+		timeout) < 0)
 	err_sys("connect");
 #endif
 
-    /*
-     * Now we are connected and the query is supposed to complete quickly.
-     * This will help people who run whois ... | less
-     */
-    /* Disabled, because in the real world this is not true. :-(
-    alarm(0);
-    */
-
     return fd;
+}
+
+int connect_with_timeout(int fd, const struct sockaddr *addr,
+	socklen_t addrlen, int timeout)
+{
+    int savedflags, rc, connect_errno, opt;
+    fd_set fd_w;
+    struct timeval tv;
+    size_t len;
+
+    if (timeout <= 0)
+	return (connect(fd, addr, addrlen));
+
+    if ((savedflags = fcntl(fd, F_GETFL, 0)) < 0)
+	return -1;
+
+    /* set the socket non-blocking, so connect(2) will return immediately */
+    if (fcntl(fd, F_SETFL, savedflags | O_NONBLOCK) < 0)
+	return -1;
+
+    rc = connect(fd, addr, addrlen);
+
+    /* set the socket to block again */
+    connect_errno = errno;
+    if (fcntl(fd, F_SETFL, savedflags) < 0)
+	return -1;
+    errno = connect_errno;
+
+    if (rc == 0 || errno != EINPROGRESS)
+	return rc;
+
+    FD_ZERO(&fd_w);
+    FD_SET(fd, &fd_w);
+    tv.tv_sec = timeout;
+    tv.tv_usec = 0;
+
+    /* loop until an error or the timeout has expired */
+    do {
+	rc = select(fd + 1, NULL, &fd_w, NULL, &tv);
+    } while (rc == -1 && errno == EINTR);
+
+    if (rc == 0) {		/* timed out */
+	errno = ETIMEDOUT;
+	return -1;
+    }
+
+    if (rc < 0 || rc > 1)	/* select failed */
+	return rc;
+
+    /* rc == 1: success. check for errors */
+    len = sizeof(opt);
+    if (getsockopt(fd, SOL_SOCKET, SO_ERROR, &opt, &len) < 0)
+	return -1;
+
+    /* and report them */
+    if (opt != 0) {
+	errno = (int) &opt;
+	return -1;
+    }
+
+    return 0;
 }
 
 void alarm_handler(int signum)
@@ -958,6 +1030,40 @@ char *convert_teredo(const char *s)
     a ^= 0xffff;
     b ^= 0xffff;
     sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
+    return new;
+}
+
+char *convert_inaddr(const char *s)
+{
+    char *new = malloc(sizeof("255.255.255.255"));
+    char *endptr;
+    unsigned int a, b, c;
+
+    errno = 0;
+
+    a = strtol(s, &endptr, 10);
+    if (errno || a < 0 || a > 255 || *endptr != '.')
+	return (char *) "0.0.0.0";
+
+    if (domcmp(endptr + 1, ".in-addr.arpa")) {
+	b = strtol(endptr + 1, &endptr, 10);			/* 1.2. */
+	if (errno || b < 0 || b > 255 || *endptr != '.')
+	    return (char *) "0.0.0.0";
+
+	if (domcmp(endptr + 1, ".in-addr.arpa")) {
+	    c = strtol(endptr + 1, &endptr, 10);		/* 1.2.3. */
+	    if (errno || c < 0 || c > 255 || *endptr != '.')
+		return (char *) "0.0.0.0";
+
+	    if (domcmp(endptr + 1, ".in-addr.arpa"))
+		return (char *) "0.0.0.0";
+
+	    sprintf(new, "%d.%d.%d.0", c, b, a);
+	} else
+	    sprintf(new, "%d.%d.0.0", b, a);
+    } else
+	sprintf(new, "%d.0.0.0", a);
+
     return new;
 }
 

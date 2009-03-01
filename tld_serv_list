@@ -35,7 +35,8 @@
 .int	whois.iana.org
 .mil	NONE
 
-.e164.arpa whois.ripe.net
+.e164.arpa	whois.ripe.net
+.in-addr.arpa	ARPA
 .arpa	whois.iana.org
 
 .aero	whois.aero
