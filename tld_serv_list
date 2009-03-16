@@ -50,7 +50,7 @@
 .museum	whois.museum
 .name	whois.nic.name
 .pro	whois.registrypro.pro
-.tel	WEB http://www.whois.tel/
+.tel	whois.nic.tel
 .travel	whois.nic.travel
 
 .ac	whois.nic.ac
@@ -136,7 +136,7 @@
 .gd	whois.adamsnames.tc
 .ge	WEB http://whois.sanet.ge/
 .gf	whois.nplus.gf
-.gg	whois.channelisles.net
+.gg	whois.gg
 .gh	WEB http://www.nic.gh/customer/search_c.htm
 .gi	AFILIAS
 .gl	NONE		# www.nic.gl
@@ -166,7 +166,7 @@
 .ir	whois.nic.ir
 .is	whois.isnet.is
 .it	whois.nic.it
-.je	whois.channelisles.net
+.je	whois.je
 .jm	NONE		# NIC? uwimona.edu.jm http://nic.jm
 .jo	WEB http://www.dns.jo/Whois.aspx
 .jp	whois.jprs.jp
@@ -360,6 +360,7 @@
 -ripn	whois.ripn.net
 -rotld	whois.rotld.ro
 -sgnic	whois.nic.net.sg
+-tel	whois.nic.tel
 -uanic	whois.com.ua
 -uynic	www.rau.edu.uy
 -sixxs	whois.sixxs.net

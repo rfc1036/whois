@@ -1,3 +1,10 @@
+whois (4.7.32) unstable; urgency=medium
+
+  * Added new ASN allocations.
+  * Updated the .tel, .gg and .je TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 16 Mar 2009 18:08:04 +0100
+
 whois (4.7.31) unstable; urgency=low
 
   * Implemented a 10 seconds timeout on connect(2) to allow querying

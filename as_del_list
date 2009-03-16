@@ -62,7 +62,8 @@
 38912	39935	ripe
 40960	45055	ripe
 45056	46079	apnic
-47104	49151	ripe
+47104	52223	ripe
+52224	53247	lacnic
 
 # catch all: everything else comes from ARIN
 1	47103	arin
