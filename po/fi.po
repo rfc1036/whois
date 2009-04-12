@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.7.28\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-09 02:03+0100\n"
+"POT-Creation-Date: 2009-04-12 06:00+0200\n"
 "PO-Revision-Date: 2008-09-28 19:28+0100\n"
 "Last-Translator: Sami Kerola <kerolasa@iki.fi>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:117
+#: ../whois.c:120
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -25,31 +25,31 @@ msgstr ""
 "\n"
 "L‰het‰ bugiraportit osoitteeseen %s.\n"
 
-#: ../whois.c:164 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:243
-#: ../whois.c:270
+#: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
+#: ../whois.c:277
 #, c-format
 msgid "Using server %s.\n"
 msgstr "K‰ytet‰‰n palvelinta %s.\n"
 
-#: ../whois.c:206
+#: ../whois.c:209
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "T‰lla TLD:ll‰ ei ole whois palvelinta, tiedot ovat nakyviss‰  osoitteessa"
 
-#: ../whois.c:214
+#: ../whois.c:217
 msgid "This TLD has no whois server."
 msgstr "T‰lla TLD:ll‰ ei ole whois palvelinta."
 
-#: ../whois.c:217
+#: ../whois.c:220
 msgid "No whois server is known for this kind of object."
 msgstr "Kysytty ei vastaa minkaan whois palvelun tiet‰miin tietoihin."
 
-#: ../whois.c:220
+#: ../whois.c:223
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Tuntematon AS-numero tai IP-verkko. P‰ivit‰ t‰m‰ ohjelma."
 
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:250
+#: ../whois.c:253
 #, c-format
 msgid ""
 "\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Kysyt‰‰n IPv4 ulostulona %s IPv6:n IPv4 avaruudesta.\n"
 "\n"
 
-#: ../whois.c:257
+#: ../whois.c:260
 #, c-format
 msgid ""
 "\n"
@@ -71,7 +71,7 @@ msgstr ""
 "Kysyt‰‰n IPv4 ulostulona %s Teredo IPv6 tunneliosoitetta.\n"
 "\n"
 
-#: ../whois.c:271
+#: ../whois.c:278
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -80,7 +80,7 @@ msgstr ""
 "Kysely: \"%s\"\n"
 "\n"
 
-#: ../whois.c:281
+#: ../whois.c:288
 #, c-format
 msgid ""
 "\n"
@@ -93,16 +93,16 @@ msgstr ""
 "Lˆytyi viittaus %s.\n"
 "\n"
 
-#: ../whois.c:324 ../whois.c:327
+#: ../whois.c:331 ../whois.c:334
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Ohjelma ei kykene tulkitsemaan rivi‰: %s"
 
-#: ../whois.c:482
+#: ../whois.c:489
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Varoitus: k‰yt‰t RIPE valitsimia traditionaaliseen palvelimeen."
 
-#: ../whois.c:620 ../whois.c:755
+#: ../whois.c:627 ../whois.c:762
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -110,26 +110,26 @@ msgstr ""
 "Katastrofaalinen virhe: lisenssiteksti on muuttunut.\n"
 "P‰ivita ohjelma.\n"
 
-#: ../whois.c:796
+#: ../whois.c:814
 #, c-format
 msgid "Host %s not found."
 msgstr "Palvelinta %s ei lˆydy."
 
-#: ../whois.c:806
+#: ../whois.c:824
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: tuntematon versio"
 
-#: ../whois.c:827
+#: ../whois.c:899
 msgid "Timeout."
 msgstr "Aikakatkaisu."
 
-#: ../whois.c:833
+#: ../whois.c:905
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Ohjelma keskeytyi signaaliin %d..."
 
-#: ../whois.c:1003
+#: ../whois.c:1109
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -195,51 +195,56 @@ msgstr ""
 "      --help           tulosta t‰m‰ ruutu\n"
 "      --version        tulosta versio\n"
 
-#: ../mkpasswd.c:76
+#: ../mkpasswd.c:80
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "\tStandardi DES-salaus ks crypt(3)"
 
-#: ../mkpasswd.c:148
+#: ../mkpasswd.c:159
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "V‰‰r‰ metodi '%s'.\n"
 
-#: ../mkpasswd.c:157 ../mkpasswd.c:167
+#: ../mkpasswd.c:168 ../mkpasswd.c:178
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "V‰‰r‰ numero '%s'.\n"
 
-#: ../mkpasswd.c:185
+#: ../mkpasswd.c:196
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "K‰yt‰ valitsinta '%s --help' lis‰tietojen saamiseen.\n"
 
-#: ../mkpasswd.c:225
+#: ../mkpasswd.c:237
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
 msgstr "V‰‰r‰ suolan pituus: %d tavu(a), kun %d tavua odotettiin.\n"
 
-#: ../mkpasswd.c:231
+#: ../mkpasswd.c:241
+#, fuzzy, c-format
+msgid "Wrong salt length: %d byte(s) when %d <= n <= %d expected.\n"
+msgstr "V‰‰r‰ suolan pituus: %d tavu(a), kun %d tavua odotettiin.\n"
+
+#: ../mkpasswd.c:247
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Suolassa laiton merkki '%c'.\n"
 
-#: ../mkpasswd.c:269 ../mkpasswd.c:296
+#: ../mkpasswd.c:286 ../mkpasswd.c:313
 #, c-format
 msgid "Password: "
 msgstr "Salasana:"
 
-#: ../mkpasswd.c:290
+#: ../mkpasswd.c:307
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Laiton merkki salasanassa '0x%hhx'.\n"
 
-#: ../mkpasswd.c:312
+#: ../mkpasswd.c:329
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Toiminto ei ole tuettu crypt(3) funktiossa.\n"
 
-#: ../mkpasswd.c:363
+#: ../mkpasswd.c:411
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -250,7 +255,7 @@ msgstr ""
 "Salaa salasanan crypt(3) funktiolla.\n"
 "\n"
 
-#: ../mkpasswd.c:366
+#: ../mkpasswd.c:414
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -283,7 +288,7 @@ msgstr ""
 "\n"
 "L‰het‰ bugiraportit osoitteeseen %s.\n"
 
-#: ../mkpasswd.c:394
+#: ../mkpasswd.c:442
 #, c-format
 msgid "Available methods:\n"
 msgstr "K‰ytett‰viss‰ olevat toiminnot:\n"

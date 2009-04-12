@@ -1,3 +1,14 @@
+whois (4.7.33) unstable; urgency=medium
+
+  * mkpasswd: use /dev/urandom to generate the salt. If it is not present,
+    initialize srand(3) with gettimeofday(2) instead of time(2) to have a
+    larger randomness space. (Closes: #523387)
+  * mkpasswd: added preliminary support for variable length salts, patch
+    courtesy of Nicolas François.
+  * Updated the .co.za SLD server. (Closes: #521579)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 12 Apr 2009 05:55:21 +0200
+
 whois (4.7.32) unstable; urgency=medium
 
   * Added new ASN allocations.

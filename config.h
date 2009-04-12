@@ -1,5 +1,5 @@
 /* Program version */
-#define VERSION "4.7.32"
+#define VERSION "4.7.33"
 
 /* Configurable features */
 
@@ -31,9 +31,9 @@
 #endif
 
 /* needs unistd.h */
-#ifdef _ISO_CPP_14882_1998
-/* Solaris 8 and better. What else? */
+#if defined _POSIX_C_SOURCE && _POSIX_C_SOURCE >= 200112L
 # define HAVE_GETADDRINFO
+# define HAVE_REGEXEC
 #endif
 
 #if defined __APPLE__ && defined __MACH__
@@ -50,10 +50,33 @@
 # endif
 #endif
 
-#if defined _POSIX2_VERSION
-# define HAVE_REGEXEC
+/* Unknown versions of Solaris */
+#if defined __SVR4 && defined __sun
+# define HAVE_SHA_CRYPT
 #endif
 
+/* FIXME: which systems lack this? */
+#define HAVE_GETTIMEOFDAY
+
+/*
+ * Please send patches to correctly ignore old releases which lack a RNG
+ * and add more systems which have one.
+ */
+#ifdef RANDOM_DEVICE
+#elif defined __GLIBC__ \
+	|| defined __FreeBSD__ || defined __NetBSD__ || defined __OpenBSD__ \
+	/* AIX >= 5.2? */ \
+	|| defined _AIX52 \
+	/* HP-UX >= B.11.11.09? */ \
+	|| defined  __hpux \
+	/* OS X: */ \
+	|| (defined __APPLE__ && defined __MACH__) \
+	/* Solaris >= 9 (this is >= 7): */ \
+	|| (defined __SVR4 && defined __sun && defined SUSv2) \
+	/* Tru64 UNIX >= 5.1B? */ \
+	|| defined __osf
+# define RANDOM_DEVICE "/dev/urandom"
+#endif
 
 #ifdef ENABLE_NLS
 # ifndef NLS_CAT_NAME
