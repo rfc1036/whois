@@ -73,7 +73,7 @@
 .az	WEB http://www.nic.az/AzCheck.htm
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://www.barbadosdomains.net/search_domain.php
-.bd	WEB http://www.bttb.net.bd/bd_search.php
+.bd	www.whois.com.bd # http://www.btcl.net.bd/faq_dotbd.php
 .be	whois.dns.be
 .bf	NONE		# NIC? http://www.onatel.bf/
 .bg	whois.register.bg
@@ -162,7 +162,7 @@
 .im	whois.nic.im
 .in	whois.registry.in	# afilias
 .io	whois.nic.io
-.iq	NONE		# NIC?
+.iq	NONE		# http://www.cmc.iq/english/iq/iqregister1.htm
 .ir	whois.nic.ir
 .is	whois.isnet.is
 .it	whois.nic.it

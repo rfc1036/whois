@@ -1,13 +1,16 @@
 #
-# Traduction de whois.pot
+# Translation of whois to French
+# Copyright not yet (C) 2003-2009 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# This file is distributed under the same license as the whois package.
 # Copyright © 2003 William Steve Applegate <wsapplegate@est.un.goret.info>
+# -2003: William Steve Applegate <wsapplegate@est.un.goret.info>
 # -2008: Mohammed Adnène Trojette <adn+deb@diwi.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-12 06:00+0200\n"
-"PO-Revision-Date: 2008-03-25 20:16+0100\n"
+"PO-Revision-Date: 2009-04-30 21:51+0200\n"
 "Last-Translator: Simon Paillard <simon.paillard@resel.enst-bretagne.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +72,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Requête faite pour l'extrémité IPv4 %s d'une adresse IPv6 6to4.\n"
+"Requête faite pour l'extrémité IPv4 %s d'une adresse IPv6 Teredo.\n"
 "\n"
 
 #: ../whois.c:278
@@ -120,7 +123,7 @@ msgstr "L'hôte %s est introuvable."
 #: ../whois.c:824
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: service inconnu"
+msgstr "%s/tcp : service inconnu"
 
 #: ../whois.c:899
 msgid "Timeout."
@@ -168,40 +171,39 @@ msgid ""
 msgstr ""
 "Usage: whois [OPTION]... OBJET...\n"
 "\n"
-"-l                     réduire d'un niveau la spécificité de la recherche "
-"[RPSL seulement]\n"
+"-l                     réduire d'un niveau la spécificité de la recherche\n"
+"                       [RPSL seulement]\n"
 "-L                     trouver toutes les occurrences moins spécifiques\n"
-"-m                     trouver les occurrences de premier niveau plus "
-"spécifiques\n"
+"-m                     trouver les occurrences de premier niveau plus\n"
+"                       spécifiques\n"
 "-M                     trouver toutes les occurrences plus spécifiques\n"
-"-c                     trouver l'occurrence la plus spécifique contenant un "
-"attribut mnt-irt\n"
+"-c                     trouver l'occurrence la plus spécifique contenant un\n"
+"                       attribut mnt-irt\n"
 "-x                     occurrences exactes [RPSL seulement]\n"
-"-d                     renvoyer aussi les objets de délégation DNS inverse "
-"[RPSL seulement]\n"
-"-i ATTR[,ATTR]...      effectuer une recherche inverse pour les ATTRibuts "
-"spécifiés\n"
+"-d                     renvoyer aussi les objets de délégation DNS inverse\n"
+"                       [RPSL seulement]\n"
+"-i ATTR[,ATTR]...      effectuer une recherche inverse pour les ATTRibuts\n"
+"                       spécifiés\n"
 "-T TYPE[,TYPE]...      chercher seulement les objets de ce TYPE\n"
-"-K                     seules les clés primaires sont renvoyées [RPSL "
-"seulement]\n"
-"-r                     désactiver la recherche récursive des informations de "
-"contact\n"
-"-R                     forcer l'affichage de la copie locale de l'objet de "
-"domaine,\n"
-"                       même s'il contient un renvoi\n"
+"-K                     seules les clés primaires sont renvoyées [RPSL\n"
+"                       seulement]\n"
+"-r                     désactiver la recherche récursive des informations de\n"
+"                       contact\n"
+"-R                     forcer l'affichage de la copie locale de l'objet de\n"
+"                       domaine, même s'il contient un renvoi\n"
 "-a                     rechercher dans toutes les bases de données\n"
 "-s SOURCE[,SOURCE]...  rechercher dans la base de la SOURCE\n"
-"-g SOURCE:PREM-DERN    trouver les mises à jour de la SOURCE ayant des "
-"numéros de série compris entre PREM et DERN\n"
-"-t TYPE                demander la syntaxe pour les objets de ce TYPE ('all' "
-"donne une liste)\n"
-"-v TYPE                demander la syntaxe détaillée pour les objets de ce "
-"TYPE\n"
-"-q [version|sources|types]  demander les informations spécifiées au serveur "
-"[RPSL seulement]\n"
-"-F                     sortie rapide au format brut (l'option -r est "
-"implicite)\n"
-"-h HOTE                se connecter au serveur HOTE\n"
+"-g SOURCE:PREM-DERN    trouver les mises à jour de la SOURCE ayant des\n"
+"                       numéros de série compris entre PREM et DERN\n"
+"-t TYPE                demander la syntaxe pour les objets de ce TYPE (« all »\n"
+"                       donne une liste)\n"
+"-v TYPE                demander la syntaxe détaillée pour les objets de ce\n"
+"                       TYPE\n"
+"-q [version|sources|types]  demander les informations spécifiées au serveur\n"
+"                       [RPSL seulement]\n"
+"-F                     sortie rapide au format brut (l'option -r est\n"
+"                       implicite)\n"
+"-h HÔTE                se connecter au serveur HÔTE\n"
 "-p PORT                se connecter à ce PORT\n"
 "-H                     cacher les textes légaux de déni de responsabilité\n"
 "      --verbose        détailler les actions entreprises\n"
@@ -220,29 +222,29 @@ msgstr "La méthode '%s' est invalide.\n"
 #: ../mkpasswd.c:168 ../mkpasswd.c:178
 #, c-format
 msgid "Invalid number '%s'.\n"
-msgstr "Le nombre '%s' est invalide.\n"
+msgstr "Le nombre « %s » est invalide.\n"
 
 #: ../mkpasswd.c:196
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr "Veuillez taper '%s --help' pour plus d'informations.\n"
+msgstr "Veuillez taper « %s --help » pour plus d'informations.\n"
 
 # : ../mkpasswd.c:152
 #: ../mkpasswd.c:237
 #, c-format
 msgid "Wrong salt length: %d byte(s) when %d expected.\n"
-msgstr "Mauvaise taille d'aléa: %d octet(s) au lieu de %d.\n"
+msgstr "Mauvaise taille d'aléa : %d octet(s) au lieu de %d.\n"
 
 # : ../mkpasswd.c:152
 #: ../mkpasswd.c:241
-#, fuzzy, c-format
+#, c-format
 msgid "Wrong salt length: %d byte(s) when %d <= n <= %d expected.\n"
-msgstr "Mauvaise taille d'aléa: %d octet(s) au lieu de %d.\n"
+msgstr "Mauvaise taille d'aléa : %d octet(s), non comprise entre %d et %d.\n"
 
 #: ../mkpasswd.c:247
 #, c-format
 msgid "Illegal salt character '%c'.\n"
-msgstr "Le caractère '%c' est invalide dans l'aléa.\n"
+msgstr "Le caractère « %c » est invalide dans l'aléa.\n"
 
 #: ../mkpasswd.c:286 ../mkpasswd.c:313
 #, c-format
@@ -252,7 +254,7 @@ msgstr "Mot de passe : "
 #: ../mkpasswd.c:307
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
-msgstr "Le caractère '0x%hhx' est invalide dans le mot de passe.\n"
+msgstr "Le caractère « 0x%hhx » est invalide dans le mot de passe.\n"
 
 #: ../mkpasswd.c:329
 #, c-format
@@ -291,8 +293,8 @@ msgstr ""
 "      -m, --method=TYPE     sélectionner ce TYPE de méthode\n"
 "      -S, --salt=ALÉA       utiliser cette ALÉA\n"
 "      -R, --rounds=NOMBRE   utiliser le NOMBRE de passages indiqué\n"
-"      -P, --password-fd=NUM lire le mot de passe depuis le descripteur de "
-"fichier NUM\n"
+"      -P, --password-fd=NUM lire le mot de passe depuis le descripteur de\n "
+"                            fichier NUM\n"
 "                            au lieu de /dev/tty\n"
 "      -s, --stdin           équivalent à --password-fd=0\n"
 "      -h, --help            afficher cette page d'aide et sortir\n"
@@ -300,7 +302,7 @@ msgstr ""
 "\n"
 "Si le MOT DE PASSE est manquant, il est demandé interactivement.\n"
 "Si aucune ALÉA n'est spécifiée, un aléa aléatoire est générée.\n"
-"Si le TYPE est 'help', les méthodes disponibles sont affichés.\n"
+"Si le TYPE est « help », les méthodes disponibles sont affichés.\n"
 "\n"
 "Veuillez signaler les bogues à %s.\n"
 

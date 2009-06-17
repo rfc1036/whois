@@ -62,7 +62,7 @@ const char *hide_strings[] = {
     "Access to INFO WHOIS information is provided", "",		/* Afilias */
     "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
     "DotAsia WHOIS LEGAL STATEMENT", "integrity of the database.",
-    "mTLD WHOIS LEGAL STATEMENT", "integrity of the database."	/* .mobi */
+    "mTLD WHOIS LEGAL STATEMENT", "integrity of the database.",	/* .mobi */
     "Access to RegistryPro's Whois", "All rights",		/* .pro */
     "Telnic, Ltd., the Registry Operator", "(b) harass any person;", /* .tel */
     NULL, NULL
