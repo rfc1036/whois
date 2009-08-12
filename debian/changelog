@@ -1,3 +1,10 @@
+whois (4.7.36) unstable; urgency=medium
+
+  * Fixed the whois server for 182.0.0.0/7 added in 4.7.35.
+  * Fixed the whois servers for some ERX legacy allocations.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 12 Aug 2009 22:01:25 +0200
+
 whois (4.7.35) unstable; urgency=medium
 
   * Added new IPv4 allocations.
