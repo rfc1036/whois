@@ -89,9 +89,10 @@
 169.208.0.0/12	apnic
 171.16.0.0/12	ripe
 171.32.0.0/15	ripe
+175.0.0.0/8	apnic
 178.0.0.0/8	ripe
 180.0.0.0/8	lacnic
-183.0.0.0/8	lacnic
+182.0.0.0/7	lacnic
 # 175 -> 185 reserved
 186.0.0.0/7	lacnic
 188.0.0.0/8	ripe # transferred from ARIN to to RIPE

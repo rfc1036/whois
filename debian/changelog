@@ -1,3 +1,16 @@
+whois (4.7.35) unstable; urgency=medium
+
+  * Added new IPv4 allocations.
+  * Updated the .ae, .jobs, .ms, .ph and .tv TLD servers. (Closes: #539567)
+  * Added the .ls, .mg, .mk, .tz and .uy TLD servers.
+  * Removed the .td TLD server.
+  * mkpasswd: generate random-length hashes when supported.
+  * mkpasswd: use ngettext to support translation of plural forms.
+    (Patch courtesy of Petr Pisar.)
+  * Updated some translations.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 12 Aug 2009 15:31:20 +0200
+
 whois (4.7.34) unstable; urgency=medium
 
   * Added new IPv4 allocations.

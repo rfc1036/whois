@@ -210,9 +210,6 @@ const char *handle_query(const char *hserver, const char *hport,
 			"whois database at"));
 	    puts(server + 1);
 	    return NULL;
-	case 2:
-	    puts(server + 1);
-	    return NULL;
 	case 3:
 	    puts(_("This TLD has no whois server."));
 	    return NULL;
@@ -224,8 +221,8 @@ const char *handle_query(const char *hserver, const char *hport,
 	    return NULL;
 	case 4:
 	    if (verb)
-		printf(_("Using server %s.\n"), "whois.crsnic.net");
-	    sockfd = openconn("whois.crsnic.net", NULL);
+		printf(_("Using server %s.\n"), server + 1);
+	    sockfd = openconn(server + 1, NULL);
 	    server = query_crsnic(sockfd, qstring);
 	    break;
 	case 7:
@@ -240,12 +237,6 @@ const char *handle_query(const char *hserver, const char *hport,
 		printf(_("Using server %s.\n"), "whois.afilias-grs.info");
 	    sockfd = openconn("whois.afilias-grs.info", NULL);
 	    server = query_afilias(sockfd, qstring);
-	    break;
-	case 9:
-	    if (verb)
-		printf(_("Using server %s.\n"), "whois.nic.cc");
-	    sockfd = openconn("whois.nic.cc", NULL);
-	    server = query_crsnic(sockfd, qstring);
 	    break;
 	case 0x0A:
 	    p = convert_6to4(qstring);

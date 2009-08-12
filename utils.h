@@ -42,6 +42,7 @@
 #else
 # define _(a) (a)
 # define N_(a) (a)
+# define ngettext(a, b, c) ((c==1) ? (a) : (b))
 #endif
 
 

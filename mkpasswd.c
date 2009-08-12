@@ -233,12 +233,16 @@ int main(int argc, char *argv[])
 	unsigned int c = strlen(salt_arg);
 	if (c < salt_minlen || c > salt_maxlen) {
 	    if (salt_minlen == salt_maxlen)
-		fprintf(stderr,
-			_("Wrong salt length: %d byte(s) when %d expected.\n"),
+		fprintf(stderr, ngettext(
+			"Wrong salt length: %d byte when %d expected.\n",
+			"Wrong salt length: %d bytes when %d expected.\n", c),
 			c, salt_maxlen);
 	    else
-		fprintf(stderr,
-			_("Wrong salt length: %d byte(s) when %d <= n <= %d expected.\n"),
+		fprintf(stderr, ngettext(
+			"Wrong salt length: %d byte when %d <= n <= %d"
+			" expected.\n",
+			"Wrong salt length: %d bytes when %d <= n <= %d"
+			" expected.\n", c),
 			c, salt_minlen, salt_maxlen);
 	    exit(1);
 	}
@@ -267,13 +271,19 @@ int main(int argc, char *argv[])
 	}
 	free(entropy);
 #else
+	unsigned int salt_len = salt_maxlen;
+
+	if (salt_minlen != salt_maxlen) { /* salt length can vary */
+	    srand(time(NULL) + getpid());
+	    salt_len = rand() % (salt_maxlen - salt_minlen + 1) + salt_minlen;
+	}
+
 	salt = NOFAIL(malloc(strlen(salt_prefix) + strlen(rounds_str)
-		+ salt_maxlen + 1));
+		+ salt_len + 1));
 	*salt = '\0';
 	strcat(salt, salt_prefix);
 	strcat(salt, rounds_str);
-	/* XXX the salt length should be random when it can vary */
-	generate_salt(salt + strlen(salt), salt_maxlen);
+	generate_salt(salt + strlen(salt), salt_len);
 #endif
     }
 
@@ -433,7 +443,7 @@ void display_version(void)
 
 void display_methods(void)
 {
-    int i;
+    unsigned int i;
 
     printf(_("Available methods:\n"));
     for (i = 0; methods[i].method != NULL; i++)

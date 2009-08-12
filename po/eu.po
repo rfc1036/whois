@@ -1,13 +1,13 @@
 # translation of whois to Euskara
 # Aitor Ibañez <aitiba@gmail.com>,2007
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2009 Marco d'Itri
+# This file is distributed under the same license as the whois package.
 # Aitor Ibañez <aitiba@gmail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.5.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-12 06:00+0200\n"
+"POT-Creation-Date: 2009-08-10 14:04+0200\n"
 "PO-Revision-Date: 2002-08-24 16:22+0200\n"
 "Last-Translator: Aitor Ibaez <aitiba@gmail.com>\n"
 "Language-Team: Euskara <Librezale@librezale.org>\n"
@@ -26,8 +26,7 @@ msgstr ""
 "\n"
 "Bug berri baten jakinarazpena: %s.\n"
 
-#: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
-#: ../whois.c:277
+#: ../whois.c:167 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:268
 #, c-format
 msgid "Using server %s.\n"
 msgstr "%s zerbitzaria erabiltzen.\n"
@@ -38,21 +37,21 @@ msgstr ""
 "TLD honek ez du whois zerbitzaririk, baina whois databasera sarbidea "
 "daukazu..."
 
-#: ../whois.c:217
+#: ../whois.c:214
 msgid "This TLD has no whois server."
 msgstr "TLD honek ez du whois zerbitzaririk."
 
-#: ../whois.c:220
+#: ../whois.c:217
 msgid "No whois server is known for this kind of object."
 msgstr "Objetu mota horrentzako, ez da whois zerbitzaririk ezagutzen."
 
-#: ../whois.c:223
+#: ../whois.c:220
 #, fuzzy
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "AS zenbaki edo IP sarea ezezaguna. Mesedez, programa eguneratu."
 
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:253
+#: ../whois.c:244
 #, c-format
 msgid ""
 "\n"
@@ -63,7 +62,7 @@ msgstr ""
 "Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
-#: ../whois.c:260
+#: ../whois.c:251
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -74,7 +73,7 @@ msgstr ""
 "Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
-#: ../whois.c:278
+#: ../whois.c:269
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -83,7 +82,7 @@ msgstr ""
 "Kontsulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:288
+#: ../whois.c:279
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -95,17 +94,17 @@ msgstr ""
 "$s-ra erreferentzia aurkituta.\n"
 "\n"
 
-#: ../whois.c:331 ../whois.c:334
+#: ../whois.c:322 ../whois.c:325
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Lerro hau, %s , ezin da prozesatu."
 
-#: ../whois.c:489
+#: ../whois.c:480
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Oharra: RIPE flags-ak ohiko zerbitzariengatik ezikusiak izaten dira."
 
-#: ../whois.c:627 ../whois.c:762
+#: ../whois.c:618 ../whois.c:753
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -113,26 +112,26 @@ msgstr ""
 "Hondamen arriskua: erabilpen balditzen textua aldatu egin da.\n"
 "Programa eguneratu.\n"
 
-#: ../whois.c:814
+#: ../whois.c:805
 #, c-format
 msgid "Host %s not found."
 msgstr "%s Host-a ez da aurkitu."
 
-#: ../whois.c:824
+#: ../whois.c:815
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: zerbitzu ezezaguna"
 
-#: ../whois.c:899
+#: ../whois.c:890
 msgid "Timeout."
 msgstr "Denbora muga."
 
-#: ../whois.c:905
+#: ../whois.c:896
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "%d seinalearengatik etena..."
 
-#: ../whois.c:1109
+#: ../whois.c:1100
 #, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -224,36 +223,40 @@ msgid "Try '%s --help' for more information.\n"
 msgstr "%s --help informazio gehiagorako.\n"
 
 #: ../mkpasswd.c:237
-#, c-format
-msgid "Wrong salt length: %d byte(s) when %d expected.\n"
-msgstr "Hazi tamain desegokia:%d byte %d-en ordez.\n"
-
-#: ../mkpasswd.c:241
 #, fuzzy, c-format
-msgid "Wrong salt length: %d byte(s) when %d <= n <= %d expected.\n"
-msgstr "Hazi tamain desegokia:%d byte %d-en ordez.\n"
+msgid "Wrong salt length: %d byte when %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
+msgstr[0] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
+msgstr[1] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 
-#: ../mkpasswd.c:247
+#: ../mkpasswd.c:242
+#, fuzzy, c-format
+msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
+msgstr[0] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
+msgstr[1] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
+
+#: ../mkpasswd.c:251
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "'%c' karakterea, hazian, ilegala da.\n"
 
-#: ../mkpasswd.c:286 ../mkpasswd.c:313
+#: ../mkpasswd.c:296 ../mkpasswd.c:323
 #, c-format
 msgid "Password: "
 msgstr "Pasahitza: "
 
-#: ../mkpasswd.c:307
+#: ../mkpasswd.c:317
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "'0x%hhx' password karakterea ilegala da.\n"
 
-#: ../mkpasswd.c:329
+#: ../mkpasswd.c:339
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr ""
 
-#: ../mkpasswd.c:411
+#: ../mkpasswd.c:417
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -264,7 +267,7 @@ msgstr ""
 "PASAHITZA crypt(3) erabiliz enkriptatu.\n"
 "\n"
 
-#: ../mkpasswd.c:414
+#: ../mkpasswd.c:420
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -297,7 +300,7 @@ msgstr ""
 "\n"
 "Bug berri baten jakinarazpena: %s.\n"
 
-#: ../mkpasswd.c:442
+#: ../mkpasswd.c:448
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "Algoritmo erabilgarriak:\n"

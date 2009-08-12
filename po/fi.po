@@ -1,18 +1,19 @@
 # Finnish translation for whois.
-# Copyright (C) 2008 Sami Kerola <kerolasa@iki.fi>
+# Copyright (C) 2008- Sami Kerola <kerolasa@iki.fi>
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.7.28\n"
+"Project-Id-Version: whois 4.7.34\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-12 06:00+0200\n"
-"PO-Revision-Date: 2008-09-28 19:28+0100\n"
+"POT-Creation-Date: 2009-08-10 14:04+0200\n"
+"PO-Revision-Date: 2009-08-12 14:55+0100\n"
 "Last-Translator: Sami Kerola <kerolasa@iki.fi>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../whois.c:120
 #, c-format
@@ -23,33 +24,32 @@ msgid ""
 msgstr ""
 "Versio %s.\n"
 "\n"
-"L‰het‰ bugiraportit osoitteeseen %s.\n"
+"L√§het√§ bugiraportit osoitteeseen %s.\n"
 
-#: ../whois.c:167 ../whois.c:227 ../whois.c:233 ../whois.c:240 ../whois.c:246
-#: ../whois.c:277
+#: ../whois.c:167 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:268
 #, c-format
 msgid "Using server %s.\n"
-msgstr "K‰ytet‰‰n palvelinta %s.\n"
+msgstr "K√§ytet√§√§n palvelinta %s.\n"
 
 #: ../whois.c:209
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
-"T‰lla TLD:ll‰ ei ole whois palvelinta, tiedot ovat nakyviss‰  osoitteessa"
+"T√§lla TLD:ll√§ ei ole whois palvelinta, tiedot ovat nakyviss√§ osoitteessa"
+
+#: ../whois.c:214
+msgid "This TLD has no whois server."
+msgstr "T√§lla TLD:ll√§ ei ole whois palvelinta."
 
 #: ../whois.c:217
-msgid "This TLD has no whois server."
-msgstr "T‰lla TLD:ll‰ ei ole whois palvelinta."
+msgid "No whois server is known for this kind of object."
+msgstr "Mik√§√§n whois palvelu ei tied√§ kysytty√§ tietoa."
 
 #: ../whois.c:220
-msgid "No whois server is known for this kind of object."
-msgstr "Kysytty ei vastaa minkaan whois palvelun tiet‰miin tietoihin."
-
-#: ../whois.c:223
 msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr "Tuntematon AS-numero tai IP-verkko. P‰ivit‰ t‰m‰ ohjelma."
+msgstr "Tuntematon AS-numero tai IP-verkko. P√§ivit√§ t√§m√§ ohjelma."
 
 #. XXX should fail if p = 0.0.0.0
-#: ../whois.c:253
+#: ../whois.c:244
 #, c-format
 msgid ""
 "\n"
@@ -57,10 +57,10 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Kysyt‰‰n IPv4 ulostulona %s IPv6:n IPv4 avaruudesta.\n"
+"Kysyt√§√§n IPv4 ulostulona %s IPv6:n IPv4 avaruudesta.\n"
 "\n"
 
-#: ../whois.c:260
+#: ../whois.c:251
 #, c-format
 msgid ""
 "\n"
@@ -68,10 +68,10 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Kysyt‰‰n IPv4 ulostulona %s Teredo IPv6 tunneliosoitetta.\n"
+"Kysyt√§√§n IPv4 ulostulona %s Teredo IPv6 tunneliosoitetta.\n"
 "\n"
 
-#: ../whois.c:278
+#: ../whois.c:269
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -80,7 +80,7 @@ msgstr ""
 "Kysely: \"%s\"\n"
 "\n"
 
-#: ../whois.c:288
+#: ../whois.c:279
 #, c-format
 msgid ""
 "\n"
@@ -90,46 +90,46 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Lˆytyi viittaus %s.\n"
+"L√∂ytyi viittaus %s.\n"
 "\n"
 
-#: ../whois.c:331 ../whois.c:334
+#: ../whois.c:322 ../whois.c:325
 #, c-format
 msgid "Cannot parse this line: %s"
-msgstr "Ohjelma ei kykene tulkitsemaan rivi‰: %s"
+msgstr "Ohjelma ei kykene tulkitsemaan rivi√§: %s"
 
-#: ../whois.c:489
+#: ../whois.c:480
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr "Varoitus: k‰yt‰t RIPE valitsimia traditionaaliseen palvelimeen."
+msgstr "Varoitus: k√§yt√§t RIPE valitsimia perinteiseen palvelimeen."
 
-#: ../whois.c:627 ../whois.c:762
+#: ../whois.c:618 ../whois.c:753
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
 "Katastrofaalinen virhe: lisenssiteksti on muuttunut.\n"
-"P‰ivita ohjelma.\n"
+"P√§ivita ohjelma.\n"
 
-#: ../whois.c:814
+#: ../whois.c:805
 #, c-format
 msgid "Host %s not found."
-msgstr "Palvelinta %s ei lˆydy."
+msgstr "Palvelinta %s ei l√∂ydy."
 
-#: ../whois.c:824
+#: ../whois.c:815
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: tuntematon versio"
+msgstr "%s/tcp: tuntematon palvelu"
 
-#: ../whois.c:899
+#: ../whois.c:890
 msgid "Timeout."
 msgstr "Aikakatkaisu."
 
-#: ../whois.c:905
+#: ../whois.c:896
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Ohjelma keskeytyi signaaliin %d..."
 
-#: ../whois.c:1109
+#: ../whois.c:1100
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -164,98 +164,102 @@ msgid ""
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
-"K‰yttˆ: whois [OPTIO]... OBJEKTI...\n"
+"K√§ytt√∂: whois [OPTIO]... OBJEKTI...\n"
 "\n"
-"-l                     tasoa ep‰tarkempi osuma [ainoastaan RPSL]\n"
-"-L                     etsi kaikki ep‰tarkemmat osumat\n"
-"-m                     etsi yht‰ tasoa tarkemmat osumat\n"
+"-l                     tasoa ep√§tarkempi osuma [ainoastaan RPSL]\n"
+"-L                     etsi kaikki ep√§tarkemmat osumat\n"
+"-m                     etsi yht√§ tasoa tarkemmat osumat\n"
 "-M                     etsi kaikki tarkemmat osumat\n"
-"-c                     etsi v‰h‰isin, joka vastaa mnt-irt attribuuttia\n"
-"-x                     t‰ydellinen osuma [ainoastaan RPSL]\n"
-"-d                     palauta ainoastaan k‰‰nteisdomainit [ainoastan RPSL]\n"
-"-i ATTR[,ATTR]...      k‰‰nteiskysely ATTRibuutin perusteella\n"
-"-T TYPE[,TYPE]...      etsi ainoastaan m‰‰ritetyn tyyppisi‰ objekteja\n"
+"-c                     etsi v√§h√§isin, joka vastaa mnt-irt attribuuttia\n"
+"-x                     t√§ydellinen osuma [ainoastaan RPSL]\n"
+"-d                     palauta ainoastaan k√§√§nteisdomainit [ainoastan RPSL]\n"
+"-i ATTR[,ATTR]...      k√§√§nteiskysely ATTRibuutin perusteella\n"
+"-T TYPE[,TYPE]...      etsi ainoastaan m√§√§ritetyn tyyppisi√§ objekteja\n"
 "-K                     palauta ainoastan hakuavaimet [ainoastan RPSL]\n"
-"-r                     ‰l‰ k‰yt‰ rekursiivista kontaktietohakua\n"
-"-R                     pakota k‰ytt‰m‰‰n paikallista kopiota domain\n"
-"                       objektista, vaikka se sis‰lt‰isi viitteit‰\n"
+"-r                     √§l√§ k√§yt√§ rekursiivista kontaktietohakua\n"
+"-R                     pakota k√§ytt√§m√§√§n paikallista kopiota domain\n"
+"                       objektista, vaikka se sis√§lt√§isi viitteit√§\n"
 "-a                     etsi kaikista tietokannoista\n"
 "-s SOURCE[,SOURCE]...  etsi tietokannoista SOURCE\n"
-"-g SOURCE:FIRST-LAST   lˆytˆ p‰ivitt‰‰ l‰hteen SOURCE j‰rjestysnumeron\n"
-"                       FIRST:st‰ LAST:iin\n"
-"-t TYPE                pyyd‰ mallinne TYPE objektille ('all' n‰ytt‰‰ "
+"-g SOURCE:FIRST-LAST   l√∂yt√∂ p√§ivitt√§√§ l√§hteen SOURCE j√§rjestysnumeron\n"
+"                       FIRST:st√§ LAST:iin\n"
+"-t TYPE                pyyd√§ mallinne TYPE objektille ('all' n√§ytt√§√§ "
 "tyyppilistan)\n"
 "-v TYPE                monisanainen mallinne TYPE objektille\n"
 "-q [version|sources|types]  erityinen palvelintieto [ainostaan RPSL]\n"
-"-F                     nopea tuloste (sis‰lt‰‰ -r valitsimen)\n"
+"-F                     nopea tuloste (sis√§lt√§√§ -r valitsimen)\n"
 "-h HOST                kysy palvelimelta HOST\n"
-"-p PORT                k‰yt‰ TCP-porttia PORT\n"
-"-H                     ‰l‰ tulosta k‰yttˆehtoja\n"
-"      --verbose        selit‰‰ mit‰ tapahtuu\n"
-"      --help           tulosta t‰m‰ ruutu\n"
+"-p PORT                k√§yt√§ TCP-porttia PORT\n"
+"-H                     √§l√§ tulosta k√§ytt√∂ehtoja\n"
+"      --verbose        n√§yt√§ mit√§ tapahtuu\n"
+"      --help           tulosta t√§m√§ ruutu\n"
 "      --version        tulosta versio\n"
 
 #: ../mkpasswd.c:80
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "\tStandardi DES-salaus ks crypt(3)"
+msgstr "Standardi 56 bittinen DES-salaus ks crypt(3)"
 
 #: ../mkpasswd.c:159
 #, c-format
 msgid "Invalid method '%s'.\n"
-msgstr "V‰‰r‰ metodi '%s'.\n"
+msgstr "V√§√§r√§ metodi '%s'.\n"
 
 #: ../mkpasswd.c:168 ../mkpasswd.c:178
 #, c-format
 msgid "Invalid number '%s'.\n"
-msgstr "V‰‰r‰ numero '%s'.\n"
+msgstr "V√§√§r√§ numero '%s'.\n"
 
 #: ../mkpasswd.c:196
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr "K‰yt‰ valitsinta '%s --help' lis‰tietojen saamiseen.\n"
+msgstr "K√§yt√§ valitsinta '%s --help' lis√§tietojen saamiseen.\n"
 
 #: ../mkpasswd.c:237
 #, c-format
-msgid "Wrong salt length: %d byte(s) when %d expected.\n"
-msgstr "V‰‰r‰ suolan pituus: %d tavu(a), kun %d tavua odotettiin.\n"
+msgid "Wrong salt length: %d byte when %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
+msgstr[0] "V√§√§r√§ suolan pituus: %d tavu, kun %d odotettiin.\n"
+msgstr[1] "V√§√§r√§ suolan pituus: %d tavu, kun %d odotettiin.\n"
 
-#: ../mkpasswd.c:241
-#, fuzzy, c-format
-msgid "Wrong salt length: %d byte(s) when %d <= n <= %d expected.\n"
-msgstr "V‰‰r‰ suolan pituus: %d tavu(a), kun %d tavua odotettiin.\n"
+#: ../mkpasswd.c:242
+#, c-format
+msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
+msgstr[0] "V√§√§r√§ suolan pituus: %d tavua, kun %d <= n <= %d odotettiin.\n"
+msgstr[1] "V√§√§r√§ suolan pituus: %d tavua, kun %d <= n <= %d odotettiin.\n"
 
-#: ../mkpasswd.c:247
+#: ../mkpasswd.c:251
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Suolassa laiton merkki '%c'.\n"
 
-#: ../mkpasswd.c:286 ../mkpasswd.c:313
+#: ../mkpasswd.c:296 ../mkpasswd.c:323
 #, c-format
 msgid "Password: "
-msgstr "Salasana:"
+msgstr "Salasana: "
 
-#: ../mkpasswd.c:307
+#: ../mkpasswd.c:317
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Laiton merkki salasanassa '0x%hhx'.\n"
 
-#: ../mkpasswd.c:329
+#: ../mkpasswd.c:339
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Toiminto ei ole tuettu crypt(3) funktiossa.\n"
 
-#: ../mkpasswd.c:411
+#: ../mkpasswd.c:417
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
-"K‰yttˆ: mkpasswd [OPTIO] ... [SALASANA] [SUOLA]]\n"
+"K√§ytt√∂: mkpasswd [OPTIO] ... [SALASANA] [SUOLA]]\n"
 "Salaa salasanan crypt(3) funktiolla.\n"
 "\n"
 
-#: ../mkpasswd.c:414
+#: ../mkpasswd.c:420
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -275,20 +279,20 @@ msgid ""
 msgstr ""
 "      -m, --method=TYPE     valitse toiminto TYPE\n"
 "      -S, --salt=SUOLA      suolan valinta\n"
-"      -R, --rounds=NUMERO   pyˆrist‰ numeroon\n"
+"      -R, --rounds=NUMERO   py√∂rist√§ numeroon\n"
 "      -P, --password-fd=NUM lue salasana avoimesta tiedostosta NUM\n"
-"                            ‰l‰k‰ terminaalista /dev/tty\n"
+"                            √§l√§k√§ terminaalista /dev/tty\n"
 "      -s, --stdin           sama kuin --password-fd=0\n"
-"      -h, --help            tulosta t‰m‰ ruutu\n"
+"      -h, --help            tulosta t√§m√§ ruutu\n"
 "      -V, --version         tulosta versio\n"
 "\n"
-"Ellei salasanaa m‰‰ritet‰ se kysyt‰‰n.\n"
-"Ellei suolaa m‰‰ritet‰ k‰ytet‰‰n satunnaista.\n"
+"Ellei salasanaa m√§√§ritet√§ se kysyt√§√§n.\n"
+"Ellei suolaa m√§√§ritet√§ k√§ytet√§√§n satunnaista.\n"
 "Jos tyyppi on 'help', tulostetaan toiminnot.\n"
 "\n"
-"L‰het‰ bugiraportit osoitteeseen %s.\n"
+"L√§het√§ bugiraportit osoitteeseen %s.\n"
 
-#: ../mkpasswd.c:442
+#: ../mkpasswd.c:448
 #, c-format
 msgid "Available methods:\n"
-msgstr "K‰ytett‰viss‰ olevat toiminnot:\n"
+msgstr "K√§ytett√§viss√§ olevat toiminnot:\n"
