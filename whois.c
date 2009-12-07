@@ -335,6 +335,7 @@ const char *match_config_file(const char *s)
 	i = regexec(&re, s, 0, NULL, 0);
 	if (i == 0) {
 	    regfree(&re);
+	    fclose(fp);
 	    return strdup(server);
 	}
 	if (i != REG_NOMATCH) {
@@ -344,10 +345,13 @@ const char *match_config_file(const char *s)
 	}
 	regfree(&re);
 #else
-	if (domcmp(s, pattern))
+	if (domcmp(s, pattern)) {
+	    fclose(fp);
 	    return strdup(server);
+	}
 #endif
     }
+    fclose(fp);
     return NULL;
 }
 #endif

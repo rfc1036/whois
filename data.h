@@ -45,7 +45,7 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "% Access and use restricted", "",				/* GANDI */
     "% The data in the WHOIS database of Schlund", "",
-    "NeuStar, Inc., the Registry", "rules.  For details",	/* us */
+    "NeuStar, Inc., the Registry", "OF THE AVAILABILITY",	/* us */
     "The data in this whois database is", "",			/* enom */
     "By submitting a WHOIS query, you agree you will", "LACK OF A DOMAIN",		/* directNIC */
     "The Data in Moniker.Com", "",

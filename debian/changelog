@@ -1,3 +1,15 @@
+whois (4.7.37) unstable; urgency=medium
+
+  * Added new ASN allocations.
+  * Added new IPv4 allocations.
+  * Fixed the disclaimer suppression data for .biz. (Closes: #551299)
+  * Added Chinese translation contributed by Feng Liu.
+  * Added the .cm and .kn TLD servers.
+  * Updated the .bi, .ge, .gf, .ki, .ls, .np and .tr TLD servers.
+  * Removed the .mq TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 07 Dec 2009 22:47:26 +0100
+
 whois (4.7.36) unstable; urgency=medium
 
   * Fixed the whois server for 182.0.0.0/7 added in 4.7.35.

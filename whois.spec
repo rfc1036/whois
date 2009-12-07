@@ -1,6 +1,6 @@
 Summary: Enhanced WHOIS client
 Name: whois
-Version: 4.7.36
+Version: 4.7.37
 Release: 1
 License: GPL
 Vendor: Marco d'Itri <md@linux.it>
