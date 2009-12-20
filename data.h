@@ -21,8 +21,10 @@ const char *ripe_servers[] = {
     "whois.arnes.si",
     "www.registry.co.ug",
     "whois.nic.ir",
+    "whois.pandi.or.id",
     "whois.nic.ck",
     "whois.ra.net",
+    "whois.bgpmon.net",
     NULL
 };
 
@@ -74,12 +76,6 @@ const char *nic_handles[] = {
     "poem-",	"whois.ripe.net",
     "form-",	"whois.ripe.net",
     "pgpkey-",	"whois.ripe.net",
-#if 0
-    // commented until somebody will explain the query format for these
-    "coco-",	"whois.corenic.net",
-    "coho-",	"whois.corenic.net",
-    "core-",	"whois.corenic.net",
-#endif
     "denic-",	"whois.denic.de",
     /* RPSL objects */
     "as-",	"whois.ripe.net",
@@ -138,4 +134,17 @@ const char *tld_serv[] = {
 #include "tld_serv.h"
     NULL,	NULL
 };
+
+#ifdef HAVE_ICONV
+struct server_charset {
+    const char *name;
+    const char *charset;
+    const char *options;
+};
+
+const struct server_charset servers_charset[] = {
+#include "servers_charset.h"
+    { NULL, NULL, NULL }
+};
+#endif
 

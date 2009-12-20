@@ -1,4 +1,4 @@
-.TH "WHOIS" "1" "4 March 2005" "Marco d'Itri" "Debian GNU/Linux"
+.TH "WHOIS" "1" "20 December 2009" "Marco d'Itri" "Debian GNU/Linux"
 .SH "NAME"
 whois \- client for the whois directory service
 .SH "SYNOPSIS"
@@ -52,17 +52,20 @@ only search in the domains database. If you want to search for NIC handles
 you have to prepend a \fI!\fP character. When you do this, the default
 server becomes \fIwhois.networksolutions.com\fP.
 .P
-When querying \fIwhois.nic.mil\fP for AS numbers, the program will
+When querying \fIwhois.arin.net\fP for IPv4 or IPv6 networks, the CIDR
+netmask length will be automatically removed from the query string.
+.P
+When querying \fIwhois.nic.ad.jp\fP for AS numbers, the program will
 automatically convert the request in the appropriate format, inserting
 a space after the string \fIAS\fP.
 .P
-If the program is compiled with IDN support, when querying
-\fIwhois.denic.de\fP for domain names it will automatically add the flags
-\fI\-T dn,ace \-C US\-ASCII\fP if no flags have been specified by the user.
-The domain name will \fBalways\fP be IDN-encoded.
+When querying \fIwhois.denic.de\fP for domain names and no other
+flags have been specified, the program will automatically add the flag
+\fI\-T dn\fP.
 .P
-When querying \fIwhois.corenic.net\fP, the program will automatically
-request machine-readable output.
+When querying \fIwhois.dk-hostmaster.dk\fP for domain names and no other
+flags have been specified, the program will automatically add the flag
+\fI\-\-show\-handles\fP.
 .P
 RIPE-specific command line options are ignored when querying non-RIPE
 servers. This may or may not be the behaviour intended by the user.
@@ -75,6 +78,12 @@ to find a server before applying the normal rules. Each line of the
 file should contain a regular expression to be matched against the query
 text and the whois server to use, separated by white space.
 .P
+The whois protocol does not specify an encoding for characters which
+cannot be represented by ASCII and implementations vary wildly.
+If the program knows that a specific server uses a certain encoding,
+if needed it will transcode the server output to the encoding specified
+by the current system locale.
+.P
 Command line arguments will always be interpreted accordingly to the
 current system locale and converted to the IDN ASCII Compatible Encoding.
 .SH "Files"
@@ -82,8 +91,8 @@ current system locale and converted to the IDN ASCII Compatible Encoding.
 .SH "ENVIRONMENT"
 .IP LANG
 When querying \fIwhois.nic.ad.jp\fP and \fIwhois.jprs.jp\fP english text
-is requested unless the
-\fILANG\fP environment variable specifies a Japanese locale.
+is requested unless the \fILANG\fP or \fILC_MESSAGES\fP environment
+variables specify a Japanese locale.
 .IP "WHOIS_OPTIONS"
 A list of options which will be evalued before the ones specified on the
 command line.
@@ -101,9 +110,9 @@ the help file which can be obtained with the command:
 .IP 
 .B whois \-h whois.ripe.net HELP
 .SH "BUGS"
-The program has many buffer overflows when parsing the command line
-parameters: be sure to not pass untrusted data to it.
-It will be rewritten to use a dynamic strings library.
+The program may have buffer overflows in the command line parser:
+be sure to not pass untrusted data to it.
+It should be rewritten to use a dynamics strings library.
 .SH "HISTORY"
 This program closely tracks the user interface of the whois client
 developed at RIPE by Ambrose Magee and others on the base of the

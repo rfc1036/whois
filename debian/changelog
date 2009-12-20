@@ -1,3 +1,16 @@
+whois (5.0.0) unstable; urgency=low
+
+  * Added optional support for automatically transcoding the output of
+    servers. (Closes: #363366, #402356)
+  * Automatically add --show-handles to queries for .dk domains.
+  * Normalize the querystring and convert it to punycode even if a server
+    is specified on the command line.
+  * Updated the .id, .is, .my, .sb and .tj TLD servers.
+  * Removed the .mm, .pw, .sr and .tp TLD servers.
+  * Cleaned up the horrible strings manipulation code. (Closes: #131924)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 20 Dec 2009 03:01:40 +0100
+
 whois (4.7.37) unstable; urgency=medium
 
   * Added new ASN allocations.

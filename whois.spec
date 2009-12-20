@@ -1,6 +1,6 @@
 Summary: Enhanced WHOIS client
 Name: whois
-Version: 4.7.37
+Version: 5.0.0
 Release: 1
 License: GPL
 Vendor: Marco d'Itri <md@linux.it>
@@ -20,7 +20,7 @@ server for most queries.
 %setup
 
 %build
-make OPTS="$RPM_OPT_FLAGS" 
+make CFLAGS="$RPM_OPT_FLAGS" HAVE_LIBIDN=1 HAVE_ICONV=1
 
 %install
 rm -rf ${RPM_BUILD_ROOT}

@@ -9,7 +9,7 @@ VERSION := $(shell dpkg-parsechangelog | sed -n 's/\+.*$$//; /^Version/s/.* //p'
 
 build:
 	dh_testdir
-	$(MAKE) CONFIG_FILE="/etc/whois.conf" HAVE_LIBIDN=1
+	$(MAKE) CONFIG_FILE="/etc/whois.conf" HAVE_LIBIDN=1 HAVE_ICONV=1
 	cd po && $(MAKE) whois.pot
 	touch $@
 
