@@ -1,3 +1,13 @@
+whois (5.0.1) unstable; urgency=medium
+
+  * Added new IPv4 allocations.
+  * Removed the .dj TLD server.
+  * Added support to mkpasswd for a "-5" convenience command line parameter.
+  * Updated one or more translations. (Closes: #562706)
+  * Removed the broken links from the README. (Closes: #566950)
+
+ -- Marco d'Itri <md@linux.it>  Thu, 28 Jan 2010 00:55:22 +0100
+
 whois (5.0.0) unstable; urgency=low
 
   * Added optional support for automatically transcoding the output of

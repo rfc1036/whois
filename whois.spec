@@ -1,6 +1,6 @@
 Summary: Enhanced WHOIS client
 Name: whois
-Version: 5.0.0
+Version: 5.0.1
 Release: 1
 License: GPL
 Vendor: Marco d'Itri <md@linux.it>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-10 14:04+0200\n"
+"POT-Creation-Date: 2010-01-27 13:38+0100\n"
 "PO-Revision-Date: 2009-04-30 21:51+0200\n"
 "Last-Translator: Simon Paillard <simon.paillard@resel.enst-bretagne.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../whois.c:120
+#: ../whois.c:136
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -28,31 +28,30 @@ msgstr ""
 "\n"
 "Veuillez signaler les bogues à %s.\n"
 
-#: ../whois.c:167 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:268
+#: ../whois.c:190 ../whois.c:243 ../whois.c:249 ../whois.c:256 ../whois.c:286
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Le serveur %s est sélectionné.\n"
 
-#: ../whois.c:209
+#: ../whois.c:228
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Ce TLD n'a pas de serveur whois, mais vous pouvez accéder à la base de "
 "données à"
 
-#: ../whois.c:214
+#: ../whois.c:233
 msgid "This TLD has no whois server."
 msgstr "Ce TLD n'a pas de serveur whois."
 
-#: ../whois.c:217
+#: ../whois.c:236
 msgid "No whois server is known for this kind of object."
 msgstr "Aucun serveur whois n'est connu pour ce type d'objet."
 
-#: ../whois.c:220
+#: ../whois.c:239
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Numéro d'AS ou réseau IP inconnu. Veuillez mettre à jour ce programme."
 
-#. XXX should fail if p = 0.0.0.0
-#: ../whois.c:244
+#: ../whois.c:262
 #, c-format
 msgid ""
 "\n"
@@ -63,7 +62,7 @@ msgstr ""
 "Requête faite pour l'extrémité IPv4 %s d'une adresse IPv6 6to4.\n"
 "\n"
 
-#: ../whois.c:251
+#: ../whois.c:268
 #, c-format
 msgid ""
 "\n"
@@ -74,7 +73,7 @@ msgstr ""
 "Requête faite pour l'extrémité IPv4 %s d'une adresse IPv6 Teredo.\n"
 "\n"
 
-#: ../whois.c:269
+#: ../whois.c:287
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -83,7 +82,7 @@ msgstr ""
 "Requête : \"%s\"\n"
 "\n"
 
-#: ../whois.c:279
+#: ../whois.c:297
 #, c-format
 msgid ""
 "\n"
@@ -96,17 +95,17 @@ msgstr ""
 "Renvoi trouvé vers %s.\n"
 "\n"
 
-#: ../whois.c:322 ../whois.c:325
+#: ../whois.c:339 ../whois.c:342
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Impossible d'interpréter la ligne : %s"
 
-#: ../whois.c:480
+#: ../whois.c:506
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr ""
 "Avertissement : des options RIPE ont été utilisées avec un serveur classique."
 
-#: ../whois.c:618 ../whois.c:753
+#: ../whois.c:657 ../whois.c:806
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -114,26 +113,26 @@ msgstr ""
 "Erreur catastrophique : le texte de déni de responsabilité a changé.\n"
 "Veuillez mettre à jour ce programme.\n"
 
-#: ../whois.c:805
+#: ../whois.c:858
 #, c-format
 msgid "Host %s not found."
 msgstr "L'hôte %s est introuvable."
 
-#: ../whois.c:815
+#: ../whois.c:868
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp : service inconnu"
 
-#: ../whois.c:890
+#: ../whois.c:943
 msgid "Timeout."
 msgstr "Temps limite dépassé."
 
-#: ../whois.c:896
+#: ../whois.c:949
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interruption par le signal %d..."
 
-#: ../whois.c:1100
+#: ../whois.c:1175
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -215,23 +214,23 @@ msgstr ""
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "fonction crypt(3) standard, chiffrement DES à 56 bits"
 
-#: ../mkpasswd.c:159
+#: ../mkpasswd.c:162
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "La méthode '%s' est invalide.\n"
 
-#: ../mkpasswd.c:168 ../mkpasswd.c:178
+#: ../mkpasswd.c:171 ../mkpasswd.c:181
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Le nombre « %s » est invalide.\n"
 
-#: ../mkpasswd.c:196
+#: ../mkpasswd.c:199
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Veuillez taper « %s --help » pour plus d'informations.\n"
 
 # : ../mkpasswd.c:152
-#: ../mkpasswd.c:237
+#: ../mkpasswd.c:240
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
@@ -239,34 +238,34 @@ msgstr[0] "Mauvaise taille d'aléa : %d octet au lieu de %d.\n"
 msgstr[1] "Mauvaise taille d'aléa : %d octets au lieu de %d.\n"
 
 # : ../mkpasswd.c:152
-#: ../mkpasswd.c:242
+#: ../mkpasswd.c:245
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Mauvaise taille d'aléa : %d octet, non comprise entre %d et %d.\n"
 msgstr[1] "Mauvaise taille d'aléa : %d octets, non comprise entre %d et %d.\n"
 
-#: ../mkpasswd.c:251
+#: ../mkpasswd.c:254
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Le caractère « %c » est invalide dans l'aléa.\n"
 
-#: ../mkpasswd.c:296 ../mkpasswd.c:323
+#: ../mkpasswd.c:299 ../mkpasswd.c:326
 #, c-format
 msgid "Password: "
 msgstr "Mot de passe : "
 
-#: ../mkpasswd.c:317
+#: ../mkpasswd.c:320
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Le caractère « 0x%hhx » est invalide dans le mot de passe.\n"
 
-#: ../mkpasswd.c:339
+#: ../mkpasswd.c:342
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Méthode non prise en charge par crypt(3).\n"
 
-#: ../mkpasswd.c:417
+#: ../mkpasswd.c:420
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -277,10 +276,11 @@ msgstr ""
 "Chiffre le MOT DE PASSE à l'aide de la fonction crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:423
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
+"      -5                    like --method=md5\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
 "      -P, --password-fd=NUM read the password from file descriptor NUM\n"
@@ -296,6 +296,7 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 "      -m, --method=TYPE     sélectionner ce TYPE de méthode\n"
+"      -s                    équivalent à --method=md5\n"
 "      -S, --salt=ALÉA       utiliser cette ALÉA\n"
 "      -R, --rounds=NOMBRE   utiliser le NOMBRE de passages indiqué\n"
 "      -P, --password-fd=NUM lire le mot de passe depuis le descripteur de\n"
@@ -311,7 +312,7 @@ msgstr ""
 "\n"
 "Veuillez signaler les bogues à %s.\n"
 
-#: ../mkpasswd.c:448
+#: ../mkpasswd.c:452
 #, c-format
 msgid "Available methods:\n"
 msgstr "Méthodes disponibles :\n"

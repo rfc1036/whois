@@ -17,13 +17,16 @@ libc function using the given salt.
 Use the \fISTRING\fP as salt. It must not contain prefixes such as \fI$1$\fP.
 .TP
 .B -R, --rounds=NUMBER
-Use \fINUMBER\fP rounds. This argument is ignored if the method choosen
+Use \fINUMBER\fP rounds. This argument is ignored if the method chosen
 does not support variable rounds. For the OpenBSD Blowfish method this is
 the logarithm of the number of rounds.
 .TP
 .B -m, --method=TYPE
 Compute the password using the \fITYPE\fP method.
 If \fITYPE\fP is \fIhelp\fP then the available methods are printed.
+.TP
+.B -5
+Like \fI--method=md5\fP.
 .TP
 .B -P, --password-fd=NUM
 Read the password from file descriptor \fINUM\fP instead of using

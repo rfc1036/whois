@@ -3,10 +3,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.7.35\n"
+"Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-10 14:04+0200\n"
-"PO-Revision-Date: 2009-08-10 09:08+0200\n"
+"POT-Creation-Date: 2010-01-27 13:38+0100\n"
+"PO-Revision-Date: 2010-01-27 16:11+0100\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../whois.c:120
+#: ../whois.c:136
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -26,32 +26,31 @@ msgstr ""
 "Chyby programu hlaste na %s (anglicky), chyby překladu na\n"
 "<translation-team-cs@lists.sourceforge.net> (česky).\n"
 
-#: ../whois.c:167 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:268
+#: ../whois.c:190 ../whois.c:243 ../whois.c:249 ../whois.c:256 ../whois.c:286
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Používám server %s.\n"
 
-#: ../whois.c:209
+#: ../whois.c:228
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Tato TLD nemá žádný whoisový server, ale k whoisové databázi se lze dostat na"
 
-#: ../whois.c:214
+#: ../whois.c:233
 msgid "This TLD has no whois server."
 msgstr "Tato TLD nemá žádný whoisový server."
 
-#: ../whois.c:217
+#: ../whois.c:236
 msgid "No whois server is known for this kind of object."
 msgstr "Pro tento druh objektu není znám žádný whoisový server."
 
-#: ../whois.c:220
+#: ../whois.c:239
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr ""
 "Neznémé číslo AS nebo neznámá IP síť.\n"
 "Prosím, pořiďte si novou verzi tohoto programu."
 
-#. XXX should fail if p = 0.0.0.0
-#: ../whois.c:244
+#: ../whois.c:262
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +61,7 @@ msgstr ""
 "Dotazuji se na IPv4 konec %s příslušející 6to4 IPv6 adrese.\n"
 "\n"
 
-#: ../whois.c:251
+#: ../whois.c:268
 #, c-format
 msgid ""
 "\n"
@@ -73,7 +72,7 @@ msgstr ""
 "Dotazuji se na IPv4 konec %s příslušející Teredo IPv6 adrese.\n"
 "\n"
 
-#: ../whois.c:269
+#: ../whois.c:287
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +81,7 @@ msgstr ""
 "Znění dotazu: „%s“\n"
 "\n"
 
-#: ../whois.c:279
+#: ../whois.c:297
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +94,16 @@ msgstr ""
 "Nalezen odkaz na %s.\n"
 "\n"
 
-#: ../whois.c:322 ../whois.c:325
+#: ../whois.c:339 ../whois.c:342
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Tento řádek nemohu rozebrat: %s"
 
-#: ../whois.c:480
+#: ../whois.c:506
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Varování: RIPE příznak použit s tradičním serverem."
 
-#: ../whois.c:618 ../whois.c:753
+#: ../whois.c:657 ../whois.c:806
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,26 +111,26 @@ msgstr ""
 "Katastrofální chyba: text prohlášení byl pozměněn.\n"
 "Prosím, pořiďte si novou verzi tohoto programu.\n"
 
-#: ../whois.c:805
+#: ../whois.c:858
 #, c-format
 msgid "Host %s not found."
 msgstr "Jméno počítače %s nenalezeno."
 
-#: ../whois.c:815
+#: ../whois.c:868
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/TCP: neznámá služba"
 
-#: ../whois.c:890
+#: ../whois.c:943
 msgid "Timeout."
 msgstr "Čas vypršel."
 
-#: ../whois.c:896
+#: ../whois.c:949
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Přerušeno signálem %d…"
 
-#: ../whois.c:1100
+#: ../whois.c:1175
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -204,22 +203,22 @@ msgstr ""
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "standardní crypt(3) založený na 56bitové šifře DES"
 
-#: ../mkpasswd.c:159
+#: ../mkpasswd.c:162
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "Neplatná metoda „%s“.\n"
 
-#: ../mkpasswd.c:168 ../mkpasswd.c:178
+#: ../mkpasswd.c:171 ../mkpasswd.c:181
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Neplatné číslo „%s“.\n"
 
-#: ../mkpasswd.c:196
+#: ../mkpasswd.c:199
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Pro podrobnosti zkuste příkaz „%s --help“.\n"
 
-#: ../mkpasswd.c:237
+#: ../mkpasswd.c:240
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
@@ -227,7 +226,7 @@ msgstr[0] "Chybná délka soli: %d bajt, zatímco očekáváno %d.\n"
 msgstr[1] "Chybná délka soli: %d bajty, zatímco očekáváno %d.\n"
 msgstr[2] "Chybná délka soli: %d bajtů, zatímco očekáváno %d.\n"
 
-#: ../mkpasswd.c:242
+#: ../mkpasswd.c:245
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
@@ -235,27 +234,27 @@ msgstr[0] "Chybná délka soli: %d bajt, zatímco očekáváno %d <= n <= %d.\n"
 msgstr[1] "Chybná délka soli: %d bajty, zatímco očekáváno %d <= n <= %d.\n"
 msgstr[2] "Chybná délka soli: %d bajtů, zatímco očekáváno %d <= n <= %d.\n"
 
-#: ../mkpasswd.c:251
+#: ../mkpasswd.c:254
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Neplatný znak v soli „%c“.\n"
 
-#: ../mkpasswd.c:296 ../mkpasswd.c:323
+#: ../mkpasswd.c:299 ../mkpasswd.c:326
 #, c-format
 msgid "Password: "
 msgstr "Heslo: "
 
-#: ../mkpasswd.c:317
+#: ../mkpasswd.c:320
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
 msgstr "Zakázaný znak v hesle „0x%hhx“.\n"
 
-#: ../mkpasswd.c:339
+#: ../mkpasswd.c:342
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Metoda není podporována funkcí crypt(3).\n"
 
-#: ../mkpasswd.c:417
+#: ../mkpasswd.c:420
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -266,10 +265,11 @@ msgstr ""
 "Zašifruje HESLO pomocí funkce crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:423
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
+"      -5                    like --method=md5\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
 "      -P, --password-fd=NUM read the password from file descriptor NUM\n"
@@ -284,7 +284,8 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
-"      -H, --hash=DRUH       vybere DRUH hashe\n"
+"      -m, --method=DRUH     vybere DRUH metody\n"
+"      -5                    stejné jako --method=md5\n"
 "      -S, --salt=SŮL        použije zadanou SŮL\n"
 "      -R, --rounds=POČET    použije zadaný POČET kol\n"
 "      -P, --password-fd=Č   přečte heslo z deskriptoru souboru Č\n"
@@ -295,12 +296,12 @@ msgstr ""
 "\n"
 "Chybí-li HESLO, bude o něj požádáno interaktivně.\n"
 "Nebude-li zadána SŮL, vygeneruje se náhodná.\n"
-"Bude-li DRUH „help“, vypíšou se dostupné algoritmy.\n"
+"Bude-li DRUH „help“, vypíšou se dostupné metody.\n"
 "\n"
 "Chyby programu hlaste na %s (anglicky), chyby překladu na\n"
 "<translation-team-cs@lists.sourceforge.net> (česky).\n"
 
-#: ../mkpasswd.c:448
+#: ../mkpasswd.c:452
 #, c-format
 msgid "Available methods:\n"
 msgstr "Dostupné metody:\n"

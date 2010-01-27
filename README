@@ -1,6 +1,10 @@
 Why another whois client? Because the RIPE client is a mess of hacks and
 #ifdefs and more complex programs lack features or are bloated.
 
+This client is intelligent and can automatically select the appropriate
+whois server for most queries.
+
+
 Notes about the data files:
 - domain names MUST be lowercase and MUST begin with "." or "-".
 - first match wins (for both domains and netblocks)
@@ -12,20 +16,15 @@ not correctly handled by the program.
 Please also try to compile after defining HAVE_GETADDRINFO and send me
 working #defines for your flavour of UNIX.
 
-The home of the program is http://www.linux.it/~md/software/
+The home of the program is
+http://ftp.debian.org/debian/pool/main/w/whois/ .
 
 
 Other information sources:
 - RIPE-187 and RIPE-189 (from ftp://ftp.ripe.net/ripe/docs/ or
   http://www.ripe.net/docs/)
-- the www.geektools.org CGI proxy
-- home of the 6bone client: http://www.ip.qwest.net/~david/software/
-- http://www.apnic.net/db/RIRs.html and
-  http://www.apnic.net/maps/tld-list.html
 - http://www.uninett.no/navn/domreg.html
-- http://www.iahc.org/dns-refs/registry.html
 - http://www.iana.org/root-whois/xx.htm
-- http://www.afrinic.net/
 - http://www.aftld.org/
 
 Marco d'Itri

@@ -1,24 +1,24 @@
 # translation of ru.po to Russian
 # Copyright (C) Marco d'Itri
 # This file is distributed under the same license as the whois package.
-# Andy Shevchenko <andy@smile.org.ua>, 2005.
 #
+# Andy Shevchenko <andy@smile.org.ua>, 2005.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: ru\n"
+"Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-10 14:04+0200\n"
-"PO-Revision-Date: 2005-11-29 15:15+0200\n"
-"Last-Translator: Andy Shevchenko <andy@smile.org.ua>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"POT-Creation-Date: 2010-01-27 13:38+0100\n"
+"PO-Revision-Date: 2010-01-27 20:31+0300\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
+"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../whois.c:120
+#: ../whois.c:136
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,32 +27,30 @@ msgid ""
 msgstr ""
 "Версия %s.\n"
 "\n"
-"Замечания отправляйте на %s.\n"
+"Сообщения об ошибках отправляйте на %s.\n"
 
-#: ../whois.c:167 ../whois.c:224 ../whois.c:230 ../whois.c:237 ../whois.c:268
+#: ../whois.c:190 ../whois.c:243 ../whois.c:249 ../whois.c:256 ../whois.c:286
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Используется сервер %s.\n"
 
-#: ../whois.c:209
+#: ../whois.c:228
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr ""
-"Этот ДВУ не имеет whois-сервера, но можно получить доступ к базе whois на"
+msgstr "Данный TLD не имеет whois-сервера, но можно получить доступ к базе whois на"
 
-#: ../whois.c:214
+#: ../whois.c:233
 msgid "This TLD has no whois server."
-msgstr "Этот ДВУ не имеет whois-сервера."
+msgstr "Данный TLD не имеет whois-сервера."
 
-#: ../whois.c:217
+#: ../whois.c:236
 msgid "No whois server is known for this kind of object."
 msgstr "Нет whois-сервера для объектов данного вида."
 
-#: ../whois.c:220
+#: ../whois.c:239
 msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr "Неизвестный номер AS или IP-сети. Пожалуйста, обновите программу."
+msgstr "Неизвестный номер AS или IP-сеть. Пожалуйста, обновите программу."
 
-#. XXX should fail if p = 0.0.0.0
-#: ../whois.c:244
+#: ../whois.c:262
 #, c-format
 msgid ""
 "\n"
@@ -63,18 +61,18 @@ msgstr ""
 "Запрашивается конечная IPv4-точка %s для IPv6-адреса 6-в-4.\n"
 "\n"
 
-#: ../whois.c:251
-#, fuzzy, c-format
+#: ../whois.c:268
+#, c-format
 msgid ""
 "\n"
 "Querying for the IPv4 endpoint %s of a Teredo IPv6 address.\n"
 "\n"
 msgstr ""
 "\n"
-"Запрашивается конечная IPv4-точка %s для IPv6-адреса 6-в-4.\n"
+"Запрашивается конечная IPv4-точка %s для IPv6-адреса Teredo.\n"
 "\n"
 
-#: ../whois.c:269
+#: ../whois.c:287
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -83,7 +81,7 @@ msgstr ""
 "Строка запроса: \"%s\"\n"
 "\n"
 
-#: ../whois.c:279
+#: ../whois.c:297
 #, c-format
 msgid ""
 "\n"
@@ -96,43 +94,43 @@ msgstr ""
 "Найдено перенаправление на %s.\n"
 "\n"
 
-#: ../whois.c:322 ../whois.c:325
+#: ../whois.c:339 ../whois.c:342
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Невозможно разобрать строку: %s"
 
-#: ../whois.c:480
+#: ../whois.c:506
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Предупреждение: флаги RIPE используются с традиционным сервером."
 
-#: ../whois.c:618 ../whois.c:753
+#: ../whois.c:657 ../whois.c:806
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Катастрофическая ошибка: текст отказа был изменён.\n"
+"Катастрофическая ошибка: текст правовой оговорки был изменён.\n"
 "Пожалуйста, обновите программу.\n"
 
-#: ../whois.c:805
+#: ../whois.c:858
 #, c-format
 msgid "Host %s not found."
 msgstr "Узел %s не найден."
 
-#: ../whois.c:815
+#: ../whois.c:868
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: неизвестный сервис"
 
-#: ../whois.c:890
+#: ../whois.c:943
 msgid "Timeout."
 msgstr "Задержка."
 
-#: ../whois.c:896
+#: ../whois.c:949
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Прервано по сигналу %d..."
 
-#: ../whois.c:1100
+#: ../whois.c:1175
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -167,7 +165,7 @@ msgid ""
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
-"Использование: whois [ОПЦИЯ]... ОБЪЕКТ...\n"
+"Использование: whois [ПАРАМЕТР]... ОБЪЕКТ...\n"
 "\n"
 "-l                     одноуровневый минимальный поиск [только RPSL]\n"
 "-L                     найти всё при минимуме указанных совпадений\n"
@@ -198,80 +196,82 @@ msgstr ""
 "-F                     быстрый сырой вывод (включает также -r)\n"
 "-h УЗЕЛ                присоединиться к УЗЛУ\n"
 "-p ПОРТ                присоединиться к ПОРТУ\n"
-"-H                     скрыть легальные отказы\n"
+"-H                     скрыть правовые оговорки\n"
 "      --verbose        разъяснять, что происходит\n"
-"      --help           отобразить эту помощь и выйти\n"
-"      --version        вывести информацию о версии и выйти\n"
+"      --help           показать эту справку и закончить работу\n"
+"      --version        показать информацию о версии и закончить работу\n"
 
 #: ../mkpasswd.c:80
-#, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "\tстандартный 56 битный, базирующийся на DES, алгоритм crypt(3)"
+msgstr "стандартный 56-битный, базирующийся на DES, crypt(3)"
 
-#: ../mkpasswd.c:159
-#, fuzzy, c-format
+#: ../mkpasswd.c:162
+#, c-format
 msgid "Invalid method '%s'.\n"
-msgstr "Неверный номер '%s'.\n"
+msgstr "Неверный метод '%s'.\n"
 
-#: ../mkpasswd.c:168 ../mkpasswd.c:178
+#: ../mkpasswd.c:171 ../mkpasswd.c:181
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Неверный номер '%s'.\n"
 
-#: ../mkpasswd.c:196
+#: ../mkpasswd.c:199
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr "Выполните '%s --help' для дополнительной информации.\n"
+msgstr "Доп. информацию можно получить, запустив '%s --help'.\n"
 
-#: ../mkpasswd.c:237
-#, fuzzy, c-format
+#: ../mkpasswd.c:240
+#, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
-msgstr[0] "Испорченная длина salt: %d байт(а) при ожидаемой %d.\n"
-msgstr[1] "Испорченная длина salt: %d байт(а) при ожидаемой %d.\n"
+msgstr[0] "Неверная длина соли: %d байт при ожидаемой %d.\n"
+msgstr[1] "Неверная длина соли: %d байта при ожидаемой %d.\n"
+msgstr[2] "Неверная длина соли: %d байт при ожидаемой %d.\n"
 
-#: ../mkpasswd.c:242
-#, fuzzy, c-format
+#: ../mkpasswd.c:245
+#, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
-msgstr[0] "Испорченная длина salt: %d байт(а) при ожидаемой %d.\n"
-msgstr[1] "Испорченная длина salt: %d байт(а) при ожидаемой %d.\n"
+msgstr[0] "Неверная длина соли: %d байт при ожидаемой %d <= n <= %d.\n"
+msgstr[1] "Неверная длина соли: %d байта при ожидаемой %d <= n <= %d.\n"
+msgstr[2] "Неверная длина соли: %d байт при ожидаемой %d <= n <= %d.\n"
 
-#: ../mkpasswd.c:251
+#: ../mkpasswd.c:254
 #, c-format
 msgid "Illegal salt character '%c'.\n"
-msgstr "Неверный salt-символ '%c'.\n"
+msgstr "Недопустимый для соли символ '%c'.\n"
 
-#: ../mkpasswd.c:296 ../mkpasswd.c:323
+#: ../mkpasswd.c:299 ../mkpasswd.c:326
 #, c-format
 msgid "Password: "
 msgstr "Пароль: "
 
-#: ../mkpasswd.c:317
+#: ../mkpasswd.c:320
 #, c-format
 msgid "Illegal password character '0x%hhx'.\n"
-msgstr "Неверный символ пароля '0x%hhx'.\n"
+msgstr "Недопустимый для пароля символ '0x%hhx'.\n"
 
-#: ../mkpasswd.c:339
+#: ../mkpasswd.c:342
 #, c-format
 msgid "Method not supported by crypt(3).\n"
-msgstr ""
+msgstr "Данный метод не поддерживается crypt(3).\n"
 
-#: ../mkpasswd.c:417
+#: ../mkpasswd.c:420
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
-"Использование: mkpasswd [ОПЦИИ]... [ПАРОЛЬ [SALT]]\n"
-"Кодирует ПАРОЛЬ, используя алгоритм crypt(3).\n"
+"Использование: mkpasswd [ПАРАМЕТРЫ]... [ПАРОЛЬ [СОЛЬ]]\n"
+"Шифрует ПАРОЛЬ, используя crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:420
-#, fuzzy, c-format
+#: ../mkpasswd.c:423
+#, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
+"      -5                    like --method=md5\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
 "      -P, --password-fd=NUM read the password from file descriptor NUM\n"
@@ -286,25 +286,24 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
-"      -H, --hash=ТИП        выбрать ТИП хэша\n"
-"      -S, --salt=SALT       использовать указанный SALT\n"
-"      -P, --password-fd=НОМЕР прочитать пароль из дескриптора файла с "
-"номером НОМЕР\n"
-"                            вместо /dev/tty\n"
-"      -s, --stdin           аналогично --password-fd=0\n"
-"      -h, --help            отобразить эту помощь и выйти\n"
-"      -V, --version         вывести информацию о версии и выйти\n"
+"      -m, --method=ТИП        использовать метод ТИП\n"
+"      -5                      аналогично --method=md5\n"
+"      -S, --salt=СОЛЬ         использовать указанную СОЛЬ\n"
+"      -R, --rounds=ЧИСЛО      использовать указанное ЧИСЛО округлений\n"
+"      -P, --password-fd=НОМЕР прочитать пароль из дескриптора файла\n"
+"                              с НОМЕРом вместо /dev/tty\n"
+"      -s, --stdin             аналогично --password-fd=0\n"
+"      -h, --help              показать эту справку и закончить работу\n"
+"      -V, --version           показать версию и закончить работу\n"
 "\n"
-"Если ПАРОЛЬ опущен, он будет затребован интерактивно.\n"
-"Если не указан SALT, он будет создан псевдослучайно.\n"
-"Если ТИП будет 'help', то будут распечатаны доступные алгоритмы.\n"
+"Если ПАРОЛЬ не задан, то он будет затребован интерактивно.\n"
+"Если не указана СОЛЬ, то будет сгенерировано произвольное значение.\n"
+"Если значение ТИП равно 'help', то будет показан список доступных методов.\n"
 "\n"
-"Замечания отправляйте на %s.\n"
+"Сообщения об ошибках отправляйте на %s.\n"
 
-#: ../mkpasswd.c:448
-#, fuzzy, c-format
+#: ../mkpasswd.c:452
+#, c-format
 msgid "Available methods:\n"
-msgstr "Доступные алгоритмы:\n"
+msgstr "Доступные методы:\n"
 
-#~ msgid "Invalid hash type '%s'.\n"
-#~ msgstr "Неверный тип хэша '%s'.\n"

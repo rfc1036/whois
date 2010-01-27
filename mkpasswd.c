@@ -138,9 +138,12 @@ int main(int argc, char *argv[])
     /* prepend options from environment */
     argv = merge_args(getenv("MKPASSWD_OPTIONS"), argv, &argc);
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:P:R:sS:V", longopts, 0))
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:5P:R:sS:V", longopts, 0))
 	    > 0) {
 	switch (ch) {
+	case '5':
+	    optarg = (char *) "md5";
+	    /* fall through */
 	case 'm':
 	case 'H':
 	    if (!optarg || strcaseeq("help", optarg)) {
@@ -418,6 +421,7 @@ void display_help(void)
 	    "Crypts the PASSWORD using crypt(3).\n\n"));
     fprintf(stderr, _(
 "      -m, --method=TYPE     select method TYPE\n"
+"      -5                    like --method=md5\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
 "      -P, --password-fd=NUM read the password from file descriptor NUM\n"
