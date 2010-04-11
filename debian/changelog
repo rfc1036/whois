@@ -1,3 +1,12 @@
+whois (5.0.2) unstable; urgency=medium
+
+  * Added new IPv4 allocations.
+  * Updated one or more translations. (Closes: #572068)
+  * Updated the .gt TLD server. (Closes: #576521)
+  * Use inet_pton (if available) to parse IP addresses. (Closes: #573006)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 11 Apr 2010 04:17:33 +0200
+
 whois (5.0.1) unstable; urgency=medium
 
   * Added new IPv4 allocations.

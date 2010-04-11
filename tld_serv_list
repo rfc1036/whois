@@ -147,7 +147,7 @@
 .gq	NONE		# NO NIC http://www.getesa.gq/
 .gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
 .gs	whois.nic.gs
-.gt	WEB http://www.gt/whois.htm
+.gt	WEB http://www.gt/whois.html
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
 .gw	NONE		# www.gwregister.com
 .gy	whois.registry.gy
