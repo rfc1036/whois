@@ -5,7 +5,7 @@ SHELL+= -e
 
 D := $(shell pwd)/debian/whois
 
-VERSION := $(shell dpkg-parsechangelog | sed -n 's/\+.*$$//; /^Version/s/.* //p')
+VERSION := $(shell dpkg-parsechangelog | sed -n 's/ubuntu[0-9]*$$//; s/\+.*$$//; /^Version/s/.* //p')
 
 build:
 	dh_testdir

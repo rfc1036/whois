@@ -113,7 +113,7 @@
 .cy	WEB http://www.nic.cy/nslookup/online_database.php
 .cz	whois.nic.cz
 .de	whois.denic.de
-.dj	NONE
+.dj	WEB http://www.nic.dj/whois.php	# BROKEN 2010-05-06
 .dk	whois.dk-hostmaster.dk
 .dm	whois.nic.dm
 .do	WEB http://www.nic.do/whois-h.php3
@@ -140,7 +140,7 @@
 .gg	whois.gg
 .gh	WEB http://www.nic.gh/customer/search_c.htm
 .gi	AFILIAS
-.gl	NONE		# www.nic.gl
+.gl	whois.nic.gl
 .gm	whois.ripe.net	# www.nic.gm
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	whois.nic.gp
@@ -251,7 +251,7 @@
 .edu.ru	whois.informika.ru
 .ru	whois.ripn.net
 .rw	WEB http://www.nic.rw/cgi-bin/whoisrw.pl
-.sa	saudinic.net.sa
+.sa	whois.nic.net.sa
 .sb	whois.coccaregistry.net
 .sc	AFILIAS		# www.nic.sc
 .sd	NONE		# http://isoc.sd/ (CHECK LATER)
@@ -319,7 +319,6 @@
 .ws	whois.samoanic.ws
 .ye	NONE		# NIC? www.nominet.org.ye http://www.y.net.ye/services/domain_name.htm
 .yt	whois.nic.fr
-.yu	NONE		# www.nic.yu - phase out date: 30 March 2009
 .ac.za	whois.ac.za
 .co.za	whois.coza.net.za
 .gov.za	whois.gov.za
@@ -328,6 +327,10 @@
 .za	NONE		# http://www.internet.org.za/slds.html many more SLD...
 .zm	NONE		# http://www.zamnet.zm/ser-isp/dnr.htm
 .zw	NONE		# http://www.zispa.co.zw/
+
+.xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
+.xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
+.xn--wgbh1c		NONE			# Egypt
 
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com

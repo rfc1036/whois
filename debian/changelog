@@ -1,3 +1,13 @@
+whois (5.0.3) unstable; urgency=medium
+
+  * Added the .dj, .gl, .xn--mgbaam7a8h (.امارات, United Arabs Emirates),
+    and .xn--mgberp4a5d4ar (.السعودية, Saudi Arabia) TLD servers.
+  * Explicitly ignore Ubuntu patchlevels in the debian/rules version check
+    to help the Ubuntu developers who keep breaking their package every time
+    they patch it.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 06 May 2010 23:51:11 +0200
+
 whois (5.0.2) unstable; urgency=medium
 
   * Added new IPv4 allocations.
