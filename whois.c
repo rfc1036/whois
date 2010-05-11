@@ -52,6 +52,7 @@
 /* hack */
 #define malloc(s) NOFAIL(malloc(s))
 #define realloc(p, s) NOFAIL(realloc(p, s))
+#define strdup(s) NOFAIL(strdup(s))
 
 /* Global variables */
 int sockfd, verb = 0;
