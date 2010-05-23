@@ -1,3 +1,4 @@
+# http://www.iana.org/domains/root/db/
 # NIC? means I have not been able to find the registry
 
 .br.com	whois.centralnic.net
@@ -188,7 +189,7 @@
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
-.ls	WEB http://www.co.ls/data/co.asp
+.ls	WEB http://www.co.ls/co.asp
 .lt	whois.domreg.lt
 .lu	whois.dns.lu
 .lv	whois.nic.lv
@@ -331,6 +332,7 @@
 .xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
 .xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
 .xn--wgbh1c		NONE			# Egypt
+.xn--p1ai		whois.ripn.net		# Russian Federation
 
 -dom	whois.networksolutions.com
 -org	whois.networksolutions.com

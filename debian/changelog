@@ -1,3 +1,11 @@
+whois (5.0.5) unstable; urgency=medium
+
+  * Added the .xn--p1ai (.рф, Russian Federation) TLD server.
+    (Closes: #581611)
+  * Updated the .ls TLD server. (Closes: #582077)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 23 May 2010 03:17:45 +0200
+
 whois (5.0.4) unstable; urgency=high
 
   * Added new IPv4 allocations.

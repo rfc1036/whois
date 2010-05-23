@@ -1,5 +1,5 @@
 /*
- * Copyright 1999-2009 by Marco d'Itri <md@linux.it>.
+ * Copyright 1999-2010 by Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,12 @@
 /* hack */
 #define malloc(s) NOFAIL(malloc(s))
 #define realloc(p, s) NOFAIL(realloc(p, s))
+#ifdef strdup
+#undef strdup
+#define strdup(s) NOFAIL(__strdup(s))
+#else
 #define strdup(s) NOFAIL(strdup(s))
+#endif
 
 /* Global variables */
 int sockfd, verb = 0;
