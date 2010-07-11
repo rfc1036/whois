@@ -107,8 +107,10 @@
 175.192.0.0/10	whois.nic.or.kr
 175.0.0.0/8	apnic
 176.0.0.0/8	ripe
+177.0.0.0/8	lacnic
 178.0.0.0/8	ripe
 180.0.0.0/8	apnic
+181.0.0.0/8	lacnic
 183.96.0.0/11	whois.nic.or.kr
 182.0.0.0/7	apnic
 186.0.0.0/7	lacnic

@@ -560,6 +560,9 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	strcat(buf, query + 2);
     }
     else if (!isripe && streq(server, "whois.arin.net") &&
+	    strncaseeq(query, "AS", 2) && isasciidigit(query[2]))
+	strcat(buf, query + 2);			/* strip the "AS" prefix */
+    else if (!isripe && streq(server, "whois.arin.net") &&
 	    (p = strrchr(query, '/')))
 	strncat(buf, query, p - query);		/* strip the mask length */
     else

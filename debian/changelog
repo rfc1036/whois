@@ -1,3 +1,13 @@
+whois (5.0.6) unstable; urgency=medium
+
+  * Added new IPv4 allocations.
+  * Added the .priv.at, .xn--fiqs8s (.中国, China), .xn--fiqz9s
+    (.中國, China) and .xn--wgbh1c (.مصر, Egypt) TLD servers.
+  * Do not use the "AS" prefix for ASN queries to whois.arin.net.
+    (Closes: #583798)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 11 Jul 2010 16:49:19 +0200
+
 whois (5.0.5) unstable; urgency=medium
 
   * Added the .xn--p1ai (.рф, Russian Federation) TLD server.
