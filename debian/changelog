@@ -1,3 +1,13 @@
+whois (5.0.7) unstable; urgency=medium
+
+  * Added new IPv4 allocations.
+  * Added the .xn--j6w193g (.香港, Hong Kong), .xn--kprw13d (.台湾, Taiwan)
+    and .xn--kpry57d (.台灣, Taiwan) TLD servers.
+  * Updated the .bd, .bo, .cm, .co, .cu, .dz, .gr, .hk, .lb, .ni, .rw, .tw
+    and .tz TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 09 Aug 2010 00:58:21 +0200
+
 whois (5.0.6) unstable; urgency=medium
 
   * Added new IPv4 allocations.
