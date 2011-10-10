@@ -1,17 +1,20 @@
-# Oversatt fra whois.pot.
-# Egil Kvaleberg <egil@kvaleberg.no>, 1999.
+# Translation of whois to Danish.
+# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian 
+# Bunk <bunk@fs.tum.de>, 2010 Chris Leick <c.leick@vollbio.de>.
+# This file is distributed under the same license as the whois package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 4.4.5\n"
+"Project-Id-Version: whois 5.0.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-09 23:58+0200\n"
-"PO-Revision-Date: 1999-12-18 14:00:00\n"
-"Last-Translator: Egil Kvaleberg <egil@kvaleberg.no>\n"
-"Language-Team: Norwegian <no@li.org>\n"
-"Language: no\n"
+"PO-Revision-Date: 2011-03-20 17:30+01:00\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
@@ -22,28 +25,30 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
+"Version %s.\n"
+"\n"
+"Rapporter fejl til %s (på engelsk).\n"
 
 #: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
 #, c-format
 msgid "Using server %s.\n"
-msgstr "Bruker tjener %s.\n"
+msgstr "Bruger server %s.\n"
 
 #: ../whois.c:237
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr ""
+msgstr "Denne TLD har ingen whois-server, men du kan tilgå whois-databasen på"
 
 #: ../whois.c:242
 msgid "This TLD has no whois server."
-msgstr ""
+msgstr "Denne TLD har ingen whois-server."
 
 #: ../whois.c:245
 msgid "No whois server is known for this kind of object."
-msgstr ""
+msgstr "Ingen whois-server er kendt for denne type af objekt."
 
 #: ../whois.c:248
-#, fuzzy
 msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr "Ukjent AS-nummer. Vennligst oppdater programmet."
+msgstr "Ukendt AS- eller IP-netværksnummer. Opgrader venligst dette program."
 
 #: ../whois.c:271
 #, c-format
@@ -52,6 +57,9 @@ msgid ""
 "Querying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n"
 "\n"
 msgstr ""
+"\n"
+"Forespørger efter IPv4-slutpunktet %s for en 6to4 IPv6-adresse.\n"
+"\n"
 
 #: ../whois.c:277
 #, c-format
@@ -60,6 +68,9 @@ msgid ""
 "Querying for the IPv4 endpoint %s of a Teredo IPv6 address.\n"
 "\n"
 msgstr ""
+"\n"
+"Forespørger efter IPv4-slutpunktet %s for en Teredo IPv6-adresse.\n"
+"\n"
 
 #: ../whois.c:296
 #, c-format
@@ -67,11 +78,11 @@ msgid ""
 "Query string: \"%s\"\n"
 "\n"
 msgstr ""
-"Foresp�rsel: \"%s\"\n"
+"Forespørgelsesstreng: »%s«\n"
 "\n"
 
 #: ../whois.c:306
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
 "\n"
@@ -79,46 +90,45 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Fant InterNIC-referanse til %s.\n"
+"\n"
+"Fandt en henvisning til %s.\n"
 "\n"
 
 #: ../whois.c:348 ../whois.c:351
 #, c-format
 msgid "Cannot parse this line: %s"
-msgstr ""
+msgstr "Kan ikke fortolke denne linje: %s"
 
 #: ../whois.c:520
-#, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr "Merk: RIPE-flaggene ignoreres for en tradisjonell tjener."
+msgstr "Advarsel: RIPE-flag brugt med en traditionel server."
 
 #: ../whois.c:674 ../whois.c:823
-#, fuzzy
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Alvorlig feil: INTERNIC har endret standardtekst.\n"
-"Vennligst oppdater programmet.\n"
+"Katastrofal fejl: Teksten for ansvarsfraskrivelse er blevet ændret.\n"
+"Opgrader venligst dette program.\n"
 
 #: ../whois.c:875
 #, c-format
 msgid "Host %s not found."
-msgstr "Finner ikke verten %s."
+msgstr "Vært %s er ikke fundet."
 
 #: ../whois.c:885
 #, c-format
 msgid "%s/tcp: unknown service"
-msgstr "%s/tcp: ukjent port"
+msgstr "%s/tcp: Ukendt tjeneste"
 
 #: ../whois.c:960
 msgid "Timeout."
-msgstr ""
+msgstr "Tidsudløb."
 
 #: ../whois.c:966
 #, c-format
 msgid "Interrupted by signal %d..."
-msgstr "Avbrudt av signal %d..."
+msgstr "Afbrudt af signal %d..."
 
 #: ../whois.c:1223
 #, fuzzy, c-format
@@ -154,77 +164,87 @@ msgid ""
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 msgstr ""
-"Bruk: whois [OPSJONER]... OBJEKTER...\n"
+"Brug: whois [TILVALG]... OBJEKT...\n"
 "\n"
-"-a                     s�k i alle databaser\n"
-"-F                     full utskrift (impliserer -r)\n"
-"-g KILDE:F�RSTE-SISTE  finn oppdateringer fra KILDE fra serie F�RSTE til "
-"SISTE\n"
-"-h VERT                koble til tjener VERT\n"
-"-i ATTR[,ATTR]...      gj�r reversoppslag for attributtene ATTR\n"
-"-L                     finn alle mindre spesifike treff\n"
-"-M                     finn alle mer spesifike treff\n"
-"-m                     finn f�rste niv� av mer spesifike treff\n"
-"-r                     ikke foreta rekursive oppslag\n"
-"-p PORT                koble til PORT\n"
-"-R                     vis lokal kopi av objektet selv om det inneholder\n"
-"                       en referanse\n"
-"-S                     be tjeneren utelate syntaktisk \"sukker\"\n"
-"-s KILDE[,KILDE]...    s�k i databasen fra KILDE\n"
-"-T TYPE[,TYPE]...      se bare p� objekttype TYPE\n"
-"-t TYPE                be om mal for objekttype TYPE ('all' gir en liste)\n"
-"-v TYPE                be om utf�rlig mal for objekttype TYPE\n"
-"-V                     forklarer hva som skjer\n"
-"\n"
-"Versjon %s. Rapporter feil til %s.\n"
+"-l                     et niveau mindre specifik opslag [kun RPSL]\n"
+"-L                     find alle mindre specifikke resultater\n"
+"-m                     find første niveau mere specifikke resultater\n"
+"-M                     find alle mere specifikke resultater\n"
+"-c                     find det mindste resultat der indeholder attributten\n"
+"\t\t\tmnt-irt\n"
+"-x                     præcis match [kun RPSL]\n"
+"-d                     returner også DNS-omvendte delegationsobjekter\n"
+"                       [kun RPSL]\n"
+"-i ATTR[,ATTR]...      foretag et omvendt opslag for angivne ATTRibutter\n"
+"-T TYPE[,TYPE]...      kig kun efter objekter i form af TYPE\n"
+"-K                     kun primære nøgler returneres [kun RPSL]\n"
+"-r                     deaktiver omvendte opslag for kontaktinformation\n"
+"-R                     fremtving visning af lokal kopi af domæneobjektet "
+"selv\n"
+"                       hvis det indeholder henvisning\n"
+"-a                     søg i alle databaser\n"
+"-s KILDE[,KILDE]...    søg databasen fra KILDE\n"
+"-g KILDE:FØRST-SIDST   find opdateringer fra KILDE fra seriel FØRST til "
+"SIDST\n"
+"-t TYPE                anmod om skabelon for objekttypen TYPE (»all« for en\n"
+"                       liste)\n"
+"-v TYPE                anmod om uddybende skabelon for objekttypen TYPE\n"
+"-q [version|kilder|typer]  forespørg angivet serverinfo [kun RPSL]\n"
+"-F                     hurtig råuddata (-r underforstås)\n"
+"-h VÆRT                forbind til server VÆRT\n"
+"-p PORT                forbind til PORT\n"
+"-H                     skjul juridisk ansvarsfraskrivelse\n"
+"      --verbose        forklar hvad der sker\n"
+"      --help           vis denne hjælpetekst og afslut\n"
+"      --version        vis versionsinformation og afslut\n"
 
 #: ../mkpasswd.c:84
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr ""
+msgstr "standard 56-Bit DES-baseret Crypt(3)"
 
 #: ../mkpasswd.c:165
 #, c-format
 msgid "Invalid method '%s'.\n"
-msgstr ""
+msgstr "Ugyldig metode »%s«\n"
 
 #: ../mkpasswd.c:174 ../mkpasswd.c:184
 #, c-format
 msgid "Invalid number '%s'.\n"
-msgstr ""
+msgstr "Ugyldigt tal »%s«.\n"
 
 #: ../mkpasswd.c:202
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr ""
+msgstr "Prøv »%s --help« for yderligere information.\n"
 
 #: ../mkpasswd.c:244
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Forkert salt-længde: %d byte men %d var forventet.\n"
+msgstr[1] "Forkert salt-længde: %d byte men %d var forventet.\n"
 
 #: ../mkpasswd.c:249
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Forkert salt-længde: %d byte men %d <= n <= %d var forventet.\n"
+msgstr[1] "Forkert salt-længde: %d byte men %d <= n <= %d var forventet.\n"
 
 #: ../mkpasswd.c:258
 #, c-format
 msgid "Illegal salt character '%c'.\n"
-msgstr ""
+msgstr "Ugyldigt salt-tegn »%c«.\n"
 
 #: ../mkpasswd.c:308 ../mkpasswd.c:324
 #, c-format
 msgid "Password: "
-msgstr ""
+msgstr "Adgangskode: "
 
 #: ../mkpasswd.c:342
 #, c-format
 msgid "Method not supported by crypt(3).\n"
-msgstr ""
+msgstr "Metoden er ikke understøttet af crypt(3).\n"
 
 #: ../mkpasswd.c:420
 #, c-format
@@ -233,6 +253,9 @@ msgid ""
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
+"Brug: mkpasswd [TILVALG] ... [ADGANGSKODE] [SALT]]\n"
+"Krypterer ADGANGSKODEN med crypt(3).\n"
+"\n"
 
 #: ../mkpasswd.c:423
 #, c-format
@@ -253,37 +276,26 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
+"      -m, --method=TYPE     vælg metoden TYPE\n"
+"      -5                    som --method=md5\n"
+"      -S, --salt=SALT       brug den angivne SALT\n"
+"      -R, --rounds=ANTAL    brug det angivne ANTAL af runder\n"
+"      -P, --password-fd=NUM læs adgangskoden fra filbeskriveren NUM\n"
+"                            i steden for /dev/tty\n"
+"      -s, --stdin           som --password-fd=0\n"
+"      -h, --help            vis denne hjælpetekst og afslut\n"
+"      -V, --version         vis versionsinformation og afslut\n"
+"\n"
+"Hvis ADGANGSKODE mangler, så spørges der efter den interaktivt.\n"
+"Hvis ingen SALT er angivet, så oprettes en vilkårlig.\n"
+"Hvis TYPE er »help«, så udskrives tilgængelige metoder.\n"
+"\n"
+"Rapporter fejl til %s (på engelsk).\n"
 
 #: ../mkpasswd.c:452
 #, c-format
 msgid "Available methods:\n"
-msgstr ""
+msgstr "Tilgængelige metoder:\n"
 
-#~ msgid "Using default server %s.\n"
-#~ msgstr "Bruker standardtjener %s.\n"
-
-#, fuzzy
-#~ msgid ""
-#~ "\n"
-#~ "Found referral to %s.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Fant InterNIC-referanse til %s.\n"
-#~ "\n"
-
-#~ msgid "Detected referral to %s on %s.\n"
-#~ msgstr "Referanse til %s vedr�rende %s.\n"
-
-#~ msgid ""
-#~ "I don't know where this IP has been delegated.\n"
-#~ "I'll try ARIN and hope for the best..."
-#~ msgstr ""
-#~ "Vet ikke hvor denne IP-adressen har blitt delegert.\n"
-#~ "Pr�ver ARIN og h�per det beste..."
-
-#~ msgid "I guess it's a netblock name but I don't know where to look it up."
-#~ msgstr "Gjetter at det er et netblock-navn, men vet ikke hvor det finnes."
-
-#~ msgid "I guess it's a domain but I don't know where to look it up."
-#~ msgstr "Gjetter at det er er domene, men vet ikke hvor det finnes."
+#~ msgid "Illegal password character '0x%hhx'.\n"
+#~ msgstr "Ugyldigt adgangskodetegn »0x%hhx«.\n"

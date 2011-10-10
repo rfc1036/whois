@@ -1,5 +1,5 @@
 /* Program version */
-#define VERSION "5.0.11"
+#define VERSION "5.0.12"
 
 /* Configurable features */
 
@@ -54,6 +54,7 @@
 /* Unknown versions of Solaris */
 #if defined __SVR4 && defined __sun
 # define HAVE_SHA_CRYPT
+# define HAVE_SOLARIS_CRYPT_GENSALT
 #endif
 
 /* FIXME: which systems lack this? */

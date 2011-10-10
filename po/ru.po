@@ -8,17 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-27 13:38+0100\n"
+"POT-Creation-Date: 2011-10-09 23:58+0200\n"
 "PO-Revision-Date: 2010-01-27 20:31+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../whois.c:136
+#: ../whois.c:145
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -29,28 +31,29 @@ msgstr ""
 "\n"
 "Сообщения об ошибках отправляйте на %s.\n"
 
-#: ../whois.c:190 ../whois.c:243 ../whois.c:249 ../whois.c:256 ../whois.c:286
+#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Используется сервер %s.\n"
 
-#: ../whois.c:228
+#: ../whois.c:237
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Данный TLD не имеет whois-сервера, но можно получить доступ к базе whois на"
+msgstr ""
+"Данный TLD не имеет whois-сервера, но можно получить доступ к базе whois на"
 
-#: ../whois.c:233
+#: ../whois.c:242
 msgid "This TLD has no whois server."
 msgstr "Данный TLD не имеет whois-сервера."
 
-#: ../whois.c:236
+#: ../whois.c:245
 msgid "No whois server is known for this kind of object."
 msgstr "Нет whois-сервера для объектов данного вида."
 
-#: ../whois.c:239
+#: ../whois.c:248
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Неизвестный номер AS или IP-сеть. Пожалуйста, обновите программу."
 
-#: ../whois.c:262
+#: ../whois.c:271
 #, c-format
 msgid ""
 "\n"
@@ -61,7 +64,7 @@ msgstr ""
 "Запрашивается конечная IPv4-точка %s для IPv6-адреса 6-в-4.\n"
 "\n"
 
-#: ../whois.c:268
+#: ../whois.c:277
 #, c-format
 msgid ""
 "\n"
@@ -72,7 +75,7 @@ msgstr ""
 "Запрашивается конечная IPv4-точка %s для IPv6-адреса Teredo.\n"
 "\n"
 
-#: ../whois.c:287
+#: ../whois.c:296
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +84,7 @@ msgstr ""
 "Строка запроса: \"%s\"\n"
 "\n"
 
-#: ../whois.c:297
+#: ../whois.c:306
 #, c-format
 msgid ""
 "\n"
@@ -94,16 +97,16 @@ msgstr ""
 "Найдено перенаправление на %s.\n"
 "\n"
 
-#: ../whois.c:339 ../whois.c:342
+#: ../whois.c:348 ../whois.c:351
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Невозможно разобрать строку: %s"
 
-#: ../whois.c:506
+#: ../whois.c:520
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Предупреждение: флаги RIPE используются с традиционным сервером."
 
-#: ../whois.c:657 ../whois.c:806
+#: ../whois.c:674 ../whois.c:823
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,27 +114,27 @@ msgstr ""
 "Катастрофическая ошибка: текст правовой оговорки был изменён.\n"
 "Пожалуйста, обновите программу.\n"
 
-#: ../whois.c:858
+#: ../whois.c:875
 #, c-format
 msgid "Host %s not found."
 msgstr "Узел %s не найден."
 
-#: ../whois.c:868
+#: ../whois.c:885
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: неизвестный сервис"
 
-#: ../whois.c:943
+#: ../whois.c:960
 msgid "Timeout."
 msgstr "Задержка."
 
-#: ../whois.c:949
+#: ../whois.c:966
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Прервано по сигналу %d..."
 
-#: ../whois.c:1175
-#, c-format
+#: ../whois.c:1223
+#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -153,8 +156,7 @@ msgid ""
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a "
-"list)\n"
+"-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
@@ -201,26 +203,26 @@ msgstr ""
 "      --help           показать эту справку и закончить работу\n"
 "      --version        показать информацию о версии и закончить работу\n"
 
-#: ../mkpasswd.c:80
+#: ../mkpasswd.c:84
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "стандартный 56-битный, базирующийся на DES, crypt(3)"
 
-#: ../mkpasswd.c:162
+#: ../mkpasswd.c:165
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "Неверный метод '%s'.\n"
 
-#: ../mkpasswd.c:171 ../mkpasswd.c:181
+#: ../mkpasswd.c:174 ../mkpasswd.c:184
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Неверный номер '%s'.\n"
 
-#: ../mkpasswd.c:199
+#: ../mkpasswd.c:202
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Доп. информацию можно получить, запустив '%s --help'.\n"
 
-#: ../mkpasswd.c:240
+#: ../mkpasswd.c:244
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
@@ -228,7 +230,7 @@ msgstr[0] "Неверная длина соли: %d байт при ожидае
 msgstr[1] "Неверная длина соли: %d байта при ожидаемой %d.\n"
 msgstr[2] "Неверная длина соли: %d байт при ожидаемой %d.\n"
 
-#: ../mkpasswd.c:245
+#: ../mkpasswd.c:249
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
@@ -236,20 +238,15 @@ msgstr[0] "Неверная длина соли: %d байт при ожидае
 msgstr[1] "Неверная длина соли: %d байта при ожидаемой %d <= n <= %d.\n"
 msgstr[2] "Неверная длина соли: %d байт при ожидаемой %d <= n <= %d.\n"
 
-#: ../mkpasswd.c:254
+#: ../mkpasswd.c:258
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Недопустимый для соли символ '%c'.\n"
 
-#: ../mkpasswd.c:299 ../mkpasswd.c:326
+#: ../mkpasswd.c:308 ../mkpasswd.c:324
 #, c-format
 msgid "Password: "
 msgstr "Пароль: "
-
-#: ../mkpasswd.c:320
-#, c-format
-msgid "Illegal password character '0x%hhx'.\n"
-msgstr "Недопустимый для пароля символ '0x%hhx'.\n"
 
 #: ../mkpasswd.c:342
 #, c-format
@@ -307,3 +304,5 @@ msgstr ""
 msgid "Available methods:\n"
 msgstr "Доступные методы:\n"
 
+#~ msgid "Illegal password character '0x%hhx'.\n"
+#~ msgstr "Недопустимый для пароля символ '0x%hhx'.\n"

@@ -23,6 +23,7 @@ whois.isnic.is		iso-8859-1
 whois.jprs.jp		iso-2022-jp
 whois.nic.ad.jp		iso-2022-jp
 whois.nic.or.kr		euc-kr
+whois.kr		euc-kr
 whois.nic.li		utf-8
 whois.domreg.lt		utf-8
 whois.dns.lu		iso-8859-1
@@ -30,9 +31,12 @@ whois.nic.mu		utf-8
 whois.norid.no		iso-8859-1
 whois.nic.nu		utf-8
 whois.dns.pt		iso-8859-1
+whois.rnids.rs		utf-8
 whois.nic-se.se		utf-8
+whois.tld.sy		utf-8
 whois.nic.tr		utf-8
 whois.twnic.net.tw	utf-8
-whois.net.ua		koi8-u
+whois.pp.ua		utf-8
+whois.ua		koi8-u
 whois.nic.org.uy	utf-8
 

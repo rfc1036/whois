@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.5.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-27 13:38+0100\n"
+"POT-Creation-Date: 2011-10-09 23:58+0200\n"
 "PO-Revision-Date: 2002-08-24 16:22+0200\n"
 "Last-Translator: Aitor Ibaez <aitiba@gmail.com>\n"
 "Language-Team: Euskara <Librezale@librezale.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:136
+#: ../whois.c:145
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -26,31 +27,31 @@ msgstr ""
 "\n"
 "Bug berri baten jakinarazpena: %s.\n"
 
-#: ../whois.c:190 ../whois.c:243 ../whois.c:249 ../whois.c:256 ../whois.c:286
+#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
 #, c-format
 msgid "Using server %s.\n"
 msgstr "%s zerbitzaria erabiltzen.\n"
 
-#: ../whois.c:228
+#: ../whois.c:237
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "TLD honek ez du whois zerbitzaririk, baina whois databasera sarbidea "
 "daukazu..."
 
-#: ../whois.c:233
+#: ../whois.c:242
 msgid "This TLD has no whois server."
 msgstr "TLD honek ez du whois zerbitzaririk."
 
-#: ../whois.c:236
+#: ../whois.c:245
 msgid "No whois server is known for this kind of object."
 msgstr "Objetu mota horrentzako, ez da whois zerbitzaririk ezagutzen."
 
-#: ../whois.c:239
+#: ../whois.c:248
 #, fuzzy
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "AS zenbaki edo IP sarea ezezaguna. Mesedez, programa eguneratu."
 
-#: ../whois.c:262
+#: ../whois.c:271
 #, c-format
 msgid ""
 "\n"
@@ -61,7 +62,7 @@ msgstr ""
 "Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
-#: ../whois.c:268
+#: ../whois.c:277
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -72,7 +73,7 @@ msgstr ""
 "Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
-#: ../whois.c:287
+#: ../whois.c:296
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +82,7 @@ msgstr ""
 "Kontsulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:297
+#: ../whois.c:306
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -93,17 +94,17 @@ msgstr ""
 "$s-ra erreferentzia aurkituta.\n"
 "\n"
 
-#: ../whois.c:339 ../whois.c:342
+#: ../whois.c:348 ../whois.c:351
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Lerro hau, %s , ezin da prozesatu."
 
-#: ../whois.c:506
+#: ../whois.c:520
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Oharra: RIPE flags-ak ohiko zerbitzariengatik ezikusiak izaten dira."
 
-#: ../whois.c:657 ../whois.c:806
+#: ../whois.c:674 ../whois.c:823
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,26 +112,26 @@ msgstr ""
 "Hondamen arriskua: erabilpen balditzen textua aldatu egin da.\n"
 "Programa eguneratu.\n"
 
-#: ../whois.c:858
+#: ../whois.c:875
 #, c-format
 msgid "Host %s not found."
 msgstr "%s Host-a ez da aurkitu."
 
-#: ../whois.c:868
+#: ../whois.c:885
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: zerbitzu ezezaguna"
 
-#: ../whois.c:943
+#: ../whois.c:960
 msgid "Timeout."
 msgstr "Denbora muga."
 
-#: ../whois.c:949
+#: ../whois.c:966
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "%d seinalearengatik etena..."
 
-#: ../whois.c:1175
+#: ../whois.c:1223
 #, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -153,8 +154,7 @@ msgid ""
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a "
-"list)\n"
+"-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
@@ -201,54 +201,49 @@ msgstr ""
 "      --help       laguntza pantaila hau erakusten du eta amaitzen du\n"
 "      --version    programaren bertsioa erakusten du eta amaitzen du\n"
 
-#: ../mkpasswd.c:80
+#: ../mkpasswd.c:84
 #, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "56 bits-etako DESan oinarritutako \tcrypt(3)-a"
 
-#: ../mkpasswd.c:162
+#: ../mkpasswd.c:165
 #, fuzzy, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "'%s' zenbakia ez da baliozkoa.\n"
 
-#: ../mkpasswd.c:171 ../mkpasswd.c:181
+#: ../mkpasswd.c:174 ../mkpasswd.c:184
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "'%s' zenbakia ez da baliozkoa.\n"
 
-#: ../mkpasswd.c:199
+#: ../mkpasswd.c:202
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "%s --help informazio gehiagorako.\n"
 
-#: ../mkpasswd.c:240
+#: ../mkpasswd.c:244
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 msgstr[1] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 
-#: ../mkpasswd.c:245
+#: ../mkpasswd.c:249
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 msgstr[1] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 
-#: ../mkpasswd.c:254
+#: ../mkpasswd.c:258
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "'%c' karakterea, hazian, ilegala da.\n"
 
-#: ../mkpasswd.c:299 ../mkpasswd.c:326
+#: ../mkpasswd.c:308 ../mkpasswd.c:324
 #, c-format
 msgid "Password: "
 msgstr "Pasahitza: "
-
-#: ../mkpasswd.c:320
-#, c-format
-msgid "Illegal password character '0x%hhx'.\n"
-msgstr "'0x%hhx' password karakterea ilegala da.\n"
 
 #: ../mkpasswd.c:342
 #, c-format
@@ -304,6 +299,9 @@ msgstr ""
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "Algoritmo erabilgarriak:\n"
+
+#~ msgid "Illegal password character '0x%hhx'.\n"
+#~ msgstr "'0x%hhx' password karakterea ilegala da.\n"
 
 #~ msgid "Invalid hash type '%s'.\n"
 #~ msgstr "'%s' hash funtzioa ez da baliozkoa.\n"

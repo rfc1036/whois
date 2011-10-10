@@ -1,3 +1,43 @@
+whois (5.0.12) unstable; urgency=low
+
+  * Recursion disabled when the query string contains spaces, because
+    probably the query format will not be compatible with the referral
+    server (e.g. whois to rwhois or ARIN to RIPE).
+  * Add the "+" flag by default to queries to whois.arin.net if the
+    argument looks like an IP address. Also add the "a" and "n" flags.
+    No thanks to ARIN for breaking every whois client.
+  * Added the .cv, .lk, .mq, .sy, .so, .biz.ua, .co.ua, .pp.ua, .qa,
+    .xn--3e0b707e (.한국, Korea), .xn--45brj9c (.ভারত, India, Bengali),
+    .xn--90a3ac (.СРБ, Serbia), .xn--clchc0ea0b2g2a9gcd (.சிங்கப்பூர்,
+    Singapore, Tamil), .xn--fpcrj9c3d (.భారత్, India, Telugu), .xn--fzc2c9e2c
+    (.ලංකා, Sri Lanka, Sinhala), .xn--gecrj9c (.ભારત, India, Gujarati),
+    .xn--h2brj9c (.भारत, India, Hindi), .xn--lgbbat1ad8j (.الجزائر, Algeria),
+    .xn--mgbayh7gpa (.الاردن, Jordan), .xn--mgbbh1a71e (.بھارت, India, Urdu),
+    .xn--mgbc0a9azcg (.المغرب, Morocco), .xn--ogbpf8fl (.سورية, Syria),
+    .xn--s9brj9c (.ਭਾਰਤ, India, Punjabi), .xn--xkc2al3hye2a (.இலங்கை, Sri
+    Lanka, Tamil), .xn--wgbl6a (.قطر, Qatar), .xn--xkc2dl3a5ee0h
+    (.இந்தியா, India, Tamil), .xn--yfro4i67o (.新加坡, Singapore, Chinese) and
+    .xxx TLD servers. (Closes: #642424),
+  * Added the .priv.at pseudo-SLD server.
+  * Updated the .co, .gf, .gp, .kr, .li, .rs, .ru, .su, .sv, .ua and
+    .xn--p1ai TLD servers. (Closes: #590425, #634830, #627478)
+  * Added a new ASN allocation.
+  * Fixed a typo and -t syntax in whois(1). (Closes: #614973, #632588)
+  * Made whois return an error in some cases, code contributed by
+    David Souther.
+  * Split HAVE_LINUX_CRYPT_GENSALT from HAVE_XCRYPT to support SuSE,
+    which has it builtin in the libc. Added untested support for Solaris'
+    crypt_gensalt(3). This and the following changes have been contributed
+    by Ludwig Nussel of SuSE.
+  * mkpasswd: stop rejecting non-ASCII characters.
+  * mkpasswd: added support for the 2y algorithm, which fixes CVE-2011-2483.
+  * mkpasswd: raised the number of rounds for 2a/2y from 4 to 5, which is
+    the current default.
+  * mkpasswd: removed support for 2 and {SHA}, which actually are not
+    supported by FreeBSD and libxcrypt.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 10 Oct 2011 02:04:32 +0200
+
 whois (5.0.11) unstable; urgency=medium
 
   * Added the remaining IPv4 allocations.

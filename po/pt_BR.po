@@ -7,16 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-27 13:38+0100\n"
+"POT-Creation-Date: 2011-10-09 23:58+0200\n"
 "PO-Revision-Date: 2006-04-26 21:03-0300\n"
 "Last-Translator: Anderson Goulart <globalx@gmail.com>\n"
 "Language-Team: Portuguese/Brazil\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:136
+#: ../whois.c:145
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,30 +28,30 @@ msgstr ""
 "\n"
 "Reporte bugs para %s \n"
 
-#: ../whois.c:190 ../whois.c:243 ../whois.c:249 ../whois.c:256 ../whois.c:286
+#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Utilizando servidor %s.\n"
 
-#: ../whois.c:228
+#: ../whois.c:237
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Este TLD não tem servidor whois, mas você pode acessar a base de dados do "
 "whois em"
 
-#: ../whois.c:233
+#: ../whois.c:242
 msgid "This TLD has no whois server."
 msgstr "Não existe servidor whois para este TLD."
 
-#: ../whois.c:236
+#: ../whois.c:245
 msgid "No whois server is known for this kind of object."
 msgstr "Nenhum servidor whois é conhecido para este tipo de objeto."
 
-#: ../whois.c:239
+#: ../whois.c:248
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Número AS ou rede IP desconhecidos. Por favor, atualize este programa."
 
-#: ../whois.c:262
+#: ../whois.c:271
 #, c-format
 msgid ""
 "\n"
@@ -61,7 +62,7 @@ msgstr ""
 "Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
 "\n"
 
-#: ../whois.c:268
+#: ../whois.c:277
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -72,7 +73,7 @@ msgstr ""
 "Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
 "\n"
 
-#: ../whois.c:287
+#: ../whois.c:296
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +82,7 @@ msgstr ""
 "Consulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:297
+#: ../whois.c:306
 #, c-format
 msgid ""
 "\n"
@@ -94,16 +95,16 @@ msgstr ""
 "Uma referência para·%s encontrada.\n"
 "\n"
 
-#: ../whois.c:339 ../whois.c:342
+#: ../whois.c:348 ../whois.c:351
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Não pôde processar esta linha: %s"
 
-#: ../whois.c:506
+#: ../whois.c:520
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Aviso: RIPE flags utilizados com um servidor tradicional."
 
-#: ../whois.c:657 ../whois.c:806
+#: ../whois.c:674 ../whois.c:823
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,27 +112,27 @@ msgstr ""
 "Erro catastrófico: o texto das condições de uso foi alterado.\n"
 "Por favor, atualize este programa. \n"
 
-#: ../whois.c:858
+#: ../whois.c:875
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s não encontrado."
 
-#: ../whois.c:868
+#: ../whois.c:885
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: serviço desconhecido"
 
-#: ../whois.c:943
+#: ../whois.c:960
 msgid "Timeout."
 msgstr "Tempo esgotado."
 
-#: ../whois.c:949
+#: ../whois.c:966
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrompido pelo sinal %d..."
 
-#: ../whois.c:1175
-#, c-format
+#: ../whois.c:1223
+#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -153,8 +154,7 @@ msgid ""
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a "
-"list)\n"
+"-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
@@ -201,34 +201,34 @@ msgstr ""
 "      --help           exibe essa ajuda e sai\n"
 "      --version        exibe informações sobre a versão e sai\n"
 
-#: ../mkpasswd.c:80
+#: ../mkpasswd.c:84
 #, fuzzy
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "\tstandard 56 bit DES-based crypt(3)"
 
-#: ../mkpasswd.c:162
+#: ../mkpasswd.c:165
 #, fuzzy, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "Número inválido '%s'.\n"
 
-#: ../mkpasswd.c:171 ../mkpasswd.c:181
+#: ../mkpasswd.c:174 ../mkpasswd.c:184
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Número inválido '%s'.\n"
 
-#: ../mkpasswd.c:199
+#: ../mkpasswd.c:202
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Tente '%s --help para maiores informações.\n"
 
-#: ../mkpasswd.c:240
+#: ../mkpasswd.c:244
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Tamanho do salt incorreto: %d byte enquanto %d eram esperados.\n"
 msgstr[1] "Tamanho do salt incorreto: %d bytes enquanto %d eram esperados.\n"
 
-#: ../mkpasswd.c:245
+#: ../mkpasswd.c:249
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
@@ -237,20 +237,15 @@ msgstr[0] ""
 msgstr[1] ""
 "Tamanho do salt incorreto: %d bytes enquanto %d <= n <= %d eram esperados.\n"
 
-#: ../mkpasswd.c:254
+#: ../mkpasswd.c:258
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Caractere salt ilegal '%c'.\n"
 
-#: ../mkpasswd.c:299 ../mkpasswd.c:326
+#: ../mkpasswd.c:308 ../mkpasswd.c:324
 #, c-format
 msgid "Password: "
 msgstr "Senha: "
-
-#: ../mkpasswd.c:320
-#, c-format
-msgid "Illegal password character '0x%hhx'.\n"
-msgstr "Caractere de senha ilegal '0x%hhx'.\n"
 
 #: ../mkpasswd.c:342
 #, c-format
@@ -305,6 +300,9 @@ msgstr ""
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "Algoritmos disponíveis: \n"
+
+#~ msgid "Illegal password character '0x%hhx'.\n"
+#~ msgstr "Caractere de senha ilegal '0x%hhx'.\n"
 
 #~ msgid "Invalid hash type '%s'.\n"
 #~ msgstr "Hash-type inválido '%s'.\n"

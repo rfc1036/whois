@@ -1,6 +1,6 @@
 prefix = /usr
 
-CFLAGS = -g -O2
+CFLAGS ?= -g -O2
 
 PERL = perl
 INSTALL = install
@@ -44,17 +44,23 @@ endif
 
 ifdef HAVE_XCRYPT
 mkpasswd_LDADD += -lxcrypt
-DEFS += -DHAVE_XCRYPT
+DEFS += -DHAVE_XCRYPT -DHAVE_LINUX_CRYPT_GENSALT
 else
+ifdef HAVE_LINUX_CRYPT_GENSALT
+# owl and openSUSE have crypt_gensalt(3) in the libc's libcrypt
+DEFS += -DHAVE_LINUX_CRYPT_GENSALT
+endif
 mkpasswd_LDADD += -lcrypt
 endif
+
+CPPFLAGS += $(DEFS) $(INCLUDES)
 
 ##############################################################################
 all: Makefile.depend whois mkpasswd #pos
 
 ##############################################################################
 %.o: %.c
-	$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) -c $<
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
 
 whois: $(whois_OBJECTS)
 	$(CC) $(LDFLAGS) -o $@ $^ $(whois_LDADD) $(LIBS)
@@ -104,7 +110,7 @@ distclean: clean
 
 clean:
 	rm -f Makefile.depend as_del.h ip_del.h ip6_del.h tld_serv.h \
-		*.o whois mkpasswd
+		servers_charset.h *.o whois mkpasswd
 	rm -f po/*.mo
 
 pos:
@@ -112,6 +118,6 @@ pos:
 
 depend: Makefile.depend
 Makefile.depend:
-	$(CC) $(DEFS) $(INCLUDES) $(CFLAGS) -MM -MG *.c > $@
+	$(CC) $(CPPFLAGS) $(CFLAGS) -MM -MG *.c > $@
 
 -include Makefile.depend

@@ -31,16 +31,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-27 13:38+0100\n"
+"POT-Creation-Date: 2011-10-09 23:58+0200\n"
 "PO-Revision-Date: 2010-01-29 09:16+0100\n"
 "Last-Translator: Francisco Javier Cuadrado <fcocuadrado@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:136
+#: ../whois.c:145
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -51,32 +52,30 @@ msgstr ""
 "\n"
 "Informar de fallos a %s.\n"
 
-#: ../whois.c:190
-#: ../whois.c:243
-#: ../whois.c:249
-#: ../whois.c:256
-#: ../whois.c:286
+#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Usando el servidor %s.\n"
 
-#: ../whois.c:228
+#: ../whois.c:237
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Este TLD no dispone de servidor whois, pero puede acceder a la base de datos de whois en"
+msgstr ""
+"Este TLD no dispone de servidor whois, pero puede acceder a la base de datos "
+"de whois en"
 
-#: ../whois.c:233
+#: ../whois.c:242
 msgid "This TLD has no whois server."
 msgstr "Este TLD no dispone de servidor whois."
 
-#: ../whois.c:236
+#: ../whois.c:245
 msgid "No whois server is known for this kind of object."
 msgstr "No se conoce ningún servidor de whois para esta clase de objeto."
 
-#: ../whois.c:239
+#: ../whois.c:248
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Numero AS o red IP desconocida. Por favor, actualice este programa."
 
-#: ../whois.c:262
+#: ../whois.c:271
 #, c-format
 msgid ""
 "\n"
@@ -87,7 +86,7 @@ msgstr ""
 "Consultando el punto final IPv4 de %s de una dirección IPv6 6a4.\n"
 "\n"
 
-#: ../whois.c:268
+#: ../whois.c:277
 #, c-format
 msgid ""
 "\n"
@@ -98,7 +97,7 @@ msgstr ""
 "Consultando el punto final IPv4 de %s de una dirección IPv6 Teredo.\n"
 "\n"
 
-#: ../whois.c:287
+#: ../whois.c:296
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -107,7 +106,7 @@ msgstr ""
 "Cadena de la consulta: «%s»\n"
 "\n"
 
-#: ../whois.c:297
+#: ../whois.c:306
 #, c-format
 msgid ""
 "\n"
@@ -120,18 +119,16 @@ msgstr ""
 "Se ha encontrado una referencia a %s.\n"
 "\n"
 
-#: ../whois.c:339
-#: ../whois.c:342
+#: ../whois.c:348 ../whois.c:351
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "No se pudo procesar esta linea: %s"
 
-#: ../whois.c:506
+#: ../whois.c:520
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Atención: Se han usado opciones de RIPE con un servidor tradicional."
 
-#: ../whois.c:657
-#: ../whois.c:806
+#: ../whois.c:674 ../whois.c:823
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -139,27 +136,27 @@ msgstr ""
 "Error catastrófico: el texto de las condiciones de uso ha sido cambiado.\n"
 "Por favor, actualice este programa.\n"
 
-#: ../whois.c:858
+#: ../whois.c:875
 #, c-format
 msgid "Host %s not found."
 msgstr "El servidor %s no se ha encontrado."
 
-#: ../whois.c:868
+#: ../whois.c:885
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servicio desconocido"
 
-#: ../whois.c:943
+#: ../whois.c:960
 msgid "Timeout."
 msgstr "Se ha agotado el tiempo de espera."
 
-#: ../whois.c:949
+#: ../whois.c:966
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrumpido por la señal %d..."
 
-#: ../whois.c:1175
-#, c-format
+#: ../whois.c:1223
+#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -167,9 +164,11 @@ msgid ""
 "-L                     find all Less specific matches\n"
 "-m                     find first level more specific matches\n"
 "-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt attribute\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
 "-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL only]\n"
+"-d                     return DNS reverse delegation objects too [RPSL "
+"only]\n"
 "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
 "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
 "-K                     only primary keys are returned [RPSL only]\n"
@@ -179,7 +178,7 @@ msgid ""
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a list)\n"
+"-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
@@ -192,13 +191,15 @@ msgid ""
 msgstr ""
 "Uso: whois [OPCIONES]... OBJETO...\n"
 "\n"
-"-l                         se realiza una búsqueda un nivel menos específica\n"
+"-l                         se realiza una búsqueda un nivel menos "
+"específica\n"
 "                           [sólo RPSL]\n"
 "-L                         busca las correspondencias menos especificas\n"
 "-m                         busca las correspondencias del primer nivel más\n"
 "                           específico\n"
 "-M                         busca las correspondencias más especificas\n"
-"-c                         busca la correspondencia más pequeña que contenga\n"
+"-c                         busca la correspondencia más pequeña que "
+"contenga\n"
 "                           un atributo mnt-irt\n"
 "-x                         busca la correspondencia exacta [sólo RPSL]\n"
 "-d                         también devuelve la delegacion inversa del DNS\n"
@@ -230,55 +231,50 @@ msgstr ""
 "      --help               muestra este mensaje de ayuda y finaliza\n"
 "      --version            muestra la información de la versión y finaliza\n"
 
-#: ../mkpasswd.c:80
+#: ../mkpasswd.c:84
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "crypt(3) basado en DES de 56 bits"
 
-#: ../mkpasswd.c:162
+#: ../mkpasswd.c:165
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "Método «%s» inválido.\n"
 
-#: ../mkpasswd.c:171
-#: ../mkpasswd.c:181
+#: ../mkpasswd.c:174 ../mkpasswd.c:184
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "El numero «%s» no es valido.\n"
 
-#: ../mkpasswd.c:199
+#: ../mkpasswd.c:202
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Pruebe «%s --help» para más información.\n"
 
-#: ../mkpasswd.c:240
+#: ../mkpasswd.c:244
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Longitud del «salt» incorrecta: %d byte en lugar de %d.\n"
 msgstr[1] "Longitud del «salt» incorrecta: %d bytes en lugar de %d.\n"
 
-#: ../mkpasswd.c:245
+#: ../mkpasswd.c:249
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
-msgstr[0] "Longitud del «salt» incorrecta: %d byte cuando se esperaba %d <= n <= %d.\n"
-msgstr[1] "Longitud del «salt» incorrecta: %d bytes cuando se esperaba %d <= n <= %d.\n"
+msgstr[0] ""
+"Longitud del «salt» incorrecta: %d byte cuando se esperaba %d <= n <= %d.\n"
+msgstr[1] ""
+"Longitud del «salt» incorrecta: %d bytes cuando se esperaba %d <= n <= %d.\n"
 
-#: ../mkpasswd.c:254
+#: ../mkpasswd.c:258
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "El carácter «%c» no es válido en el «salt».\n"
 
-#: ../mkpasswd.c:299
-#: ../mkpasswd.c:326
+#: ../mkpasswd.c:308 ../mkpasswd.c:324
 #, c-format
 msgid "Password: "
 msgstr "Contraseña: "
-
-#: ../mkpasswd.c:320
-#, c-format
-msgid "Illegal password character '0x%hhx'.\n"
-msgstr "El carácter «0x%hhx» no es válido en la contraseña.\n"
 
 #: ../mkpasswd.c:342
 #, c-format
@@ -336,3 +332,5 @@ msgstr ""
 msgid "Available methods:\n"
 msgstr "Métodos disponibles:\n"
 
+#~ msgid "Illegal password character '0x%hhx'.\n"
+#~ msgstr "El carácter «0x%hhx» no es válido en la contraseña.\n"

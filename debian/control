@@ -2,13 +2,13 @@ Source: whois
 Section: net
 Priority: standard
 Maintainer: Marco d'Itri <md@linux.it>
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Build-Depends: debhelper (>= 5), gettext, libidn11-dev
 
 Package: whois
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: an intelligent whois client
+Description: intelligent whois client
  This is a new whois (RFC 3912) client rewritten from scratch.
  It is inspired from and compatible with the usual BSD and RIPE whois(1)
  programs.

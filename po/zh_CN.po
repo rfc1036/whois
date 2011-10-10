@@ -7,17 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-27 13:38+0100\n"
+"POT-Creation-Date: 2011-10-09 23:58+0200\n"
 "PO-Revision-Date: 2009-10-24 03:59+0000\n"
 "Last-Translator: Feng Liu (Maxim) <maximliu@googlemail.com>\n"
 "Language-Team: Chinese (China) <zh_CN@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2009-11-10 02:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../whois.c:136
+#: ../whois.c:145
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -28,28 +29,28 @@ msgstr ""
 "\n"
 "将 bugs 提交到 %s。\n"
 
-#: ../whois.c:190 ../whois.c:243 ../whois.c:249 ../whois.c:256 ../whois.c:286
+#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
 #, c-format
 msgid "Using server %s.\n"
 msgstr "使用服务器 %s。\n"
 
-#: ../whois.c:228
+#: ../whois.c:237
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr "此顶级域名没有 whois 服务器，但您可在这里访问 whois 数据库："
 
-#: ../whois.c:233
+#: ../whois.c:242
 msgid "This TLD has no whois server."
 msgstr "此顶级域名没有对应的 whois 服务器。"
 
-#: ../whois.c:236
+#: ../whois.c:245
 msgid "No whois server is known for this kind of object."
 msgstr "无针对此类对象的 whois 服务器。"
 
-#: ../whois.c:239
+#: ../whois.c:248
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "未知的 AS 号码或 IP 地址。请升级此程序。"
 
-#: ../whois.c:262
+#: ../whois.c:271
 #, c-format
 msgid ""
 "\n"
@@ -60,7 +61,7 @@ msgstr ""
 "查询和一个6to4 IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:268
+#: ../whois.c:277
 #, c-format
 msgid ""
 "\n"
@@ -71,7 +72,7 @@ msgstr ""
 "查询一个Teredo IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:287
+#: ../whois.c:296
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -80,7 +81,7 @@ msgstr ""
 "查询字符串: \"%s\"\n"
 "\n"
 
-#: ../whois.c:297
+#: ../whois.c:306
 #, c-format
 msgid ""
 "\n"
@@ -93,16 +94,16 @@ msgstr ""
 "发现一个到 %s 的引用。\n"
 "\n"
 
-#: ../whois.c:339 ../whois.c:342
+#: ../whois.c:348 ../whois.c:351
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "不能分析该行：%s"
 
-#: ../whois.c:506
+#: ../whois.c:520
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "警告: 对传统服务器使用了 RIPE 标志。"
 
-#: ../whois.c:657 ../whois.c:806
+#: ../whois.c:674 ../whois.c:823
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -110,27 +111,27 @@ msgstr ""
 "严重错误: 声明(disclaimer)文本已经被改变。\n"
 "请升级此程序。\n"
 
-#: ../whois.c:858
+#: ../whois.c:875
 #, c-format
 msgid "Host %s not found."
 msgstr "没有找到主机 %s。"
 
-#: ../whois.c:868
+#: ../whois.c:885
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: 未知服务"
 
-#: ../whois.c:943
+#: ../whois.c:960
 msgid "Timeout."
 msgstr "超时。"
 
-#: ../whois.c:949
+#: ../whois.c:966
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "被信号 %d 中断..."
 
-#: ../whois.c:1175
-#, c-format
+#: ../whois.c:1223
+#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -152,8 +153,7 @@ msgid ""
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a "
-"list)\n"
+"-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"
@@ -195,55 +195,52 @@ msgstr ""
 "      --help           显示这个帮助并退出\n"
 "      --version        输出版本信息并退出\n"
 
-#: ../mkpasswd.c:80
+#: ../mkpasswd.c:84
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "以标准56位DES为基础的 crypt(3)"
 
-#: ../mkpasswd.c:162
+#: ../mkpasswd.c:165
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "无效方式 '%s'。\n"
 
-#: ../mkpasswd.c:171 ../mkpasswd.c:181
+#: ../mkpasswd.c:174 ../mkpasswd.c:184
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "无效的数字 '%s'。\n"
 
-#: ../mkpasswd.c:199
+#: ../mkpasswd.c:202
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "尝试用 '%s --help' 获取更多的信息。\n"
 
-#: ../mkpasswd.c:240
+#: ../mkpasswd.c:244
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
-msgstr[0] "错误的 salt 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
-msgstr[1] "错误的 salt 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
+msgstr[0] "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
+msgstr[1] "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
 
-#: ../mkpasswd.c:245
+#: ../mkpasswd.c:249
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] ""
-"错误的 salt 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字节。\n"
+"错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字"
+"节。\n"
 msgstr[1] ""
-"错误的 salt 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字节。\n"
+"错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字"
+"节。\n"
 
-#: ../mkpasswd.c:254
+#: ../mkpasswd.c:258
 #, c-format
 msgid "Illegal salt character '%c'.\n"
-msgstr "非法的 salt 字符 '%c'。\n"
+msgstr "非法的随机数字符 '%c'。\n"
 
-#: ../mkpasswd.c:299 ../mkpasswd.c:326
+#: ../mkpasswd.c:308 ../mkpasswd.c:324
 #, c-format
 msgid "Password: "
 msgstr "密码: "
-
-#: ../mkpasswd.c:320
-#, c-format
-msgid "Illegal password character '0x%hhx'.\n"
-msgstr "非法的密码字符 '0x%hhx'。\n"
 
 #: ../mkpasswd.c:342
 #, c-format
@@ -281,7 +278,7 @@ msgid ""
 "Report bugs to %s.\n"
 msgstr ""
 "      -m, --method=TYPE \t选择使用 TYPE 的方法\n"
-"      -S, --salt=SALT \t\t使用指定 SALT\n"
+"      -S, --salt=SALT \t\t使用指定随机字符\n"
 "      -R, --rounds=NUMBER \t使用指定的循环次数\n"
 "      -P, --password-fd=NUM \t从文件描述符 NUM 中读取密码来\n"
 "\t\t\t\t替代从 /dev/tty 中获取密码\n"
@@ -299,3 +296,6 @@ msgstr ""
 #, c-format
 msgid "Available methods:\n"
 msgstr "可用方式：\n"
+
+#~ msgid "Illegal password character '0x%hhx'.\n"
+#~ msgstr "非法的密码字符 '0x%hhx'。\n"

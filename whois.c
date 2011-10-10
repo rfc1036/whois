@@ -90,6 +90,7 @@ int main(int argc, char *argv[])
     int ch, nopar = 0, fstringlen = 64;
     const char *server = NULL, *port = NULL;
     char *qstring, *fstring;
+    int ret;
 
 #ifdef ENABLE_NLS
     setlocale(LC_ALL, "");
@@ -203,9 +204,9 @@ int main(int argc, char *argv[])
     if (!server)
 	server = guess_server(qstring);
 
-    handle_query(server, port, qstring, fstring);
+    ret = handle_query(server, port, qstring, fstring);
 
-    exit(0);
+    exit(ret);
 }
 
 /*
@@ -213,7 +214,7 @@ int main(int argc, char *argv[])
  * from guess_server or an encoded command/message from guess_server.
  * This function has multiple memory leaks.
  */
-void handle_query(const char *hserver, const char *hport,
+int handle_query(const char *hserver, const char *hport,
 	const char *query, const char *flags)
 {
     const char *server = NULL, *port = NULL;
@@ -237,16 +238,16 @@ void handle_query(const char *hserver, const char *hport,
 	    puts(_("This TLD has no whois server, but you can access the "
 			"whois database at"));
 	    puts(server + 1);
-	    return;
+	    return 1;
 	case 3:
 	    puts(_("This TLD has no whois server."));
-	    return;
+	    return 1;
 	case 5:
 	    puts(_("No whois server is known for this kind of object."));
-	    return;
+	    return 1;
 	case 6:
 	    puts(_("Unknown AS number or IP network. Please upgrade this program."));
-	    return;
+	    return 1;
 	case 4:
 	    if (verb)
 		printf(_("Using server %s.\n"), server + 1);
@@ -288,7 +289,7 @@ void handle_query(const char *hserver, const char *hport,
     }
 
     if (!server)
-	return;
+	return 1;
 
     query_string = queryformat(server, flags, query);
     if (verb) {
@@ -302,12 +303,12 @@ void handle_query(const char *hserver, const char *hport,
     free(query_string);
 
     /* recursion is fun */
-    if (server) {
+    if (server && !strchr(query, ' ')) {
 	printf(_("\n\nFound a referral to %s.\n\n"), server);
 	handle_query(server, NULL, query, flags);
     }
 
-    return;
+    return 0;
 }
 
 #ifdef CONFIG_FILE
@@ -560,11 +561,16 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	strcat(buf, query + 2);
     }
     else if (!isripe && streq(server, "whois.arin.net") &&
-	    strncaseeq(query, "AS", 2) && isasciidigit(query[2]))
-	strcat(buf, query + 2);			/* strip the "AS" prefix */
-    else if (!isripe && streq(server, "whois.arin.net") &&
-	    (p = strrchr(query, '/')))
-	strncat(buf, query, p - query);		/* strip the mask length */
+	    !strrchr(query, ' ')) {
+	if (strncaseeq(query, "AS", 2) && isasciidigit(query[2])) {
+	    strcat(buf, "a ");
+	    strcat(buf, query + 2);
+	} else if (myinet_aton(query) || strchr(query, ':')) {
+	    strcat(buf, "n + ");
+	    strcat(buf, query);
+	} else
+	    strcat(buf, query);
+    }
     else
 	strcat(buf, query);
 
@@ -1006,7 +1012,9 @@ int domcmp(const char *dom, const char *tld)
 char *normalize_domain(const char *dom)
 {
     char *p, *ret;
+#ifdef HAVE_LIBIDN
     char *domain_start = NULL;
+#endif
 
     ret = strdup(dom);
     /* eat trailing dots and blanks */
@@ -1237,7 +1245,7 @@ void usage(void)
 "-a                     search all databases\n"
 "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE ('all' for a list)\n"
+"-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info [RPSL only]\n"
 "-F                     fast raw output (implies -r)\n"

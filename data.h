@@ -67,6 +67,7 @@ const char *hide_strings[] = {
     "mTLD WHOIS LEGAL STATEMENT", "integrity of the database.",	/* .mobi */
     "Access to RegistryPro's Whois", "All rights",		/* .pro */
     "Telnic, Ltd., the Registry Operator", "(b) harass any person;", /* .tel */
+    "Access to the .XXX WHOIS", "",				/* .xxx */
     NULL, NULL
 };
 

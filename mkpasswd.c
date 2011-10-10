@@ -36,6 +36,10 @@
 #include <xcrypt.h>
 #include <sys/stat.h>
 #endif
+#ifdef HAVE_LINUX_CRYPT_GENSALT
+#define _OW_SOURCE
+#include <crypt.h>
+#endif
 #ifdef HAVE_GETTIMEOFDAY
 #include <sys/time.h>
 #endif
@@ -79,11 +83,13 @@ static const struct crypt_method methods[] = {
     { "des",		"",	2,	2,	0,
 	N_("standard 56 bit DES-based crypt(3)") },
     { "md5",		"$1$",	8,	8,	0, "MD5" },
-#if defined FreeBSD
-    { "bf",		"$2$",  22,	22,	0, "Blowfish (FreeBSD)" },
-#endif
-#if defined OpenBSD || (defined __SVR4 && defined __sun) || defined HAVE_XCRYPT
+#if defined OpenBSD || defined FreeBSD || (defined __SVR4 && defined __sun)
     { "bf",		"$2a$", 22,	22,	1, "Blowfish" },
+#endif
+#if defined HAVE_LINUX_CRYPT_GENSALT
+    { "bf",		"$2a$", 22,	22,	1, "Blowfish, system-specific on 8-bit chars" },
+    /* algorithm 2y fixes CVE-2011-2483 */
+    { "bfy",		"$2y$", 22,	22,	1, "Blowfish, correct handling of 8-bit chars" },
 #endif
 #if defined FreeBSD
     { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
@@ -102,9 +108,6 @@ static const struct crypt_method methods[] = {
      */
 #if defined __SVR4 && defined __sun
     { "sunmd5",		"$md5$", 8,	8,	1, "SunMD5" },
-#endif
-#if defined HAVE_XCRYPT
-    { "sha",		"{SHA}", 0,	0,	0, "SHA-1" },
 #endif
     { NULL,		NULL,	0,	0,	0, NULL }
 };
@@ -222,10 +225,11 @@ int main(int argc, char *argv[])
 	salt_prefix = methods[0].prefix;
     }
 
-    if (streq(salt_prefix, "$2a$")) {		/* OpenBSD Blowfish  */
-	if (rounds <= 4)
-	    rounds = 4;
-	/* actually for 2a it is the logarithm of the number of rounds */
+    if (streq(salt_prefix, "$2a$") || streq(salt_prefix, "$2y$")) {
+	/* OpenBSD Blowfish and derivatives */
+	if (rounds <= 5)
+	    rounds = 5;
+	/* actually for 2a/2y it is the logarithm of the number of rounds */
 	snprintf(rounds_str, sizeof(rounds_str), "%02u$", rounds);
     } else if (rounds_support && rounds)
 	snprintf(rounds_str, sizeof(rounds_str), "rounds=%u$", rounds);
@@ -264,7 +268,12 @@ int main(int argc, char *argv[])
 	strcat(salt, rounds_str);
 	strcat(salt, salt_arg);
     } else {
-#ifdef HAVE_XCRYPT
+#ifdef HAVE_SOLARIS_CRYPT_GENSALT
+#error "This code path is untested on Solaris. Please send a patch."
+	salt = crypt_gensalt(salt_prefix, NULL);
+	if (!salt)
+		perror(stderr, "crypt_gensalt");
+#elif defined HAVE_LINUX_CRYPT_GENSALT
 	void *entropy = get_random_bytes(64);
 
 	salt = crypt_gensalt(salt_prefix, rounds, entropy, 64);
@@ -293,7 +302,7 @@ int main(int argc, char *argv[])
     if (password) {
     } else if (password_fd != -1) {
 	FILE *fp;
-	unsigned char *p;
+	char *p;
 
 	if (isatty(password_fd))
 	    fprintf(stderr, _("Password: "));
@@ -308,20 +317,9 @@ int main(int argc, char *argv[])
 	    exit(2);
 	}
 
-	p = (unsigned char *)password;
-	while (*p) {
-	    if (*p == '\n' || *p == '\r') {
-		*p = '\0';
-		break;
-	    }
-	    /* which characters are valid? */
-	    if (*p > 0x7f) {
-		fprintf(stderr,
-			_("Illegal password character '0x%hhx'.\n"), *p);
-		exit(1);
-	    }
-	    p++;
-	}
+	p = strpbrk(password, "\n\r");
+	if (p)
+	    *p = '\0';
     } else {
 	password = getpass(_("Password: "));
 	if (!password) {
@@ -338,7 +336,9 @@ int main(int argc, char *argv[])
 	    fprintf(stderr, "crypt failed.\n");
 	    exit(2);
 	}
-	if (!strneq(result, salt_prefix, strlen(salt_prefix))) {
+	/* yes, using strlen(salt_prefix) on salt. It's not
+	 * documented whether crypt_gensalt may change the prefix */
+	if (!strneq(result, salt, strlen(salt_prefix))) {
 	    fprintf(stderr, _("Method not supported by crypt(3).\n"));
 	    exit(2);
 	}
