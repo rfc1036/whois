@@ -8,11 +8,11 @@ Build-Depends: debhelper (>= 5), gettext, libidn11-dev
 Package: whois
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: intelligent whois client
- This is a new whois (RFC 3912) client rewritten from scratch.
- It is inspired from and compatible with the usual BSD and RIPE whois(1)
- programs.
- It is intelligent and can automatically select the appropriate whois
- server for most queries.
+Description: intelligent WHOIS client
+ This package provides a commandline client for the WHOIS (RFC 3912)
+ protocol, which queries online servers for information such as contact
+ details for domains and IP address assignments.
+ It can intelligently select the appropriate WHOIS server for most queries.
  .
- The package also contains mkpasswd, a features-rich front end to crypt(3).
+ The package also contains mkpasswd, a features-rich front end to the
+ password encryption function crypt(3).

@@ -56,7 +56,7 @@ endif
 CPPFLAGS += $(DEFS) $(INCLUDES)
 
 ##############################################################################
-all: Makefile.depend whois mkpasswd #pos
+all: Makefile.depend whois mkpasswd pos
 
 ##############################################################################
 %.o: %.c
@@ -88,7 +88,7 @@ servers_charset.h: servers_charset_list make_servers_charset.pl
 	$(PERL) -w make_servers_charset.pl < $< > $@
 
 ##############################################################################
-install: install-whois install-mkpasswd #install-pos
+install: install-whois install-mkpasswd install-pos
 
 install-whois: whois
 	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/

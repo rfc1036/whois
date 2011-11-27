@@ -1,5 +1,5 @@
 /* Program version */
-#define VERSION "5.0.12"
+#define VERSION "5.0.13"
 
 /* Configurable features */
 

@@ -4,8 +4,6 @@ SHELL+= -e
 DPKG_EXPORT_BUILDFLAGS = 1
 -include /usr/share/dpkg/buildflags.mk
 
-#export DH_VERBOSE=1
-
 D := $(shell pwd)/debian/whois
 
 VERSION := $(shell dpkg-parsechangelog | sed -n 's/ubuntu[0-9]*$$//; s/\+.*$$//; /^Version/s/.* //p')
@@ -13,7 +11,6 @@ VERSION := $(shell dpkg-parsechangelog | sed -n 's/ubuntu[0-9]*$$//; s/\+.*$$//;
 build:
 	dh_testdir
 	$(MAKE) CONFIG_FILE="/etc/whois.conf" HAVE_LIBIDN=1 HAVE_ICONV=1
-	cd po && $(MAKE) whois.pot
 	touch $@
 
 clean:
@@ -30,8 +27,7 @@ binary-arch: checkroot build
 	egrep -q '^#define VERSION "$(VERSION)"$$' config.h
 
 	dh_installdirs usr/bin
-	install whois mkpasswd $D/usr/bin/
-	cd po && $(MAKE) install BASEDIR=$D
+	$(MAKE) install BASEDIR=$D
 	dh_installman whois.1 mkpasswd.1
 	dh_installdocs README
 	dh_installchangelogs 

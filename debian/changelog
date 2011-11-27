@@ -1,3 +1,12 @@
+whois (5.0.13) unstable; urgency=medium
+
+  * Updated the .hr TLD server. (Closes: #646572)
+  * Improved the package description, thanks to debian-l10n-english@.
+    (Closes: #650111)
+  * Updated the FSF address in licenses.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 27 Nov 2011 21:19:28 +0100
+
 whois (5.0.12) unstable; urgency=low
 
   * Recursion disabled when the query string contains spaces, because
