@@ -1,3 +1,10 @@
+whois (5.0.14) unstable; urgency=medium
+
+  * Added the .sx TLD server.
+  * Updated the .pe TLD server. (Closes: #653105)
+
+ -- Marco d'Itri <md@linux.it>  Fri, 23 Dec 2011 23:55:47 +0100
+
 whois (5.0.13) unstable; urgency=medium
 
   * Updated the .hr TLD server. (Closes: #646572)

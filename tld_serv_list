@@ -88,6 +88,7 @@
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
 .bn	NONE		# www.brunet.bn
 .bo	whois.nic.bo
+#.bq
 .br	whois.nic.br
 .bs	WEB http://www.nic.bs/cgi-bin/search.pl
 .bt	WEB http://www.nic.bt/
@@ -113,6 +114,7 @@
 .cr	WEB http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do
 .cu	WEB http://www.nic.cu/
 .cv	WEB http://www.dns.cv/
+.cw	NONE		# http://www.una.an/cw_domreg/
 .cx	whois.nic.cx
 .cy	WEB http://www.nic.cy/nslookup/online_database.php
 .cz	whois.nic.cz
@@ -270,9 +272,11 @@
 .sn	whois.nic.sn
 .so	whois.nic.so
 .sr	NONE		# www.register.sr
+#.ss
 .st	whois.nic.st
 .su	whois.tcinet.ru
 .sv	WEB http://www.svnet.org.sv/
+.sx	whois.sx
 .sy	whois.tld.sy
 .sz	NONE		# http://www.sispa.org.sz/
 .tc	whois.adamsnames.tc
