@@ -851,7 +851,10 @@ int openconn(const char *server, const char *port)
     memset(&hints, 0, sizeof(struct addrinfo));
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags = AI_ADDRCONFIG | AI_IDN;
+    hints.ai_flags = AI_ADDRCONFIG;
+#ifdef HAVE_LIBIDN
+    hints.ai_flags |= AI_IDN;
+#endif
 
     if ((err = getaddrinfo(server, port ? port : "nicname", &hints, &res))
 	    != 0) {

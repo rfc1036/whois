@@ -1,3 +1,11 @@
+whois (5.0.15) unstable; urgency=medium
+
+  * Added the .xn--mgba3a4f16a (ایران., Iran) TLD server.
+  * Updated the .pe TLD server, this time for real. (Closes: #653105)
+  * Updated one or more translations. (Closes: #654175)
+
+ -- Marco d'Itri <md@linux.it>  Mon, 05 Mar 2012 22:56:19 +0100
+
 whois (5.0.14) unstable; urgency=medium
 
   * Added the .sx TLD server.

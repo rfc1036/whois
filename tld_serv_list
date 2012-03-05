@@ -236,7 +236,7 @@
 .nz	whois.srs.net.nz
 .om	WEB http://www.omnic.om/onlineUser/WHOISLookup.jsp
 .pa	WEB http://www.nic.pa/
-.pe	whois.nic.pe
+.pe	kero.yachay.pe
 .pf	NONE		# http://www.opt.pf/home/
 .pg	NONE	# http://www.npi.gov.pg/DNS/DNS-Application-form.htm
 .ph	WEB http://www.dot.ph/
@@ -355,6 +355,7 @@
 .xn--kprw13d		whois.twnic.net.tw	# Taiwan, Simplified Chinese
 .xn--kpry57d		whois.twnic.net.tw	# Taiwan, Traditional Chinese
 .xn--lgbbat1ad8j	whois.nic.dz		# Algeria
+.xn--mgba3a4f16a	whois.nic.ir		# Iran
 .xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
 .xn--mgbayh7gpa		WEB http://idn.jo/whois_a.aspx	# Jordan
 .xn--mgbbh1a71e		whois.registry.in	# India, Urdu AW
