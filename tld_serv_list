@@ -58,13 +58,13 @@
 
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
-.ae	whois.aeda.net.ae
+.ae	whois.aeda.ae
 .af	whois.nic.af
 .ag	whois.nic.ag
 .ai	whois.ai
-.al	NONE		# http://www.ert.gov.al/ert_eng/domain.html
+.al	NONE		# http://www.akep.al/en/kerkoni-domain
 .am	whois.nic.am
-.an	NONE		# http://www.una.an/an_domreg/
+.an	NONE		# being phased out. deletion planned for 2014-10-31
 .ao	NONE		# www.dns.ao
 .aq	NONE		# 2day.com
 .ar	WEB http://www.nic.ar/
@@ -124,8 +124,8 @@
 .dm	whois.nic.dm
 .do	WEB http://www.nic.do/whois-h.php3
 .dz	whois.nic.dz
-.ec	WEB http://www.nic.ec/whois/eng/whois.asp # whois.nic.ec is restricted
-.ee	whois.eenet.ee
+.ec	whois.nic.ec
+.ee	whois.tld.ee
 .eg	NONE		# http://lookup.egregistry.eg/english.aspx
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
@@ -155,7 +155,7 @@
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/whois.html
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
-.gw	NONE		# www.gwregister.com
+.gw	NONE		# NIC? www.nic.gw www.gwregister.com
 .gy	whois.registry.gy
 .hk	whois.hkirc.hk
 .hm	whois.registry.hm
@@ -280,7 +280,7 @@
 .sy	whois.tld.sy
 .sz	NONE		# http://www.sispa.org.sz/
 .tc	whois.adamsnames.tc
-.td	NONE		# NIC? http://www.sotel.td/ was http://www.nic.td/ . http://www.tit.td/ ?
+.td	NONE		# http://www.nic.td/
 .tf	whois.nic.tf
 .tg	WEB http://www.nic.tg/
 .th	whois.thnic.co.th
@@ -343,7 +343,8 @@
 # to find any registered subdomains to verify it.
 .xn--3e0b707e		whois.kr		# Korea, Republic of
 .xn--45brj9c		whois.registry.in	# India, Bengali AW
-.xn--90a3ac		whois.rnids.rs		# Serbia AW
+.xn--80ao21a		whois.nic.kz		# Kazakhstan
+.xn--90a3ac		whois.rnids.rs		# Serbia
 .xn--clchc0ea0b2g2a9gcd	whois.nic.net.sg	# Singapore, Tamil
 .xn--fiqs8s		cwhois.cnnic.cn		# China, Simplified Chinese
 .xn--fiqz9s		cwhois.cnnic.cn		# China, Traditional Chinese
@@ -356,11 +357,11 @@
 .xn--kpry57d		whois.twnic.net.tw	# Taiwan, Traditional Chinese
 .xn--lgbbat1ad8j	whois.nic.dz		# Algeria
 .xn--mgba3a4f16a	whois.nic.ir		# Iran
-.xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
+.xn--mgbaam7a8h		whois.aeda.ae		# United Arab Emirates
 .xn--mgbayh7gpa		WEB http://idn.jo/whois_a.aspx	# Jordan
 .xn--mgbbh1a71e		whois.registry.in	# India, Urdu AW
-.xn--mgbc0a9azcg	whois.iam.net.ma	# Morocco AW
-.xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
+#.xn--mgbc0a9azcg	whois.iam.net.ma	# Morocco
+#.xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
 .xn--o3cw4h		whois.thnic.co.th	# Thailand
 .xn--ogbpf8fl		whois.tld.sy		# Syria
 .xn--p1ai		whois.tcinet.ru		# Russian Federation

@@ -1,3 +1,14 @@
+whois (5.0.16) unstable; urgency=medium
+
+  * Added the .xn--80ao21a (.ҚАЗ, Kazakhstan) TLD server.
+  * Updated the .ec and .ee TLD servers.
+  * Removed the .xn--mgbc0a9azcg (.المغرب, Morocco) and .xn--mgberp4a5d4ar 
+    (.السعودية, Saudi Arabia) TLD servers.
+  * Added a new ASN allocation.
+  * Updated one or more translations.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 30 Apr 2012 05:44:07 +0200
+
 whois (5.0.15) unstable; urgency=medium
 
   * Added the .xn--mgba3a4f16a (ایران., Iran) TLD server.

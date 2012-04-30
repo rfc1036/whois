@@ -3,6 +3,7 @@ whois.corenic.net	utf-8		-C UTF-8
 whois.cat		utf-8		-C UTF-8
 whois.museum		utf-8		-C UTF-8
 
+whois.aeda.ae		utf-8
 whois.nic.br		iso-8859-1
 whois.cira.ca		iso-8859-1
 whois.nic.ch		utf-8
@@ -26,6 +27,9 @@ whois.jprs.jp		iso-2022-jp
 whois.nic.ad.jp		iso-2022-jp
 whois.nic.or.kr		euc-kr
 whois.kr		euc-kr
+# XXX I had to guess: the server is unable to fully transcode U+49b in the
+# answer for xn--e1aybc.xn--80ao21a. Maybe it is cp1251 instead?
+whois.nic.kz		rk1048
 whois.nic.li		utf-8
 whois.domreg.lt		utf-8
 whois.dns.lu		iso-8859-1
@@ -33,9 +37,12 @@ whois.nic.mu		utf-8
 whois.norid.no		iso-8859-1
 whois.nic.nu		utf-8
 whois.dns.pt		iso-8859-1
+whois.registry.qa	utf-8
 whois.rnids.rs		utf-8
 whois.nic-se.se		utf-8
+whois.nic.net.sg	utf-8
 whois.tld.sy		utf-8
+whois.thnic.co.th	utf-8
 whois.nic.tr		utf-8
 whois.twnic.net.tw	utf-8
 whois.pp.ua		utf-8

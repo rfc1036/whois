@@ -1,12 +1,12 @@
 # Czech translation for whois
-# Petr Pisar <petr.pisar@atlas.cz>, 2008, 2009
+# Petr Pisar <petr.pisar@atlas.cz>, 2008, 2009, 2010, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.0.1\n"
+"Project-Id-Version: whois 5.0.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-09 23:58+0200\n"
-"PO-Revision-Date: 2010-01-27 16:11+0100\n"
+"PO-Revision-Date: 2012-03-07 21:06+0100\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "Language: cs\n"
@@ -132,7 +132,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Přerušeno signálem %d…"
 
 #: ../whois.c:1223
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -185,8 +185,7 @@ msgstr ""
 "-g ZDROJ:PRVNÍ-POSLEDNÍ\n"
 "                       nalezne aktualizace ze ZDROJE se sériovým číslem\n"
 "                       mezi PRVNÍM a POSLEDNÍM\n"
-"-t TYP                 požaduje šablonu pro objekt druhu TYP („all“ pro "
-"seznam)\n"
+"-t TYP                 požaduje šablonu pro objekt druhu TYP\n"
 "-v TYP                 požaduje podrobnou šablonu pro objekt druhu TYP\n"
 "-q [version|sources|types]\n"
 "                       dotáže se na zadané informace o serveru [jen RPSL]\n"
@@ -301,17 +300,3 @@ msgstr ""
 msgid "Available methods:\n"
 msgstr "Dostupné metody:\n"
 
-#~ msgid "Illegal password character '0x%hhx'.\n"
-#~ msgstr "Zakázaný znak v hesle „0x%hhx“.\n"
-
-#~ msgid "Invalid hash type '%s'.\n"
-#~ msgstr "Neplatný druh hashe „%s“.\n"
-
-#~ msgid "Connecting to whois.crsnic.net."
-#~ msgstr "Připojuji se k whois.crsnic.net."
-
-#~ msgid "Connecting to whois.publicinterestregistry.net."
-#~ msgstr "Připojuji se k whois.publicinterestregistry.net."
-
-#~ msgid "Connecting to whois.nic.cc."
-#~ msgstr "Připojuji se k whois.nic.cc."
