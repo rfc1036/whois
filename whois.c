@@ -254,13 +254,6 @@ int handle_query(const char *hserver, const char *hport,
 	    sockfd = openconn(server + 1, NULL);
 	    server = query_crsnic(sockfd, query);
 	    break;
-	case 7:
-	    if (verb)
-		printf(_("Using server %s.\n"),
-			"whois.publicinterestregistry.net");
-	    sockfd = openconn("whois.publicinterestregistry.net", NULL);
-	    server = query_pir(sockfd, query);
-	    break;
 	case 8:
 	    if (verb)
 		printf(_("Using server %s.\n"), "whois.afilias-grs.info");
@@ -717,57 +710,6 @@ const char *query_crsnic(const int sock, const char *query)
 
 	/* the output must not be hidden or no data will be shown for
 	   host records and not-existing domains */
-	if (hide_line(&hide, buf))
-	    continue;
-
-	if ((p = strpbrk(buf, "\r\n")))
-	    *p = '\0';
-	recode_fputs(buf, stdout);
-	fputc('\n', stdout);
-    }
-
-    if (ferror(fi))
-	err_sys("fgets");
-    fclose(fi);
-
-    return referral_server;
-}
-
-const char *query_pir(const int sock, const char *query)
-{
-    char *temp, *p, buf[2000];
-    FILE *fi;
-    int hide = hide_discl;
-    char *referral_server = NULL;
-    int state = 0;
-
-    temp = malloc(strlen(query) + 5 + 2 + 1);
-    strcpy(temp, "FULL ");
-    strcat(temp, query);
-    strcat(temp, "\r\n");
-
-    fi = fdopen(sock, "r");
-    if (write(sock, temp, strlen(temp)) < 0)
-	err_sys("write");
-    free(temp);
-
-    while (fgets(buf, sizeof(buf), fi)) {
-	/* If there are multiple matches only the server of the first record
-	   is queried */
-	if (state == 0 &&
-		strneq(buf, "Registrant Name:SEE SPONSORING REGISTRAR", 40))
-	    state = 1;
-	if (state == 1 &&
-		strneq(buf, "Registrant Street1:Whois Server:", 32)) {
-	    for (p = buf; *p != ':'; p++);	/* skip until colon */
-	    for (p++; *p != ':'; p++);		/* skip until 2nd colon */
-	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
-	    referral_server = strdup(p);
-	    if ((p = strpbrk(referral_server, "\r\n")))
-		*p = '\0';
-	    state = 2;
-	}
-
 	if (hide_line(&hide, buf))
 	    continue;
 

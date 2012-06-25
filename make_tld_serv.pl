@@ -15,7 +15,6 @@ while (<>) {
 	$b =~ s/^W(?:EB)?\s+/\\x01/;
 	$b =~ s/^VERISIGN\s+/\\x04/;
 	$b = "\\x03" if $b eq 'NONE';
-	$b = "\\x07" if $b eq 'PIR';
 	$b = "\\x08" if $b eq 'AFILIAS';
 	$b = "\\x0C" if $b eq 'ARPA';
 	print qq(    "$a",\t"$b",\n);

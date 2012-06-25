@@ -63,10 +63,10 @@ all: Makefile.depend whois mkpasswd pos
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
 
 whois: $(whois_OBJECTS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(whois_LDADD) $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(whois_LDADD) $(LIBS)
 
 mkpasswd: $(mkpasswd_OBJECTS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(mkpasswd_LDADD) $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(mkpasswd_LDADD) $(LIBS)
 
 ##############################################################################
 as_del.h: as_del_list make_as_del.pl
@@ -109,8 +109,8 @@ distclean: clean
 	rm -f po/whois.pot
 
 clean:
-	rm -f Makefile.depend as_del.h ip_del.h ip6_del.h tld_serv.h \
-		servers_charset.h *.o whois mkpasswd
+	rm -f Makefile.depend as_del.h as32_del.h ip_del.h ip6_del.h \
+		tld_serv.h servers_charset.h *.o whois mkpasswd
 	rm -f po/*.mo
 
 pos:

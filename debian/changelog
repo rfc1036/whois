@@ -1,3 +1,13 @@
+whois (5.0.17) unstable; urgency=medium
+
+  * Updated the .bi, .fo, .gr and .gt TLD servers.
+  * Changed the version check in debian/rules to support Ubuntu backports.
+    (Closes: #671097)
+  * Removed support for recursion of .org queries, it has been a thick
+    registry since 2005. (Closes: #678734)
+
+ -- Marco d'Itri <md@linux.it>  Mon, 25 Jun 2012 03:34:36 +0200
+
 whois (5.0.16) unstable; urgency=medium
 
   * Added the .xn--80ao21a (.ҚАЗ, Kazakhstan) TLD server.

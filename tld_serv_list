@@ -30,7 +30,7 @@
 
 .eu.org	whois.eu.org
 .za.org	whois.za.org
-.org	PIR
+.org	whois.pir.org
 
 .edu	whois.educause.net
 .gov	whois.nic.gov
@@ -79,10 +79,10 @@
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
 .bd	WEB http://whois.btcl.net.bd/
 .be	whois.dns.be
-.bf	NONE		# http://www.artel.bf/ http://www.onatel.bf/internet/domaine.htm
+.bf	NONE		# http://www.arce.bf/ http://www.onatel.bf/internet/domaine.htm
 .bg	whois.register.bg
 .bh	NONE		# www.inet.com.bh
-.bi	WEB http://whois.nic.bi/register/whois.hei	# whois.nic.bi wrong referral?
+.bi	WEB https://whois.nic.bi/whois.php	# whois.nic.bi wrong referral?
 .bj	whois.nic.bj
 #.bl
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
@@ -94,7 +94,7 @@
 .bt	WEB http://www.nic.bt/
 .bv	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .by	WEB http://www.tld.by/indexeng.html
-.bw	NONE		# NIC? btc.bw www.info.bw/resource/local/index.shtml
+.bw	NONE		# NIC? http://www.info.bw/services/index.shtml
 .bz	AFILIAS
 .co.ca	whois.co.ca
 .ca	whois.cira.ca
@@ -130,13 +130,13 @@
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
 .es	WEB https://www.nic.es/
-.et	NONE	# http://www.telecom.net.et/EthioInternet/domainname.html
+.et	NONE	# http://www.ethionet.et/
 .eu	whois.eu
 .fi	whois.ficora.fi
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.co.fk/
 .fm	WEB http://www.dot.fm/whois.html
-.fo	whois.ripe.net	# www.nic.fo
+.fo	whois.nic.fo
 .fr	whois.nic.fr
 .ga	NONE		# www.nic.ga
 .gb	NONE
@@ -151,11 +151,11 @@
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	WEB https://www.dom-enic.com/whois.html
 .gq	NONE		# NO NIC http://www.getesa.gq/
-.gr	WEB https://grweb.ics.forth.gr/whois_en.jsp
+.gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
 .gs	whois.nic.gs
-.gt	WEB http://www.gt/whois.html
+.gt	WEB http://www.gt/who_is.html
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
-.gw	NONE		# NIC? www.nic.gw www.gwregister.com
+.gw	NONE		# NIC? www.nic.gw no registry
 .gy	whois.registry.gy
 .hk	whois.hkirc.hk
 .hm	whois.registry.hm
@@ -169,7 +169,7 @@
 .im	whois.nic.im
 .in	whois.registry.in	# afilias
 .io	whois.nic.io
-.iq	NONE		# http://www.cmc.iq/english/iq/iqregister1.htm
+.iq	NONE		# http://www.cmc.iq/en/iq.html
 .ir	whois.nic.ir
 .is	whois.isnic.is
 .it	whois.nic.it
@@ -207,7 +207,7 @@
 .mg	whois.nic.mg
 .mh	NONE		# www.nic.net.mh
 .mk	WEB http://dns.marnet.net.mk/registar.php
-.ml	NONE		# NIC? www.sotelma.ml
+.ml	NONE		# NIC? nic.ml www.sotelma.ml
 .mm	NONE		# www.nic.mm
 .mn	AFILIAS
 .mo	WEB http://www.monic.net.mo/	# whois.monic.mo is restricted
