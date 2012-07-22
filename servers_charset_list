@@ -3,7 +3,7 @@ whois.corenic.net	utf-8		-C UTF-8
 whois.cat		utf-8		-C UTF-8
 whois.museum		utf-8		-C UTF-8
 
-whois.aeda.ae		utf-8
+whois.aeda.net.ae	utf-8
 whois.nic.br		iso-8859-1
 whois.cira.ca		iso-8859-1
 whois.nic.ch		utf-8
@@ -18,12 +18,13 @@ whois.eenet.ee		iso-8859-1
 whois.eu		utf-8
 whois.ficora.fi		iso-8859-1
 whois.nic.fo		utf-8
-whois.nic.fr		iso-8859-1
+whois.nic.fr		utf-8
 whois.hkirc.hk		utf-8
 whois.nic.hr		utf-8
 whois.nic.hu		iso-8859-1
 whois.nic.ir		utf-8
 whois.isnic.is		iso-8859-1
+whois.nic.it		utf-8
 whois.jprs.jp		iso-2022-jp
 whois.nic.ad.jp		iso-2022-jp
 whois.nic.or.kr		euc-kr

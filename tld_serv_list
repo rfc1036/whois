@@ -58,7 +58,7 @@
 
 .ac	whois.nic.ac
 .ad	NONE		# www.nic.ad
-.ae	whois.aeda.ae
+.ae	whois.aeda.net.ae
 .af	whois.nic.af
 .ag	whois.nic.ag
 .ai	whois.ai
@@ -357,7 +357,7 @@
 .xn--kpry57d		whois.twnic.net.tw	# Taiwan, Traditional Chinese
 .xn--lgbbat1ad8j	whois.nic.dz		# Algeria
 .xn--mgba3a4f16a	whois.nic.ir		# Iran
-.xn--mgbaam7a8h		whois.aeda.ae		# United Arab Emirates
+.xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
 .xn--mgbayh7gpa		WEB http://idn.jo/whois_a.aspx	# Jordan
 .xn--mgbbh1a71e		whois.registry.in	# India, Urdu AW
 #.xn--mgbc0a9azcg	whois.iam.net.ma	# Morocco

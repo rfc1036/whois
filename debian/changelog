@@ -1,3 +1,11 @@
+whois (5.0.18) unstable; urgency=low
+
+  * Updated the .ae and .xn--mgbaam7a8h (.امارات, United Arabs Emirates)
+    TLDs.
+  * Updated the server charset table for .fr and .it.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 22 Jul 2012 20:35:18 +0200
+
 whois (5.0.17) unstable; urgency=medium
 
   * Updated the .bi, .fo, .gr and .gt TLD servers.

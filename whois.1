@@ -81,6 +81,7 @@ If the \fI/etc/whois.conf\fR config file exists, it will be consulted
 to find a server before applying the normal rules. Each line of the
 file should contain a regular expression to be matched against the query
 text and the whois server to use, separated by white space.
+IDN domains must use the ACE format.
 .P
 The whois protocol does not specify an encoding for characters which
 cannot be represented by ASCII and implementations vary wildly.
