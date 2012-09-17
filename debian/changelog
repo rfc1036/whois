@@ -1,3 +1,15 @@
+whois (5.0.19) unstable; urgency=low
+
+  * Added the .post TLD server.
+  * Updated the .co.za SLD servers. (Closes: #687094)
+  * Added the .alt.za, .net.za and .web.za SLD servers.
+  * whois.ua changed (?) the encoding to utf-8. (Closes: #686715)
+  * Fixed the parsing of 6to4 addresses like whois 2002:xxxx::. (LP#967311)
+  * Modified the package version check in debian/rules to help Ubuntu
+    maintainers. (Closes: #684526)
+
+ -- Marco d'Itri <md@linux.it>  Mon, 17 Sep 2012 21:41:29 +0200
+
 whois (5.0.18) unstable; urgency=low
 
   * Updated the .ae and .xn--mgbaam7a8h (.امارات, United Arabs Emirates)

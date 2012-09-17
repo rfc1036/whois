@@ -51,6 +51,7 @@
 .mobi	whois.dotmobiregistry.net
 .museum	whois.museum
 .name	whois.nic.name
+.post	whois.dotpostregistry.net
 .pro	whois.registrypro.pro
 .tel	whois.nic.tel
 .travel	whois.nic.travel
@@ -331,11 +332,13 @@
 .ye	NONE		# NIC? www.nominet.org.ye http://www.y.net.ye/services/domain_name.htm
 .yt	whois.nic.fr
 .ac.za	whois.ac.za
-.co.za	whois.coza.net.za
+.alt.za	whois.alt.za
+.co.za	whois.registry.net.za
 .gov.za	whois.gov.za
-#.net.za	whois.net.za
+.net.za	whois.net.za
 .org.za	WEB http://www.org.za/	# rwhois.org.za:4321 is restricted
-.za	NONE		# http://www.internet.org.za/slds.html many more SLD...
+.web.za	whois.web.za
+.za	NONE		# http://www.zadna.org.za/annexure-d.html
 .zm	NONE		# http://www.zamnet.zm/ser-isp/dnr.htm
 .zw	NONE		# http://www.zispa.co.zw/
 

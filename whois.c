@@ -1060,6 +1060,12 @@ char *convert_6to4(const char *s)
 #else
     unsigned int a, b;
 
+    if (sscanf(s, "2002:%x::", &a) == 1) {
+	new = malloc(sizeof("255.255.255.255"));
+	sprintf(new, "%d.%d.0.0", a >> 8, a & 0xff);
+	return new;
+    }
+
     if (sscanf(s, "2002:%x:%x:", &a, &b) != 2)
 	return strdup("0.0.0.0");
 
