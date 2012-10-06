@@ -1,4 +1,5 @@
 # http://www.iana.org/domains/root/db/
+# http://www.icann.org/en/resources/idn/fast-track/string-evaluation-completion
 # NIC? means I have not been able to find the registry
 
 .br.com	whois.centralnic.net
@@ -73,9 +74,9 @@
 .priv.at whois.nic.priv.at	# "unofficial" SLD
 .at	whois.nic.at
 .au	whois.ausregistry.net.au
-.aw	NONE		# http://www.setarnet.aw/domreg.html
+.aw	NONE		# http://setar.aw/internet/domain-registration.html
 .ax	NONE		# www.ax
-.az	WEB http://www.nic.az/AzCheck.htm
+.az	WEB http://www.nic.az/
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
 .bd	WEB http://whois.btcl.net.bd/
@@ -94,8 +95,8 @@
 .bs	WEB http://www.nic.bs/cgi-bin/search.pl
 .bt	WEB http://www.nic.bt/
 .bv	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
-.by	WEB http://www.tld.by/indexeng.html
-.bw	NONE		# NIC? http://www.info.bw/services/index.shtml
+.by	whois.cctld.by
+.bw	WEB http://www.whois.bw/
 .bz	AFILIAS
 .co.ca	whois.co.ca
 .ca	whois.cira.ca
@@ -136,7 +137,7 @@
 .fi	whois.ficora.fi
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.co.fk/
-.fm	WEB http://www.dot.fm/whois.html
+.fm	WEB http://dot.fm/whois.html
 .fo	whois.nic.fo
 .fr	whois.nic.fr
 .ga	NONE		# www.nic.ga
@@ -156,7 +157,7 @@
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/who_is.html
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
-.gw	NONE		# NIC? www.nic.gw no registry
+.gw	NONE		# currently no registry
 .gy	whois.registry.gy
 .hk	whois.hkirc.hk
 .hm	whois.registry.hm
@@ -175,7 +176,7 @@
 .is	whois.isnic.is
 .it	whois.nic.it
 .je	whois.je
-.jm	NONE		# NIC? uwimona.edu.jm http://nic.jm
+.jm	NONE		# http://myspot.mona.uwi.edu/mits/
 .jo	WEB http://www.dns.jo/Whois.aspx
 .jp	whois.jprs.jp
 .ke	whois.kenic.or.ke
@@ -184,7 +185,7 @@
 .ki	whois.nic.mu
 .km	NONE		# www.domaine.km
 .kn	WEB http://www.nic.kn/
-.kp	whois.kcce.kp
+.kp	NONE		# NIC? http://www.star.co.kp/
 .kr	whois.kr
 .kw	WEB http://www.kw/
 .ky	WEB http://kynseweb.messagesecure.com/kywebadmin/ # http://www.icta.ky/
@@ -201,7 +202,7 @@
 .lv	whois.nic.lv
 .ly	whois.nic.ly
 .ma	whois.iam.net.ma # www.nic.ma
-.mc	whois.ripe.net
+.mc	NONE	# www.nic.mc
 .md	WEB http://www.dns.md/wh1.php # whois.nic.md is restricted
 .me	whois.meregistry.net	# afilias
 #.mf
@@ -227,7 +228,7 @@
 .nc	whois.cctld.nc
 .ne	NONE		# NIC? http://www.intnet.ne
 .nf	whois.nic.nf
-.ng	whois.register.net.ng
+.ng	whois.nic.net.ng
 .ni	WEB http://www.nic.ni/
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
@@ -235,12 +236,12 @@
 .nr	WEB http://www.cenpac.net.nr/dns/whois.html
 .nu	whois.nic.nu
 .nz	whois.srs.net.nz
-.om	WEB http://www.omnic.om/onlineUser/WHOISLookup.jsp
+.om	whois.registry.om
 .pa	WEB http://www.nic.pa/
 .pe	kero.yachay.pe
 .pf	NONE		# http://www.opt.pf/home/
-.pg	NONE	# http://www.npi.gov.pg/DNS/DNS-Application-form.htm
-.ph	WEB http://www.dot.ph/
+.pg	NONE	# http://www.unitech.ac.pg/
+.ph	WEB http://www.dot.ph/whois
 .pk	WEB http://www.pknic.net.pk/
 .co.pl	whois.co.pl	# "unofficial" SLD
 .pl	whois.dns.pl
@@ -257,11 +258,11 @@
 .rs	whois.rnids.rs
 .edu.ru	whois.informika.ru
 .ru	whois.tcinet.ru
-.rw	WEB http://www.nic.rw/cgi-bin/whois.pl
+.rw	NONE		# http://www.ricta.org.rw/
 .sa	whois.nic.net.sa
 .sb	whois.coccaregistry.net
 .sc	AFILIAS		# www.nic.sc
-.sd	NONE		# http://isoc.sd/ (CHECK LATER)
+.sd	NONE		# http://isoc.sd/sis/index.php/sd-domain
 .se	whois.nic-se.se
 .sg	whois.nic.net.sg
 .sh	whois.nic.sh
@@ -269,7 +270,7 @@
 .sj	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .sk	whois.sk-nic.sk
 .sl	whois.nic.sl
-.sm	whois.ripe.net
+.sm	whois.nic.sm
 .sn	whois.nic.sn
 .so	whois.nic.so
 .sr	NONE		# www.register.sr
@@ -281,7 +282,7 @@
 .sy	whois.tld.sy
 .sz	NONE		# http://www.sispa.org.sz/
 .tc	whois.adamsnames.tc
-.td	NONE		# http://www.nic.td/
+.td	WEB http://www.nic.td/
 .tf	whois.nic.tf
 .tg	WEB http://www.nic.tg/
 .th	whois.thnic.co.th
@@ -289,7 +290,7 @@
 .tk	whois.dot.tk
 .tl	whois.nic.tl
 .tm	whois.nic.tm
-.tn	WEB http://whois.ati.tn/
+.tn	whois.tn
 .to	whois.tonic.to
 .tp	NONE			# phase out in progress
 .tr	whois.nic.tr
@@ -301,7 +302,7 @@
 .co.ua	whois.co.ua
 .pp.ua	whois.pp.ua
 .ua	whois.ua
-.ug	www.registry.co.ug	# this is a whois server too
+.ug	whois.co.ug
 .ac.uk	whois.ja.net
 .bl.uk	NONE
 .british-library.uk NONE
@@ -317,19 +318,19 @@
 #.um
 .fed.us	whois.nic.gov
 .us	whois.nic.us
-.com.uy	WEB https://nic.anteldata.com.uy/dns/
+.com.uy	WEB https://nic.anteldata.com.uy/dns/consultaWhois/whois.action
 .uy	whois.nic.org.uy
 .uz	whois.cctld.uz
-.va	whois.ripe.net
+.va	NONE
 .vc	AFILIAS
 .ve	whois.nic.ve
 .vg	whois.adamsnames.tc
 .vi	WEB http://www.nic.vi/whoisform.htm
-.vn	WEB http://www.vnnic.vn/english/
+.vn	WEB http://en.vnnic.vn/
 .vu	WEB http://www.vunic.vu/whois.html
 .wf	whois.nic.fr
 .ws	whois.samoanic.ws
-.ye	NONE		# NIC? www.nominet.org.ye http://www.y.net.ye/services/domain_name.htm
+.ye	NONE		# NIC? http://www.y.net.ye/services/domain_name.htm
 .yt	whois.nic.fr
 .ac.za	whois.ac.za
 .alt.za	whois.alt.za
@@ -339,7 +340,7 @@
 .org.za	WEB http://www.org.za/	# rwhois.org.za:4321 is restricted
 .web.za	whois.web.za
 .za	NONE		# http://www.zadna.org.za/annexure-d.html
-.zm	NONE		# http://www.zamnet.zm/ser-isp/dnr.htm
+.zm	NONE		# http://www.zamnet.zm/ http://www.coppernet.zm/
 .zw	NONE		# http://www.zispa.co.zw/
 
 # AW means that I had to guess the whois server name, but I was not able
@@ -359,12 +360,13 @@
 .xn--kprw13d		whois.twnic.net.tw	# Taiwan, Simplified Chinese
 .xn--kpry57d		whois.twnic.net.tw	# Taiwan, Traditional Chinese
 .xn--lgbbat1ad8j	whois.nic.dz		# Algeria
-.xn--mgba3a4f16a	whois.nic.ir		# Iran
+.xn--mgb9awbf		whois.registry.om	# Oman AW
 .xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
 .xn--mgbayh7gpa		WEB http://idn.jo/whois_a.aspx	# Jordan
 .xn--mgbbh1a71e		whois.registry.in	# India, Urdu AW
-#.xn--mgbc0a9azcg	whois.iam.net.ma	# Morocco
-#.xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
+.xn--mgbc0a9azcg	NONE			# Morocco
+.xn--mgberp4a5d4ar	WEB http://nic.sa/view/whois	# Saudi Arabia
+.xn--mgbx4cd0ab		whois.domainregistry.my	# Malaysia AW
 .xn--o3cw4h		whois.thnic.co.th	# Thailand
 .xn--ogbpf8fl		whois.tld.sy		# Syria
 .xn--p1ai		whois.tcinet.ru		# Russian Federation
@@ -395,7 +397,6 @@
 -kg	whois.domain.kg
 -ti	whois.telstra.net
 -tw	whois.twnic.net.tw
--6bone	whois.6bone.net
 -coop	whois.nic.coop
 -cknic	whois.nic.ck
 -idnic	whois.idnic.net.id

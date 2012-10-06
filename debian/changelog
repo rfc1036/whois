@@ -1,3 +1,14 @@
+whois (5.0.20) unstable; urgency=low
+
+  * Updated the .by, .ng, .om, .sm, .tn, .ug and .vn TLD servers.
+    (Closes: #689486)
+  * Added the .bw, .td, .xn--mgb9awbf (عمان., Oman), .xn--mgberp4a5d4ar 
+    (.السعودية, Saudi Arabia) and .xn--mgbx4cd0ab (ﻢﻠﻴﺴﻳﺍ., Malaysia)
+    TLD servers.
+  * Removed the .kp, .mc, .rw and .xn--mgba3a4f16a (ایران., Iran) TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 07 Oct 2012 01:25:05 +0200
+
 whois (5.0.19) unstable; urgency=low
 
   * Added the .post TLD server.
