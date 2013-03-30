@@ -1,0 +1,17 @@
+*_del.h
+tld_serv.h
+servers_charset.h
+
+Makefile.depend
+*.o
+mkpasswd
+whois
+
+po/whois.pot
+po/*.mo
+
+build
+debian/files
+debian/whois.debhelper.log
+debian/whois.substvars
+debian/whois/
