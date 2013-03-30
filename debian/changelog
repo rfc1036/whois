@@ -1,3 +1,7 @@
+whois (5.0.21) unstable; urgency=low
+
+ -- Marco d'Itri <md@linux.it>  Sat, 30 Mar 2013 05:24:51 +0100
+
 whois (5.0.20) unstable; urgency=low
 
   * Updated the .by, .ng, .om, .sm, .tn, .ug and .vn TLD servers.
