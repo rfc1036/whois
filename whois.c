@@ -1058,16 +1058,21 @@ char *convert_6to4(const char *s)
     new = malloc(sizeof("255.255.255.255"));
     sprintf(new, "%d.%d.%d.%d", *(ip + 2), *(ip + 3), *(ip + 4), *(ip + 5));
 #else
+    int items;
     unsigned int a, b;
+    char c;
 
-    if (sscanf(s, "2002:%x::", &a) == 1) {
-	new = malloc(sizeof("255.255.255.255"));
-	sprintf(new, "%d.%d.0.0", a >> 8, a & 0xff);
-	return new;
-    }
+    items = sscanf(s, "2002:%x:%x%c", &a, &b, &c);
 
-    if (sscanf(s, "2002:%x:%x:", &a, &b) != 2)
+    if (items <= 0 || items == 2 || (items == 3 && c != ':'))
 	return strdup("0.0.0.0");
+
+    if (items == 1) {
+	items = sscanf(s, "2002:%x:%c", &a, &c);
+	if (items != 2 || c != ':')
+	    return strdup("0.0.0.0");
+	b = 0;
+    }
 
     new = malloc(sizeof("255.255.255.255"));
     sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
