@@ -495,7 +495,7 @@ const char *whereas(const unsigned long asn)
  */
 char *queryformat(const char *server, const char *flags, const char *query)
 {
-    char *buf, *p;
+    char *buf;
     int i, isripe = 0;
 
     /* 64 bytes reserved for server-specific flags added later */
