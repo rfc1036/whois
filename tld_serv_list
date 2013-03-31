@@ -1,6 +1,9 @@
 # http://www.iana.org/domains/root/db/
-# http://www.icann.org/en/resources/idn/fast-track/string-evaluation-completion
-# NIC? means I have not been able to find the registry
+#
+# Domain names MUST be lowercase and MUST begin with "." or "-".
+# First match wins.
+# Elements in this list are matched against the end of the query.
+# "NIC?" means that I have not been able to find the registry.
 
 .br.com	whois.centralnic.net
 .cn.com	whois.centralnic.net
