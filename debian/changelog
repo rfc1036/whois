@@ -1,6 +1,18 @@
 whois (5.0.21) unstable; urgency=low
 
- -- Marco d'Itri <md@linux.it>  Sat, 30 Mar 2013 05:24:51 +0100
+  * Fixed parsing of 6to4 addresses: the last two bytes of the IPv4 address
+    in 6to4 addresses were not parsed correctly since version 5.0.19.
+    (Closes: #699928)
+  * Added the .xn--j1amh (.укр, Ukraine) TLD server.
+  * Updated the .bi, .se and .vn TLD servers. (Closes: #697753)
+  * Removed whois.pandi.or.id from the list of servers which support the 
+    RIPE extensions, since it does not anymore and queries are broken.
+    (Closes: #704115)
+  * Updated some disclaimer suppression strings.
+  * Respect DEB_HOST_GNU_TYPE when selecting CC for cross-compiling.
+    (Closes: #695442)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 31 Mar 2013 19:46:02 +0200
 
 whois (5.0.20) unstable; urgency=low
 
