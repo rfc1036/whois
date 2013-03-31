@@ -1,5 +1,6 @@
 whois (5.0.22) unstable; urgency=low
 
+  * Fixed cross-compiling, this time for real. (See #695442.)
 
  -- Marco d'Itri <md@linux.it>  Sun, 31 Mar 2013 22:17:29 +0200
 
