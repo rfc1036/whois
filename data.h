@@ -31,43 +31,45 @@ const char *ripe_servers[] = {
 const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "",				/* NetSol */
     "TERMS OF USE: You are not", "",				/* crsnic */
-    "Access to .ORG WHOIS information", "",
-    "NOTICE: Access to the .aero", "",
-    "This Registry database contains ONLY .EDU", "type: help",	/* edu */
-    "% .eu Whois Server", "% of the database",
     "The data in Register", "",				    /* Register.Com */
     "The Data in the Tucows", "RECORD DOES NOT",
-    " The data contained in the WHOIS", "",			/* DOTSTER */
-    "This whois service currently only", "top-level domains.",
-    "Signature Domains' Whois Service", "agree to abide by the above",
-    "Access to ASNIC", "by this policy.",			/* as */
+    "The information in this whois database", "",		/* DOTSTER */
+    "This whois service currently only", "top-level domains.",	/* NameSecure */
     "The Data in Gabia", "you agree to abide",
-    "The data contained in Go Daddy", "is not the registrant",
+    "The data contained in GoDaddy.com", "is not the registrant",
     "Disclaimer: The Global Name Registry", "for any commercial",
     "Access to America Online", "time. By accessing",		/* AOL */
-    "% Access and use restricted", "",				/* GANDI */
-    "% The data in the WHOIS database of Schlund", "",
-    "NeuStar, Inc., the Registry", "OF THE AVAILABILITY",	/* us */
+    "# Access and use restricted", "",				/* GANDI */
+    "% The data in the WHOIS database of 1&1 Internet", "",
     "The data in this whois database is", "",			/* enom */
-    "By submitting a WHOIS query, you agree you will", "LACK OF A DOMAIN",		/* directNIC */
-    "The Data in Moniker.Com", "",
+    "The Data in Moniker's WHOIS database", "of Moniker.",
     "The Data in OnlineNIC", "    By starting this query",
-    "The data in Bulkregister", "",
     "Interdomain's WHOIS", "DOES NOT SIGNIFY",
     "The Data provided by Stargate Holdings", "(2) enable any",
     "; This data is provided by domaindiscount24.com", "",
-    "%% BookMyName Whois", "%% this policy",
-    "The .coop registry WHOIS", "VERIFICATION, NOR DO",
-    "Tralliance, Inc., the Registry", "",			/* .travel */
-    "NOTICE: Access to the domains information", "",		/* CORE */
-    "%% puntCAT Whois Server", "%% any time.",
-    "Access to INFO WHOIS information is provided", "",		/* Afilias */
-    "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
+    "%% NOTICE: Access to this information is provided", "%% By submitting", /* bookmyname.com */
+    "% NOTICE: Access to the domains information", "% this query", /* CORE */
+
+    /* gTLDs */
+    "Access to .AERO WHOIS information", "",
     "DotAsia WHOIS LEGAL STATEMENT", "integrity of the database.",
+    "The .coop registry WHOIS", "VERIFICATION, NOR DO",
+    "%% puntCAT Whois Server", "%% any time.",
+    "This Registry database contains ONLY .EDU", "type: help",	/* edu */
+    "Access to INFO WHOIS information is provided", "",		/* Afilias */
     "mTLD WHOIS LEGAL STATEMENT", "integrity of the database.",	/* .mobi */
+    "Access to .ORG WHOIS information", "",
     "Access to RegistryPro's Whois", "All rights",		/* .pro */
     "Telnic, Ltd., the Registry Operator", "(b) harass any person;", /* .tel */
-    "Access to the .XXX WHOIS", "",				/* .xxx */
+    "Tralliance, Inc., the Registry", "",			/* .travel */
+    "Access to .XXX ICM REGISTRY WHOIS", "",			/* .xxx */
+
+    /* ccTLDs */
+    "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
+    "Access to ASNIC", "by this policy.",			/* as */
+    "% The WHOIS service offered", "% of the database",		/* eu */
+    "NeuStar, Inc., the Registry", "OF THE AVAILABILITY",	/* us */
+
     NULL, NULL
 };
 
