@@ -1,3 +1,9 @@
+whois (5.0.23) unstable; urgency=medium
+
+  * whois.nic.or.kr switched from EUC-KR to UTF-8. (LP#1132526)
+
+ -- Marco d'Itri <md@linux.it>  Mon, 08 Apr 2013 06:14:14 +0200
+
 whois (5.0.22) unstable; urgency=low
 
   * Fixed cross-compiling, this time for real. (See #695442.)
