@@ -93,8 +93,10 @@ install: install-whois install-mkpasswd install-pos
 install-whois: whois
 	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
 	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
+	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man5/
 	$(INSTALL) -m 0755 whois $(BASEDIR)$(prefix)/bin/
 	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
+	$(INSTALL) -m 0644 whois.conf.5 $(BASEDIR)$(prefix)/share/man/man5/
 
 install-mkpasswd: mkpasswd
 	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/

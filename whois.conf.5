@@ -1,0 +1,44 @@
+.TH "WHOIS.CONF" "5" "9 April 2013" "Petr Písař" "Debian GNU/Linux"
+
+.SH "NAME"
+whois.conf \- alternative WHOIS servers list for whois client
+
+.SH "SYNOPSIS"
+.B /etc/whois.conf
+
+.SH "DESCRIPTION"
+This file contains a list of WHOIS servers which can augment or override
+the built-in list of the client.
+
+It's a plain text file in ASCII encoding. Each line consists of two fields:
+a pattern to match WHOIS object identifier and a corresponding WHOIS server
+domain name.
+
+Fields are separated by non-empty sequence of space or a tabular characters.
+A line starting with a hash character is a free comment and it's not
+considered.
+
+The pattern is case-insensitive extended regular expression if whois client
+has been compiled with POSIX regular expressions support. Otherwise, simple
+case-insensitive suffix comparison against WHOIS object identifier is used.
+
+Internationalized domain names (IDN) must be specified in ascii-compatible
+encoding (ACE) format.
+
+.SH "EXAMPLE"
+\\.nz$             nz.whois-servers.net
+.br
+# Hangul Korean TLD
+.br
+\\.xn--3e0b707e$   whois.kr
+
+.SH "FILES"
+/etc/whois.conf
+
+.SH "SEE ALSO"
+\fBwhois\fP(1)
+
+.SH "AUTHOR"
+This manual page was written by Petr Písař <\fIppisar@redhat.com\fP>
+and is licensed under the terms of the GNU General Public License,
+version 2 or higher.
