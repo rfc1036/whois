@@ -72,9 +72,9 @@ const char *client_tag = IDSTRING;
 
 #ifdef HAVE_GETOPT_LONG
 static const struct option longopts[] = {
-    {"help",	no_argument,		NULL, 0  },
     {"version",	no_argument,		NULL, 1  },
     {"verbose",	no_argument,		NULL, 2  },
+    {"help",	no_argument,		NULL, 3  },
     {"server",	required_argument,	NULL, 'h'},
     {"host",	required_argument,	NULL, 'h'},
     {"port",	required_argument,	NULL, 'p'},
@@ -139,22 +139,24 @@ int main(int argc, char *argv[])
 	case 'p':
 	    port = strdup(optarg);
 	    break;
+	case 3:
+	    usage(EXIT_SUCCESS);
 	case 2:
 	    verb = 1;
 	    break;
 	case 1:
-	    fprintf(stderr, _("Version %s.\n\nReport bugs to %s.\n"),
+	    fprintf(stdout, _("Version %s.\n\nReport bugs to %s.\n"),
 		    VERSION, "<md+whois@linux.it>");
-	    exit(0);
+	    exit(EXIT_SUCCESS);
 	default:
-	    usage();
+	    usage(EXIT_FAILURE);
 	}
     }
     argc -= optind;
     argv += optind;
 
     if (argc == 0 && !nopar)	/* there is no parameter */
-	usage();
+	usage(EXIT_FAILURE);
 
     /* On some systems realloc only works on non-NULL buffers */
     /* I wish I could remember which ones they are... */
@@ -1181,9 +1183,9 @@ int isasciidigit(const char c) {
 
 /* http://www.ripe.net/ripe/docs/databaseref-manual.html */
 
-void usage(void)
+void usage(int error)
 {
-    fprintf(stderr, _(
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "Usage: whois [OPTION]... OBJECT...\n\n"
 "-h HOST, --host HOST   connect to server HOST\n"
 "-p PORT, --port PORT   connect to PORT\n"
@@ -1217,6 +1219,6 @@ void usage(void)
 "-q [version|sources|types]  query specified server info\n"
 "-F                     fast raw output (implies -r)\n"
 ));
-    exit(0);
+    exit(error);
 }
 
