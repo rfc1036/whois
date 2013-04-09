@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
     argv = merge_args(getenv("WHOIS_OPTIONS"), argv, &argc);
 
     while ((ch = GETOPT_LONGISH(argc, argv,
-		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:St:T:v:V:x", longopts, 0)) > 0) {
+		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x", longopts, 0)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
 	    if (strlen(fstring) + 3 > fstringlen) {
