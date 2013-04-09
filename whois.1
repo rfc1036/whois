@@ -3,27 +3,35 @@
 whois \- client for the whois directory service
 .SH "SYNOPSIS"
 .B whois
-[\~\fB\-h\fP\~\fIHOST\fP\~]
-[\~\fB\-p\fP\~ \fIPORT\fP\~]
-[\~\fB\-aCFHlLMmrRSVx\fP\~]
+[\~{\~\fB\-h\fP | \fB\-\-host\fP\~}\~\fIHOST\fP\~]
+[\~{\~\fB\-p\fP | \fB\-\-port\fP\~}\~\fIPORT\fP\~]
+[\~\fB\-abBcdFGHKlLmMrRSx\fP\~]
 [\~\fB\-g\fP\~\fISOURCE:FIRST\-LAST\fP\~]
-[\~\fB\-i\fP\~\fIATTR\fP\~]
-[\~\fB\-S\fP\~\fISOURCE\fP\~]
-[\~\fB\-T\fP\~\fITYPE\fP\~]
-.I object
+[\~\fB\-i\fP\~\fIATTR\fP[\fI,ATTR\fP]...\~]
+[\~\fB\-s\fP\~\fISOURCE\fP[\fI,SOURCE\fP]...\~]
+[\~\fB\-T\fP\~\fITYPE\fP[\fI,TYPE\fP]...\~]
+[\~\fB\-\-verbose\fP\~]
+.I OBJECT
 
 .B whois
-.B -t
+.B \-q
+.I KEYWORD
+
+.B whois
+.B \-t
 .I TYPE
 
 .B whois
-.B -v
+.B \-v
 .I TYPE
 
 .B whois
-.B -q
-.I keyword
-.PP 
+.B \-\-help
+
+.B whois
+.B \-\-version
+
+.PP
 .SH "DESCRIPTION"
 \fBwhois\fP searches for an object in a \fIRFC\ 3912\fP database.
 
@@ -31,16 +39,16 @@ This version of the whois client tries to guess the right server to
 ask for the specified object. If no guess can be made it will connect
 to \fIwhois.networksolutions.com\fP for NIC handles or \fIwhois.arin.net\fP
 for IPv4 addresses and network names.
-.PP 
+.PP
 .SH "OPTIONS"
 .TP 8
-.B \-h HOST
+.B \-h HOST, \-\-host HOST
 Connect to HOST.
 .TP 8
 .B \-H
 Do not display the legal disclaimers some registries like to show you.
 .TP 8
-.B \-p PORT
+.B \-p, \-\-port PORT
 Connect to PORT.
 .TP 8
 .B \-\-verbose
@@ -49,7 +57,93 @@ Be verbose.
 .B \-\-help
 Display online help.
 .TP 8
-Other options are flags understood by RIPE-like servers.
+.B \-\-version
+Display client version information.
+.P
+Other options are flags understood by \fIwhois.ripe.net\fP and some other
+RIPE-like servers:
+.TP 8
+.B \-a
+Also search all the mirrored databases.
+.TP 8
+.B \-b
+Return brief IP address ranges with abuse contact.
+.TP 8
+.B \-B
+Disable object filtering. (Show the e-mail addresses.)
+.TP 8
+.B \-c
+Return the smallest IP address range with a reference to an irt object.
+.TP 8
+.B \-d
+Return the reverse DNS delegation object too.
+.\" .TP 8
+.\" .B \-F
+.\" Return attribute names in short format. Implies \fI-r\fP option.
+.TP 8
+.B \-g SOURCE:FIRST\-LAST
+Search updates from \fISOURCE\fP database between \fIFIRST\fP and \fILAST\fP
+update serial number. It's useful to obtain Near Real Time Mirroring stream.
+.TP 8
+.B \-G
+Disable grouping of associated objects.
+.TP 8
+.B \-i ATTR[,ATTR]...
+Search objects having associated attributes. \fIATTR\fP is attribute name.
+Attribute value is positional \fIOBJECT\fP argument.
+.TP 8
+.B \-K
+Return primary key attributes only. Exception is \fImembers\fP attribute of
+\fIset\fP object which is always returned. Another exceptions are all
+attributes of objects \fIorganisation\fP, \fIperson\fP, and \fIrole\fP that
+are never returned.
+.TP 8
+.B \-l
+Return the one level less specific object.
+.TP 8
+.B \-L
+Return all levels of less specific objects.
+.TP 8
+.B \-m
+Return all one level more specific objects.
+.TP 8
+.B \-M
+Return all levels of more specific objects.
+.TP 8
+.B -q KEYWORD
+Return list of keywords supported by server. \fIKEYWORD\fP can be
+\fIversion\fP for server version, \fIsources\fP for list of source databases,
+or \fItypes\fP for object types.
+.TP 8
+.B \-r
+Disable recursive look-up for contact information.
+.TP 8
+.B \-R
+Disable following referrals and force showing the object from the local copy
+in the server.
+.TP 8
+.B \-s SOURCE[,SOURCE]...
+Request the server to search for objects mirrored from \fISOURCES\fP.
+Sources are delimited by comma and the order is significant.
+Use \fI-q sources\fP option to obtain list of valid sources.
+.TP 8
+.B \-t TYPE
+Return the template for a object of \fITYPE\fP.
+.TP 8
+.B \-T TYPE[,TYPE]...
+Restrict the search to objects of \fITYPE\fP. Multiple types are separeted by
+a comma.
+.TP 8
+.B -v TYPE
+Return the verbose template for a object of \fITYPE\fP.
+.\" .TP 8
+.\" .B \-V AGENT
+.\" Change user agent identifier. Typical format is \fIXXn.n\fP like \fIMd5.0\fP.
+.\" RIPE uses the value to identify a client behind a registered proxy (in that
+.\" case a comma followed by a client IP address should be appended).
+.TP 8
+.B -x
+Search for only exact match on network address prefix.
 .SH "NOTES"
 Please remember that \fIwhois.networksolutions.com\fP by default will
 only search in the domains database. If you want to search for NIC handles
@@ -77,7 +171,7 @@ When querying a non-standard server, command line options which are not
 to be interpreted by the client should always follow the \fI\-\-\fP
 separator (which marks the beginning of the query string).
 .P
-If the \fI/etc/whois.conf\fR config file exists, it will be consulted
+If the \fI/etc/whois.conf\fR configuration file exists, it will be consulted
 to find a server before applying the normal rules. Each line of the
 file should contain a regular expression to be matched against the query
 text and the whois server to use, separated by white space.
@@ -91,15 +185,15 @@ by the current system locale.
 .P
 Command line arguments will always be interpreted accordingly to the
 current system locale and converted to the IDN ASCII Compatible Encoding.
-.SH "Files"
+.SH "FILES"
 /etc/whois.conf
 .SH "ENVIRONMENT"
 .IP LANG
-When querying \fIwhois.nic.ad.jp\fP and \fIwhois.jprs.jp\fP english text
+When querying \fIwhois.nic.ad.jp\fP and \fIwhois.jprs.jp\fP English text
 is requested unless the \fILANG\fP or \fILC_MESSAGES\fP environment
 variables specify a Japanese locale.
 .IP "WHOIS_OPTIONS"
-A list of options which will be evalued before the ones specified on the
+A list of options which will be evaluated before the ones specified on the
 command line.
 .IP "WHOIS_SERVER"
 This server will be queried if the program cannot guess where some kind
@@ -107,13 +201,9 @@ of objects are located. If the variable does not exist then
 \fIwhois.arin.net\fP will be queried.
 .SH "SEE ALSO"
 \fIRFC 3912\fP: WHOIS Protocol Specification
-.PP 
-\fIRIPE\-223\fP: RIPE NCC Database Documentation
-.PP 
-Detailed help on available flags can be found in \fIRIPE\-223\fP or in
-the help file which can be obtained with the command:
-.IP 
-.B whois \-h whois.ripe.net HELP
+.PP
+\fIRIPE Database Query Reference Manual:\fP
+\fI<http://www.ripe.net/data-tools/support/documentation/ripe-database-query-reference-manual>\fP
 .SH "BUGS"
 The program may have buffer overflows in the command line parser:
 be sure to not pass untrusted data to it.
