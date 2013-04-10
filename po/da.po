@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 23:58+0200\n"
+"POT-Creation-Date: 2013-04-10 04:23+0200\n"
 "PO-Revision-Date: 2011-03-20 17:30+01:00\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:145
+#: ../whois.c:148
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -29,28 +29,28 @@ msgstr ""
 "\n"
 "Rapporter fejl til %s (på engelsk).\n"
 
-#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
+#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Bruger server %s.\n"
 
-#: ../whois.c:237
+#: ../whois.c:240
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr "Denne TLD har ingen whois-server, men du kan tilgå whois-databasen på"
 
-#: ../whois.c:242
+#: ../whois.c:245
 msgid "This TLD has no whois server."
 msgstr "Denne TLD har ingen whois-server."
 
-#: ../whois.c:245
+#: ../whois.c:248
 msgid "No whois server is known for this kind of object."
 msgstr "Ingen whois-server er kendt for denne type af objekt."
 
-#: ../whois.c:248
+#: ../whois.c:251
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Ukendt AS- eller IP-netværksnummer. Opgrader venligst dette program."
 
-#: ../whois.c:271
+#: ../whois.c:267
 #, c-format
 msgid ""
 "\n"
@@ -61,7 +61,7 @@ msgstr ""
 "Forespørger efter IPv4-slutpunktet %s for en 6to4 IPv6-adresse.\n"
 "\n"
 
-#: ../whois.c:277
+#: ../whois.c:273
 #, c-format
 msgid ""
 "\n"
@@ -72,7 +72,7 @@ msgstr ""
 "Forespørger efter IPv4-slutpunktet %s for en Teredo IPv6-adresse.\n"
 "\n"
 
-#: ../whois.c:296
+#: ../whois.c:292
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +81,7 @@ msgstr ""
 "Forespørgelsesstreng: »%s«\n"
 "\n"
 
-#: ../whois.c:306
+#: ../whois.c:302
 #, c-format
 msgid ""
 "\n"
@@ -94,16 +94,16 @@ msgstr ""
 "Fandt en henvisning til %s.\n"
 "\n"
 
-#: ../whois.c:348 ../whois.c:351
+#: ../whois.c:344 ../whois.c:347
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Kan ikke fortolke denne linje: %s"
 
-#: ../whois.c:520
+#: ../whois.c:516
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Advarsel: RIPE-flag brugt med en traditionel server."
 
-#: ../whois.c:674 ../whois.c:823
+#: ../whois.c:675 ../whois.c:773
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,92 +111,62 @@ msgstr ""
 "Katastrofal fejl: Teksten for ansvarsfraskrivelse er blevet ændret.\n"
 "Opgrader venligst dette program.\n"
 
-#: ../whois.c:875
+#: ../whois.c:828
 #, c-format
 msgid "Host %s not found."
 msgstr "Vært %s er ikke fundet."
 
-#: ../whois.c:885
+#: ../whois.c:838
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: Ukendt tjeneste"
 
-#: ../whois.c:960
+#: ../whois.c:913
 msgid "Timeout."
 msgstr "Tidsudløb."
 
-#: ../whois.c:966
+#: ../whois.c:919
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Afbrudt af signal %d..."
 
-#: ../whois.c:1223
-#, fuzzy, c-format
+#: ../whois.c:1189
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL only]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt "
-"attribute\n"
-"-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-r                     turn off recursive lookups for contact information\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-a                     search all databases\n"
-"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE\n"
-"-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources|types]  query specified server info [RPSL only]\n"
-"-F                     fast raw output (implies -r)\n"
-"-h HOST                connect to server HOST\n"
-"-p PORT                connect to PORT\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
-msgstr ""
-"Brug: whois [TILVALG]... OBJEKT...\n"
 "\n"
-"-l                     et niveau mindre specifik opslag [kun RPSL]\n"
-"-L                     find alle mindre specifikke resultater\n"
-"-m                     find første niveau mere specifikke resultater\n"
-"-M                     find alle mere specifikke resultater\n"
-"-c                     find det mindste resultat der indeholder attributten\n"
-"\t\t\tmnt-irt\n"
-"-x                     præcis match [kun RPSL]\n"
-"-d                     returner også DNS-omvendte delegationsobjekter\n"
-"                       [kun RPSL]\n"
-"-i ATTR[,ATTR]...      foretag et omvendt opslag for angivne ATTRibutter\n"
-"-T TYPE[,TYPE]...      kig kun efter objekter i form af TYPE\n"
-"-K                     kun primære nøgler returneres [kun RPSL]\n"
-"-r                     deaktiver omvendte opslag for kontaktinformation\n"
-"-R                     fremtving visning af lokal kopi af domæneobjektet "
-"selv\n"
-"                       hvis det indeholder henvisning\n"
-"-a                     søg i alle databaser\n"
-"-s KILDE[,KILDE]...    søg databasen fra KILDE\n"
-"-g KILDE:FØRST-SIDST   find opdateringer fra KILDE fra seriel FØRST til "
-"SIDST\n"
-"-t TYPE                anmod om skabelon for objekttypen TYPE (»all« for en\n"
-"                       liste)\n"
-"-v TYPE                anmod om uddybende skabelon for objekttypen TYPE\n"
-"-q [version|kilder|typer]  forespørg angivet serverinfo [kun RPSL]\n"
-"-F                     hurtig råuddata (-r underforstås)\n"
-"-h VÆRT                forbind til server VÆRT\n"
-"-p PORT                forbind til PORT\n"
-"-H                     skjul juridisk ansvarsfraskrivelse\n"
-"      --verbose        forklar hvad der sker\n"
-"      --help           vis denne hjælpetekst og afslut\n"
-"      --version        vis versionsinformation og afslut\n"
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
 
 #: ../mkpasswd.c:84
 msgid "standard 56 bit DES-based crypt(3)"
@@ -212,41 +182,41 @@ msgstr "Ugyldig metode »%s«\n"
 msgid "Invalid number '%s'.\n"
 msgstr "Ugyldigt tal »%s«.\n"
 
-#: ../mkpasswd.c:202
+#: ../mkpasswd.c:201
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Prøv »%s --help« for yderligere information.\n"
 
-#: ../mkpasswd.c:244
+#: ../mkpasswd.c:242
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Forkert salt-længde: %d byte men %d var forventet.\n"
 msgstr[1] "Forkert salt-længde: %d byte men %d var forventet.\n"
 
-#: ../mkpasswd.c:249
+#: ../mkpasswd.c:247
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Forkert salt-længde: %d byte men %d <= n <= %d var forventet.\n"
 msgstr[1] "Forkert salt-længde: %d byte men %d <= n <= %d var forventet.\n"
 
-#: ../mkpasswd.c:258
+#: ../mkpasswd.c:256
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Ugyldigt salt-tegn »%c«.\n"
 
-#: ../mkpasswd.c:308 ../mkpasswd.c:324
+#: ../mkpasswd.c:306 ../mkpasswd.c:322
 #, c-format
 msgid "Password: "
 msgstr "Adgangskode: "
 
-#: ../mkpasswd.c:342
+#: ../mkpasswd.c:340
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Metoden er ikke understøttet af crypt(3).\n"
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:419
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -257,7 +227,7 @@ msgstr ""
 "Krypterer ADGANGSKODEN med crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:423
+#: ../mkpasswd.c:422
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -296,6 +266,78 @@ msgstr ""
 #, c-format
 msgid "Available methods:\n"
 msgstr "Tilgængelige metoder:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL only]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     exact match [RPSL only]\n"
+#~ "-d                     return DNS reverse delegation objects too [RPSL "
+#~ "only]\n"
+#~ "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+#~ "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+#~ "-K                     only primary keys are returned [RPSL only]\n"
+#~ "-r                     turn off recursive lookups for contact "
+#~ "information\n"
+#~ "-R                     force to show local copy of the domain object "
+#~ "even\n"
+#~ "                       if it contains referral\n"
+#~ "-a                     search all databases\n"
+#~ "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to "
+#~ "LAST\n"
+#~ "-t TYPE                request template for object of TYPE\n"
+#~ "-v TYPE                request verbose template for object of TYPE\n"
+#~ "-q [version|sources|types]  query specified server info [RPSL only]\n"
+#~ "-F                     fast raw output (implies -r)\n"
+#~ "-h HOST                connect to server HOST\n"
+#~ "-p PORT                connect to PORT\n"
+#~ "-H                     hide legal disclaimers\n"
+#~ "      --verbose        explain what is being done\n"
+#~ "      --help           display this help and exit\n"
+#~ "      --version        output version information and exit\n"
+#~ msgstr ""
+#~ "Brug: whois [TILVALG]... OBJEKT...\n"
+#~ "\n"
+#~ "-l                     et niveau mindre specifik opslag [kun RPSL]\n"
+#~ "-L                     find alle mindre specifikke resultater\n"
+#~ "-m                     find første niveau mere specifikke resultater\n"
+#~ "-M                     find alle mere specifikke resultater\n"
+#~ "-c                     find det mindste resultat der indeholder "
+#~ "attributten\n"
+#~ "\t\t\tmnt-irt\n"
+#~ "-x                     præcis match [kun RPSL]\n"
+#~ "-d                     returner også DNS-omvendte delegationsobjekter\n"
+#~ "                       [kun RPSL]\n"
+#~ "-i ATTR[,ATTR]...      foretag et omvendt opslag for angivne ATTRibutter\n"
+#~ "-T TYPE[,TYPE]...      kig kun efter objekter i form af TYPE\n"
+#~ "-K                     kun primære nøgler returneres [kun RPSL]\n"
+#~ "-r                     deaktiver omvendte opslag for kontaktinformation\n"
+#~ "-R                     fremtving visning af lokal kopi af domæneobjektet "
+#~ "selv\n"
+#~ "                       hvis det indeholder henvisning\n"
+#~ "-a                     søg i alle databaser\n"
+#~ "-s KILDE[,KILDE]...    søg databasen fra KILDE\n"
+#~ "-g KILDE:FØRST-SIDST   find opdateringer fra KILDE fra seriel FØRST til "
+#~ "SIDST\n"
+#~ "-t TYPE                anmod om skabelon for objekttypen TYPE (»all« for "
+#~ "en\n"
+#~ "                       liste)\n"
+#~ "-v TYPE                anmod om uddybende skabelon for objekttypen TYPE\n"
+#~ "-q [version|kilder|typer]  forespørg angivet serverinfo [kun RPSL]\n"
+#~ "-F                     hurtig råuddata (-r underforstås)\n"
+#~ "-h VÆRT                forbind til server VÆRT\n"
+#~ "-p PORT                forbind til PORT\n"
+#~ "-H                     skjul juridisk ansvarsfraskrivelse\n"
+#~ "      --verbose        forklar hvad der sker\n"
+#~ "      --help           vis denne hjælpetekst og afslut\n"
+#~ "      --version        vis versionsinformation og afslut\n"
 
 #~ msgid "Illegal password character '0x%hhx'.\n"
 #~ msgstr "Ugyldigt adgangskodetegn »0x%hhx«.\n"

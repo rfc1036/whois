@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 23:58+0200\n"
+"POT-Creation-Date: 2013-04-10 04:23+0200\n"
 "PO-Revision-Date: 2010-01-27 15:31+0100\n"
 "Last-Translator: Sami Kerola <kerolasa@iki.fi>\n"
 "Language-Team: \n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:145
+#: ../whois.c:148
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,29 +27,29 @@ msgstr ""
 "\n"
 "Lähetä bugiraportit osoitteeseen %s.\n"
 
-#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
+#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Käytetään palvelinta %s.\n"
 
-#: ../whois.c:237
+#: ../whois.c:240
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Tälla TLD:llä ei ole whois palvelinta, tiedot ovat nakyvissä osoitteessa"
 
-#: ../whois.c:242
+#: ../whois.c:245
 msgid "This TLD has no whois server."
 msgstr "Tälla TLD:llä ei ole whois palvelinta."
 
-#: ../whois.c:245
+#: ../whois.c:248
 msgid "No whois server is known for this kind of object."
 msgstr "Mikään whois palvelu ei tiedä kysyttyä tietoa."
 
-#: ../whois.c:248
+#: ../whois.c:251
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Tuntematon AS-numero tai IP-verkko. Päivitä tämä ohjelma."
 
-#: ../whois.c:271
+#: ../whois.c:267
 #, c-format
 msgid ""
 "\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Kysytään IPv4 ulostulona %s IPv6:n IPv4 avaruudesta.\n"
 "\n"
 
-#: ../whois.c:277
+#: ../whois.c:273
 #, c-format
 msgid ""
 "\n"
@@ -71,7 +71,7 @@ msgstr ""
 "Kysytään IPv4 ulostulona %s Teredo IPv6 tunneliosoitetta.\n"
 "\n"
 
-#: ../whois.c:296
+#: ../whois.c:292
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -80,7 +80,7 @@ msgstr ""
 "Kysely: \"%s\"\n"
 "\n"
 
-#: ../whois.c:306
+#: ../whois.c:302
 #, c-format
 msgid ""
 "\n"
@@ -93,16 +93,16 @@ msgstr ""
 "Löytyi viittaus %s.\n"
 "\n"
 
-#: ../whois.c:348 ../whois.c:351
+#: ../whois.c:344 ../whois.c:347
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Ohjelma ei kykene tulkitsemaan riviä: %s"
 
-#: ../whois.c:520
+#: ../whois.c:516
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Varoitus: käytät RIPE valitsimia perinteiseen palvelimeen."
 
-#: ../whois.c:674 ../whois.c:823
+#: ../whois.c:675 ../whois.c:773
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -110,89 +110,62 @@ msgstr ""
 "Katastrofaalinen virhe: lisenssiteksti on muuttunut.\n"
 "Päivita ohjelma.\n"
 
-#: ../whois.c:875
+#: ../whois.c:828
 #, c-format
 msgid "Host %s not found."
 msgstr "Palvelinta %s ei löydy."
 
-#: ../whois.c:885
+#: ../whois.c:838
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: tuntematon palvelu"
 
-#: ../whois.c:960
+#: ../whois.c:913
 msgid "Timeout."
 msgstr "Aikakatkaisu."
 
-#: ../whois.c:966
+#: ../whois.c:919
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Ohjelma keskeytyi signaaliin %d..."
 
-#: ../whois.c:1223
-#, fuzzy, c-format
+#: ../whois.c:1189
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL only]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt "
-"attribute\n"
-"-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-r                     turn off recursive lookups for contact information\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-a                     search all databases\n"
-"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE\n"
-"-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources|types]  query specified server info [RPSL only]\n"
-"-F                     fast raw output (implies -r)\n"
-"-h HOST                connect to server HOST\n"
-"-p PORT                connect to PORT\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
-msgstr ""
-"Käyttö: whois [OPTIO]... OBJEKTI...\n"
 "\n"
-"-l                     tasoa epätarkempi osuma [ainoastaan RPSL]\n"
-"-L                     etsi kaikki epätarkemmat osumat\n"
-"-m                     etsi yhtä tasoa tarkemmat osumat\n"
-"-M                     etsi kaikki tarkemmat osumat\n"
-"-c                     etsi vähäisin, joka vastaa mnt-irt attribuuttia\n"
-"-x                     täydellinen osuma [ainoastaan RPSL]\n"
-"-d                     palauta ainoastaan käänteisdomainit [ainoastan RPSL]\n"
-"-i ATTR[,ATTR]...      käänteiskysely ATTRibuutin perusteella\n"
-"-T TYPE[,TYPE]...      etsi ainoastaan määritetyn tyyppisiä objekteja\n"
-"-K                     palauta ainoastan hakuavaimet [ainoastan RPSL]\n"
-"-r                     älä käytä rekursiivista kontaktietohakua\n"
-"-R                     pakota käyttämään paikallista kopiota domain\n"
-"                       objektista, vaikka se sisältäisi viitteitä\n"
-"-a                     etsi kaikista tietokannoista\n"
-"-s SOURCE[,SOURCE]...  etsi tietokannoista SOURCE\n"
-"-g SOURCE:FIRST-LAST   löytö päivittää lähteen SOURCE järjestysnumeron\n"
-"                       FIRST:stä LAST:iin\n"
-"-t TYPE                pyydä mallinne TYPE objektille ('all' näyttää "
-"tyyppilistan)\n"
-"-v TYPE                monisanainen mallinne TYPE objektille\n"
-"-q [version|sources|types]  erityinen palvelintieto [ainostaan RPSL]\n"
-"-F                     nopea tuloste (sisältää -r valitsimen)\n"
-"-h HOST                kysy palvelimelta HOST\n"
-"-p PORT                käytä TCP-porttia PORT\n"
-"-H                     älä tulosta käyttöehtoja\n"
-"      --verbose        näytä mitä tapahtuu\n"
-"      --help           tulosta tämä ruutu\n"
-"      --version        tulosta versio\n"
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
 
 #: ../mkpasswd.c:84
 msgid "standard 56 bit DES-based crypt(3)"
@@ -208,41 +181,41 @@ msgstr "Väärä metodi '%s'.\n"
 msgid "Invalid number '%s'.\n"
 msgstr "Väärä numero '%s'.\n"
 
-#: ../mkpasswd.c:202
+#: ../mkpasswd.c:201
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Käytä valitsinta '%s --help' lisätietojen saamiseen.\n"
 
-#: ../mkpasswd.c:244
+#: ../mkpasswd.c:242
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Väärä suolan pituus: %d tavu, kun %d odotettiin.\n"
 msgstr[1] "Väärä suolan pituus: %d tavu, kun %d odotettiin.\n"
 
-#: ../mkpasswd.c:249
+#: ../mkpasswd.c:247
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Väärä suolan pituus: %d tavua, kun %d <= n <= %d odotettiin.\n"
 msgstr[1] "Väärä suolan pituus: %d tavua, kun %d <= n <= %d odotettiin.\n"
 
-#: ../mkpasswd.c:258
+#: ../mkpasswd.c:256
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Suolassa laiton merkki '%c'.\n"
 
-#: ../mkpasswd.c:308 ../mkpasswd.c:324
+#: ../mkpasswd.c:306 ../mkpasswd.c:322
 #, c-format
 msgid "Password: "
 msgstr "Salasana: "
 
-#: ../mkpasswd.c:342
+#: ../mkpasswd.c:340
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Toiminto ei ole tuettu crypt(3) funktiossa.\n"
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:419
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -253,7 +226,7 @@ msgstr ""
 "Salaa salasanan crypt(3) funktiolla.\n"
 "\n"
 
-#: ../mkpasswd.c:423
+#: ../mkpasswd.c:422
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -292,6 +265,74 @@ msgstr ""
 #, c-format
 msgid "Available methods:\n"
 msgstr "Käytettävissä olevat toiminnot:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL only]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     exact match [RPSL only]\n"
+#~ "-d                     return DNS reverse delegation objects too [RPSL "
+#~ "only]\n"
+#~ "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+#~ "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+#~ "-K                     only primary keys are returned [RPSL only]\n"
+#~ "-r                     turn off recursive lookups for contact "
+#~ "information\n"
+#~ "-R                     force to show local copy of the domain object "
+#~ "even\n"
+#~ "                       if it contains referral\n"
+#~ "-a                     search all databases\n"
+#~ "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to "
+#~ "LAST\n"
+#~ "-t TYPE                request template for object of TYPE\n"
+#~ "-v TYPE                request verbose template for object of TYPE\n"
+#~ "-q [version|sources|types]  query specified server info [RPSL only]\n"
+#~ "-F                     fast raw output (implies -r)\n"
+#~ "-h HOST                connect to server HOST\n"
+#~ "-p PORT                connect to PORT\n"
+#~ "-H                     hide legal disclaimers\n"
+#~ "      --verbose        explain what is being done\n"
+#~ "      --help           display this help and exit\n"
+#~ "      --version        output version information and exit\n"
+#~ msgstr ""
+#~ "Käyttö: whois [OPTIO]... OBJEKTI...\n"
+#~ "\n"
+#~ "-l                     tasoa epätarkempi osuma [ainoastaan RPSL]\n"
+#~ "-L                     etsi kaikki epätarkemmat osumat\n"
+#~ "-m                     etsi yhtä tasoa tarkemmat osumat\n"
+#~ "-M                     etsi kaikki tarkemmat osumat\n"
+#~ "-c                     etsi vähäisin, joka vastaa mnt-irt attribuuttia\n"
+#~ "-x                     täydellinen osuma [ainoastaan RPSL]\n"
+#~ "-d                     palauta ainoastaan käänteisdomainit [ainoastan "
+#~ "RPSL]\n"
+#~ "-i ATTR[,ATTR]...      käänteiskysely ATTRibuutin perusteella\n"
+#~ "-T TYPE[,TYPE]...      etsi ainoastaan määritetyn tyyppisiä objekteja\n"
+#~ "-K                     palauta ainoastan hakuavaimet [ainoastan RPSL]\n"
+#~ "-r                     älä käytä rekursiivista kontaktietohakua\n"
+#~ "-R                     pakota käyttämään paikallista kopiota domain\n"
+#~ "                       objektista, vaikka se sisältäisi viitteitä\n"
+#~ "-a                     etsi kaikista tietokannoista\n"
+#~ "-s SOURCE[,SOURCE]...  etsi tietokannoista SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   löytö päivittää lähteen SOURCE järjestysnumeron\n"
+#~ "                       FIRST:stä LAST:iin\n"
+#~ "-t TYPE                pyydä mallinne TYPE objektille ('all' näyttää "
+#~ "tyyppilistan)\n"
+#~ "-v TYPE                monisanainen mallinne TYPE objektille\n"
+#~ "-q [version|sources|types]  erityinen palvelintieto [ainostaan RPSL]\n"
+#~ "-F                     nopea tuloste (sisältää -r valitsimen)\n"
+#~ "-h HOST                kysy palvelimelta HOST\n"
+#~ "-p PORT                käytä TCP-porttia PORT\n"
+#~ "-H                     älä tulosta käyttöehtoja\n"
+#~ "      --verbose        näytä mitä tapahtuu\n"
+#~ "      --help           tulosta tämä ruutu\n"
+#~ "      --version        tulosta versio\n"
 
 #~ msgid "Illegal password character '0x%hhx'.\n"
 #~ msgstr "Laiton merkki salasanassa '0x%hhx'.\n"

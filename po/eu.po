@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.5.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 23:58+0200\n"
+"POT-Creation-Date: 2013-04-10 04:23+0200\n"
 "PO-Revision-Date: 2002-08-24 16:22+0200\n"
 "Last-Translator: Aitor Ibaez <aitiba@gmail.com>\n"
 "Language-Team: Euskara <Librezale@librezale.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../whois.c:145
+#: ../whois.c:148
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,31 +27,31 @@ msgstr ""
 "\n"
 "Bug berri baten jakinarazpena: %s.\n"
 
-#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
+#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
 msgid "Using server %s.\n"
 msgstr "%s zerbitzaria erabiltzen.\n"
 
-#: ../whois.c:237
+#: ../whois.c:240
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "TLD honek ez du whois zerbitzaririk, baina whois databasera sarbidea "
 "daukazu..."
 
-#: ../whois.c:242
+#: ../whois.c:245
 msgid "This TLD has no whois server."
 msgstr "TLD honek ez du whois zerbitzaririk."
 
-#: ../whois.c:245
+#: ../whois.c:248
 msgid "No whois server is known for this kind of object."
 msgstr "Objetu mota horrentzako, ez da whois zerbitzaririk ezagutzen."
 
-#: ../whois.c:248
+#: ../whois.c:251
 #, fuzzy
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "AS zenbaki edo IP sarea ezezaguna. Mesedez, programa eguneratu."
 
-#: ../whois.c:271
+#: ../whois.c:267
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
-#: ../whois.c:277
+#: ../whois.c:273
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Kontsula 6to4 IPv6 helbidean dagoen %s IPv4 endpoint-entzat.\n"
 "\n"
 
-#: ../whois.c:296
+#: ../whois.c:292
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Kontsulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:306
+#: ../whois.c:302
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -94,17 +94,17 @@ msgstr ""
 "$s-ra erreferentzia aurkituta.\n"
 "\n"
 
-#: ../whois.c:348 ../whois.c:351
+#: ../whois.c:344 ../whois.c:347
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Lerro hau, %s , ezin da prozesatu."
 
-#: ../whois.c:520
+#: ../whois.c:516
 #, fuzzy
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Oharra: RIPE flags-ak ohiko zerbitzariengatik ezikusiak izaten dira."
 
-#: ../whois.c:674 ../whois.c:823
+#: ../whois.c:675 ../whois.c:773
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,94 +112,62 @@ msgstr ""
 "Hondamen arriskua: erabilpen balditzen textua aldatu egin da.\n"
 "Programa eguneratu.\n"
 
-#: ../whois.c:875
+#: ../whois.c:828
 #, c-format
 msgid "Host %s not found."
 msgstr "%s Host-a ez da aurkitu."
 
-#: ../whois.c:885
+#: ../whois.c:838
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: zerbitzu ezezaguna"
 
-#: ../whois.c:960
+#: ../whois.c:913
 msgid "Timeout."
 msgstr "Denbora muga."
 
-#: ../whois.c:966
+#: ../whois.c:919
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "%d seinalearengatik etena..."
 
-#: ../whois.c:1223
-#, fuzzy, c-format
+#: ../whois.c:1189
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL only]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt "
-"attribute\n"
-"-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-r                     turn off recursive lookups for contact information\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-a                     search all databases\n"
-"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE\n"
-"-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources|types]  query specified server info [RPSL only]\n"
-"-F                     fast raw output (implies -r)\n"
-"-h HOST                connect to server HOST\n"
-"-p PORT                connect to PORT\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
-msgstr ""
-"Erabilpena: whois [AUKERAK]... OBJETUA...\n"
 "\n"
-"-a                 data base guztietan bilatzen du\n"
-"-F                 modo azkarra (-r inplikatzen du)\n"
-"-g SOURCE:HASIERA-BUKAERA  H eta B tarteko serietan,SOURCE-ren agerraldiak "
-"bilatzen ditu\n"
-"-h HOST            HOST zerbitzarira konektatzen da\n"
-"-H                 abisu-legala ezkutatzen du\n"
-"-i ATTR[,ATTR]...  adierazitako ATTRibute-arentzat alderantzizko bilaketa "
-"egin du\n"
-"-x                 bilaketa zehatza [RPSL bakarrik]\n"
-"-l                 adierazitako [RPSL] bilaketarentzat, maila bat jeisten "
-"du\n"
-"-L                 mapeketa gutxien espezifikoenak bilatzen ditu\n"
-"-M                 mapeketa espezifikoenak bilatzen ditu\n"
-"-m                 lehen maila espezifikoena bilatzen du\n"
-"-r                 alderantzizko bilaketa ezgaitzen du\n"
-"-p PORTUA          PORTUA konektatzen du\n"
-"-R                 Objektu zehatzaren kopia lokala eraskuten "
-"du,                    erreferentzia bat eduki ere\n"
-"-S                 zerbitzariari adierazten dio pekulariedade sintaktikoak \t"
-"\t    ez erabiltzea \n"
-"-s SOURCE[,SOURCE]...  SOURCE data basea bilatzen du\n"
-"-T TIPO[,TIPO]...  TIPO objektu motak bakarrik bilatzen ditu\n"
-"-t TIPO        TIPO objektu mota batentzako, txantiloiak                "
-"lortzen ditu ('all' lista batentzako)\n"
-"-v TIPO            TIPO objektu baten txantiloi zehatza lortzen du\n"
-"-q [bertsioa|sources]  zerbitzariaren informazioa kontsultatzen "
-"du                        [RPSL bakarrik]\n"
-"-d                 alderantizko DNSaren ordezkaritza itzultzen du "
-"[RPSL                    bakarrik]\n"
-"-K                 oinarrizko-gakoak bakarrik [RPSL bakarrik]\n"
-"      --verbose    egiten ari dena bakarrik, eraskusten du\n"
-"      --help       laguntza pantaila hau erakusten du eta amaitzen du\n"
-"      --version    programaren bertsioa erakusten du eta amaitzen du\n"
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
 
 #: ../mkpasswd.c:84
 #, fuzzy
@@ -216,41 +184,41 @@ msgstr "'%s' zenbakia ez da baliozkoa.\n"
 msgid "Invalid number '%s'.\n"
 msgstr "'%s' zenbakia ez da baliozkoa.\n"
 
-#: ../mkpasswd.c:202
+#: ../mkpasswd.c:201
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "%s --help informazio gehiagorako.\n"
 
-#: ../mkpasswd.c:244
+#: ../mkpasswd.c:242
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 msgstr[1] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 
-#: ../mkpasswd.c:249
+#: ../mkpasswd.c:247
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 msgstr[1] "Hazi tamain desegokia:%d byte %d-en ordez.\n"
 
-#: ../mkpasswd.c:258
+#: ../mkpasswd.c:256
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "'%c' karakterea, hazian, ilegala da.\n"
 
-#: ../mkpasswd.c:308 ../mkpasswd.c:324
+#: ../mkpasswd.c:306 ../mkpasswd.c:322
 #, c-format
 msgid "Password: "
 msgstr "Pasahitza: "
 
-#: ../mkpasswd.c:342
+#: ../mkpasswd.c:340
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr ""
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:419
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -261,7 +229,7 @@ msgstr ""
 "PASAHITZA crypt(3) erabiliz enkriptatu.\n"
 "\n"
 
-#: ../mkpasswd.c:423
+#: ../mkpasswd.c:422
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -299,6 +267,78 @@ msgstr ""
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "Algoritmo erabilgarriak:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL only]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     exact match [RPSL only]\n"
+#~ "-d                     return DNS reverse delegation objects too [RPSL "
+#~ "only]\n"
+#~ "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+#~ "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+#~ "-K                     only primary keys are returned [RPSL only]\n"
+#~ "-r                     turn off recursive lookups for contact "
+#~ "information\n"
+#~ "-R                     force to show local copy of the domain object "
+#~ "even\n"
+#~ "                       if it contains referral\n"
+#~ "-a                     search all databases\n"
+#~ "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to "
+#~ "LAST\n"
+#~ "-t TYPE                request template for object of TYPE\n"
+#~ "-v TYPE                request verbose template for object of TYPE\n"
+#~ "-q [version|sources|types]  query specified server info [RPSL only]\n"
+#~ "-F                     fast raw output (implies -r)\n"
+#~ "-h HOST                connect to server HOST\n"
+#~ "-p PORT                connect to PORT\n"
+#~ "-H                     hide legal disclaimers\n"
+#~ "      --verbose        explain what is being done\n"
+#~ "      --help           display this help and exit\n"
+#~ "      --version        output version information and exit\n"
+#~ msgstr ""
+#~ "Erabilpena: whois [AUKERAK]... OBJETUA...\n"
+#~ "\n"
+#~ "-a                 data base guztietan bilatzen du\n"
+#~ "-F                 modo azkarra (-r inplikatzen du)\n"
+#~ "-g SOURCE:HASIERA-BUKAERA  H eta B tarteko serietan,SOURCE-ren "
+#~ "agerraldiak bilatzen ditu\n"
+#~ "-h HOST            HOST zerbitzarira konektatzen da\n"
+#~ "-H                 abisu-legala ezkutatzen du\n"
+#~ "-i ATTR[,ATTR]...  adierazitako ATTRibute-arentzat alderantzizko bilaketa "
+#~ "egin du\n"
+#~ "-x                 bilaketa zehatza [RPSL bakarrik]\n"
+#~ "-l                 adierazitako [RPSL] bilaketarentzat, maila bat jeisten "
+#~ "du\n"
+#~ "-L                 mapeketa gutxien espezifikoenak bilatzen ditu\n"
+#~ "-M                 mapeketa espezifikoenak bilatzen ditu\n"
+#~ "-m                 lehen maila espezifikoena bilatzen du\n"
+#~ "-r                 alderantzizko bilaketa ezgaitzen du\n"
+#~ "-p PORTUA          PORTUA konektatzen du\n"
+#~ "-R                 Objektu zehatzaren kopia lokala eraskuten "
+#~ "du,                    erreferentzia bat eduki ere\n"
+#~ "-S                 zerbitzariari adierazten dio pekulariedade "
+#~ "sintaktikoak \t\t    ez erabiltzea \n"
+#~ "-s SOURCE[,SOURCE]...  SOURCE data basea bilatzen du\n"
+#~ "-T TIPO[,TIPO]...  TIPO objektu motak bakarrik bilatzen ditu\n"
+#~ "-t TIPO        TIPO objektu mota batentzako, txantiloiak                "
+#~ "lortzen ditu ('all' lista batentzako)\n"
+#~ "-v TIPO            TIPO objektu baten txantiloi zehatza lortzen du\n"
+#~ "-q [bertsioa|sources]  zerbitzariaren informazioa kontsultatzen "
+#~ "du                        [RPSL bakarrik]\n"
+#~ "-d                 alderantizko DNSaren ordezkaritza itzultzen du "
+#~ "[RPSL                    bakarrik]\n"
+#~ "-K                 oinarrizko-gakoak bakarrik [RPSL bakarrik]\n"
+#~ "      --verbose    egiten ari dena bakarrik, eraskusten du\n"
+#~ "      --help       laguntza pantaila hau erakusten du eta amaitzen du\n"
+#~ "      --version    programaren bertsioa erakusten du eta amaitzen du\n"
 
 #~ msgid "Illegal password character '0x%hhx'.\n"
 #~ msgstr "'0x%hhx' password karakterea ilegala da.\n"

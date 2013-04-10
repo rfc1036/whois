@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.7.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 23:58+0200\n"
+"POT-Creation-Date: 2013-04-10 04:23+0200\n"
 "PO-Revision-Date: 2005-04-26 00:20+0900\n"
 "Last-Translator: Satoru SATOH <ss@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../whois.c:145
+#: ../whois.c:148
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -28,30 +28,30 @@ msgstr ""
 "\n"
 "バグ報告は %s へ.\n"
 
-#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
+#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
 msgid "Using server %s.\n"
 msgstr "サーバー %s を使用\n"
 
-#: ../whois.c:237
+#: ../whois.c:240
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "この TLD には whois サーバーがありませんが、次のサーバーで whois データベース"
 "にアクセスできます"
 
-#: ../whois.c:242
+#: ../whois.c:245
 msgid "This TLD has no whois server."
 msgstr "この TLD には whois サーバーがありません"
 
-#: ../whois.c:245
+#: ../whois.c:248
 msgid "No whois server is known for this kind of object."
 msgstr "この種のオブジェクトに対する既知の whois サーバーはありません"
 
-#: ../whois.c:248
+#: ../whois.c:251
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "不明な AS 番号または IP ネットワーク. アップグレードして下さい"
 
-#: ../whois.c:271
+#: ../whois.c:267
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "6to4 IPv6 アドレスの IPv4 終端 %s を問い合わせ中\n"
 "\n"
 
-#: ../whois.c:277
+#: ../whois.c:273
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "6to4 IPv6 アドレスの IPv4 終端 %s を問い合わせ中\n"
 "\n"
 
-#: ../whois.c:296
+#: ../whois.c:292
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "問い合わせ文字列: \"%s\"\n"
 "\n"
 
-#: ../whois.c:306
+#: ../whois.c:302
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "%s への照会をみつけました\n"
 "\n"
 
-#: ../whois.c:348 ../whois.c:351
+#: ../whois.c:344 ../whois.c:347
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "この行を解析できません: %s"
 
-#: ../whois.c:520
+#: ../whois.c:516
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "警告: 旧来のサーバーについて RIPE フラグが使用されています"
 
-#: ../whois.c:674 ../whois.c:823
+#: ../whois.c:675 ../whois.c:773
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,89 +112,62 @@ msgstr ""
 "破滅的なエラー: 免責条項テキストが変更されました\n"
 "このプログラムをアップグレードして下さい\n"
 
-#: ../whois.c:875
+#: ../whois.c:828
 #, c-format
 msgid "Host %s not found."
 msgstr "ホスト %s はみつかりませんでした"
 
-#: ../whois.c:885
+#: ../whois.c:838
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: 不明なサービス"
 
-#: ../whois.c:960
+#: ../whois.c:913
 msgid "Timeout."
 msgstr "時間切れ"
 
-#: ../whois.c:966
+#: ../whois.c:919
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "シグナル %d が割込み..."
 
-#: ../whois.c:1223
-#, fuzzy, c-format
+#: ../whois.c:1189
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL only]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt "
-"attribute\n"
-"-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-r                     turn off recursive lookups for contact information\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-a                     search all databases\n"
-"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE\n"
-"-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources|types]  query specified server info [RPSL only]\n"
-"-F                     fast raw output (implies -r)\n"
-"-h HOST                connect to server HOST\n"
-"-p PORT                connect to PORT\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
-msgstr ""
-": whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL のみ]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
 "-c                     find the smallest match containing a mnt-irt "
 "attribute\n"
-"-x                     厳密にマッチ [RPSL のみ]\n"
-"-d                     DNS 逆向き移譲オブジェクトも返す [RPSL のみ]\n"
-"-i ATTR[,ATTR]...      指定属性 ATTR について逆引き\n"
-"-T TYPE[,TYPE]...      TYPE オブジェクトのみについて検索\n"
-"-K                     主キーのみ返す [RPSL のみ]\n"
-"-r                     コンタクト情報について再帰検索しない\n"
-"-R                     照会が含まれていても強制的にドメインオブジェクトの\n"
-"                       ローカルコピーを表示\n"
-"-a                     すべてのデータベースを検索\n"
-"-s SOURCE[,SOURCE]...  SOURCE からデータベースを検索\n"
-"-g SOURCE:FIRST-LAST   SOURCE (シリアル FIRST から LAST まで)から更新を検索\n"
-"-t TYPE                TYPE オブジェクトについてテンプレートを要求 (リストは "
-"'all')\n"
-"-v TYPE                TYPE オブジェクトについて冗長なテンプレートを要求\n"
-"-q [version|sources|types]  指定サーバー情報を問い合わせ [RPSL のみ]\n"
-"-F                     高速直接(ロー)出力 (-r を暗示)\n"
-"-h HOST                サーバー HOST に接続\n"
-"-p PORT                PORT に接続\n"
-"-H                     法的責任棄却声明を表示しない\n"
-"      --verbose        進捗について詳細に説明\n"
-"      --help           このヘルプを表示して終了\n"
-"      --version        バージョン情報を表示して終了\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
 
 #: ../mkpasswd.c:84
 #, fuzzy
@@ -211,41 +184,41 @@ msgstr "不正な数字 '%s'\n"
 msgid "Invalid number '%s'.\n"
 msgstr "不正な数字 '%s'\n"
 
-#: ../mkpasswd.c:202
+#: ../mkpasswd.c:201
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "さらなる詳細については '%s --help' を実行\n"
 
-#: ../mkpasswd.c:244
+#: ../mkpasswd.c:242
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "間違ったソルト長: %d バイト(s) (%d を期待)\n"
 msgstr[1] "間違ったソルト長: %d バイト(s) (%d を期待)\n"
 
-#: ../mkpasswd.c:249
+#: ../mkpasswd.c:247
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "間違ったソルト長: %d バイト(s) (%d を期待)\n"
 msgstr[1] "間違ったソルト長: %d バイト(s) (%d を期待)\n"
 
-#: ../mkpasswd.c:258
+#: ../mkpasswd.c:256
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "不正なソルト文字 '%c'\n"
 
-#: ../mkpasswd.c:308 ../mkpasswd.c:324
+#: ../mkpasswd.c:306 ../mkpasswd.c:322
 #, c-format
 msgid "Password: "
 msgstr "パスワード: "
 
-#: ../mkpasswd.c:342
+#: ../mkpasswd.c:340
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr ""
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:419
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -256,7 +229,7 @@ msgstr ""
 "PASSWORD を crypt(3) で暗号化\n"
 "\n"
 
-#: ../mkpasswd.c:423
+#: ../mkpasswd.c:422
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -293,6 +266,75 @@ msgstr ""
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "利用可能なアルゴリズム:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL only]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     exact match [RPSL only]\n"
+#~ "-d                     return DNS reverse delegation objects too [RPSL "
+#~ "only]\n"
+#~ "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+#~ "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+#~ "-K                     only primary keys are returned [RPSL only]\n"
+#~ "-r                     turn off recursive lookups for contact "
+#~ "information\n"
+#~ "-R                     force to show local copy of the domain object "
+#~ "even\n"
+#~ "                       if it contains referral\n"
+#~ "-a                     search all databases\n"
+#~ "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to "
+#~ "LAST\n"
+#~ "-t TYPE                request template for object of TYPE\n"
+#~ "-v TYPE                request verbose template for object of TYPE\n"
+#~ "-q [version|sources|types]  query specified server info [RPSL only]\n"
+#~ "-F                     fast raw output (implies -r)\n"
+#~ "-h HOST                connect to server HOST\n"
+#~ "-p PORT                connect to PORT\n"
+#~ "-H                     hide legal disclaimers\n"
+#~ "      --verbose        explain what is being done\n"
+#~ "      --help           display this help and exit\n"
+#~ "      --version        output version information and exit\n"
+#~ msgstr ""
+#~ ": whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL のみ]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     厳密にマッチ [RPSL のみ]\n"
+#~ "-d                     DNS 逆向き移譲オブジェクトも返す [RPSL のみ]\n"
+#~ "-i ATTR[,ATTR]...      指定属性 ATTR について逆引き\n"
+#~ "-T TYPE[,TYPE]...      TYPE オブジェクトのみについて検索\n"
+#~ "-K                     主キーのみ返す [RPSL のみ]\n"
+#~ "-r                     コンタクト情報について再帰検索しない\n"
+#~ "-R                     照会が含まれていても強制的にドメインオブジェクト"
+#~ "の\n"
+#~ "                       ローカルコピーを表示\n"
+#~ "-a                     すべてのデータベースを検索\n"
+#~ "-s SOURCE[,SOURCE]...  SOURCE からデータベースを検索\n"
+#~ "-g SOURCE:FIRST-LAST   SOURCE (シリアル FIRST から LAST まで)から更新を検"
+#~ "索\n"
+#~ "-t TYPE                TYPE オブジェクトについてテンプレートを要求 (リスト"
+#~ "は 'all')\n"
+#~ "-v TYPE                TYPE オブジェクトについて冗長なテンプレートを要求\n"
+#~ "-q [version|sources|types]  指定サーバー情報を問い合わせ [RPSL のみ]\n"
+#~ "-F                     高速直接(ロー)出力 (-r を暗示)\n"
+#~ "-h HOST                サーバー HOST に接続\n"
+#~ "-p PORT                PORT に接続\n"
+#~ "-H                     法的責任棄却声明を表示しない\n"
+#~ "      --verbose        進捗について詳細に説明\n"
+#~ "      --help           このヘルプを表示して終了\n"
+#~ "      --version        バージョン情報を表示して終了\n"
 
 #~ msgid "Illegal password character '0x%hhx'.\n"
 #~ msgstr "不正なパスワード文字 '0x%hhx'\n"

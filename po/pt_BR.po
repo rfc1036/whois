@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 23:58+0200\n"
+"POT-Creation-Date: 2013-04-10 04:23+0200\n"
 "PO-Revision-Date: 2006-04-26 21:03-0300\n"
 "Last-Translator: Anderson Goulart <globalx@gmail.com>\n"
 "Language-Team: Portuguese/Brazil\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:145
+#: ../whois.c:148
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -28,30 +28,30 @@ msgstr ""
 "\n"
 "Reporte bugs para %s \n"
 
-#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
+#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Utilizando servidor %s.\n"
 
-#: ../whois.c:237
+#: ../whois.c:240
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Este TLD não tem servidor whois, mas você pode acessar a base de dados do "
 "whois em"
 
-#: ../whois.c:242
+#: ../whois.c:245
 msgid "This TLD has no whois server."
 msgstr "Não existe servidor whois para este TLD."
 
-#: ../whois.c:245
+#: ../whois.c:248
 msgid "No whois server is known for this kind of object."
 msgstr "Nenhum servidor whois é conhecido para este tipo de objeto."
 
-#: ../whois.c:248
+#: ../whois.c:251
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Número AS ou rede IP desconhecidos. Por favor, atualize este programa."
 
-#: ../whois.c:271
+#: ../whois.c:267
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
 "\n"
 
-#: ../whois.c:277
+#: ../whois.c:273
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
 "\n"
 
-#: ../whois.c:296
+#: ../whois.c:292
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Consulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:306
+#: ../whois.c:302
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "Uma referência para·%s encontrada.\n"
 "\n"
 
-#: ../whois.c:348 ../whois.c:351
+#: ../whois.c:344 ../whois.c:347
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Não pôde processar esta linha: %s"
 
-#: ../whois.c:520
+#: ../whois.c:516
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Aviso: RIPE flags utilizados com um servidor tradicional."
 
-#: ../whois.c:674 ../whois.c:823
+#: ../whois.c:675 ../whois.c:773
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,94 +112,62 @@ msgstr ""
 "Erro catastrófico: o texto das condições de uso foi alterado.\n"
 "Por favor, atualize este programa. \n"
 
-#: ../whois.c:875
+#: ../whois.c:828
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s não encontrado."
 
-#: ../whois.c:885
+#: ../whois.c:838
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: serviço desconhecido"
 
-#: ../whois.c:960
+#: ../whois.c:913
 msgid "Timeout."
 msgstr "Tempo esgotado."
 
-#: ../whois.c:966
+#: ../whois.c:919
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrompido pelo sinal %d..."
 
-#: ../whois.c:1223
-#, fuzzy, c-format
+#: ../whois.c:1189
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL only]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt "
-"attribute\n"
-"-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-r                     turn off recursive lookups for contact information\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-a                     search all databases\n"
-"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE\n"
-"-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources|types]  query specified server info [RPSL only]\n"
-"-F                     fast raw output (implies -r)\n"
-"-h HOST                connect to server HOST\n"
-"-p PORT                connect to PORT\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
-msgstr ""
-"Uso: whois [OPÇÕES]... OBJETO...\n"
 "\n"
-"-l                     descende em um nível a especificidade da busca "
-"[RPSL]\n"
-"-L                     busca as correspondências menos específicas\n"
-"-m                     busca o primeiro nível mais específico\n"
-"-M                     busca as correspondências mais específicas\n"
-"-c                     busca a correspondência menos específica que contém o "
-"atributo mnt-irt\n"
-"-x                     busca exata [RPSL]\n"
-"-d                     retorna também objetos de delegação de DNS reverso "
-"[RPSL]\n"
-"-i ATTR[,ATTR]...      efetua uma busca inversa para os ATTRibutos "
-"especificados\n"
-"-T TIPO[,TIPO]...      busca somente por objetos do TIPO\n"
-"-K                     somente chaves primárias são retornadas [RPSL]\n"
-"-r                     desabilita buscas recursivas para informações de "
-"contatos\n"
-"-R                     mostra a cópia local do objeto especificado incluso\n"
-"                       se contém uma referência\n"
-"-a                     busca em todas as bases de dados\n"
-"-s SOURCE[,SOURCE]...  busca na base de dados de SOURCE\n"
-"-g SOURCE:FIRST-LAST   encontra atualizações de SOURCE da série FIRST até "
-"LAST\n"
-"-t TIPO                obtém o modelo para objeto de TIPO ('all' para uma "
-"lista)\n"
-"-v TIPO                obtém o modelo detalhado para objeto de TIPO\n"
-"-q [version|sources|types]  consulta informações sobre o servidor [RPSL]\n"
-"-F                     modo rápido (implica -r)\n"
-"-h HOST                conecta no servidor HOST\n"
-"-p PORTA                conecta na PORTA\n"
-"-H                     esconde o aviso legal\n"
-"      --verbose        mostra o que está acontecendo\n"
-"      --help           exibe essa ajuda e sai\n"
-"      --version        exibe informações sobre a versão e sai\n"
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
 
 #: ../mkpasswd.c:84
 #, fuzzy
@@ -216,19 +184,19 @@ msgstr "Número inválido '%s'.\n"
 msgid "Invalid number '%s'.\n"
 msgstr "Número inválido '%s'.\n"
 
-#: ../mkpasswd.c:202
+#: ../mkpasswd.c:201
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Tente '%s --help para maiores informações.\n"
 
-#: ../mkpasswd.c:244
+#: ../mkpasswd.c:242
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Tamanho do salt incorreto: %d byte enquanto %d eram esperados.\n"
 msgstr[1] "Tamanho do salt incorreto: %d bytes enquanto %d eram esperados.\n"
 
-#: ../mkpasswd.c:249
+#: ../mkpasswd.c:247
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
@@ -237,22 +205,22 @@ msgstr[0] ""
 msgstr[1] ""
 "Tamanho do salt incorreto: %d bytes enquanto %d <= n <= %d eram esperados.\n"
 
-#: ../mkpasswd.c:258
+#: ../mkpasswd.c:256
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Caractere salt ilegal '%c'.\n"
 
-#: ../mkpasswd.c:308 ../mkpasswd.c:324
+#: ../mkpasswd.c:306 ../mkpasswd.c:322
 #, c-format
 msgid "Password: "
 msgstr "Senha: "
 
-#: ../mkpasswd.c:342
+#: ../mkpasswd.c:340
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr ""
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:419
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -263,7 +231,7 @@ msgstr ""
 "Encripta a PASSWORD utilizando crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:423
+#: ../mkpasswd.c:422
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -300,6 +268,79 @@ msgstr ""
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "Algoritmos disponíveis: \n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL only]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     exact match [RPSL only]\n"
+#~ "-d                     return DNS reverse delegation objects too [RPSL "
+#~ "only]\n"
+#~ "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+#~ "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+#~ "-K                     only primary keys are returned [RPSL only]\n"
+#~ "-r                     turn off recursive lookups for contact "
+#~ "information\n"
+#~ "-R                     force to show local copy of the domain object "
+#~ "even\n"
+#~ "                       if it contains referral\n"
+#~ "-a                     search all databases\n"
+#~ "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to "
+#~ "LAST\n"
+#~ "-t TYPE                request template for object of TYPE\n"
+#~ "-v TYPE                request verbose template for object of TYPE\n"
+#~ "-q [version|sources|types]  query specified server info [RPSL only]\n"
+#~ "-F                     fast raw output (implies -r)\n"
+#~ "-h HOST                connect to server HOST\n"
+#~ "-p PORT                connect to PORT\n"
+#~ "-H                     hide legal disclaimers\n"
+#~ "      --verbose        explain what is being done\n"
+#~ "      --help           display this help and exit\n"
+#~ "      --version        output version information and exit\n"
+#~ msgstr ""
+#~ "Uso: whois [OPÇÕES]... OBJETO...\n"
+#~ "\n"
+#~ "-l                     descende em um nível a especificidade da busca "
+#~ "[RPSL]\n"
+#~ "-L                     busca as correspondências menos específicas\n"
+#~ "-m                     busca o primeiro nível mais específico\n"
+#~ "-M                     busca as correspondências mais específicas\n"
+#~ "-c                     busca a correspondência menos específica que "
+#~ "contém o atributo mnt-irt\n"
+#~ "-x                     busca exata [RPSL]\n"
+#~ "-d                     retorna também objetos de delegação de DNS reverso "
+#~ "[RPSL]\n"
+#~ "-i ATTR[,ATTR]...      efetua uma busca inversa para os ATTRibutos "
+#~ "especificados\n"
+#~ "-T TIPO[,TIPO]...      busca somente por objetos do TIPO\n"
+#~ "-K                     somente chaves primárias são retornadas [RPSL]\n"
+#~ "-r                     desabilita buscas recursivas para informações de "
+#~ "contatos\n"
+#~ "-R                     mostra a cópia local do objeto especificado "
+#~ "incluso\n"
+#~ "                       se contém uma referência\n"
+#~ "-a                     busca em todas as bases de dados\n"
+#~ "-s SOURCE[,SOURCE]...  busca na base de dados de SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   encontra atualizações de SOURCE da série FIRST até "
+#~ "LAST\n"
+#~ "-t TIPO                obtém o modelo para objeto de TIPO ('all' para uma "
+#~ "lista)\n"
+#~ "-v TIPO                obtém o modelo detalhado para objeto de TIPO\n"
+#~ "-q [version|sources|types]  consulta informações sobre o servidor [RPSL]\n"
+#~ "-F                     modo rápido (implica -r)\n"
+#~ "-h HOST                conecta no servidor HOST\n"
+#~ "-p PORTA                conecta na PORTA\n"
+#~ "-H                     esconde o aviso legal\n"
+#~ "      --verbose        mostra o que está acontecendo\n"
+#~ "      --help           exibe essa ajuda e sai\n"
+#~ "      --version        exibe informações sobre a versão e sai\n"
 
 #~ msgid "Illegal password character '0x%hhx'.\n"
 #~ msgstr "Caractere de senha ilegal '0x%hhx'.\n"

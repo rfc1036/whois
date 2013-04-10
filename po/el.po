@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 23:58+0200\n"
+"POT-Creation-Date: 2013-04-10 04:23+0200\n"
 "PO-Revision-Date: 2003-12-10 08:51+0200\n"
 "Last-Translator: Velonis Petros <velonis@freemail.gr>\n"
 "Language-Team: Greek <velonis@freemail.gr>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:145
+#: ../whois.c:148
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,33 +27,33 @@ msgstr ""
 "\n"
 "Αναφέρατε σφάλματα στο %s.\n"
 
-#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
+#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Γίνεται χρήση του εξυπηρετητή %s.\n"
 
-#: ../whois.c:237
+#: ../whois.c:240
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Αυτό το TLD δεν έχει εξυπηρετητή whois, ωστόσο μπορείτε να προσπελάσετε την "
 "βάση whois στο"
 
-#: ../whois.c:242
+#: ../whois.c:245
 msgid "This TLD has no whois server."
 msgstr "Αυτό το TLD δεν έχει εξυπηρετητή whois."
 
-#: ../whois.c:245
+#: ../whois.c:248
 msgid "No whois server is known for this kind of object."
 msgstr ""
 "Κανένας εξυπηρετητής whois δεν είναι γνωστός για αυτού του είδους το "
 "αντικείμενο."
 
-#: ../whois.c:248
+#: ../whois.c:251
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr ""
 "Άγνωστος αριθμός AS ή IP δικτύου. Παρακαλώ αναβαθμίστε αυτό το πρόγραμμα."
 
-#: ../whois.c:271
+#: ../whois.c:267
 #, c-format
 msgid ""
 "\n"
@@ -64,7 +64,7 @@ msgstr ""
 "Άντληση πληροφοριών για το σημείο τέλους IPv4 %s μιας διεύθυνσης 6to4 IPv6.\n"
 "\n"
 
-#: ../whois.c:277
+#: ../whois.c:273
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -75,7 +75,7 @@ msgstr ""
 "Άντληση πληροφοριών για το σημείο τέλους IPv4 %s μιας διεύθυνσης 6to4 IPv6.\n"
 "\n"
 
-#: ../whois.c:296
+#: ../whois.c:292
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -84,7 +84,7 @@ msgstr ""
 "Αλφαριθμητικό ερώτησης: \"%s\"\n"
 "\n"
 
-#: ../whois.c:306
+#: ../whois.c:302
 #, c-format
 msgid ""
 "\n"
@@ -97,18 +97,18 @@ msgstr ""
 "Βρέθηκε αναφορά στο %s.\n"
 "\n"
 
-#: ../whois.c:348 ../whois.c:351
+#: ../whois.c:344 ../whois.c:347
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Αδύνατη η ανάλυση αυτής της γραμμής: %s"
 
-#: ../whois.c:520
+#: ../whois.c:516
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr ""
 "Προειδοποίηση: Η σημαίες του RIPE χρησιμοποιούνται σε έναν παραδοσιακό "
 "εξυπηρετητή."
 
-#: ../whois.c:674 ../whois.c:823
+#: ../whois.c:675 ../whois.c:773
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -116,97 +116,62 @@ msgstr ""
 "Καταστροφικό σφάλμα: το κείμενο της αποποίησης ευθυνών έχει τροποποιηθεί.\n"
 "Παρακαλώ αναβαθμίστε το πρόγραμμα.\n"
 
-#: ../whois.c:875
+#: ../whois.c:828
 #, c-format
 msgid "Host %s not found."
 msgstr "Το σύστημα %s δε βρέθηκε."
 
-#: ../whois.c:885
+#: ../whois.c:838
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: άγνωστη υπηρεσία"
 
-#: ../whois.c:960
+#: ../whois.c:913
 msgid "Timeout."
 msgstr "Διάλειμμα."
 
-#: ../whois.c:966
+#: ../whois.c:919
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Διακοπή από το σήμα %d..."
 
-#: ../whois.c:1223
-#, fuzzy, c-format
+#: ../whois.c:1189
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL only]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt "
-"attribute\n"
-"-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-r                     turn off recursive lookups for contact information\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-a                     search all databases\n"
-"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE\n"
-"-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources|types]  query specified server info [RPSL only]\n"
-"-F                     fast raw output (implies -r)\n"
-"-h HOST                connect to server HOST\n"
-"-p PORT                connect to PORT\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
-msgstr ""
-"Χρήση: whois [ΕΠΙΛΟΓΕΣ]... ΑΝΤΙΚΕΙΜΕΝΟ...\n"
 "\n"
-"-l                     ένα επίπεδο λιγότερο συγκεκριμένη αναζήτηση [μόνο "
-"RPSL]\n"
-"-L                    εύρεση όλων των Λιγότερο συγκεκριμένων ταιριασμάτων\n"
-"-m                   εύρεση όλων των πρώτου επιπέδου περισσότερο "
-"συγκεκριμένων ταιριασμάτων\n"
-"-M                   εύρεση όλων των Περισσότερο συγκεκριμένων ταιριασμάτων\n"
-"-c                     εύρεση του μικρότερου ταιριάσματος που να περιέχει "
-"μια ένα χαρακτηριστικό mnt-irt \n"
-"-x                     ακριβές ταίριασμα [μόνο RPSL]\n"
-"-d                     επιστροφή και των αντίστροφων αντικειμένων DNS [μόνο "
-"RPSL]\n"
-"-i ΧΑΡΑΚ[,ΧΑΡΑΚ]...    να γίνει μια αντίστροφη αναζήτηση για τα καθορισμένα "
-"ΧΑΡΑΚτηριστικά\n"
-"-T ΕΙΔΟΣ[,ΕΊΔΟΣ]...    αναζήτηση μόνο αντικειμένου του ΕΙΔΟΥΣ\n"
-"-K                    επιστροφή μόνο των πρωταρχικών κλειδιών [μόνο RPSL]\n"
-"-r                     απενεργοποίηση των αναδρομικών αναζητήσεων  για "
-"πληροφορίες επικοινωνίας\n"
-"-R                    επιβολή εμφάνισης τοπικού αντιγράφου του αντικειμένου "
-"επιθήματος ακόμα και αν περιέχει αναφορές\n"
-"-a                     αναζήτηση σε όλες τις βάσεις δεδομένων\n"
-"-s ΠΗΓΗ[,ΠΗΓΉ]...      αναζήτηση της βάσης δεδομένων από την ΠΗΓΗ\n"
-"-g ΠΗΓΗ:ΠΡΩΤΟ:ΤΕΛΕΥΤΑΙΟ   εμφάνιση αναβαθμίσεων από την ΠΗΓΗ από το σειριακό "
-"ΠΡΏΤΟ ως ΤΕΛΕΥΤΑΙΟ\n"
-"-t ΕΙΔΟΣ                αναζήτηση προτύπου για το αντικείμενο του ΕΊΔΟΥΣ "
-"('all' για εμφάνιση λίστας)\n"
-"-v ΕΙΔΟΣ               αναζήτηση περιφραστικού προτύπου για το αντικείμενο "
-"του ΕΙΔΟΥΣ\n"
-"-q [έκδοση|πηγές|τύποι]  συγκεκριμένο ερώτημα πληροφοριών εξυπηρετητή [μόνο "
-"RPSL]\n"
-"-F                       γρήγορη ακατέργαστη έξοδος (υπονοεί -r)\n"
-"-h ΣΥΣΤΗΜΑ   σύνδεση στον εξυπηρετητή ΣΎΣΤΗΜΑ\n"
-"-p ΘΥΡΑ            σύνδεση στη ΘΥΡΑ\n"
-"-H                       απόκρυψη του νομικού εγγράφου αποποίησης ευθύνης\n"
-"     --verbose      εξήγηση του τί συμβαίνει\n"
-"     --help             εμφάνιση αυτής της βοήθειας και έξοδος\n"
-"     --version        εμφάνιση της έκδοσης και έξοδος\n"
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
 
 #: ../mkpasswd.c:84
 #, fuzzy
@@ -223,41 +188,41 @@ msgstr "Μη αποδεκτό νούμερο '%s'.\n"
 msgid "Invalid number '%s'.\n"
 msgstr "Μη αποδεκτό νούμερο '%s'.\n"
 
-#: ../mkpasswd.c:202
+#: ../mkpasswd.c:201
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Προσπάθησε '%s --help' για περισσότερες πληροφορίες.\n"
 
-#: ../mkpasswd.c:244
+#: ../mkpasswd.c:242
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Εσφαλμένο μήκος salt : %d byte(s) όταν αναμένεται %d .\n"
 msgstr[1] "Εσφαλμένο μήκος salt : %d byte(s) όταν αναμένεται %d .\n"
 
-#: ../mkpasswd.c:249
+#: ../mkpasswd.c:247
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Εσφαλμένο μήκος salt : %d byte(s) όταν αναμένεται %d .\n"
 msgstr[1] "Εσφαλμένο μήκος salt : %d byte(s) όταν αναμένεται %d .\n"
 
-#: ../mkpasswd.c:258
+#: ../mkpasswd.c:256
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Μη αποδεκτός χαρακτήρας salt  '%c'.\n"
 
-#: ../mkpasswd.c:308 ../mkpasswd.c:324
+#: ../mkpasswd.c:306 ../mkpasswd.c:322
 #, c-format
 msgid "Password: "
 msgstr "Συνθηματικό: "
 
-#: ../mkpasswd.c:342
+#: ../mkpasswd.c:340
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr ""
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:419
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -268,7 +233,7 @@ msgstr ""
 "Κρυπτογραφεί το ΣΥΝΘΗΜΑΤΙΚΟ χρησιμοποιώντας το crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:423
+#: ../mkpasswd.c:422
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -306,6 +271,85 @@ msgstr ""
 #, fuzzy, c-format
 msgid "Available methods:\n"
 msgstr "Διαθέσιμοι αλγόριθμοι:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL only]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     exact match [RPSL only]\n"
+#~ "-d                     return DNS reverse delegation objects too [RPSL "
+#~ "only]\n"
+#~ "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+#~ "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+#~ "-K                     only primary keys are returned [RPSL only]\n"
+#~ "-r                     turn off recursive lookups for contact "
+#~ "information\n"
+#~ "-R                     force to show local copy of the domain object "
+#~ "even\n"
+#~ "                       if it contains referral\n"
+#~ "-a                     search all databases\n"
+#~ "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to "
+#~ "LAST\n"
+#~ "-t TYPE                request template for object of TYPE\n"
+#~ "-v TYPE                request verbose template for object of TYPE\n"
+#~ "-q [version|sources|types]  query specified server info [RPSL only]\n"
+#~ "-F                     fast raw output (implies -r)\n"
+#~ "-h HOST                connect to server HOST\n"
+#~ "-p PORT                connect to PORT\n"
+#~ "-H                     hide legal disclaimers\n"
+#~ "      --verbose        explain what is being done\n"
+#~ "      --help           display this help and exit\n"
+#~ "      --version        output version information and exit\n"
+#~ msgstr ""
+#~ "Χρήση: whois [ΕΠΙΛΟΓΕΣ]... ΑΝΤΙΚΕΙΜΕΝΟ...\n"
+#~ "\n"
+#~ "-l                     ένα επίπεδο λιγότερο συγκεκριμένη αναζήτηση [μόνο "
+#~ "RPSL]\n"
+#~ "-L                    εύρεση όλων των Λιγότερο συγκεκριμένων "
+#~ "ταιριασμάτων\n"
+#~ "-m                   εύρεση όλων των πρώτου επιπέδου περισσότερο "
+#~ "συγκεκριμένων ταιριασμάτων\n"
+#~ "-M                   εύρεση όλων των Περισσότερο συγκεκριμένων "
+#~ "ταιριασμάτων\n"
+#~ "-c                     εύρεση του μικρότερου ταιριάσματος που να περιέχει "
+#~ "μια ένα χαρακτηριστικό mnt-irt \n"
+#~ "-x                     ακριβές ταίριασμα [μόνο RPSL]\n"
+#~ "-d                     επιστροφή και των αντίστροφων αντικειμένων DNS "
+#~ "[μόνο RPSL]\n"
+#~ "-i ΧΑΡΑΚ[,ΧΑΡΑΚ]...    να γίνει μια αντίστροφη αναζήτηση για τα "
+#~ "καθορισμένα ΧΑΡΑΚτηριστικά\n"
+#~ "-T ΕΙΔΟΣ[,ΕΊΔΟΣ]...    αναζήτηση μόνο αντικειμένου του ΕΙΔΟΥΣ\n"
+#~ "-K                    επιστροφή μόνο των πρωταρχικών κλειδιών [μόνο "
+#~ "RPSL]\n"
+#~ "-r                     απενεργοποίηση των αναδρομικών αναζητήσεων  για "
+#~ "πληροφορίες επικοινωνίας\n"
+#~ "-R                    επιβολή εμφάνισης τοπικού αντιγράφου του "
+#~ "αντικειμένου επιθήματος ακόμα και αν περιέχει αναφορές\n"
+#~ "-a                     αναζήτηση σε όλες τις βάσεις δεδομένων\n"
+#~ "-s ΠΗΓΗ[,ΠΗΓΉ]...      αναζήτηση της βάσης δεδομένων από την ΠΗΓΗ\n"
+#~ "-g ΠΗΓΗ:ΠΡΩΤΟ:ΤΕΛΕΥΤΑΙΟ   εμφάνιση αναβαθμίσεων από την ΠΗΓΗ από το "
+#~ "σειριακό ΠΡΏΤΟ ως ΤΕΛΕΥΤΑΙΟ\n"
+#~ "-t ΕΙΔΟΣ                αναζήτηση προτύπου για το αντικείμενο του ΕΊΔΟΥΣ "
+#~ "('all' για εμφάνιση λίστας)\n"
+#~ "-v ΕΙΔΟΣ               αναζήτηση περιφραστικού προτύπου για το "
+#~ "αντικείμενο του ΕΙΔΟΥΣ\n"
+#~ "-q [έκδοση|πηγές|τύποι]  συγκεκριμένο ερώτημα πληροφοριών εξυπηρετητή "
+#~ "[μόνο RPSL]\n"
+#~ "-F                       γρήγορη ακατέργαστη έξοδος (υπονοεί -r)\n"
+#~ "-h ΣΥΣΤΗΜΑ   σύνδεση στον εξυπηρετητή ΣΎΣΤΗΜΑ\n"
+#~ "-p ΘΥΡΑ            σύνδεση στη ΘΥΡΑ\n"
+#~ "-H                       απόκρυψη του νομικού εγγράφου αποποίησης "
+#~ "ευθύνης\n"
+#~ "     --verbose      εξήγηση του τί συμβαίνει\n"
+#~ "     --help             εμφάνιση αυτής της βοήθειας και έξοδος\n"
+#~ "     --version        εμφάνιση της έκδοσης και έξοδος\n"
 
 #~ msgid "Illegal password character '0x%hhx'.\n"
 #~ msgstr "Μη αποδεκτός χαρακτήρας συνθηματικού '0x%hhx'.\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 23:58+0200\n"
+"POT-Creation-Date: 2013-04-10 04:23+0200\n"
 "PO-Revision-Date: 2009-10-24 03:59+0000\n"
 "Last-Translator: Feng Liu (Maxim) <maximliu@googlemail.com>\n"
 "Language-Team: Chinese (China) <zh_CN@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2009-11-10 02:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: ../whois.c:145
+#: ../whois.c:148
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -29,28 +29,28 @@ msgstr ""
 "\n"
 "将 bugs 提交到 %s。\n"
 
-#: ../whois.c:199 ../whois.c:252 ../whois.c:258 ../whois.c:265 ../whois.c:295
+#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
 msgid "Using server %s.\n"
 msgstr "使用服务器 %s。\n"
 
-#: ../whois.c:237
+#: ../whois.c:240
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr "此顶级域名没有 whois 服务器，但您可在这里访问 whois 数据库："
 
-#: ../whois.c:242
+#: ../whois.c:245
 msgid "This TLD has no whois server."
 msgstr "此顶级域名没有对应的 whois 服务器。"
 
-#: ../whois.c:245
+#: ../whois.c:248
 msgid "No whois server is known for this kind of object."
 msgstr "无针对此类对象的 whois 服务器。"
 
-#: ../whois.c:248
+#: ../whois.c:251
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "未知的 AS 号码或 IP 地址。请升级此程序。"
 
-#: ../whois.c:271
+#: ../whois.c:267
 #, c-format
 msgid ""
 "\n"
@@ -61,7 +61,7 @@ msgstr ""
 "查询和一个6to4 IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:277
+#: ../whois.c:273
 #, c-format
 msgid ""
 "\n"
@@ -72,7 +72,7 @@ msgstr ""
 "查询一个Teredo IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:296
+#: ../whois.c:292
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +81,7 @@ msgstr ""
 "查询字符串: \"%s\"\n"
 "\n"
 
-#: ../whois.c:306
+#: ../whois.c:302
 #, c-format
 msgid ""
 "\n"
@@ -94,16 +94,16 @@ msgstr ""
 "发现一个到 %s 的引用。\n"
 "\n"
 
-#: ../whois.c:348 ../whois.c:351
+#: ../whois.c:344 ../whois.c:347
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "不能分析该行：%s"
 
-#: ../whois.c:520
+#: ../whois.c:516
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "警告: 对传统服务器使用了 RIPE 标志。"
 
-#: ../whois.c:674 ../whois.c:823
+#: ../whois.c:675 ../whois.c:773
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,89 +111,62 @@ msgstr ""
 "严重错误: 声明(disclaimer)文本已经被改变。\n"
 "请升级此程序。\n"
 
-#: ../whois.c:875
+#: ../whois.c:828
 #, c-format
 msgid "Host %s not found."
 msgstr "没有找到主机 %s。"
 
-#: ../whois.c:885
+#: ../whois.c:838
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: 未知服务"
 
-#: ../whois.c:960
+#: ../whois.c:913
 msgid "Timeout."
 msgstr "超时。"
 
-#: ../whois.c:966
+#: ../whois.c:919
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "被信号 %d 中断..."
 
-#: ../whois.c:1223
-#, fuzzy, c-format
+#: ../whois.c:1189
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
-"-l                     one level less specific lookup [RPSL only]\n"
-"-L                     find all Less specific matches\n"
-"-m                     find first level more specific matches\n"
-"-M                     find all More specific matches\n"
-"-c                     find the smallest match containing a mnt-irt "
-"attribute\n"
-"-x                     exact match [RPSL only]\n"
-"-d                     return DNS reverse delegation objects too [RPSL "
-"only]\n"
-"-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
-"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
-"-K                     only primary keys are returned [RPSL only]\n"
-"-r                     turn off recursive lookups for contact information\n"
-"-R                     force to show local copy of the domain object even\n"
-"                       if it contains referral\n"
-"-a                     search all databases\n"
-"-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
-"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
-"-t TYPE                request template for object of TYPE\n"
-"-v TYPE                request verbose template for object of TYPE\n"
-"-q [version|sources|types]  query specified server info [RPSL only]\n"
-"-F                     fast raw output (implies -r)\n"
-"-h HOST                connect to server HOST\n"
-"-p PORT                connect to PORT\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
-msgstr ""
-"用法: whois [选项]... 对象...\n"
 "\n"
-"-l                     将精确度降低一级的查询 [仅 RPSL]\n"
-"-L                     找到所有低精确度匹配\n"
-"-m                     找到第一级较高精确度匹配\n"
-"-M                     找到所有较高精确度匹配\n"
-"-c                     找到最小的包含一个 mnt-irt 属性的匹配\n"
-"-x                     精确匹配 [仅 RPSL]\n"
-"-d                     同时返回 DNS 反向查询的代理对象[仅 RPSL]\n"
-"-i ATTR[,ATTR]...      为指定的属性(ATTRibutes)进行一次反向查询\n"
-"-T TYPE[,TYPE]...      仅查找指定类型(TYPE)的对象\n"
-"-K                     只返回主键(primary keys) [RPSL only]\n"
-"-r                     查询联系信息(contact information)时关闭递归查询\n"
-"-R                     强制显示本地域名对象(domain object)副本\n"
-"                       即使它包含转介(referral)\n"
-"-a                     搜寻所有数据库\n"
-"-s SOURCE[,SOURCE]...  从指定 SOURCE 中搜寻数据库\n"
-"-g SOURCE:FIRST-LAST   从 SOURCE 中查找更新，按照从开始到结束的序列\n"
-"-t TYPE                为指定类型(TYPE)对象请求模板(template) ('all'为一个列"
-"表)\n"
-"-v TYPE                为指定类型(TYPE)对象请求冗余信息模板(verbose "
-"template) \n"
-"-q [version|sources|types]  查询特定的服务器信息[仅 RPSL]\n"
-"-F                     快速输出原始数据(raw) (隐含 -r)\n"
-"-h HOST                连接到指定 HOST 服务器\n"
-"-p PORT                连接到指定 PORT 端口\n"
-"-H                     隐藏法律声明内容\n"
-"      --verbose        输出冗余的处理信息\n"
-"      --help           显示这个帮助并退出\n"
-"      --version        输出版本信息并退出\n"
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
 
 #: ../mkpasswd.c:84
 msgid "standard 56 bit DES-based crypt(3)"
@@ -209,19 +182,19 @@ msgstr "无效方式 '%s'。\n"
 msgid "Invalid number '%s'.\n"
 msgstr "无效的数字 '%s'。\n"
 
-#: ../mkpasswd.c:202
+#: ../mkpasswd.c:201
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "尝试用 '%s --help' 获取更多的信息。\n"
 
-#: ../mkpasswd.c:244
+#: ../mkpasswd.c:242
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
 msgstr[1] "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
 
-#: ../mkpasswd.c:249
+#: ../mkpasswd.c:247
 #, fuzzy, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
@@ -232,22 +205,22 @@ msgstr[1] ""
 "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字"
 "节。\n"
 
-#: ../mkpasswd.c:258
+#: ../mkpasswd.c:256
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "非法的随机数字符 '%c'。\n"
 
-#: ../mkpasswd.c:308 ../mkpasswd.c:324
+#: ../mkpasswd.c:306 ../mkpasswd.c:322
 #, c-format
 msgid "Password: "
 msgstr "密码: "
 
-#: ../mkpasswd.c:342
+#: ../mkpasswd.c:340
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "不被 crypt(3) 支持的方法。\n"
 
-#: ../mkpasswd.c:420
+#: ../mkpasswd.c:419
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -258,7 +231,7 @@ msgstr ""
 "用 crypt(3) 加密 PASSWORD。\n"
 "\n"
 
-#: ../mkpasswd.c:423
+#: ../mkpasswd.c:422
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -296,6 +269,73 @@ msgstr ""
 #, c-format
 msgid "Available methods:\n"
 msgstr "可用方式：\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Usage: whois [OPTION]... OBJECT...\n"
+#~ "\n"
+#~ "-l                     one level less specific lookup [RPSL only]\n"
+#~ "-L                     find all Less specific matches\n"
+#~ "-m                     find first level more specific matches\n"
+#~ "-M                     find all More specific matches\n"
+#~ "-c                     find the smallest match containing a mnt-irt "
+#~ "attribute\n"
+#~ "-x                     exact match [RPSL only]\n"
+#~ "-d                     return DNS reverse delegation objects too [RPSL "
+#~ "only]\n"
+#~ "-i ATTR[,ATTR]...      do an inverse lookup for specified ATTRibutes\n"
+#~ "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+#~ "-K                     only primary keys are returned [RPSL only]\n"
+#~ "-r                     turn off recursive lookups for contact "
+#~ "information\n"
+#~ "-R                     force to show local copy of the domain object "
+#~ "even\n"
+#~ "                       if it contains referral\n"
+#~ "-a                     search all databases\n"
+#~ "-s SOURCE[,SOURCE]...  search the database from SOURCE\n"
+#~ "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to "
+#~ "LAST\n"
+#~ "-t TYPE                request template for object of TYPE\n"
+#~ "-v TYPE                request verbose template for object of TYPE\n"
+#~ "-q [version|sources|types]  query specified server info [RPSL only]\n"
+#~ "-F                     fast raw output (implies -r)\n"
+#~ "-h HOST                connect to server HOST\n"
+#~ "-p PORT                connect to PORT\n"
+#~ "-H                     hide legal disclaimers\n"
+#~ "      --verbose        explain what is being done\n"
+#~ "      --help           display this help and exit\n"
+#~ "      --version        output version information and exit\n"
+#~ msgstr ""
+#~ "用法: whois [选项]... 对象...\n"
+#~ "\n"
+#~ "-l                     将精确度降低一级的查询 [仅 RPSL]\n"
+#~ "-L                     找到所有低精确度匹配\n"
+#~ "-m                     找到第一级较高精确度匹配\n"
+#~ "-M                     找到所有较高精确度匹配\n"
+#~ "-c                     找到最小的包含一个 mnt-irt 属性的匹配\n"
+#~ "-x                     精确匹配 [仅 RPSL]\n"
+#~ "-d                     同时返回 DNS 反向查询的代理对象[仅 RPSL]\n"
+#~ "-i ATTR[,ATTR]...      为指定的属性(ATTRibutes)进行一次反向查询\n"
+#~ "-T TYPE[,TYPE]...      仅查找指定类型(TYPE)的对象\n"
+#~ "-K                     只返回主键(primary keys) [RPSL only]\n"
+#~ "-r                     查询联系信息(contact information)时关闭递归查询\n"
+#~ "-R                     强制显示本地域名对象(domain object)副本\n"
+#~ "                       即使它包含转介(referral)\n"
+#~ "-a                     搜寻所有数据库\n"
+#~ "-s SOURCE[,SOURCE]...  从指定 SOURCE 中搜寻数据库\n"
+#~ "-g SOURCE:FIRST-LAST   从 SOURCE 中查找更新，按照从开始到结束的序列\n"
+#~ "-t TYPE                为指定类型(TYPE)对象请求模板(template) ('all'为一个"
+#~ "列表)\n"
+#~ "-v TYPE                为指定类型(TYPE)对象请求冗余信息模板(verbose "
+#~ "template) \n"
+#~ "-q [version|sources|types]  查询特定的服务器信息[仅 RPSL]\n"
+#~ "-F                     快速输出原始数据(raw) (隐含 -r)\n"
+#~ "-h HOST                连接到指定 HOST 服务器\n"
+#~ "-p PORT                连接到指定 PORT 端口\n"
+#~ "-H                     隐藏法律声明内容\n"
+#~ "      --verbose        输出冗余的处理信息\n"
+#~ "      --help           显示这个帮助并退出\n"
+#~ "      --version        输出版本信息并退出\n"
 
 #~ msgid "Illegal password character '0x%hhx'.\n"
 #~ msgstr "非法的密码字符 '0x%hhx'。\n"
