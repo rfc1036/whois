@@ -1217,7 +1217,6 @@ void usage(int error)
 "-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info\n"
-"-F                     fast raw output (implies -r)\n"
 ));
     exit(error);
 }
