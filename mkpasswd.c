@@ -114,7 +114,7 @@ static const struct crypt_method methods[] = {
 
 void generate_salt(char *const buf, const unsigned int len);
 void *get_random_bytes(const int len);
-void display_help(void);
+void display_help(int error);
 void display_version(void);
 void display_methods(void);
 
@@ -196,8 +196,7 @@ int main(int argc, char *argv[])
 	    display_version();
 	    exit(0);
 	case 'h':
-	    display_help();
-	    exit(0);
+	    display_help(EXIT_SUCCESS);
 	default:
 	    fprintf(stderr, _("Try '%s --help' for more information.\n"),
 		    argv[0]);
@@ -214,8 +213,7 @@ int main(int argc, char *argv[])
 	password = argv[0];
     } else if (argc == 0) {
     } else {
-	display_help();
-	exit(1);
+	display_help(EXIT_FAILURE);
     }
 
     /* default: DES password */
@@ -415,9 +413,10 @@ void generate_salt(char *const buf, const unsigned int len)
 
 #endif /* RANDOM_DEVICE */
 
-void display_help(void)
+void display_help(int error)
 {
-    fprintf(stderr, _("Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr,
+	    _("Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 	    "Crypts the PASSWORD using crypt(3).\n\n"));
     fprintf(stderr, _(
 "      -m, --method=TYPE     select method TYPE\n"
@@ -435,6 +434,7 @@ void display_help(void)
 "If TYPE is 'help', available methods are printed.\n"
 "\n"
 "Report bugs to %s.\n"), "<md+whois@linux.it>");
+    exit(error);
 }
 
 void display_version(void)
