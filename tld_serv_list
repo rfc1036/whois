@@ -78,7 +78,7 @@
 .at	whois.nic.at
 .au	whois.ausregistry.net.au
 .aw	NONE		# http://setar.aw/internet/domain-registration.html
-.ax	NONE		# www.ax
+.ax	whois.ax	# www.ax
 .az	WEB http://www.nic.az/
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
@@ -91,7 +91,7 @@
 .bj	whois.nic.bj
 #.bl
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
-.bn	NONE		# www.brunet.bn
+.bn	whois.bn	# www.brunet.bn
 .bo	whois.nic.bo
 #.bq
 .br	whois.nic.br
@@ -119,7 +119,7 @@
 .cr	WEB http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do
 .cu	WEB http://www.nic.cu/
 .cv	WEB http://www.dns.cv/
-.cw	NONE		# http://www.una.an/cw_domreg/
+.cw	NONE		# http://www.una.cw/cw_registry/
 .cx	whois.nic.cx
 .cy	WEB http://www.nic.cy/nslookup/online_database.php
 .cz	whois.nic.cz
@@ -174,7 +174,7 @@
 .im	whois.nic.im
 .in	whois.registry.in	# afilias
 .io	whois.nic.io
-.iq	NONE		# http://www.cmc.iq/en/iq.html
+.iq	whois.cmc.iq		# http://www.cmc.iq/en/iq.html
 .ir	whois.nic.ir
 .is	whois.isnic.is
 .it	whois.nic.it
@@ -253,7 +253,7 @@
 .pr	whois.nic.pr
 .ps	whois.pnina.ps
 .pt	whois.dns.pt
-.pw	NONE		# http://www.pwregistry.pw/
+.pw	whois.nic.pw
 .py	WEB http://www.nic.py/consultas.html
 .qa	whois.registry.qa
 .re	whois.nic.fr
@@ -261,7 +261,7 @@
 .rs	whois.rnids.rs
 .edu.ru	whois.informika.ru
 .ru	whois.tcinet.ru
-.rw	NONE		# http://www.ricta.org.rw/
+.rw	whois.ricta.org.rw	# http://www.ricta.org.rw/
 .sa	whois.nic.net.sa
 .sb	whois.coccaregistry.net
 .sc	AFILIAS		# www.nic.sc

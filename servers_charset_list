@@ -4,6 +4,7 @@ whois.cat		utf-8		-C UTF-8
 whois.museum		utf-8		-C UTF-8
 
 whois.aeda.net.ae	utf-8
+whois.ax		iso-8859-1
 whois.nic.br		iso-8859-1
 whois.cira.ca		iso-8859-1
 whois.nic.ch		utf-8
