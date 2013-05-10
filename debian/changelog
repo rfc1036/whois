@@ -1,3 +1,10 @@
+whois (5.0.25) unstable; urgency=low
+
+  * Added the .ax, .bn, .iq, .pw and .rw TLD servers.
+  * Updated one or more translations.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 10 May 2013 05:13:47 +0200
+
 whois (5.0.24) unstable; urgency=low
 
   * Merged documentation fixes and the whois.conf(5) man page, courtesy of
