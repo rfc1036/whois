@@ -68,7 +68,7 @@
 56320	58367	ripe
 58368	59391	apnic
 59392	61439	ripe
-61440	62463	lacnic
+61440	61951	lacnic
 
 # catch all: everything else comes from ARIN
 1	63487	arin
