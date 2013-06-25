@@ -87,7 +87,7 @@
 .bf	NONE		# http://www.arce.bf/ http://www.onatel.bf/internet/domaine.htm
 .bg	whois.register.bg
 .bh	NONE		# www.inet.com.bh
-.bi	WEB https://whois.nic.bi/
+.bi	whois1.nic.bi
 .bj	whois.nic.bj
 #.bl
 .bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
