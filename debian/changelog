@@ -1,3 +1,11 @@
+whois (5.0.26) unstable; urgency=low
+
+  * Added the .cf TLD server.
+  * Updated the .bi TLD server.
+  * Added a new ASN allocation.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 17 Jul 2013 00:48:12 +0200
+
 whois (5.0.25) unstable; urgency=low
 
   * Added the .ax, .bn, .iq, .pw and .rw TLD servers.
