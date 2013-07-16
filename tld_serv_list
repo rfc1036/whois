@@ -105,7 +105,7 @@
 .ca	whois.cira.ca
 .cc	VERISIGN whois.nic.cc
 .cd	whois.nic.cd
-.cf	NONE		# was: WEB http://www.nic.cf/whois.php3
+.cf	whois.dot.cf
 .cg	WEB http://www.nic.cg/cgi-bin/whois.pl
 .ch	whois.nic.ch
 .ci	www.nic.ci
