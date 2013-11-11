@@ -94,6 +94,7 @@ char *simple_recode(const iconv_t handle, const char *str)
 	    {
 		size_t used = outp - result;
 		size_t newsize;
+		char *new_result;
 
 		if (outbuf_size < SIMPLE_RECODE_BUFFER_SIZE_2)
 		    newsize = SIMPLE_RECODE_BUFFER_SIZE_2;
@@ -103,13 +104,17 @@ char *simple_recode(const iconv_t handle, const char *str)
 
 		/* check if the newsize variable has overflowed */
 		if (newsize <= outbuf_size) {
+		    free(result);
 		    errno = ENOMEM;
 		    return NULL;
 		}
 		outbuf_size = newsize;
-		result = realloc(result, outbuf_size);
-		if (!result)
+		new_result = realloc(result, outbuf_size);
+		if (!new_result) {
+		    free(result);
 		    return NULL;
+		}
+		result = new_result;
 
 		/* update the position in the new output stream */
 		outp = result + used;
@@ -119,6 +124,7 @@ char *simple_recode(const iconv_t handle, const char *str)
 	    }
 
 	default:
+	    free(result);
 	    return NULL;
 	}
     } while (inbytes_remaining > 0);
