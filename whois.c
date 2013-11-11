@@ -1118,7 +1118,7 @@ char *convert_inaddr(const char *s)
 {
     char *new;
     char *endptr;
-    unsigned int a, b = 0, c = 0;
+    long int a, b = 0, c = 0;
 
     errno = 0;
 
@@ -1142,7 +1142,7 @@ char *convert_inaddr(const char *s)
     }
 
     new = malloc(sizeof("255.255.255.255"));
-    sprintf(new, "%d.%d.%d.0", c, b, a);
+    sprintf(new, "%ld.%ld.%ld.0", c, b, a);
     return new;
 }
 
