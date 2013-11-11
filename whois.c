@@ -133,6 +133,7 @@ int main(int argc, char *argv[])
 	    break;
 	case 'V':
 	    client_tag = optarg;
+	    break;
 	case 'H':
 	    hide_discl = HIDE_NOT_STARTED;	/* enable disclaimers hiding */
 	    break;
