@@ -220,7 +220,7 @@ int main(int argc, char *argv[])
 int handle_query(const char *hserver, const char *hport,
 	const char *query, const char *flags)
 {
-    const char *server = NULL, *port = NULL;
+    char *server = NULL, *port = NULL;
     char *p, *query_string;
 
     if (hport) {
@@ -235,7 +235,7 @@ int handle_query(const char *hserver, const char *hport,
     switch (server[0]) {
 	case 0:
 	    if (!(server = getenv("WHOIS_SERVER")))
-		server = DEFAULTSERVER;
+		server = strdup(DEFAULTSERVER);
 	    break;
 	case 1:
 	    puts(_("This TLD has no whois server, but you can access the "
@@ -255,28 +255,33 @@ int handle_query(const char *hserver, const char *hport,
 	    if (verb)
 		printf(_("Using server %s.\n"), server + 1);
 	    sockfd = openconn(server + 1, NULL);
+	    free(server);
 	    server = query_crsnic(sockfd, query);
 	    break;
 	case 8:
 	    if (verb)
 		printf(_("Using server %s.\n"), "whois.afilias-grs.info");
 	    sockfd = openconn("whois.afilias-grs.info", NULL);
+	    free(server);
 	    server = query_afilias(sockfd, query);
 	    break;
 	case 0x0A:
 	    p = convert_6to4(query);
 	    printf(_("\nQuerying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n\n"), p);
+	    free(server);
 	    server = guess_server(p);
 	    query = p;
 	    goto retry;
 	case 0x0B:
 	    p = convert_teredo(query);
 	    printf(_("\nQuerying for the IPv4 endpoint %s of a Teredo IPv6 address.\n\n"), p);
+	    free(server);
 	    server = guess_server(p);
 	    query = p;
 	    goto retry;
 	case 0x0C:
 	    p = convert_inaddr(query);
+	    free(server);
 	    server = guess_server(p);
 	    free(p);
 	    goto retry;
@@ -380,9 +385,9 @@ const char *match_config_file(const char *s)
 #endif
 
 /* Parses an user-supplied string and tries to guess the right whois server.
- * Returns a statically allocated buffer.
+ * Returns a dinamically allocated buffer.
  */
-const char *guess_server(const char *s)
+char *guess_server(const char *s)
 {
     unsigned long ip, as32;
     unsigned int i;
@@ -395,45 +400,45 @@ const char *guess_server(const char *s)
 	/* RPSL hierarchical objects */
 	if (strncaseeq(s, "as", 2)) {
 	    if (isasciidigit(s[2]))
-		return whereas(atol(s + 2));
+		return strdup(whereas(atol(s + 2)));
 	    else
-		return "";
+		return strdup("");
 	}
 
 	v6prefix = strtol(s, NULL, 16);
 
 	if (v6prefix == 0)
-	    return "\x05";			/* unknown */
+	    return strdup("\x05");		/* unknown */
 
 	v6net = (v6prefix << 16) + strtol(colon + 1, NULL, 16);/* second u16 */
 
 	for (i = 0; ip6_assign[i].serv; i++) {
 	    if ((v6net & (~0UL << (32 - ip6_assign[i].masklen)))
 		    == ip6_assign[i].net)
-		return ip6_assign[i].serv;
+		return strdup(ip6_assign[i].serv);
 	}
 
-	return "\x06";			/* unknown allocation */
+	return strdup("\x06");			/* unknown allocation */
     }
 
     /* email address */
     if (strchr(s, '@'))
-	return "\x05";
+	return strdup("\x05");
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
 	if (strncaseeq(s, "as", 2) &&		/* it's an AS */
 		(isasciidigit(s[2]) || s[2] == ' '))
-	    return whereas(atol(s + 2));
+	    return strdup(whereas(atol(s + 2)));
 	if (*s == '!')	/* NSI NIC handle */
-	    return "whois.networksolutions.com";
+	    return strdup("whois.networksolutions.com");
 	else
-	    return "\x05";	/* probably a unknown kind of nic handle */
+	    return strdup("\x05"); /* probably a unknown kind of nic handle */
     }
 
     /* ASN32? */
     if (strncaseeq(s, "as", 2) && s[2] && (as32 = asn32_to_long(s + 2)) != 0)
-	return whereas32(as32);
+	return strdup(whereas32(as32));
 
     /* smells like an IP? */
 #ifdef HAVE_INET_PTON
@@ -444,28 +449,28 @@ const char *guess_server(const char *s)
 #endif
 	for (i = 0; ip_assign[i].serv; i++)
 	    if ((ip & ip_assign[i].mask) == ip_assign[i].net)
-		return ip_assign[i].serv;
-	return "\x05";			/* not in the unicast IPv4 space */
+		return strdup(ip_assign[i].serv);
+	return strdup("\x05");		/* not in the unicast IPv4 space */
     }
 
     /* check the TLDs list */
     for (i = 0; tld_serv[i]; i += 2)
 	if (domcmp(s, tld_serv[i]))
-	    return tld_serv[i + 1];
+	    return strdup(tld_serv[i + 1]);
 
     /* no dot but hyphen */
     if (!strchr(s, '.')) {
 	/* search for strings at the start of the word */
 	for (i = 0; nic_handles[i]; i += 2)
 	    if (strncaseeq(s, nic_handles[i], strlen(nic_handles[i])))
-		return nic_handles[i + 1];
+		return strdup(nic_handles[i + 1]);
 	/* it's probably a network name */
-	return "";
+	return strdup("");
     }
 
     /* has dot and maybe a hyphen and it's not in tld_serv[], WTF is it? */
     /* either a TLD or a NIC handle we don't know about yet */
-    return "\x05";
+    return strdup("\x05");
 }
 
 const char *whereas32(const unsigned long asn)
@@ -616,7 +621,7 @@ int hide_line(int *hiding, const char *const line)
 }
 
 /* returns a string which should be freed by the caller, or NULL */
-const char *do_query(const int sock, const char *query)
+char *do_query(const int sock, const char *query)
 {
     char *temp, *p, buf[2000];
     FILE *fi;
@@ -679,7 +684,7 @@ const char *do_query(const int sock, const char *query)
     return referral_server;
 }
 
-const char *query_crsnic(const int sock, const char *query)
+char *query_crsnic(const int sock, const char *query)
 {
     char *temp, *p, buf[2000];
     FILE *fi;
@@ -729,7 +734,7 @@ const char *query_crsnic(const int sock, const char *query)
     return referral_server;
 }
 
-const char *query_afilias(const int sock, const char *query)
+char *query_afilias(const int sock, const char *query)
 {
     char *temp, *p, buf[2000];
     FILE *fi;
@@ -1009,7 +1014,7 @@ char *normalize_domain(const char *dom)
 
 /* server and port have to be freed by the caller */
 void split_server_port(const char *const input,
-	const char **server, const char **port) {
+	char **server, char **port) {
     char *p;
 
     if (*input == '[' && (p = strchr(input, ']'))) {	/* IPv6 */
