@@ -66,6 +66,7 @@ const char *hide_strings[] = {
     /* ccTLDs */
     "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
     "Access to ASNIC", "by this policy.",			/* as */
+    "% The WHOIS service offered by DNS.be", "% protect the privacy", /* be */
     "% The WHOIS service offered", "% of the database",		/* eu */
     "NeuStar, Inc., the Registry", "OF THE AVAILABILITY",	/* us */
 
