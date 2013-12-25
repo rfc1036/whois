@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: whois\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-10 04:23+0200\n"
-"PO-Revision-Date: 2013-11-16 16:13+0800\n"
+"PO-Revision-Date: 2013-12-25 17:40+0800\n"
 "Last-Translator: Terence Ng <pheotiman@gmail.com>\n"
 "Language-Team: Chinese (China) <zh_CN@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2009-11-10 02:44+0000\n"
 "X-Generator: Poedit 1.5.7\n"
 "Language: Chinese Simplified\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../whois.c:148
 #, c-format
@@ -27,7 +28,7 @@ msgid ""
 msgstr ""
 "版本 %s。\n"
 "\n"
-"将 bugs 提交到 %s。\n"
+"向 %s 报告漏洞。\n"
 
 #: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
 #, c-format
@@ -220,20 +221,17 @@ msgid "Try '%s --help' for more information.\n"
 msgstr "尝试用 '%s --help' 获取更多的信息。\n"
 
 #: ../mkpasswd.c:242
-#, fuzzy, c-format
+#, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
-msgstr[0] "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
-msgstr[1] "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度为 %d 字节。\n"
+msgstr[0] ""
+"错误的随即字符 ( salt ) 长度：当前为 %d 字节，预期长度为 %d 字节。\n"
 
 #: ../mkpasswd.c:247
-#, fuzzy, c-format
+#, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] ""
-"错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字"
-"节。\n"
-msgstr[1] ""
 "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字"
 "节。\n"
 
