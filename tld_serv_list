@@ -144,7 +144,7 @@
 .fm	WEB http://dot.fm/whois.html
 .fo	whois.nic.fo
 .fr	whois.nic.fr
-.ga	NONE		# whois.dot.ga NOT ACTIVE YET # www.nic.ga
+.ga	whois.dot.ga	# www.my.ga
 .gb	NONE
 .gd	whois.nic.gd
 .ge	WEB http://www.registration.ge/
@@ -213,7 +213,7 @@
 .mg	whois.nic.mg
 .mh	NONE		# www.nic.net.mh
 .mk	WEB http://dns.marnet.net.mk/registar.php
-.ml	NONE		# whois.dot.ml NOT ACTIVE YET # www.point.ml
+.ml	whois.dot.ml	# www.point.ml
 .mm	NONE		# www.nic.mm
 .mn	AFILIAS
 .mo	WEB http://www.monic.net.mo/	# whois.monic.mo is restricted
