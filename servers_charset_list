@@ -1,6 +1,9 @@
 # server name		charset		optional parameters
-whois.corenic.net	utf-8		-C UTF-8
 whois.cat		utf-8		-C UTF-8
+whois.conac.cn		utf-8
+whois.corenic.net	utf-8		-C UTF-8
+whois.online.rs.corenic.net	utf-8	-C UTF-8
+whois.site.rs.corenic.net	utf-8	-C UTF-8
 whois.museum		utf-8		-C UTF-8
 
 whois.aeda.net.ae	utf-8
