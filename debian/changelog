@@ -1,3 +1,19 @@
+whois (5.1.0) unstable; urgency=low
+
+  * Added the .ga, .ml, .pf, .xn--l1acc (.МОН, Mongolia) and
+    .xn--mgba3a4f16a (.ﺍیﺭﺎﻧ, Iran) TLD servers.
+  * Added the servers for 54 "new" gTLDs.
+  * Updated the .bw, .gd, .hn, .sb, .xn--j1amh and .xn--mgberp4a5d4ar
+    TLD servers.
+  * Added new RIPE and APNIC ASN allocations.
+  * Removed the .ck TLD server.
+  * Updated one or more translations.
+  * Applied multiple small fixes contributed by Petr Písař of Red Hat.
+  * Correctly hide the disclaimers for .be and .sx. (Closes: #729366)
+  * Direct queries for private ASN blocks to RIPE. (Closes: #724661)
+
+ -- Marco d'Itri <md@linux.it>  Thu, 26 Dec 2013 10:05:43 +0100
+
 whois (5.0.26) unstable; urgency=low
 
   * Added the .cf TLD server.

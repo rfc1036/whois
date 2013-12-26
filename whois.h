@@ -3,7 +3,7 @@
 
 /* String sent to RIPE servers - MUST NOT BE LONGER THAN FIVE CHARACTERS! */
 /* Do *NOT* change it if you don't know what you are doing! */
-#define IDSTRING "Md5.0"
+#define IDSTRING "Md5.1"
 
 #define HIDE_DISABLED  -2
 #define HIDE_NOT_STARTED -1
