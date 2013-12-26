@@ -45,15 +45,21 @@ whois.iis.nu		utf-8
 whois.registry.pf	utf-8
 whois.dns.pt		iso-8859-1
 whois.registry.qa	utf-8
+whois.nic.re		utf-8
 whois.rnids.rs		utf-8
+whois.nic.net.sa	utf-8
 whois.iis.se		utf-8
 whois.sgnic.sg		utf-8
 whois.tld.sy		utf-8
 whois.thnic.co.th	utf-8
+whois.ati.tn		windows-1252
 whois.nic.tr		iso-8859-9
 whois.twnic.net.tw	utf-8
+whois.biz.ua		utf-8
+whois.co.ua		utf-8
 whois.pp.ua		utf-8
-whois.ati.tn		windows-1252
 whois.ua		utf-8
 whois.nic.org.uy	utf-8
+whois.nic.wf		utf-8
+whois.nic.yt		utf-8
 
