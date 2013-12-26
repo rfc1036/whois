@@ -243,7 +243,7 @@
 .om	whois.registry.om
 .pa	WEB http://www.nic.pa/
 .pe	kero.yachay.pe
-.pf	NONE		# http://www.opt.pf/home/
+.pf	whois.registry.pf
 .pg	NONE	# http://www.unitech.ac.pg/
 .ph	WEB http://www.dot.ph/whois
 .pk	WEB http://www.pknic.net.pk/

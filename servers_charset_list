@@ -39,6 +39,7 @@ whois.dns.lu		iso-8859-1
 whois.nic.mu		utf-8
 whois.norid.no		iso-8859-1
 whois.iis.nu		utf-8
+whois.registry.pf	utf-8
 whois.dns.pt		iso-8859-1
 whois.registry.qa	utf-8
 whois.rnids.rs		utf-8
