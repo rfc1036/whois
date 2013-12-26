@@ -110,7 +110,7 @@
 .cg	WEB http://www.nic.cg/cgi-bin/whois.pl
 .ch	whois.nic.ch
 .ci	whois.nic.ci
-.ck	whois.nic.ck
+.ck	NONE
 .cl	whois.nic.cl
 .cm	whois.netcom.cm
 .edu.cn	whois.edu.cn
@@ -402,7 +402,6 @@
 -ti	whois.telstra.net
 -tw	whois.twnic.net.tw
 -coop	whois.nic.coop
--cknic	whois.nic.ck
 -frnic	whois.nic.fr
 -gandi	whois.gandi.net
 -kenic	whois.kenic.or.ke
