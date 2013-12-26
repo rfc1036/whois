@@ -5,7 +5,7 @@ whois.museum		utf-8		-C UTF-8
 
 whois.aeda.net.ae	utf-8
 whois.ax		iso-8859-1
-whois.nic.br		iso-8859-1
+whois.registro.br	iso-8859-1
 whois.cira.ca		iso-8859-1
 whois.nic.ch		utf-8
 whois.nic.cl		iso-8859-1
@@ -17,7 +17,7 @@ whois.enum.denic.de	utf-8
 whois.dk-hostmaster.dk	utf-8		--charset=utf-8
 whois.eenet.ee		iso-8859-1
 whois.eu		utf-8
-whois.ficora.fi		iso-8859-1
+whois.fi		iso-8859-1
 whois.nic.fo		utf-8
 whois.nic.fr		utf-8
 whois.hkirc.hk		utf-8
@@ -38,18 +38,18 @@ whois.domreg.lt		utf-8
 whois.dns.lu		iso-8859-1
 whois.nic.mu		utf-8
 whois.norid.no		iso-8859-1
-whois.nic.nu		utf-8
+whois.iis.nu		utf-8
 whois.dns.pt		iso-8859-1
 whois.registry.qa	utf-8
 whois.rnids.rs		utf-8
 whois.iis.se		utf-8
-whois.nic.net.sg	utf-8
+whois.sgnic.sg		utf-8
 whois.tld.sy		utf-8
 whois.thnic.co.th	utf-8
-whois.nic.tr		utf-8
+whois.nic.tr		iso-8859-9
 whois.twnic.net.tw	utf-8
 whois.pp.ua		utf-8
-whois.tn		windows-1252
+whois.ati.tn		windows-1252
 whois.ua		utf-8
 whois.nic.org.uy	utf-8
 

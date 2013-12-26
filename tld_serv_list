@@ -28,17 +28,17 @@
 .jpn.com whois.centralnic.net
 .web.com whois.centralnic.net
 
-.com	VERISIGN whois.crsnic.net
+.com	VERISIGN whois.verisign-grs.com
 
 .za.net	whois.za.net
-.net	VERISIGN whois.crsnic.net
+.net	VERISIGN whois.verisign-grs.com
 
 .eu.org	whois.eu.org
 .za.org	whois.za.org
 .org	whois.pir.org
 
-.edu	whois.educause.net
-.gov	whois.nic.gov
+.edu	whois.educause.edu
+.gov	whois.dotgov.gov
 .int	whois.iana.org
 .mil	NONE
 
@@ -48,16 +48,16 @@
 
 .aero	whois.aero
 .asia	whois.nic.asia
-.biz	whois.nic.biz
+.biz	whois.biz
 .cat	whois.cat
 .coop	whois.nic.coop
-.info	whois.afilias.info
+.info	whois.afilias.net
 .jobs	VERISIGN jobswhois.verisign-grs.com
 .mobi	whois.dotmobiregistry.net
 .museum	whois.museum
 .name	whois.nic.name
 .post	whois.dotpostregistry.net
-.pro	whois.registrypro.pro
+.pro	whois.dotproregistry.net
 .tel	whois.nic.tel
 .travel	whois.nic.travel
 .xxx	whois.nic.xxx
@@ -69,7 +69,7 @@
 .ag	whois.nic.ag
 .ai	whois.ai
 .al	NONE		# http://www.akep.al/en/kerkoni-domain
-.am	whois.nic.am
+.am	whois.amnic.net
 .an	NONE		# being phased out. deletion planned for 2014-10-31
 .ao	NONE		# www.dns.ao
 .aq	NONE		# 2day.com
@@ -77,7 +77,7 @@
 .as	whois.nic.as
 .priv.at whois.nic.priv.at	# "unofficial" SLD
 .at	whois.nic.at
-.au	whois.ausregistry.net.au
+.au	whois.audns.net.au
 .aw	NONE		# http://setar.aw/internet/domain-registration.html
 .ax	whois.ax	# www.ax
 .az	WEB http://www.nic.az/
@@ -95,7 +95,7 @@
 .bn	whois.bn	# www.brunet.bn
 .bo	whois.nic.bo
 #.bq
-.br	whois.nic.br
+.br	whois.registro.br
 .bs	WEB http://www.nic.bs/cgi-bin/search.pl
 .bt	WEB http://www.nic.bt/
 .bv	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
@@ -104,12 +104,12 @@
 .bz	AFILIAS
 .co.ca	whois.co.ca
 .ca	whois.cira.ca
-.cc	VERISIGN whois.nic.cc
+.cc	VERISIGN ccwhois.verisign-grs.com
 .cd	whois.nic.cd
 .cf	whois.dot.cf
 .cg	WEB http://www.nic.cg/cgi-bin/whois.pl
 .ch	whois.nic.ch
-.ci	www.nic.ci
+.ci	whois.nic.ci
 .ck	whois.nic.ck
 .cl	whois.nic.cl
 .cm	whois.netcom.cm
@@ -138,7 +138,7 @@
 .es	WEB https://www.nic.es/
 .et	NONE	# http://www.ethionet.et/
 .eu	whois.eu
-.fi	whois.ficora.fi
+.fi	whois.fi
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.co.fk/
 .fm	WEB http://dot.fm/whois.html
@@ -173,7 +173,7 @@
 .ie	whois.domainregistry.ie
 .il	whois.isoc.org.il
 .im	whois.nic.im
-.in	whois.registry.in	# afilias
+.in	whois.inregistry.net	# afilias
 .io	whois.nic.io
 .iq	whois.cmc.iq		# http://www.cmc.iq/en/iq.html
 .ir	whois.nic.ir
@@ -197,7 +197,7 @@
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/
 .lc	AFILIAS
-.li	whois.nic.ch
+.li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
 .ls	WEB http://www.co.ls/co.asp
@@ -208,14 +208,14 @@
 .ma	whois.iam.net.ma # www.nic.ma
 .mc	NONE	# www.nic.mc
 .md	WEB http://www.dns.md/wh1.php # whois.nic.md is restricted
-.me	whois.meregistry.net	# afilias
+.me	whois.nic.me	# afilias
 #.mf
 .mg	whois.nic.mg
 .mh	NONE		# www.nic.net.mh
 .mk	WEB http://dns.marnet.net.mk/registar.php
 .ml	whois.dot.ml	# www.point.ml
 .mm	NONE		# www.nic.mm
-.mn	AFILIAS
+.mn	whois.nic.mn
 .mo	WEB http://www.monic.net.mo/	# whois.monic.mo is restricted
 .mp	NONE		# get.mp
 .mq	WEB https://www.dom-enic.com/whois.html
@@ -225,11 +225,11 @@
 .mu	whois.nic.mu
 .mv	NONE		# NIC? www.dhiraagu.com.mv
 .mw	WEB http://www.registrar.mw/
-.mx	whois.nic.mx
+.mx	whois.mx
 .my	whois.domainregistry.my
 .mz	NONE		# NIC? www.uem.mz
 .na	whois.na-nic.com.na
-.nc	whois.cctld.nc
+.nc	whois.nc
 .ne	NONE		# NIC? http://www.intnet.ne
 .nf	whois.nic.nf
 .ng	whois.nic.net.ng
@@ -238,7 +238,7 @@
 .no	whois.norid.no
 .np	WEB http://register.mos.com.np/userSearchInc.asp
 .nr	WEB http://www.cenpac.net.nr/dns/whois.html
-.nu	whois.nic.nu
+.nu	whois.iis.nu
 .nz	whois.srs.net.nz
 .om	whois.registry.om
 .pa	WEB http://www.nic.pa/
@@ -249,7 +249,7 @@
 .pk	WEB http://www.pknic.net.pk/
 .co.pl	whois.co.pl	# "unofficial" SLD
 .pl	whois.dns.pl
-.pm	whois.nic.fr
+.pm	whois.nic.pm
 .pn	WEB http://www.pitcairn.pn/PnRegistry/
 .pr	whois.nic.pr
 .ps	whois.pnina.ps
@@ -257,7 +257,7 @@
 .pw	whois.nic.pw
 .py	WEB http://www.nic.py/consultas.html
 .qa	whois.registry.qa
-.re	whois.nic.fr
+.re	whois.nic.re
 .ro	whois.rotld.ro
 .rs	whois.rnids.rs
 .edu.ru	whois.informika.ru
@@ -268,7 +268,7 @@
 .sc	AFILIAS		# www.nic.sc
 .sd	NONE		# http://isoc.sd/sis/index.php/sd-domain
 .se	whois.iis.se
-.sg	whois.nic.net.sg
+.sg	whois.sgnic.sg
 .sh	whois.nic.sh
 .si	whois.arnes.si
 .sj	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
@@ -294,12 +294,12 @@
 .tk	whois.dot.tk
 .tl	whois.nic.tl
 .tm	whois.nic.tm
-.tn	whois.tn
+.tn	whois.ati.tn
 .to	whois.tonic.to
 .tp	NONE			# phase out in progress
 .tr	whois.nic.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
-.tv	VERISIGN whois.nic.tv
+.tv	VERISIGN tvwhois.verisign-grs.com
 .tw	whois.twnic.net.tw
 .tz	whois.tznic.or.tz
 .biz.ua	whois.biz.ua
@@ -332,10 +332,10 @@
 .vi	WEB http://www.nic.vi/whoisform.htm
 .vn	WEB http://www.vnnic.vn/en/domain
 .vu	WEB http://www.vunic.vu/whois.html
-.wf	whois.nic.fr
-.ws	whois.samoanic.ws
+.wf	whois.nic.wf
+.ws	whois.website.ws
 .ye	NONE		# NIC? http://www.y.net.ye/services/domain_name.htm
-.yt	whois.nic.fr
+.yt	whois.nic.yt
 .ac.za	whois.ac.za
 .alt.za	whois.alt.za
 .co.za	whois.registry.net.za
@@ -350,16 +350,16 @@
 # AW means that I had to guess the whois server name, but I was not able
 # to find any registered subdomains to verify it.
 .xn--3e0b707e		whois.kr		# Korea, Republic of
-.xn--45brj9c		whois.registry.in	# India, Bengali AW
+.xn--45brj9c		whois.inregistry.net	# India, Bengali AW
 .xn--80ao21a		whois.nic.kz		# Kazakhstan
 .xn--90a3ac		whois.rnids.rs		# Serbia
-.xn--clchc0ea0b2g2a9gcd	whois.nic.net.sg	# Singapore, Tamil
+.xn--clchc0ea0b2g2a9gcd	whois.sgnic.sg		# Singapore, Tamil
 .xn--fiqs8s		cwhois.cnnic.cn		# China, Simplified Chinese
 .xn--fiqz9s		cwhois.cnnic.cn		# China, Traditional Chinese
-.xn--fpcrj9c3d		whois.registry.in	# India, Telugu AW
+.xn--fpcrj9c3d		whois.inregistry.net	# India, Telugu AW
 .xn--fzc2c9e2c		whois.nic.lk		# Sri Lanka, Sinhala
-.xn--gecrj9c		whois.registry.in	# India, Gujarati AW
-.xn--h2brj9c		whois.registry.in	# India, Hindi AW
+.xn--gecrj9c		whois.inregistry.net	# India, Gujarati AW
+.xn--h2brj9c		whois.inregistry.net	# India, Hindi AW
 .xn--j1amh		whois.ua		# Ukraine AW
 .xn--j6w193g		whois.hkirc.hk		# Hong Kong
 .xn--kprw13d		whois.twnic.net.tw	# Taiwan, Simplified Chinese
@@ -368,7 +368,7 @@
 .xn--mgb9awbf		whois.registry.om	# Oman AW
 .xn--mgbaam7a8h		whois.aeda.net.ae	# United Arab Emirates
 .xn--mgbayh7gpa		WEB http://idn.jo/whois_a.aspx	# Jordan
-.xn--mgbbh1a71e		whois.registry.in	# India, Urdu AW
+.xn--mgbbh1a71e		whois.inregistry.net	# India, Urdu AW
 .xn--mgbc0a9azcg	NONE			# Morocco
 .xn--mgberp4a5d4ar	WEB http://nic.sa/view/whois	# Saudi Arabia
 .xn--mgbx4cd0ab		whois.domainregistry.my	# Malaysia AW
@@ -376,12 +376,12 @@
 .xn--ogbpf8fl		whois.tld.sy		# Syria
 .xn--p1ai		whois.tcinet.ru		# Russian Federation
 .xn--pgbs0dh		NONE			# Tunisia
-.xn--s9brj9c		whois.registry.in	# India, Punjabi AW
+.xn--s9brj9c		whois.inregistry.net	# India, Punjabi AW
 .xn--wgbh1c		whois.dotmasr.eg	# Egypt
 .xn--wgbl6a		whois.registry.qa	# Qatar
 .xn--xkc2al3hye2a	whois.nic.lk		# Sri Lanka, Tamil
-.xn--xkc2dl3a5ee0h	whois.registry.in	# India, Tamil AW
-.xn--yfro4i67o		whois.nic.net.sg	# Singapore, Chinese
+.xn--xkc2dl3a5ee0h	whois.inregistry.net	# India, Tamil AW
+.xn--yfro4i67o		whois.sgnic.sg		# Singapore, Chinese
 .xn--ygbi2ammx		whois.pnina.ps		# Palestinian Territory
 
 -dom	whois.networksolutions.com
@@ -393,8 +393,7 @@
 -lacnic	whois.lacnic.net
 -afrinic whois.afrinic.net
 -ap	whois.apnic.net
--ar	whois.aunic.net
--cn	whois.cnnic.net.cn
+-cn	whois.cnnic.cn
 -cz	whois.nic.cz
 -dk	whois.dk-hostmaster.dk
 -il	whois.isoc.org.il
@@ -408,14 +407,15 @@
 -gandi	whois.gandi.net
 -kenic	whois.kenic.or.ke
 -lrms	whois.afilias.info
--metu	whois.metu.edu.tr
+-metu	whois.nic.tr
 -nicat	whois.nic.at
+-nicci	whois.nic.ci
 -nicir	whois.nic.ir
 -norid	whois.norid.no
 -rotld	whois.rotld.ro
--sgnic	whois.nic.net.sg
+-sgnic	whois.sgnic.sg
 -tel	whois.nic.tel
 -uanic	whois.ua
 -cunic  whois.cunic.ua
--uynic	www.rau.edu.uy
+-uynic	whois.nic.org.uy
 -sixxs	whois.sixxs.net
