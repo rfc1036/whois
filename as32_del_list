@@ -8,3 +8,6 @@
 5.0	5.65535	afrinic
 6.0	6.65535	arin
 
+# private ASN block
+4200000000	4294967294	ripe
+
