@@ -1,3 +1,9 @@
+whois (5.1.0~byte1) stable; urgency=low
+
+  * Backport uit sid
+
+ -- Cipriano Groenendal <cipri@byte.nl>  Fri, 27 Dec 2013 09:56:21 +0100
+
 whois (5.1.0) unstable; urgency=low
 
   * Added the .ga, .ml, .pf, .xn--l1acc (.МОН, Mongolia) and
