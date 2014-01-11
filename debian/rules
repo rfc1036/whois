@@ -13,7 +13,7 @@ DPKG_EXPORT_BUILDFLAGS = 1
 
 D := $(CURDIR)/debian/whois
 
-VERSION := $(shell dpkg-parsechangelog | sed -n 's/~*ubuntu[0-9]*.*$$//; s/\+.*$$//; /^Version/s/.* //p')
+VERSION := $(shell dpkg-parsechangelog | sed -rn 's/(~deb|~?ubuntu)[0-9]*.*$$//; s/\+.*$$//; /^Version/s/.* //p')
 
 build:
 	dh_testdir
