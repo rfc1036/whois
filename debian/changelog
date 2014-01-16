@@ -1,3 +1,16 @@
+whois (5.1.2) unstable; urgency=medium
+
+  * Always query whois.nic.$TLD for the "new" gTLDs, because the ICANN
+    contract requires that it works.
+  * Added the .aw and .zm TLD servers.
+  * Updated the .mk, .tc and .vu TLD servers.
+  * Added more ASN entries for Japan and Korea.
+  * Fixed some invalid ASN and networks entries which would never be
+    matched, reported by Henry Stern.
+  * mkpasswd ported to Solaris/Dyson, patch courtesy of Igor Pashev.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 02 May 2014 04:15:08 +0200
+
 whois (5.1.1) unstable; urgency=medium
 
   * Added the servers for 29 "new" gTLDs.
