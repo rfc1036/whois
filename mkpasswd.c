@@ -179,11 +179,14 @@ int main(int argc, char *argv[])
 	case 'R':
 	    {
 		char *p;
-		rounds = strtol(optarg, &p, 10);
-		if (p == NULL || *p != '\0' || rounds < 0) {
+		long r;
+
+		r = strtol(optarg, &p, 10);
+		if (p == NULL || *p != '\0' || r < 0) {
 		    fprintf(stderr, _("Invalid number '%s'.\n"), optarg);
 		    exit(1);
 		}
+		rounds = r;
 	    }
 	    break;
 	case 's':
