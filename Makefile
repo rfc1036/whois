@@ -123,3 +123,5 @@ Makefile.depend:
 	$(CC) $(CPPFLAGS) $(CFLAGS) -MM -MG *.c > $@
 
 -include Makefile.depend
+
+.DELETE_ON_ERROR:
