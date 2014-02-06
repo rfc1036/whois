@@ -39,6 +39,7 @@
 #endif
 
 /* Application-specific */
+#include "version.h"
 #include "data.h"
 #include "whois.h"
 #include "utils.h"

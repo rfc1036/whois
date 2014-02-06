@@ -45,6 +45,7 @@
 #endif
 
 /* Application-specific */
+#include "version.h"
 #include "utils.h"
 
 /* Global variables */

@@ -1,6 +1,3 @@
-/* Program version */
-#define VERSION "5.1.1"
-
 /* Configurable features */
 
 /* Always hide legal disclaimers */

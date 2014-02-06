@@ -1,6 +1,7 @@
 *_del.h
 tld_serv.h
 servers_charset.h
+version.h
 
 Makefile.depend
 *.o

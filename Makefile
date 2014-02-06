@@ -69,6 +69,9 @@ mkpasswd: $(mkpasswd_OBJECTS)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(mkpasswd_LDADD) $(LIBS)
 
 ##############################################################################
+version.h: debian/changelog make_version_h.pl
+	$(PERL) -w make_version_h.pl $< > $@
+
 as_del.h: as_del_list make_as_del.pl
 	$(PERL) -w make_as_del.pl < $< > $@
 
