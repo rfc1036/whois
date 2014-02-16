@@ -29,7 +29,7 @@ const char *ripe_servers[] = {
 
 const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "",				/* NetSol */
-    "TERMS OF USE: You are not", "",				/* crsnic */
+    "NOTICE: The expiration date", "reserves the right",	/* VeriSign */
     "The data in Register", "",				    /* Register.Com */
     "The Data in the Tucows", "RECORD DOES NOT",
     "The information in this whois database", "",		/* DOTSTER */
