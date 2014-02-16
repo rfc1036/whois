@@ -48,6 +48,11 @@ const char *hide_strings[] = {
     "; This data is provided by domaindiscount24.com", "",
     "%% NOTICE: Access to this information is provided", "%% By submitting", /* bookmyname.com */
     "% NOTICE: Access to the domains information", "% this query", /* CORE */
+    "The Data in MarkMonitor.com's", "--", /* MarkMonitor */
+    "Corporation Service Company(c) (CSC)  The Trusted Partner", "Register your domain name at", /* CSC */
+    "The data in Networksolutions.com's", "By submitting this query", /* Networksolutions */
+    "% Copyright (c)2003 by Deutsche Telekom AG", "% DOMAIN full", /* Deutsche Telekom  */
+    "# Welcome to the OVH WHOIS Server", "# soumettant une", /* ovh */
 
     /* gTLDs */
     "Access to .AERO WHOIS information", "",
