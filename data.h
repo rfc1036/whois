@@ -29,7 +29,7 @@ const char *ripe_servers[] = {
 
 const char *hide_strings[] = {
     "NOTICE AND TERMS OF USE: You", "",				/* NetSol */
-    "TERMS OF USE: You are not", "",				/* crsnic */
+    "NOTICE: The expiration date", "reserves the right",	/* crsnic */
     "The data in Register", "",				    /* Register.Com */
     "The Data in the Tucows", "RECORD DOES NOT",
     "The information in this whois database", "",		/* DOTSTER */
@@ -48,6 +48,11 @@ const char *hide_strings[] = {
     "; This data is provided by domaindiscount24.com", "",
     "%% NOTICE: Access to this information is provided", "%% By submitting", /* bookmyname.com */
     "% NOTICE: Access to the domains information", "% this query", /* CORE */
+    "The Data in MarkMonitor.com's", "--", /* MarkMonitor */
+    "Corporation Service Company(c) (CSC)  The Trusted Partner", "Register your domain name at", /* CSC */
+    "The data in Networksolutions.com's", "By submitting this query", /* Networksolutions */
+    "% Copyright (c)2003 by Deutsche Telekom AG", "% DOMAIN full", /* Deutsche Telekom  */
+    "# Welcome to the OVH WHOIS Server", "# soumettant une", /* ovh */
 
     /* gTLDs */
     "Access to .AERO WHOIS information", "",
