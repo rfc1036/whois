@@ -719,12 +719,14 @@ char *do_query(const int sock, const char *query)
 }
 
 #ifdef WIN32
-/* CHECK THIS... line separator is always \n ? */
+// Unfortunately, fgets() does not work on sockets in Windows.
+// So, we use an ad-hoc function.
 int __win32_nextline(const int sock, char *buf, int size) {
     int ret;
     int pos = 0;
     char recvByte;
     while(1) {
+        // Could be done better...
         ret = recv(sock, &recvByte, 1, 0);
         if (ret < 0)
             err_sys("recv");
