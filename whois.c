@@ -7,6 +7,8 @@
  * (at your option) any later version.
  */
 
+ /* Win32 (MinGW) porting by Martino Fornasa <mf@fornasa.it> */
+ 
 /* for AI_IDN */
 #define _GNU_SOURCE
 
@@ -19,9 +21,14 @@
 #include <string.h>
 #include <ctype.h>
 #include <sys/types.h>
+#ifdef WIN32
+#include <winsock2.h>
+#include <windows.h>
+#else
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#endif
 #include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
@@ -160,6 +167,14 @@ int main(int argc, char *argv[])
     if (argc == 0 && !nopar)	/* there is no parameter */
 	usage(EXIT_FAILURE);
 
+#ifdef WIN32
+	WSADATA wsaData;
+	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+        fprintf(stderr, "WSAStartup failed.\n");
+        exit(EXIT_FAILURE);
+    }
+#endif
+
     /* On some systems realloc only works on non-NULL buffers */
     /* I wish I could remember which ones they are... */
     qstring = malloc(64);
@@ -182,7 +197,9 @@ int main(int argc, char *argv[])
 
     signal(SIGTERM, sighandler);
     signal(SIGINT, sighandler);
+#ifndef WIN32
     signal(SIGALRM, alarm_handler);
+#endif
 
     if (getenv("WHOIS_HIDE"))
 	hide_discl = HIDE_NOT_STARTED;
@@ -633,12 +650,21 @@ char *do_query(const int sock, const char *query)
     strcpy(temp, query);
     strcat(temp, "\r\n");
 
+#ifdef WIN32
+    if (send(sock, temp, strlen(temp),0) < 0)
+	err_sys("send");
+#else
     fi = fdopen(sock, "r");
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
+#endif
     free(temp);
 
+#ifdef WIN32
+    while (__win32_nextline(sock, buf, sizeof(buf))) {
+#else
     while (fgets(buf, sizeof(buf), fi)) {
+#endif
 	/* 6bone-style referral:
 	 * % referto: whois -h whois.arin.net -p 43 as 1
 	 */
@@ -674,8 +700,10 @@ char *do_query(const int sock, const char *query)
 	fputc('\n', stdout);
     }
 
+#ifndef WIN32
     if (ferror(fi))
 	err_sys("fgets");
+#endif
     fclose(fi);
 
     if (hide > HIDE_NOT_STARTED)
@@ -684,6 +712,27 @@ char *do_query(const int sock, const char *query)
 
     return referral_server;
 }
+
+#ifdef WIN32
+/* CHECK THIS... line separator is always \n ? */
+int __win32_nextline(const int sock, char *buf, int size) {
+    int ret;
+    int pos = 0;
+    char recvByte;
+    while(1) {
+        ret = recv(sock, &recvByte, 1, 0);
+        if (ret < 0)
+            err_sys("recv");
+        if (ret > 0) 
+		    buf[pos++] = recvByte;
+        if (recvByte == '\n' || ret == 0 || pos == (size-1)) {
+            buf[pos] = 0;
+			if (ret == 0) return 0;
+			return 1;
+		}
+    }
+}
+#endif
 
 char *query_crsnic(const int sock, const char *query)
 {
@@ -698,12 +747,21 @@ char *query_crsnic(const int sock, const char *query)
     strcpy(temp + 1, query);
     strcat(temp, "\r\n");
 
+#ifdef WIN32
+    if (send(sock, temp, strlen(temp), 0) < 0)
+	    err_sys("send");
+#else
     fi = fdopen(sock, "r");
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
+#endif
     free(temp);
 
+#ifdef WIN32
+    while (__win32_nextline(sock, buf, sizeof(buf))) {
+#else
     while (fgets(buf, sizeof(buf), fi)) {
+#endif
 	/* If there are multiple matches only the server of the first record
 	   is queried */
 	if (state == 0 && strneq(buf, "   Domain Name:", 15))
@@ -728,9 +786,11 @@ char *query_crsnic(const int sock, const char *query)
 	fputc('\n', stdout);
     }
 
+#ifndef WIN32
     if (ferror(fi))
 	err_sys("fgets");
     fclose(fi);
+#endif
 
     return referral_server;
 }
@@ -748,11 +808,20 @@ char *query_afilias(const int sock, const char *query)
     strcat(temp, "\r\n");
 
     fi = fdopen(sock, "r");
+#ifdef WIN32
+    if (send(sock, temp, strlen(temp),0) < 0)
+	err_sys("send");
+#else
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
+#endif
     free(temp);
 
+#ifdef WIN32
+    while (__win32_nextline(sock, buf, sizeof(buf))) {
+#else
     while (fgets(buf, sizeof(buf), fi)) {
+#endif	
 	if (state == 0 && strneq(buf, "Domain Name:", 12))
 	    state = 1;
 	if (state == 1 && strneq(buf, "Whois Server:", 13)) {
@@ -772,8 +841,10 @@ char *query_afilias(const int sock, const char *query)
 	fputc('\n', stdout);
     }
 
+#ifndef WIN32
     if (ferror(fi))
 	err_sys("fgets");
+#endif
     fclose(fi);
 
     if (hide > HIDE_NOT_STARTED)
@@ -796,7 +867,9 @@ int openconn(const char *server, const char *port)
     struct sockaddr_in saddr;
 #endif
 
+#ifndef WIN32
     alarm(60);
+#endif
 
 #ifdef HAVE_GETADDRINFO
     memset(&hints, 0, sizeof(struct addrinfo));
@@ -853,6 +926,18 @@ int openconn(const char *server, const char *port)
     return fd;
 }
 
+#ifdef WIN32
+// TODO: add timeout handling
+int connect_with_timeout(int fd, const struct sockaddr *addr,
+	unsigned int addrlen, int timeout)
+{
+	int rc = connect(fd, addr, addrlen);
+	if(rc<0){
+       return(-1);
+    }
+	return rc; 
+}
+#else
 int connect_with_timeout(int fd, const struct sockaddr *addr,
 	socklen_t addrlen, int timeout)
 {
@@ -913,6 +998,7 @@ int connect_with_timeout(int fd, const struct sockaddr *addr,
 
     return 0;
 }
+#endif
 
 void alarm_handler(int signum)
 {

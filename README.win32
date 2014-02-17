@@ -1,0 +1,17 @@
+Native Win32 porting with MinGW is currently incomplete 
+(localization and manpage support is missing and there are
+ some problems with text encoding).
+
+The "whois.exe" executable runs on Windows XP, Vista, Seven, Eight and it does 
+not require a specific runtime.
+
+
+BUILD REQUIREMENTS
+* Windows XP, Vista, Seven, Eight
+* MinGW gcc-core, mingw-runtime, mingw32-make are required to build.
+* The commands "cc" and "mingw32-make" must be in the PATH.
+* You need Perl. The command "perl.exe" must be in the PATH.
+* To build: cd to the source directory and issue "mingw32-make".
+
+
+Martino Fornasa <mf@fornasa.it>
