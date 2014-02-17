@@ -168,8 +168,8 @@ int main(int argc, char *argv[])
 	usage(EXIT_FAILURE);
 
 #ifdef WIN32
-	WSADATA wsaData;
-	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+    WSADATA wsaData;
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
         fprintf(stderr, "WSAStartup failed.\n");
         exit(EXIT_FAILURE);
     }
@@ -652,7 +652,7 @@ char *do_query(const int sock, const char *query)
 
 #ifdef WIN32
     if (send(sock, temp, strlen(temp),0) < 0)
-	err_sys("send");
+        err_sys("send");
 #else
     fi = fdopen(sock, "r");
     if (write(sock, temp, strlen(temp)) < 0)
@@ -724,12 +724,12 @@ int __win32_nextline(const int sock, char *buf, int size) {
         if (ret < 0)
             err_sys("recv");
         if (ret > 0) 
-		    buf[pos++] = recvByte;
+            buf[pos++] = recvByte;
         if (recvByte == '\n' || ret == 0 || pos == (size-1)) {
             buf[pos] = 0;
-			if (ret == 0) return 0;
-			return 1;
-		}
+            if (ret == 0) return 0;
+            return 1;
+        } 
     }
 }
 #endif
@@ -810,7 +810,7 @@ char *query_afilias(const int sock, const char *query)
     fi = fdopen(sock, "r");
 #ifdef WIN32
     if (send(sock, temp, strlen(temp),0) < 0)
-	err_sys("send");
+        err_sys("send");
 #else
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
@@ -931,11 +931,11 @@ int openconn(const char *server, const char *port)
 int connect_with_timeout(int fd, const struct sockaddr *addr,
 	unsigned int addrlen, int timeout)
 {
-	int rc = connect(fd, addr, addrlen);
-	if(rc<0){
-       return(-1);
+    int rc = connect(fd, addr, addrlen);
+    if (rc<0) {
+        return(-1);
     }
-	return rc; 
+    return rc; 
 }
 #else
 int connect_with_timeout(int fd, const struct sockaddr *addr,
