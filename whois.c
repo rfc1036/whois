@@ -154,8 +154,13 @@ int main(int argc, char *argv[])
 	    verb = 1;
 	    break;
 	case 1:
+#ifdef WIN32
+        fprintf(stdout, _("Version %s-win32.\n\nReport bugs to %s.\n"),
+            VERSION, "<md+whois@linux.it>");
+#else
 	    fprintf(stdout, _("Version %s.\n\nReport bugs to %s.\n"),
 		    VERSION, "<md+whois@linux.it>");
+#endif
 	    exit(EXIT_SUCCESS);
 	default:
 	    usage(EXIT_FAILURE);
