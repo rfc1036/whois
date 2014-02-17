@@ -132,6 +132,7 @@ clean:
 		tld_serv.h servers_charset.h *.o whois.exe
 	del /Q po\*.mo
 else
+clean:
 	rm -f Makefile.depend as_del.h as32_del.h ip_del.h ip6_del.h \
 		tld_serv.h servers_charset.h *.o whois mkpasswd
 	rm -f po/*.mo
