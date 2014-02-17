@@ -1,5 +1,5 @@
 Native Win32 porting with MinGW is currently incomplete 
-(localization and manpage support is missing and there are
+(localization and manpage are missing and there are
  some problems with text encoding).
 
 The "whois.exe" executable runs on Windows XP, Vista, Seven, Eight and it does 
