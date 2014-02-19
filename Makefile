@@ -41,6 +41,12 @@ whois_LDADD += -lidn
 DEFS += -DHAVE_LIBIDN
 endif
 
+ifeq "$(OS)" "Windows_NT"
+ifdef HAVE_LIBIDN
+whois_LDADD += -liconv -static
+endif
+endif
+
 ifdef HAVE_ICONV
 whois_OBJECTS += simple_recode.o
 DEFS += -DHAVE_ICONV

@@ -93,6 +93,37 @@ extern char *optarg;
 extern int optind;
 #endif
 
+#ifdef WIN32
+#ifdef HAVE_LIBIDN
+#include <locale.h>
+static char *replace( char *prev, char *value )
+{
+    if( value == NULL )
+      return prev;
+    if( prev )
+      free( prev );
+    return strdup( value );
+}
+
+char *win32_locale()
+{
+    static char *result = NULL;
+    static char *nothing = "";
+    char *p;
+    result = replace( result, setlocale( LC_CTYPE, NULL ));
+    if( (p = strrchr( result, '.' )) == NULL )
+        return nothing;
+
+	if( (++p - result) > 2 )
+        strcpy( result, "cp" );
+    else
+        *result = '\0';
+    strcat( result, p );
+    return result;
+}
+#endif
+#endif
+
 int main(int argc, char *argv[])
 {
     int ch, nopar = 0, fstringlen = 64;
@@ -100,6 +131,24 @@ int main(int argc, char *argv[])
     char *qstring, *fstring;
     int ret;
 
+#ifdef WIN32
+#ifdef HAVE_LIBIDN
+    const char *charset_str = "CHARSET";
+    if (getenv(charset_str)==NULL) {
+        setlocale(LC_ALL, "");
+        char * loc = win32_locale();
+        char * new_charset = malloc(strlen(charset_str)+strlen(loc) + 1);
+        new_charset[0] = 0;
+        strcat(new_charset, charset_str);
+        strcat(new_charset, "=");
+        strcat(new_charset, loc);
+        putenv(new_charset);
+		free(new_charset);
+		free(loc);
+    }
+#endif
+#endif
+	
 #ifdef ENABLE_NLS
     setlocale(LC_ALL, "");
     bindtextdomain(NLS_CAT_NAME, LOCALEDIR);
