@@ -14,11 +14,12 @@ BUILD REQUIREMENTS
 * To build: cd to the source directory and issue "mingw32-make".
 
 
-INTERNATIONALIZED DOMAIN NAMES SUPPORT
-To support IDNs you need:
+I18N SUPPORT (INTERNATIONALIZED DOMAIN NAMES AND NON-ASCII SERVER SUPPORT)
+To support i18n you need:
 * libiconv (which is included in standard MinGW installation)
 * libidn (precompiled binaries are available at ftp://ftp.gnu.org/gnu/libidn/)
-* To build: cd to the source directory and issue "mingw32-make HAVE_LIBIDN=1".
+* To build: cd to the source directory and issue:
+  mingw32-make HAVE_LIBIDN=1 HAVE_ICONV=1
 
 In order to obtain a standalone executable, libiconv and libidn 
 are statically linked. To change this, modify the relevant section in the Makefile.

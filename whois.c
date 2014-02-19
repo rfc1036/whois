@@ -69,6 +69,9 @@
 
 /* Global variables */
 int sockfd, verb = 0;
+#ifdef WIN32
+char *win32_charset = NULL;
+#endif
 
 #ifdef ALWAYS_HIDE_DISCL
 int hide_discl = HIDE_NOT_STARTED;
@@ -105,7 +108,7 @@ static char *replace( char *prev, char *value )
     return strdup( value );
 }
 
-char *win32_locale()
+char *get_win32_charset()
 {
     static char *result = NULL;
     static char *nothing = "";
@@ -133,18 +136,15 @@ int main(int argc, char *argv[])
 
 #ifdef WIN32
 #ifdef HAVE_LIBIDN
-    const char *charset_str = "CHARSET";
-    if (getenv(charset_str)==NULL) {
+    win32_charset = getenv("CHARSET");
+    if (getenv("CHARSET")==NULL) {   
         setlocale(LC_ALL, "");
-        char * loc = win32_locale();
-        char * new_charset = malloc(strlen(charset_str)+strlen(loc) + 1);
-        new_charset[0] = 0;
-        strcat(new_charset, charset_str);
-        strcat(new_charset, "=");
-        strcat(new_charset, loc);
-        putenv(new_charset);
-		free(new_charset);
-		free(loc);
+        win32_charset = get_win32_charset();
+        int env_len = strlen("CHARSET")+strlen(win32_charset) + 2;
+        char * env_var = malloc(env_len);
+        snprintf(env_var, env_len, "CHARSET=%s", win32_charset);
+        putenv(env_var);
+        free(env_var);
     }
 #endif
 #endif

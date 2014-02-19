@@ -24,7 +24,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <iconv.h>
+#ifndef WIN32
 #include <langinfo.h>
+#endif
 
 #include "utils.h"
 
@@ -33,6 +35,10 @@
 /* Global variables */
 iconv_t simple_recode_iconv_handle;
 const char *simple_recode_input_charset;
+
+#ifdef WIN32
+extern char* win32_charset;
+#endif
 
 /*
  * These value should be tuned to an acceptable compromise between memory
@@ -155,8 +161,13 @@ int recode_fputs(const char *s, FILE *stream)
 	return fputs(s, stream);
 
     if (simple_recode_iconv_handle == NULL) {
+#ifdef WIN32
+        simple_recode_iconv_handle = iconv_open(win32_charset,
+					 simple_recode_input_charset);
+#else
 	simple_recode_iconv_handle = iconv_open(nl_langinfo(CODESET),
 					 simple_recode_input_charset);
+#endif
 	if (simple_recode_iconv_handle == (iconv_t) - 1)
 	    err_sys("iconv_open");
     }
