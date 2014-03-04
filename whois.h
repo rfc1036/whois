@@ -9,6 +9,9 @@
 #define HIDE_NOT_STARTED -1
 
 /* prototypes */
+#ifdef WIN32
+typedef unsigned int socklen_t;
+#endif
 char *guess_server(const char *);
 const char *match_config_file(const char *);
 const char *whereas(const unsigned long);

@@ -24,6 +24,10 @@ mkpasswd_OBJECTS := mkpasswd.o utils.o
 # OS X
 #whois_LDADD += -liconv
 
+ifeq "$(OS)" "Windows_NT"
+LIBS += -lws2_32
+endif
+
 ifdef CONFIG_FILE
 DEFS += -DCONFIG_FILE=\"$(CONFIG_FILE)\"
 endif
@@ -35,6 +39,12 @@ endif
 ifdef HAVE_LIBIDN
 whois_LDADD += -lidn
 DEFS += -DHAVE_LIBIDN
+endif
+
+ifeq "$(OS)" "Windows_NT"
+ifdef HAVE_LIBIDN
+whois_LDADD += -liconv -static
+endif
 endif
 
 ifdef HAVE_ICONV
@@ -56,7 +66,11 @@ endif
 CPPFLAGS += $(DEFS) $(INCLUDES)
 
 ##############################################################################
+ifeq "$(OS)" "Windows_NT"
+all: Makefile.depend whois
+else
 all: Makefile.depend whois mkpasswd pos
+endif
 
 ##############################################################################
 %.o: %.c
@@ -110,13 +124,25 @@ install-mkpasswd: mkpasswd
 install-pos:
 	cd po && $(MAKE) install
 
+ifeq "$(OS)" "Windows_NT"
+distclean: clean
+	del /q po\whois.pot
+else
 distclean: clean
 	rm -f po/whois.pot
+endif
 
+ifeq "$(OS)" "Windows_NT"
+clean:
+	del /Q Makefile.depend as_del.h as32_del.h ip_del.h ip6_del.h \
+		tld_serv.h servers_charset.h *.o whois.exe
+	del /Q po\*.mo
+else
 clean:
 	rm -f Makefile.depend as_del.h as32_del.h ip_del.h ip6_del.h \
 		tld_serv.h servers_charset.h *.o whois mkpasswd
 	rm -f po/*.mo
+endif
 
 pos:
 	cd po && $(MAKE)

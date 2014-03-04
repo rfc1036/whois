@@ -27,6 +27,10 @@
 # endif
 #endif
 
+#ifdef WIN32
+# define HAVE_GETOPT_LONG
+#endif
+
 /* needs unistd.h */
 #if defined _POSIX_C_SOURCE && _POSIX_C_SOURCE >= 200112L
 # define HAVE_GETADDRINFO
