@@ -78,7 +78,7 @@
 .priv.at whois.nic.priv.at	# "unofficial" SLD
 .at	whois.nic.at
 .au	whois.audns.net.au
-.aw	NONE		# http://setar.aw/internet/domain-registration.html
+.aw	whois.nic.aw
 .ax	whois.ax	# www.ax
 .az	WEB http://www.nic.az/
 .ba	WEB http://www.nic.ba/stream/whois/
