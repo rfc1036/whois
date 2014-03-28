@@ -297,7 +297,7 @@
 #.mf
 .mg	whois.nic.mg
 .mh	NONE		# www.nic.net.mh
-.mk	WEB http://dns.marnet.net.mk/registar.php
+.mk	whois.marnet.mk
 .ml	whois.dot.ml	# www.point.ml
 .mm	NONE		# www.nic.mm
 .mn	whois.nic.mn
