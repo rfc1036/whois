@@ -285,7 +285,7 @@
 .sx	whois.sx
 .sy	whois.tld.sy
 .sz	NONE		# http://www.sispa.org.sz/
-.tc	whois.adamsnames.tc
+.tc	whois.meridiantld.net
 .td	WEB http://www.nic.td/
 .tf	whois.nic.tf
 .tg	WEB http://www.nic.tg/
@@ -331,7 +331,7 @@
 .vg	whois.adamsnames.tc
 .vi	WEB http://www.nic.vi/whoisform.htm
 .vn	WEB http://www.vnnic.vn/en/domain
-.vu	WEB http://www.vunic.vu/whois.html
+.vu	vunic.vu
 .wf	whois.nic.wf
 .ws	whois.website.ws
 .ye	NONE		# NIC? http://www.y.net.ye/services/domain_name.htm
