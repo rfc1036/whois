@@ -84,6 +84,9 @@ ip_del.h: ip_del_list make_ip_del.pl
 ip6_del.h: ip6_del_list make_ip6_del.pl
 	$(PERL) make_ip6_del.pl < $< > $@
 
+new_gtlds.h: new_gtlds_list make_new_gtlds.pl
+	$(PERL) make_new_gtlds.pl < $< > $@
+
 tld_serv.h: tld_serv_list make_tld_serv.pl
 	$(PERL) make_tld_serv.pl < $< > $@
 

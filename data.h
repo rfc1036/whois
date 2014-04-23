@@ -134,6 +134,11 @@ const struct as32_del as32_assign[] = {
     { 0, 0, NULL }
 };
 
+const char *new_gtlds[] = {
+#include "new_gtlds.h"
+    NULL
+};
+
 const char *tld_serv[] = {
 #include "tld_serv.h"
     NULL,	NULL
