@@ -70,25 +70,25 @@ mkpasswd: $(mkpasswd_OBJECTS)
 
 ##############################################################################
 version.h: debian/changelog make_version_h.pl
-	$(PERL) -w make_version_h.pl $< > $@
+	$(PERL) make_version_h.pl $< > $@
 
 as_del.h: as_del_list make_as_del.pl
-	$(PERL) -w make_as_del.pl < $< > $@
+	$(PERL) make_as_del.pl < $< > $@
 
 as32_del.h: as32_del_list make_as32_del.pl
-	$(PERL) -w make_as32_del.pl < $< > $@
+	$(PERL) make_as32_del.pl < $< > $@
 
 ip_del.h: ip_del_list make_ip_del.pl
-	$(PERL) -w make_ip_del.pl < $< > $@
+	$(PERL) make_ip_del.pl < $< > $@
 
 ip6_del.h: ip6_del_list make_ip6_del.pl
-	$(PERL) -w make_ip6_del.pl < $< > $@
+	$(PERL) make_ip6_del.pl < $< > $@
 
 tld_serv.h: tld_serv_list make_tld_serv.pl
-	$(PERL) -w make_tld_serv.pl < $< > $@
+	$(PERL) make_tld_serv.pl < $< > $@
 
 servers_charset.h: servers_charset_list make_servers_charset.pl
-	$(PERL) -w make_servers_charset.pl < $< > $@
+	$(PERL) make_servers_charset.pl < $< > $@
 
 ##############################################################################
 install: install-whois install-mkpasswd install-pos

@@ -1,14 +1,15 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
+use warnings;
 use strict;
 
 while (<>) {
 	chomp;
-	s/^\s*(.*)\s*$/$1/;
-	s/\s*#.*$//;
+	s/#.*$//;
+	s/^\s+//; s/\s+$//;
 	next if /^$/;
 
-	die "invalid line:\n$_\n"
+	die "format error:\n$_\n"
 		if not m#^([\da-fA-F]{4}):([\da-fA-F]{1,4})::/(\d+)\s+([\w\.]+)$#;
 	my $len = $3; my $s = $4;
 	my $i1 = $1; my $i2 = $2;
