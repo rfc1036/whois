@@ -344,7 +344,7 @@
 .org.za	WEB http://www.org.za/	# rwhois.org.za:4321 is restricted
 .web.za	whois.web.za
 .za	NONE		# http://www.zadna.org.za/annexure-d.html
-.zm	NONE		# http://www.zamnet.zm/ http://www.coppernet.zm/
+.zm	whois.nic.zm
 .zw	NONE		# http://www.zispa.co.zw/
 
 # AW means that I had to guess the whois server name, but I was not able
