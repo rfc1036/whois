@@ -17,8 +17,9 @@
  */
 
 /* for crypt, snprintf and strcasecmp */
-#define _XOPEN_SOURCE
-#define _BSD_SOURCE
+#define _XOPEN_SOURCE 500
+#define _BSD_SOURCE 1
+#define __EXTENSIONS__ 1
 
 /* System library */
 #include <stdio.h>
@@ -271,10 +272,9 @@ int main(int argc, char *argv[])
 	strcat(salt, salt_arg);
     } else {
 #ifdef HAVE_SOLARIS_CRYPT_GENSALT
-#error "This code path is untested on Solaris. Please send a patch."
 	salt = crypt_gensalt(salt_prefix, NULL);
 	if (!salt)
-		perror(stderr, "crypt_gensalt");
+		perror("crypt_gensalt");
 #elif defined HAVE_LINUX_CRYPT_GENSALT
 	void *entropy = get_random_bytes(64);
 
