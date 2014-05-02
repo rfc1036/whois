@@ -29,26 +29,24 @@
 9840	9871	whois.nic.or.kr
 9943	9982	whois.nic.or.kr
 9990	10021	whois.nic.ad.jp
-9216	10067	apnic
 10034	10073	whois.nic.or.kr
 10154	10198	whois.nic.or.kr
-10074	10239	apnic
+9216	10239	apnic
 12288	13311	ripe
 15360	16383	ripe
 17503	17534	whois.nic.ad.jp
 17567	17616	whois.nic.or.kr
 17673	17704	whois.nic.ad.jp
-17832	17880	whois.nic.or.kr
-17408	18431	apnic
+17832	17881	whois.nic.or.kr
 17930	17961	whois.nic.ad.jp
 18067	18098	whois.nic.ad.jp
 18121	18152	whois.nic.ad.jp
 18259	18290	whois.nic.ad.jp
-18259	18290	whois.nic.ad.jp
+17408	18431	apnic
 20480	21503	ripe
-23552	24575	apnic
 23552	23601	whois.nic.or.kr
 23612	23643	whois.nic.ad.jp
+23552	24575	apnic
 24576	25599	ripe
 26592	26623	lacnic
 27648	28671	lacnic
@@ -70,11 +68,10 @@
 59392	61439	ripe
 61440	61951	lacnic
 61952	62463	ripe
-63488	63999	apnic
-
-# private ASN block
-64512	65534	ripe
-
 # catch all: everything else comes from ARIN
 1	63487	arin
+63488	63999	apnic
+
+# documentation and private ASN block
+64496	65534	ripe
 
