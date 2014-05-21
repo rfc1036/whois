@@ -614,12 +614,17 @@ int hide_line(int *hiding, const char *const line)
 {
     int i;
 
-    if (*hiding == HIDE_DISABLED) {
+    if (*hiding == HIDE_TO_THE_END) {
+	return 1;
+    } else if (*hiding == HIDE_DISABLED) {
 	return 0;
     } else if (*hiding == HIDE_NOT_STARTED) {	/* looking for smtng to hide */
 	for (i = 0; hide_strings[i] != NULL; i += 2) {
 	    if (strneq(line, hide_strings[i], strlen(hide_strings[i]))) {
-		*hiding = i;			/* start hiding */
+		if (hide_strings[i + 1] == NULL)
+		    *hiding = HIDE_TO_THE_END;	/* all the remaining output */
+		else
+		    *hiding = i;		/* start hiding */
 		return 1;			/* and hide this line */
 	    }
 	}
@@ -699,7 +704,7 @@ char *do_query(const int sock, const char *query)
 	err_sys("fgets");
     fclose(fi);
 
-    if (hide > HIDE_NOT_STARTED)
+    if (hide > HIDE_NOT_STARTED && hide != HIDE_TO_THE_END)
 	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
 		   "Please upgrade this program.\n"));
 
@@ -797,7 +802,7 @@ char *query_afilias(const int sock, const char *query)
 	err_sys("fgets");
     fclose(fi);
 
-    if (hide > HIDE_NOT_STARTED)
+    if (hide > HIDE_NOT_STARTED && hide != HIDE_TO_THE_END)
 	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
 		   "Please upgrade this program.\n"));
 
