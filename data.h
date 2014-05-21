@@ -40,7 +40,7 @@ const char *hide_strings[] = {
     "Access to America Online", "time. By accessing",		/* AOL */
     "# Access and use restricted", "",				/* GANDI */
     "% The data in the WHOIS database of 1&1 Internet", "",
-    "The data in this whois database is", "",			/* enom */
+    "The data in this whois database is", NULL, /* enom, activeregistrar.com */
     "The Data in Moniker's WHOIS database", "of Moniker.",
     "The Data in OnlineNIC", "    By starting this query",
     "Interdomain's WHOIS", "DOES NOT SIGNIFY",
