@@ -102,6 +102,7 @@ struct ip_del {
 };
 
 const struct ip_del ip_assign[] = {
+#include "ip_del_recovered.h"
 #include "ip_del.h"
     { 0, 0, NULL }
 };
