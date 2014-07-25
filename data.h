@@ -60,13 +60,22 @@ const char *hide_strings[] = {
     "The .coop registry WHOIS", "VERIFICATION, NOR DO",
     "%% puntCAT Whois Server", "%% any time.",
     "This Registry database contains ONLY .EDU", "type: help",	/* edu */
-    "Access to INFO WHOIS information is provided", "",		/* Afilias */
+    "Access to AFILIAS WHOIS information is provided", "",	/* .info */
     "mTLD WHOIS LEGAL STATEMENT", "integrity of the database.",	/* .mobi */
     "Access to .ORG WHOIS information", "",
     "Access to RegistryPro's Whois", "All rights",		/* .pro */
     "Telnic, Ltd., the Registry Operator", "(b) harass any person;", /* .tel */
     "Tralliance, Inc., the Registry", "",			/* .travel */
     "Access to .XXX ICM REGISTRY WHOIS", "",			/* .xxx */
+
+    /* new gTLDs */
+    "Terms of Use: Users accessing the Donuts WHOIS", NULL,
+    "Terms of Use: Users accessing the United TLD WHOIS", NULL,
+    "Access to WHOIS information is provided", "",		/* Afilias */
+    "The  WHOIS information provided on this page", NULL, /* uniregistry.net */
+    "The whois information provided on this site", "",	/* mm-registry.com */
+    "; This data is provided by ", NULL,		/* ksregistry.net */
+    "This whois service is provided by CentralNic Ltd", "",
 
     /* ccTLDs */
     "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
