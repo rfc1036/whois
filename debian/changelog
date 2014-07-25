@@ -1,3 +1,11 @@
+whois (5.1.5) unstable; urgency=medium
+
+  * Updated the list of new gTLDs.
+  * Added some disclaimer suppression strings for the new gTLDs' servers.
+  * Updated one or more translations. (Closes: #756231)
+
+ -- Marco d'Itri <md@linux.it>  Sat, 02 Aug 2014 03:41:44 +0200
+
 whois (5.1.4) unstable; urgency=medium
 
   * Added the charset for whois.lacnic.net.
