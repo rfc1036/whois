@@ -1,3 +1,9 @@
+whois (5.1.5~bpo70+1) wheezy-backports; urgency=medium
+
+  * Rebuilt for wheezy.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 02 Aug 2014 03:48:51 +0200
+
 whois (5.1.5) unstable; urgency=medium
 
   * Updated the list of new gTLDs.
