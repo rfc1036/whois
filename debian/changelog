@@ -36,6 +36,12 @@ whois (5.1.2) unstable; urgency=medium
 
  -- Marco d'Itri <md@linux.it>  Fri, 02 May 2014 04:15:08 +0200
 
+whois (5.1.1~deb7u1) proposed-updates; urgency=low
+
+  * Rebuilt for wheezy.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 11 Jan 2014 03:16:43 +0100
+
 whois (5.1.1) unstable; urgency=medium
 
   * Added the servers for 29 "new" gTLDs.
