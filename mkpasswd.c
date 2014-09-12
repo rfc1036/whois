@@ -387,6 +387,7 @@ void generate_salt(char *const buf, const unsigned int len)
     for (i = 0; i < len; i++)
 	buf[i] = valid_salts[entropy[i] % (sizeof valid_salts - 1)];
     buf[i] = '\0';
+    free(entropy);
 }
 
 #else /* RANDOM_DEVICE */
