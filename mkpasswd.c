@@ -115,7 +115,7 @@ static const struct crypt_method methods[] = {
 };
 
 void generate_salt(char *const buf, const unsigned int len);
-void *get_random_bytes(const int len);
+void *get_random_bytes(const unsigned int len);
 void display_help(int error);
 void display_version(void);
 void display_methods(void);
@@ -351,7 +351,7 @@ int main(int argc, char *argv[])
 }
 
 #ifdef RANDOM_DEVICE
-void* get_random_bytes(const int count)
+void* get_random_bytes(const unsigned int count)
 {
     char *buf;
     int fd;
