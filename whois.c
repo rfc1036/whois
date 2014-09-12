@@ -772,6 +772,8 @@ char *query_afilias(const int sock, const char *query)
     free(temp);
 
     while (fgets(buf, sizeof(buf), fi)) {
+	/* If multiple attributes are returned then use the first result.
+	   This is not supposed to happen. */
 	if (state == 0 && strneq(buf, "Domain Name:", 12))
 	    state = 1;
 	if (state == 1 && strneq(buf, "Whois Server:", 13)) {
@@ -780,8 +782,11 @@ char *query_afilias(const int sock, const char *query)
 	    referral_server = strdup(p);
 	    if ((p = strpbrk(referral_server, "\r\n ")))
 		*p = '\0';
+	    state = 2;
 	}
 
+	/* the output must not be hidden or no data will be shown for
+	   host records and not-existing domains */
 	if (hide_line(&hide, buf))
 	    continue;
 
