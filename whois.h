@@ -29,7 +29,7 @@ unsigned long myinet_aton(const char *);
 unsigned long asn32_to_long(const char *);
 int isasciidigit(const char);
 int domcmp(const char *, const char *);
-int is_new_gtld(const char *);
+const char *is_new_gtld(const char *);
 int domfind(const char *, const char *[]);
 char *normalize_domain(const char *);
 char *convert_6to4(const char *);

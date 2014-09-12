@@ -392,7 +392,7 @@ char *guess_server(const char *s)
 {
     unsigned long ip, as32;
     unsigned int i;
-    const char *colon;
+    const char *colon, *tld;
 
     /* IPv6 address */
     if ((colon = strchr(s, ':'))) {
@@ -460,16 +460,9 @@ char *guess_server(const char *s)
 	    return strdup(tld_serv[i + 1]);
 
     /* use the default server name for "new" gTLDs */
-    if (is_new_gtld(s)) {
-	char *server;
-	const char *p, *tld = NULL;
-
-	for (p = s; *p; p++)		/* look for the TLD */
-	    if (*p == '.')
-		tld = p;
-
-	server = malloc(strlen("whois.nic") + strlen(tld) + 1);
-	strcpy(server, "whois.nic");
+    if ((tld = is_new_gtld(s))) {
+	char *server = malloc(strlen("whois.nic.") + strlen(tld) + 1);
+	strcpy(server, "whois.nic.");
 	strcat(server, tld);
 	return(server);
     }
@@ -983,13 +976,13 @@ int domcmp(const char *dom, const char *tld)
     return 0;
 }
 
-int is_new_gtld(const char *s)
+const char *is_new_gtld(const char *s)
 {
     int i;
 
     for (i = 0; new_gtlds[i]; i++)
 	if (domcmp(s, new_gtlds[i]))
-	    return 1;
+	    return new_gtlds[i] + 1;
 
     return 0;
 }
