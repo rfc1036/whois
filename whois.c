@@ -255,8 +255,8 @@ int main(int argc, char *argv[])
     if (getenv("WHOIS_HIDE"))
 	hide_discl = HIDE_NOT_STARTED;
 
-    /* -v or -t has been used */
-    if (!server && !*qstring)
+    /* -v or -t or long flags have been used */
+    if (!server && (!*qstring || *fstring))
 	server = strdup("whois.ripe.net");
 
     if (*qstring) {
