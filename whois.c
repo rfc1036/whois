@@ -71,23 +71,25 @@ int hide_discl = HIDE_DISABLED;
 
 const char *client_tag = IDSTRING;
 
-#ifdef HAVE_GETOPT_LONG
-static const struct option longopts[] = {
-    {"version",	no_argument,		NULL, 1  },
-    {"verbose",	no_argument,		NULL, 2  },
-    {"help",	no_argument,		NULL, 3  },
-    {"server",	required_argument,	NULL, 'h'},
-    {"host",	required_argument,	NULL, 'h'},
-    {"port",	required_argument,	NULL, 'p'},
-    {NULL,	0,			NULL, 0  }
-};
-#else
+#ifndef HAVE_GETOPT_LONG
 extern char *optarg;
 extern int optind;
 #endif
 
 int main(int argc, char *argv[])
 {
+#ifdef HAVE_GETOPT_LONG
+    const struct option longopts[] = {
+	{"version",		no_argument,		NULL, 1  },
+	{"verbose",		no_argument,		NULL, 2  },
+	{"help",		no_argument,		NULL, 3  },
+	{"server",		required_argument,	NULL, 'h'},
+	{"host",		required_argument,	NULL, 'h'},
+	{"port",		required_argument,	NULL, 'p'},
+	{NULL,			0,			NULL, 0  }
+    };
+#endif
+
     int ch, nopar = 0, fstringlen = 64;
     const char *server = NULL, *port = NULL;
     char *qstring, *fstring;
