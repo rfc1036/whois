@@ -80,14 +80,50 @@ int main(int argc, char *argv[])
 {
 #ifdef HAVE_GETOPT_LONG
     const struct option longopts[] = {
+	/* program flags */
 	{"version",		no_argument,		NULL, 1  },
 	{"verbose",		no_argument,		NULL, 2  },
 	{"help",		no_argument,		NULL, 3  },
 	{"server",		required_argument,	NULL, 'h'},
 	{"host",		required_argument,	NULL, 'h'},
 	{"port",		required_argument,	NULL, 'p'},
+	/* long RIPE flags */
+	{"exact",		required_argument,	NULL, 'x'},
+	{"all-more",		required_argument,	NULL, 'M'},
+	{"one-more",		required_argument,	NULL, 'm'},
+	{"all-less",		required_argument,	NULL, 'L'},
+	{"one-less",		required_argument,	NULL, 'l'},
+	{"reverse-domain",	required_argument,	NULL, 'd'},
+	{"irt",			required_argument,	NULL, 'c'},
+	{"abuse-contact",	no_argument,		NULL, 'b'},
+	{"brief",		no_argument,		NULL, 'F'},
+	{"primary-keys",	no_argument,		NULL, 'K'},
+	{"persistent-connection", no_argument,		NULL, 'k'},
+	{"no-referenced",	no_argument,		NULL, 'r'},
+	{"no-filtering",	no_argument,		NULL, 'B'},
+	{"no-grouping",		no_argument,		NULL, 'G'},
+	{"select-types",	no_argument,		NULL, 'T'},
+	{"all-sources",		no_argument,		NULL, 'a'},
+	{"sources",		no_argument,		NULL, 's'},
+	{"types",		no_argument,		NULL, 12 }, /* -q */
+	{"ripe-version",	no_argument,		NULL, 12 }, /* -q */
+	{"list-sources",	no_argument,		NULL, 12 }, /* -q */
+	{"template",		required_argument,	NULL, 't'},
+	{"ripe-verbose",	required_argument,	NULL, 'v'},
+	/* long RIPE flags with no short equivalent */
+	{"list-versions",	no_argument,		NULL, 10 },
+	{"diff-versions",	required_argument,	NULL, 11 },
+	{"show-version",	required_argument,	NULL, 11 },
+	{"resource",		no_argument,		NULL, 10 },
+	{"show-personal",	no_argument,		NULL, 10 },
+	{"no-personal",		no_argument,		NULL, 10 },
+	{"show-tag-info",	no_argument,		NULL, 10 },
+	{"no-tag-info",		no_argument,		NULL, 10 },
+	{"filter-tag-include",	required_argument,	NULL, 11 },
+	{"filter-tag-exclude",	required_argument,	NULL, 11 },
 	{NULL,			0,			NULL, 0  }
     };
+    int longindex;
 #endif
 
     int ch, nopar = 0, fstringlen = 64;
@@ -108,7 +144,8 @@ int main(int argc, char *argv[])
     argv = merge_args(getenv("WHOIS_OPTIONS"), argv, &argc);
 
     while ((ch = GETOPT_LONGISH(argc, argv,
-		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x", longopts, 0)) > 0) {
+		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x",
+		longopts, &longindex)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
 	    if (strlen(fstring) + 3 > fstringlen) {
@@ -129,8 +166,37 @@ int main(int argc, char *argv[])
 		nopar = 1;
 	    continue;
 	}
-	/* program flags */
 	switch (ch) {
+#ifdef HAVE_GETOPT_LONG
+	/* long RIPE flags with no short equivalent */
+	case 12:
+		nopar = 1;
+		/* fall through */
+	case 10:
+	    {
+		int flaglen = 2 + strlen(longopts[longindex].name) + 1;
+		if (strlen(fstring) + flaglen > fstringlen) {
+		    fstringlen += flaglen;
+		    fstring = realloc(fstring, fstringlen + 1);
+		}
+		sprintf(fstring + strlen(fstring), "--%s ",
+			longopts[longindex].name);
+	    }
+	    break;
+	case 11:
+	    {
+		int flaglen = 2 + strlen(longopts[longindex].name) + 1
+		    + strlen(optarg) + 1;
+		if (strlen(fstring) + flaglen > fstringlen) {
+		    fstringlen += flaglen;
+		    fstring = realloc(fstring, fstringlen + 1);
+		}
+		sprintf(fstring + strlen(fstring), "--%s %s ",
+			longopts[longindex].name, optarg);
+	    }
+	    break;
+#endif
+	/* program flags */
 	case 'h':
 	    server = strdup(optarg);
 	    break;
