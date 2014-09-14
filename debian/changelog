@@ -1,3 +1,9 @@
+whois (5.2.0~bpo70+1) wheezy-backports; urgency=medium
+
+  * Rebuilt for wheezy.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 14 Sep 2014 13:30:49 +0200
+
 whois (5.2.0) unstable; urgency=medium
 
   * Implemented support for the long RIPE flags.
