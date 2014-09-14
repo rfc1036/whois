@@ -71,23 +71,61 @@ int hide_discl = HIDE_DISABLED;
 
 const char *client_tag = IDSTRING;
 
-#ifdef HAVE_GETOPT_LONG
-static const struct option longopts[] = {
-    {"version",	no_argument,		NULL, 1  },
-    {"verbose",	no_argument,		NULL, 2  },
-    {"help",	no_argument,		NULL, 3  },
-    {"server",	required_argument,	NULL, 'h'},
-    {"host",	required_argument,	NULL, 'h'},
-    {"port",	required_argument,	NULL, 'p'},
-    {NULL,	0,			NULL, 0  }
-};
-#else
+#ifndef HAVE_GETOPT_LONG
 extern char *optarg;
 extern int optind;
 #endif
 
 int main(int argc, char *argv[])
 {
+#ifdef HAVE_GETOPT_LONG
+    const struct option longopts[] = {
+	/* program flags */
+	{"version",		no_argument,		NULL, 1  },
+	{"verbose",		no_argument,		NULL, 2  },
+	{"help",		no_argument,		NULL, 3  },
+	{"server",		required_argument,	NULL, 'h'},
+	{"host",		required_argument,	NULL, 'h'},
+	{"port",		required_argument,	NULL, 'p'},
+	/* long RIPE flags */
+	{"exact",		required_argument,	NULL, 'x'},
+	{"all-more",		required_argument,	NULL, 'M'},
+	{"one-more",		required_argument,	NULL, 'm'},
+	{"all-less",		required_argument,	NULL, 'L'},
+	{"one-less",		required_argument,	NULL, 'l'},
+	{"reverse-domain",	required_argument,	NULL, 'd'},
+	{"irt",			required_argument,	NULL, 'c'},
+	{"abuse-contact",	no_argument,		NULL, 'b'},
+	{"brief",		no_argument,		NULL, 'F'},
+	{"primary-keys",	no_argument,		NULL, 'K'},
+	{"persistent-connection", no_argument,		NULL, 'k'},
+	{"no-referenced",	no_argument,		NULL, 'r'},
+	{"no-filtering",	no_argument,		NULL, 'B'},
+	{"no-grouping",		no_argument,		NULL, 'G'},
+	{"select-types",	no_argument,		NULL, 'T'},
+	{"all-sources",		no_argument,		NULL, 'a'},
+	{"sources",		no_argument,		NULL, 's'},
+	{"types",		no_argument,		NULL, 12 }, /* -q */
+	{"ripe-version",	no_argument,		NULL, 12 }, /* -q */
+	{"list-sources",	no_argument,		NULL, 12 }, /* -q */
+	{"template",		required_argument,	NULL, 't'},
+	{"ripe-verbose",	required_argument,	NULL, 'v'},
+	/* long RIPE flags with no short equivalent */
+	{"list-versions",	no_argument,		NULL, 10 },
+	{"diff-versions",	required_argument,	NULL, 11 },
+	{"show-version",	required_argument,	NULL, 11 },
+	{"resource",		no_argument,		NULL, 10 },
+	{"show-personal",	no_argument,		NULL, 10 },
+	{"no-personal",		no_argument,		NULL, 10 },
+	{"show-tag-info",	no_argument,		NULL, 10 },
+	{"no-tag-info",		no_argument,		NULL, 10 },
+	{"filter-tag-include",	required_argument,	NULL, 11 },
+	{"filter-tag-exclude",	required_argument,	NULL, 11 },
+	{NULL,			0,			NULL, 0  }
+    };
+    int longindex;
+#endif
+
     int ch, nopar = 0, fstringlen = 64;
     const char *server = NULL, *port = NULL;
     char *qstring, *fstring;
@@ -106,7 +144,8 @@ int main(int argc, char *argv[])
     argv = merge_args(getenv("WHOIS_OPTIONS"), argv, &argc);
 
     while ((ch = GETOPT_LONGISH(argc, argv,
-		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x", longopts, 0)) > 0) {
+		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x",
+		longopts, &longindex)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
 	    if (strlen(fstring) + 3 > fstringlen) {
@@ -127,8 +166,37 @@ int main(int argc, char *argv[])
 		nopar = 1;
 	    continue;
 	}
-	/* program flags */
 	switch (ch) {
+#ifdef HAVE_GETOPT_LONG
+	/* long RIPE flags with no short equivalent */
+	case 12:
+		nopar = 1;
+		/* fall through */
+	case 10:
+	    {
+		int flaglen = 2 + strlen(longopts[longindex].name) + 1;
+		if (strlen(fstring) + flaglen > fstringlen) {
+		    fstringlen += flaglen;
+		    fstring = realloc(fstring, fstringlen + 1);
+		}
+		sprintf(fstring + strlen(fstring), "--%s ",
+			longopts[longindex].name);
+	    }
+	    break;
+	case 11:
+	    {
+		int flaglen = 2 + strlen(longopts[longindex].name) + 1
+		    + strlen(optarg) + 1;
+		if (strlen(fstring) + flaglen > fstringlen) {
+		    fstringlen += flaglen;
+		    fstring = realloc(fstring, fstringlen + 1);
+		}
+		sprintf(fstring + strlen(fstring), "--%s %s ",
+			longopts[longindex].name, optarg);
+	    }
+	    break;
+#endif
+	/* program flags */
 	case 'h':
 	    server = strdup(optarg);
 	    break;
@@ -187,8 +255,8 @@ int main(int argc, char *argv[])
     if (getenv("WHOIS_HIDE"))
 	hide_discl = HIDE_NOT_STARTED;
 
-    /* -v or -t has been used */
-    if (!server && !*qstring)
+    /* -v or -t or long flags have been used */
+    if (!server && (!*qstring || *fstring))
 	server = strdup("whois.ripe.net");
 
     if (*qstring) {
@@ -392,7 +460,7 @@ char *guess_server(const char *s)
 {
     unsigned long ip, as32;
     unsigned int i;
-    const char *colon;
+    const char *colon, *tld;
 
     /* IPv6 address */
     if ((colon = strchr(s, ':'))) {
@@ -460,16 +528,9 @@ char *guess_server(const char *s)
 	    return strdup(tld_serv[i + 1]);
 
     /* use the default server name for "new" gTLDs */
-    if (is_new_gtld(s)) {
-	char *server;
-	const char *p, *tld = NULL;
-
-	for (p = s; *p; p++)		/* look for the TLD */
-	    if (*p == '.')
-		tld = p;
-
-	server = malloc(strlen("whois.nic") + strlen(tld) + 1);
-	strcpy(server, "whois.nic");
+    if ((tld = is_new_gtld(s))) {
+	char *server = malloc(strlen("whois.nic.") + strlen(tld) + 1);
+	strcpy(server, "whois.nic.");
 	strcat(server, tld);
 	return(server);
     }
@@ -779,6 +840,8 @@ char *query_afilias(const int sock, const char *query)
     free(temp);
 
     while (fgets(buf, sizeof(buf), fi)) {
+	/* If multiple attributes are returned then use the first result.
+	   This is not supposed to happen. */
 	if (state == 0 && strneq(buf, "Domain Name:", 12))
 	    state = 1;
 	if (state == 1 && strneq(buf, "Whois Server:", 13)) {
@@ -787,8 +850,11 @@ char *query_afilias(const int sock, const char *query)
 	    referral_server = strdup(p);
 	    if ((p = strpbrk(referral_server, "\r\n ")))
 		*p = '\0';
+	    state = 2;
 	}
 
+	/* the output must not be hidden or no data will be shown for
+	   host records and not-existing domains */
 	if (hide_line(&hide, buf))
 	    continue;
 
@@ -983,13 +1049,13 @@ int domcmp(const char *dom, const char *tld)
     return 0;
 }
 
-int is_new_gtld(const char *s)
+const char *is_new_gtld(const char *s)
 {
     int i;
 
     for (i = 0; new_gtlds[i]; i++)
 	if (domcmp(s, new_gtlds[i]))
-	    return 1;
+	    return new_gtlds[i] + 1;
 
     return 0;
 }

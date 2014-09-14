@@ -115,7 +115,7 @@ static const struct crypt_method methods[] = {
 };
 
 void generate_salt(char *const buf, const unsigned int len);
-void *get_random_bytes(const int len);
+void *get_random_bytes(const unsigned int len);
 void display_help(int error);
 void display_version(void);
 void display_methods(void);
@@ -351,10 +351,10 @@ int main(int argc, char *argv[])
 }
 
 #ifdef RANDOM_DEVICE
-void* get_random_bytes(const int count)
+void* get_random_bytes(const unsigned int count)
 {
     char *buf;
-    int fd;
+    int fd, bytes_read;
 
     buf = NOFAIL(malloc(count));
     fd = open(RANDOM_DEVICE, O_RDONLY);
@@ -362,11 +362,13 @@ void* get_random_bytes(const int count)
 	perror("open(" RANDOM_DEVICE ")");
 	exit(2);
     }
-    if (read(fd, buf, count) != count) {
-	if (count < 0)
-	    perror("read(" RANDOM_DEVICE ")");
-	else
-	    fprintf(stderr, "Short read of %s.\n", RANDOM_DEVICE);
+    bytes_read = read(fd, buf, count);
+    if (bytes_read < 0) {
+	perror("read(" RANDOM_DEVICE ")");
+	exit(2);
+    }
+    if (bytes_read != count) {
+	fprintf(stderr, "Short read of %s.\n", RANDOM_DEVICE);
 	exit(2);
     }
     close(fd);
@@ -385,6 +387,7 @@ void generate_salt(char *const buf, const unsigned int len)
     for (i = 0; i < len; i++)
 	buf[i] = valid_salts[entropy[i] % (sizeof valid_salts - 1)];
     buf[i] = '\0';
+    free(entropy);
 }
 
 #else /* RANDOM_DEVICE */

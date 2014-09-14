@@ -1,3 +1,15 @@
+whois (5.2.0) unstable; urgency=medium
+
+  * Implemented support for the long RIPE flags.
+  * "Fixed" some harmless bugs discovered with a Coverity scan.
+  * Default to whois.ripe.net when using long flags.
+  * Updated the list of new gTLDs.
+  * Added a new ASN allocation.
+  * Added new recovered IPv4 allocations.
+  * Updated make_version_h.pl to support Debian binNMUs. (Closes: #761318)
+
+ -- Marco d'Itri <md@linux.it>  Sat, 13 Sep 2014 05:05:16 +0200
+
 whois (5.1.5~bpo70+1) wheezy-backports; urgency=medium
 
   * Rebuilt for wheezy.
@@ -41,12 +53,6 @@ whois (5.1.2) unstable; urgency=medium
   * mkpasswd ported to Solaris/Dyson, patch courtesy of Igor Pashev.
 
  -- Marco d'Itri <md@linux.it>  Fri, 02 May 2014 04:15:08 +0200
-
-whois (5.1.1~deb7u1) proposed-updates; urgency=low
-
-  * Rebuilt for wheezy.
-
- -- Marco d'Itri <md@linux.it>  Sat, 11 Jan 2014 03:16:43 +0100
 
 whois (5.1.1) unstable; urgency=medium
 

@@ -2,17 +2,18 @@
 
 use warnings;
 use strict;
+use autodie;
 
 my $changelog = $ARGV[0] or die "Usage: $0 debian/changelog\n";
 
-open(my $fh, '<', $changelog) or die "open($changelog): $!";
+open(my $fh, '<', $changelog);
 my $line = <$fh>;
-close($fh) or die "close($changelog): $!";
+close($fh);
 
 my ($ver) = $line =~ /^whois \s+ \( ( [^\)]+ ) \) \s+ \S+/x;
 die "Version number not found in $changelog!\n" if not $ver;
 
-$ver =~ s/ ( ~bpo\d+\+\d+ | ~deb\d+.* | ubuntu\d+ | \+dyson\d+ ) $//x;
+$ver =~ s/ ( ~bpo\d+\+\d+ | \+b\d+ | ~deb\d+.* | ubuntu\d+ | \+dyson\d+ ) $//x;
 
 # The version number must not deviate from this format or the -V option
 # to RIPE-like servers will break. If needed, update the previous regexp.

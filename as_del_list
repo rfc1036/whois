@@ -87,7 +87,7 @@
 61952	62463	ripe
 # catch all: everything else comes from ARIN
 1	63487	arin
-63488	63999	apnic
+63488	64098	apnic
 
 # documentation and private ASN block
 64496	65534	ripe
