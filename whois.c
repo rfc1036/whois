@@ -524,7 +524,7 @@ char *guess_server(const char *s)
 
     /* check the TLDs list */
     for (i = 0; tld_serv[i]; i += 2)
-	if (domcmp(s, tld_serv[i]))
+	if (in_domain(s, tld_serv[i]))
 	    return strdup(tld_serv[i + 1]);
 
     /* use the default server name for "new" gTLDs */
