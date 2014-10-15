@@ -442,7 +442,7 @@ const char *match_config_file(const char *s)
 	}
 	regfree(&re);
 #else
-	if (domcmp(s, pattern)) {
+	if (endstrcaseeq(s, pattern)) {
 	    fclose(fp);
 	    return strdup(server);
 	}
@@ -553,7 +553,7 @@ char *guess_server(const char *s)
 
 	/* search for strings at the end of the word */
 	for (i = 0; nic_handles_post[i]; i += 2)
-	    if (domcmp(s, nic_handles_post[i]))
+	    if (endstrcaseeq(s, nic_handles_post[i]))
 		return strdup(nic_handles_post[i + 1]);
 
 	/* it's probably a network name */
@@ -1050,18 +1050,24 @@ int japanese_locale(void) {
 }
 
 /* check if dom ends with tld */
-int domcmp(const char *dom, const char *tld)
+int endstrcaseeq(const char *dom, const char *tld)
 {
-    const char *p, *q;
+    size_t dom_len, tld_len;
+    const char *p = NULL;
 
-    for (p = dom; *p; p++); p--;	/* move to the last char */
-    for (q = tld; *q; q++); q--;
-    while (p >= dom && q >= tld && tolower(*p) == *q) {	/* compare backwards */
-	if (q == tld)			/* start of the second word? */
-	    return 1;
-	p--; q--;
-    }
-    return 0;
+    if ((dom_len = strlen(dom)) == 0)
+	return 0;
+
+    if ((tld_len = strlen(tld)) == 0)
+	return 0;
+
+    /* dom cannot be shorter than what we are looking for */
+    if (tld_len > dom_len)
+	return 0;
+
+    p = dom + dom_len - tld_len;
+
+    return strcaseeq(p, tld);
 }
 
 /* check if dom is a subdomain of tld */
