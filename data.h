@@ -159,6 +159,11 @@ const char *tld_serv[] = {
     NULL,	NULL
 };
 
+const char *nic_handles_post[] = {
+#include "nic_handles.h"
+    NULL,	NULL
+};
+
 #ifdef HAVE_ICONV
 struct server_charset {
     const char *name;

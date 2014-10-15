@@ -541,6 +541,12 @@ char *guess_server(const char *s)
 	for (i = 0; nic_handles[i]; i += 2)
 	    if (strncaseeq(s, nic_handles[i], strlen(nic_handles[i])))
 		return strdup(nic_handles[i + 1]);
+
+	/* search for strings at the end of the word */
+	for (i = 0; nic_handles_post[i]; i += 2)
+	    if (domcmp(s, nic_handles_post[i]))
+		return strdup(nic_handles_post[i + 1]);
+
 	/* it's probably a network name */
 	return strdup("");
     }

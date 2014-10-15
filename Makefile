@@ -87,6 +87,9 @@ ip6_del.h: ip6_del_list make_ip6_del.pl
 new_gtlds.h: new_gtlds_list make_new_gtlds.pl
 	$(PERL) make_new_gtlds.pl < $< > $@
 
+nic_handles.h: nic_handles_list make_nic_handles.pl
+	$(PERL) make_nic_handles.pl < $< > $@
+
 tld_serv.h: tld_serv_list make_tld_serv.pl
 	$(PERL) make_tld_serv.pl < $< > $@
 
