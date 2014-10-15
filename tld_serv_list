@@ -156,7 +156,7 @@
 .gm	WEB http://www.nic.gm/htmlpages/whois.htm
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	WEB https://www.dom-enic.com/whois.html
-.gq	NONE		# NO NIC http://www.getesa.gq/
+.gq	whois.dominio.gq
 .gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/who_is.html
@@ -227,7 +227,7 @@
 .mw	WEB http://www.registrar.mw/
 .mx	whois.mx
 .my	whois.mynic.my
-.mz	NONE		# NIC? www.uem.mz
+.mz	whois.nic.mz
 .na	whois.na-nic.com.na
 .nc	whois.nc
 .ne	NONE		# NIC? http://www.intnet.ne
