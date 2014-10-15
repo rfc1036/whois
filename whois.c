@@ -1049,6 +1049,32 @@ int domcmp(const char *dom, const char *tld)
     return 0;
 }
 
+/* check if dom is a subdomain of tld */
+int in_domain(const char *dom, const char *tld)
+{
+    size_t dom_len, tld_len;
+    const char *p = NULL;
+
+    if ((dom_len = strlen(dom)) == 0)
+	return 0;
+
+    if ((tld_len = strlen(tld)) == 0)
+	return 0;
+
+    /* dom cannot be shorter than what we are looking for */
+    /* -1 to ignore dom containing just a dot and tld */
+    if (tld_len >= dom_len - 1)
+	return 0;
+
+    p = dom + dom_len - tld_len;
+
+    /* fail if the character before tld is not a dot */
+    if (*(p - 1) != '.')
+	return 0;
+
+    return strcaseeq(p, tld);
+}
+
 const char *is_new_gtld(const char *s)
 {
     int i;
