@@ -4,12 +4,15 @@
 # Any exceptions can be handled in tld_serv_list as usual, since it will
 # be checked first.
 
+abogado
 academy
 accountants
 active
 actor
 agency
 airforce
+allfinanz
+alsace
 archi
 army
 associates
@@ -18,6 +21,7 @@ auction
 audio
 autos
 axa
+band
 bar
 bargains
 bayern
@@ -35,12 +39,14 @@ bnpparibas
 boo
 boutique
 brussels
+budapest
 build
 builders
 business
 buzz
 bzh
 cab
+cal
 camera
 camp
 cancerresearch
@@ -51,13 +57,16 @@ cards
 care
 career
 careers
+casa
 cash
 catering
 center
 ceo
 cern
+channel
 cheap
 christmas
+chrome
 church
 citic
 city
@@ -84,6 +93,7 @@ cool
 country
 credit
 creditcard
+crs
 cruises
 cuisinella
 cymru
@@ -106,6 +116,7 @@ discount
 dnp
 domains
 durban
+dvag
 eat
 education
 email
@@ -130,7 +141,10 @@ fishing
 fitness
 flights
 florist
+flsmidth
+fly
 foo
+forsale
 foundation
 frl
 frogans
@@ -145,11 +159,13 @@ gift
 gifts
 gives
 glass
+gle
 global
 globo
 gmail
 gmo
 gmx
+google
 gop
 graphics
 gratis
@@ -173,6 +189,7 @@ host
 hosting
 house
 how
+ibm
 immo
 immobilien
 industries
@@ -234,6 +251,7 @@ net
 network
 neustar
 new
+nexus
 ngo
 nhk
 ninja
@@ -262,10 +280,13 @@ pink
 pizza
 place
 plumbing
+pohl
+poker
 praxi
 press
 prod
 productions
+prof
 properties
 property
 pub
@@ -287,6 +308,7 @@ restaurant
 reviews
 rich
 rio
+rip
 rocks
 rodeo
 rsvp
@@ -334,6 +356,7 @@ town
 toys
 trade
 training
+tui
 university
 uno
 uol
@@ -357,12 +380,15 @@ watch
 webcam
 website
 wed
+wedding
 whoswho
 wien
 wiki
 williamhill
 wme
+work
 works
+world
 wtc
 wtf
 xn--1qqw23a
@@ -390,16 +416,21 @@ xn--mgbab2bd
 xn--ngbc5azd
 xn--nqv7f
 xn--nqv7fs00ema
+xn--p1acf
 xn--q9jyb4c
 xn--rhqv96g
 xn--ses554g
 xn--unup4y
+xn--vermgensberater-ctb
+xn--vermgensberatung-pwb
 xn--vhquv
 xn--xhq521b
 xn--zfr164b
 xyz
 yachts
 yandex
+yoga
 yokohama
 youtube
+zip
 zone
