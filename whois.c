@@ -1261,17 +1261,17 @@ char *convert_inaddr(const char *s)
     if (errno || a < 0 || a > 255 || *endptr != '.')
 	return strdup("0.0.0.0");
 
-    if (domcmp(endptr + 1, ".in-addr.arpa")) {
+    if (in_domain(endptr + 1, "in-addr.arpa")) {
 	b = strtol(endptr + 1, &endptr, 10);			/* 1.2. */
 	if (errno || b < 0 || b > 255 || *endptr != '.')
 	    return strdup("0.0.0.0");
 
-	if (domcmp(endptr + 1, ".in-addr.arpa")) {
+	if (in_domain(endptr + 1, "in-addr.arpa")) {
 	    c = strtol(endptr + 1, &endptr, 10);		/* 1.2.3. */
 	    if (errno || c < 0 || c > 255 || *endptr != '.')
 		return strdup("0.0.0.0");
 
-	    if (domcmp(endptr + 1, ".in-addr.arpa"))
+	    if (in_domain(endptr + 1, "in-addr.arpa"))
 		return strdup("0.0.0.0");
 	} else {
 	    c = b; b = a; a = 0;
