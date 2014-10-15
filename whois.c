@@ -1247,7 +1247,11 @@ char *convert_inaddr(const char *s)
 
 	    if (domcmp(endptr + 1, ".in-addr.arpa"))
 		return strdup("0.0.0.0");
+	} else {
+	    c = b; b = a; a = 0;
 	}
+    } else {
+	c = a; a = 0;
     }
 
     new = malloc(sizeof("255.255.255.255"));
