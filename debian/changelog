@@ -1,3 +1,13 @@
+whois (5.2.1) unstable; urgency=medium
+
+  * Added the .aw and .zm TLD servers.
+  * Added the charset for whois.domain.kg.
+  * Updated the list of new gTLDs.
+  * Queries for bare TLDs will be directed to whois.iana.org.
+    (Closes: #763833)
+
+ -- Marco d'Itri <md@linux.it>  Thu, 16 Oct 2014 02:01:20 +0200
+
 whois (5.2.0) unstable; urgency=medium
 
   * Implemented support for the long RIPE flags.
