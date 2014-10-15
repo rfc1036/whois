@@ -1080,8 +1080,8 @@ const char *is_new_gtld(const char *s)
     int i;
 
     for (i = 0; new_gtlds[i]; i++)
-	if (domcmp(s, new_gtlds[i]))
-	    return new_gtlds[i] + 1;
+	if (in_domain(s, new_gtlds[i]))
+	    return new_gtlds[i];
 
     return 0;
 }

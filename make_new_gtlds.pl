@@ -11,6 +11,6 @@ while (<>) {
 
 	die "format error: $_" if not /^((?:xn--)?[a-z0-9]+)$/;
 
-	print qq|    ".$_",\n|;
+	print qq|    "$_",\n|;
 }
 
