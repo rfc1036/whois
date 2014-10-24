@@ -1110,7 +1110,7 @@ const char *is_new_gtld(const char *s)
 /*
  * Attempt to normalize a query by removing trailing dots and whitespace,
  * then convert the domain to punycode.
- * The function assumes that the domain is the last token of they query.
+ * The function assumes that the domain is the last token of the query.
  * Returns a malloc'ed string which needs to be freed by the caller.
  */
 char *normalize_domain(const char *dom)
@@ -1121,10 +1121,15 @@ char *normalize_domain(const char *dom)
 #endif
 
     ret = strdup(dom);
-    /* eat trailing dots and blanks */
-    p = ret + strlen(ret);
-    for (; *p == '.' || *p == ' ' || *p == '\t' || p == ret; p--)
+    /* start from the last character */
+    p = ret + strlen(ret) - 1;
+    /* and then eat trailing dots and blanks */
+    while (p > ret) {
+	if (!(*p == '.' || *p == ' ' || *p == '\t'))
+	    break;
 	*p = '\0';
+	p--;
+    }
 
 #ifdef HAVE_LIBIDN
     /* find the start of the last word if there are spaces in the query */
