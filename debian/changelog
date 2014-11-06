@@ -1,3 +1,12 @@
+whois (5.2.2) unstable; urgency=medium
+
+  * Fixed the code that removes trailing dots. (Closes: #763834)
+  * Added the .xn--d1alf (.мкд, Macedonia) and .xn--node (.გე, Georgia)
+    TLD servers.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 06 Nov 2014 03:47:43 +0100
+
 whois (5.2.1) unstable; urgency=medium
 
   * Added the .aw and .zm TLD servers.
