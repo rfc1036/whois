@@ -81,6 +81,15 @@
 # define RANDOM_DEVICE "/dev/urandom"
 #endif
 
+/* use arc4random_buf instead if it is available */
+#if (defined __FreeBSD__ && __FreeBSD__ >= 9) || \
+    (defined __NetBSD__  && __NetBSD_Version__ >= 600000000) || \
+    (defined OpenBSD && OpenBSD >= 200805) || \
+    (defined __APPLE__ && defined __MACH__)
+# define HAVE_ARC4RANDOM_BUF
+# undef RANDOM_DEVICE
+#endif
+
 #ifdef ENABLE_NLS
 # ifndef NLS_CAT_NAME
 #  define NLS_CAT_NAME   "whois"

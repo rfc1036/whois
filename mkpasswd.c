@@ -383,20 +383,27 @@ void* get_random_bytes(const unsigned int count)
 }
 #endif
 
-#ifdef RANDOM_DEVICE
+#if defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF
 
 void generate_salt(char *const buf, const unsigned int len)
 {
     unsigned int i;
+    unsigned char *entropy;
 
-    unsigned char *entropy = get_random_bytes(len * sizeof(unsigned char));
+#if defined HAVE_ARC4RANDOM_BUF
+    void *entropy = NOFAIL(malloc(len));
+    arc4random_buf(entropy, len);
+#else
+    entropy = get_random_bytes(len);
+#endif
+
     for (i = 0; i < len; i++)
 	buf[i] = valid_salts[entropy[i] % (sizeof valid_salts - 1)];
     buf[i] = '\0';
     free(entropy);
 }
 
-#else /* RANDOM_DEVICE */
+#else /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF */
 
 void generate_salt(char *const buf, const unsigned int len)
 {
@@ -424,7 +431,7 @@ void generate_salt(char *const buf, const unsigned int len)
     buf[i] = '\0';
 }
 
-#endif /* RANDOM_DEVICE */
+#endif /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF */
 
 void display_help(int error)
 {
