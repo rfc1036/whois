@@ -86,7 +86,13 @@ static const struct crypt_method methods[] = {
 	N_("standard 56 bit DES-based crypt(3)") },
     { "md5",		"$1$",	8,	8,	0, "MD5" },
 #if defined OpenBSD || defined FreeBSD || (defined __SVR4 && defined __sun)
+# if (defined OpenBSD && OpenBSD >= 201405)
+    /* http://marc.info/?l=openbsd-misc&m=139320023202696 */
+    { "bf",		"$2b$", 22,	22,	1, "Blowfish" },
+    { "bfa",		"$2a$", 22,	22,	1, "Blowfish (obsolete $2a$ version)" },
+# else
     { "bf",		"$2a$", 22,	22,	1, "Blowfish" },
+# endif
 #endif
 #if defined HAVE_LINUX_CRYPT_GENSALT
     { "bf",		"$2a$", 22,	22,	1, "Blowfish, system-specific on 8-bit chars" },
