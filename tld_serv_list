@@ -91,7 +91,7 @@
 .bi	whois1.nic.bi
 .bj	whois.nic.bj
 #.bl
-.bm	WEB http://207.228.133.14/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
+.bm	WEB http://www.bermudanic.bm/cgi-bin/lansaweb?procfun+BMWHO+BMWHO2+WHO
 .bn	whois.bn	# www.brunet.bn
 .bo	whois.nic.bo
 #.bq
@@ -107,7 +107,7 @@
 .cc	VERISIGN ccwhois.verisign-grs.com
 .cd	whois.nic.cd
 .cf	whois.dot.cf
-.cg	WEB http://www.nic.cg/cgi-bin/whois.pl
+.cg	NONE
 .ch	whois.nic.ch
 .ci	whois.nic.ci
 .ck	NONE
@@ -157,11 +157,11 @@
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	WEB https://www.dom-enic.com/whois.html
 .gq	whois.dominio.gq
-.gr	WEB https://grweb.ics.forth.gr/Whois?lang=en
+.gr	WEB https://grweb.ics.forth.gr/public/whois.jsp?lang=en
 .gs	whois.nic.gs
-.gt	WEB http://www.gt/who_is.html
+.gt	WEB http://www.gt/
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
-.gw	NONE		# currently no registry
+.gw	WEB http://nic.gw/en/whois/
 .gy	whois.registry.gy
 .hk	whois.hkirc.hk
 .hm	whois.registry.hm
@@ -185,7 +185,7 @@
 .jp	whois.jprs.jp
 .ke	whois.kenic.or.ke
 .kg	whois.domain.kg
-.kh	NONE		# http://www.mptc.gov.kh/DomainNameRegistrationForm.aspx http://www.nic.net.kh/
+.kh	NONE		# http://www.trc.gov.kh/index.php/en/newsCategory/view?id=42&detail_id=68
 .ki	whois.nic.mu
 .km	NONE		# www.domaine.km
 .kn	WEB http://www.nic.kn/
@@ -207,7 +207,7 @@
 .ly	whois.nic.ly
 .ma	whois.iam.net.ma # www.nic.ma
 .mc	NONE	# www.nic.mc
-.md	WEB http://www.dns.md/wh1.php # whois.nic.md is restricted
+.md	whois.nic.md
 .me	whois.nic.me	# afilias
 #.mf
 .mg	whois.nic.mg
@@ -236,7 +236,7 @@
 .ni	WEB http://www.nic.ni/
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
-.np	WEB http://register.mos.com.np/userSearchInc.asp
+.np	WEB http://register.mos.com.np/np-whois-lookup
 .nr	WEB http://www.cenpac.net.nr/dns/whois.html
 .nu	whois.iis.nu
 .nz	whois.srs.net.nz
@@ -255,7 +255,7 @@
 .ps	whois.pnina.ps
 .pt	whois.dns.pt
 .pw	whois.nic.pw
-.py	WEB http://www.nic.py/consultas.html
+.py	WEB http://www.nic.py/consulta-datos.php
 .qa	whois.registry.qa
 .re	whois.nic.re
 .ro	whois.rotld.ro
@@ -285,10 +285,10 @@
 .sx	whois.sx
 .sy	whois.tld.sy
 .sz	NONE		# http://www.sispa.org.sz/
-.tc	whois.meridiantld.net
+.tc	whois.nic.tc
 .td	WEB http://www.nic.td/
 .tf	whois.nic.tf
-.tg	WEB http://www.nic.tg/
+.tg	whois.nic.tg
 .th	whois.thnic.co.th
 .tj	WEB http://www.nic.tj/whois.html
 .tk	whois.dot.tk
@@ -329,7 +329,7 @@
 .vc	AFILIAS
 .ve	whois.nic.ve
 .vg	whois.adamsnames.tc
-.vi	WEB http://www.nic.vi/whoisform.htm
+.vi	WEB https://secure.nic.vi/whois-lookup/
 .vn	WEB http://www.vnnic.vn/en/domain
 .vu	vunic.vu
 .wf	whois.nic.wf
@@ -340,10 +340,10 @@
 .alt.za	whois.alt.za
 .co.za	whois.registry.net.za
 .gov.za	whois.gov.za
-.net.za	whois.net.za
-.org.za	WEB http://www.org.za/	# rwhois.org.za:4321 is restricted
-.web.za	whois.web.za
-.za	NONE		# http://www.zadna.org.za/annexure-d.html
+.net.za	net-whois.registry.net.za
+.org.za	org-whois.registry.net.za
+.web.za	web-whois.registry.net.za
+.za	NONE		# http://www.zadna.org.za/content/page/domain-information
 .zm	whois.nic.zm
 .zw	NONE		# http://www.zispa.co.zw/
 
