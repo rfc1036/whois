@@ -1,3 +1,17 @@
+whois (5.2.3) unstable; urgency=medium
+
+  * Added the .gw TLD server.
+  * Updated the .bm, .gr, .gt, .md, .np, .py, .tc, .tg, .vi, .net.za,
+    .org.za and .web.za TLD servers. (Closes: #773489)
+  * Removed the .cg TLD server.
+  * Updated the list of new gTLDs.
+  * mkpasswd: use arc4random_buf(3) where available.
+  * mkpasswd: support OpenBSD's new hash 2b.
+  * Updated some IPv4 allocations.
+  * Remove the new_gtlds.h generated file from the Debian source package.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 26 Dec 2014 20:12:24 +0100
+
 whois (5.2.2) unstable; urgency=medium
 
   * Fixed the code that removes trailing dots. (Closes: #763834)
