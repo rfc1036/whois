@@ -10,7 +10,7 @@ while (<>) {
 	next if /^$/;
 
 	die "format error: $_" if not
-		(my ($a, $b) = /^([\w\d\.-]+)\s+([\w\d\.:-]+|[A-Z]+\s+.*)$/);
+		(my ($a, $b) = /^\.(\w[\w\d\.-]+)\s+([\w\d\.:-]+|[A-Z]+\s+.*)$/);
 
 	$b =~ s/^W(?:EB)?\s+/\\x01/;
 	$b =~ s/^VERISIGN\s+/\\x04" "/;

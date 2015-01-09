@@ -442,7 +442,7 @@ const char *match_config_file(const char *s)
 	}
 	regfree(&re);
 #else
-	if (domcmp(s, pattern)) {
+	if (endstrcaseeq(s, pattern)) {
 	    fclose(fp);
 	    return strdup(server);
 	}
@@ -496,6 +496,15 @@ char *guess_server(const char *s)
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
+	/* if it is a TLD or a new gTLD then ask IANA */
+	for (i = 0; tld_serv[i]; i += 2)
+	    if (strcaseeq(s, tld_serv[i]))
+		return strdup("whois.iana.org");
+
+	for (i = 0; new_gtlds[i]; i++)
+	    if (strcaseeq(s, new_gtlds[i]))
+		return strdup("whois.iana.org");
+
 	if (strncaseeq(s, "as", 2) &&		/* it's an AS */
 		(isasciidigit(s[2]) || s[2] == ' '))
 	    return strdup(whereas(atol(s + 2)));
@@ -524,7 +533,7 @@ char *guess_server(const char *s)
 
     /* check the TLDs list */
     for (i = 0; tld_serv[i]; i += 2)
-	if (domcmp(s, tld_serv[i]))
+	if (in_domain(s, tld_serv[i]))
 	    return strdup(tld_serv[i + 1]);
 
     /* use the default server name for "new" gTLDs */
@@ -541,6 +550,12 @@ char *guess_server(const char *s)
 	for (i = 0; nic_handles[i]; i += 2)
 	    if (strncaseeq(s, nic_handles[i], strlen(nic_handles[i])))
 		return strdup(nic_handles[i + 1]);
+
+	/* search for strings at the end of the word */
+	for (i = 0; nic_handles_post[i]; i += 2)
+	    if (endstrcaseeq(s, nic_handles_post[i]))
+		return strdup(nic_handles_post[i + 1]);
+
 	/* it's probably a network name */
 	return strdup("");
     }
@@ -633,9 +648,9 @@ char *queryformat(const char *server, const char *flags, const char *query)
     /* add useful default flags if there are no flags or multiple arguments */
     if (isripe) { }
     else if (strchr(query, ' ') || *flags) { }
-    else if (streq(server, "whois.denic.de") && domcmp(query, ".de"))
+    else if (streq(server, "whois.denic.de") && in_domain(query, "de"))
 	strcat(buf, "-T dn" DENIC_PARAM_ACE DENIC_PARAM_CHARSET " ");
-    else if (streq(server, "whois.dk-hostmaster.dk") && domcmp(query, ".dk"))
+    else if (streq(server, "whois.dk-hostmaster.dk") && in_domain(query, "dk"))
 	strcat(buf, "--show-handles ");
 
     /* mangle and add the query string */
@@ -1035,18 +1050,50 @@ int japanese_locale(void) {
 }
 
 /* check if dom ends with tld */
-int domcmp(const char *dom, const char *tld)
+int endstrcaseeq(const char *dom, const char *tld)
 {
-    const char *p, *q;
+    size_t dom_len, tld_len;
+    const char *p = NULL;
 
-    for (p = dom; *p; p++); p--;	/* move to the last char */
-    for (q = tld; *q; q++); q--;
-    while (p >= dom && q >= tld && tolower(*p) == *q) {	/* compare backwards */
-	if (q == tld)			/* start of the second word? */
-	    return 1;
-	p--; q--;
-    }
-    return 0;
+    if ((dom_len = strlen(dom)) == 0)
+	return 0;
+
+    if ((tld_len = strlen(tld)) == 0)
+	return 0;
+
+    /* dom cannot be shorter than what we are looking for */
+    if (tld_len > dom_len)
+	return 0;
+
+    p = dom + dom_len - tld_len;
+
+    return strcaseeq(p, tld);
+}
+
+/* check if dom is a subdomain of tld */
+int in_domain(const char *dom, const char *tld)
+{
+    size_t dom_len, tld_len;
+    const char *p = NULL;
+
+    if ((dom_len = strlen(dom)) == 0)
+	return 0;
+
+    if ((tld_len = strlen(tld)) == 0)
+	return 0;
+
+    /* dom cannot be shorter than what we are looking for */
+    /* -1 to ignore dom containing just a dot and tld */
+    if (tld_len >= dom_len - 1)
+	return 0;
+
+    p = dom + dom_len - tld_len;
+
+    /* fail if the character before tld is not a dot */
+    if (*(p - 1) != '.')
+	return 0;
+
+    return strcaseeq(p, tld);
 }
 
 const char *is_new_gtld(const char *s)
@@ -1054,8 +1101,8 @@ const char *is_new_gtld(const char *s)
     int i;
 
     for (i = 0; new_gtlds[i]; i++)
-	if (domcmp(s, new_gtlds[i]))
-	    return new_gtlds[i] + 1;
+	if (in_domain(s, new_gtlds[i]))
+	    return new_gtlds[i];
 
     return 0;
 }
@@ -1063,7 +1110,7 @@ const char *is_new_gtld(const char *s)
 /*
  * Attempt to normalize a query by removing trailing dots and whitespace,
  * then convert the domain to punycode.
- * The function assumes that the domain is the last token of they query.
+ * The function assumes that the domain is the last token of the query.
  * Returns a malloc'ed string which needs to be freed by the caller.
  */
 char *normalize_domain(const char *dom)
@@ -1074,10 +1121,15 @@ char *normalize_domain(const char *dom)
 #endif
 
     ret = strdup(dom);
-    /* eat trailing dots and blanks */
-    p = ret + strlen(ret);
-    for (; *p == '.' || *p == ' ' || *p == '\t' || p == ret; p--)
+    /* start from the last character */
+    p = ret + strlen(ret) - 1;
+    /* and then eat trailing dots and blanks */
+    while (p > ret) {
+	if (!(*p == '.' || *p == ' ' || *p == '\t'))
+	    break;
 	*p = '\0';
+	p--;
+    }
 
 #ifdef HAVE_LIBIDN
     /* find the start of the last word if there are spaces in the query */
@@ -1235,19 +1287,23 @@ char *convert_inaddr(const char *s)
     if (errno || a < 0 || a > 255 || *endptr != '.')
 	return strdup("0.0.0.0");
 
-    if (domcmp(endptr + 1, ".in-addr.arpa")) {
+    if (in_domain(endptr + 1, "in-addr.arpa")) {
 	b = strtol(endptr + 1, &endptr, 10);			/* 1.2. */
 	if (errno || b < 0 || b > 255 || *endptr != '.')
 	    return strdup("0.0.0.0");
 
-	if (domcmp(endptr + 1, ".in-addr.arpa")) {
+	if (in_domain(endptr + 1, "in-addr.arpa")) {
 	    c = strtol(endptr + 1, &endptr, 10);		/* 1.2.3. */
 	    if (errno || c < 0 || c > 255 || *endptr != '.')
 		return strdup("0.0.0.0");
 
-	    if (domcmp(endptr + 1, ".in-addr.arpa"))
+	    if (in_domain(endptr + 1, "in-addr.arpa"))
 		return strdup("0.0.0.0");
+	} else {
+	    c = b; b = a; a = 0;
 	}
+    } else {
+	c = a; a = 0;
     }
 
     new = malloc(sizeof("255.255.255.255"));

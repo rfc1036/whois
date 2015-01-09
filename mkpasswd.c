@@ -86,7 +86,13 @@ static const struct crypt_method methods[] = {
 	N_("standard 56 bit DES-based crypt(3)") },
     { "md5",		"$1$",	8,	8,	0, "MD5" },
 #if defined OpenBSD || defined FreeBSD || (defined __SVR4 && defined __sun)
+# if (defined OpenBSD && OpenBSD >= 201405)
+    /* http://marc.info/?l=openbsd-misc&m=139320023202696 */
+    { "bf",		"$2b$", 22,	22,	1, "Blowfish" },
+    { "bfa",		"$2a$", 22,	22,	1, "Blowfish (obsolete $2a$ version)" },
+# else
     { "bf",		"$2a$", 22,	22,	1, "Blowfish" },
+# endif
 #endif
 #if defined HAVE_LINUX_CRYPT_GENSALT
     { "bf",		"$2a$", 22,	22,	1, "Blowfish, system-specific on 8-bit chars" },
@@ -377,20 +383,27 @@ void* get_random_bytes(const unsigned int count)
 }
 #endif
 
-#ifdef RANDOM_DEVICE
+#if defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF
 
 void generate_salt(char *const buf, const unsigned int len)
 {
     unsigned int i;
+    unsigned char *entropy;
 
-    unsigned char *entropy = get_random_bytes(len * sizeof(unsigned char));
+#if defined HAVE_ARC4RANDOM_BUF
+    void *entropy = NOFAIL(malloc(len));
+    arc4random_buf(entropy, len);
+#else
+    entropy = get_random_bytes(len);
+#endif
+
     for (i = 0; i < len; i++)
 	buf[i] = valid_salts[entropy[i] % (sizeof valid_salts - 1)];
     buf[i] = '\0';
     free(entropy);
 }
 
-#else /* RANDOM_DEVICE */
+#else /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF */
 
 void generate_salt(char *const buf, const unsigned int len)
 {
@@ -418,7 +431,7 @@ void generate_salt(char *const buf, const unsigned int len)
     buf[i] = '\0';
 }
 
-#endif /* RANDOM_DEVICE */
+#endif /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF */
 
 void display_help(int error)
 {

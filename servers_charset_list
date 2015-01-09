@@ -32,6 +32,7 @@ whois.isnic.is		iso-8859-1
 whois.nic.it		utf-8
 whois.jprs.jp		iso-2022-jp
 whois.nic.ad.jp		iso-2022-jp
+whois.domain.kg		cp1251
 whois.nic.or.kr		utf-8
 whois.kr		utf-8
 # XXX I had to guess: the server is unable to fully transcode U+49b in the
@@ -40,6 +41,7 @@ whois.nic.kz		rk1048
 whois.nic.li		utf-8
 whois.domreg.lt		utf-8
 whois.dns.lu		iso-8859-1
+whois.marnet.mk		utf-8
 whois.nic.mu		utf-8
 whois.norid.no		iso-8859-1
 whois.iis.nu		utf-8

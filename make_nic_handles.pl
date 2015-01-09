@@ -9,8 +9,9 @@ while (<>) {
 	s/^\s+//; s/\s+$//;
 	next if /^$/;
 
-	die "format error: $_" if not /^(xn--[a-z0-9-]+|[a-z]+)$/;
+	die "format error: $_" if not
+		(my ($a, $b) = /^(-\w+)\s+([\w\d\.:-]+)$/);
 
-	print qq|    "$_",\n|;
+	print qq|    "$a",\t"$b",\n|;
 }
 

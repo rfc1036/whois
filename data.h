@@ -11,17 +11,13 @@ const char *ripe_servers[] = {
     "whois.apnic.net",
     "whois.afrinic.net",
     "rr.arin.net",		/* does not accept the old syntax */
-    "whois.6bone.net",		/* 3.0.0b1 */
     "whois.connect.com.au",	/* 3.0.0b1 */
     "whois.nic.fr",
-    "whois.telstra.net",
     "whois.restena.lu",
     "rr.level3.net",		/* 3.0.0a13 */
     "whois.ripn.net",
     "whois.arnes.si",
-    "www.registry.co.ug",
     "whois.nic.ir",
-    "whois.nic.ck",
     "whois.ra.net",
     "whois.bgpmon.net",
     NULL
@@ -156,6 +152,11 @@ const char *new_gtlds[] = {
 
 const char *tld_serv[] = {
 #include "tld_serv.h"
+    NULL,	NULL
+};
+
+const char *nic_handles_post[] = {
+#include "nic_handles.h"
     NULL,	NULL
 };
 

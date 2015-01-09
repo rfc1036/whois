@@ -87,6 +87,9 @@ ip6_del.h: ip6_del_list make_ip6_del.pl
 new_gtlds.h: new_gtlds_list make_new_gtlds.pl
 	$(PERL) make_new_gtlds.pl < $< > $@
 
+nic_handles.h: nic_handles_list make_nic_handles.pl
+	$(PERL) make_nic_handles.pl < $< > $@
+
 tld_serv.h: tld_serv_list make_tld_serv.pl
 	$(PERL) make_tld_serv.pl < $< > $@
 
@@ -118,7 +121,7 @@ distclean: clean
 
 clean:
 	rm -f Makefile.depend as_del.h as32_del.h ip_del.h ip6_del.h \
-		tld_serv.h servers_charset.h *.o whois mkpasswd
+		new_gtlds.h tld_serv.h servers_charset.h *.o whois mkpasswd
 	rm -f po/*.mo
 
 pos:
