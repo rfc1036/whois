@@ -1,3 +1,9 @@
+whois (5.2.3~bpo70+2) wheezy-backports; urgency=medium
+
+  * Rebuild for wheezy-backports.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 09 Jan 2015 03:50:55 +0100
+
 whois (5.2.3) unstable; urgency=medium
 
   * Added the .gw TLD server.
