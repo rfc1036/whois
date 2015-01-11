@@ -270,7 +270,7 @@
 .se	whois.iis.se
 .sg	whois.sgnic.sg
 .sh	whois.nic.sh
-.si	whois.arnes.si
+.si	whois.register.si
 .sj	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .sk	whois.sk-nic.sk
 .sl	whois.nic.sl
