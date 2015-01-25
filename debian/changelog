@@ -1,3 +1,10 @@
+whois (5.2.4) unstable; urgency=medium
+
+  * Fixed referrals handling for the .cc, .tv a .jobs TLDs.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 25 Jan 2015 04:07:20 +0100
+
 whois (5.2.3) unstable; urgency=medium
 
   * Added the .gw TLD server.
