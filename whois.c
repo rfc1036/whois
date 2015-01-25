@@ -361,6 +361,9 @@ int handle_query(const char *hserver, const char *hport,
     if (!server)
 	return 1;
 
+    if (*server == '\0')
+	return 0;
+
     query_string = queryformat(server, flags, query);
     if (verb) {
 	printf(_("Using server %s.\n"), server);
