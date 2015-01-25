@@ -810,9 +810,10 @@ char *query_crsnic(const int sock, const char *query)
 	   is queried */
 	if (state == 0 && strneq(buf, "   Domain Name:", 15))
 	    state = 1;
-	if (state == 1 && strneq(buf, "   Whois Server:", 16)) {
-	    for (p = buf; *p != ':'; p++);	/* skip until colon */
-	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
+	if (state == 1 && (strneq(buf, "   Whois Server:", 16)
+		    || strneq(buf, "   WHOIS Server:", 16))) {
+	    for (p = buf; *p != ':'; p++);	/* skip until the colon */
+	    for (p++; *p == ' '; p++);		/* skip the spaces */
 	    referral_server = strdup(p);
 	    if ((p = strpbrk(referral_server, "\r\n ")))
 		*p = '\0';
