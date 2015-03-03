@@ -192,7 +192,7 @@
 .kp	NONE		# NIC? http://www.star.co.kp/
 .kr	whois.kr
 .kw	WEB http://www.kw/
-.ky	WEB http://kynseweb.messagesecure.com/kywebadmin/ # http://www.icta.ky/
+.ky	whois.kyregistry.ky
 .kz	whois.nic.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/
