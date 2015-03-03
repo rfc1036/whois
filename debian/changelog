@@ -1,3 +1,12 @@
+whois (5.2.5) unstable; urgency=medium
+
+  * Added the .xn--90ais (.бел, Belarus) TLD server.
+  * Updated the .ky TLD server.
+  * Updated the list of new gTLDs.
+  * Added new recovered IPv4 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 03 Mar 2015 02:15:57 +0100
+
 whois (5.2.4) unstable; urgency=medium
 
   * Fixed referrals handling for the .cc, .tv a .jobs TLDs.
