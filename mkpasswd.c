@@ -279,8 +279,10 @@ int main(int argc, char *argv[])
     } else {
 #ifdef HAVE_SOLARIS_CRYPT_GENSALT
 	salt = crypt_gensalt(salt_prefix, NULL);
-	if (!salt)
+	if (!salt) {
 		perror("crypt_gensalt");
+		exit(2);
+	}
 #elif defined HAVE_LINUX_CRYPT_GENSALT
 	void *entropy = get_random_bytes(64);
 
