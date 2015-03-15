@@ -1,8 +1,9 @@
 #!/usr/bin/make -f
 SHELL+= -e
 
-DEB_HOST_GNU_TYPE  := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-DEB_BUILD_GNU_TYPE := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+-include /usr/share/dpkg/architecture.mk
+DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 
 ifneq ($(DEB_HOST_GNU_TYPE),$(DEB_BUILD_GNU_TYPE))
   export CC := $(DEB_HOST_GNU_TYPE)-gcc
@@ -24,9 +25,10 @@ clean:
 	$(MAKE) distclean
 	dh_clean
 
-binary-arch: checkroot build
+binary-arch: build
 	dh_testdir
-	dh_clean
+	dh_testroot
+	dh_prep
 
 	dh_installdirs usr/bin
 	$(MAKE) install BASEDIR=$D
@@ -40,7 +42,7 @@ binary-arch: checkroot build
 	dh_installdeb
 	dh_gencontrol
 	dh_md5sums
-	dh_builddeb -- -Zxz
+	dh_builddeb
 
 binary: binary-arch
 
@@ -49,7 +51,4 @@ binary-indep:
 build-arch: build
 build-indep: build
 
-checkroot:
-	test root = "`whoami`"
-
-.PHONY: binary binary-arch binary-indep build build-arch build-indep clean checkroot
+.PHONY: binary binary-arch binary-indep build build-arch build-indep clean
