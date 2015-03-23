@@ -711,13 +711,13 @@ int hide_line(int *hiding, const char *const line)
     } else if (*hiding > HIDE_NOT_STARTED) {	/* hiding something */
 	if (*hide_strings[*hiding + 1] == '\0')	{ /*look for a blank line?*/
 	    if (*line == '\n' || *line == '\r' || *line == '\0') {
-		*hiding = HIDE_DISABLED;	/* stop hiding */
+		*hiding = HIDE_NOT_STARTED;	/* stop hiding */
 		return 0;		/* but do not hide the blank line */
 	    }
 	} else {				/*look for a matching string*/
 	    if (strneq(line, hide_strings[*hiding + 1],
 			strlen(hide_strings[*hiding + 1]))) {
-		*hiding = HIDE_DISABLED;	/* stop hiding */
+		*hiding = HIDE_NOT_STARTED;	/* stop hiding */
 		return 1;			/* but hide the last line */
 	    }
 	}
