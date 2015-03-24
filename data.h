@@ -72,7 +72,6 @@ const char *hide_strings[] = {
     "TERMS OF USE: The information in the Whois database", NULL, /* .wang */
     "The WHOIS service offered by Neustar, Inc, on behalf", NULL,
     "The WHOIS service offered by the Registry Operator", NULL, /* .science */
-    "", NULL,
 
     /* ccTLDs */
     "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
