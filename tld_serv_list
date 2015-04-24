@@ -205,7 +205,7 @@
 .lu	whois.dns.lu
 .lv	whois.nic.lv
 .ly	whois.nic.ly
-.ma	whois.iam.net.ma # www.nic.ma
+.ma	whois.registre.ma
 .mc	NONE	# www.nic.mc
 .md	whois.nic.md
 .me	whois.nic.me	# afilias
