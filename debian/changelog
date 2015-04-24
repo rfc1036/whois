@@ -1,3 +1,11 @@
+whois (5.2.8) unstable; urgency=medium
+
+  * Updated the list of new gTLDs.
+  * Added new ASN allocations.
+  * Added the .xn--y9a3aq (.հայ, Armenia) TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 18 May 2015 00:37:32 +0200
+
 whois (5.2.7) unstable; urgency=medium
 
   * Removed a bogus disclaimer detection string.
