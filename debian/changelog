@@ -1,3 +1,9 @@
+whois (5.2.7~bpo70+1) wheezy-backports; urgency=medium
+
+  * Rebuild for wheezy-backports.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 24 Apr 2015 16:02:40 +0200
+
 whois (5.2.7) unstable; urgency=medium
 
   * Removed a bogus disclaimer detection string.
