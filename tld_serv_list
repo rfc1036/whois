@@ -192,7 +192,7 @@
 .kp	NONE		# NIC? http://www.star.co.kp/
 .kr	whois.kr
 .kw	WEB http://www.kw/
-.ky	WEB http://kynseweb.messagesecure.com/kywebadmin/ # http://www.icta.ky/
+.ky	whois.kyregistry.ky
 .kz	whois.nic.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/
@@ -245,6 +245,8 @@
 .pe	kero.yachay.pe
 .pf	whois.registry.pf
 .pg	NONE	# http://www.unitech.ac.pg/
+.edu.ph	WEB http://services.ph.net/dns/query.pl
+.gov.ph	NONE	# http://dns.gov.ph/
 .ph	WEB http://www.dot.ph/whois
 .pk	WEB http://www.pknic.net.pk/
 .co.pl	whois.co.pl	# "unofficial" SLD
@@ -270,7 +272,7 @@
 .se	whois.iis.se
 .sg	whois.sgnic.sg
 .sh	whois.nic.sh
-.si	whois.arnes.si
+.si	whois.register.si
 .sj	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .sk	whois.sk-nic.sk
 .sl	whois.nic.sl
@@ -296,7 +298,6 @@
 .tm	whois.nic.tm
 .tn	whois.ati.tn
 .to	whois.tonic.to
-.tp	NONE			# phase out in progress
 .tr	whois.nic.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
 .tv	VERISIGN tvwhois.verisign-grs.com
@@ -353,6 +354,7 @@
 .xn--45brj9c		whois.inregistry.net	# India, Bengali AW
 .xn--80ao21a		whois.nic.kz		# Kazakhstan
 .xn--90a3ac		whois.rnids.rs		# Serbia
+.xn--90ais		whois.cctld.by		# Belarus
 .xn--clchc0ea0b2g2a9gcd	whois.sgnic.sg		# Singapore, Tamil
 .xn--d1alf		whois.marnet.mk		# Macedonia
 .xn--fiqs8s		cwhois.cnnic.cn		# China, Simplified Chinese

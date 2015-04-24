@@ -361,6 +361,9 @@ int handle_query(const char *hserver, const char *hport,
     if (!server)
 	return 1;
 
+    if (*server == '\0')
+	return 0;
+
     query_string = queryformat(server, flags, query);
     if (verb) {
 	printf(_("Using server %s.\n"), server);
@@ -708,13 +711,13 @@ int hide_line(int *hiding, const char *const line)
     } else if (*hiding > HIDE_NOT_STARTED) {	/* hiding something */
 	if (*hide_strings[*hiding + 1] == '\0')	{ /*look for a blank line?*/
 	    if (*line == '\n' || *line == '\r' || *line == '\0') {
-		*hiding = HIDE_DISABLED;	/* stop hiding */
+		*hiding = HIDE_NOT_STARTED;	/* stop hiding */
 		return 0;		/* but do not hide the blank line */
 	    }
 	} else {				/*look for a matching string*/
 	    if (strneq(line, hide_strings[*hiding + 1],
 			strlen(hide_strings[*hiding + 1]))) {
-		*hiding = HIDE_DISABLED;	/* stop hiding */
+		*hiding = HIDE_NOT_STARTED;	/* stop hiding */
 		return 1;			/* but hide the last line */
 	    }
 	}
@@ -810,9 +813,10 @@ char *query_crsnic(const int sock, const char *query)
 	   is queried */
 	if (state == 0 && strneq(buf, "   Domain Name:", 15))
 	    state = 1;
-	if (state == 1 && strneq(buf, "   Whois Server:", 16)) {
-	    for (p = buf; *p != ':'; p++);	/* skip until colon */
-	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
+	if (state == 1 && (strneq(buf, "   Whois Server:", 16)
+		    || strneq(buf, "   WHOIS Server:", 16))) {
+	    for (p = buf; *p != ':'; p++);	/* skip until the colon */
+	    for (p++; *p == ' '; p++);		/* skip the spaces */
 	    referral_server = strdup(p);
 	    if ((p = strpbrk(referral_server, "\r\n ")))
 		*p = '\0';

@@ -1,3 +1,36 @@
+whois (5.2.7) unstable; urgency=medium
+
+  * Removed a bogus disclaimer detection string.
+  * Updated the list of new gTLDs
+
+ -- Marco d'Itri <md@linux.it>  Wed, 25 Mar 2015 23:04:44 +0100
+
+whois (5.2.6) unstable; urgency=medium
+
+  * Added the .edu.ph TLD server.
+  * Removed the .gov.py TLD server. (Closes: #780562)
+  * Updated the list of new gTLDs.
+  * Implemented hiding multiple disclaimers blocks to improve detection.
+  * Updated the disclaimer detection strings.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 23 Mar 2015 04:28:39 +0100
+
+whois (5.2.5) unstable; urgency=medium
+
+  * Added the .xn--90ais (.бел, Belarus) TLD server.
+  * Updated the .ky TLD server.
+  * Updated the list of new gTLDs.
+  * Added new recovered IPv4 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 03 Mar 2015 02:15:57 +0100
+
+whois (5.2.4) unstable; urgency=medium
+
+  * Fixed referrals handling for the .cc, .tv a .jobs TLDs.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 25 Jan 2015 04:07:20 +0100
+
 whois (5.2.3~bpo70+2) wheezy-backports; urgency=medium
 
   * Rebuild for wheezy-backports.
