@@ -77,6 +77,7 @@ const char *hide_strings[] = {
     "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
     "This WHOIS information is provided", NULL,			/* as */
     "% The WHOIS service offered by DNS Belgium", "",		/* be */
+    "%   (c) 2015 NIC Costa Rica", "",				/* cr */
     "% The WHOIS service offered by EURid", "% of the database", /* eu */
     "% WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS", NULL,	/* sx */
     "NeuStar, Inc., the Registry Administrator for .US", NULL,

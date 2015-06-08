@@ -117,7 +117,7 @@
 .cn	whois.cnnic.cn
 .uk.co	whois.uk.co
 .co	whois.nic.co
-.cr	WEB http://www.nic.cr/niccr_publico/showRegistroDominiosScreen.do
+.cr	whois.nic.cr
 .cu	WEB http://www.nic.cu/
 .cv	WEB http://www.dns.cv/
 .cw	NONE		# http://www.una.cw/cw_registry/
