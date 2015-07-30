@@ -1,3 +1,10 @@
+whois (5.2.10) unstable; urgency=medium
+
+  * Updated the list of new gTLDs.
+  * Updated the .ki and .vg TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 30 Jul 2015 03:26:56 +0200
+
 whois (5.2.9) unstable; urgency=medium
 
   * Updated the list of new gTLDs.
