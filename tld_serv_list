@@ -329,7 +329,7 @@
 .va	NONE
 .vc	AFILIAS
 .ve	whois.nic.ve
-.vg	whois.adamsnames.tc
+.vg	whois.nic.vg
 .vi	WEB https://secure.nic.vi/whois-lookup/
 .vn	WEB http://www.vnnic.vn/en/domain
 .vu	vunic.vu

@@ -80,6 +80,7 @@ const char *hide_strings[] = {
     "%   (c) 2015 NIC Costa Rica", "",				/* cr */
     "% The WHOIS service offered by EURid", "% of the database", /* eu */
     "% WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS", NULL,	/* sx */
+    "; The data in the WHOIS database of KSregistry GmbH", "",	/* vg */
     "NeuStar, Inc., the Registry Administrator for .US", NULL,
 
     NULL, NULL
