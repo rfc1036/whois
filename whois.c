@@ -102,9 +102,9 @@ int main(int argc, char *argv[])
 	{"no-referenced",	no_argument,		NULL, 'r'},
 	{"no-filtering",	no_argument,		NULL, 'B'},
 	{"no-grouping",		no_argument,		NULL, 'G'},
-	{"select-types",	no_argument,		NULL, 'T'},
+	{"select-types",	required_argument,	NULL, 'T'},
 	{"all-sources",		no_argument,		NULL, 'a'},
-	{"sources",		no_argument,		NULL, 's'},
+	{"sources",		required_argument,	NULL, 's'},
 	{"types",		no_argument,		NULL, 12 }, /* -q */
 	{"ripe-version",	no_argument,		NULL, 12 }, /* -q */
 	{"list-sources",	no_argument,		NULL, 12 }, /* -q */
