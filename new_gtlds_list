@@ -4,6 +4,7 @@
 # Any exceptions can be handled in tld_serv_list as usual, since it will
 # be checked first.
 
+aaa
 abb
 abbott
 abogado
@@ -11,6 +12,7 @@ academy
 accenture
 accountant
 accountants
+aco
 active
 actor
 ads
@@ -72,6 +74,7 @@ bnpparibas
 boats
 bond
 boo
+boots
 boutique
 bradesco
 bridgestone
@@ -106,11 +109,13 @@ casino
 catering
 cba
 cbn
+ceb
 center
 ceo
 cern
 cfa
 cfd
+chanel
 channel
 chat
 cheap
@@ -212,8 +217,10 @@ exchange
 expert
 exposed
 express
+fage
 fail
 faith
+family
 fan
 fans
 farm
@@ -250,12 +257,14 @@ game
 garden
 gbiz
 gdn
+gea
 gent
 genting
 ggee
 gift
 gifts
 gives
+giving
 glass
 gle
 global
@@ -274,6 +283,7 @@ graphics
 gratis
 green
 gripe
+group
 guge
 guide
 guitars
@@ -365,6 +375,7 @@ limited
 limo
 link
 live
+lixil
 loan
 loans
 lol
@@ -400,6 +411,7 @@ mini
 mma
 moda
 moe
+mom
 monash
 money
 montblanc
@@ -533,6 +545,7 @@ science
 scor
 scot
 seat
+seek
 sener
 services
 sew
@@ -562,6 +575,7 @@ spreadbetting
 srl
 starhub
 statoil
+stcgroup
 studio
 study
 style
@@ -622,9 +636,11 @@ vet
 viajes
 video
 villas
+vin
 vision
 vista
 vistaprint
+viva
 vlaanderen
 vodka
 vote
@@ -646,6 +662,7 @@ wiki
 williamhill
 win
 windows
+wine
 wme
 work
 works
@@ -681,6 +698,7 @@ xn--czr694b
 xn--czrs0t
 xn--czru2d
 xn--d1acj3b
+xn--efvy88h
 xn--estv75g
 xn--fhbei
 xn--fiq228c5hs
@@ -716,6 +734,7 @@ xn--vhquv
 xn--vuq861b
 xn--xhq521b
 xn--zfr164b
+xperia
 xyz
 yachts
 yandex
