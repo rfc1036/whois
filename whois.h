@@ -19,7 +19,7 @@ int hide_line(int *hiding, const char *const line);
 char *do_query(const int, const char *);
 char *query_crsnic(const int, const char *);
 char *query_afilias(const int, const char *);
-int openconn(const char *, const char *);
+int openconn(int, const char *, const char *);
 int connect_with_timeout(int, const struct sockaddr *, socklen_t, int);
 void usage(int error);
 void alarm_handler(int);
@@ -37,7 +37,8 @@ char *convert_6to4(const char *);
 char *convert_teredo(const char *);
 char *convert_inaddr(const char *);
 int handle_query(const char *server, const char *port,
-		   const char *qstring, const char *fstring);
+		   const char *qstring, const char *fstring,
+		   int sock_family);
 void split_server_port(const char *const input, char **server, char **port);
 
 

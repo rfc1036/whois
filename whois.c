@@ -84,6 +84,8 @@ int main(int argc, char *argv[])
 	{"version",		no_argument,		NULL, 1  },
 	{"verbose",		no_argument,		NULL, 2  },
 	{"help",		no_argument,		NULL, 3  },
+	{"ipv4",		no_argument,		NULL, 4  },
+	{"ipv6",		no_argument,		NULL, 6  },
 	{"server",		required_argument,	NULL, 'h'},
 	{"host",		required_argument,	NULL, 'h'},
 	{"port",		required_argument,	NULL, 'p'},
@@ -126,7 +128,7 @@ int main(int argc, char *argv[])
     int longindex;
 #endif
 
-    int ch, nopar = 0, fstringlen = 64;
+    int ch, nopar = 0, fstringlen = 64, sock_family = AF_UNSPEC;
     const char *server = NULL, *port = NULL;
     char *qstring, *fstring;
     int ret;
@@ -144,7 +146,7 @@ int main(int argc, char *argv[])
     argv = merge_args(getenv("WHOIS_OPTIONS"), argv, &argc);
 
     while ((ch = GETOPT_LONGISH(argc, argv,
-		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x",
+		"46abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x",
 		longopts, &longindex)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
@@ -208,6 +210,12 @@ int main(int argc, char *argv[])
 	    break;
 	case 'p':
 	    port = strdup(optarg);
+	    break;
+	case '6':
+	    sock_family = AF_INET6;
+	    break;
+	case '4':
+	    sock_family = AF_INET;
 	    break;
 	case 3:
 	    usage(EXIT_SUCCESS);
@@ -276,7 +284,7 @@ int main(int argc, char *argv[])
     if (!server)
 	server = guess_server(qstring);
 
-    ret = handle_query(server, port, qstring, fstring);
+    ret = handle_query(server, port, qstring, fstring, sock_family);
 
     exit(ret);
 }
@@ -287,7 +295,7 @@ int main(int argc, char *argv[])
  * This function has multiple memory leaks.
  */
 int handle_query(const char *hserver, const char *hport,
-	const char *query, const char *flags)
+	const char *query, const char *flags, int sock_family)
 {
     char *server = NULL, *port = NULL;
     char *p, *query_string;
@@ -323,14 +331,14 @@ int handle_query(const char *hserver, const char *hport,
 	case 4:
 	    if (verb)
 		printf(_("Using server %s.\n"), server + 1);
-	    sockfd = openconn(server + 1, NULL);
+	    sockfd = openconn(sock_family, server + 1, NULL);
 	    free(server);
 	    server = query_crsnic(sockfd, query);
 	    break;
 	case 8:
 	    if (verb)
 		printf(_("Using server %s.\n"), "whois.afilias-grs.info");
-	    sockfd = openconn("whois.afilias-grs.info", NULL);
+	    sockfd = openconn(sock_family, "whois.afilias-grs.info", NULL);
 	    free(server);
 	    server = query_afilias(sockfd, query);
 	    break;
@@ -370,7 +378,7 @@ int handle_query(const char *hserver, const char *hport,
 	printf(_("Query string: \"%s\"\n\n"), query_string);
     }
 
-    sockfd = openconn(server, port);
+    sockfd = openconn(sock_family, server, port);
 
     server = do_query(sockfd, query_string);
     free(query_string);
@@ -378,7 +386,7 @@ int handle_query(const char *hserver, const char *hport,
     /* recursion is fun */
     if (server && !strchr(query, ' ')) {
 	printf(_("\n\nFound a referral to %s.\n\n"), server);
-	handle_query(server, NULL, query, flags);
+	handle_query(server, NULL, query, flags, sock_family);
     }
 
     return 0;
@@ -894,7 +902,7 @@ char *query_afilias(const int sock, const char *query)
     return referral_server;
 }
 
-int openconn(const char *server, const char *port)
+int openconn(int sock_family, const char *server, const char *port)
 {
     int fd = -1;
     int timeout = 10;
@@ -911,7 +919,7 @@ int openconn(const char *server, const char *port)
 
 #ifdef HAVE_GETADDRINFO
     memset(&hints, 0, sizeof(struct addrinfo));
-    hints.ai_family = AF_UNSPEC;
+    hints.ai_family = sock_family;
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_ADDRCONFIG;
 #ifdef HAVE_LIBIDN
