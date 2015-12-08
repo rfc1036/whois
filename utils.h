@@ -9,6 +9,10 @@
 
 #define NOFAIL(ptr) do_nofail((ptr), __FILE__, __LINE__)
 
+#ifndef AFL_MODE
+# define AFL_MODE 0
+#endif
+
 /* Portability macros */
 #ifdef __GNUC__
 # define NORETURN __attribute__((noreturn))

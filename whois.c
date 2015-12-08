@@ -140,6 +140,20 @@ int main(int argc, char *argv[])
     fstring = malloc(fstringlen + 1);
     *fstring = '\0';
 
+    /* interface for American Fuzzy Lop */
+    if (AFL_MODE) {
+	FILE *fp = fdopen(0, "r");
+	char *buf = NULL;
+	size_t len = 0;
+
+	/* read one line from stdin */
+	if (getline(&buf, &len, fp) < 0)
+	    err_sys("getline");
+	fflush(fp);
+	/* and use it as command line arguments */
+	argv = merge_args(buf, argv, &argc);
+    }
+
     /* prepend options from environment */
     argv = merge_args(getenv("WHOIS_OPTIONS"), argv, &argc);
 
@@ -906,6 +920,13 @@ int openconn(const char *server, const char *port)
     struct servent *servinfo;
     struct sockaddr_in saddr;
 #endif
+
+    /*
+     * When using American Fuzzy Lop get the data from it using stdin
+     * instead of connecting to the actual whois server.
+     */
+    if (AFL_MODE)
+	return (dup(0));
 
     alarm(60);
 

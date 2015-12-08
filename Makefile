@@ -97,6 +97,19 @@ servers_charset.h: servers_charset_list make_servers_charset.pl
 	$(PERL) make_servers_charset.pl < $< > $@
 
 ##############################################################################
+afl:
+	$(MAKE) whois \
+		CC=afl-gcc AFL_HARDEN=1 \
+		HAVE_LIBIDN=1 HAVE_ICONV=1 DEFS=-DAFL_MODE=1
+
+afl2:
+	$(MAKE) whois \
+		HAVE_LIBIDN=1 HAVE_ICONV=1 DEFS=-DAFL_MODE=1
+
+afl-run:
+	nice afl-fuzz -i ../afl_in -o ../afl_out -- ./whois
+
+##############################################################################
 install: install-whois install-mkpasswd install-pos
 
 install-whois: whois
