@@ -1,3 +1,14 @@
+whois (5.2.11) unstable; urgency=medium
+
+  * Fixed the --select-types and --sources long options.
+  * Updated the list of new gTLDs.
+  * Removed the .an TLD.
+  * Removed the .xn--l1acc (.МОН, Mongolia) TLD server.
+  * Added the .xn--mgbtx2b (عراق, Iraq) and .xn--qxam (.ΕΛ, Greece) TLD
+    servers.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 08 Dec 2015 07:43:48 +0100
+
 whois (5.2.10) unstable; urgency=medium
 
   * Updated the list of new gTLDs.
