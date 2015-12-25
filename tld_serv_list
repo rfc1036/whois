@@ -5,6 +5,7 @@
 # Elements in this list are matched against the end of the query.
 # "NIC?" means that I have not been able to find the registry.
 
+.ae.org	whois.centralnic.net
 .br.com	whois.centralnic.net
 .cn.com	whois.centralnic.net
 .de.com	whois.centralnic.net
