@@ -150,7 +150,7 @@
 .gf	WEB https://www.dom-enic.com/whois.html
 .gg	whois.gg
 .gh	WEB http://www.nic.gh/customer/search_c.htm
-.gi	AFILIAS
+.gi	whois2.afilias-grs.net
 .gl	whois.nic.gl
 .gm	WEB http://www.nic.gm/htmlpages/whois.htm
 .gn	NONE		# http://www.psg.com/dns/gn/
@@ -195,7 +195,7 @@
 .kz	whois.nic.kz
 .la	whois.nic.la
 .lb	WEB http://www.aub.edu.lb/lbdr/
-.lc	AFILIAS
+.lc	whois2.afilias-grs.net
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
@@ -266,7 +266,7 @@
 .rw	whois.ricta.org.rw	# http://www.ricta.org.rw/
 .sa	whois.nic.net.sa
 .sb	whois.nic.sb
-.sc	AFILIAS		# www.nic.sc
+.sc	whois2.afilias-grs.net		# www.nic.sc
 .sd	NONE		# http://isoc.sd/sis/index.php/sd-domain
 .se	whois.iis.se
 .sg	whois.sgnic.sg
@@ -326,7 +326,7 @@
 .uy	whois.nic.org.uy
 .uz	whois.cctld.uz
 .va	NONE
-.vc	AFILIAS
+.vc	whois2.afilias-grs.net
 .ve	whois.nic.ve
 .vg	whois.nic.vg
 .vi	WEB https://secure.nic.vi/whois-lookup/
