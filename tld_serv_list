@@ -49,7 +49,7 @@
 .aero	whois.aero
 .asia	whois.nic.asia
 .biz	whois.biz
-.cat	whois.cat
+.cat	whois.nic.cat
 .coop	whois.nic.coop
 .info	whois.afilias.net
 .jobs	whois.nic.jobs
@@ -215,7 +215,7 @@
 .ml	whois.dot.ml	# www.point.ml
 .mm	NONE		# www.nic.mm
 .mn	whois.nic.mn
-.mo	WEB http://www.monic.net.mo/	# whois.monic.mo is restricted
+.mo	WEB http://www.monic.mo/	# whois.monic.mo is restricted
 .mp	NONE		# get.mp
 .mq	WEB https://www.dom-enic.com/whois.html
 .mr	NONE		# www.nic.mr
