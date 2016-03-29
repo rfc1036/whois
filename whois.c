@@ -511,8 +511,7 @@ char *guess_server(const char *s)
     if (strchr(s, '@'))
 	return strdup("\x05");
 
-    /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
-    if (!strpbrk(s, ".-")) {
+    if (!strpbrk(s, ".")) {
 	/* if it is a TLD or a new gTLD then ask IANA */
 	for (i = 0; tld_serv[i]; i += 2)
 	    if (strcaseeq(s, tld_serv[i]))
@@ -521,7 +520,10 @@ char *guess_server(const char *s)
 	for (i = 0; new_gtlds[i]; i++)
 	    if (strcaseeq(s, new_gtlds[i]))
 		return strdup("whois.iana.org");
+    }
 
+    /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
+    if (!strpbrk(s, ".-")) {
 	if (strncaseeq(s, "as", 2) &&		/* it's an AS */
 		(isasciidigit(s[2]) || s[2] == ' '))
 	    return strdup(whereas(atol(s + 2)));
