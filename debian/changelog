@@ -1,3 +1,17 @@
+whois (5.2.12) unstable; urgency=medium
+
+  * Implemented support for fuzzing with the awesome american fuzzy lop.
+  * Added the .xn--e1a4c (ею, European Union) and .xn--mix891f (澳門,
+    Macao) TLD servers.
+  * Updated the .jobs, .kn and .pro TLD servers.
+  * Updated the .gi, .lc, .sc and .vc TLD servers, because the precedent
+    data caused the program to return an error status.
+  * Updated the list of new gTLDs.
+  * Fixed the code which queries whois.iana.org for TLDs to recognize IDN
+    TLDs too.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 29 Mar 2016 05:33:10 +0200
+
 whois (5.2.11) unstable; urgency=medium
 
   * Fixed the --select-types and --sources long options.
