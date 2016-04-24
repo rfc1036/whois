@@ -25,8 +25,7 @@ const char *hide_strings[] = {
     "The data in Networksolutions.com's WHOIS database", NULL,
     /* Some registrars like .wang copied the first paragraph of this
      * disclaimer, so the detection here needs to be split in two parts. */
-    "NOTICE: The expiration date", "",	/* crsnic */
-    "TERMS OF USE: You are not authorized", "reserves the right", /* crsnic */
+    "TERMS OF USE: You are not authorized", NULL,	/* crsnic */
     "The data in Register.com's WHOIS database", NULL,
     "The Data in the Tucows Registrar WHOIS database", NULL,
     "The data in NameSecure.com's WHOIS database", NULL,
