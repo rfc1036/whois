@@ -108,8 +108,18 @@ struct ip_del {
 };
 
 const struct ip_del ip_assign[] = {
-#include "ip_del_recovered.h"
 #include "ip_del.h"
+    { 0, 0, NULL }
+};
+
+struct ip_del_recovered {
+    const unsigned long start;
+    const unsigned long end;
+    const char         *serv;
+};
+
+const struct ip_del_recovered ip_assign_recovered[] = {
+#include "ip_del_recovered.h"
     { 0, 0, NULL }
 };
 
