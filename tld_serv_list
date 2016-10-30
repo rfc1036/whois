@@ -351,8 +351,10 @@
 # to find any registered subdomains to verify it.
 .xn--3e0b707e		whois.kr		# Korea, Republic of
 .xn--45brj9c		whois.inregistry.net	# India, Bengali AW
+.xn--54b7fta0cc		NONE			# Bangladesh
 .xn--80ao21a		whois.nic.kz		# Kazakhstan
 .xn--90a3ac		whois.rnids.rs		# Serbia
+.xn--90ae		whois.imena.bg		# Bulgaria
 .xn--90ais		whois.cctld.by		# Belarus
 .xn--clchc0ea0b2g2a9gcd	whois.sgnic.sg		# Singapore, Tamil
 .xn--d1alf		whois.marnet.mk		# Macedonia
