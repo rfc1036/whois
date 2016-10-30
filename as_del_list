@@ -89,6 +89,8 @@
 64099	64197	lacnic
 # catch all: everything else comes from ARIN
 1	64296	arin
+64297	64395	apnic
+64396	64495	ripe
 
 # documentation and private ASN block
 64496	65534	ripe
