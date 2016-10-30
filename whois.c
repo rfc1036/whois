@@ -814,9 +814,11 @@ char *query_crsnic(const int sock, const char *query)
     char *referral_server = NULL;
     int state = 0;
 
-    temp = malloc(strlen(query) + 1 + 2 + 1);
-    *temp = '=';
-    strcpy(temp + 1, query);
+    temp = malloc(strlen("domain ") + strlen(query) + 2 + 1);
+
+    if (!strpbrk(query, "=~ "))
+	strcpy(temp, "domain ");
+    strcat(temp, query);
     strcat(temp, "\r\n");
 
     fi = fdopen(sock, "r");
