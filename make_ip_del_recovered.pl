@@ -6,6 +6,8 @@ use strict;
 use autodie;
 
 use Text::CSV;
+use Net::CIDR;
+use Net::IP;
 
 my $csv = Text::CSV->new;
 
@@ -16,14 +18,15 @@ while (my $row = $csv->getline($in)) {
 	next if $row->[0] eq 'Start address';
 	next if $row->[5] ne 'ALLOCATED';
 
-	my ($b1, $b2, $b3, $b4) = split(/\./, $row->[0]);
-	my ($e1, $e2, $e3, $e4) = split(/\./, $row->[1]);
-	die if not defined $b4 or not defined $e4;
-
-	print $out '{ ' .
-		(($b1 << 24) + ($b2 << 16) + ($b3 << 8) + $b4) . 'UL, ' .
-		(($e1 << 24) + ($e2 << 16) + ($e3 << 8) + $e4) . 'UL, ' .
-		'"' . $row->[4] . qq|" },\n|;
+	print $out '/* ' . $row->[0] . ' - ' . $row->[1] . " */\n";
+	my @networks =
+		map { Net::IP->new($_) }
+		Net::CIDR::range2cidr($row->[0] . '-' . $row->[1]);
+	print $out sprintf(qq|{ %sUL, %sUL, "%s" },\n|,
+		$_->intip,
+		((~(0xffffffff >> $_->prefixlen)) & 0xffffffff),
+		$row->[4]
+	) foreach @networks;
 }
 
 close($in);
