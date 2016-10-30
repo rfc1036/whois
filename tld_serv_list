@@ -82,7 +82,7 @@
 .az	WEB http://www.nic.az/
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
-.bd	WEB http://whois.btcl.net.bd/
+.bd	WEB http://www.registry.com.bd/whois.php
 .be	whois.dns.be
 .bf	NONE		# http://www.arce.bf/ http://www.onatel.bf/internet/domaine.htm
 .bg	whois.register.bg
