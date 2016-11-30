@@ -72,7 +72,7 @@
 .am	whois.amnic.net
 .ao	NONE		# www.dns.ao
 .aq	NONE		# 2day.com
-.ar	WEB http://www.nic.ar/
+.ar	whois.nic.ar
 .as	whois.nic.as
 .priv.at whois.nic.priv.at	# "unofficial" SLD
 .at	whois.nic.at
