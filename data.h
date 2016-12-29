@@ -61,7 +61,7 @@ const char *hide_strings[] = {
     /* new gTLDs */
     "Terms of Use: Users accessing the Donuts WHOIS", NULL,
     "Terms of Use: Users accessing the United TLD WHOIS", NULL,
-    "Access to WHOIS information is provided", "",		/* Afilias */
+    "Access to WHOIS information is provided", NULL,		/* Afilias */
     "The  WHOIS information provided on this page", NULL, /* uniregistry.net */
     "The whois information provided on this site", "",	/* mm-registry.com */
     "; This data is provided by ", NULL,		/* ksregistry.net */
