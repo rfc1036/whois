@@ -140,7 +140,7 @@
 .fi	whois.fi
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.co.fk/
-.fm	WEB http://dot.fm/whois.html
+.fm	WEB http://dot.fm/whois/
 .fo	whois.nic.fo
 .fr	whois.nic.fr
 .ga	whois.dot.ga	# www.my.ga
@@ -267,7 +267,7 @@
 .sa	whois.nic.net.sa
 .sb	whois.nic.sb
 .sc	whois2.afilias-grs.net		# www.nic.sc
-.sd	NONE		# http://isoc.sd/sis/index.php/sd-domain
+.sd	NONE		# http://wwe.domains.sd/
 .se	whois.iis.se
 .sg	whois.sgnic.sg
 .sh	whois.nic.sh
