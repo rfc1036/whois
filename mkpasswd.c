@@ -123,7 +123,7 @@ static const struct crypt_method methods[] = {
 
 void generate_salt(char *const buf, const unsigned int len);
 void *get_random_bytes(const unsigned int len);
-void display_help(int error);
+void NORETURN display_help(int error);
 void display_version(void);
 void display_methods(void);
 
@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
     /* prepend options from environment */
     argv = merge_args(getenv("MKPASSWD_OPTIONS"), argv, &argc);
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:5P:R:sS:V", longopts, 0))
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:5P:R:sS:V", longopts, NULL))
 	    > 0) {
 	switch (ch) {
 	case '5':
@@ -363,7 +363,8 @@ int main(int argc, char *argv[])
 void* get_random_bytes(const unsigned int count)
 {
     char *buf;
-    int fd, bytes_read;
+    int fd;
+    ssize_t bytes_read;
 
     buf = NOFAIL(malloc(count));
     fd = open(RANDOM_DEVICE, O_RDONLY);
@@ -436,7 +437,7 @@ void generate_salt(char *const buf, const unsigned int len)
 
 #endif /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF */
 
-void display_help(int error)
+void NORETURN display_help(int error)
 {
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr,
 	    _("Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"

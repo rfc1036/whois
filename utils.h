@@ -16,8 +16,10 @@
 /* Portability macros */
 #ifdef __GNUC__
 # define NORETURN __attribute__((noreturn))
+# define UNUSED __attribute__((unused))
 #else
 # define NORETURN
+# define UNUSED
 #endif
 
 #ifndef AI_IDN
@@ -54,7 +56,7 @@
 void *do_nofail(void *ptr, const char *file, const int line);
 char **merge_args(char *args, char *argv[], int *argc);
 
-void err_quit(const char *fmt, ...) NORETURN;
-void err_sys(const char *fmt, ...) NORETURN;
+void NORETURN err_quit(const char *fmt, ...);
+void NORETURN err_sys(const char *fmt, ...);
 
 #endif

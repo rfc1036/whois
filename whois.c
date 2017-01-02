@@ -61,15 +61,15 @@
 #endif
 
 /* Global variables */
-int sockfd, verb = 0;
+static int sockfd, verb = 0;
 
 #ifdef ALWAYS_HIDE_DISCL
-int hide_discl = HIDE_NOT_STARTED;
+static int hide_discl = HIDE_NOT_STARTED;
 #else
-int hide_discl = HIDE_DISABLED;
+static int hide_discl = HIDE_DISABLED;
 #endif
 
-const char *client_tag = IDSTRING;
+static const char *client_tag = IDSTRING;
 
 #ifndef HAVE_GETOPT_LONG
 extern char *optarg;
@@ -126,7 +126,8 @@ int main(int argc, char *argv[])
     int longindex;
 #endif
 
-    int ch, nopar = 0, fstringlen = 64;
+    int ch, nopar = 0;
+    size_t fstringlen = 64;
     const char *server = NULL, *port = NULL;
     char *qstring, *fstring;
     int ret;
@@ -1050,13 +1051,13 @@ int connect_with_timeout(int fd, const struct sockaddr *addr,
     return 0;
 }
 
-void alarm_handler(int signum)
+void NORETURN alarm_handler(int signum UNUSED)
 {
     close(sockfd);
     err_quit(_("Timeout."));
 }
 
-void sighandler(int signum)
+void NORETURN sighandler(int signum)
 {
     close(sockfd);
     err_quit(_("Interrupted by signal %d..."), signum);
@@ -1133,7 +1134,7 @@ const char *is_new_gtld(const char *s)
 	if (in_domain(s, new_gtlds[i]))
 	    return new_gtlds[i];
 
-    return 0;
+    return NULL;
 }
 
 /*
@@ -1232,7 +1233,7 @@ void split_server_port(const char *const input,
     }
 
     /* change the server name to lower case */
-    for (p = (char *) *server; *p && *p != '\0'; p++)
+    for (p = (char *) *server; *p; p++)
 	*p = tolower(*p);
 }
 
@@ -1268,7 +1269,7 @@ char *convert_6to4(const char *s)
     }
 
     new = malloc(sizeof("255.255.255.255"));
-    sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
+    sprintf(new, "%ud.%ud.%ud.%ud", a >> 8, a & 0xff, b >> 8, b & 0xff);
 #endif
 
     return new;
@@ -1298,7 +1299,7 @@ char *convert_teredo(const char *s)
     a ^= 0xffff;
     b ^= 0xffff;
     new = malloc(sizeof("255.255.255.255"));
-    sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
+    sprintf(new, "%ud.%ud.%ud.%ud", a >> 8, a & 0xff, b >> 8, b & 0xff);
 #endif
 
     return new;
@@ -1378,7 +1379,7 @@ int isasciidigit(const char c) {
 
 /* http://www.ripe.net/ripe/docs/databaseref-manual.html */
 
-void usage(int error)
+void NORETURN usage(int error)
 {
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "Usage: whois [OPTION]... OBJECT...\n\n"
