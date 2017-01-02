@@ -72,7 +72,7 @@ char **merge_args(char *args, char *argv[], int *argc)
 }
 
 /* Error routines */
-void err_sys(const char *fmt, ...)
+void NORETURN err_sys(const char *fmt, ...)
 {
     va_list ap;
 
@@ -83,7 +83,7 @@ void err_sys(const char *fmt, ...)
     exit(2);
 }
 
-void err_quit(const char *fmt, ...)
+void NORETURN err_quit(const char *fmt, ...)
 {
     va_list ap;
 

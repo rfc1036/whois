@@ -4,7 +4,7 @@
  */
 
 /* servers which accept the new syntax (-V XXn.n) */
-const char *ripe_servers[] = {
+static const char *ripe_servers[] = {
     "whois.ripe.net",
     "whois.apnic.net",
     "whois.afrinic.net",
@@ -21,7 +21,7 @@ const char *ripe_servers[] = {
     NULL
 };
 
-const char *hide_strings[] = {
+static const char *hide_strings[] = {
     "The data in Networksolutions.com's WHOIS database", NULL,
     /* Some registrars like .wang copied the first paragraph of this
      * disclaimer, so the detection here needs to be split in two parts. */
@@ -85,7 +85,7 @@ const char *hide_strings[] = {
     NULL, NULL
 };
 
-const char *nic_handles[] = {
+static const char *nic_handles[] = {
     "net-",	"whois.arin.net",
     "netblk-",	"whois.arin.net",
     "poem-",	"whois.ripe.net",
@@ -107,7 +107,7 @@ struct ip_del {
     const char         *serv;
 };
 
-const struct ip_del ip_assign[] = {
+static const struct ip_del ip_assign[] = {
 #include "ip_del_recovered.h"
 #include "ip_del.h"
     { 0, 0, NULL }
@@ -119,7 +119,7 @@ struct ip6_del {
     const char          *serv;
 };
 
-const struct ip6_del ip6_assign[] = {
+static const struct ip6_del ip6_assign[] = {
 #include "ip6_del.h"
     { 0, 0, NULL }
 };
@@ -130,7 +130,7 @@ struct as_del {
     const char          *serv;
 };
 
-const struct as_del as_assign[] = {
+static const struct as_del as_assign[] = {
 #include "as_del.h"
     { 0, 0, NULL }
 };
@@ -141,22 +141,22 @@ struct as32_del {
     const char         *serv;
 };
 
-const struct as32_del as32_assign[] = {
+static const struct as32_del as32_assign[] = {
 #include "as32_del.h"
     { 0, 0, NULL }
 };
 
-const char *new_gtlds[] = {
+static const char *new_gtlds[] = {
 #include "new_gtlds.h"
     NULL
 };
 
-const char *tld_serv[] = {
+static const char *tld_serv[] = {
 #include "tld_serv.h"
     NULL,	NULL
 };
 
-const char *nic_handles_post[] = {
+static const char *nic_handles_post[] = {
 #include "nic_handles.h"
     NULL,	NULL
 };

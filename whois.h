@@ -42,6 +42,6 @@ void split_server_port(const char *const input, char **server, char **port);
 
 
 /* flags for RIPE-like servers */
-const char *ripeflags="abBcdFGKlLmMrRx";
-const char *ripeflagsp="gisTtvq";
+static const char *ripeflags="abBcdFGKlLmMrRx";
+static const char *ripeflagsp="gisTtvq";
 

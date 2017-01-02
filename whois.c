@@ -61,15 +61,15 @@
 #endif
 
 /* Global variables */
-int sockfd, verb = 0;
+static int sockfd, verb = 0;
 
 #ifdef ALWAYS_HIDE_DISCL
-int hide_discl = HIDE_NOT_STARTED;
+static int hide_discl = HIDE_NOT_STARTED;
 #else
-int hide_discl = HIDE_DISABLED;
+static int hide_discl = HIDE_DISABLED;
 #endif
 
-const char *client_tag = IDSTRING;
+static const char *client_tag = IDSTRING;
 
 #ifndef HAVE_GETOPT_LONG
 extern char *optarg;
@@ -1133,7 +1133,7 @@ const char *is_new_gtld(const char *s)
 	if (in_domain(s, new_gtlds[i]))
 	    return new_gtlds[i];
 
-    return 0;
+    return NULL;
 }
 
 /*
