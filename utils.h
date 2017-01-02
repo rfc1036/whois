@@ -16,8 +16,10 @@
 /* Portability macros */
 #ifdef __GNUC__
 # define NORETURN __attribute__((noreturn))
+# define UNUSED __attribute__((unused))
 #else
 # define NORETURN
+# define UNUSED
 #endif
 
 #ifndef AI_IDN

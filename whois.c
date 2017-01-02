@@ -126,7 +126,8 @@ int main(int argc, char *argv[])
     int longindex;
 #endif
 
-    int ch, nopar = 0, fstringlen = 64;
+    int ch, nopar = 0;
+    size_t fstringlen = 64;
     const char *server = NULL, *port = NULL;
     char *qstring, *fstring;
     int ret;
@@ -1050,13 +1051,13 @@ int connect_with_timeout(int fd, const struct sockaddr *addr,
     return 0;
 }
 
-void alarm_handler(int signum)
+void NORETURN alarm_handler(int signum UNUSED)
 {
     close(sockfd);
     err_quit(_("Timeout."));
 }
 
-void sighandler(int signum)
+void NORETURN sighandler(int signum)
 {
     close(sockfd);
     err_quit(_("Interrupted by signal %d..."), signum);
@@ -1378,7 +1379,7 @@ int isasciidigit(const char c) {
 
 /* http://www.ripe.net/ripe/docs/databaseref-manual.html */
 
-void usage(int error)
+void NORETURN usage(int error)
 {
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "Usage: whois [OPTION]... OBJECT...\n\n"
