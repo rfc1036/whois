@@ -32,9 +32,14 @@ ifdef LOCALEDIR
 DEFS += -DLOCALEDIR=\"$(BASEDIR)$(prefix)/share/locale\"
 endif
 
+ifdef HAVE_LIBIDN2
+whois_LDADD += -lidn2
+DEFS += -DHAVE_LIBIDN2
+else
 ifdef HAVE_LIBIDN
 whois_LDADD += -lidn
 DEFS += -DHAVE_LIBIDN
+endif
 endif
 
 ifdef HAVE_ICONV
