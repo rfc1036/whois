@@ -13,6 +13,10 @@
 
 
 /* autoconf in cpp macros */
+#if defined __NetBSD__ || __OpenBSD__
+# include <sys/param.h>
+#endif
+
 #ifdef linux
 # define ENABLE_NLS
 #endif

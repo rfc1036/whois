@@ -15,7 +15,7 @@ mkpasswd_OBJECTS := mkpasswd.o utils.o
 # FreeBSD
 #whois_LDADD += -liconv
 #LIBS += -L/usr/local/lib -lintl
-#INCLUDES += -I/usr/local/include
+#DEFS += -I/usr/local/include
 
 # OS/2 EMX
 #whois_LDADD += -lsocket

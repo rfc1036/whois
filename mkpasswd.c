@@ -32,6 +32,7 @@
 #endif
 #include <fcntl.h>
 #include <string.h>
+#include <strings.h>
 #include <time.h>
 #include <sys/types.h>
 #ifdef HAVE_XCRYPT
