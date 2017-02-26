@@ -85,7 +85,7 @@
 #if (defined __FreeBSD__ && __FreeBSD__ >= 9) || \
     (defined __NetBSD__  && __NetBSD_Version__ >= 600000000) || \
     (defined OpenBSD && OpenBSD >= 200805) || \
-    (defined __APPLE__ && defined __MACH__)
+    (defined __APPLE__ && defined __MACH__ && MAC_OS_X_VERSION_MIN_REQUIRED >= 1070)
 # define HAVE_ARC4RANDOM_BUF
 # undef RANDOM_DEVICE
 #endif
