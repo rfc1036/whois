@@ -147,7 +147,7 @@
 .gb	NONE
 .gd	whois.nic.gd
 .ge	WEB http://www.registration.ge/
-.gf	WEB https://www.dom-enic.com/whois.html
+.gf	whois.mediaserv.net
 .gg	whois.gg
 .gh	WEB http://www.nic.gh/customer/search_c.htm
 .gi	whois2.afilias-grs.net
@@ -217,7 +217,7 @@
 .mn	whois.nic.mn
 .mo	WEB http://www.monic.mo/	# whois.monic.mo is restricted
 .mp	NONE		# get.mp
-.mq	WEB https://www.dom-enic.com/whois.html
+.mq	whois.mediaserv.net
 .mr	NONE		# www.nic.mr
 .ms	whois.nic.ms
 .mt	WEB https://www.nic.org.mt/dotmt/ # whois.nic.org.mt is restricted
