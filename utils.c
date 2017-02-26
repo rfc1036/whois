@@ -46,7 +46,8 @@ char **merge_args(char *args, char *argv[], int *argc)
 {
     char *arg, *argstring;
     char **newargs = NULL;
-    unsigned int i, num_env = 0;
+    int i;
+    unsigned int num_env = 0;
 
     if (!args)
 	return argv;

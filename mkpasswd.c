@@ -151,7 +151,7 @@ int main(int argc, char *argv[])
     /* prepend options from environment */
     argv = merge_args(getenv("MKPASSWD_OPTIONS"), argv, &argc);
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:5P:R:sS:V", longopts, 0))
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:5P:R:sS:V", longopts, NULL))
 	    > 0) {
 	switch (ch) {
 	case '5':
@@ -364,7 +364,8 @@ int main(int argc, char *argv[])
 void* get_random_bytes(const unsigned int count)
 {
     char *buf;
-    int fd, bytes_read;
+    int fd;
+    ssize_t bytes_read;
 
     buf = NOFAIL(malloc(count));
     fd = open(RANDOM_DEVICE, O_RDONLY);

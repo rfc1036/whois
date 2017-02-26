@@ -126,7 +126,8 @@ int main(int argc, char *argv[])
     int longindex;
 #endif
 
-    int ch, nopar = 0, fstringlen = 64;
+    int ch, nopar = 0;
+    size_t fstringlen = 64;
     const char *server = NULL, *port = NULL;
     char *qstring, *fstring;
     int ret;
@@ -1133,7 +1134,7 @@ const char *is_new_gtld(const char *s)
 	if (in_domain(s, new_gtlds[i]))
 	    return new_gtlds[i];
 
-    return 0;
+    return NULL;
 }
 
 /*
@@ -1232,7 +1233,7 @@ void split_server_port(const char *const input,
     }
 
     /* change the server name to lower case */
-    for (p = (char *) *server; *p && *p != '\0'; p++)
+    for (p = (char *) *server; *p; p++)
 	*p = tolower(*p);
 }
 
@@ -1268,7 +1269,7 @@ char *convert_6to4(const char *s)
     }
 
     new = malloc(sizeof("255.255.255.255"));
-    sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
+    sprintf(new, "%ud.%ud.%ud.%ud", a >> 8, a & 0xff, b >> 8, b & 0xff);
 #endif
 
     return new;
@@ -1298,7 +1299,7 @@ char *convert_teredo(const char *s)
     a ^= 0xffff;
     b ^= 0xffff;
     new = malloc(sizeof("255.255.255.255"));
-    sprintf(new, "%d.%d.%d.%d", a >> 8, a & 0xff, b >> 8, b & 0xff);
+    sprintf(new, "%ud.%ud.%ud.%ud", a >> 8, a & 0xff, b >> 8, b & 0xff);
 #endif
 
     return new;
