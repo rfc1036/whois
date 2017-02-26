@@ -31,7 +31,9 @@
 #ifdef HAVE_REGEXEC
 #include <regex.h>
 #endif
-#ifdef HAVE_LIBIDN
+#ifdef HAVE_LIBIDN2
+#include <idn2.h>
+#elif defined HAVE_LIBIDN
 #include <idna.h>
 #endif
 #ifdef HAVE_INET_PTON
@@ -654,7 +656,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	simple_recode_input_charset = "utf-8";	/* then try UTF-8 */
 #endif
 
-#ifdef HAVE_LIBIDN
+#if defined HAVE_LIBIDN || defined HAVE_LIBIDN2
 # define DENIC_PARAM_ACE ",ace"
 #else
 # define DENIC_PARAM_ACE ""
@@ -1144,7 +1146,7 @@ const char *is_new_gtld(const char *s)
 char *normalize_domain(const char *dom)
 {
     char *p, *ret;
-#ifdef HAVE_LIBIDN
+#if defined HAVE_LIBIDN || defined HAVE_LIBIDN2
     char *domain_start = NULL;
 #endif
 
@@ -1159,7 +1161,7 @@ char *normalize_domain(const char *dom)
 	p--;
     }
 
-#ifdef HAVE_LIBIDN
+#if defined HAVE_LIBIDN || defined HAVE_LIBIDN2
     /* find the start of the last word if there are spaces in the query */
     for (p = ret; *p; p++)
 	if (*p == ' ')
@@ -1169,8 +1171,13 @@ char *normalize_domain(const char *dom)
 	char *q, *r;
 	int prefix_len;
 
+#ifdef HAVE_LIBIDN2
+	if (idn2_lookup_ul(domain_start, &q, IDN2_NONTRANSITIONAL) != IDN2_OK)
+	    return ret;
+#else
 	if (idna_to_ascii_lz(domain_start, &q, 0) != IDNA_SUCCESS)
 	    return ret;
+#endif
 
 	/* reassemble the original query in a new buffer */
 	prefix_len = domain_start - ret;
@@ -1185,8 +1192,13 @@ char *normalize_domain(const char *dom)
     } else {
 	char *q;
 
+#ifdef HAVE_LIBIDN2
+	if (idn2_lookup_ul(ret, &q, IDN2_NONTRANSITIONAL) != IDN2_OK)
+	    return ret;
+#else
 	if (idna_to_ascii_lz(ret, &q, 0) != IDNA_SUCCESS)
 	    return ret;
+#endif
 
 	free(ret);
 	return q;

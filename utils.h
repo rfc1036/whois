@@ -49,6 +49,9 @@
 # define ngettext(a, b, c) ((c==1) ? (a) : (b))
 #endif
 
+#if defined IDN2_VERSION_NUMBER && IDN2_VERSION_NUMBER < 0x00140000
+# define IDN2_NONTRANSITIONAL IDN2_NFC_INPUT
+#endif
 
 /* Prototypes */
 void *do_nofail(void *ptr, const char *file, const int line);
