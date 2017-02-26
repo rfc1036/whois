@@ -394,7 +394,7 @@ void generate_salt(char *const buf, const unsigned int len)
     unsigned char *entropy;
 
 #if defined HAVE_ARC4RANDOM_BUF
-    void *entropy = NOFAIL(malloc(len));
+    entropy = NOFAIL(malloc(len));
     arc4random_buf(entropy, len);
 #else
     entropy = get_random_bytes(len);
