@@ -547,10 +547,16 @@ char *guess_server(const char *s)
 #else
     if ((ip = myinet_aton(s))) {
 #endif
-	for (i = 0; ip_assign[i].serv; i++)
-	    if ((ip & ip_assign[i].mask) == ip_assign[i].net)
-		return strdup(ip_assign[i].serv);
-	return strdup("\x05");		/* not in the unicast IPv4 space */
+        /* check if ip is in the recovered list */
+        for (i = 0; ip_assign_recovered[i].serv; i++)
+            if ((ip >= ip_assign_recovered[i].start) && ip <= ip_assign_recovered[i].end)
+                return strdup(ip_assign_recovered[i].serv);
+
+        for (i = 0; ip_assign[i].serv; i++)
+            if ((ip & ip_assign[i].mask) == ip_assign[i].net)
+                return strdup(ip_assign[i].serv);
+
+        return strdup("\x05");          /* not in the unicast IPv4 space */
     }
 
     /* check the TLDs list */
