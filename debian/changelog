@@ -1,3 +1,14 @@
+whois (5.2.15) unstable; urgency=medium
+
+  * Updated the .gf and .mq TLD servers.
+  * Updated the list of new gTLDs.
+  * Updated the charset for whois.nic.kz.
+  * Fixed multiple portability issues on non-Linux platforms.
+  * Fixed a lot of minor compiler warnings with no practical effects.
+  * Added support for libidn2, not enabled yet.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 27 Feb 2017 00:37:41 +0100
+
 whois (5.2.14) unstable; urgency=medium
 
   * Updated the .ar, .bm and .fm TLD servers.
