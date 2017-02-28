@@ -36,9 +36,7 @@
 #elif defined HAVE_LIBIDN
 #include <idna.h>
 #endif
-#ifdef HAVE_INET_PTON
 #include <arpa/inet.h>
-#endif
 
 /* Application-specific */
 #include "version.h"
@@ -1137,6 +1135,27 @@ const char *is_new_gtld(const char *s)
     return NULL;
 }
 
+#ifdef HAVE_LIBIDN2
+int is_ip(const char *host)
+{
+  struct sockaddr_storage dst;
+  char ip[256]; /* max domain length is 254 */
+
+  if (sscanf(host,"%127[^/]", ip) != 1)
+    return 0;
+
+  if (inet_pton(AF_INET, ip, (struct in_addr *) &dst)
+    || inet_pton(AF_INET6, ip, (struct in6_addr *) &dst))
+  {
+    printf("%s: 1\n", ip);
+    return 1;
+  }
+
+  printf("%s: 0\n", ip);
+  return 0;
+}
+#endif
+
 /*
  * Attempt to normalize a query by removing trailing dots and whitespace,
  * then convert the domain to punycode.
@@ -1172,6 +1191,8 @@ char *normalize_domain(const char *dom)
 	int prefix_len;
 
 #ifdef HAVE_LIBIDN2
+	if (!is_ip(domain_start))
+	    return ret;
 	if (idn2_lookup_ul(domain_start, &q, IDN2_NONTRANSITIONAL) != IDN2_OK)
 	    return ret;
 #else
@@ -1193,6 +1214,8 @@ char *normalize_domain(const char *dom)
 	char *q;
 
 #ifdef HAVE_LIBIDN2
+	if (is_ip(ret))
+	    return ret;
 	if (idn2_lookup_ul(ret, &q, IDN2_NONTRANSITIONAL) != IDN2_OK)
 	    return ret;
 #else
