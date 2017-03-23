@@ -12,6 +12,7 @@
 .gb.com	whois.centralnic.net
 .gb.net	whois.centralnic.net
 .gr.com	whois.centralnic.net
+.hk.com whois.registry.hk.com
 .hu.com	whois.centralnic.net
 .in.net	whois.centralnic.net
 .no.com	whois.centralnic.net
@@ -35,6 +36,7 @@
 
 .eu.org	whois.eu.org
 .za.org	whois.za.org
+.hk.org whois.registry.hk.com
 .org	whois.pir.org
 
 .edu	whois.educause.edu
@@ -162,6 +164,8 @@
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
 .gw	WEB http://nic.gw/en/whois/
 .gy	whois.registry.gy
+.ltd.hk whois.registry.hk.com
+.inc.hk whois.registry.hk.com
 .hk	whois.hkirc.hk
 .hm	whois.registry.hm
 .hn	whois.nic.hn
