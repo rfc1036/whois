@@ -1172,6 +1172,12 @@ char *normalize_domain(const char *dom)
 	int prefix_len;
 
 #ifdef HAVE_LIBIDN2
+        /* skip CIDR notation */
+	if (NULL != strchr(domain_start, '/'))
+            return ret;
+	/* skip IPv6 */
+	if (NULL != strchr(domain_start, ':'))
+            return ret;
 	if (idn2_lookup_ul(domain_start, &q, IDN2_NONTRANSITIONAL) != IDN2_OK)
 	    return ret;
 #else
@@ -1193,6 +1199,12 @@ char *normalize_domain(const char *dom)
 	char *q;
 
 #ifdef HAVE_LIBIDN2
+        /* skip CIDR notation */
+	if (NULL != strchr(ret, '/'))
+            return ret;
+        /* skip IPv6 */
+	if (NULL != strchr(ret, ':'))
+            return ret;
 	if (idn2_lookup_ul(ret, &q, IDN2_NONTRANSITIONAL) != IDN2_OK)
 	    return ret;
 #else
