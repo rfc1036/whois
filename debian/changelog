@@ -1,3 +1,11 @@
+whois (5.2.16) unstable; urgency=medium
+
+  * Fixed parsing of 6to4 addresses broken in 5.2.15.
+  * Updated the .do TLD server.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 13 Mar 2017 01:40:38 +0100
+
 whois (5.2.15) unstable; urgency=medium
 
   * Updated the .gf and .mq TLD servers.
