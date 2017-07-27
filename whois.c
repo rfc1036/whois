@@ -834,8 +834,8 @@ char *query_crsnic(const int sock, const char *query)
 	   is queried */
 	if (state == 0 && strneq(buf, "   Domain Name:", 15))
 	    state = 1;
-	if (state == 1 && (strneq(buf, "   Whois Server:", 16)
-		    || strneq(buf, "   WHOIS Server:", 16))) {
+	if (state == 1 && (strneq(buf, "   Registrar Whois Server:", 26)
+		    || strneq(buf, "   Registrar WHOIS Server:", 26))) {
 	    for (p = buf; *p != ':'; p++);	/* skip until the colon */
 	    for (p++; *p == ' '; p++);		/* skip the spaces */
 	    referral_server = strdup(p);
