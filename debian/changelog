@@ -1,3 +1,18 @@
+whois (5.2.17) unstable; urgency=high
+
+  * Fixed whois referrals for .com, .net, .jobs, .bz, .cc and .tv, broken
+    by an ICANN-mandated output change:
+    https://www.icann.org/resources/pages/rdds-labeling-policy-2017-02-01-en
+  * Added the .xn--2scrj9c (ಭಾರತ, India), .xn--3hcrj9c (ଭାରତ, India),
+    .xn--45br5cyl (ভাৰত, India), .xn--h2breg3eve (भारतम्, India),
+    .xn--h2brj9c8c (भारोत, India), .xn--mgbbh1a (ﺏﺍﺮﺗ, India),
+    .xn--mgbgu82a (ڀﺍﺮﺗ, India) and .xn--rvc1e0am3e (ഭാരതം, India)
+    TLD servers.
+  * Updated the list of new gTLDs.
+  * whois.1: fixed a typo. (Closes: #866742)
+
+ -- Marco d'Itri <md@linux.it>  Thu, 27 Jul 2017 17:08:47 +0200
+
 whois (5.2.16) unstable; urgency=medium
 
   * Fixed parsing of 6to4 addresses broken in 5.2.15.
