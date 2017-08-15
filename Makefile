@@ -58,6 +58,8 @@ endif
 mkpasswd_LDADD += -lcrypt
 endif
 
+HAVE_GETTEXT ?= YES
+
 CPPFLAGS += $(DEFS) $(INCLUDES)
 
 ##############################################################################
@@ -132,7 +134,9 @@ install-mkpasswd: mkpasswd
 	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
 
 install-pos:
+ifdef HAVE_GETTEXT
 	cd po && $(MAKE) install
+endif
 
 distclean: clean
 	rm -f po/whois.pot
@@ -143,7 +147,9 @@ clean:
 	rm -f po/*.mo
 
 pos:
+ifdef HAVE_GETTEXT
 	cd po && $(MAKE)
+endif
 
 depend: Makefile.depend
 Makefile.depend:
