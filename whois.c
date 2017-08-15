@@ -818,6 +818,7 @@ char *query_crsnic(const int sock, const char *query)
     int state = 0;
 
     temp = malloc(strlen("domain ") + strlen(query) + 2 + 1);
+    *temp = '\0';
 
     if (!strpbrk(query, "=~ "))
 	strcpy(temp, "domain ");
