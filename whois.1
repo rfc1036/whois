@@ -137,6 +137,11 @@ Return the verbose template for a object of \fITYPE\fP.
 .B -x
 Search for only exact match on network address prefix.
 .SH "NOTES"
+When querying the Verisign gTLDs (e.g. .com, .net...) thin registry servers
+for a domain the program will automatically prepend the \fIdomain\fP
+keyword to only show domain records.
+The \fInameserver\fP or \fIregistrar\fP keywords must be used to show
+other kinds of records.
 .P
 When querying \fIwhois.arin.net\fP for IPv4 or IPv6 networks, the CIDR
 netmask length will be automatically removed from the query string.
