@@ -816,11 +816,17 @@ char *query_crsnic(const int sock, const char *query)
     int hide = hide_discl;
     char *referral_server = NULL;
     int state = 0;
+    int dotscount = 0;
 
     temp = malloc(strlen("domain ") + strlen(query) + 2 + 1);
     *temp = '\0';
 
-    if (!strpbrk(query, "=~ "))
+    /* if this has more than one dot then it is a name server */
+    for (p = (char *) query; *p != '\0'; p++)
+	if (*p == '.')
+	    dotscount++;
+
+    if (dotscount == 1 && !strpbrk(query, "=~ "))
 	strcpy(temp, "domain ");
     strcat(temp, query);
     strcat(temp, "\r\n");
