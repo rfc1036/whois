@@ -32,14 +32,12 @@ ifdef LOCALEDIR
 DEFS += -DLOCALEDIR=\"$(BASEDIR)$(prefix)/share/locale\"
 endif
 
-ifdef HAVE_LIBIDN2
-whois_LDADD += -lidn2
-DEFS += -DHAVE_LIBIDN2
-else
-ifdef HAVE_LIBIDN
-whois_LDADD += -lidn
-DEFS += -DHAVE_LIBIDN
-endif
+ifeq ($(shell pkg-config --exists 'libidn2 >= 2.0.3' || echo NO),)
+whois_LDADD += $(shell pkg-config --libs libidn2)
+DEFS += -DHAVE_LIBIDN2 $(shell pkg-config --cflags libidn2)
+else ifeq ($(shell pkg-config --exists 'libidn' || echo NO),)
+whois_LDADD += $(shell pkg-config --libs libidn)
+DEFS += -DHAVE_LIBIDN $(shell pkg-config --cflags libidn)
 endif
 
 ifdef HAVE_ICONV

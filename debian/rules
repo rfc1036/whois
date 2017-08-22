@@ -16,7 +16,7 @@ D := $(CURDIR)/debian/whois
 
 build:
 	dh_testdir
-	$(MAKE) CONFIG_FILE="/etc/whois.conf" HAVE_LIBIDN=1 HAVE_ICONV=1
+	$(MAKE) CONFIG_FILE="/etc/whois.conf" HAVE_ICONV=1
 	touch $@
 
 clean:
