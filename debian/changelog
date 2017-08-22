@@ -1,3 +1,14 @@
+whois (5.2.18) unstable; urgency=medium
+
+  * Fixed an unitialised variable which used to break querying the
+    Verisign registry servers with parameters.
+  * Do not request domains only when querying the Verisign registry
+    servers for a hostname.
+  * Fixed the program return code for queries like
+    "nameserver name.example.com".
+
+ -- Marco d'Itri <md@linux.it>  Tue, 22 Aug 2017 16:45:02 +0200
+
 whois (5.2.17) unstable; urgency=high
 
   * Fixed whois referrals for .com, .net, .jobs, .bz, .cc and .tv, broken
