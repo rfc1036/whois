@@ -54,7 +54,7 @@
 .info	whois.afilias.net
 .jobs	VERISIGN whois.nic.jobs
 .mobi	whois.afilias.net
-.museum	whois.museum
+.museum	whois.nic.museum
 .name	whois.nic.name
 .post	whois.dotpostregistry.net
 .pro	whois.afilias.net
@@ -168,7 +168,7 @@
 .hr	whois.dns.hr
 .ht	whois.nic.ht
 .hu	whois.nic.hu
-.id	whois.pandi.or.id
+.id	whois.id
 .ie	whois.domainregistry.ie
 .il	whois.isoc.org.il
 .im	whois.nic.im
@@ -265,7 +265,7 @@
 .ru	whois.tcinet.ru
 .rw	whois.ricta.org.rw	# http://www.ricta.org.rw/
 .sa	whois.nic.net.sa
-.sb	whois.nic.sb
+.sb	whois.nic.net.sb
 .sc	whois2.afilias-grs.net		# www.nic.sc
 .sd	NONE		# http://wwe.domains.sd/
 .se	whois.iis.se
