@@ -124,7 +124,7 @@
 .cy	WEB http://www.nic.cy/nslookup/online_database.php
 .cz	whois.nic.cz
 .de	whois.denic.de
-.dj	WEB http://www.nic.dj/whois.php
+.dj	NONE		# http://www.dj/
 .dk	whois.dk-hostmaster.dk
 .dm	whois.nic.dm
 .do	whois.nic.do
