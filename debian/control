@@ -2,9 +2,9 @@ Source: whois
 Section: net
 Priority: standard
 Maintainer: Marco d'Itri <md@linux.it>
-Standards-Version: 4.1.1.1
+Standards-Version: 4.1.2
 Rules-Requires-Root: no
-Build-Depends: debhelper (>= 9), gettext, libidn11-dev
+Build-Depends: debhelper (>= 9), gettext, libidn2-dev (>= 2.0.3)
 Vcs-Git: git://github.com/rfc1036/whois.git
 Vcs-Browser: https://github.com/rfc1036/whois
 
