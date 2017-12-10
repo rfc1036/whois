@@ -94,6 +94,11 @@
 # undef RANDOM_DEVICE
 #endif
 
+/* or else getentropy(2) on Linux */
+#if defined __GLIBC__ && __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 25
+# define HAVE_GETENTROPY
+#endif
+
 #ifdef ENABLE_NLS
 # ifndef NLS_CAT_NAME
 #  define NLS_CAT_NAME   "whois"

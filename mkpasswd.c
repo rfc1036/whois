@@ -360,7 +360,7 @@ int main(int argc, char *argv[])
     exit(0);
 }
 
-#if defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF
+#if defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF || defined HAVE_GETENTROPY
 
 void* get_random_bytes(const unsigned int count)
 {
@@ -371,6 +371,9 @@ void* get_random_bytes(const unsigned int count)
     buf = NOFAIL(malloc(count));
 #if defined HAVE_ARC4RANDOM_BUF
     arc4random_buf(buf, count);
+#elif defined HAVE_GETENTROPY
+    if (getentropy(buf, count) < 0)
+	perror("getentropy");
 #else
     fd = open(RANDOM_DEVICE, O_RDONLY);
     if (fd < 0) {
@@ -405,7 +408,7 @@ void generate_salt(char *const buf, const unsigned int len)
     free(entropy);
 }
 
-#else /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF */
+#else /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF || HAVE_GETENTROPY */
 
 void generate_salt(char *const buf, const unsigned int len)
 {
@@ -433,7 +436,7 @@ void generate_salt(char *const buf, const unsigned int len)
     buf[i] = '\0';
 }
 
-#endif /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF */
+#endif /* RANDOM_DEVICE || HAVE_ARC4RANDOM_BUF || HAVE_GETENTROPY*/
 
 void NORETURN display_help(int error)
 {
