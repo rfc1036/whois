@@ -1,3 +1,12 @@
+whois (5.2.19) unstable; urgency=medium
+
+  * Switched do libidn2.
+  * Adopted getentropy(2) for mkpasswd on recent Linux.
+  * Updated the .id and .museum TLD servers.
+  * Removed the .dj TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 10 Dec 2017 17:16:58 +0100
+
 whois (5.2.18) unstable; urgency=medium
 
   * Fixed an unitialised variable which used to break querying the
