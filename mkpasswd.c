@@ -364,17 +364,17 @@ int main(int argc, char *argv[])
 
 void* get_random_bytes(const unsigned int count)
 {
-    char *buf;
-    int fd;
-    ssize_t bytes_read;
+    char *buf = NOFAIL(malloc(count));
 
-    buf = NOFAIL(malloc(count));
 #if defined HAVE_ARC4RANDOM_BUF
     arc4random_buf(buf, count);
 #elif defined HAVE_GETENTROPY
     if (getentropy(buf, count) < 0)
 	perror("getentropy");
 #else
+    int fd;
+    ssize_t bytes_read;
+
     fd = open(RANDOM_DEVICE, O_RDONLY);
     if (fd < 0) {
 	perror("open(" RANDOM_DEVICE ")");
