@@ -2,6 +2,8 @@ prefix = /usr
 
 CFLAGS ?= -g -O2
 
+PKG_CONFIG ?= pkg-config
+
 PERL = perl
 INSTALL = install
 
@@ -32,12 +34,12 @@ ifdef LOCALEDIR
 DEFS += -DLOCALEDIR=\"$(BASEDIR)$(prefix)/share/locale\"
 endif
 
-ifeq ($(shell pkg-config --exists 'libidn2 >= 2.0.3' || echo NO),)
-whois_LDADD += $(shell pkg-config --libs libidn2)
-DEFS += -DHAVE_LIBIDN2 $(shell pkg-config --cflags libidn2)
-else ifeq ($(shell pkg-config --exists 'libidn' || echo NO),)
-whois_LDADD += $(shell pkg-config --libs libidn)
-DEFS += -DHAVE_LIBIDN $(shell pkg-config --cflags libidn)
+ifeq ($(shell $(PKG_CONFIG) --exists 'libidn2 >= 2.0.3' || echo NO),)
+whois_LDADD += $(shell $(PKG_CONFIG) --libs libidn2)
+DEFS += -DHAVE_LIBIDN2 $(shell $(PKG_CONFIG) --cflags libidn2)
+else ifeq ($(shell $(PKG_CONFIG) --exists 'libidn' || echo NO),)
+whois_LDADD += $(shell $(PKG_CONFIG) --libs libidn)
+DEFS += -DHAVE_LIBIDN $(shell $(PKG_CONFIG) --cflags libidn)
 endif
 
 ifdef HAVE_ICONV
