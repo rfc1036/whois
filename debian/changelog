@@ -1,3 +1,12 @@
+whois (5.2.20) unstable; urgency=medium
+
+  * Added the .mr TLD server.
+  * Removed the .bs TLD server.
+  * Updated the .ai, .gh, .gr, .kw, .ls, .ph, .sb, .com.uy and .vn TLD
+    servers.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 27 Dec 2017 03:15:27 +0100
+
 whois (5.2.19) unstable; urgency=medium
 
   * Switched do libidn2.
