@@ -33,6 +33,11 @@ ifdef LOCALEDIR
 DEFS += -DLOCALEDIR=\"$(BASEDIR)$(prefix)/share/locale\"
 endif
 
+# libidn support has been autodetected since 5.2.18
+ifdef HAVE_LIBIDN
+$(error Please fix your build system to stop defining HAVE_LIBIDN!)
+endif
+
 ifeq ($(shell $(PKG_CONFIG) --exists 'libidn2 >= 2.0.3' || echo NO),)
 whois_LDADD += $(shell $(PKG_CONFIG) --libs libidn2)
 DEFS += -DHAVE_LIBIDN2 $(shell $(PKG_CONFIG) --cflags libidn2)
@@ -104,11 +109,11 @@ servers_charset.h: servers_charset_list make_servers_charset.pl
 afl:
 	$(MAKE) whois \
 		CC=afl-gcc AFL_HARDEN=1 \
-		HAVE_LIBIDN=1 HAVE_ICONV=1 DEFS=-DAFL_MODE=1
+		HAVE_ICONV=1 DEFS=-DAFL_MODE=1
 
 afl2:
 	$(MAKE) whois \
-		HAVE_LIBIDN=1 HAVE_ICONV=1 DEFS=-DAFL_MODE=1
+		HAVE_ICONV=1 DEFS=-DAFL_MODE=1
 
 afl-run:
 	nice afl-fuzz -i ../afl_in -o ../afl_out -- ./whois
