@@ -156,7 +156,7 @@
 .gn	NONE		# http://www.psg.com/dns/gn/
 .gp	WEB https://www.dom-enic.com/whois.html
 .gq	whois.dominio.gq
-.gr	WEB https://grweb.ics.forth.gr/public/whois.jsp?lang=en
+.gr	WEB https://grweb.ics.forth.gr/public/whois
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/
 .gu	WEB http://gadao.gov.gu/domainsearch.htm
