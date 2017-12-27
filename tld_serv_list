@@ -246,7 +246,7 @@
 .pg	NONE	# http://www.unitech.ac.pg/
 .edu.ph	WEB http://services.ph.net/dns/query.pl
 .gov.ph	NONE	# http://dns.gov.ph/
-.ph	WEB http://www.dot.ph/whois
+.ph	WEB https://whois.dot.ph/
 .pk	WEB http://www.pknic.net.pk/
 .co.pl	whois.co.pl	# "unofficial" SLD
 .pl	whois.dns.pl
