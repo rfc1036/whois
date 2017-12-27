@@ -95,7 +95,7 @@
 .bo	whois.nic.bo
 #.bq
 .br	whois.registro.br
-.bs	WEB http://www.nic.bs/cgi-bin/search.pl
+.bs	NONE		# http://www.register.bs/
 .bt	WEB http://www.nic.bt/
 .bv	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .by	whois.cctld.by
