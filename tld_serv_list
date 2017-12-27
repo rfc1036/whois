@@ -199,7 +199,7 @@
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
-.ls	WEB http://www.co.ls/co.asp
+.ls	WEB http://www.nic.ls/
 .lt	whois.domreg.lt
 .lu	whois.dns.lu
 .lv	whois.nic.lv
