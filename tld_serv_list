@@ -322,7 +322,7 @@
 #.um
 .fed.us	whois.nic.gov
 .us	whois.nic.us
-.com.uy	WEB https://nic.anteldata.com.uy/dns/consultaWhois/whois.action
+.com.uy	WEB https://nic.com.uy/public/consulta-whois/acceder.action
 .uy	whois.nic.org.uy
 .uz	whois.cctld.uz
 .va	NONE
