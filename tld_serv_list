@@ -218,7 +218,7 @@
 .mo	WEB http://www.monic.mo/	# whois.monic.mo is restricted
 .mp	NONE		# get.mp
 .mq	whois.mediaserv.net
-.mr	NONE		# www.nic.mr
+.mr	whois.nic.mr
 .ms	whois.nic.ms
 .mt	WEB https://www.nic.org.mt/dotmt/ # whois.nic.org.mt is restricted
 .mu	whois.nic.mu
