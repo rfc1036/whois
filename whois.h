@@ -38,6 +38,7 @@ char *normalize_domain(const char *);
 char *convert_6to4(const char *);
 char *convert_teredo(const char *);
 char *convert_inaddr(const char *);
+char *convert_in6arpa(const char *);
 int handle_query(const char *server, const char *port,
 		   const char *qstring, const char *fstring);
 void split_server_port(const char *const input, char **server, char **port);

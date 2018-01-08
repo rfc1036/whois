@@ -17,6 +17,7 @@ while (<>) {
 	$b = "\\x03" if $b eq 'NONE';
 	$b = "\\x08" if $b eq 'AFILIAS';
 	$b = "\\x0C" if $b eq 'ARPA';
+	$b = "\\x0D" if $b eq 'IP6';
 	print qq|    "$a",\t"$b",\n|;
 }
 

@@ -368,6 +368,12 @@ int handle_query(const char *hserver, const char *hport,
 	    server = guess_server(p);
 	    free(p);
 	    goto retry;
+	case 0x0D:
+	    p = convert_in6arpa(query);
+	    free(server);
+	    server = guess_server(p);
+	    free(p);
+	    goto retry;
 	default:
 	    break;
     }
@@ -1326,6 +1332,69 @@ char *convert_inaddr(const char *s)
     new = malloc(sizeof("255.255.255.255"));
     sprintf(new, "%ld.%ld.%ld.0", c, b, a);
     return new;
+}
+
+char *convert_in6arpa(const char *s)
+{
+    char *ip, *p;
+    int character = 0;
+    int digits = 1;
+
+    ip = malloc(40);
+
+    p = strstr(s, ".ip6.arpa");
+    if (!p || p == s) {
+	ip[character] = '\0';
+	return ip;
+    }
+
+    /* start from the first character before ".ip6.arpa" */
+    p--;
+
+    while (1) {
+	/* check that this is a valid digit for an IPv6 address */
+	if (!((*p >= '0' && *p <= '9') || (*p >= 'a' && *p <= 'f') ||
+	      (*p >= 'A' && *p <= 'F'))) {
+	    free(ip);
+	    ip[character] = '\0';
+	    return ip;
+	}
+
+	/* copy the digit to the IP address */
+	ip[character++] = *p;
+
+	/* stop if we have reached the beginning of the string */
+	if (p == s)
+	    break;
+
+	/* stop if we have parsed a complete address */
+	if (character == 39)
+	    break;
+
+	/* add the colon separator every four digits */
+	if ((digits++ % 4) == 0)
+	    ip[character++] = ':';
+
+	/* go to the precedent character and abort if it is not a dot */
+	p--;
+	if (*p != '.') {
+	    ip[character] = '\0';
+	    return ip;
+	}
+
+	/* abort if the string starts with the dot */
+	if (p == s) {
+	    ip[character] = '\0';
+	    return ip;
+	}
+
+	/* go to the precedent character and continue */
+	p--;
+    }
+
+    /* terminate the string */
+    ip[character] = '\0';
+    return ip;
 }
 
 unsigned long myinet_aton(const char *s)
