@@ -107,13 +107,8 @@ servers_charset.h: servers_charset_list make_servers_charset.pl
 
 ##############################################################################
 afl:
-	$(MAKE) whois \
-		CC=afl-gcc AFL_HARDEN=1 \
-		HAVE_ICONV=1 DEFS=-DAFL_MODE=1
-
-afl2:
-	$(MAKE) whois \
-		HAVE_ICONV=1 DEFS=-DAFL_MODE=1
+	-rm -f Makefile.depend
+	DEFS=-DAFL_MODE=1 AFL_HARDEN=1 $(MAKE) whois CC=afl-gcc HAVE_ICONV=1
 
 afl-run:
 	nice afl-fuzz -i ../afl_in -o ../afl_out -- ./whois
