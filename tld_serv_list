@@ -44,6 +44,7 @@
 
 .e164.arpa	whois.ripe.net
 .in-addr.arpa	ARPA
+.ip6.arpa	IP6
 .arpa	whois.iana.org
 
 .aero	whois.aero
