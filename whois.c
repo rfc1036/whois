@@ -555,7 +555,7 @@ char *guess_server(const char *s)
 	char *server = malloc(strlen("whois.nic.") + strlen(tld) + 1);
 	strcpy(server, "whois.nic.");
 	strcat(server, tld);
-	return(server);
+	return server;
     }
 
     /* no dot but hyphen */
@@ -935,7 +935,7 @@ int openconn(const char *server, const char *port)
      * instead of connecting to the actual whois server.
      */
     if (AFL_MODE)
-	return (dup(0));
+	return dup(0);
 
     alarm(60);
 
@@ -1001,7 +1001,7 @@ int connect_with_timeout(int fd, const struct sockaddr *addr,
     struct timeval tv;
 
     if (timeout <= 0)
-	return (connect(fd, addr, addrlen));
+	return connect(fd, addr, addrlen);
 
     if ((savedflags = fcntl(fd, F_GETFL, 0)) < 0)
 	return -1;
@@ -1065,7 +1065,8 @@ void NORETURN sighandler(int signum)
     err_quit(_("Interrupted by signal %d..."), signum);
 }
 
-int japanese_locale(void) {
+int japanese_locale(void)
+{
     char *lang;
 
     lang = getenv("LC_MESSAGE");
@@ -1212,7 +1213,8 @@ char *normalize_domain(const char *dom)
 
 /* server and port have to be freed by the caller */
 void split_server_port(const char *const input,
-	char **server, char **port) {
+	char **server, char **port)
+{
     char *p;
 
     if (*input == '[' && (p = strchr(input, ']'))) {	/* IPv6 */
@@ -1356,7 +1358,8 @@ unsigned long asn32_to_long(const char *s)
     return (a << 16) + b;
 }
 
-int isasciidigit(const char c) {
+int isasciidigit(const char c)
+{
     return (c >= '0' && c <= '9') ? 1 : 0;
 }
 
