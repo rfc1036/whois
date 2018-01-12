@@ -5,15 +5,22 @@
 # Elements in this list are matched against the end of the query.
 # "NIC?" means that I have not been able to find the registry.
 
+.ae.org	whois.centralnic.net
+.ar.com	whois.centralnic.net
 .br.com	whois.centralnic.net
 .cn.com	whois.centralnic.net
+.com.de whois.centralnic.net
+.com.se whois.centralnic.net
 .de.com	whois.centralnic.net
 .eu.com	whois.centralnic.net
 .gb.com	whois.centralnic.net
 .gb.net	whois.centralnic.net
-.gr.com	whois.centralnic.net
 .hu.com	whois.centralnic.net
-.in.net	whois.centralnic.net
+.hu.net	whois.centralnic.net
+.jp.net whois.centralnic.net
+.jpn.com whois.centralnic.net
+.kr.com whois.centralnic.net
+.mex.com whois.centralnic.net
 .no.com	whois.centralnic.net
 .qc.com	whois.centralnic.net
 .ru.com	whois.centralnic.net
@@ -24,9 +31,13 @@
 .uk.net	whois.centralnic.net
 .us.com	whois.centralnic.net
 .uy.com	whois.centralnic.net
-.za.com	whois.centralnic.net
-.jpn.com whois.centralnic.net
-.web.com whois.centralnic.net
+.za.bz whois.centralnic.net
+.za.com whois.centralnic.net
+.africa.com whois.centralnic.net
+.gr.com whois.centralnic.net
+.in.net whois.centralnic.net
+.us.org whois.centralnic.net
+.co.com whois.centralnic.net
 
 .com	VERISIGN whois.verisign-grs.com
 
