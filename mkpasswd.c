@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2008  Marco d'Itri
+ * Copyright (C) 2001-2018 Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
