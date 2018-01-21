@@ -1,3 +1,11 @@
+whois (5.3.0) unstable; urgency=medium
+
+  * Implemented querying for ip6.arpa domains.
+  * Updated the .pr TLD servers.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 21 Jan 2018 01:23:45 +0100
+
 whois (5.2.20) unstable; urgency=medium
 
   * Added the .mr TLD server.
