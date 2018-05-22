@@ -1,3 +1,12 @@
+whois (5.3.1) unstable; urgency=medium
+
+  * mkpasswd: support passwords of arbitrary length. (Closes: #899254)
+  * Added the .ls TLD server. (Closes: #896452)
+  * Added support for -bzh and -uanic NIC handles.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 22 May 2018 15:32:28 +0200
+
 whois (5.3.0) unstable; urgency=medium
 
   * Implemented querying for ip6.arpa domains.
