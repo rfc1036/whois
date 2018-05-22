@@ -127,6 +127,7 @@ void *get_random_bytes(const unsigned int len);
 void NORETURN display_help(int error);
 void display_version(void);
 void display_methods(void);
+char *read_line(FILE *fp);
 
 int main(int argc, char *argv[])
 {
@@ -314,24 +315,20 @@ int main(int argc, char *argv[])
     if (password) {
     } else if (password_fd != -1) {
 	FILE *fp;
-	char *p;
 
 	if (isatty(password_fd))
 	    fprintf(stderr, _("Password: "));
-	password = NOFAIL(malloc(128));
 	fp = fdopen(password_fd, "r");
 	if (!fp) {
 	    perror("fdopen");
 	    exit(2);
 	}
-	if (!fgets(password, 128, fp)) {
-	    perror("fgets");
+
+	password = read_line(fp);
+	if (!password) {
+	    perror("fgetc");
 	    exit(2);
 	}
-
-	p = strpbrk(password, "\n\r");
-	if (p)
-	    *p = '\0';
     } else {
 	password = getpass(_("Password: "));
 	if (!password) {
@@ -477,5 +474,31 @@ void display_methods(void)
     printf(_("Available methods:\n"));
     for (i = 0; methods[i].method != NULL; i++)
 	printf("%s\t%s\n", methods[i].method, methods[i].desc);
+}
+
+char *read_line(FILE *fp) {
+    int size = 128;
+    int ch;
+    size_t pos = 0;
+    char *password;
+
+    password = NOFAIL(malloc(size));
+
+    while ((ch = fgetc(fp)) != EOF) {
+	if (ch == '\n' || ch == '\r')
+	    break;
+	password[pos++] = ch;
+	if (pos == size) {
+	    size += 128;
+	    password = NOFAIL(realloc(password, size));
+	}
+    }
+    password[pos] = '\0';
+
+    if (ferror(fp)) {
+	free(password);
+	return NULL;
+    }
+    return password;
 }
 
