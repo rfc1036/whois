@@ -1356,7 +1356,6 @@ char *convert_in6arpa(const char *s)
 	/* check that this is a valid digit for an IPv6 address */
 	if (!((*p >= '0' && *p <= '9') || (*p >= 'a' && *p <= 'f') ||
 	      (*p >= 'A' && *p <= 'F'))) {
-	    free(ip);
 	    ip[character] = '\0';
 	    return ip;
 	}
