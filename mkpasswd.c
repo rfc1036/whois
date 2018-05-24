@@ -462,7 +462,7 @@ void NORETURN display_help(int error)
 void display_version(void)
 {
     printf("mkpasswd %s\n\n", VERSION);
-    puts("Copyright (C) 2001-2008 Marco d'Itri\n"
+    puts("Copyright (C) 2001-2018 Marco d'Itri\n"
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.");
 }
