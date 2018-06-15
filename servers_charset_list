@@ -13,7 +13,7 @@ whois.ax		iso-8859-1
 whois.registro.br	iso-8859-1
 whois.cira.ca		iso-8859-1
 whois.nic.ch		utf-8
-whois.nic.cl		iso-8859-1
+whois.nic.cl		utf-8
 whois.cnnic.cn		utf-8
 cwhois.cnnic.cn		utf-8
 whois.nic.cz		utf-8
