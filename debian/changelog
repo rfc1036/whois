@@ -1,3 +1,11 @@
+whois (5.3.2) unstable; urgency=medium
+
+  * Added the .ge TLD server.
+  * Updated the charset for whois.nic.cl. (Closes: #900047)
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 15 Jul 2018 12:38:42 +0200
+
 whois (5.3.1) unstable; urgency=medium
 
   * mkpasswd: support passwords of arbitrary length. (Closes: #899254)
