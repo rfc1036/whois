@@ -1,3 +1,9 @@
+whois (5.3.2~bpo9+1) stretch-backports; urgency=medium
+
+  * Rebuild for stretch-backports.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 15 Jul 2018 13:24:06 +0200
+
 whois (5.3.2) unstable; urgency=medium
 
   * Added the .ge TLD server.
