@@ -143,7 +143,21 @@
 .fk	NONE		# http://www.fidc.co.fk/
 .fm	WEB http://dot.fm/whois/
 .fo	whois.nic.fo
+
+# .fr "sectoriel"
+.aeroport.fr	whois.smallregistry.net
+.avocat.fr	whois.smallregistry.net
+.chambagri.fr	whois.smallregistry.net
+.chirurgiens-dentistes.fr	whois.smallregistry.net
+.experts-comptables.fr	whois.smallregistry.net
+.geometre-expert.fr	whois.smallregistry.net
+.medecin.fr	whois.smallregistry.net
+.notaires.fr	whois.smallregistry.net
+.pharmacien.fr	whois.smallregistry.net
+.port.fr	whois.smallregistry.net
+.veterinaire.fr	whois.smallregistry.net
 .fr	whois.nic.fr
+
 .ga	whois.dot.ga	# www.my.ga
 .gb	NONE
 .gd	whois.nic.gd
