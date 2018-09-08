@@ -294,7 +294,8 @@ int main(int argc, char *argv[])
 	    perror("crypt_gensalt");
 	    exit(2);
 	}
-	free(entropy);
+	if (entropy)
+	    free(entropy);
 #else
 	unsigned int salt_len = salt_maxlen;
 
@@ -360,9 +361,21 @@ int main(int argc, char *argv[])
     exit(0);
 }
 
-#if defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF || defined HAVE_GETENTROPY
+#ifdef CRYPT_GENSALT_IMPLEMENTS_AUTO_ENTROPY
 
-void* get_random_bytes(const unsigned int count)
+/*
+ * If NULL is passed to the libxcrypt version of crypt_gensalt() instead of
+ * the buffer of random bytes then the function will obtain by itself the
+ * required randomness.
+ */
+inline void *get_random_bytes(const unsigned int count)
+{
+    return NULL;
+}
+
+#elif defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF || defined HAVE_GETENTROPY
+
+void *get_random_bytes(const unsigned int count)
 {
     char *buf = NOFAIL(malloc(count));
 
