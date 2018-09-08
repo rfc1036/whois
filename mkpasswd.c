@@ -283,16 +283,16 @@ int main(int argc, char *argv[])
 #ifdef HAVE_SOLARIS_CRYPT_GENSALT
 	salt = crypt_gensalt(salt_prefix, NULL);
 	if (!salt) {
-		perror("crypt_gensalt");
-		exit(2);
+	    perror("crypt_gensalt");
+	    exit(2);
 	}
 #elif defined HAVE_LINUX_CRYPT_GENSALT
 	void *entropy = get_random_bytes(64);
 
 	salt = crypt_gensalt(salt_prefix, rounds, entropy, 64);
 	if (!salt) {
-		fprintf(stderr, "crypt_gensalt failed.\n");
-		exit(2);
+	    perror("crypt_gensalt");
+	    exit(2);
 	}
 	free(entropy);
 #else
@@ -342,7 +342,10 @@ int main(int argc, char *argv[])
 	result = crypt(password, salt);
 	/* xcrypt returns "*0" on errors */
 	if (!result || result[0] == '*') {
-	    fprintf(stderr, "crypt failed.\n");
+	    if (CRYPT_SETS_ERRNO)
+		perror("crypt");
+	    else
+		fprintf(stderr, "crypt failed.\n");
 	    exit(2);
 	}
 	/* yes, using strlen(salt_prefix) on salt. It's not

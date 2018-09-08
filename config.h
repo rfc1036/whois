@@ -95,6 +95,13 @@
 # define HAVE_GETENTROPY
 #endif
 
+/* some versions of crypt(3) set errno on error */
+#if defined __GLIBC__ || (defined __SVR4 && defined __sun) || defined OpenBSD || AIX
+# define CRYPT_SETS_ERRNO 1
+#else
+# define CRYPT_SETS_ERRNO 0
+#endif
+
 #ifdef ENABLE_NLS
 # ifndef NLS_CAT_NAME
 #  define NLS_CAT_NAME   "whois"
