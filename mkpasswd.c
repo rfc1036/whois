@@ -92,16 +92,16 @@ static const struct crypt_method methods[] = {
 #if defined OpenBSD || defined FreeBSD || (defined __SVR4 && defined __sun)
 # if (defined OpenBSD && OpenBSD >= 201405)
     /* http://marc.info/?l=openbsd-misc&m=139320023202696 */
-    { "bf",		"$2b$", 22,	22,	1, "Blowfish" },
-    { "bfa",		"$2a$", 22,	22,	1, "Blowfish (obsolete $2a$ version)" },
+    { "bf",		"$2b$", 22,	22,	2, "Blowfish" },
+    { "bfa",		"$2a$", 22,	22,	2, "Blowfish (obsolete $2a$ version)" },
 # else
-    { "bf",		"$2a$", 22,	22,	1, "Blowfish" },
+    { "bf",		"$2a$", 22,	22,	2, "Blowfish" },
 # endif
 #endif
 #if defined HAVE_LINUX_CRYPT_GENSALT
-    { "bf",		"$2a$", 22,	22,	1, "Blowfish, system-specific on 8-bit chars" },
+    { "bf",		"$2a$", 22,	22,	2, "Blowfish, system-specific on 8-bit chars" },
     /* algorithm 2y fixes CVE-2011-2483 */
-    { "bfy",		"$2y$", 22,	22,	1, "Blowfish, correct handling of 8-bit chars" },
+    { "bfy",		"$2y$", 22,	22,	2, "Blowfish, correct handling of 8-bit chars" },
 #endif
 #if defined FreeBSD
     { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
@@ -242,11 +242,11 @@ int main(int argc, char *argv[])
 
     if (!salt_prefix) {
 	/* NULL means that crypt_gensalt will choose one later */
-    } else if (streq(salt_prefix, "$2a$") || streq(salt_prefix, "$2b$")) {
-	/* OpenBSD Blowfish and derivatives */
+    } else if (rounds_support == 2) {
+	/* bcrypt strings always contain the rounds number */
 	if (rounds <= 5)
 	    rounds = 5;
-	/* actually for 2a/2y it is the logarithm of the number of rounds */
+	/* actually it is the logarithm of the number of rounds */
 	snprintf(rounds_str, sizeof(rounds_str), "%02u$", rounds);
     } else if (rounds_support && rounds)
 	snprintf(rounds_str, sizeof(rounds_str), "rounds=%u$", rounds);
