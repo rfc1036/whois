@@ -56,6 +56,7 @@
 #if defined __SVR4 && defined __sun
 # define HAVE_SHA_CRYPT
 # define HAVE_SOLARIS_CRYPT_GENSALT
+# define CRYPT_GENSALT_IMPLEMENTS_DEFAULT_PREFIX
 #endif
 
 /* FIXME: which systems lack this? */

@@ -83,6 +83,9 @@ struct crypt_method {
 
 static const struct crypt_method methods[] = {
     /* method		prefix	minlen,	maxlen	rounds description */
+#ifdef CRYPT_GENSALT_IMPLEMENTS_DEFAULT_PREFIX
+    { "auto",		NULL,	0,	0,	0, NULL },
+#endif
     { "des",		"",	2,	2,	0,
 	N_("standard 56 bit DES-based crypt(3)") },
     { "md5",		"$1$",	8,	8,	0, "MD5" },
@@ -229,14 +232,17 @@ int main(int argc, char *argv[])
 	display_help(EXIT_FAILURE);
     }
 
-    /* default: DES password */
+    /* default: DES password, or else whatever crypt_gensalt chooses */
     if (!salt_prefix) {
 	salt_minlen = methods[0].minlen;
 	salt_maxlen = methods[0].maxlen;
 	salt_prefix = methods[0].prefix;
+	rounds_support = methods[0].rounds;
     }
 
-    if (streq(salt_prefix, "$2a$") || streq(salt_prefix, "$2y$")) {
+    if (!salt_prefix) {
+	/* NULL means that crypt_gensalt will choose one later */
+    } else if (streq(salt_prefix, "$2a$") || streq(salt_prefix, "$2b$")) {
 	/* OpenBSD Blowfish and derivatives */
 	if (rounds <= 5)
 	    rounds = 5;
@@ -492,7 +498,8 @@ void display_methods(void)
 
     printf(_("Available methods:\n"));
     for (i = 0; methods[i].method != NULL; i++)
-	printf("%s\t%s\n", methods[i].method, methods[i].desc);
+	if (methods[i].desc)
+	    printf("%s\t%s\n", methods[i].method, methods[i].desc);
 }
 
 char *read_line(FILE *fp) {
