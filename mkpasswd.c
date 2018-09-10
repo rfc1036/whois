@@ -348,9 +348,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "crypt failed.\n");
 	    exit(2);
 	}
-	/* yes, using strlen(salt_prefix) on salt. It's not
-	 * documented whether crypt_gensalt may change the prefix */
-	if (!strneq(result, salt, strlen(salt_prefix))) {
+	if (!strneq(result, salt, strlen(salt))) {
 	    fprintf(stderr, _("Method not supported by crypt(3).\n"));
 	    exit(2);
 	}
