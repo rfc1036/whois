@@ -57,10 +57,11 @@ mkpasswd_LDADD += $(shell $(PKG_CONFIG) --libs libcrypt)
 else ifdef HAVE_XCRYPT
 DEFS += -DHAVE_XCRYPT_H -DHAVE_LINUX_CRYPT_GENSALT
 mkpasswd_LDADD += -lxcrypt
-ifdef HAVE_LINUX_CRYPT_GENSALT
-# owl and openSUSE have crypt_gensalt(3) in the libc's libcrypt
-DEFS += -DHAVE_LINUX_CRYPT_GENSALT
-endif
+else ifdef HAVE_LIBOWCRYPT
+# owl and openSUSE have crypt_gensalt(3) in libowcrypt
+DEFS += -DHAVE_LINUX_CRYPT_GENSALT -D_OW_SOURCE
+mkpasswd_LDADD += -lcrypt -lowcrypt
+else
 mkpasswd_LDADD += -lcrypt
 endif
 

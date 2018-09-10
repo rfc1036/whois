@@ -40,7 +40,6 @@
 #include <sys/stat.h>
 #endif
 #ifdef HAVE_LINUX_CRYPT_GENSALT
-#define _OW_SOURCE
 #include <crypt.h>
 #endif
 #ifdef HAVE_GETTIMEOFDAY
