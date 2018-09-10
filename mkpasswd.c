@@ -35,7 +35,7 @@
 #include <strings.h>
 #include <time.h>
 #include <sys/types.h>
-#ifdef HAVE_XCRYPT
+#ifdef HAVE_XCRYPT_H
 #include <xcrypt.h>
 #include <sys/stat.h>
 #endif
