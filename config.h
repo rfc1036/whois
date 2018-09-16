@@ -17,7 +17,7 @@
 # include <sys/param.h>
 #endif
 
-#ifdef linux
+#ifdef __GLIBC__
 # define ENABLE_NLS
 #endif
 
@@ -67,7 +67,7 @@
  * and add more systems which have one.
  */
 #ifdef RANDOM_DEVICE
-#elif defined __GLIBC__ \
+#elif defined linux \
 	|| defined __FreeBSD__ || defined __NetBSD__ || defined __OpenBSD__ \
 	/* AIX >= 5.2? */ \
 	|| defined _AIX52 \
