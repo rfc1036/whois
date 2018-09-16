@@ -373,6 +373,12 @@ inline void *get_random_bytes(const unsigned int count)
     return NULL;
 }
 
+#elif defined HAVE_SOLARIS_CRYPT_GENSALT
+
+/*
+ * The Solaris version of crypt_gensalt() gathers the random data by itself.
+ */
+
 #elif defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF || defined HAVE_GETENTROPY
 
 void *get_random_bytes(const unsigned int count)
