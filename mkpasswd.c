@@ -39,7 +39,7 @@
 #include <xcrypt.h>
 #include <sys/stat.h>
 #endif
-#ifdef HAVE_LINUX_CRYPT_GENSALT
+#ifdef HAVE_CRYPT_H
 #include <crypt.h>
 #endif
 #ifdef HAVE_GETTIMEOFDAY

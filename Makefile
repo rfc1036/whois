@@ -52,14 +52,14 @@ DEFS += -DHAVE_ICONV
 endif
 
 ifeq ($(shell $(PKG_CONFIG) --exists 'libxcrypt >= 4.1' || echo NO),)
-DEFS += -DHAVE_LINUX_CRYPT_GENSALT $(shell $(PKG_CONFIG) --cflags libcrypt)
+DEFS += -DHAVE_CRYPT_H -DHAVE_LINUX_CRYPT_GENSALT $(shell $(PKG_CONFIG) --cflags libcrypt)
 mkpasswd_LDADD += $(shell $(PKG_CONFIG) --libs libcrypt)
 else ifdef HAVE_XCRYPT
 DEFS += -DHAVE_XCRYPT_H -DHAVE_LINUX_CRYPT_GENSALT
 mkpasswd_LDADD += -lxcrypt
 else ifdef HAVE_LIBOWCRYPT
 # owl and openSUSE have crypt_gensalt(3) in libowcrypt
-DEFS += -DHAVE_LINUX_CRYPT_GENSALT -D_OW_SOURCE
+DEFS += -DHAVE_CRYPT_H -DHAVE_LINUX_CRYPT_GENSALT -D_OW_SOURCE
 mkpasswd_LDADD += -lcrypt -lowcrypt
 else
 mkpasswd_LDADD += -lcrypt
