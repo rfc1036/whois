@@ -86,30 +86,30 @@ static const struct crypt_method methods[] = {
 #ifdef CRYPT_GENSALT_IMPLEMENTS_DEFAULT_PREFIX
     { "auto",		NULL,	0,	0,	0, NULL },
 #endif
-    { "des",		"",	2,	2,	0,
+    { "descrypt",	"",	2,	2,	0,
 	N_("standard 56 bit DES-based crypt(3)") },
-    { "md5",		"$1$",	8,	8,	0, "MD5" },
-#if defined OpenBSD || defined FreeBSD || (defined __SVR4 && defined __sun)
-# if (defined OpenBSD && OpenBSD >= 201405)
+    { "md5crypt",	"$1$",	8,	8,	0, "MD5" },
+    /* compatibility aliases for mkpasswd versions < 5.4.0 */
+    { "des",		"",	2,	2,	0, NULL },
+    { "md5",		"$1$",	8,	8,	0, NULL },
+#ifdef HAVE_BCRYPT_OBSOLETE
     /* http://marc.info/?l=openbsd-misc&m=139320023202696 */
-    { "bf",		"$2b$", 22,	22,	2, "Blowfish" },
-    { "bfa",		"$2a$", 22,	22,	2, "Blowfish (obsolete $2a$ version)" },
-# else
-    { "bf",		"$2a$", 22,	22,	2, "Blowfish" },
-# endif
+    { "bf",		"$2a$", 22,	22,	2, "bcrypt" },
 #endif
-#if defined HAVE_LINUX_CRYPT_GENSALT
-    { "bf",		"$2a$", 22,	22,	2, "Blowfish, system-specific on 8-bit chars" },
-    /* algorithm 2y fixes CVE-2011-2483 */
-    { "bfy",		"$2y$", 22,	22,	2, "Blowfish, correct handling of 8-bit chars" },
+#ifdef HAVE_BCRYPT
+    { "bcrypt",		"$2b$", 22,	22,	2, "bcrypt" },
+    { "bcrypt-a",	"$2a$", 22,	22,	2, "bcrypt (obsolete $2a$ version)" },
 #endif
 #if defined FreeBSD
     { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
 #endif
 #if defined HAVE_SHA_CRYPT
     /* http://people.redhat.com/drepper/SHA-crypt.txt */
-    { "sha-256",	"$5$",	8,	16,	1, "SHA-256" },
-    { "sha-512",	"$6$",	8,	16,	1, "SHA-512" },
+    { "sha256crypt",	"$5$",	8,	16,	1, "SHA-256" },
+    { "sha512crypt",	"$6$",	8,	16,	1, "SHA-512" },
+    /* compatibility aliases for mkpasswd versions < 5.4.0 */
+    { "sha-256",	"$5$",	8,	16,	1, NULL },
+    { "sha-512",	"$6$",	8,	16,	1, NULL },
 #endif
     /* http://www.crypticide.com/dropsafe/article/1389 */
     /*
