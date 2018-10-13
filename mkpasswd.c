@@ -499,7 +499,7 @@ void display_methods(void)
     printf(_("Available methods:\n"));
     for (i = 0; methods[i].method != NULL; i++)
 	if (methods[i].desc)
-	    printf("%s\t%s\n", methods[i].method, methods[i].desc);
+	    printf("%-15s %s\n", methods[i].method, methods[i].desc);
 }
 
 char *read_line(FILE *fp) {
