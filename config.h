@@ -40,6 +40,7 @@
 #if defined __APPLE__ && defined __MACH__
 # define HAVE_GETOPT_LONG
 # define HAVE_GETADDRINFO
+# define HAVE_BSDICRYPT
 #endif
 
 #if defined __GLIBC__
@@ -56,6 +57,10 @@
 # define HAVE_BCRYPT_OBSOLETE
 #elif defined OpenBSD || defined __FreeBSD__ || (defined __SVR4 && defined __sun) || defined _OW_SOURCE
 # define HAVE_BCRYPT
+#endif
+
+#if defined OpenBSD || defined __FreeBSD__ || defined __NetBSD__
+# define HAVE_BSDICRYPT
 #endif
 
 /* Unknown versions of Solaris */

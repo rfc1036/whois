@@ -81,6 +81,13 @@ struct crypt_method {
     const char *desc;		/* long description for the methods list */
 };
 
+/* XCRYPT_VERSION_NUM is defined in crypt.h from libxcrypt */
+#if defined XCRYPT_VERSION_NUM
+# define HAVE_SHA_CRYPT
+# define HAVE_BCRYPT
+# define HAVE_BSDICRYPT
+#endif
+
 static const struct crypt_method methods[] = {
     /* method		prefix	minlen,	maxlen	rounds description */
 #ifdef CRYPT_GENSALT_IMPLEMENTS_DEFAULT_PREFIX
@@ -89,6 +96,10 @@ static const struct crypt_method methods[] = {
     /* compatibility aliases for mkpasswd versions < 5.4.0 */
     { "des",		"",	2,	2,	0, NULL },
     { "md5",		"$1$",	8,	8,	0, NULL },
+#if defined XCRYPT_VERSION_NUM
+    { "yescrypt",	"$y$",	0,	0,	0, "Yescrypt" },
+    { "scrypt",		"$7$",	0,	0,	0, "scrypt" },
+#endif
 #ifdef HAVE_BCRYPT_OBSOLETE
     /* http://marc.info/?l=openbsd-misc&m=139320023202696 */
     { "bf",		"$2a$", 22,	22,	2, "bcrypt" },
@@ -105,13 +116,17 @@ static const struct crypt_method methods[] = {
     { "sha-256",	"$5$",	8,	16,	1, NULL },
     { "sha-512",	"$6$",	8,	16,	1, NULL },
 #endif
-#if defined __SVR4 && defined __sun
+#if (defined __SVR4 && defined __sun) || defined XCRYPT_VERSION_NUM
     { "sunmd5",		"$md5$", 8,	8,	1, "SunMD5" },
 #endif
     { "md5crypt",	"$1$",	8,	8,	0, "MD5" },
+#ifdef HAVE_BSDICRYPT
+    { "bsdicrypt",		"_",	0,	0,	0,
+	N_("BSDI extended DES-based crypt(3)") },
+#endif
     { "descrypt",	"",	2,	2,	0,
 	N_("standard 56 bit DES-based crypt(3)") },
-#if defined FreeBSD
+#if defined FreeBSD || defined XCRYPT_VERSION_NUM
     { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
 #endif
     /* http://www.crypticide.com/dropsafe/article/1389 */
