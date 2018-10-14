@@ -52,6 +52,12 @@
 # endif
 #endif
 
+#if defined OpenBSD && OpenBSD < 201405
+# define HAVE_BCRYPT_OBSOLETE
+#elif defined OpenBSD || defined __FreeBSD__ || (defined __SVR4 && defined __sun) || defined _OW_SOURCE
+# define HAVE_BCRYPT
+#endif
+
 /* Unknown versions of Solaris */
 #if defined __SVR4 && defined __sun
 # define HAVE_SHA_CRYPT
