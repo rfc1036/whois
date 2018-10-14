@@ -155,7 +155,7 @@
 .gl	whois.nic.gl
 .gm	WEB http://www.nic.gm/htmlpages/whois.htm
 .gn	NONE		# http://www.psg.com/dns/gn/
-.gp	WEB https://www.dom-enic.com/whois.html
+.gp	whois.nic.gp
 .gq	whois.dominio.gq
 .gr	WEB https://grweb.ics.forth.gr/public/whois
 .gs	whois.nic.gs
