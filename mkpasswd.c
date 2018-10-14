@@ -86,9 +86,6 @@ static const struct crypt_method methods[] = {
 #ifdef CRYPT_GENSALT_IMPLEMENTS_DEFAULT_PREFIX
     { "auto",		NULL,	0,	0,	0, NULL },
 #endif
-    { "descrypt",	"",	2,	2,	0,
-	N_("standard 56 bit DES-based crypt(3)") },
-    { "md5crypt",	"$1$",	8,	8,	0, "MD5" },
     /* compatibility aliases for mkpasswd versions < 5.4.0 */
     { "des",		"",	2,	2,	0, NULL },
     { "md5",		"$1$",	8,	8,	0, NULL },
@@ -100,16 +97,22 @@ static const struct crypt_method methods[] = {
     { "bcrypt",		"$2b$", 22,	22,	2, "bcrypt" },
     { "bcrypt-a",	"$2a$", 22,	22,	2, "bcrypt (obsolete $2a$ version)" },
 #endif
-#if defined FreeBSD
-    { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
-#endif
 #if defined HAVE_SHA_CRYPT
     /* http://people.redhat.com/drepper/SHA-crypt.txt */
-    { "sha256crypt",	"$5$",	8,	16,	1, "SHA-256" },
     { "sha512crypt",	"$6$",	8,	16,	1, "SHA-512" },
+    { "sha256crypt",	"$5$",	8,	16,	1, "SHA-256" },
     /* compatibility aliases for mkpasswd versions < 5.4.0 */
     { "sha-256",	"$5$",	8,	16,	1, NULL },
     { "sha-512",	"$6$",	8,	16,	1, NULL },
+#endif
+#if defined __SVR4 && defined __sun
+    { "sunmd5",		"$md5$", 8,	8,	1, "SunMD5" },
+#endif
+    { "md5crypt",	"$1$",	8,	8,	0, "MD5" },
+    { "descrypt",	"",	2,	2,	0,
+	N_("standard 56 bit DES-based crypt(3)") },
+#if defined FreeBSD
+    { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
 #endif
     /* http://www.crypticide.com/dropsafe/article/1389 */
     /*
@@ -118,9 +121,6 @@ static const struct crypt_method methods[] = {
      * http://cvs.opensolaris.org/source/xref/onnv/onnv-gate/ \
      *   usr/src/lib/crypt_modules/sunmd5/sunmd5.c#crypt_gensalt_impl
      */
-#if defined __SVR4 && defined __sun
-    { "sunmd5",		"$md5$", 8,	8,	1, "SunMD5" },
-#endif
     { NULL,		NULL,	0,	0,	0, NULL }
 };
 
