@@ -181,6 +181,17 @@ int main(int argc, char *argv[])
 		display_methods();
 		exit(0);
 	    }
+#if defined HAVE_LINUX_CRYPT_GENSALT || defined HAVE_SOLARIS_CRYPT_GENSALT
+	    if (optarg[0] == '$'
+		    && strlen(optarg) > 2
+		    && *(optarg + strlen(optarg) - 1) == '$') {
+		salt_prefix = NOFAIL(strdup(optarg));
+		salt_minlen = 0;
+		salt_maxlen = 0;
+		rounds_support = 0;
+		break;
+	    }
+#endif
 	    for (i = 0; methods[i].method != NULL; i++)
 		if (strcaseeq(methods[i].method, optarg)) {
 		    salt_prefix = methods[i].prefix;

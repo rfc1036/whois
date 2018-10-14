@@ -25,6 +25,8 @@ The behavior is undefined if this option is used without \fI--method\fP.
 .B -m, --method=TYPE
 Compute the password using the \fITYPE\fP method.
 If \fITYPE\fP is \fIhelp\fP then the available methods are printed.
+If \fITYPE\fP begins and end with \fI$\fP characters then the string
+is passed to \fIcrypt_gensalt(3)\fP as-is.
 .TP
 .B -5
 Like \fI--method=md5\fP.
@@ -50,6 +52,8 @@ This programs suffers of a bad case of featuritis.
 .IR passwd(1),
 .IR passwd(5),
 .IR crypt(3),
+.IR crypt(5),
+.IR crypt_gensalt(3),
 .IR getpass(3)
 .SH AUTHOR
 .B mkpasswd
