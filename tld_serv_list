@@ -141,7 +141,7 @@
 .fi	whois.fi
 .fj	whois.usp.ac.fj
 .fk	NONE		# http://www.fidc.co.fk/
-.fm	WEB http://dot.fm/whois/
+.fm	whois.nic.fm
 .fo	whois.nic.fo
 .fr	whois.nic.fr
 .ga	whois.dot.ga	# www.my.ga
