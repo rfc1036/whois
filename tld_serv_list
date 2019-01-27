@@ -224,7 +224,7 @@
 .mt	WEB https://www.nic.org.mt/dotmt/ # whois.nic.org.mt is restricted
 .mu	whois.nic.mu
 .mv	NONE		# NIC? www.dhiraagu.com.mv
-.mw	WEB http://www.registrar.mw/
+.mw	whois.nic.mw
 .mx	whois.mx
 .my	whois.mynic.my
 .mz	whois.nic.mz
