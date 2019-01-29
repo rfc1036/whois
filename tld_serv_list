@@ -30,6 +30,7 @@
 
 .com	VERISIGN whois.verisign-grs.com
 
+.ru.net	whois.flexireg.net
 .za.net	whois.za.net
 .net	VERISIGN whois.verisign-grs.com
 
@@ -262,7 +263,10 @@
 .re	whois.nic.re
 .ro	whois.rotld.ro
 .rs	whois.rnids.rs
+.com.ru	whois.flexireg.net
 .edu.ru	whois.informika.ru
+.msk.ru	whois.flexireg.net
+.spb.ru	whois.flexireg.net
 .ru	whois.tcinet.ru
 .rw	whois.ricta.org.rw	# http://www.ricta.org.rw/
 .sa	whois.nic.net.sa
