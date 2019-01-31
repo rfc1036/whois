@@ -414,7 +414,7 @@ const char *match_config_file(const char *s)
 
     if ((fp = fopen(CONFIG_FILE, "r")) == NULL) {
 	if (errno != ENOENT)
-	    err_sys("Cannot open " CONFIG_FILE);
+	    perror("Cannot open " CONFIG_FILE);
 	return NULL;
     }
 
