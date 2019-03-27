@@ -280,7 +280,7 @@
 .sn	whois.nic.sn
 .so	whois.nic.so
 .sr	NONE		# www.register.sr
-#.ss
+.ss	whois.nic.ss
 .st	whois.nic.st
 .su	whois.tcinet.ru
 .sv	WEB http://www.svnet.org.sv/
