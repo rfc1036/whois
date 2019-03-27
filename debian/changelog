@@ -1,3 +1,12 @@
+whois (5.4.2) unstable; urgency=medium
+
+  * Added the .ss and .xn--mgbah1a3hjkrd (موريتانيا, Mauritania) TLD
+    servers.
+  * Updated the .in TLD and related IDN TLDs servers.
+  * Updated the .fm TLD server.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 28 Mar 2019 00:48:28 +0100
+
 whois (5.4.1) unstable; urgency=medium
 
   * Added the .mw TLD server.
