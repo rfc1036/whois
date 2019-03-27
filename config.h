@@ -17,7 +17,7 @@
 # include <sys/param.h>
 #endif
 
-#ifdef linux
+#ifdef __GLIBC__
 # define ENABLE_NLS
 #endif
 
@@ -40,6 +40,7 @@
 #if defined __APPLE__ && defined __MACH__
 # define HAVE_GETOPT_LONG
 # define HAVE_GETADDRINFO
+# define HAVE_BSDICRYPT
 #endif
 
 #if defined __GLIBC__
@@ -52,10 +53,22 @@
 # endif
 #endif
 
+#if defined OpenBSD && OpenBSD < 201405
+# define HAVE_BCRYPT_OBSOLETE
+#elif defined OpenBSD || defined __FreeBSD__ || (defined __SVR4 && defined __sun) || defined _OW_SOURCE
+# define HAVE_BCRYPT
+#endif
+
+#if defined OpenBSD || defined __FreeBSD__ || defined __NetBSD__
+# define HAVE_BSDICRYPT
+#endif
+
 /* Unknown versions of Solaris */
 #if defined __SVR4 && defined __sun
 # define HAVE_SHA_CRYPT
+# define HAVE_CRYPT_H
 # define HAVE_SOLARIS_CRYPT_GENSALT
+# define CRYPT_GENSALT_IMPLEMENTS_DEFAULT_PREFIX
 #endif
 
 /* FIXME: which systems lack this? */
@@ -66,7 +79,7 @@
  * and add more systems which have one.
  */
 #ifdef RANDOM_DEVICE
-#elif defined __GLIBC__ \
+#elif defined linux \
 	|| defined __FreeBSD__ || defined __NetBSD__ || defined __OpenBSD__ \
 	/* AIX >= 5.2? */ \
 	|| defined _AIX52 \
@@ -93,6 +106,13 @@
 /* or else getentropy(2) on Linux */
 #if defined __GLIBC__ && __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 25
 # define HAVE_GETENTROPY
+#endif
+
+/* some versions of crypt(3) set errno on error */
+#if defined __GLIBC__ || (defined __SVR4 && defined __sun) || defined OpenBSD || AIX
+# define CRYPT_SETS_ERRNO 1
+#else
+# define CRYPT_SETS_ERRNO 0
 #endif
 
 #ifdef ENABLE_NLS

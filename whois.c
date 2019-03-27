@@ -281,11 +281,8 @@ int main(int argc, char *argv[])
     }
 
 #ifdef CONFIG_FILE
-    if (!server) {
+    if (!server)
 	server = match_config_file(qstring);
-	if (verb && server)
-	    printf(_("Using server %s.\n"), server);
-    }
 #endif
 
     if (!server)

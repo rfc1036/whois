@@ -35,12 +35,11 @@
 #include <strings.h>
 #include <time.h>
 #include <sys/types.h>
-#ifdef HAVE_XCRYPT
+#ifdef HAVE_XCRYPT_H
 #include <xcrypt.h>
 #include <sys/stat.h>
 #endif
-#ifdef HAVE_LINUX_CRYPT_GENSALT
-#define _OW_SOURCE
+#ifdef HAVE_CRYPT_H
 #include <crypt.h>
 #endif
 #ifdef HAVE_GETTIMEOFDAY
@@ -82,32 +81,53 @@ struct crypt_method {
     const char *desc;		/* long description for the methods list */
 };
 
+/* XCRYPT_VERSION_NUM is defined in crypt.h from libxcrypt */
+#if defined XCRYPT_VERSION_NUM
+# define HAVE_SHA_CRYPT
+# define HAVE_BCRYPT
+# define HAVE_BSDICRYPT
+#endif
+
 static const struct crypt_method methods[] = {
     /* method		prefix	minlen,	maxlen	rounds description */
-    { "des",		"",	2,	2,	0,
-	N_("standard 56 bit DES-based crypt(3)") },
-    { "md5",		"$1$",	8,	8,	0, "MD5" },
-#if defined OpenBSD || defined FreeBSD || (defined __SVR4 && defined __sun)
-# if (defined OpenBSD && OpenBSD >= 201405)
+#ifdef CRYPT_GENSALT_IMPLEMENTS_DEFAULT_PREFIX
+    { "auto",		NULL,	0,	0,	0, NULL },
+#endif
+    /* compatibility aliases for mkpasswd versions < 5.4.0 */
+    { "des",		"",	2,	2,	0, NULL },
+    { "md5",		"$1$",	8,	8,	0, NULL },
+#if defined XCRYPT_VERSION_NUM
+    { "yescrypt",	"$y$",	0,	0,	0, "Yescrypt" },
+    { "scrypt",		"$7$",	0,	0,	0, "scrypt" },
+#endif
+#ifdef HAVE_BCRYPT_OBSOLETE
     /* http://marc.info/?l=openbsd-misc&m=139320023202696 */
-    { "bf",		"$2b$", 22,	22,	1, "Blowfish" },
-    { "bfa",		"$2a$", 22,	22,	1, "Blowfish (obsolete $2a$ version)" },
-# else
-    { "bf",		"$2a$", 22,	22,	1, "Blowfish" },
-# endif
+    { "bf",		"$2a$", 22,	22,	2, "bcrypt" },
 #endif
-#if defined HAVE_LINUX_CRYPT_GENSALT
-    { "bf",		"$2a$", 22,	22,	1, "Blowfish, system-specific on 8-bit chars" },
-    /* algorithm 2y fixes CVE-2011-2483 */
-    { "bfy",		"$2y$", 22,	22,	1, "Blowfish, correct handling of 8-bit chars" },
-#endif
-#if defined FreeBSD
-    { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
+#ifdef HAVE_BCRYPT
+    { "bcrypt",		"$2b$", 22,	22,	2, "bcrypt" },
+    { "bcrypt-a",	"$2a$", 22,	22,	2, "bcrypt (obsolete $2a$ version)" },
 #endif
 #if defined HAVE_SHA_CRYPT
     /* http://people.redhat.com/drepper/SHA-crypt.txt */
-    { "sha-256",	"$5$",	8,	16,	1, "SHA-256" },
-    { "sha-512",	"$6$",	8,	16,	1, "SHA-512" },
+    { "sha512crypt",	"$6$",	8,	16,	1, "SHA-512" },
+    { "sha256crypt",	"$5$",	8,	16,	1, "SHA-256" },
+    /* compatibility aliases for mkpasswd versions < 5.4.0 */
+    { "sha-256",	"$5$",	8,	16,	1, NULL },
+    { "sha-512",	"$6$",	8,	16,	1, NULL },
+#endif
+#if (defined __SVR4 && defined __sun) || defined XCRYPT_VERSION_NUM
+    { "sunmd5",		"$md5$", 8,	8,	1, "SunMD5" },
+#endif
+    { "md5crypt",	"$1$",	8,	8,	0, "MD5" },
+#ifdef HAVE_BSDICRYPT
+    { "bsdicrypt",		"_",	0,	0,	0,
+	N_("BSDI extended DES-based crypt(3)") },
+#endif
+    { "descrypt",	"",	2,	2,	0,
+	N_("standard 56 bit DES-based crypt(3)") },
+#if defined FreeBSD || defined XCRYPT_VERSION_NUM
+    { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
 #endif
     /* http://www.crypticide.com/dropsafe/article/1389 */
     /*
@@ -116,9 +136,6 @@ static const struct crypt_method methods[] = {
      * http://cvs.opensolaris.org/source/xref/onnv/onnv-gate/ \
      *   usr/src/lib/crypt_modules/sunmd5/sunmd5.c#crypt_gensalt_impl
      */
-#if defined __SVR4 && defined __sun
-    { "sunmd5",		"$md5$", 8,	8,	1, "SunMD5" },
-#endif
     { NULL,		NULL,	0,	0,	0, NULL }
 };
 
@@ -164,6 +181,17 @@ int main(int argc, char *argv[])
 		display_methods();
 		exit(0);
 	    }
+#if defined HAVE_LINUX_CRYPT_GENSALT || defined HAVE_SOLARIS_CRYPT_GENSALT
+	    if (optarg[0] == '$'
+		    && strlen(optarg) > 2
+		    && *(optarg + strlen(optarg) - 1) == '$') {
+		salt_prefix = NOFAIL(strdup(optarg));
+		salt_minlen = 0;
+		salt_maxlen = 0;
+		rounds_support = 0;
+		break;
+	    }
+#endif
 	    for (i = 0; methods[i].method != NULL; i++)
 		if (strcaseeq(methods[i].method, optarg)) {
 		    salt_prefix = methods[i].prefix;
@@ -230,18 +258,21 @@ int main(int argc, char *argv[])
 	display_help(EXIT_FAILURE);
     }
 
-    /* default: DES password */
+    /* default: DES password, or else whatever crypt_gensalt chooses */
     if (!salt_prefix) {
 	salt_minlen = methods[0].minlen;
 	salt_maxlen = methods[0].maxlen;
 	salt_prefix = methods[0].prefix;
+	rounds_support = methods[0].rounds;
     }
 
-    if (streq(salt_prefix, "$2a$") || streq(salt_prefix, "$2y$")) {
-	/* OpenBSD Blowfish and derivatives */
+    if (!salt_prefix) {
+	/* NULL means that crypt_gensalt will choose one later */
+    } else if (rounds_support == 2) {
+	/* bcrypt strings always contain the rounds number */
 	if (rounds <= 5)
 	    rounds = 5;
-	/* actually for 2a/2y it is the logarithm of the number of rounds */
+	/* actually it is the logarithm of the number of rounds */
 	snprintf(rounds_str, sizeof(rounds_str), "%02u$", rounds);
     } else if (rounds_support && rounds)
 	snprintf(rounds_str, sizeof(rounds_str), "rounds=%u$", rounds);
@@ -283,18 +314,19 @@ int main(int argc, char *argv[])
 #ifdef HAVE_SOLARIS_CRYPT_GENSALT
 	salt = crypt_gensalt(salt_prefix, NULL);
 	if (!salt) {
-		perror("crypt_gensalt");
-		exit(2);
+	    perror("crypt_gensalt");
+	    exit(2);
 	}
 #elif defined HAVE_LINUX_CRYPT_GENSALT
 	void *entropy = get_random_bytes(64);
 
 	salt = crypt_gensalt(salt_prefix, rounds, entropy, 64);
 	if (!salt) {
-		fprintf(stderr, "crypt_gensalt failed.\n");
-		exit(2);
+	    perror("crypt_gensalt");
+	    exit(2);
 	}
-	free(entropy);
+	if (entropy)
+	    free(entropy);
 #else
 	unsigned int salt_len = salt_maxlen;
 
@@ -342,12 +374,13 @@ int main(int argc, char *argv[])
 	result = crypt(password, salt);
 	/* xcrypt returns "*0" on errors */
 	if (!result || result[0] == '*') {
-	    fprintf(stderr, "crypt failed.\n");
+	    if (CRYPT_SETS_ERRNO)
+		perror("crypt");
+	    else
+		fprintf(stderr, "crypt failed.\n");
 	    exit(2);
 	}
-	/* yes, using strlen(salt_prefix) on salt. It's not
-	 * documented whether crypt_gensalt may change the prefix */
-	if (!strneq(result, salt, strlen(salt_prefix))) {
+	if (!strneq(result, salt, strlen(salt))) {
 	    fprintf(stderr, _("Method not supported by crypt(3).\n"));
 	    exit(2);
 	}
@@ -357,9 +390,27 @@ int main(int argc, char *argv[])
     exit(0);
 }
 
-#if defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF || defined HAVE_GETENTROPY
+#ifdef CRYPT_GENSALT_IMPLEMENTS_AUTO_ENTROPY
 
-void* get_random_bytes(const unsigned int count)
+/*
+ * If NULL is passed to the libxcrypt version of crypt_gensalt() instead of
+ * the buffer of random bytes then the function will obtain by itself the
+ * required randomness.
+ */
+inline void *get_random_bytes(const unsigned int count)
+{
+    return NULL;
+}
+
+#elif defined HAVE_SOLARIS_CRYPT_GENSALT
+
+/*
+ * The Solaris version of crypt_gensalt() gathers the random data by itself.
+ */
+
+#elif defined RANDOM_DEVICE || defined HAVE_ARC4RANDOM_BUF || defined HAVE_GETENTROPY
+
+void *get_random_bytes(const unsigned int count)
 {
     char *buf = NOFAIL(malloc(count));
 
@@ -473,7 +524,8 @@ void display_methods(void)
 
     printf(_("Available methods:\n"));
     for (i = 0; methods[i].method != NULL; i++)
-	printf("%s\t%s\n", methods[i].method, methods[i].desc);
+	if (methods[i].desc)
+	    printf("%-15s %s\n", methods[i].method, methods[i].desc);
 }
 
 char *read_line(FILE *fp) {
