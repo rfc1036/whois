@@ -1,3 +1,9 @@
+whois (5.4.3) unstable; urgency=medium
+
+  * Added the new 2a10:0000::/12 IPv6 assignment to RIPE.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 12 Jun 2019 15:03:56 +0200
+
 whois (5.4.2) unstable; urgency=medium
 
   * Added the .ss and .xn--mgbah1a3hjkrd (موريتانيا, Mauritania) TLD
