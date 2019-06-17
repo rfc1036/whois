@@ -98,6 +98,9 @@ static const struct crypt_method methods[] = {
     { "md5",		"$1$",	8,	8,	0, NULL },
 #if defined XCRYPT_VERSION_NUM
     { "yescrypt",	"$y$",	0,	0,	0, "Yescrypt" },
+#if XCRYPT_VERSION_NUM >= ((4 << 16) | 4)
+    { "gost-yescrypt",	"$gy$",	0,	0,	0, "GOST Yescrypt" },
+#endif
     { "scrypt",		"$7$",	0,	0,	0, "scrypt" },
 #endif
 #ifdef HAVE_BCRYPT_OBSOLETE
