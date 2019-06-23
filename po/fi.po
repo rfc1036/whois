@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-10 04:23+0200\n"
+"POT-Creation-Date: 2019-06-23 16:06+0200\n"
 "PO-Revision-Date: 2014-06-09 15:27-0000\n"
 "Last-Translator: Sami Kerola <kerolasa@iki.fi>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.6.4\n"
 
-#: ../whois.c:148
+#: ../whois.c:233
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -28,28 +28,28 @@ msgstr ""
 "\n"
 "Lähetä bugiraportit osoitteeseen %s.\n"
 
-#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
+#: ../whois.c:322
+msgid "This TLD has no whois server, but you can access the whois database at"
+msgstr "Tälla TLD:llä ei ole whois palvelinta, voit hakea tiedot osoitteesta"
+
+#: ../whois.c:327
+msgid "This TLD has no whois server."
+msgstr "Tälla TLD:llä ei ole whois palvelinta."
+
+#: ../whois.c:330
+msgid "No whois server is known for this kind of object."
+msgstr "Mikään whois palvelu ei tiedä kysyttyä tietoa."
+
+#: ../whois.c:333
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr "Tuntematon AS-numero tai IP-verkko. Päivitä tämä ohjelma."
+
+#: ../whois.c:337 ../whois.c:344 ../whois.c:387
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Käytetään palvelinta %s.\n"
 
-#: ../whois.c:240
-msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Tälla TLD:llä ei ole whois palvelinta, voit hakea tiedot osoitteesta"
-
-#: ../whois.c:245
-msgid "This TLD has no whois server."
-msgstr "Tälla TLD:llä ei ole whois palvelinta."
-
-#: ../whois.c:248
-msgid "No whois server is known for this kind of object."
-msgstr "Mikään whois palvelu ei tiedä kysyttyä tietoa."
-
-#: ../whois.c:251
-msgid "Unknown AS number or IP network. Please upgrade this program."
-msgstr "Tuntematon AS-numero tai IP-verkko. Päivitä tämä ohjelma."
-
-#: ../whois.c:267
+#: ../whois.c:351
 #, c-format
 msgid ""
 "\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Kysytään IPv4 ulostuloa %s IPv6:n IPv4 avaruudesta.\n"
 "\n"
 
-#: ../whois.c:273
+#: ../whois.c:358
 #, c-format
 msgid ""
 "\n"
@@ -71,7 +71,7 @@ msgstr ""
 "Kysytään IPv4 ulostuloa %s Teredo IPv6 tunneliosoitetta.\n"
 "\n"
 
-#: ../whois.c:292
+#: ../whois.c:388
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -80,7 +80,7 @@ msgstr ""
 "Kysely: \"%s\"\n"
 "\n"
 
-#: ../whois.c:302
+#: ../whois.c:398
 #, c-format
 msgid ""
 "\n"
@@ -93,16 +93,16 @@ msgstr ""
 "Löytyi viittaus %s.\n"
 "\n"
 
-#: ../whois.c:344 ../whois.c:347
+#: ../whois.c:440 ../whois.c:443
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Ohjelma ei ymmärrä riviä: %s"
 
-#: ../whois.c:516
+#: ../whois.c:632
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Varoitus: käytät RIPE valitsimia perinteiseen palvelimeen."
 
-#: ../whois.c:675 ../whois.c:773
+#: ../whois.c:802 ../whois.c:918
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -110,26 +110,26 @@ msgstr ""
 "Katastrofaalinen virhe: lisenssiteksti on muuttunut.\n"
 "Päivita ohjelma.\n"
 
-#: ../whois.c:828
+#: ../whois.c:978
 #, c-format
 msgid "Host %s not found."
 msgstr "Palvelinta %s ei löydy."
 
-#: ../whois.c:838
+#: ../whois.c:988
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: tuntematon palvelu"
 
-#: ../whois.c:913
+#: ../whois.c:1063
 msgid "Timeout."
 msgstr "Aikakatkaisu."
 
-#: ../whois.c:919
+#: ../whois.c:1069
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Ohjelma keskeytyi signaaliin %d..."
 
-#: ../whois.c:1189
+#: ../whois.c:1437
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -200,55 +200,60 @@ msgstr ""
 "-v TYYPPI              hae pitkämallinne objektille TYYPPI\n"
 ".q [versio|lähde|tyyppi]   hae erityisiä palvelin tietoja\n"
 
-#: ../mkpasswd.c:84
+#: ../mkpasswd.c:128
+#, fuzzy
+msgid "BSDI extended DES-based crypt(3)"
+msgstr "Standardi 56-bittinen DES-salaus katso crypt(3)"
+
+#: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "Standardi 56-bittinen DES-salaus katso crypt(3)"
 
-#: ../mkpasswd.c:165
+#: ../mkpasswd.c:207
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "Kelvoton metodi '%s'.\n"
 
-#: ../mkpasswd.c:174 ../mkpasswd.c:184
+#: ../mkpasswd.c:216 ../mkpasswd.c:228
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Kelvoton numero '%s'.\n"
 
-#: ../mkpasswd.c:201
+#: ../mkpasswd.c:246
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Käytä valitsinta '%s --help' lisätietojen saamiseen.\n"
 
-#: ../mkpasswd.c:242
+#: ../mkpasswd.c:290
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Väärä suolan pituus: %d tavu, kun %d odotettiin.\n"
 msgstr[1] "Väärä suolan pituus: %d tavua, kun %d odotettiin.\n"
 
-#: ../mkpasswd.c:247
+#: ../mkpasswd.c:295
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Väärä suolan pituus: %d tavu, kun %d <= n <= %d odotettiin.\n"
 msgstr[1] "Väärä suolan pituus: %d tavua, kun %d <= n <= %d odotettiin.\n"
 
-#: ../mkpasswd.c:256
+#: ../mkpasswd.c:304
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Laiton merkki suolassa '%c'.\n"
 
-#: ../mkpasswd.c:306 ../mkpasswd.c:322
+#: ../mkpasswd.c:355 ../mkpasswd.c:368
 #, c-format
 msgid "Password: "
 msgstr "Salasana: "
 
-#: ../mkpasswd.c:340
+#: ../mkpasswd.c:387
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Functio crypt(3) ei tue toimintoa.\n"
 
-#: ../mkpasswd.c:419
+#: ../mkpasswd.c:495
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -259,7 +264,7 @@ msgstr ""
 "Salaa SALASANA crypt(3) funktiolla.\n"
 "\n"
 
-#: ../mkpasswd.c:422
+#: ../mkpasswd.c:498
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -294,7 +299,7 @@ msgstr ""
 "\n"
 "Lähetä bugiraportit osoitteeseen %s.\n"
 
-#: ../mkpasswd.c:452
+#: ../mkpasswd.c:528
 #, c-format
 msgid "Available methods:\n"
 msgstr "Käytettävissä olevat toiminnot:\n"

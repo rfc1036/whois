@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.24\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-10 04:23+0200\n"
+"POT-Creation-Date: 2019-06-23 16:06+0200\n"
 "PO-Revision-Date: 2013-04-18 17:47+0200\n"
 "Last-Translator: Steve Petruzzello <dlist@bluewin.ch>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../whois.c:148
+#: ../whois.c:233
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -30,30 +30,30 @@ msgstr ""
 "\n"
 "Veuillez signaler les bogues à %s.\n"
 
-#: ../whois.c:202 ../whois.c:255 ../whois.c:261 ../whois.c:291
-#, c-format
-msgid "Using server %s.\n"
-msgstr "Le serveur %s est sélectionné.\n"
-
-#: ../whois.c:240
+#: ../whois.c:322
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Ce TLD n'a pas de serveur whois, mais vous pouvez accéder à la base de "
 "données à"
 
-#: ../whois.c:245
+#: ../whois.c:327
 msgid "This TLD has no whois server."
 msgstr "Ce TLD n'a pas de serveur whois."
 
-#: ../whois.c:248
+#: ../whois.c:330
 msgid "No whois server is known for this kind of object."
 msgstr "Aucun serveur whois n'est connu pour ce type d'objet."
 
-#: ../whois.c:251
+#: ../whois.c:333
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Numéro d'AS ou réseau IP inconnu. Veuillez mettre à jour ce programme."
 
-#: ../whois.c:267
+#: ../whois.c:337 ../whois.c:344 ../whois.c:387
+#, c-format
+msgid "Using server %s.\n"
+msgstr "Le serveur %s est sélectionné.\n"
+
+#: ../whois.c:351
 #, c-format
 msgid ""
 "\n"
@@ -64,7 +64,7 @@ msgstr ""
 "Requête faite pour l'extrémité IPv4 %s d'une adresse IPv6 6to4.\n"
 "\n"
 
-#: ../whois.c:273
+#: ../whois.c:358
 #, c-format
 msgid ""
 "\n"
@@ -75,7 +75,7 @@ msgstr ""
 "Requête faite pour l'extrémité IPv4 %s d'une adresse IPv6 Teredo.\n"
 "\n"
 
-#: ../whois.c:292
+#: ../whois.c:388
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -84,7 +84,7 @@ msgstr ""
 "Requête : \"%s\"\n"
 "\n"
 
-#: ../whois.c:302
+#: ../whois.c:398
 #, c-format
 msgid ""
 "\n"
@@ -97,17 +97,17 @@ msgstr ""
 "Renvoi trouvé vers %s.\n"
 "\n"
 
-#: ../whois.c:344 ../whois.c:347
+#: ../whois.c:440 ../whois.c:443
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Impossible d'interpréter la ligne : %s"
 
-#: ../whois.c:516
+#: ../whois.c:632
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr ""
 "Avertissement : des options RIPE ont été utilisées avec un serveur classique."
 
-#: ../whois.c:675 ../whois.c:773
+#: ../whois.c:802 ../whois.c:918
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -115,26 +115,26 @@ msgstr ""
 "Erreur catastrophique : le texte d'avertissement a changé.\n"
 "Veuillez mettre à jour ce programme.\n"
 
-#: ../whois.c:828
+#: ../whois.c:978
 #, c-format
 msgid "Host %s not found."
 msgstr "L'hôte %s est introuvable."
 
-#: ../whois.c:838
+#: ../whois.c:988
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp : service inconnu"
 
-#: ../whois.c:913
+#: ../whois.c:1063
 msgid "Timeout."
 msgstr "Temps limite dépassé."
 
-#: ../whois.c:919
+#: ../whois.c:1069
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interruption par le signal %d..."
 
-#: ../whois.c:1189
+#: ../whois.c:1437
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -180,52 +180,68 @@ msgstr ""
 "      --help           afficher cette aide et sortir\n"
 "      --version        afficher la version et sortir\n"
 "\n"
-"Ces drapeaux sont gérés par le serveur whois.ripe.net et quelques serveurs de type RIPE :\n"
+"Ces drapeaux sont gérés par le serveur whois.ripe.net et quelques serveurs "
+"de type RIPE :\n"
 "-l                     réduire d'un niveau la spécificité de la recherche\n"
 "-L                     trouver toutes les occurrences moins spécifiques\n"
-"-m                     trouver les occurrences de premier niveau plus spécifiques\n"
+"-m                     trouver les occurrences de premier niveau plus "
+"spécifiques\n"
 "-M                     trouver toutes les occurrences plus spécifiques\n"
-"-c                     trouver l'occurrence la plus spécifique contenant un attribut mnt-irt\n"
+"-c                     trouver l'occurrence la plus spécifique contenant un "
+"attribut mnt-irt\n"
 "-x                     occurrence exacte\n"
-"-b                     afficher la plage des adresses IP avec l'information d'abus\n"
-"-B                     désactiver le filtrage d'objet (montrer les adresses électroniques)\n"
+"-b                     afficher la plage des adresses IP avec l'information "
+"d'abus\n"
+"-B                     désactiver le filtrage d'objet (montrer les adresses "
+"électroniques)\n"
 "-G                     désactiver le groupement des objets associés\n"
 "-d                     afficher aussi les objets de délégation DNS inverse\n"
-"-i ATTR[,ATTR]...      effectuer une recherche inverse pour les ATTRibuts spécifiés\n"
+"-i ATTR[,ATTR]...      effectuer une recherche inverse pour les ATTRibuts "
+"spécifiés\n"
 "-T TYPE[,TYPE]...      chercher seulement les objets de ce TYPE\n"
 "-K                     seules les clés primaires sont renvoyées\n"
-"-r                     désactiver la recherche récursive des informations de contact\n"
-"-R                     forcer l'affichage de la copie locale de l'objet de domaine même\n"
+"-r                     désactiver la recherche récursive des informations de "
+"contact\n"
+"-R                     forcer l'affichage de la copie locale de l'objet de "
+"domaine même\n"
 "                       s'il contient un renvoi\n"
-"-a                     rechercher aussi dans toutes les bases de données miroir\n"
+"-a                     rechercher aussi dans toutes les bases de données "
+"miroir\n"
 "-s SOURCE[,SOURCE]...  rechercher dans la base de données miroir de SOURCE\n"
-"-g SOURCE:PREM-DERN    trouver les mises à jour de la SOURCE ayant des numéros\n"
+"-g SOURCE:PREM-DERN    trouver les mises à jour de la SOURCE ayant des "
+"numéros\n"
 "                       de série entre PREM et DERN\n"
 "-t TYPE                demander la syntaxe pour les objets de ce TYPE\n"
-"-v TYPE                demander la syntaxe détaillée pour les objets de ce TYPE\n"
+"-v TYPE                demander la syntaxe détaillée pour les objets de ce "
+"TYPE\n"
 "-q [version|sources|types]  demander les informations spécifiées au serveur\n"
 
-#: ../mkpasswd.c:84
+#: ../mkpasswd.c:128
+#, fuzzy
+msgid "BSDI extended DES-based crypt(3)"
+msgstr "fonction crypt(3) standard, chiffrement DES à 56 bits"
+
+#: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "fonction crypt(3) standard, chiffrement DES à 56 bits"
 
-#: ../mkpasswd.c:165
+#: ../mkpasswd.c:207
 #, c-format
 msgid "Invalid method '%s'.\n"
 msgstr "La méthode « %s » est invalide.\n"
 
-#: ../mkpasswd.c:174 ../mkpasswd.c:184
+#: ../mkpasswd.c:216 ../mkpasswd.c:228
 #, c-format
 msgid "Invalid number '%s'.\n"
 msgstr "Le nombre « %s » est invalide.\n"
 
-#: ../mkpasswd.c:201
+#: ../mkpasswd.c:246
 #, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Veuillez taper « %s --help » pour plus d'informations.\n"
 
 # : ../mkpasswd.c:152
-#: ../mkpasswd.c:242
+#: ../mkpasswd.c:290
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
@@ -233,29 +249,29 @@ msgstr[0] "Mauvaise taille d'aléa : %d octet au lieu de %d.\n"
 msgstr[1] "Mauvaise taille d'aléa : %d octets au lieu de %d.\n"
 
 # : ../mkpasswd.c:152
-#: ../mkpasswd.c:247
+#: ../mkpasswd.c:295
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Mauvaise taille d'aléa : %d octet, non comprise entre %d et %d.\n"
 msgstr[1] "Mauvaise taille d'aléa : %d octets, non comprise entre %d et %d.\n"
 
-#: ../mkpasswd.c:256
+#: ../mkpasswd.c:304
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Le caractère « %c » est invalide dans l'aléa.\n"
 
-#: ../mkpasswd.c:306 ../mkpasswd.c:322
+#: ../mkpasswd.c:355 ../mkpasswd.c:368
 #, c-format
 msgid "Password: "
 msgstr "Mot de passe : "
 
-#: ../mkpasswd.c:340
+#: ../mkpasswd.c:387
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Méthode non prise en charge par crypt(3).\n"
 
-#: ../mkpasswd.c:419
+#: ../mkpasswd.c:495
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -266,7 +282,7 @@ msgstr ""
 "Chiffre le MOT DE PASSE à l'aide de la fonction crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:422
+#: ../mkpasswd.c:498
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -302,7 +318,7 @@ msgstr ""
 "\n"
 "Veuillez signaler les bogues à %s.\n"
 
-#: ../mkpasswd.c:452
+#: ../mkpasswd.c:528
 #, c-format
 msgid "Available methods:\n"
 msgstr "Méthodes disponibles :\n"
