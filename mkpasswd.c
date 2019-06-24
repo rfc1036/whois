@@ -494,14 +494,18 @@ void NORETURN display_help(int error)
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr,
 	    _("Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 	    "Crypts the PASSWORD using crypt(3).\n\n"));
-    fprintf(stderr, _(
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "      -m, --method=TYPE     select method TYPE\n"
 "      -5                    like --method=md5\n"
 "      -S, --salt=SALT       use the specified SALT\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
 "      -P, --password-fd=NUM read the password from file descriptor NUM\n"
 "                            instead of /dev/tty\n"
 "      -s, --stdin           like --password-fd=0\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "      -h, --help            display this help and exit\n"
 "      -V, --version         output version information and exit\n"
 "\n"

@@ -1438,30 +1438,44 @@ void NORETURN usage(int error)
 "-h HOST, --host HOST   connect to server HOST\n"
 "-p PORT, --port PORT   connect to PORT\n"
 "-H                     hide legal disclaimers\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "      --verbose        explain what is being done\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 "\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
 "-l                     find the one level less specific match\n"
 "-L                     find all levels less specific matches\n"
 "-m                     find all one level more specific matches\n"
 "-M                     find all levels of more specific matches\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "-c                     find the smallest match containing a mnt-irt attribute\n"
 "-x                     exact match\n"
 "-b                     return brief IP address ranges with abuse contact\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "-B                     turn off object filtering (show email addresses)\n"
 "-G                     turn off grouping of associated objects\n"
 "-d                     return DNS reverse delegation objects too\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
 "-T TYPE[,TYPE]...      only look for objects of TYPE\n"
 "-K                     only primary keys are returned\n"
 "-r                     turn off recursive look-ups for contact information\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "-R                     force to show local copy of the domain object even\n"
 "                       if it contains referral\n"
 "-a                     also search all the mirrored databases\n"
 "-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
 "-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "-t TYPE                request template for object of TYPE\n"
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info\n"
