@@ -159,7 +159,7 @@ int main(int argc, char *argv[])
     argv = merge_args(getenv("WHOIS_OPTIONS"), argv, &argc);
 
     while ((ch = GETOPT_LONGISH(argc, argv,
-		"abBcdFg:Gh:Hi:KlLmMp:q:rRs:t:T:v:V:x",
+		"abBcdFg:Gh:Hi:IKlLmMp:q:rRs:t:T:v:V:x",
 		longopts, &longindex)) > 0) {
 	/* RIPE flags */
 	if (strchr(ripeflags, ch)) {
@@ -220,6 +220,9 @@ int main(int argc, char *argv[])
 	    break;
 	case 'H':
 	    hide_discl = HIDE_NOT_STARTED;	/* enable disclaimers hiding */
+	    break;
+	case 'I':
+	    server = strdup("\x0E");
 	    break;
 	case 'p':
 	    port = strdup(optarg);
@@ -372,6 +375,13 @@ int handle_query(const char *hserver, const char *hport,
 	    server = guess_server(p);
 	    free(p);
 	    goto retry;
+	case 0x0E:
+	    if (verb)
+		printf(_("Using server %s.\n"), "whois.iana.org");
+	    sockfd = openconn("whois.iana.org", NULL);
+	    free(server);
+	    server = query_iana(sockfd, query);
+	    break;
 	default:
 	    break;
     }
@@ -921,6 +931,47 @@ char *query_afilias(const int sock, const char *query)
     return referral_server;
 }
 
+char *query_iana(const int sock, const char *query)
+{
+    char *temp, *p, buf[2000];
+    FILE *fi;
+    char *referral_server = NULL;
+    int state = 0;
+
+    temp = malloc(strlen(query) + 2 + 1);
+    strcpy(temp, query);
+    strcat(temp, "\r\n");
+
+    fi = fdopen(sock, "r");
+    if (write(sock, temp, strlen(temp)) < 0)
+	err_sys("write");
+    free(temp);
+
+    while (fgets(buf, sizeof(buf), fi)) {
+	/* If multiple attributes are returned then use the first result.
+	   This is not supposed to happen. */
+	if (state == 0 && strneq(buf, "refer:", 6)) {
+	    for (p = buf; *p != ':'; p++);	/* skip until colon */
+	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
+	    referral_server = strdup(p);
+	    if ((p = strpbrk(referral_server, "\r\n ")))
+		*p = '\0';
+	    state = 2;
+	}
+
+	if ((p = strpbrk(buf, "\r\n")))
+	    *p = '\0';
+	recode_fputs(buf, stdout);
+	fputc('\n', stdout);
+    }
+
+    if (ferror(fi))
+	err_sys("fgets");
+    fclose(fi);
+
+    return referral_server;
+}
+
 int openconn(const char *server, const char *port)
 {
     int fd = -1;
@@ -1437,6 +1488,7 @@ void NORETURN usage(int error)
 "Usage: whois [OPTION]... OBJECT...\n\n"
 "-h HOST, --host HOST   connect to server HOST\n"
 "-p PORT, --port PORT   connect to PORT\n"
+"-I                     query whois.iana.org and follow its referral\n"
 "-H                     hide legal disclaimers\n"
     ));
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
