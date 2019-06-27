@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-23 16:07+0200\n"
+"POT-Creation-Date: 2019-06-28 01:38+0200\n"
 "PO-Revision-Date: 2006-04-26 21:03-0300\n"
 "Last-Translator: Anderson Goulart <globalx@gmail.com>\n"
 "Language-Team: Portuguese/Brazil\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:233
+#: ../whois.c:236
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -28,30 +28,30 @@ msgstr ""
 "\n"
 "Reporte bugs para %s \n"
 
-#: ../whois.c:322
+#: ../whois.c:325
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Este TLD não tem servidor whois, mas você pode acessar a base de dados do "
 "whois em"
 
-#: ../whois.c:327
+#: ../whois.c:330
 msgid "This TLD has no whois server."
 msgstr "Não existe servidor whois para este TLD."
 
-#: ../whois.c:330
+#: ../whois.c:333
 msgid "No whois server is known for this kind of object."
 msgstr "Nenhum servidor whois é conhecido para este tipo de objeto."
 
-#: ../whois.c:333
+#: ../whois.c:336
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Número AS ou rede IP desconhecidos. Por favor, atualize este programa."
 
-#: ../whois.c:337 ../whois.c:344 ../whois.c:387
+#: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Utilizando servidor %s.\n"
 
-#: ../whois.c:351
+#: ../whois.c:354
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
 "\n"
 
-#: ../whois.c:358
+#: ../whois.c:361
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Procurando pela extremidade IPv4 %s de um endereço IPv6. 6to4.\n"
 "\n"
 
-#: ../whois.c:388
+#: ../whois.c:398
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Consulta: \"%s\"\n"
 "\n"
 
-#: ../whois.c:398
+#: ../whois.c:408
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "Uma referência para·%s encontrada.\n"
 "\n"
 
-#: ../whois.c:440 ../whois.c:443
+#: ../whois.c:450 ../whois.c:453
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Não pôde processar esta linha: %s"
 
-#: ../whois.c:632
+#: ../whois.c:642
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Aviso: RIPE flags utilizados com um servidor tradicional."
 
-#: ../whois.c:802 ../whois.c:918
+#: ../whois.c:812 ../whois.c:928
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,32 +112,33 @@ msgstr ""
 "Erro catastrófico: o texto das condições de uso foi alterado.\n"
 "Por favor, atualize este programa. \n"
 
-#: ../whois.c:978
+#: ../whois.c:1029
 #, c-format
 msgid "Host %s not found."
 msgstr "Host %s não encontrado."
 
-#: ../whois.c:988
+#: ../whois.c:1039
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: serviço desconhecido"
 
-#: ../whois.c:1063
+#: ../whois.c:1114
 msgid "Timeout."
 msgstr "Tempo esgotado."
 
-#: ../whois.c:1069
+#: ../whois.c:1120
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrompido pelo sinal %d..."
 
-#: ../whois.c:1437
+#: ../whois.c:1488
 #, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
 "-h HOST, --host HOST   connect to server HOST\n"
 "-p PORT, --port PORT   connect to PORT\n"
+"-I                     query whois.iana.org and follow its referral\n"
 "-H                     hide legal disclaimers\n"
 msgstr ""
 "Uso: whois [OPÇÕES]... OBJETO...\n"
@@ -146,7 +147,7 @@ msgstr ""
 "-p PORTA                conecta na PORTA\n"
 "-H                     esconde o aviso legal\n"
 
-#: ../whois.c:1443
+#: ../whois.c:1495
 #, fuzzy, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
@@ -158,7 +159,7 @@ msgstr ""
 "      --help           exibe essa ajuda e sai\n"
 "      --version        exibe informações sobre a versão e sai\n"
 
-#: ../whois.c:1449
+#: ../whois.c:1501
 #, fuzzy, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
@@ -172,7 +173,7 @@ msgstr ""
 "-m                     busca o primeiro nível mais específico\n"
 "-M                     busca as correspondências mais específicas\n"
 
-#: ../whois.c:1456
+#: ../whois.c:1508
 #, fuzzy, c-format
 msgid ""
 "-c                     find the smallest match containing a mnt-irt "
@@ -184,7 +185,7 @@ msgstr ""
 "atributo mnt-irt\n"
 "-x                     busca exata\n"
 
-#: ../whois.c:1461
+#: ../whois.c:1513
 #, fuzzy, c-format
 msgid ""
 "-B                     turn off object filtering (show email addresses)\n"
@@ -193,7 +194,7 @@ msgid ""
 msgstr ""
 "-d                     retorna também objetos de delegação de DNS reverso\n"
 
-#: ../whois.c:1466
+#: ../whois.c:1518
 #, fuzzy, c-format
 msgid ""
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
@@ -208,7 +209,7 @@ msgstr ""
 "-r                     desabilita buscas recursivas para informações de "
 "contatos\n"
 
-#: ../whois.c:1472
+#: ../whois.c:1524
 #, fuzzy, c-format
 msgid ""
 "-R                     force to show local copy of the domain object even\n"
@@ -224,7 +225,7 @@ msgstr ""
 "-g SOURCE:FIRST-LAST   encontra atualizações de SOURCE da série FIRST até "
 "LAST\n"
 
-#: ../whois.c:1479
+#: ../whois.c:1531
 #, fuzzy, c-format
 msgid ""
 "-t TYPE                request template for object of TYPE\n"

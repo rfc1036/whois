@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 4.6.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-23 16:07+0200\n"
+"POT-Creation-Date: 2019-06-28 01:38+0200\n"
 "PO-Revision-Date: 2003-12-10 08:51+0200\n"
 "Last-Translator: Velonis Petros <velonis@freemail.gr>\n"
 "Language-Team: Greek <velonis@freemail.gr>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:233
+#: ../whois.c:236
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,33 +27,33 @@ msgstr ""
 "\n"
 "Αναφέρατε σφάλματα στο %s.\n"
 
-#: ../whois.c:322
+#: ../whois.c:325
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Αυτό το TLD δεν έχει εξυπηρετητή whois, ωστόσο μπορείτε να προσπελάσετε την "
 "βάση whois στο"
 
-#: ../whois.c:327
+#: ../whois.c:330
 msgid "This TLD has no whois server."
 msgstr "Αυτό το TLD δεν έχει εξυπηρετητή whois."
 
-#: ../whois.c:330
+#: ../whois.c:333
 msgid "No whois server is known for this kind of object."
 msgstr ""
 "Κανένας εξυπηρετητής whois δεν είναι γνωστός για αυτού του είδους το "
 "αντικείμενο."
 
-#: ../whois.c:333
+#: ../whois.c:336
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr ""
 "Άγνωστος αριθμός AS ή IP δικτύου. Παρακαλώ αναβαθμίστε αυτό το πρόγραμμα."
 
-#: ../whois.c:337 ../whois.c:344 ../whois.c:387
+#: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Γίνεται χρήση του εξυπηρετητή %s.\n"
 
-#: ../whois.c:351
+#: ../whois.c:354
 #, c-format
 msgid ""
 "\n"
@@ -64,7 +64,7 @@ msgstr ""
 "Άντληση πληροφοριών για το σημείο τέλους IPv4 %s μιας διεύθυνσης 6to4 IPv6.\n"
 "\n"
 
-#: ../whois.c:358
+#: ../whois.c:361
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -75,7 +75,7 @@ msgstr ""
 "Άντληση πληροφοριών για το σημείο τέλους IPv4 %s μιας διεύθυνσης 6to4 IPv6.\n"
 "\n"
 
-#: ../whois.c:388
+#: ../whois.c:398
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -84,7 +84,7 @@ msgstr ""
 "Αλφαριθμητικό ερώτησης: \"%s\"\n"
 "\n"
 
-#: ../whois.c:398
+#: ../whois.c:408
 #, c-format
 msgid ""
 "\n"
@@ -97,18 +97,18 @@ msgstr ""
 "Βρέθηκε αναφορά στο %s.\n"
 "\n"
 
-#: ../whois.c:440 ../whois.c:443
+#: ../whois.c:450 ../whois.c:453
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Αδύνατη η ανάλυση αυτής της γραμμής: %s"
 
-#: ../whois.c:632
+#: ../whois.c:642
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr ""
 "Προειδοποίηση: Η σημαίες του RIPE χρησιμοποιούνται σε έναν παραδοσιακό "
 "εξυπηρετητή."
 
-#: ../whois.c:802 ../whois.c:918
+#: ../whois.c:812 ../whois.c:928
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -116,32 +116,33 @@ msgstr ""
 "Καταστροφικό σφάλμα: το κείμενο της αποποίησης ευθυνών έχει τροποποιηθεί.\n"
 "Παρακαλώ αναβαθμίστε το πρόγραμμα.\n"
 
-#: ../whois.c:978
+#: ../whois.c:1029
 #, c-format
 msgid "Host %s not found."
 msgstr "Το σύστημα %s δε βρέθηκε."
 
-#: ../whois.c:988
+#: ../whois.c:1039
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: άγνωστη υπηρεσία"
 
-#: ../whois.c:1063
+#: ../whois.c:1114
 msgid "Timeout."
 msgstr "Διάλειμμα."
 
-#: ../whois.c:1069
+#: ../whois.c:1120
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Διακοπή από το σήμα %d..."
 
-#: ../whois.c:1437
+#: ../whois.c:1488
 #, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
 "-h HOST, --host HOST   connect to server HOST\n"
 "-p PORT, --port PORT   connect to PORT\n"
+"-I                     query whois.iana.org and follow its referral\n"
 "-H                     hide legal disclaimers\n"
 msgstr ""
 "Χρήση: whois [ΕΠΙΛΟΓΕΣ]... ΑΝΤΙΚΕΙΜΕΝΟ...\n"
@@ -150,7 +151,7 @@ msgstr ""
 "-p ΘΥΡΑ            σύνδεση στη ΘΥΡΑ\n"
 "-H                       απόκρυψη του νομικού εγγράφου αποποίησης ευθύνης\n"
 
-#: ../whois.c:1443
+#: ../whois.c:1495
 #, fuzzy, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
@@ -162,7 +163,7 @@ msgstr ""
 "     --help             εμφάνιση αυτής της βοήθειας και έξοδος\n"
 "     --version        εμφάνιση της έκδοσης και έξοδος\n"
 
-#: ../whois.c:1449
+#: ../whois.c:1501
 #, fuzzy, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
@@ -179,7 +180,7 @@ msgstr ""
 "-M                     εύρεση όλων των Περισσότερο συγκεκριμένων "
 "ταιριασμάτων\n"
 
-#: ../whois.c:1456
+#: ../whois.c:1508
 #, fuzzy, c-format
 msgid ""
 "-c                     find the smallest match containing a mnt-irt "
@@ -191,7 +192,7 @@ msgstr ""
 "μια ένα χαρακτηριστικό mnt-irt \n"
 "-x                     ακριβές ταίριασμα\n"
 
-#: ../whois.c:1461
+#: ../whois.c:1513
 #, fuzzy, c-format
 msgid ""
 "-B                     turn off object filtering (show email addresses)\n"
@@ -201,7 +202,7 @@ msgstr ""
 "-d                     επιστροφή και των αντίστροφων αντικειμένων DNS [μόνο "
 "RPSL]\n"
 
-#: ../whois.c:1466
+#: ../whois.c:1518
 #, fuzzy, c-format
 msgid ""
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
@@ -216,7 +217,7 @@ msgstr ""
 "-r                     απενεργοποίηση των αναδρομικών αναζητήσεων  για "
 "πληροφορίες επικοινωνίας\n"
 
-#: ../whois.c:1472
+#: ../whois.c:1524
 #, fuzzy, c-format
 msgid ""
 "-R                     force to show local copy of the domain object even\n"
@@ -232,7 +233,7 @@ msgstr ""
 "-g ΠΗΓΗ:ΠΡΩΤΟ:ΤΕΛΕΥΤΑΙΟ   εμφάνιση αναβαθμίσεων από την ΠΗΓΗ από το σειριακό "
 "ΠΡΏΤΟ ως ΤΕΛΕΥΤΑΙΟ\n"
 
-#: ../whois.c:1479
+#: ../whois.c:1531
 #, fuzzy, c-format
 msgid ""
 "-t TYPE                request template for object of TYPE\n"

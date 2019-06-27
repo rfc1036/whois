@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-23 16:07+0200\n"
+"POT-Creation-Date: 2019-06-28 01:38+0200\n"
 "PO-Revision-Date: 2013-12-25 17:40+0800\n"
 "Last-Translator: Terence Ng <pheotiman@gmail.com>\n"
 "Language-Team: Chinese (China) <zh_CN@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../whois.c:233
+#: ../whois.c:236
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -30,28 +30,28 @@ msgstr ""
 "\n"
 "向 %s 报告漏洞。\n"
 
-#: ../whois.c:322
+#: ../whois.c:325
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr "此顶级域名没有 whois 服务器，但您可在这里访问 whois 数据库："
 
-#: ../whois.c:327
+#: ../whois.c:330
 msgid "This TLD has no whois server."
 msgstr "此顶级域名没有对应的 whois 服务器。"
 
-#: ../whois.c:330
+#: ../whois.c:333
 msgid "No whois server is known for this kind of object."
 msgstr "无针对此类对象的 whois 服务器。"
 
-#: ../whois.c:333
+#: ../whois.c:336
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "未知的 AS 号码或 IP 地址。请升级此程序。"
 
-#: ../whois.c:337 ../whois.c:344 ../whois.c:387
+#: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
 #, c-format
 msgid "Using server %s.\n"
 msgstr "使用服务器 %s。\n"
 
-#: ../whois.c:351
+#: ../whois.c:354
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "查询和一个6to4 IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:358
+#: ../whois.c:361
 #, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "查询一个Teredo IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:388
+#: ../whois.c:398
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "查询字符串: \"%s\"\n"
 "\n"
 
-#: ../whois.c:398
+#: ../whois.c:408
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "发现一个到 %s 的引用。\n"
 "\n"
 
-#: ../whois.c:440 ../whois.c:443
+#: ../whois.c:450 ../whois.c:453
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "不能分析该行：%s"
 
-#: ../whois.c:632
+#: ../whois.c:642
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "警告: 对传统服务器使用了 RIPE 标志。"
 
-#: ../whois.c:802 ../whois.c:918
+#: ../whois.c:812 ../whois.c:928
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,32 +112,33 @@ msgstr ""
 "严重错误: 声明(disclaimer)文本已经被改变。\n"
 "请升级此程序。\n"
 
-#: ../whois.c:978
+#: ../whois.c:1029
 #, c-format
 msgid "Host %s not found."
 msgstr "没有找到主机 %s。"
 
-#: ../whois.c:988
+#: ../whois.c:1039
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: 未知服务"
 
-#: ../whois.c:1063
+#: ../whois.c:1114
 msgid "Timeout."
 msgstr "超时。"
 
-#: ../whois.c:1069
+#: ../whois.c:1120
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "被信号 %d 中断..."
 
-#: ../whois.c:1437
-#, c-format
+#: ../whois.c:1488
+#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
 "-h HOST, --host HOST   connect to server HOST\n"
 "-p PORT, --port PORT   connect to PORT\n"
+"-I                     query whois.iana.org and follow its referral\n"
 "-H                     hide legal disclaimers\n"
 msgstr ""
 "用法： whois 【选项】 …… 对象 ……\n"
@@ -146,7 +147,7 @@ msgstr ""
 "-p PORT, --port PORT    连接到端口 PORT\n"
 "-H                      隐藏法律声明\n"
 
-#: ../whois.c:1443
+#: ../whois.c:1495
 #, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
@@ -159,7 +160,7 @@ msgstr ""
 "      --version         输出版本信息并退出\n"
 "\n"
 
-#: ../whois.c:1449
+#: ../whois.c:1501
 #, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
@@ -174,7 +175,7 @@ msgstr ""
 "-m                   寻找有更加具体匹配的一个级别\n"
 "-M                   寻找有更加具体的匹配的所有级别\n"
 
-#: ../whois.c:1456
+#: ../whois.c:1508
 #, c-format
 msgid ""
 "-c                     find the smallest match containing a mnt-irt "
@@ -186,7 +187,7 @@ msgstr ""
 "-x                     精确匹配\n"
 "-b                     return brief IP address ranges with abuse contact\n"
 
-#: ../whois.c:1461
+#: ../whois.c:1513
 #, c-format
 msgid ""
 "-B                     turn off object filtering (show email addresses)\n"
@@ -197,7 +198,7 @@ msgstr ""
 "-G                    关闭相关联对象的分组\n"
 "-d                     返回 DNS 反解授权对象\n"
 
-#: ../whois.c:1466
+#: ../whois.c:1518
 #, c-format
 msgid ""
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
@@ -210,7 +211,7 @@ msgstr ""
 "-K                      只返回主键\n"
 "-r                      关闭联系信息的递归查询\n"
 
-#: ../whois.c:1472
+#: ../whois.c:1524
 #, c-format
 msgid ""
 "-R                     force to show local copy of the domain object even\n"
@@ -225,7 +226,7 @@ msgstr ""
 "-s SOURCE[,SOURCE]...   从 SOURCE 中搜索数据库镜像\n"
 "-g SOURCE:FIRST-LAST   从串行的 FIRST 到 LAST 的 SOURCE 中查找更新\n"
 
-#: ../whois.c:1479
+#: ../whois.c:1531
 #, c-format
 msgid ""
 "-t TYPE                request template for object of TYPE\n"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.24\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-23 16:07+0200\n"
+"POT-Creation-Date: 2019-06-28 01:38+0200\n"
 "PO-Revision-Date: 2013-04-10 20:06+0200\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../whois.c:233
+#: ../whois.c:236
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -27,31 +27,31 @@ msgstr ""
 "Chyby programu hlaste na %s (anglicky), chyby překladu na\n"
 "<translation-team-cs@lists.sourceforge.net> (česky).\n"
 
-#: ../whois.c:322
+#: ../whois.c:325
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Tato TLD nemá žádný whoisový server, ale k whoisové databázi se lze dostat na"
 
-#: ../whois.c:327
+#: ../whois.c:330
 msgid "This TLD has no whois server."
 msgstr "Tato TLD nemá žádný whoisový server."
 
-#: ../whois.c:330
+#: ../whois.c:333
 msgid "No whois server is known for this kind of object."
 msgstr "Pro tento druh objektu není znám žádný whoisový server."
 
-#: ../whois.c:333
+#: ../whois.c:336
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr ""
 "Neznámé číslo AS nebo neznámá IP síť.\n"
 "Prosím, pořiďte si novou verzi tohoto programu."
 
-#: ../whois.c:337 ../whois.c:344 ../whois.c:387
+#: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Používám server %s.\n"
 
-#: ../whois.c:351
+#: ../whois.c:354
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Dotazuji se na IPv4 konec %s příslušející 6to4 IPv6 adrese.\n"
 "\n"
 
-#: ../whois.c:358
+#: ../whois.c:361
 #, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Dotazuji se na IPv4 konec %s příslušející Teredo IPv6 adrese.\n"
 "\n"
 
-#: ../whois.c:388
+#: ../whois.c:398
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "Znění dotazu: „%s“\n"
 "\n"
 
-#: ../whois.c:398
+#: ../whois.c:408
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "Nalezen odkaz na %s.\n"
 "\n"
 
-#: ../whois.c:440 ../whois.c:443
+#: ../whois.c:450 ../whois.c:453
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Tento řádek nemohu rozebrat: %s"
 
-#: ../whois.c:632
+#: ../whois.c:642
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Varování: RIPE příznak použit s tradičním serverem."
 
-#: ../whois.c:802 ../whois.c:918
+#: ../whois.c:812 ../whois.c:928
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,32 +112,33 @@ msgstr ""
 "Katastrofální chyba: text prohlášení byl pozměněn.\n"
 "Prosím, pořiďte si novou verzi tohoto programu.\n"
 
-#: ../whois.c:978
+#: ../whois.c:1029
 #, c-format
 msgid "Host %s not found."
 msgstr "Jméno počítače %s nenalezeno."
 
-#: ../whois.c:988
+#: ../whois.c:1039
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/TCP: neznámá služba"
 
-#: ../whois.c:1063
+#: ../whois.c:1114
 msgid "Timeout."
 msgstr "Čas vypršel."
 
-#: ../whois.c:1069
+#: ../whois.c:1120
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Přerušeno signálem %d…"
 
-#: ../whois.c:1437
-#, c-format
+#: ../whois.c:1488
+#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
 "-h HOST, --host HOST   connect to server HOST\n"
 "-p PORT, --port PORT   connect to PORT\n"
+"-I                     query whois.iana.org and follow its referral\n"
 "-H                     hide legal disclaimers\n"
 msgstr ""
 "Použití: whois [PŘEPÍNAČ]… OBJEKT…\n"
@@ -146,7 +147,7 @@ msgstr ""
 "-p PORT, --port PORT     připojí se na PORT\n"
 "-H                       skryje právní prohlášení\n"
 
-#: ../whois.c:1443
+#: ../whois.c:1495
 #, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
@@ -159,7 +160,7 @@ msgstr ""
 "      --version          vypíše informace o verzi a skončí\n"
 "\n"
 
-#: ../whois.c:1449
+#: ../whois.c:1501
 #, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
@@ -175,7 +176,7 @@ msgstr ""
 "-m                       nalezne všechny nejbližší užší shody\n"
 "-M                       nalezne všechny užší shody\n"
 
-#: ../whois.c:1456
+#: ../whois.c:1508
 #, c-format
 msgid ""
 "-c                     find the smallest match containing a mnt-irt "
@@ -188,7 +189,7 @@ msgstr ""
 "-b                       vrátí stručný rozsah IP adres s kontaktem na "
 "stížnosti\n"
 
-#: ../whois.c:1461
+#: ../whois.c:1513
 #, c-format
 msgid ""
 "-B                     turn off object filtering (show email addresses)\n"
@@ -200,7 +201,7 @@ msgstr ""
 "-G                       vypne seskupování přidružených objektů\n"
 "-d                       vrací též objekty delegace reverzního DNS\n"
 
-#: ../whois.c:1466
+#: ../whois.c:1518
 #, c-format
 msgid ""
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
@@ -213,7 +214,7 @@ msgstr ""
 "-K                       vrátí pouze primární klíče\n"
 "-r                       vypne rekurzivní dohledávání kontaktů\n"
 
-#: ../whois.c:1472
+#: ../whois.c:1524
 #, c-format
 msgid ""
 "-R                     force to show local copy of the domain object even\n"
@@ -228,7 +229,7 @@ msgstr ""
 "-s ZDROJ[,ZDROJ]…        prohledá databázi zrcadlenou ze ZDROJE\n"
 "-g ZDROJ:PRVNÍ-POSLEDNÍ  nalezne aktualizace ze ZDROJE se sériovým číslem\n"
 
-#: ../whois.c:1479
+#: ../whois.c:1531
 #, c-format
 msgid ""
 "-t TYPE                request template for object of TYPE\n"
