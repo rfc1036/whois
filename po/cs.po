@@ -1,12 +1,12 @@
 # Czech translation for whois
-# Petr Pisar <petr.pisar@atlas.cz>, 2008, 2009, 2010, 2012, 2013.
+# Petr Pisar <petr.pisar@atlas.cz>, 2008, 2009, 2010, 2012, 2013, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.0.24\n"
+"Project-Id-Version: whois 5.4.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2013-04-10 20:06+0200\n"
+"PO-Revision-Date: 2019-06-28 06:05+02:00\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "Language: cs\n"
@@ -49,7 +49,7 @@ msgstr ""
 #: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
 #, c-format
 msgid "Using server %s.\n"
-msgstr "Používám server %s.\n"
+msgstr "Používá se server %s.\n"
 
 #: ../whois.c:354
 #, c-format
@@ -132,7 +132,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Přerušeno signálem %d…"
 
 #: ../whois.c:1488
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -145,6 +145,7 @@ msgstr ""
 "\n"
 "-h STROJ, --host STROJ   připojí se na server STROJ\n"
 "-p PORT, --port PORT     připojí se na PORT\n"
+"-I                       dotáže se whois.iana.org a následuje tamní odkazy\n"
 "-H                       skryje právní prohlášení\n"
 
 #: ../whois.c:1495
@@ -245,9 +246,8 @@ msgstr ""
 "                         verze, „sources“ – zdroje, „types“ – typy)\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "standardní crypt(3) založený na 56bitové šifře DES"
+msgstr "rozšířený BSDI crypt(3) založený na šifře DES"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
