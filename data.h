@@ -11,6 +11,7 @@ const char *ripe_servers[] = {
     "rr.arin.net",		/* does not accept the old syntax */
     "whois.nic.fr",
     "rr.level3.net",		/* 3.0.0a13 */
+    "rr.ntt.net",
     "whois.tcinet.ru",
     "whois.ripn.net",
     "whois.arnes.si",
