@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2014-06-09 15:27-0000\n"
+"PO-Revision-Date: 2019-06-28 08:56+0100\n"
 "Last-Translator: Sami Kerola <kerolasa@iki.fi>\n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: ../whois.c:236
 #, c-format
@@ -130,7 +130,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Ohjelma keskeytyi signaaliin %d..."
 
 #: ../whois.c:1488
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -143,6 +143,8 @@ msgstr ""
 "\n"
 "-h PALVELIN, --host PALVELIN  ota yhteys PALVELIMEEN\n"
 "-p PORTTI, --port PORTTI      käytä PORTTIA\n"
+"-I                            ota yhteys whois.iana.org ja seuraa "
+"viittausta\n"
 "-H                            piilota ilmoitukset\n"
 
 #: ../whois.c:1495
@@ -236,13 +238,12 @@ msgstr ""
 "-q [versio|lähde|tyyppi]   hae erityisiä palvelin tietoja\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "Standardi 56-bittinen DES-salaus katso crypt(3)"
+msgstr "BSDI  laajennettu DES-salaus, katso crypt(3)"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "Standardi 56-bittinen DES-salaus katso crypt(3)"
+msgstr "standardi 56-bittinen DES-salaus katso crypt(3)"
 
 #: ../mkpasswd.c:207
 #, c-format
