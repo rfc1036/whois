@@ -345,7 +345,7 @@
 .org.za	org-whois.registry.net.za
 .web.za	web-whois.registry.net.za
 .za	NONE		# http://www.zadna.org.za/content/page/domain-information
-.zm	whois.nic.zm
+.zm	whois.zicta.zm
 .zw	NONE		# http://www.zispa.co.zw/
 
 # AW means that I had to guess the whois server name, but I was not able
