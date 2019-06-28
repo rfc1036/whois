@@ -9,6 +9,7 @@
 #   - Updates
 #       Francisco Javier Cuadrado <fcocuadrado@gmail.com>, 2010
 #       Matías A. Bellone <matiasbellone+debian@gmail.com>, 2014
+#		Jonatan Porras <jonatanpc8@gmail.com>, 2019
 #
 # Traductores, si no conocen el formato PO, merece la pena leer la
 # documentación de gettext, especialmente las secciones dedicadas a este
@@ -157,7 +158,6 @@ msgid "Interrupted by signal %d..."
 msgstr "Interrumpido por la señal %d..."
 
 #: ../whois.c:1488
-#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -170,6 +170,7 @@ msgstr ""
 "\n"
 "-h EQUIPO, --host EQUIPO  conectar con el servidor EQUIPO\n"
 "-p PUERTO, --port PUERTO  conectar al PUERTO\n"
+"-I                     consultar whois.iana.org y seguir su referencia\n"
 "-H                     no mostrar avisos legales\n"
 
 #: ../whois.c:1495
@@ -270,13 +271,12 @@ msgstr ""
 "-q [versión|orígenes|tipos]  consultar información con el servidor indicado\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "crypt(3) basado en DES de 56 bits"
+msgstr "BSDI extendido basado en DES crypt(3)"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "crypt(3) basado en DES de 56 bits"
+msgstr "crypt(3) basado en DES de 56 bits estandar"
 
 #: ../mkpasswd.c:207
 #, c-format
