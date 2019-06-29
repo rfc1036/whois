@@ -3,20 +3,20 @@
 # This file is distributed under the same license as the whois package.
 #
 # Andy Shevchenko <andy@smile.org.ua>, 2005.
-# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010, 2012, 2013.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010, 2012, 2013, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.0.24\n"
+"Project-Id-Version: whois 5.4.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2013-04-10 21:24+0400\n"
+"PO-Revision-Date: 2019-06-29 09:55+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 2.0\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -134,7 +134,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Прервано по сигналу %d..."
 
 #: ../whois.c:1488
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -145,8 +145,9 @@ msgid ""
 msgstr ""
 "Использование: whois [ПАРАМЕТР]… ОБЪЕКТ…\n"
 "\n"
-"-h УЗЕЛ, --host УЗЕЛ   подключиться к УЗЛУ\n"
-"-p ПОРТ, --port ПОРТ   подключиться к ПОРТУ\n"
+"-h УЗЕЛ, --host УЗЕЛ   подключиться к серверному УЗЛУ\n"
+"-p ПОРТ, --port ПОРТ   подключаться по ПОРТУ\n"
+"-I                     запросить whois.iana.org и следовать результатам\n"
 "-H                     скрыть уведомление о правах\n"
 
 #: ../whois.c:1495
@@ -249,13 +250,12 @@ msgstr ""
 "                       запросить указанную информацию о сервере\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "стандартный 56-битный, базирующийся на DES, crypt(3)"
+msgstr "основанный на DES crypt(3), расширенный BSDI"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "стандартный 56-битный, базирующийся на DES, crypt(3)"
+msgstr "основанный на стандартном 56-битном DES crypt(3)"
 
 #: ../mkpasswd.c:207
 #, c-format
