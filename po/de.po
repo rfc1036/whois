@@ -1,14 +1,14 @@
 # Translation of whois to German
-# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian 
-# Bunk <bunk@fs.tum.de>, 2010, 2013 Chris Leick <c.leick@vollbio.de>.
+# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian
+# Bunk <bunk@fs.tum.de>, 2010, 2013, 2019 Chris Leick <c.leick@vollbio.de>.
 # This file is distributed under the same license as the whois package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.0.24\n"
+"Project-Id-Version: whois 5.4.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2013-04-27 21:32+0200\n"
+"PO-Revision-Date: 2019-06-28 18:02+0200\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -135,7 +135,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Durch Signal %d unterbrochen …"
 
 #: ../whois.c:1488
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -148,6 +148,7 @@ msgstr ""
 "\n"
 "-h HOST, --host HOST   verbindet sich mit Server HOST.\n"
 "-p PORT, --port PORT   verbindet sich mit PORT.\n"
+"-I                     fragt whois.iana.org ab und folgt dessen Verweis.\n"
 "-H                     versteckt Haftungsausschlussklauseln.\n"
 
 #: ../whois.c:1495
@@ -253,9 +254,9 @@ msgstr ""
 "-q [version|sources|types]  fragt die angegebene Server-Information ab.\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
+# https://en.wikipedia.org/wiki/Crypt_%28C%29#BSDi_extended_DES-based_scheme
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "Standard-56-Bit-DES-basiertes Crypt(3)"
+msgstr "BSDi-erweitertes DES-basiertes Crypt(3)"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
