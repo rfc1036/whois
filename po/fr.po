@@ -1,16 +1,16 @@
 # Translation of whois to French
-# Copyright not yet (C) 2003-2009 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# Copyright © 2003-2009 Debian French l10n team <debian-l10n-french@lists.debian.org>
 # This file is distributed under the same license as the whois package.
-# Copyright © 2003 William Steve Applegate <wsapplegate@est.un.goret.info>
 # -2003: William Steve Applegate <wsapplegate@est.un.goret.info>
 # -2008: Mohammed Adnène Trojette <adn+deb@diwi.org>
 # 2013: Steve Petruzzello <dlist@bluewin.ch>
+# 2019: Steve Petruzzello <dlist@bluewin.ch>
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.0.24\n"
+"Project-Id-Version: whois 5.4.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2013-04-18 17:47+0200\n"
+"PO-Revision-Date: 2019-06-28 17:47+0200\n"
 "Last-Translator: Steve Petruzzello <dlist@bluewin.ch>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -135,7 +135,6 @@ msgid "Interrupted by signal %d..."
 msgstr "Interruption par le signal %d..."
 
 #: ../whois.c:1488
-#, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -148,6 +147,7 @@ msgstr ""
 "\n"
 "-h HÔTE, --host HÔTE   se connecter au serveur HÔTE\n"
 "-p PORT, --port PORT   se connecter sur le port PORT\n"
+"-I                     interroger whois.iana.org et suivre son référent"
 "-H                     cacher les mentions légales\n"
 
 #: ../whois.c:1495
@@ -253,9 +253,8 @@ msgstr ""
 "-q [version|sources|types]  demander les informations spécifiées au serveur\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "fonction crypt(3) standard, chiffrement DES à 56 bits"
+msgstr "chiffrement à base DES étendu par BSDI"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
