@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: whois 5.0.24\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2013-04-10 04:19+0200\n"
+"PO-Revision-Date: 2019-07-18 02:08+0200\n"
 "Last-Translator: Marco d'Itri <md@linux.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -130,7 +130,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Interrotto dal segnale %d..."
 
 #: ../whois.c:1488
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -143,6 +143,7 @@ msgstr ""
 "\n"
 "-h HOST, --host HOST    si connette al server HOST\n"
 "-p PORTA, --port PORTA  si connette alla PORTA\n"
+"-I                 chiede a whois.iana.org e segue il rinvio\n"
 "-H                 nasconde le avvertenze legali\n"
 
 #: ../whois.c:1495
@@ -238,9 +239,8 @@ msgstr ""
 "-q [version|sources|types]  chiede al server le informazioni indicate\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "crypt(3) standard a 56 bit basata su DES"
+msgstr "crypt(3) estesa di BSDI basata su DES"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
