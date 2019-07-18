@@ -120,6 +120,13 @@ static const struct crypt_method methods[] = {
     { "sha-512",	"$6$",	8,	16,	1, NULL },
 #endif
 #if (defined __SVR4 && defined __sun) || defined XCRYPT_VERSION_NUM
+    /* http://www.crypticide.com/dropsafe/article/1389 */
+    /*
+     * Actually the maximum salt length is arbitrary, but Solaris by default
+     * always uses 8 characters:
+     * http://cvs.opensolaris.org/source/xref/onnv/onnv-gate/ \
+     *   usr/src/lib/crypt_modules/sunmd5/sunmd5.c#crypt_gensalt_impl
+     */
     { "sunmd5",		"$md5$", 8,	8,	1, "SunMD5" },
 #endif
     { "md5crypt",	"$1$",	8,	8,	0, "MD5" },
@@ -132,13 +139,6 @@ static const struct crypt_method methods[] = {
 #if defined FreeBSD || defined XCRYPT_VERSION_NUM
     { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
 #endif
-    /* http://www.crypticide.com/dropsafe/article/1389 */
-    /*
-     * Actually the maximum salt length is arbitrary, but Solaris by default
-     * always uses 8 characters:
-     * http://cvs.opensolaris.org/source/xref/onnv/onnv-gate/ \
-     *   usr/src/lib/crypt_modules/sunmd5/sunmd5.c#crypt_gensalt_impl
-     */
     { NULL,		NULL,	0,	0,	0, NULL }
 };
 
