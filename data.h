@@ -17,7 +17,6 @@ const char *ripe_servers[] = {
     "whois.arnes.si",
     "whois.nic.ir",
     "whois.ra.net",
-    "whois.bgpmon.net",
     NULL
 };
 
