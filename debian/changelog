@@ -1,3 +1,15 @@
+whois (5.5.0) unstable; urgency=medium
+
+  * Implemented the -I option to query whois.iana.org and use its referrals.
+    (Closes: #774603)
+  * Updated one or more translations. (Closes: #931336, #931244)
+  * Automatically generate the version string sent to servers because I
+    kept forgetting to update it with new releases.
+  * Updated the .zm TLD server.
+  * Added new recovered IPv4 allocations.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 19 Jul 2019 11:31:42 +0200
+
 whois (5.4.3) unstable; urgency=medium
 
   * Added the new 2a10:0000::/12 IPv6 assignment to RIPE.
