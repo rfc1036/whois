@@ -8,8 +8,7 @@
 #
 #   - Updates
 #       Francisco Javier Cuadrado <fcocuadrado@gmail.com>, 2010
-#       Matías A. Bellone <matiasbellone+debian@gmail.com>, 2014
-#		Jonatan Porras <jonatanpc8@gmail.com>, 2019
+#       Matías A. Bellone <matiasbellone+debian@gmail.com>, 2014, 2019
 #
 # Traductores, si no conocen el formato PO, merece la pena leer la
 # documentación de gettext, especialmente las secciones dedicadas a este
@@ -34,7 +33,7 @@ msgstr ""
 "Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2014-07-11 20:40-0300\n"
+"PO-Revision-Date: 2019-07-02 02:30-0300\n"
 "Last-Translator: Matías A. Bellone <matiasbellone+debian@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
 "Language: es\n"
@@ -158,6 +157,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Interrumpido por la señal %d..."
 
 #: ../whois.c:1488
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -170,7 +170,7 @@ msgstr ""
 "\n"
 "-h EQUIPO, --host EQUIPO  conectar con el servidor EQUIPO\n"
 "-p PUERTO, --port PUERTO  conectar al PUERTO\n"
-"-I                     consultar whois.iana.org y seguir su referencia\n"
+"-I                     consultar whois.iana.org y seguir su redirección\n"
 "-H                     no mostrar avisos legales\n"
 
 #: ../whois.c:1495
@@ -272,11 +272,11 @@ msgstr ""
 
 #: ../mkpasswd.c:128
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "BSDI extendido basado en DES crypt(3)"
+msgstr "crypt(3) extendido BSDI basado en DES"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "crypt(3) basado en DES de 56 bits estandar"
+msgstr "crypt(3) estándar basado en DES de 56 bits"
 
 #: ../mkpasswd.c:207
 #, c-format
