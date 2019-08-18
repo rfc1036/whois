@@ -1,3 +1,10 @@
+whois (5.5.1) unstable; urgency=medium
+
+  * Updated the .ge TLD server.
+  * Updated one or more translations.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 18 Aug 2019 19:47:55 +0200
+
 whois (5.5.0) unstable; urgency=medium
 
   * Implemented the -I option to query whois.iana.org and use its referrals.
