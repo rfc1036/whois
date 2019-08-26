@@ -100,7 +100,6 @@
     (defined OpenBSD && OpenBSD >= 200805) || \
     (defined __APPLE__ && defined __MACH__ && MAC_OS_X_VERSION_MIN_REQUIRED >= 1070)
 # define HAVE_ARC4RANDOM_BUF
-# undef RANDOM_DEVICE
 #endif
 
 /* or else getentropy(2) on Linux */
