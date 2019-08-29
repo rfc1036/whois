@@ -1,14 +1,14 @@
 # Polish translation for whois.
 # Michał 'CeFeK' Nazarewicz <cefek@career.pl>, 1999
 # Przemysław Knycz <djrzulf@pld.org.pl>, 2003
-# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2018
+# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2019
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.4.0\n"
+"Project-Id-Version: whois 5.5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2018-11-30 21:23+0100\n"
+"PO-Revision-Date: 2019-08-28 18:02+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "Language: pl\n"
@@ -132,7 +132,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Przerwano sygnałem %d..."
 
 #: ../whois.c:1488
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -145,6 +145,7 @@ msgstr ""
 "\n"
 "-h HOST, --host HOST   łączenie z serwerem HOST\n"
 "-p PORT, --port PORT   łączenie z portem PORT\n"
+"-I                     odpytanie whois.iana.org i podążanie za odwołaniami\n"
 "-H                     ukrycie oświadczeń prawnych\n"
 
 #: ../whois.c:1495
