@@ -288,7 +288,7 @@
 .sy	whois.tld.sy
 .sz	NONE		# http://www.sispa.org.sz/
 .tc	whois.nic.tc
-.td	WEB http://www.nic.td/
+.td	whois.nic.td
 .tf	whois.nic.tf
 .tg	whois.nic.tg
 .th	whois.thnic.co.th
