@@ -1,3 +1,11 @@
+whois (5.5.2) unstable; urgency=medium
+
+  * Added the .xn--qxa6a (.ευ, European Union, Greek) TLD server.
+  * Updated the .td TLD server.
+  * Updated one or more translations.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 02 Oct 2019 23:44:49 +0200
+
 whois (5.5.1) unstable; urgency=medium
 
   * Updated the .ge TLD server.
