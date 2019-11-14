@@ -1,5 +1,9 @@
 prefix = /usr
 
+ifdef DESTDIR
+BASEDIR := $(DESTDIR)
+endif
+
 INSTALL= install
 
 INSTALLNLSDIR=$(BASEDIR)$(prefix)/share/locale

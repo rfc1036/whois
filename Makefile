@@ -1,5 +1,9 @@
 prefix = /usr
 
+ifdef DESTDIR
+BASEDIR := $(DESTDIR)
+endif
+
 CFLAGS ?= -g -O2
 
 PKG_CONFIG ?= pkg-config
