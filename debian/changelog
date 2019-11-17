@@ -1,3 +1,12 @@
+whois (5.5.3) unstable; urgency=medium
+
+  * Added the new 2630:0000::/12 IPv6 assignment to ARIN.
+  * Updated the .xxx TLD server.
+  * Updated the list of new gTLDs.
+  * Converted the Debian packaging to dh.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 17 Nov 2019 21:33:50 +0100
+
 whois (5.5.2) unstable; urgency=medium
 
   * Added the .xn--qxa6a (.ευ, European Union, Greek) TLD server.
