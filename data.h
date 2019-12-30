@@ -27,14 +27,13 @@ const char *hide_strings[] = {
     "TERMS OF USE: You are not authorized", NULL,	/* crsnic */
     "The data in Register.com's WHOIS database", NULL,
     "The Data in the Tucows Registrar WHOIS database", NULL,
-    "The data in NameSecure.com's WHOIS database", NULL,
-    "The Data in Gabia's WHOIS database", NULL,
+    "TERMS OF USE: The Data in Gabia' WHOIS", NULL,
     "The data contained in GoDaddy.com", NULL,
     "Personal data access and use are governed by French", NULL, /* GANDI */
     "The data in this whois database is provided to you", NULL,	/* enom */
-    "; Please register your domains at; http://www.", NULL, /* key-systems.net */
+    "Please register your domains at; http://www.", NULL, /* key-systems.net */
     "%% NOTICE: Access to this information is provided", NULL, /* bookmyname.com */
-    "% NOTICE: Access to the domains information", NULL, /* CORE */
+    "NOTICE: Access to the domain name's information", NULL, /* CORE */
     "The Data in MarkMonitor.com's", NULL, /* MarkMonitor */
     "Corporation Service Company(c) (CSC)  The Trusted Partner", "Register your domain name at", /* CSC */
     "The data in Networksolutions.com's", NULL,		/* Networksolutions */
@@ -44,27 +43,19 @@ const char *hide_strings[] = {
     "The data in the FastDomain Inc. WHOIS database", NULL,
 
     /* gTLDs */
-    "Access to .AERO WHOIS information", "",
-    "DotAsia WHOIS LEGAL STATEMENT", "integrity of the database.",
-    "The .coop registry WHOIS", "VERIFICATION, NOR DO",
-    "%% puntCAT Whois Server", "%% any time.",
-    "This Registry database contains ONLY .EDU", "type: help",	/* edu */
+    "Access to WHOIS information is provided", NULL,
+    "This Registry database contains ONLY .EDU", "domain names.", /* edu */
     "Access to AFILIAS WHOIS information is provided", NULL,	/* .info */
-    "mTLD WHOIS LEGAL STATEMENT", "integrity of the database.",	/* .mobi */
     "Access to Public Interest Registry WHOIS information", NULL, /* .org */
-    "Access to .PRO REGISTRY WHOIS information", "",
-    "Telnic, Ltd., the Registry Operator for .TEL", NULL,
+    "Telnames Limited, the Registry Operator for", NULL,
     "Tralliance, Inc., the Registry Operator for .travel", NULL,
-    "Access to .XXX ICM REGISTRY WHOIS", NULL,			/* .xxx */
+    "The data in this record is provided by", NULL,	/* .xxx */
 
     /* new gTLDs */
-    "Terms of Use: Users accessing the Donuts WHOIS", NULL,
-    "Terms of Use: Users accessing the United TLD WHOIS", NULL,
+    "Terms of Use: Donuts Inc. provides", NULL,
     "Access to WHOIS information is provided", NULL,		/* Afilias */
-    "The  WHOIS information provided on this page", NULL, /* uniregistry.net */
-    "The whois information provided on this site", "",	/* mm-registry.com */
-    "; This data is provided by ", NULL,		/* ksregistry.net */
-    "This whois service is provided by CentralNic Ltd", "",
+    "TERMS OF USE: You  are  not  authorized", NULL, /* uniregistry.net */
+    "The Whois and RDAP services are provided by CentralNic", "",
     ".Club Domains, LLC, the Registry Operator", NULL,
     "% Except for agreed Internet operational purposes", NULL,	/* .berlin */
     "TERMS OF USE: The information in the Whois database", NULL, /* .wang */
@@ -75,11 +66,13 @@ const char *hide_strings[] = {
     "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
     "This WHOIS information is provided", NULL,			/* as */
     "% The WHOIS service offered by DNS Belgium", "",		/* be */
-    "%   (c) 2015 NIC Costa Rica", "",				/* cr */
+    ".CO Internet, S.A.S., the Administrator", NULL,		/* co */
+    "%  *The information provided",
+	"% https://www.nic.cr/iniciar-sesion/?next=/mi-cuenta/",/* cr */
     "% The WHOIS service offered by EURid", "% of the database", /* eu */
-    "Access to .IN WHOIS information", "",			/* in */
-    "% WHOIS LEGAL STATEMENT AND TERMS & CONDITIONS", NULL,	/* sx */
-    "; The data in the WHOIS database of KSregistry GmbH", "",	/* vg */
+    "Access to .IN WHOIS information", NULL,			/* in */
+    "%", NULL,	/* sx */
+    "The Service is provided so that you may look", "We may discontinue",/*vu*/
     "NeuStar, Inc., the Registry Administrator for .US", NULL,
 
     NULL, NULL
