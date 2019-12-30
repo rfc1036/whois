@@ -305,11 +305,11 @@ msgstr ""
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
-"      -5                    like --method=md5\n"
+"      -5                    like --method=md5crypt\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 msgstr ""
 "      -m, --method=TIPO     seleziona il TIPO di metodo\n"
-"      -5                    come --method=md5\n"
+"      -5                    come --method=md5crypt\n"
 "      -S, --salt=SALE       usa il SALE specificato\n"
 
 #: ../mkpasswd.c:503

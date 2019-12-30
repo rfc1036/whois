@@ -304,11 +304,11 @@ msgstr ""
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
-"      -5                    like --method=md5\n"
+"      -5                    like --method=md5crypt\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 msgstr ""
 "      -m, --method=TYPE     valitse toiminto TYPE\n"
-"      -5                    sama kuin --method=md5\n"
+"      -5                    sama kuin --method=md5crypt\n"
 "      -S, --salt=SUOLA      suolan valinta\n"
 
 #: ../mkpasswd.c:503

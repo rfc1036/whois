@@ -176,7 +176,7 @@ int main(int argc, char *argv[])
 	    > 0) {
 	switch (ch) {
 	case '5':
-	    optarg = (char *) "md5";
+	    optarg = (char *) "md5crypt";
 	    /* fall through */
 	case 'm':
 	case 'H':
@@ -496,7 +496,7 @@ void NORETURN display_help(int error)
 	    "Crypts the PASSWORD using crypt(3).\n\n"));
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "      -m, --method=TYPE     select method TYPE\n"
-"      -5                    like --method=md5\n"
+"      -5                    like --method=md5crypt\n"
 "      -S, --salt=SALT       use the specified SALT\n"
     ));
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(

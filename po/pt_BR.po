@@ -308,7 +308,7 @@ msgstr ""
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
-"      -5                    like --method=md5\n"
+"      -5                    like --method=md5crypt\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 msgstr ""
 "      -H, --hash=TYPE       seleciona o hash TYPE\n"

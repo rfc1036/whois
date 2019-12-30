@@ -321,11 +321,11 @@ msgstr ""
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
-"      -5                    like --method=md5\n"
+"      -5                    like --method=md5crypt\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 msgstr ""
 "      -m, --method=TYPE     sélectionner ce TYPE de méthode\n"
-"      -5                    équivalent à --method=md5\n"
+"      -5                    équivalent à --method=md5crypt\n"
 "      -S, --salt=ALÉA       utiliser cet ALÉA\n"
 
 #: ../mkpasswd.c:503
