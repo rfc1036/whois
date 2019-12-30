@@ -1,12 +1,12 @@
-.TH "WHOIS.CONF" "5" "9 April 2013" "Petr Písař" "Debian GNU/Linux"
+.TH "WHOIS.CONF" "5" "2019-12-30" "Petr Písař" "Debian GNU/Linux"
 
-.SH "NAME"
+.SH NAME
 whois.conf \- alternative WHOIS servers list for whois client
 
-.SH "SYNOPSIS"
+.SH SYNOPSIS
 .B /etc/whois.conf
 
-.SH "DESCRIPTION"
+.SH DESCRIPTION
 This file contains a list of WHOIS servers which can augment or override
 the built-in list of the client.
 
@@ -25,7 +25,7 @@ case-insensitive suffix comparison against WHOIS object identifier is used.
 Internationalized domain names (IDN) must be specified in ascii-compatible
 encoding (ACE) format.
 
-.SH "EXAMPLE"
+.SH EXAMPLE
 \\.nz$             nz.whois-servers.net
 .br
 # Hangul Korean TLD
@@ -36,13 +36,14 @@ encoding (ACE) format.
 .br
 ^as645(1[2-9]|2[0-9]|3[0-4])$    whois.example.net
 
-.SH "FILES"
+.SH FILES
 /etc/whois.conf
 
 .SH "SEE ALSO"
-\fBwhois\fP(1)
+.IR whois (1)
 
-.SH "AUTHOR"
-This manual page was written by Petr Písař <\fIppisar@redhat.com\fP>
+.SH AUTHOR
+This manual page was written by Petr Písař
+.RI < ppisar@redhat.com >
 and is licensed under the terms of the GNU General Public License,
 version 2 or higher.
