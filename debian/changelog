@@ -1,3 +1,15 @@
+whois (5.5.4) unstable; urgency=medium
+
+  * Updated the .vu TLD server.
+  * Updated the list of new gTLDs.
+  * Added the charset for whois.ripe.net.
+  * Added support for the referrals in answers from whois.registry.in.
+  * Implemented support for passing raw $salts$.
+  * Fixed and updated many hiding string.
+  * Cleaned up the text and typesetting of the man pages. (Closes: #945622)
+
+ -- Marco d'Itri <md@linux.it>  Tue, 31 Dec 2019 03:04:15 +0100
+
 whois (5.5.3) unstable; urgency=medium
 
   * Added the new 2630:0000::/12 IPv6 assignment to ARIN.
