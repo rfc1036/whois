@@ -71,6 +71,7 @@ const char *hide_strings[] = {
 	"% https://www.nic.cr/iniciar-sesion/?next=/mi-cuenta/",/* cr */
     "% The WHOIS service offered by EURid", "% of the database", /* eu */
     "Access to .IN WHOIS information", NULL,			/* in */
+    "access to .in whois information", NULL,		/* in registar */
     "%", NULL,	/* sx */
     "The Service is provided so that you may look", "We may discontinue",/*vu*/
     "NeuStar, Inc., the Registry Administrator for .US", NULL,
