@@ -354,7 +354,7 @@
 .xn--3e0b707e		whois.kr		# Korea, Republic of
 .xn--3hcrj9c		whois.registry.in	# India
 .xn--45br5cyl		whois.registry.in	# India
-.xn--45brj9c		whois.registry.in	# India, Bengali AW
+.xn--45brj9c		whois.registry.in	# India, Bengali
 .xn--54b7fta0cc		NONE			# Bangladesh
 .xn--80ao21a		whois.nic.kz		# Kazakhstan
 .xn--90a3ac		whois.rnids.rs		# Serbia
@@ -362,15 +362,15 @@
 .xn--90ais		whois.cctld.by		# Belarus
 .xn--clchc0ea0b2g2a9gcd	whois.sgnic.sg		# Singapore, Tamil
 .xn--d1alf		whois.marnet.mk		# Macedonia
-.xn--e1a4c		whois.eu		# European Union, Cyrillic AW
+.xn--e1a4c		whois.eu		# European Union, Cyrillic
 .xn--fiqs8s		cwhois.cnnic.cn		# China, Simplified Chinese
 .xn--fiqz9s		cwhois.cnnic.cn		# China, Traditional Chinese
-.xn--fpcrj9c3d		whois.registry.in	# India, Telugu AW
+.xn--fpcrj9c3d		whois.registry.in	# India, Telugu
 .xn--fzc2c9e2c		whois.nic.lk		# Sri Lanka, Sinhala
-.xn--gecrj9c		whois.registry.in	# India, Gujarati AW
+.xn--gecrj9c		whois.registry.in	# India, Gujarati
 .xn--h2breg3eve		whois.registry.in	# India
 .xn--h2brj9c8c		whois.registry.in	# India
-.xn--h2brj9c		whois.registry.in	# India, Hindi AW
+.xn--h2brj9c		whois.registry.in	# India, Hindi
 .xn--j1amh		whois.dotukr.com	# Ukraine
 .xn--j6w193g		whois.hkirc.hk		# Hong Kong
 .xn--kprw13d		whois.twnic.net.tw	# Taiwan, Simplified Chinese
@@ -383,7 +383,7 @@
 .xn--mgbah1a3hjkrd	whois.nic.mr		# Mauritania
 .xn--mgbai9azgqp6j	NONE			# Pakistan
 .xn--mgbayh7gpa		WEB http://idn.jo/whois_a.aspx	# Jordan
-.xn--mgbbh1a71e		whois.registry.in	# India, Urdu AW
+.xn--mgbbh1a71e		whois.registry.in	# India, Urdu
 .xn--mgbbh1a		whois.registry.in	# India
 .xn--mgbc0a9azcg	NONE			# Morocco
 .xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
@@ -398,13 +398,13 @@
 .xn--p1ai		whois.tcinet.ru		# Russian Federation
 .xn--pgbs0dh		NONE			# Tunisia
 .xn--qxa6a		whois.eu		# European Union, Greek
-.xn--qxam		WEB https://grweb.ics.forth.gr/public/whois.jsp?lang=en # Greece AW
+.xn--qxam		WEB https://grweb.ics.forth.gr/public/whois.jsp?lang=en # Greece
 .xn--rvc1e0am3e		whois.registry.in	# India
-.xn--s9brj9c		whois.registry.in	# India, Punjabi AW
+.xn--s9brj9c		whois.registry.in	# India, Punjabi
 .xn--wgbh1c		whois.dotmasr.eg	# Egypt
 .xn--wgbl6a		whois.registry.qa	# Qatar
 .xn--xkc2al3hye2a	whois.nic.lk		# Sri Lanka, Tamil
-.xn--xkc2dl3a5ee0h	whois.registry.in	# India, Tamil AW
+.xn--xkc2dl3a5ee0h	whois.registry.in	# India, Tamil
 .xn--y9a3aq		whois.amnic.net		# Armenia
 .xn--yfro4i67o		whois.sgnic.sg		# Singapore, Chinese
 .xn--ygbi2ammx		whois.pnina.ps		# Palestinian Territory
