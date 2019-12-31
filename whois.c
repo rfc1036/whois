@@ -344,8 +344,8 @@ int handle_query(const char *hserver, const char *hport,
 	    break;
 	case 8:
 	    if (verb)
-		printf(_("Using server %s.\n"), "whois.afilias-grs.info");
-	    sockfd = openconn("whois.afilias-grs.info", NULL);
+		printf(_("Using server %s.\n"), server + 1);
+	    sockfd = openconn(server + 1, NULL);
 	    free(server);
 	    server = query_afilias(sockfd, query);
 	    break;
