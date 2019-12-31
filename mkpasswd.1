@@ -16,8 +16,11 @@ libc function, using the given salt.
 .BI \-\-salt= STRING
 Use the
 .I STRING
-as salt. It must not contain prefixes such as
-.IR $1$ .
+as salt. If it begins with
+.I $
+then it will be passed straight to
+.BR crypt (3)
+without any checks.
 .TP
 .BR \-R ", "\c
 .BI \-\-rounds= NUMBER

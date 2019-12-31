@@ -282,7 +282,9 @@ int main(int argc, char *argv[])
     else
 	rounds_str[0] = '\0';
 
-    if (salt_arg && salt_arg[0] != '\0') {
+    if (salt_arg && salt_arg[0] == '$')
+	salt = NOFAIL(strdup(salt_arg));
+    else if (salt_arg && salt_arg[0] != '\0') {
 	unsigned int c = strlen(salt_arg);
 	if (c < salt_minlen || c > salt_maxlen) {
 	    if (salt_minlen == salt_maxlen)
