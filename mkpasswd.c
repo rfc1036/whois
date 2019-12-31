@@ -97,11 +97,11 @@ static const struct crypt_method methods[] = {
     { "des",		"",	2,	2,	0, NULL },
     { "md5",		"$1$",	8,	8,	0, NULL },
 #if defined XCRYPT_VERSION_NUM
-    { "yescrypt",	"$y$",	0,	0,	0, "Yescrypt" },
+    { "yescrypt",	"$y$",	0,	0,	1, "Yescrypt" },
 #if XCRYPT_VERSION_NUM >= ((4 << 16) | 4)
-    { "gost-yescrypt",	"$gy$",	0,	0,	0, "GOST Yescrypt" },
+    { "gost-yescrypt",	"$gy$",	0,	0,	1, "GOST Yescrypt" },
 #endif
-    { "scrypt",		"$7$",	0,	0,	0, "scrypt" },
+    { "scrypt",		"$7$",	0,	0,	1, "scrypt" },
 #endif
 #ifdef HAVE_BCRYPT_OBSOLETE
     /* http://marc.info/?l=openbsd-misc&m=139320023202696 */
