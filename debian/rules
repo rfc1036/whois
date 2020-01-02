@@ -4,5 +4,5 @@
 	dh $@
 
 override_dh_auto_build:
-	$(MAKE) CONFIG_FILE="/etc/whois.conf" HAVE_ICONV=1
+	dh_auto_build -- CONFIG_FILE="/etc/whois.conf" HAVE_ICONV=1
 
