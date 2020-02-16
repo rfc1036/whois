@@ -13,7 +13,7 @@ whois
 po/whois.pot
 po/*.mo
 
-build
+debian/debhelper-build-stamp
 debian/files
 debian/whois.debhelper.log
 debian/whois.substvars
