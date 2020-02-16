@@ -1,3 +1,12 @@
+whois (5.5.6) unstable; urgency=medium
+
+  * Depend on pkg-config, or else the package will be built without libidn
+    and libxcrypt. (Closes: #950140)
+  * Added the .xn--q7ce6a (.ລາວ, Lao) TLD server.
+  * Added the .xn--pgbs0dh (.البحرين, Bahrain) domain.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 16 Feb 2020 10:25:51 +0100
+
 whois (5.5.5) unstable; urgency=medium
 
   * Fixed the hide string for .sx, which broke many others.
