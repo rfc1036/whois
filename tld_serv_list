@@ -264,18 +264,18 @@
 .rs	whois.rnids.rs
 
 # Russian .ru and .su 3LDs:
-.ac.ru whois.free.net
+.ac.ru	whois.free.net
 .edu.ru	whois.informika.ru
-.net.ru whois.nic.net.ru
-.org.ru whois.nic.net.ru
-.pp.ru whois.nic.net.ru
-.spb.ru whois.flexireg.net
-.com.ru whois.flexireg.net
-.msk.ru whois.flexireg.net
-.spb.su whois.flexireg.net
-.nov.ru whois.flexireg.net
-.msk.su whois.flexireg.net
-.nov.su whois.flexireg.net
+.net.ru	whois.nic.net.ru
+.org.ru	whois.nic.net.ru
+.pp.ru	whois.nic.net.ru
+.com.ru	whois.flexireg.net
+.msk.ru	whois.flexireg.net
+.msk.su	whois.flexireg.net
+.nov.ru	whois.flexireg.net
+.nov.su	whois.flexireg.net
+.spb.ru	whois.flexireg.net
+.spb.su	whois.flexireg.net
 
 .ru	whois.tcinet.ru
 .rw	whois.ricta.org.rw	# http://www.ricta.org.rw/
