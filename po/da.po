@@ -2,14 +2,14 @@
 # Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian 
 # Bunk <bunk@fs.tum.de>, 2010 Chris Leick <c.leick@vollbio.de>.
 # This file is distributed under the same license as the whois package.
-# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.0.24\n"
+"Project-Id-Version: whois 5.5.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-28 01:38+0200\n"
-"PO-Revision-Date: 2013-04-13 17:30+01:00\n"
+"PO-Revision-Date: 2020-03-08 17:30+01:00\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
 "Language: da\n"
@@ -131,7 +131,7 @@ msgid "Interrupted by signal %d..."
 msgstr "Afbrudt af signal %d ..."
 
 #: ../whois.c:1488
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
 "\n"
@@ -144,6 +144,7 @@ msgstr ""
 "\n"
 "-h VÆRT, --host VÆRT   forbind til server-VÆRT\n"
 "-p PORT, --port PORT   forbind til PORT\n"
+"-I                     forespørg whois.iana.org og følg henvisningen\n"
 "-H                     skjul juridisk ansvarsfraskrivelse\n"
 
 #: ../whois.c:1495
@@ -160,7 +161,7 @@ msgstr ""
 "\n"
 
 #: ../whois.c:1501
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
 "-l                     find the one level less specific match\n"
@@ -168,6 +169,7 @@ msgid ""
 "-m                     find all one level more specific matches\n"
 "-M                     find all levels of more specific matches\n"
 msgstr ""
+"Disse flag er understøttet af whois.ripe.net og nogle RIPE-lignende servere:\n"
 "-l                     et niveau mindre specifik opslag\n"
 "-L                     find alle mindre specifikke resultater\n"
 "-m                     find første niveau mere specifikke resultater\n"
@@ -240,9 +242,8 @@ msgstr ""
 "-q [version|kilder|typer]  forespørg angivet serverinfo\n"
 
 #: ../mkpasswd.c:128
-#, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "standard 56-bit DES-baseret Crypt(3)"
+msgstr "BSDI-udvidet DES-baseret Crypt(3)"
 
 #: ../mkpasswd.c:131
 msgid "standard 56 bit DES-based crypt(3)"
