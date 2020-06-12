@@ -693,7 +693,7 @@ char *queryformat(const char *server, const char *flags, const char *query)
 	    strcat(buf, "a ");
 	    strcat(buf, query + 2);
 	} else if (strchr(query, '/') && (myinet_aton(query) || strchr(query, ':'))) {
-	    strcat(buf, "r + < ");
+	    strcat(buf, "r + ");
 	    strcat(buf, query);
 	} else if (myinet_aton(query) || strchr(query, ':')) {
 	    strcat(buf, "n + ");
