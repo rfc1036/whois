@@ -1,3 +1,18 @@
+whois (5.5.7) unstable; urgency=medium
+
+  * Implemented support for CIDR queries to whois.arin.net.
+    The old behaviour caused the server to return no results, now when
+    querying for ip/length the server returns a result if there is an
+    exact match.
+  * Added the .ao, .bh, .mm, and .xn--pgbs0dh (.تونس, Tunisia) TLD servers.
+  * Added some .ru and .su SLD servers.
+  * Updated the .th and .xn--o3cw4h TLD servers.
+  * Updated the .cy, .jo, .lb, .np, .xn--mgbayh7gpa and .xn--qxam TLD URLs.
+  * Updated the charset for whois.ati.tn.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 03 Oct 2020 17:43:06 +0200
+
 whois (5.5.6) unstable; urgency=medium
 
   * Depend on pkg-config, or else the package will be built without libidn
