@@ -122,7 +122,7 @@
 .cv	WEB http://www.dns.cv/
 .cw	NONE		# http://www.uoc.cw/ictssite/index.php/domreg/registering-a-cw-domain/register
 .cx	whois.nic.cx
-.cy	WEB http://www.nic.cy/nslookup/online_database.php
+.cy	WEB https://www.nic.cy/cy-ui/home
 .cz	whois.nic.cz
 .de	whois.denic.de
 .dj	NONE		# http://www.dj/
