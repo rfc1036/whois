@@ -236,7 +236,7 @@
 .ni	WEB http://www.nic.ni/
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
-.np	WEB http://register.mos.com.np/np-whois-lookup
+.np	WEB https://register.com.np/whois-lookup
 .nr	WEB http://www.cenpac.net.nr/dns/whois.html
 .nu	whois.iis.nu
 .nz	whois.srs.net.nz
