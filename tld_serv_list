@@ -214,7 +214,7 @@
 .mh	NONE		# www.nic.net.mh
 .mk	whois.marnet.mk
 .ml	whois.dot.ml	# www.point.ml
-.mm	NONE		# www.nic.mm
+.mm	whois.registry.gov.mm
 .mn	whois.nic.mn
 .mo	WEB http://www.monic.mo/	# whois.monic.mo is restricted
 .mp	NONE		# get.mp
