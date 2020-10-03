@@ -87,7 +87,7 @@
 .be	whois.dns.be
 .bf	NONE		# http://www.arce.bf/ http://www.onatel.bf/internet/domaine.htm
 .bg	whois.register.bg
-.bh	NONE		# www.inet.com.bh
+.bh	whois.nic.bh
 .bi	whois1.nic.bi
 .bj	whois.nic.bj
 #.bl
