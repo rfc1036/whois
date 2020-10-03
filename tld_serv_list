@@ -262,7 +262,15 @@
 .re	whois.nic.re
 .ro	whois.rotld.ro
 .rs	whois.rnids.rs
+.ac.ru	whois.free.net
 .edu.ru	whois.informika.ru
+.com.ru	whois.flexireg.net
+.msk.ru	whois.flexireg.net
+.net.ru	whois.nic.net.ru
+.nov.ru	whois.flexireg.net
+.org.ru	whois.nic.net.ru
+.pp.ru	whois.nic.net.ru
+.spb.ru	whois.flexireg.net
 .ru	whois.tcinet.ru
 .rw	whois.ricta.org.rw	# http://www.ricta.org.rw/
 .sa	whois.nic.net.sa
@@ -282,6 +290,9 @@
 .sr	NONE		# www.register.sr
 .ss	whois.nic.ss
 .st	whois.nic.st
+.msk.su	whois.flexireg.net
+.nov.su	whois.flexireg.net
+.spb.su	whois.flexireg.net
 .su	whois.tcinet.ru
 .sv	WEB http://www.svnet.org.sv/
 .sx	whois.sx
