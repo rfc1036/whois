@@ -195,7 +195,7 @@
 .ky	whois.kyregistry.ky
 .kz	whois.nic.kz
 .la	whois.nic.la
-.lb	WEB http://www.aub.edu.lb/lbdr/
+.lb	WEB https://web.aub.edu.lb/cgi-bin/lbdr.pl
 .lc	whois2.afilias-grs.net
 .li	whois.nic.li
 .lk	whois.nic.lk
