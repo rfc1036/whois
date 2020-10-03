@@ -69,7 +69,7 @@
 .af	whois.nic.af
 .ag	whois.nic.ag
 .ai	whois.nic.ai
-.al	NONE		# https://www.akep.al/en/kerkoni-domain-2
+.al	NONE		# www.akep.al
 .am	whois.amnic.net
 .ao	WEB https://www.dns.ao/ao/gca/index.php?id=19	# www.dns.ao
 .aq	NONE		# 2day.com
@@ -107,7 +107,7 @@
 .cc	VERISIGN ccwhois.verisign-grs.com
 .cd	whois.nic.cd
 .cf	whois.dot.cf
-.cg	NONE
+.cg	NONE		# www.nic.cg
 .ch	whois.nic.ch
 .ci	whois.nic.ci
 .ck	NONE
@@ -120,7 +120,7 @@
 .cr	whois.nic.cr
 .cu	WEB http://www.nic.cu/
 .cv	WEB http://www.dns.cv/
-.cw	NONE		# http://www.uoc.cw/ictssite/index.php/domreg/registering-a-cw-domain/register
+.cw	NONE		# https://www.uoc.cw/cw-registry
 .cx	whois.nic.cx
 .cy	WEB https://www.nic.cy/cy-ui/home
 .cz	whois.nic.cz
@@ -268,7 +268,7 @@
 .sa	whois.nic.net.sa
 .sb	whois.nic.net.sb
 .sc	whois2.afilias-grs.net		# www.nic.sc
-.sd	NONE		# http://wwe.domains.sd/
+.sd	NONE
 .se	whois.iis.se
 .sg	whois.sgnic.sg
 .sh	whois.nic.sh
