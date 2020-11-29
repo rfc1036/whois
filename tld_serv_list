@@ -80,6 +80,7 @@
 .au	whois.auda.org.au
 .aw	whois.nic.aw
 .ax	whois.ax	# www.ax
+.gov.az	WEB https://www.gov.az/
 .az	WEB http://whois.az/
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
@@ -170,7 +171,7 @@
 .ht	whois.nic.ht
 .hu	whois.nic.hu
 .id	whois.id
-.ie	whois.iedr.ie
+.ie	whois.weare.ie
 .il	whois.isoc.org.il
 .im	whois.nic.im
 .in	whois.registry.in
