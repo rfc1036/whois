@@ -1,3 +1,11 @@
+whois (5.5.8) unstable; urgency=medium
+
+  * Added the .xn--4dbrk0ce (.ישראל, Israel) TLD server.
+  * Updated the .ie and .az TLD servers.
+  * Updated the list of new gTLDs.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 16 Feb 2021 01:53:57 +0100
+
 whois (5.5.7) unstable; urgency=medium
 
   * Implemented support for CIDR queries to whois.arin.net.
