@@ -107,7 +107,7 @@
 .ca	whois.cira.ca
 .cc	VERISIGN ccwhois.verisign-grs.com
 .cd	NONE
-.cf	whois.dot.cf
+.cf	NONE
 .cg	NONE		# www.nic.cg
 .ch	whois.nic.ch
 .ci	whois.nic.ci
