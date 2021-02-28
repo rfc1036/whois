@@ -145,7 +145,7 @@
 .fm	whois.nic.fm
 .fo	whois.nic.fo
 .fr	whois.nic.fr
-.ga	whois.dot.ga	# www.my.ga
+.ga	WEB http://www.my.ga/en/whois.html
 .gb	NONE
 .gd	whois.nic.gd
 .ge	whois.nic.ge
