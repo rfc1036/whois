@@ -1,3 +1,11 @@
+whois (5.5.9) unstable; urgency=medium
+
+  * Updated the .ga TLD server.
+  * Removed the .cd and cf TLD servers.
+  * Removed 72 new gTLDs which are no longer active.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 28 Mar 2021 00:38:20 +0100
+
 whois (5.5.8) unstable; urgency=medium
 
   * Added the .xn--4dbrk0ce (.ישראל, Israel) TLD server.
