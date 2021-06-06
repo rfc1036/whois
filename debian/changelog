@@ -1,3 +1,13 @@
+whois (5.5.10) unstable; urgency=medium
+
+  * Updated the .lb TLD server.
+  * Removed 5 new gTLDs which are no longer active.
+  * Updated the charset for whois.lacnic.net, whois.ax, whois.cira.ca
+    and whois.dns.pt.
+  * Fixed reporting an older version number when using --version.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 06 Jun 2021 19:54:13 +0200
+
 whois (5.5.9) unstable; urgency=medium
 
   * Updated the .ga TLD server.
