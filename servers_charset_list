@@ -47,7 +47,7 @@ whois.norid.no		iso-8859-1
 whois.iis.nu		utf-8
 whois.registry.om	utf-8
 whois.registry.pf	utf-8
-whois.dns.pt		iso-8859-1
+whois.dns.pt		utf-8
 whois.registry.qa	utf-8
 whois.nic.re		utf-8
 whois.rnids.rs		utf-8
