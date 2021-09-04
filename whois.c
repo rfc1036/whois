@@ -485,7 +485,7 @@ const char *match_config_file(const char *s)
 #endif
 
 /* Parses an user-supplied string and tries to guess the right whois server.
- * Returns a dinamically allocated buffer.
+ * Returns a dynamically allocated buffer.
  */
 char *guess_server(const char *s)
 {
