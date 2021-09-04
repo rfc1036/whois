@@ -1,5 +1,5 @@
 # Translation of whois to Danish.
-# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian 
+# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian
 # Bunk <bunk@fs.tum.de>, 2010 Chris Leick <c.leick@vollbio.de>.
 # This file is distributed under the same license as the whois package.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013, 2020.

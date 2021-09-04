@@ -129,7 +129,7 @@ whois (5.4.0) unstable; urgency=medium
 
   * Added support for the new libxcrypt 4.x.
     This allows mkpasswd to support many modern password hash methods.
-  * Renamed the hash types (i.e. the arguments to -H) to use the naming 
+  * Renamed the hash types (i.e. the arguments to -H) to use the naming
     convention established by John the Ripper.
   * Made mkpasswd use entropy gathered by crypt_gensalt(3), when available.
   * Fixed many portability bugs in mkpasswd.
@@ -476,7 +476,7 @@ whois (5.0.21) unstable; urgency=low
     (Closes: #699928)
   * Added the .xn--j1amh (.укр, Ukraine) TLD server.
   * Updated the .bi, .se and .vn TLD servers. (Closes: #697753)
-  * Removed whois.pandi.or.id from the list of servers which support the 
+  * Removed whois.pandi.or.id from the list of servers which support the
     RIPE extensions, since it does not anymore and queries are broken.
     (Closes: #704115)
   * Updated some disclaimer suppression strings.
@@ -489,7 +489,7 @@ whois (5.0.20) unstable; urgency=low
 
   * Updated the .by, .ng, .om, .sm, .tn, .ug and .vn TLD servers.
     (Closes: #689486)
-  * Added the .bw, .td, .xn--mgb9awbf (عمان., Oman), .xn--mgberp4a5d4ar 
+  * Added the .bw, .td, .xn--mgb9awbf (عمان., Oman), .xn--mgberp4a5d4ar
     (.السعودية, Saudi Arabia) and .xn--mgbx4cd0ab (ﻢﻠﻴﺴﻳﺍ., Malaysia)
     TLD servers.
   * Removed the .kp, .mc, .rw and .xn--mgba3a4f16a (ایران., Iran) TLD servers.
@@ -530,7 +530,7 @@ whois (5.0.16) unstable; urgency=medium
 
   * Added the .xn--80ao21a (.ҚАЗ, Kazakhstan) TLD server.
   * Updated the .ec and .ee TLD servers.
-  * Removed the .xn--mgbc0a9azcg (.المغرب, Morocco) and .xn--mgberp4a5d4ar 
+  * Removed the .xn--mgbc0a9azcg (.المغرب, Morocco) and .xn--mgberp4a5d4ar
     (.السعودية, Saudi Arabia) TLD servers.
   * Added a new ASN allocation.
   * Updated one or more translations.
