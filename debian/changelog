@@ -1,3 +1,15 @@
+whois (5.5.11) unstable; urgency=medium
+
+  * Implemented a --no-recursion command line option to disable recursion
+    from registrar to registry servers.
+  * Updated the .pro, .vu and .xxx TLD servers.
+  * Updated the list of new gTLDs.
+  * Removed 7 new gTLDs which are no longer active.
+  * Updated make_version_h.pl to support Ubuntu no-change uploads,
+   contributed by Matthias Klose. (Closes: #995873)
+
+ -- Marco d'Itri <md@linux.it>  Mon, 03 Jan 2022 18:18:36 +0100
+
 whois (5.5.10) unstable; urgency=medium
 
   * Updated the .lb TLD server.
