@@ -13,7 +13,7 @@ close($fh);
 my ($ver) = $line =~ /^whois \s+ \( ( [^\)]+ ) \) \s+ \S+/x;
 die "Version number not found in $changelog!\n" if not $ver;
 
-$ver =~ s/ ( ~bpo\d+\+\d+ | \+b\d+ | ~deb\d+.* | ubuntu\d+ | \+dyson\d+ ) $//x;
+$ver =~ s/ ( ~bpo\d+\+\d+ | \+b\d+ | ~deb\d+.* | ubuntu\d+ | build\d+ | \+dyson\d+ ) $//x;
 
 # The version number must not deviate from this format or the -V option
 # to RIPE-like servers will break. If needed, update the previous regexp.
