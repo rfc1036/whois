@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1999-2021 Marco d'Itri <md@linux.it>.
+ * Copyright (C) 1999-2022 Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,7 +61,7 @@
 #endif
 
 /* Global variables */
-int sockfd, verb = 0;
+int sockfd, verb = 0, no_recursion = 0;
 
 #ifdef ALWAYS_HIDE_DISCL
 int hide_discl = HIDE_NOT_STARTED;
@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
 	{"version",		no_argument,		NULL, 1  },
 	{"verbose",		no_argument,		NULL, 2  },
 	{"help",		no_argument,		NULL, 3  },
+	{"no-recursion",	no_argument,		NULL, 4  },
 	{"server",		required_argument,	NULL, 'h'},
 	{"host",		required_argument,	NULL, 'h'},
 	{"port",		required_argument,	NULL, 'p'},
@@ -227,6 +228,9 @@ int main(int argc, char *argv[])
 	case 'p':
 	    port = strdup(optarg);
 	    break;
+	case 4:
+	    no_recursion = 1;
+	    break;
 	case 3:
 	    usage(EXIT_SUCCESS);
 	case 2:
@@ -341,6 +345,8 @@ int handle_query(const char *hserver, const char *hport,
 	    sockfd = openconn(server + 1, NULL);
 	    free(server);
 	    server = query_crsnic(sockfd, query);
+	    if (no_recursion)
+		server = "";
 	    break;
 	case 8:
 	    if (verb)
@@ -348,6 +354,8 @@ int handle_query(const char *hserver, const char *hport,
 	    sockfd = openconn(server + 1, NULL);
 	    free(server);
 	    server = query_afilias(sockfd, query);
+	    if (no_recursion)
+		server = "";
 	    break;
 	case 0x0A:
 	    p = convert_6to4(query);
@@ -404,7 +412,7 @@ int handle_query(const char *hserver, const char *hport,
     free(query_string);
 
     /* recursion is fun */
-    if (server && !strchr(query, ' ')) {
+    if (!no_recursion && server && !strchr(query, ' ')) {
 	printf(_("\n\nFound a referral to %s.\n\n"), server);
 	handle_query(server, NULL, query, flags);
     }
@@ -1496,6 +1504,7 @@ void NORETURN usage(int error)
     ));
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "      --verbose        explain what is being done\n"
+"      --no-recursion   disable recursion from registry to registrar servers\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 "\n"

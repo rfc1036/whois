@@ -23,6 +23,7 @@ whois \- client for the whois directory service
 .BR \-T \~
 .IR TYPE [, TYPE ]...\~]
 .RB [\~ \-\-verbose \~]
+.RB [\~ \-\-no-recursion \~]
 .I OBJECT
 
 .B whois
@@ -80,6 +81,9 @@ whois server authoritative for that request. This works for IP addresses,
 AS numbers and domains.
 .BR BEWARE :
 this implies that the IANA server will receive your complete query.
+.TP 8
+.B \-\-no-recursion
+Disable recursion from registry to registrar servers.
 .TP 8
 .B \-\-verbose
 Be verbose.
