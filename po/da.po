@@ -1,5 +1,5 @@
 # Translation of whois to Danish.
-# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian 
+# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian
 # Bunk <bunk@fs.tum.de>, 2010 Chris Leick <c.leick@vollbio.de>.
 # This file is distributed under the same license as the whois package.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013, 2020.
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.5.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 01:38+0200\n"
+"POT-Creation-Date: 2022-01-03 17:52+0100\n"
 "PO-Revision-Date: 2020-03-08 17:30+01:00\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:236
+#: ../whois.c:240
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -29,28 +29,28 @@ msgstr ""
 "\n"
 "Rapporter fejl til %s (på engelsk).\n"
 
-#: ../whois.c:325
+#: ../whois.c:329
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr "Denne TLD har ingen whois-server, men du kan tilgå whois-databasen på"
 
-#: ../whois.c:330
+#: ../whois.c:334
 msgid "This TLD has no whois server."
 msgstr "Denne TLD har ingen whois-server."
 
-#: ../whois.c:333
+#: ../whois.c:337
 msgid "No whois server is known for this kind of object."
 msgstr "Ingen whois-server er kendt for denne type af objekt."
 
-#: ../whois.c:336
+#: ../whois.c:340
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Ukendt AS- eller IP-netværksnummer. Opgrader venligst dette program."
 
-#: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
+#: ../whois.c:344 ../whois.c:353 ../whois.c:388 ../whois.c:405
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Bruger server %s.\n"
 
-#: ../whois.c:354
+#: ../whois.c:362
 #, c-format
 msgid ""
 "\n"
@@ -61,7 +61,7 @@ msgstr ""
 "Forespørger efter IPv4-slutpunktet %s for en 6to4 IPv6-adresse.\n"
 "\n"
 
-#: ../whois.c:361
+#: ../whois.c:369
 #, c-format
 msgid ""
 "\n"
@@ -72,7 +72,7 @@ msgstr ""
 "Forespørger efter IPv4-slutpunktet %s for en Teredo IPv6-adresse.\n"
 "\n"
 
-#: ../whois.c:398
+#: ../whois.c:406
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -81,7 +81,7 @@ msgstr ""
 "Forespørgelsesstreng: »%s«\n"
 "\n"
 
-#: ../whois.c:408
+#: ../whois.c:416
 #, c-format
 msgid ""
 "\n"
@@ -94,16 +94,16 @@ msgstr ""
 "Fandt en henvisning til %s.\n"
 "\n"
 
-#: ../whois.c:450 ../whois.c:453
+#: ../whois.c:458 ../whois.c:461
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "Kan ikke fortolke denne linje: %s"
 
-#: ../whois.c:642
+#: ../whois.c:650
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Advarsel: RIPE-flag brugt med en traditionel server."
 
-#: ../whois.c:812 ../whois.c:928
+#: ../whois.c:823 ../whois.c:939
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -111,26 +111,26 @@ msgstr ""
 "Katastrofal fejl: Teksten for ansvarsfraskrivelse er blevet ændret.\n"
 "Opgrader venligst dette program.\n"
 
-#: ../whois.c:1029
+#: ../whois.c:1040
 #, c-format
 msgid "Host %s not found."
 msgstr "Vært %s er ikke fundet."
 
-#: ../whois.c:1039
+#: ../whois.c:1050
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: Ukendt tjeneste"
 
-#: ../whois.c:1114
+#: ../whois.c:1125
 msgid "Timeout."
 msgstr "Tidsudløb."
 
-#: ../whois.c:1120
+#: ../whois.c:1131
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Afbrudt af signal %d ..."
 
-#: ../whois.c:1488
+#: ../whois.c:1499
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -147,10 +147,11 @@ msgstr ""
 "-I                     forespørg whois.iana.org og følg henvisningen\n"
 "-H                     skjul juridisk ansvarsfraskrivelse\n"
 
-#: ../whois.c:1495
-#, c-format
+#: ../whois.c:1506
+#, fuzzy, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
+"      --no-recursion   disable recursion from registry to registrar servers\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 "\n"
@@ -160,7 +161,7 @@ msgstr ""
 "      --version        vis versionsinformation og afslut\n"
 "\n"
 
-#: ../whois.c:1501
+#: ../whois.c:1513
 #, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
@@ -169,13 +170,14 @@ msgid ""
 "-m                     find all one level more specific matches\n"
 "-M                     find all levels of more specific matches\n"
 msgstr ""
-"Disse flag er understøttet af whois.ripe.net og nogle RIPE-lignende servere:\n"
+"Disse flag er understøttet af whois.ripe.net og nogle RIPE-lignende "
+"servere:\n"
 "-l                     et niveau mindre specifik opslag\n"
 "-L                     find alle mindre specifikke resultater\n"
 "-m                     find første niveau mere specifikke resultater\n"
 "-M                     find alle mere specifikke resultater\n"
 
-#: ../whois.c:1508
+#: ../whois.c:1520
 #, c-format
 msgid ""
 "-c                     find the smallest match containing a mnt-irt "
@@ -189,7 +191,7 @@ msgstr ""
 "-b                     returner korte IP-adresseintervaller med "
 "misbrugskontakt\n"
 
-#: ../whois.c:1513
+#: ../whois.c:1525
 #, c-format
 msgid ""
 "-B                     turn off object filtering (show email addresses)\n"
@@ -200,7 +202,7 @@ msgstr ""
 "-G                     sluk for gruppering af associerede objekter\n"
 "-d                     returner også DNS-omvendte delegationsobjekter\n"
 
-#: ../whois.c:1518
+#: ../whois.c:1530
 #, c-format
 msgid ""
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
@@ -213,7 +215,7 @@ msgstr ""
 "-K                     kun primære nøgler returneres\n"
 "-r                     deaktiver omvendte opslag for kontaktinformation\n"
 
-#: ../whois.c:1524
+#: ../whois.c:1536
 #, c-format
 msgid ""
 "-R                     force to show local copy of the domain object even\n"
@@ -230,7 +232,7 @@ msgstr ""
 "-g KILDE:FØRST-SIDST   find opdateringer fra KILDE fra seriel FØRST til "
 "SIDST\n"
 
-#: ../whois.c:1531
+#: ../whois.c:1543
 #, c-format
 msgid ""
 "-t TYPE                request template for object of TYPE\n"
@@ -241,11 +243,11 @@ msgstr ""
 "-v TYPE                anmod om uddybende skabelon for objekttypen TYPE\n"
 "-q [version|kilder|typer]  forespørg angivet serverinfo\n"
 
-#: ../mkpasswd.c:128
+#: ../mkpasswd.c:135
 msgid "BSDI extended DES-based crypt(3)"
 msgstr "BSDI-udvidet DES-baseret Crypt(3)"
 
-#: ../mkpasswd.c:131
+#: ../mkpasswd.c:138
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "standard 56-bit DES-baseret Crypt(3)"
 
@@ -264,36 +266,36 @@ msgstr "Ugyldigt tal »%s«.\n"
 msgid "Try '%s --help' for more information.\n"
 msgstr "Prøv »%s --help« for yderligere information.\n"
 
-#: ../mkpasswd.c:290
+#: ../mkpasswd.c:292
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Forkert salt-længde: %d byte men %d var forventet.\n"
 msgstr[1] "Forkert salt-længde: %d byte men %d var forventet.\n"
 
-#: ../mkpasswd.c:295
+#: ../mkpasswd.c:297
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
 msgstr[0] "Forkert salt-længde: %d byte men %d <= n <= %d var forventet.\n"
 msgstr[1] "Forkert salt-længde: %d byte men %d <= n <= %d var forventet.\n"
 
-#: ../mkpasswd.c:304
+#: ../mkpasswd.c:306
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "Ugyldigt salt-tegn »%c«.\n"
 
-#: ../mkpasswd.c:355 ../mkpasswd.c:368
+#: ../mkpasswd.c:357 ../mkpasswd.c:370
 #, c-format
 msgid "Password: "
 msgstr "Adgangskode: "
 
-#: ../mkpasswd.c:387
+#: ../mkpasswd.c:389
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "Metoden er ikke understøttet af crypt(3).\n"
 
-#: ../mkpasswd.c:495
+#: ../mkpasswd.c:497
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -304,7 +306,7 @@ msgstr ""
 "Krypterer ADGANGSKODEN med crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:498
+#: ../mkpasswd.c:500
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -315,7 +317,7 @@ msgstr ""
 "      -5                    som --method=md5crypt\n"
 "      -S, --salt=SALT       brug den angivne SALT\n"
 
-#: ../mkpasswd.c:503
+#: ../mkpasswd.c:505
 #, c-format
 msgid ""
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
@@ -328,7 +330,7 @@ msgstr ""
 "                            i steden for /dev/tty\n"
 "      -s, --stdin           som --password-fd=0\n"
 
-#: ../mkpasswd.c:509
+#: ../mkpasswd.c:511
 #, c-format
 msgid ""
 "      -h, --help            display this help and exit\n"
@@ -349,7 +351,7 @@ msgstr ""
 "\n"
 "Rapporter fejl til %s (på engelsk).\n"
 
-#: ../mkpasswd.c:532
+#: ../mkpasswd.c:534
 #, c-format
 msgid "Available methods:\n"
 msgstr "Tilgængelige metoder:\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 01:38+0200\n"
+"POT-Creation-Date: 2022-01-03 17:52+0100\n"
 "PO-Revision-Date: 2013-12-25 17:40+0800\n"
 "Last-Translator: Terence Ng <pheotiman@gmail.com>\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../whois.c:236
+#: ../whois.c:240
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -30,28 +30,28 @@ msgstr ""
 "\n"
 "向 %s 报告漏洞。\n"
 
-#: ../whois.c:325
+#: ../whois.c:329
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr "此顶级域名没有 whois 服务器，但您可在这里访问 whois 数据库："
 
-#: ../whois.c:330
+#: ../whois.c:334
 msgid "This TLD has no whois server."
 msgstr "此顶级域名没有对应的 whois 服务器。"
 
-#: ../whois.c:333
+#: ../whois.c:337
 msgid "No whois server is known for this kind of object."
 msgstr "无针对此类对象的 whois 服务器。"
 
-#: ../whois.c:336
+#: ../whois.c:340
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "未知的 AS 号码或 IP 地址。请升级此程序。"
 
-#: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
+#: ../whois.c:344 ../whois.c:353 ../whois.c:388 ../whois.c:405
 #, c-format
 msgid "Using server %s.\n"
 msgstr "使用服务器 %s。\n"
 
-#: ../whois.c:354
+#: ../whois.c:362
 #, c-format
 msgid ""
 "\n"
@@ -62,7 +62,7 @@ msgstr ""
 "查询和一个6to4 IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:361
+#: ../whois.c:369
 #, c-format
 msgid ""
 "\n"
@@ -73,7 +73,7 @@ msgstr ""
 "查询一个Teredo IPv6 地址相对应的 IPv4 终端 %s。\n"
 "\n"
 
-#: ../whois.c:398
+#: ../whois.c:406
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -82,7 +82,7 @@ msgstr ""
 "查询字符串: \"%s\"\n"
 "\n"
 
-#: ../whois.c:408
+#: ../whois.c:416
 #, c-format
 msgid ""
 "\n"
@@ -95,16 +95,16 @@ msgstr ""
 "发现一个到 %s 的引用。\n"
 "\n"
 
-#: ../whois.c:450 ../whois.c:453
+#: ../whois.c:458 ../whois.c:461
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "不能分析该行：%s"
 
-#: ../whois.c:642
+#: ../whois.c:650
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "警告: 对传统服务器使用了 RIPE 标志。"
 
-#: ../whois.c:812 ../whois.c:928
+#: ../whois.c:823 ../whois.c:939
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -112,26 +112,26 @@ msgstr ""
 "严重错误: 声明(disclaimer)文本已经被改变。\n"
 "请升级此程序。\n"
 
-#: ../whois.c:1029
+#: ../whois.c:1040
 #, c-format
 msgid "Host %s not found."
 msgstr "没有找到主机 %s。"
 
-#: ../whois.c:1039
+#: ../whois.c:1050
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: 未知服务"
 
-#: ../whois.c:1114
+#: ../whois.c:1125
 msgid "Timeout."
 msgstr "超时。"
 
-#: ../whois.c:1120
+#: ../whois.c:1131
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "被信号 %d 中断..."
 
-#: ../whois.c:1488
+#: ../whois.c:1499
 #, fuzzy, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -147,10 +147,11 @@ msgstr ""
 "-p PORT, --port PORT    连接到端口 PORT\n"
 "-H                      隐藏法律声明\n"
 
-#: ../whois.c:1495
-#, c-format
+#: ../whois.c:1506
+#, fuzzy, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
+"      --no-recursion   disable recursion from registry to registrar servers\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 "\n"
@@ -160,7 +161,7 @@ msgstr ""
 "      --version         输出版本信息并退出\n"
 "\n"
 
-#: ../whois.c:1501
+#: ../whois.c:1513
 #, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
@@ -175,7 +176,7 @@ msgstr ""
 "-m                   寻找有更加具体匹配的一个级别\n"
 "-M                   寻找有更加具体的匹配的所有级别\n"
 
-#: ../whois.c:1508
+#: ../whois.c:1520
 #, c-format
 msgid ""
 "-c                     find the smallest match containing a mnt-irt "
@@ -187,7 +188,7 @@ msgstr ""
 "-x                     精确匹配\n"
 "-b                     return brief IP address ranges with abuse contact\n"
 
-#: ../whois.c:1513
+#: ../whois.c:1525
 #, c-format
 msgid ""
 "-B                     turn off object filtering (show email addresses)\n"
@@ -198,7 +199,7 @@ msgstr ""
 "-G                    关闭相关联对象的分组\n"
 "-d                     返回 DNS 反解授权对象\n"
 
-#: ../whois.c:1518
+#: ../whois.c:1530
 #, c-format
 msgid ""
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
@@ -211,7 +212,7 @@ msgstr ""
 "-K                      只返回主键\n"
 "-r                      关闭联系信息的递归查询\n"
 
-#: ../whois.c:1524
+#: ../whois.c:1536
 #, c-format
 msgid ""
 "-R                     force to show local copy of the domain object even\n"
@@ -226,7 +227,7 @@ msgstr ""
 "-s SOURCE[,SOURCE]...   从 SOURCE 中搜索数据库镜像\n"
 "-g SOURCE:FIRST-LAST   从串行的 FIRST 到 LAST 的 SOURCE 中查找更新\n"
 
-#: ../whois.c:1531
+#: ../whois.c:1543
 #, c-format
 msgid ""
 "-t TYPE                request template for object of TYPE\n"
@@ -237,12 +238,12 @@ msgstr ""
 "-v TYPE                 请求 TYPE 对象的详细模板\n"
 "-q [version|sources|types]   询问制定服务器信息\n"
 
-#: ../mkpasswd.c:128
+#: ../mkpasswd.c:135
 #, fuzzy
 msgid "BSDI extended DES-based crypt(3)"
 msgstr "以标准56位DES为基础的 crypt(3)"
 
-#: ../mkpasswd.c:131
+#: ../mkpasswd.c:138
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "以标准56位DES为基础的 crypt(3)"
 
@@ -261,14 +262,14 @@ msgstr "无效的数字 '%s'。\n"
 msgid "Try '%s --help' for more information.\n"
 msgstr "尝试用 '%s --help' 获取更多的信息。\n"
 
-#: ../mkpasswd.c:290
+#: ../mkpasswd.c:292
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] ""
 "错误的随即字符 ( salt ) 长度：当前为 %d 字节，预期长度为 %d 字节。\n"
 
-#: ../mkpasswd.c:295
+#: ../mkpasswd.c:297
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
@@ -276,22 +277,22 @@ msgstr[0] ""
 "错误的随机字符（salt） 长度: 当前为 %d 字节，预期长度范围为 %d <= n <= %d 字"
 "节。\n"
 
-#: ../mkpasswd.c:304
+#: ../mkpasswd.c:306
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "非法的随机数字符 '%c'。\n"
 
-#: ../mkpasswd.c:355 ../mkpasswd.c:368
+#: ../mkpasswd.c:357 ../mkpasswd.c:370
 #, c-format
 msgid "Password: "
 msgstr "密码："
 
-#: ../mkpasswd.c:387
+#: ../mkpasswd.c:389
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "不被 crypt(3) 支持的方法。\n"
 
-#: ../mkpasswd.c:495
+#: ../mkpasswd.c:497
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -302,7 +303,7 @@ msgstr ""
 "用 crypt(3) 加密 PASSWORD。\n"
 "\n"
 
-#: ../mkpasswd.c:498
+#: ../mkpasswd.c:500
 #, fuzzy, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -312,7 +313,7 @@ msgstr ""
 "      -m, --method=TYPE \t选择使用 TYPE 的方法\n"
 "      -S, --salt=SALT \t\t使用指定随机字符\n"
 
-#: ../mkpasswd.c:503
+#: ../mkpasswd.c:505
 #, c-format
 msgid ""
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
@@ -325,7 +326,7 @@ msgstr ""
 "\t\t\t\t替代从 /dev/tty 中获取密码\n"
 "      -s, --stdin \t\t同 --password-fd=0\n"
 
-#: ../mkpasswd.c:509
+#: ../mkpasswd.c:511
 #, c-format
 msgid ""
 "      -h, --help            display this help and exit\n"
@@ -346,7 +347,7 @@ msgstr ""
 "\n"
 "请将BUGS提交给 %s。\n"
 
-#: ../mkpasswd.c:532
+#: ../mkpasswd.c:534
 #, c-format
 msgid "Available methods:\n"
 msgstr "可用方式：\n"

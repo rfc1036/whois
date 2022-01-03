@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 01:38+0200\n"
+"POT-Creation-Date: 2022-01-03 17:52+0100\n"
 "PO-Revision-Date: 2019-07-02 02:30-0300\n"
 "Last-Translator: Matías A. Bellone <matiasbellone+debian@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../whois.c:236
+#: ../whois.c:240
 #, c-format
 msgid ""
 "Version %s.\n"
@@ -53,30 +53,30 @@ msgstr ""
 "\n"
 "Informar de fallos a %s.\n"
 
-#: ../whois.c:325
+#: ../whois.c:329
 msgid "This TLD has no whois server, but you can access the whois database at"
 msgstr ""
 "Este TLD no dispone de servidor whois, pero puede acceder a la base de datos "
 "de whois en"
 
-#: ../whois.c:330
+#: ../whois.c:334
 msgid "This TLD has no whois server."
 msgstr "Este TLD no dispone de servidor whois."
 
-#: ../whois.c:333
+#: ../whois.c:337
 msgid "No whois server is known for this kind of object."
 msgstr "No se conoce ningún servidor de whois para esta clase de objeto."
 
-#: ../whois.c:336
+#: ../whois.c:340
 msgid "Unknown AS number or IP network. Please upgrade this program."
 msgstr "Numero AS o red IP desconocida. Por favor, actualice este programa."
 
-#: ../whois.c:340 ../whois.c:347 ../whois.c:380 ../whois.c:397
+#: ../whois.c:344 ../whois.c:353 ../whois.c:388 ../whois.c:405
 #, c-format
 msgid "Using server %s.\n"
 msgstr "Usando el servidor %s.\n"
 
-#: ../whois.c:354
+#: ../whois.c:362
 #, c-format
 msgid ""
 "\n"
@@ -87,7 +87,7 @@ msgstr ""
 "Consultando el punto final IPv4 de %s de una dirección IPv6 6a4.\n"
 "\n"
 
-#: ../whois.c:361
+#: ../whois.c:369
 #, c-format
 msgid ""
 "\n"
@@ -98,7 +98,7 @@ msgstr ""
 "Consultando el punto final IPv4 de %s de una dirección IPv6 Teredo.\n"
 "\n"
 
-#: ../whois.c:398
+#: ../whois.c:406
 #, c-format
 msgid ""
 "Query string: \"%s\"\n"
@@ -107,7 +107,7 @@ msgstr ""
 "Cadena de la consulta: «%s»\n"
 "\n"
 
-#: ../whois.c:408
+#: ../whois.c:416
 #, c-format
 msgid ""
 "\n"
@@ -120,16 +120,16 @@ msgstr ""
 "Se ha encontrado una referencia a %s.\n"
 "\n"
 
-#: ../whois.c:450 ../whois.c:453
+#: ../whois.c:458 ../whois.c:461
 #, c-format
 msgid "Cannot parse this line: %s"
 msgstr "No se pudo procesar esta línea: %s"
 
-#: ../whois.c:642
+#: ../whois.c:650
 msgid "Warning: RIPE flags used with a traditional server."
 msgstr "Atención: Se han usado opciones de RIPE con un servidor tradicional."
 
-#: ../whois.c:812 ../whois.c:928
+#: ../whois.c:823 ../whois.c:939
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
@@ -137,26 +137,26 @@ msgstr ""
 "Error catastrófico: el texto de las condiciones de uso ha sido cambiado.\n"
 "Por favor, actualice este programa.\n"
 
-#: ../whois.c:1029
+#: ../whois.c:1040
 #, c-format
 msgid "Host %s not found."
 msgstr "No se ha encontrado el servidor %s."
 
-#: ../whois.c:1039
+#: ../whois.c:1050
 #, c-format
 msgid "%s/tcp: unknown service"
 msgstr "%s/tcp: servicio desconocido"
 
-#: ../whois.c:1114
+#: ../whois.c:1125
 msgid "Timeout."
 msgstr "Se ha agotado el tiempo de espera."
 
-#: ../whois.c:1120
+#: ../whois.c:1131
 #, c-format
 msgid "Interrupted by signal %d..."
 msgstr "Interrumpido por la señal %d..."
 
-#: ../whois.c:1488
+#: ../whois.c:1499
 #, c-format
 msgid ""
 "Usage: whois [OPTION]... OBJECT...\n"
@@ -173,10 +173,11 @@ msgstr ""
 "-I                     consultar whois.iana.org y seguir su redirección\n"
 "-H                     no mostrar avisos legales\n"
 
-#: ../whois.c:1495
-#, c-format
+#: ../whois.c:1506
+#, fuzzy, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
+"      --no-recursion   disable recursion from registry to registrar servers\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 "\n"
@@ -186,7 +187,7 @@ msgstr ""
 "      --version        mostrar información de la versión y finalizar\n"
 "\n"
 
-#: ../whois.c:1501
+#: ../whois.c:1513
 #, c-format
 msgid ""
 "These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
@@ -202,7 +203,7 @@ msgstr ""
 "-m                     buscar coincidencias del primer nivel más específico\n"
 "-M                     buscar coincidencias de niveles más específicos\n"
 
-#: ../whois.c:1508
+#: ../whois.c:1520
 #, c-format
 msgid ""
 "-c                     find the smallest match containing a mnt-irt "
@@ -215,7 +216,7 @@ msgstr ""
 "-x                     coincidencia exacta\n"
 "-b                     mostrar rangos IP breves y contacto en caso de abuso\n"
 
-#: ../whois.c:1513
+#: ../whois.c:1525
 #, c-format
 msgid ""
 "-B                     turn off object filtering (show email addresses)\n"
@@ -226,7 +227,7 @@ msgstr ""
 "-G                     no agrupar objetos asociados\n"
 "-d                     mostrar objetos de delegación de DNS reverso también\n"
 
-#: ../whois.c:1518
+#: ../whois.c:1530
 #, c-format
 msgid ""
 "-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
@@ -239,7 +240,7 @@ msgstr ""
 "-K                     mostrar sólo claves primarias\n"
 "-r                     no buscar información de contacto de forma recursiva\n"
 
-#: ../whois.c:1524
+#: ../whois.c:1536
 #, c-format
 msgid ""
 "-R                     force to show local copy of the domain object even\n"
@@ -257,7 +258,7 @@ msgstr ""
 "-g ORIGEN:PRIMERO-ÚLTIMO  buscar actualizaciones desde ORIGEN en la serie\n"
 "                          PRIMERO a ÚLTIMO\n"
 
-#: ../whois.c:1531
+#: ../whois.c:1543
 #, c-format
 msgid ""
 "-t TYPE                request template for object of TYPE\n"
@@ -270,11 +271,11 @@ msgstr ""
 "                        indicado\n"
 "-q [versión|orígenes|tipos]  consultar información con el servidor indicado\n"
 
-#: ../mkpasswd.c:128
+#: ../mkpasswd.c:135
 msgid "BSDI extended DES-based crypt(3)"
 msgstr "crypt(3) extendido BSDI basado en DES"
 
-#: ../mkpasswd.c:131
+#: ../mkpasswd.c:138
 msgid "standard 56 bit DES-based crypt(3)"
 msgstr "crypt(3) estándar basado en DES de 56 bits"
 
@@ -293,14 +294,14 @@ msgstr "El número «%s» no es válido.\n"
 msgid "Try '%s --help' for more information.\n"
 msgstr "Pruebe «%s --help» para más información.\n"
 
-#: ../mkpasswd.c:290
+#: ../mkpasswd.c:292
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
 msgstr[0] "Longitud de sal («salt») incorrecta: %d byte en lugar de %d.\n"
 msgstr[1] "Longitud de sal («salt») incorrecta: %d bytes en lugar de %d.\n"
 
-#: ../mkpasswd.c:295
+#: ../mkpasswd.c:297
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
@@ -309,22 +310,22 @@ msgstr[0] ""
 msgstr[1] ""
 "Longitud del «salt» incorrecta: %d bytes cuando se esperaba %d <= n <= %d.\n"
 
-#: ../mkpasswd.c:304
+#: ../mkpasswd.c:306
 #, c-format
 msgid "Illegal salt character '%c'.\n"
 msgstr "El carácter «%c» no es válido en el «salt».\n"
 
-#: ../mkpasswd.c:355 ../mkpasswd.c:368
+#: ../mkpasswd.c:357 ../mkpasswd.c:370
 #, c-format
 msgid "Password: "
 msgstr "Contraseña: "
 
-#: ../mkpasswd.c:387
+#: ../mkpasswd.c:389
 #, c-format
 msgid "Method not supported by crypt(3).\n"
 msgstr "crypt(3) no admite este método.\n"
 
-#: ../mkpasswd.c:495
+#: ../mkpasswd.c:497
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
@@ -335,7 +336,7 @@ msgstr ""
 "Cifra la CONTRASEÑA utilizando crypt(3).\n"
 "\n"
 
-#: ../mkpasswd.c:498
+#: ../mkpasswd.c:500
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
@@ -346,7 +347,7 @@ msgstr ""
 "      -5                    igual que --method=md5crypt\n"
 "      -S, --salt=SALT       usa el SALT indicado\n"
 
-#: ../mkpasswd.c:503
+#: ../mkpasswd.c:505
 #, c-format
 msgid ""
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
@@ -359,7 +360,7 @@ msgstr ""
 "                            en lugar de «/dev/tty»\n"
 "      -s, --stdin           igual que --password-fd=0\n"
 
-#: ../mkpasswd.c:509
+#: ../mkpasswd.c:511
 #, c-format
 msgid ""
 "      -h, --help            display this help and exit\n"
@@ -380,7 +381,7 @@ msgstr ""
 "\n"
 "Informar de fallos a %s.\n"
 
-#: ../mkpasswd.c:532
+#: ../mkpasswd.c:534
 #, c-format
 msgid "Available methods:\n"
 msgstr "Métodos disponibles:\n"
