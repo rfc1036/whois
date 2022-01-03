@@ -1,12 +1,12 @@
 # Traduzione di whois.pot.
-# Copyright (C) 1999-2013 Marco d'Itri
+# Copyright (C) 1999-2021 Marco d'Itri
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: whois 5.0.24\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-03 17:52+0100\n"
-"PO-Revision-Date: 2019-07-18 02:08+0200\n"
+"PO-Revision-Date: 2022-01-03 18:13+0200\n"
 "Last-Translator: Marco d'Itri <md@linux.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -150,11 +150,13 @@ msgstr ""
 #, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
+"      --no-recursion   disable recursion from registry to registrar servers\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 "\n"
 msgstr ""
 "      --verbose    spiega cosa sta facendo\n"
+"      --no-recursion  disattiva la ricorsione dal registry al registrar\n"
 "      --help       mostra questo aiuto ed esce\n"
 "      --version    stampa le informazioni sulla versione ed esce\n"
 "\n"
