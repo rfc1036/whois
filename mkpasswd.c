@@ -284,7 +284,14 @@ int main(int argc, char *argv[])
 
     if (salt_arg && salt_arg[0] == '$')
 	salt = NOFAIL(strdup(salt_arg));
-    else if (salt_arg && salt_arg[0] != '\0') {
+    else if (salt_prefix && salt_arg && strchr(salt_arg, '$')) {
+	salt = NOFAIL(malloc(strlen(salt_prefix) + strlen(rounds_str)
+		+ strlen(salt_arg) + 1));
+	*salt = '\0';
+	strcat(salt, salt_prefix);
+	strcat(salt, rounds_str);
+	strcat(salt, salt_arg);
+    } else if (salt_arg && salt_arg[0] != '\0') {
 	unsigned int c = strlen(salt_arg);
 	if (c < salt_minlen || c > salt_maxlen) {
 	    if (salt_minlen == salt_maxlen)
