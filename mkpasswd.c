@@ -283,8 +283,10 @@ int main(int argc, char *argv[])
 	rounds_str[0] = '\0';
 
     if (salt_arg && salt_arg[0] == '$')
+	/* the salt begins with the prefix which specifies the method */
 	salt = NOFAIL(strdup(salt_arg));
     else if (salt_prefix && salt_arg && strchr(salt_arg, '$')) {
+	/* looks like a salt, but with no initial method prefix */
 	salt = NOFAIL(malloc(strlen(salt_prefix) + strlen(rounds_str)
 		+ strlen(salt_arg) + 1));
 	*salt = '\0';
@@ -292,6 +294,7 @@ int main(int argc, char *argv[])
 	strcat(salt, rounds_str);
 	strcat(salt, salt_arg);
     } else if (salt_arg && salt_arg[0] != '\0') {
+	/* just the salt string with no metadata */
 	unsigned int c = strlen(salt_arg);
 	if (c < salt_minlen || c > salt_maxlen) {
 	    if (salt_minlen == salt_maxlen)
@@ -316,6 +319,10 @@ int main(int argc, char *argv[])
 	    }
 	}
 
+	/*
+	 * Build the actual argument to crypt(3) by concatenating the
+	 * method prefix, the rounds metadata (if any) and the salt string.
+	 */
 	salt = NOFAIL(malloc(strlen(salt_prefix) + strlen(rounds_str)
 		+ strlen(salt_arg) + 1));
 	*salt = '\0';
@@ -323,6 +330,7 @@ int main(int argc, char *argv[])
 	strcat(salt, rounds_str);
 	strcat(salt, salt_arg);
     } else {
+	/* no salt was specified by the user, so generate one */
 #ifdef HAVE_SOLARIS_CRYPT_GENSALT
 	salt = crypt_gensalt(salt_prefix, NULL);
 	if (!salt) {
