@@ -1,15 +1,18 @@
 # Translation of whois to German
-# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>, 2004 Adrian
-# Bunk <bunk@fs.tum.de>, 2010, 2013, 2019 Chris Leick <c.leick@vollbio.de>.
+# Copyright (C) 2001 Simon Richter <Simon.Richter@in.tum.de>
+# Copyright (C) 2004 Adrian Bunk <bunk@fs.tum.de>
+# Copyright (C) 2010, 2013, 2019 Chris Leick <c.leick@vollbio.de>
+# Copyright (C) 2021 Helge Kreutzmann <debian@helgefjell.de>
+#
 # This file is distributed under the same license as the whois package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.4.4\n"
+"Project-Id-Version: whois 5.5.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-03 17:52+0100\n"
-"PO-Revision-Date: 2019-06-28 18:02+0200\n"
-"Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
+"PO-Revision-Date: 2022-01-12 12:11+0100\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -152,7 +155,7 @@ msgstr ""
 "-H                     versteckt Haftungsausschlussklauseln.\n"
 
 #: ../whois.c:1506
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
 "      --no-recursion   disable recursion from registry to registrar servers\n"
@@ -161,6 +164,7 @@ msgid ""
 "\n"
 msgstr ""
 "      --verbose        erklärt, was getan wird.\n"
+"      --no-recursion   deaktiviert Rekursion vom Register zu Registrar-Servern\n"
 "      --help           zeigt diese Hilfe und beendet sich.\n"
 "      --version        gibt Versionsinformationen aus und beendet sich.\n"
 "\n"
@@ -314,7 +318,7 @@ msgid ""
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
-"Aufruf: mkpasswd [OPTIONEN] ... [PASSWORT] [SALT]]\n"
+"Aufruf: mkpasswd [OPTIONEN]... [PASSWORT] [SALT]]\n"
 "Verschlüsselt das PASSWORT mit »crypt(3)«.\n"
 "\n"
 
