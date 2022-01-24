@@ -1135,7 +1135,7 @@ int japanese_locale(void)
 {
     char *lang;
 
-    lang = getenv("LC_MESSAGE");
+    lang = getenv("LC_MESSAGES");
     if (lang) {
 	if (strneq(lang, "ja", 2))
 	    return 0;
