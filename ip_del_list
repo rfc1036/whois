@@ -22,7 +22,18 @@
 43.224.0.0/11	apnic
 43.0.0.0/8	whois.nic.ad.jp
 46.0.0.0/8	ripe
-49.0.0.0/8	apnic
+# net 49.0.0.0/8 was splitted in 2018
+49.0.0.0/13 apnic
+49.8.0.0/14 apnic
+49.12.0.0/15 ripe
+49.14.0.0/15 apnic
+49.16.0.0/12 apnic
+49.32.0.0/11 apnic
+49.64.0.0/10 apnic
+49.128.0.0/10 apnic
+49.192.0.0/11 apnic
+49.224.0.0/13 apnic
+49.232.0.0/14 apnic
 51.0.0.0/8	ripe
 # whois -r -K -h whois.apnic.net -i admin-c IM76-AP
 59.0.0.0/11	whois.nic.or.kr
