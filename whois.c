@@ -428,8 +428,7 @@ const char *match_config_file(const char *s)
     static const char delim[] = " \t";
 
     if ((fp = fopen(CONFIG_FILE, "r")) == NULL) {
-	if (errno != ENOENT)
-	    err_sys("Cannot open " CONFIG_FILE);
+	fprintf(stderr, "Cannot open %s: %s (errno = %d)\n", CONFIG_FILE, strerror(errno), errno);
 	return NULL;
     }
 
