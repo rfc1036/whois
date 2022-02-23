@@ -1,3 +1,14 @@
+whois (5.5.12) unstable; urgency=medium
+
+  * Updated the .pro TLD server, which was totally broken.
+  * Fixed the detection of Japanese locales using $LC_MESSAGES.
+  * Implemented providing partial salt strings to mkpasswd.
+  * Removed 2 new gTLDs which are no longer active.
+  * Updated one or more translations. (Closes: #1003597)
+  * Enabled full hardening in debian/rules.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 23 Feb 2022 01:03:11 +0100
+
 whois (5.5.11) unstable; urgency=medium
 
   * Implemented a --no-recursion command line option to disable recursion
