@@ -1,0 +1,357 @@
+# translation of whois to Turkish
+# Copyright (C) 2022
+# This file is distributed under the same license as the whois package.
+# Oğuz Ersen <oguz@ersen.moe>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: whois\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-01 22:10+0300\n"
+"PO-Revision-Date: 2022-04-01 23:06+0300\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: ../whois.c:240
+#, c-format
+msgid ""
+"Version %s.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"Sürüm %s.\n"
+"\n"
+"Hataları %s adresine bildirin.\n"
+
+#: ../whois.c:329
+msgid "This TLD has no whois server, but you can access the whois database at"
+msgstr ""
+"Bu TLD'nin whois sunucusu yok, ancak whois veri tabanına şu adresten "
+"erişebilirsiniz"
+
+#: ../whois.c:334
+msgid "This TLD has no whois server."
+msgstr "Bu TLD'nin whois sunucusu yok."
+
+#: ../whois.c:337
+msgid "No whois server is known for this kind of object."
+msgstr "Bu tür nesneler için bilinen bir whois sunucusu yok."
+
+#: ../whois.c:340
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr "Bilinmeyen AS numarası veya IP ağı. Lütfen bu programı güncelleyin."
+
+#: ../whois.c:344 ../whois.c:353 ../whois.c:388 ../whois.c:405
+#, c-format
+msgid "Using server %s.\n"
+msgstr "%s sunucusu kullanılıyor.\n"
+
+#: ../whois.c:362
+#, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n"
+"\n"
+msgstr ""
+"\n"
+"6to4 IPv6 adresinin IPv4 uç noktası %s sorgulanıyor.\n"
+"\n"
+
+#: ../whois.c:369
+#, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a Teredo IPv6 address.\n"
+"\n"
+msgstr ""
+"\n"
+"Teredo IPv6 adresinin IPv4 uç noktası %s sorgulanıyor.\n"
+"\n"
+
+#: ../whois.c:406
+#, c-format
+msgid ""
+"Query string: \"%s\"\n"
+"\n"
+msgstr ""
+"Sorgu dizgesi: \"%s\"\n"
+"\n"
+
+#: ../whois.c:416
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Found a referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"%s için bir yönlendirme bulundu.\n"
+"\n"
+
+#: ../whois.c:458 ../whois.c:461
+#, c-format
+msgid "Cannot parse this line: %s"
+msgstr "Bu satır ayrıştırılamıyor: %s"
+
+#: ../whois.c:650
+msgid "Warning: RIPE flags used with a traditional server."
+msgstr "Uyarı: Geleneksel bir sunucuyla RIPE bayrakları kullanıldı."
+
+#: ../whois.c:823 ../whois.c:939
+msgid ""
+"Catastrophic error: disclaimer text has been changed.\n"
+"Please upgrade this program.\n"
+msgstr ""
+"Önemli hata: sorumluluk reddi metni değiştirildi.\n"
+"Lütfen bu programı güncelleyin.\n"
+
+#: ../whois.c:1040
+#, c-format
+msgid "Host %s not found."
+msgstr "%s sunucusu bulunamadı."
+
+#: ../whois.c:1050
+#, c-format
+msgid "%s/tcp: unknown service"
+msgstr "%s/tcp: bilinmeyen hizmet"
+
+#: ../whois.c:1125
+msgid "Timeout."
+msgstr "Zaman aşımı."
+
+#: ../whois.c:1131
+#, c-format
+msgid "Interrupted by signal %d..."
+msgstr "%d sinyali tarafından kesildi..."
+
+#: ../whois.c:1499
+#, c-format
+msgid ""
+"Usage: whois [OPTION]... OBJECT...\n"
+"\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
+"-I                     query whois.iana.org and follow its referral\n"
+"-H                     hide legal disclaimers\n"
+msgstr ""
+"Kullanım: whois [SEÇENEK]... NESNE...\n"
+"\n"
+"-h HOST, --host HOST   HOST sunucusuna bağlan\n"
+"-p PORT, --port PORT   PORT bağlantı noktasına bağlan\n"
+"-I                     whois.iana.org'u sorgula ve yönlendirmesini takip et\n"
+"-H                     yasal uyarıları gizle\n"
+
+#: ../whois.c:1506
+#, c-format
+msgid ""
+"      --verbose        explain what is being done\n"
+"      --no-recursion   disable recursion from registry to registrar servers\n"
+"      --help           display this help and exit\n"
+"      --version        output version information and exit\n"
+"\n"
+msgstr ""
+"      --verbose        ne yapıldığını açıkla\n"
+"      --no-recursion   kayıt defterinden kayıt sunucularına özyinelemeyi "
+"devre dışı bırak\n"
+"      --help           bu yardımı görüntüle ve çık\n"
+"      --version        sürüm bilgisini yazdır ve çık\n"
+"\n"
+
+#: ../whois.c:1513
+#, c-format
+msgid ""
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+msgstr ""
+"Bu bayraklar whois.ripe.net ve bazı RIPE benzeri sunucular tarafından "
+"desteklenmektedir:\n"
+"-l                     bir seviye daha az özel eşleşmeyi bul\n"
+"-L                     tüm seviyelerde daha az özel eşleşmeleri bul\n"
+"-m                     tüm bir seviye daha özel eşleşmeleri bul\n"
+"-M                     tüm seviyelerde daha özel eşleşmeleri bul\n"
+
+#: ../whois.c:1520
+#, c-format
+msgid ""
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+msgstr ""
+"-c                     mnt-irt özniteliği içeren en küçük eşleşmeyi bul\n"
+"-x                     tam olarak eşleş\n"
+"-b                     kötüye kullanım irtibatıyla kısa IP adresi "
+"aralıklarını döndür\n"
+
+#: ../whois.c:1525
+#, c-format
+msgid ""
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+msgstr ""
+"-B                     nesne filtrelemeyi kapat (e-posta adreslerini "
+"göster)\n"
+"-G                     ilişkili nesnelerin gruplandırılmasını kapat\n"
+"-d                     DNS ters yetki nesnelerini de döndür\n"
+
+#: ../whois.c:1530
+#, c-format
+msgid ""
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+msgstr ""
+"-i ÖZNİ[,ÖZNİ]...      belirtilen ÖZNİtelikler için ters arama yap\n"
+"-T TÜR[,TÜR]...        yalnızca TÜR nesnelerini ara\n"
+"-K                     yalnızca birincil anahtarları döndür\n"
+"-r                     iletişim bilgileri için özyinelemeli aramaları kapat\n"
+
+#: ../whois.c:1536
+#, c-format
+msgid ""
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+msgstr ""
+"-R                     yönlendirme içerse bile etki alanı nesnesinin yerel\n"
+"                       kopyasını göstermeye zorla\n"
+"-a                     ayrıca tüm yansıtılmış veri tabanlarında arama yap\n"
+"-s KAYNAK[,KAYNAK]...  KAYNAK'tan yansıtılan veri tabanında arama yap\n"
+"-g KAYNAK:İLK-SON      KAYNAK'tan İLK'ten SON'a kadar olan güncellemeleri "
+"bul\n"
+
+#: ../whois.c:1543
+#, c-format
+msgid ""
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
+"-t TÜR                 TÜR nesnesi için şablon iste\n"
+"-v TÜR                 TÜR nesnesi için ayrıntılı şablon iste\n"
+"-q [version|sources|types]  belirtilen sunucu bilgilerini sorgula\n"
+
+#: ../mkpasswd.c:135
+msgid "BSDI extended DES-based crypt(3)"
+msgstr "BSDI genişletilmiş DES tabanlı crypt(3)"
+
+#: ../mkpasswd.c:138
+msgid "standard 56 bit DES-based crypt(3)"
+msgstr "standart 56 bit DES tabanlı crypt(3)"
+
+#: ../mkpasswd.c:207
+#, c-format
+msgid "Invalid method '%s'.\n"
+msgstr "Geçersiz yöntem '%s'.\n"
+
+#: ../mkpasswd.c:216 ../mkpasswd.c:228
+#, c-format
+msgid "Invalid number '%s'.\n"
+msgstr "Geçersiz sayı '%s'.\n"
+
+#: ../mkpasswd.c:246
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Daha fazla bilgi için '%s --help' komutunu deneyin.\n"
+
+#: ../mkpasswd.c:302
+#, c-format
+msgid "Wrong salt length: %d byte when %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
+msgstr[0] "Yanlış salt uzunluğu: %d bayt, beklenen: %d.\n"
+
+#: ../mkpasswd.c:307
+#, c-format
+msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
+msgstr[0] "Yanlış salt uzunluğu: %d bayt, beklenen: %d <= n <= %d.\n"
+
+#: ../mkpasswd.c:316
+#, c-format
+msgid "Illegal salt character '%c'.\n"
+msgstr "Geçersiz salt karakteri '%c'.\n"
+
+#: ../mkpasswd.c:372 ../mkpasswd.c:385
+#, c-format
+msgid "Password: "
+msgstr "Parola: "
+
+#: ../mkpasswd.c:404
+#, c-format
+msgid "Method not supported by crypt(3).\n"
+msgstr "Yöntem crypt(3) tarafından desteklenmiyor.\n"
+
+#: ../mkpasswd.c:512
+#, c-format
+msgid ""
+"Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
+"Crypts the PASSWORD using crypt(3).\n"
+"\n"
+msgstr ""
+"Kullanım: mkpasswd [SEÇENEKLER]... [PAROLA [SALT]]\n"
+"PAROLA değerini crypt(3) kullanarak şifreler.\n"
+"\n"
+
+#: ../mkpasswd.c:515
+#, c-format
+msgid ""
+"      -m, --method=TYPE     select method TYPE\n"
+"      -5                    like --method=md5crypt\n"
+"      -S, --salt=SALT       use the specified SALT\n"
+msgstr ""
+"      -m, --method=TÜR      TÜR yöntemini seç\n"
+"      -5                    --method=md5crypt ile aynı\n"
+"      -S, --salt=SALT       belirtilen SALT değerini kullan\n"
+
+#: ../mkpasswd.c:520
+#, c-format
+msgid ""
+"      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
+"      -P, --password-fd=NUM read the password from file descriptor NUM\n"
+"                            instead of /dev/tty\n"
+"      -s, --stdin           like --password-fd=0\n"
+msgstr ""
+"      -R, --rounds=SAYI     belirtilen SAYI kadar tur kullan\n"
+"      -P, --password-fd=NUM parolayı /dev/tty yerine NUM dosya\n"
+"                            tanıtıcısından oku\n"
+"      -s, --stdin           --password-fd=0 ile aynı\n"
+
+#: ../mkpasswd.c:526
+#, c-format
+msgid ""
+"      -h, --help            display this help and exit\n"
+"      -V, --version         output version information and exit\n"
+"\n"
+"If PASSWORD is missing then it is asked interactively.\n"
+"If no SALT is specified, a random one is generated.\n"
+"If TYPE is 'help', available methods are printed.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"      -h, --help            bu yardımı görüntüle ve çık\n"
+"      -V, --version         sürüm bilgisini yazdır ve çık\n"
+"\n"
+"PAROLA eksikse etkileşimli olarak sorulur.\n"
+"SALT belirtilmezse, rastgele bir tane oluşturulur.\n"
+"TÜR 'help' ise kullanılabilir yöntemler yazdırılır.\n"
+"\n"
+"Hataları %s adresine bildirin.\n"
+
+#: ../mkpasswd.c:549
+#, c-format
+msgid "Available methods:\n"
+msgstr "Kullanılabilir yöntemler:\n"
