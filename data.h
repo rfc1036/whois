@@ -64,6 +64,7 @@ const char *hide_strings[] = {
 
     /* ccTLDs */
     "Access to CCTLD WHOIS information is provided", "",	/* Afilias */
+    "Afilias Australia Pty Ltd (Afilias), for itself and on behalf of .au", NULL, /* au */
     "This WHOIS information is provided", NULL,			/* as */
     "% The WHOIS service offered by DNS Belgium", "",		/* be */
     ".CO Internet, S.A.S., the Administrator", NULL,		/* co */
