@@ -222,7 +222,7 @@
 .mq	whois.mediaserv.net
 .mr	whois.nic.mr
 .ms	whois.nic.ms
-.mt	WEB https://www.nic.org.mt/dotmt/ # whois.nic.org.mt is restricted
+.mt	whois.nic.org.mt
 .mu	whois.nic.mu
 .mv	NONE		# NIC? www.dhiraagu.com.mv
 .mw	whois.nic.mw
