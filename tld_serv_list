@@ -258,7 +258,7 @@
 .ps	whois.pnina.ps
 .pt	whois.dns.pt
 .pw	whois.nic.pw
-.py	WEB http://www.nic.py/consulta-datos.php
+.py	WEB https://www.nic.py/consultdompy.php
 .qa	whois.registry.qa
 .re	whois.nic.re
 .ro	whois.rotld.ro
