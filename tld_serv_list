@@ -249,7 +249,7 @@
 .edu.ph	WEB http://services.ph.net/dns/query.pl
 .gov.ph	NONE	# http://dns.gov.ph/
 .ph	WEB https://whois.dot.ph/
-.pk	WEB http://www.pknic.net.pk/
+.pk	whois.pknic.net.pk
 .co.pl	whois.co.pl	# "unofficial" SLD
 .pl	whois.dns.pl
 .pm	whois.nic.pm
