@@ -161,7 +161,7 @@
 .gr	WEB https://grweb.ics.forth.gr/public/whois
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/
-.gu	WEB http://gadao.gov.gu/domainsearch.htm
+.gu	NONE
 .gw	WEB http://nic.gw/en/whois/
 .gy	whois.registry.gy
 .hk	whois.hkirc.hk
