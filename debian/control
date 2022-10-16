@@ -2,9 +2,9 @@ Source: whois
 Section: net
 Priority: standard
 Maintainer: Marco d'Itri <md@linux.it>
-Standards-Version: 4.6.0.1
+Standards-Version: 4.6.1.1
 Rules-Requires-Root: no
-Build-Depends: debhelper-compat (= 12), gettext, pkg-config,
+Build-Depends: debhelper-compat (= 13), gettext, pkg-config,
  libidn2-dev (>= 2.0.3),
 Vcs-Git: https://github.com/rfc1036/whois.git
 Vcs-Browser: https://github.com/rfc1036/whois
