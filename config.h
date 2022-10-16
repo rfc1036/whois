@@ -17,7 +17,7 @@
 # include <sys/param.h>
 #endif
 
-#ifdef __GLIBC__
+#if defined __GLIBC__ && !defined __UCLIBC__
 # define ENABLE_NLS
 #endif
 
