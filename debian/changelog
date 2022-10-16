@@ -1,3 +1,19 @@
+whois (5.5.14) unstable; urgency=medium
+
+  * Added the .bf and .sd TLD servers.
+  * Removed the .gu TLD server.
+  * Updated the .dm, .fj, .mt and .pk TLD servers.
+  * Updated the charset for whois.nic.tr.
+  * Updated the list of new gTLDs.
+  * Removed whois.nic.fr from the list of RIPE-like servers, because it
+    is not one anymore. (Closes: #1021110)
+  * Renamed whois.arnes.si to whois.register.si in the list of RIPE-like
+    servers.
+  * Added the hiding string for whois.auda.org.au.
+  * Fixed uclibc builds, because uclibc does not have NLS support.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 16 Oct 2022 22:16:34 +0200
+
 whois (5.5.13) unstable; urgency=medium
 
   * Added the .sd TLD server.
