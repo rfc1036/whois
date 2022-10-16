@@ -13,7 +13,7 @@ const char *ripe_servers[] = {
     "rr.ntt.net",
     "whois.tcinet.ru",
     "whois.ripn.net",
-    "whois.arnes.si",
+    "whois.register.si",
     "whois.nic.ir",
     "whois.ra.net",
     NULL
