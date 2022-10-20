@@ -1,0 +1,371 @@
+# Georgian translation for whois.
+# Copyright (C) 2022 whois authors
+# This file is distributed under the same license as the whois package.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: whois\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-20 04:31+0200\n"
+"PO-Revision-Date: 2022-10-20 05:41+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: \n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: ../whois.c:240
+#, c-format
+msgid ""
+"Version %s.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"ვერსია %s\n"
+"\n"
+"შეცდომები მიიწერეთ მისამართზე %s.\n"
+
+#: ../whois.c:329
+msgid "This TLD has no whois server, but you can access the whois database at"
+msgstr ""
+"ამ TLD-ს whois სერვერი არ გააჩნია. მაგრამ whois-ის ბაზასთან წვდომა გაქვთ "
+"მისამართზე"
+
+#: ../whois.c:334
+msgid "This TLD has no whois server."
+msgstr "ამ TLD-ს whois სერვერი არ გააჩნია."
+
+#: ../whois.c:337
+msgid "No whois server is known for this kind of object."
+msgstr "ამ ტიპის ობიექტისთვის whois სერვერი ცნობილი არაა."
+
+#: ../whois.c:340
+msgid "Unknown AS number or IP network. Please upgrade this program."
+msgstr "უცნობი AS რიცხვი ან IP ქსელი. განაახლეთ ეს პროგრამა."
+
+#: ../whois.c:344 ../whois.c:353 ../whois.c:388 ../whois.c:405
+#, c-format
+msgid "Using server %s.\n"
+msgstr "ვიყენებ სერვერს: %s.\n"
+
+#: ../whois.c:362
+#, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a 6to4 IPv6 address.\n"
+"\n"
+msgstr ""
+"\n"
+"6to4 IPv6 მისამართის IPv4 ბოლო წერტილის (%s) გამოთხოვა.\n"
+"\n"
+
+#: ../whois.c:369
+#, c-format
+msgid ""
+"\n"
+"Querying for the IPv4 endpoint %s of a Teredo IPv6 address.\n"
+"\n"
+msgstr ""
+"\n"
+"Teredo IPv6 მისამართის IPv4 ბოლო წერტილის (%s) გამოთხოვა.\n"
+"\n"
+
+#: ../whois.c:406
+#, c-format
+msgid ""
+"Query string: \"%s\"\n"
+"\n"
+msgstr ""
+"მოთხოვნის სტრიქონი: \"%s\"\n"
+"\n"
+
+#: ../whois.c:416
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Found a referral to %s.\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"ნაპოვნია მიმართვა %s-ზე.\n"
+"\n"
+
+#: ../whois.c:458 ../whois.c:461
+#, c-format
+msgid "Cannot parse this line: %s"
+msgstr "ამ ხაზის დამუშავება შეუძლებელია: %s"
+
+#: ../whois.c:650
+msgid "Warning: RIPE flags used with a traditional server."
+msgstr "გაფრთხილება. RIPE-ის ალმები ტრადიციულ სერვერთან ერთად გამოიყენება."
+
+#: ../whois.c:823 ../whois.c:939
+msgid ""
+"Catastrophic error: disclaimer text has been changed.\n"
+"Please upgrade this program.\n"
+msgstr ""
+"კატასტროფული შეცდომა: შეიცვალა პასუხისმგებლობების ტექსტი.\n"
+"საჭიროა ამ პროგრამის განახლება.\n"
+
+#: ../whois.c:1040
+#, c-format
+msgid "Host %s not found."
+msgstr "ჰოსტი %s ვერ ვიპოვე."
+
+#: ../whois.c:1050
+#, c-format
+msgid "%s/tcp: unknown service"
+msgstr "%s/tcp: უცნობი სერვისი"
+
+#: ../whois.c:1125
+msgid "Timeout."
+msgstr "ლოდინის ვადა გავიდა."
+
+#: ../whois.c:1131
+#, c-format
+msgid "Interrupted by signal %d..."
+msgstr "შეწყდა სიგნალით %d..."
+
+#: ../whois.c:1499
+#, c-format
+msgid ""
+"Usage: whois [OPTION]... OBJECT...\n"
+"\n"
+"-h HOST, --host HOST   connect to server HOST\n"
+"-p PORT, --port PORT   connect to PORT\n"
+"-I                     query whois.iana.org and follow its referral\n"
+"-H                     hide legal disclaimers\n"
+msgstr ""
+"გამოყენება: whois [პარამეტრები]... ობიექტი...\n"
+"\n"
+"-h ჰოსტი, --host ჰოსტი   მითითებულ ჰოსტთან მიერთება\n"
+"-p პორტი, --port პორტი   მითითებულ პორტზე მიერთება\n"
+"-I                     whois.iana.org-ის მოთხოვნა და პასუხის მიყოლა\n"
+"-H                     იურიდიული ტექსტების დამალვა\n"
+
+#: ../whois.c:1506
+#, c-format
+msgid ""
+"      --verbose        explain what is being done\n"
+"      --no-recursion   disable recursion from registry to registrar "
+"servers\n"
+"      --help           display this help and exit\n"
+"      --version        output version information and exit\n"
+"\n"
+msgstr ""
+"      --verbose        ქმედებების ახსნა მიმდინარე დროში\n"
+"      --no-recursion   რეკურსიის გამორთვა რეესტრის სერვერბს შორის\n"
+"      --help           ამ დახმარების ჩვენება და გასვლა\n"
+"      --version        ვერსიის ინფორმაციის გამოტანა და გასვლა\n"
+"\n"
+
+#: ../whois.c:1513
+#, c-format
+msgid ""
+"These flags are supported by whois.ripe.net and some RIPE-like servers:\n"
+"-l                     find the one level less specific match\n"
+"-L                     find all levels less specific matches\n"
+"-m                     find all one level more specific matches\n"
+"-M                     find all levels of more specific matches\n"
+msgstr ""
+"ეს ალმები მხარდაჭერილია whois.ripe.net-ის და ზოგიერთი RIPE-ის მსგავსი "
+"სერვერების მიერ:\n"
+"-l                     ერთდონიანი მინიმალური ძებნა\n"
+"-L                     ყველაფრის მოძებნა მინიმალური დამთხვევებით\n"
+"-m                     მაქსიმალური მითითებული დამთხვევების პირველი დონის "
+"მოძებნა\n"
+"-M                     ყველაფრის მოძებნა მაქსიმალური დამთხვევებით\n"
+
+#: ../whois.c:1520
+#, c-format
+msgid ""
+"-c                     find the smallest match containing a mnt-irt "
+"attribute\n"
+"-x                     exact match\n"
+"-b                     return brief IP address ranges with abuse contact\n"
+msgstr ""
+"-c                     mnt-irt ატრიბუტის შემცველი უმცირესი დამთხვევის "
+"მოძებნა\n"
+"-x                     ზუსტი დამთხვევა\n"
+"-b                     კანონდარღვევს კონტაქტთან ერთად IP მისამართების "
+"დიაპაზონების მოკლე სიის დაბრუნება\n"
+
+#: ../whois.c:1525
+#, c-format
+msgid ""
+"-B                     turn off object filtering (show email addresses)\n"
+"-G                     turn off grouping of associated objects\n"
+"-d                     return DNS reverse delegation objects too\n"
+msgstr ""
+"-B                     ობიექტების ფილტრაციის გამორთვა (ელფოსტის "
+"მისამართების ჩვენება)\n"
+"-G                     ასოცირებული ობიექტების დაჯგუფების გამორთვა\n"
+"-d                     დაბრუნდება DNS სევერსის დელეგაციის ობექტებიც\n"
+
+#: ../whois.c:1530
+#, c-format
+msgid ""
+"-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes\n"
+"-T TYPE[,TYPE]...      only look for objects of TYPE\n"
+"-K                     only primary keys are returned\n"
+"-r                     turn off recursive look-ups for contact information\n"
+msgstr ""
+"-i ATTR[,ATTR]...      მითითებული ატრბუტების ინვერსიული ძებნა\n"
+"-T TYPE[,TYPE]...      მხოლოდ მითითებული ტიპის ობიექტების ძებნა\n"
+"-K                     მხოლოდ ძირითადი გასაღებები დაბრუნდება\n"
+"-r                     საკონტაქტო ინფორმაციის რეკურსიული ძებნის გამორთვა\n"
+
+#: ../whois.c:1536
+#, c-format
+msgid ""
+"-R                     force to show local copy of the domain object even\n"
+"                       if it contains referral\n"
+"-a                     also search all the mirrored databases\n"
+"-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE\n"
+"-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST\n"
+msgstr ""
+"-R                     დომენის ობიექტის ლოკალური ასლის ჩვენება მაშინაც კი,\n"
+"                       როცა ის ბმებს შეიცავს\n"
+"-a                     ძებნა სარკულ ბაზებშიაც\n"
+"-s SOURCE[,SOURCE]...  მითითებული წყაროდან კოპირებულ ბაზაში ძებნა\n"
+"-g SOURCE:FIRST-LAST   განახლებების ძებნა წყაროდან სერიულად პირველიდან "
+"ჩანაწერიდან, ბოლომდე\n"
+
+#: ../whois.c:1543
+#, c-format
+msgid ""
+"-t TYPE                request template for object of TYPE\n"
+"-v TYPE                request verbose template for object of TYPE\n"
+"-q [version|sources|types]  query specified server info\n"
+msgstr ""
+"-t TYPE                მითითებული ტიპის ობიექტისთვის  შაბლონს მოთხოვნა\n"
+"-v TYPE                მითითებული ტიპის ობიექტისთვის დამატებითი შაბლონის "
+"მოთხოვნა\n"
+"-q [version(ვერსია)|sources(წყაროები)|types(ტიპები)]  სერვერის მითითებული "
+"ინფორმაციის მოთხოვნა\n"
+
+#: ../mkpasswd.c:135
+msgid "BSDI extended DES-based crypt(3)"
+msgstr "BSDI გაფართოებული DES-ზე ბაზირებული crypt(3)"
+
+#: ../mkpasswd.c:138
+msgid "standard 56 bit DES-based crypt(3)"
+msgstr "სტანდარტული 56 ბიტიანი DES-ზე ბაზირებული crypt(3)"
+
+#: ../mkpasswd.c:207
+#, c-format
+msgid "Invalid method '%s'.\n"
+msgstr "არასწორი მეტოდი '%s'.\n"
+
+#: ../mkpasswd.c:216 ../mkpasswd.c:228
+#, c-format
+msgid "Invalid number '%s'.\n"
+msgstr "არასწორი რიცხვი '%s'.\n"
+
+#: ../mkpasswd.c:246
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "მეტი ინფორმაციისთვის სცადეთ '%s --help'\n"
+
+#: ../mkpasswd.c:302
+#, c-format
+msgid "Wrong salt length: %d byte when %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
+msgstr[0] ""
+"მარილის არასწორი სიგრძე: %d ბაიტი მაშინ, როცა მოსალოდნელი იყო %d ბაიტი.\n"
+msgstr[1] ""
+"მარილის არასწორი სიგრძე: %d ბაიტი მაშინ, როცა მოსალოდნელი იყო %d ბაიტი.\n"
+
+#: ../mkpasswd.c:307
+#, c-format
+msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
+msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
+msgstr[0] ""
+"მარილის არასწორი სიგრძე: %d ბაიტი მაშინ, როცა მოსალოდნელი იყო %d <= n <= %d "
+"ბაიტი.\n"
+msgstr[1] ""
+"მარილის არასწორი სიგრძე: %d ბაიტი მაშინ, როცა მოსალოდნელი იყო %d <= n <= %d "
+"ბაიტი.\n"
+
+#: ../mkpasswd.c:316
+#, c-format
+msgid "Illegal salt character '%c'.\n"
+msgstr "მარილიას დაუშვებელი სიმბოლო: '%c'.\n"
+
+#: ../mkpasswd.c:372 ../mkpasswd.c:385
+#, c-format
+msgid "Password: "
+msgstr "პაროლი: "
+
+#: ../mkpasswd.c:404
+#, c-format
+msgid "Method not supported by crypt(3).\n"
+msgstr "მეთოდი crypt(3)-ის მიერ მხარდაუჭერელია.\n"
+
+#: ../mkpasswd.c:512
+#, c-format
+msgid ""
+"Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
+"Crypts the PASSWORD using crypt(3).\n"
+"\n"
+msgstr ""
+"გამოყენება: mkpasswd [პარამეტრები]... [პაროლი [მარილი]]\n"
+"მითითებული პაროლის crypt(3)-ით დაშიფვრა.\n"
+"\n"
+
+#: ../mkpasswd.c:515
+#, c-format
+msgid ""
+"      -m, --method=TYPE     select method TYPE\n"
+"      -5                    like --method=md5crypt\n"
+"      -S, --salt=SALT       use the specified SALT\n"
+msgstr ""
+"      -m, --method=ტიპი     მითითებული ტიპის მეთოდის გამოყენება\n"
+"      -5                    იგივე, რაც --method=md5crypt\n"
+"      -S, --salt=მარილი       მითითებული მარილის გამოყენება\n"
+
+#: ../mkpasswd.c:520
+#, c-format
+msgid ""
+"      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
+"      -P, --password-fd=NUM read the password from file descriptor NUM\n"
+"                            instead of /dev/tty\n"
+"      -s, --stdin           like --password-fd=0\n"
+msgstr ""
+"      -R, --rounds=რიცხვი   მითითებული რაოდენობის რაუნდების გამოყენება\n"
+"      -P, --password-fd=რცხვ პაროლების /dev/tty-ის მაგიერ მითითებული "
+"ფაილის\n"
+"                            დესკრიპტორიდან წაკითხვა\n"
+"      -s, --stdin           იგივე, რაც --password-fd=0\n"
+
+#: ../mkpasswd.c:526
+#, c-format
+msgid ""
+"      -h, --help            display this help and exit\n"
+"      -V, --version         output version information and exit\n"
+"\n"
+"If PASSWORD is missing then it is asked interactively.\n"
+"If no SALT is specified, a random one is generated.\n"
+"If TYPE is 'help', available methods are printed.\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"      -h, --help            ამ დახმარების გამოტანა და გასვლა\n"
+"      -V, --version         ვერსიის ინფორმაციის გამოტანა და გასვლა\n"
+"\n"
+"თუ პაროლი მითითებული არაა, მას ინტერაქტიურად გკითხავთ.\n"
+"თუ მარილი მითითებული არაა, ის შემთხვევითობის წესით დაგენერირდება.\n"
+" თუ ტიპი 'help'-ა, ეკრანზე იქნება ნაჩვენები ხელმისაწვდომი მეთოდები.\n"
+"\n"
+"შეცდომების შესახებ მიწერეთ: %s.\n"
+
+#: ../mkpasswd.c:549
+#, c-format
+msgid "Available methods:\n"
+msgstr "ხელმისაწვდომი მეთოდები:\n"
