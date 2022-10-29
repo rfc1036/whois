@@ -1,21 +1,22 @@
 # Finnish translation for whois.
 # Copyright (C) 2008- Sami Kerola <kerolasa@iki.fi>
+# Lauri Nurmi <lanurmi@iki.fi>, 2022.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.0.1\n"
+"Project-Id-Version: whois 5.5.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-03 17:52+0100\n"
-"PO-Revision-Date: 2019-06-28 08:56+0100\n"
-"Last-Translator: Sami Kerola <kerolasa@iki.fi>\n"
+"POT-Creation-Date: 2022-10-29 11:48+0300\n"
+"PO-Revision-Date: 2022-10-30 00:27+0300\n"
+"Last-Translator: Lauri Nurmi <lanurmi@iki.fi>\n"
 "Language-Team: \n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: ../whois.c:240
 #, c-format
@@ -30,15 +31,17 @@ msgstr ""
 
 #: ../whois.c:329
 msgid "This TLD has no whois server, but you can access the whois database at"
-msgstr "Tälla TLD:llä ei ole whois palvelinta, voit hakea tiedot osoitteesta"
+msgstr ""
+"Tällä TLD:llä ei ole whois-palvelinta, mutta voit käyttää whois-tietokantaa "
+"osoitteessa"
 
 #: ../whois.c:334
 msgid "This TLD has no whois server."
-msgstr "Tälla TLD:llä ei ole whois palvelinta."
+msgstr "Tällä TLD:llä ei ole whois-palvelinta."
 
 #: ../whois.c:337
 msgid "No whois server is known for this kind of object."
-msgstr "Mikään whois palvelu ei tiedä kysyttyä tietoa."
+msgstr "Tällaiselle objektille ei ole tiedossa whois-palvelinta."
 
 #: ../whois.c:340
 msgid "Unknown AS number or IP network. Please upgrade this program."
@@ -57,7 +60,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Kysytään IPv4 ulostuloa %s IPv6:n IPv4 avaruudesta.\n"
+"Kysellään IPv4-päätetepistettä %s 6to4-IPv6-osoitteelle.\n"
 "\n"
 
 #: ../whois.c:369
@@ -68,7 +71,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Kysytään IPv4 ulostuloa %s Teredo IPv6 tunneliosoitetta.\n"
+"Kysellään IPv4-päätetepistettä %s Teredo-IPv6-osoitteelle.\n"
 "\n"
 
 #: ../whois.c:406
@@ -77,7 +80,7 @@ msgid ""
 "Query string: \"%s\"\n"
 "\n"
 msgstr ""
-"Kysely: \"%s\"\n"
+"Kysely: ”%s”\n"
 "\n"
 
 #: ../whois.c:416
@@ -96,19 +99,20 @@ msgstr ""
 #: ../whois.c:458 ../whois.c:461
 #, c-format
 msgid "Cannot parse this line: %s"
-msgstr "Ohjelma ei ymmärrä riviä: %s"
+msgstr "Tätä riviä ei voi jäsentää: %s"
 
 #: ../whois.c:650
 msgid "Warning: RIPE flags used with a traditional server."
-msgstr "Varoitus: käytät RIPE valitsimia perinteiseen palvelimeen."
+msgstr "Varoitus: RIPE-valitsimia käytetään perinteiseen palvelimeen."
 
 #: ../whois.c:823 ../whois.c:939
 msgid ""
 "Catastrophic error: disclaimer text has been changed.\n"
 "Please upgrade this program.\n"
 msgstr ""
-"Katastrofaalinen virhe: lisenssiteksti on muuttunut.\n"
-"Päivita ohjelma.\n"
+"Katastrofaalinen virhe: vastuuvapauslausekkeen teksti\n"
+"on muuttunut.\n"
+"Päivitä tämä ohjelma.\n"
 
 #: ../whois.c:1040
 #, c-format
@@ -141,24 +145,26 @@ msgid ""
 msgstr ""
 "Käyttö: whois [VALITSIN]... OBJEKTI...\n"
 "\n"
-"-h PALVELIN, --host PALVELIN  ota yhteys PALVELIMEEN\n"
-"-p PORTTI, --port PORTTI      käytä PORTTIA\n"
-"-I                            ota yhteys whois.iana.org ja seuraa "
-"viittausta\n"
-"-H                            piilota ilmoitukset\n"
+"-h PALV, --host PALV   ota yhteys PALVelimeen\n"
+"-p PORT, --port PORT   käytä PORTtia\n"
+"-I                     kysele whois.iana.org:ilta ja seuraa viittausta\n"
+"-H                     piilota vastuuvapauslausekkeet\n"
 
 #: ../whois.c:1506
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
-"      --no-recursion   disable recursion from registry to registrar servers\n"
+"      --no-recursion   disable recursion from registry to registrar "
+"servers\n"
 "      --help           display this help and exit\n"
 "      --version        output version information and exit\n"
 "\n"
 msgstr ""
-"      --verbose               näytä mitä on tekeillä\n"
-"      --help                  näytä tämä teksti\n"
-"      --version               näytä versio\n"
+"      --verbose        kerro mitä on tekeillä\n"
+"      --no-recursion   älä käytä rekursiota rekisteristä\n"
+"                       verkkotunnusvälittäjän palvelimille\n"
+"      --help           näytä tämä ohje ja poistu\n"
+"      --version        näytä versiotiedot ja poistu\n"
 
 #: ../whois.c:1513
 #, c-format
@@ -169,11 +175,12 @@ msgid ""
 "-m                     find all one level more specific matches\n"
 "-M                     find all levels of more specific matches\n"
 msgstr ""
-"Seuraavat optiot ovat tuettuja whois.ripe.net palvelimella:\n"
-"-l                     etsi välittömiä tietueita\n"
-"-L                     etsi kaikkia vastaavia tietueita\n"
-"-m                     etsi kaikki samantasoiset tai erityisemmät tietueet\n"
-"-M                     etsi kaikkien tasojen erityiset tietueet\n"
+"Seuraavat liput toimivat whois.ripe.net- ja joillakin RIPEn\n"
+"kaltaisilla palvelimilla:\n"
+"-l                     etsi yhden tason vähemmän tarkka osuma\n"
+"-L                     etsi kaikkien tasojen vähemmän tarkat osumat\n"
+"-m                     etsi kaikki yhden tason tarkemmat osumat\n"
+"-M                     etsi kaikkien tasojen tarkemmat osumat\n"
 
 #: ../whois.c:1520
 #, c-format
@@ -183,9 +190,9 @@ msgid ""
 "-x                     exact match\n"
 "-b                     return brief IP address ranges with abuse contact\n"
 msgstr ""
-"-c                     etsi vähin osuma joka liittyy mnt-irt atribuuttiin\n"
+"-c                     etsi vähin osuma, jolla on mnt-irt-attribuutti\n"
 "-x                     täysosuma\n"
-"-b                     palauta lyhyt osoiteavaruus ja abuse-tietue\n"
+"-b                     palauta lyhyesti IP-osoiteavaruudet ja abuse-tieto\n"
 
 #: ../whois.c:1525
 #, c-format
@@ -194,10 +201,9 @@ msgid ""
 "-G                     turn off grouping of associated objects\n"
 "-d                     return DNS reverse delegation objects too\n"
 msgstr ""
-"-B                     poista objektifiltteröinti (näytä "
-"sähköpostiosoitteet)\n"
+"-B                     poista objektisuodatus (näytä sähköpostiosoitteet)\n"
 "-G                     poista objektien ryhmittely\n"
-"-d                     näytä DNS delekointiobjektit\n"
+"-d                     palauta myös DNS-delegointiobjektit\n"
 
 #: ../whois.c:1530
 #, c-format
@@ -207,10 +213,10 @@ msgid ""
 "-K                     only primary keys are returned\n"
 "-r                     turn off recursive look-ups for contact information\n"
 msgstr ""
-"-i ATTR[,ATTR]...      tee käänteishaku käyttäen ATTRbuutteja\n"
-"-T TYYP[,TYYP]...      hae ainoastaan tietyn TYYPisiä objekteja\n"
-"-K                     palauta ainoastaan pääavain\n"
-"-r                     älä käytä rekursiota kontaktitiedoille\n"
+"-i ATTR[,ATTR]...      tee käänteishaku käyttäen ATTRibuutteja\n"
+"-T TYYP[,TYYP]...      hae ainoastaan tietyn TYYPpisiä objekteja\n"
+"-K                     vain pääavaimet palautetaan\n"
+"-r                     älä käytä rekursiivisia hakuja yhteystiedoille\n"
 
 #: ../whois.c:1536
 #, c-format
@@ -223,10 +229,11 @@ msgid ""
 msgstr ""
 "-R                     pakota näyttämään paikallinen objekti vaikka se\n"
 "                       sisältäisi viitteen\n"
-"-a                     etsi myös tietokantakopioista\n"
-"-s KOP[,KOP]...        käytä KOPioita\n"
-"-g KOP:EKA-VIKA        hae päivityksiä KOPioista sarjoista EKAsta VIKAaan\n"
+"-a                     etsi myös kaikista peilatuista tietokannoista\n"
+"-s LÄHDE[,LÄHDE]...    käytä LÄHTEestä peilattua tietokantaa\n"
+"-g LÄHDE:ALKU-LOPPU    hae päivityksiä LÄHTEestä sarjasta ALKU-LOPPU\n"
 
+# version|sources|types ovat kirjaimellisesti sitä mitä käyttäjän kuuluu syöttää, niitä ei saa suomentaa.
 #: ../whois.c:1543
 #, c-format
 msgid ""
@@ -234,85 +241,85 @@ msgid ""
 "-v TYPE                request verbose template for object of TYPE\n"
 "-q [version|sources|types]  query specified server info\n"
 msgstr ""
-"-t TYYPPI              hae mallinne objektille TYYPPI\n"
-"-v TYYPPI              hae pitkämallinne objektille TYYPPI\n"
-"-q [versio|lähde|tyyppi]   hae erityisiä palvelin tietoja\n"
+"-t TYYPPI              hae malline TYYPPIä olevalle objektille\n"
+"-v TYYPPI              hae laaja malline TYYPPIä olevalle objektille\n"
+"-q [version|sources|types]   kysele annettua palvelintietoa\n"
 
 #: ../mkpasswd.c:135
 msgid "BSDI extended DES-based crypt(3)"
-msgstr "BSDI  laajennettu DES-salaus, katso crypt(3)"
+msgstr "BSDI-laajennettu DES-salaus, crypt(3)"
 
 #: ../mkpasswd.c:138
 msgid "standard 56 bit DES-based crypt(3)"
-msgstr "standardi 56-bittinen DES-salaus katso crypt(3)"
+msgstr "standardi 56-bittinen DES-salaus, crypt(3)"
 
 #: ../mkpasswd.c:207
 #, c-format
 msgid "Invalid method '%s'.\n"
-msgstr "Kelvoton metodi '%s'.\n"
+msgstr "Kelvoton menetelmä ”%s”.\n"
 
 #: ../mkpasswd.c:216 ../mkpasswd.c:228
 #, c-format
 msgid "Invalid number '%s'.\n"
-msgstr "Kelvoton numero '%s'.\n"
+msgstr "Kelvoton lukuarvo ”%s”.\n"
 
 #: ../mkpasswd.c:246
 #, c-format
 msgid "Try '%s --help' for more information.\n"
-msgstr "Käytä valitsinta '%s --help' lisätietojen saamiseen.\n"
+msgstr "Komento ”%s --help” antaa lisää tietoa.\n"
 
-#: ../mkpasswd.c:292
+#: ../mkpasswd.c:302
 #, c-format
 msgid "Wrong salt length: %d byte when %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d expected.\n"
-msgstr[0] "Väärä suolan pituus: %d tavu, kun %d odotettiin.\n"
-msgstr[1] "Väärä suolan pituus: %d tavua, kun %d odotettiin.\n"
+msgstr[0] "Väärä suolan pituus: %d tavu, odotettiin %d.\n"
+msgstr[1] "Väärä suolan pituus: %d tavua, odotettiin %d.\n"
 
-#: ../mkpasswd.c:297
+#: ../mkpasswd.c:307
 #, c-format
 msgid "Wrong salt length: %d byte when %d <= n <= %d expected.\n"
 msgid_plural "Wrong salt length: %d bytes when %d <= n <= %d expected.\n"
-msgstr[0] "Väärä suolan pituus: %d tavu, kun %d <= n <= %d odotettiin.\n"
-msgstr[1] "Väärä suolan pituus: %d tavua, kun %d <= n <= %d odotettiin.\n"
+msgstr[0] "Väärä suolan pituus: %d tavu, odotettiin %d <= n <= %d.\n"
+msgstr[1] "Väärä suolan pituus: %d tavua, odotettiin kun %d <= n <= %d.\n"
 
-#: ../mkpasswd.c:306
+#: ../mkpasswd.c:316
 #, c-format
 msgid "Illegal salt character '%c'.\n"
-msgstr "Laiton merkki suolassa '%c'.\n"
+msgstr "Kielletty suolamerkki ’%c’.\n"
 
-#: ../mkpasswd.c:357 ../mkpasswd.c:370
+#: ../mkpasswd.c:372 ../mkpasswd.c:385
 #, c-format
 msgid "Password: "
 msgstr "Salasana: "
 
-#: ../mkpasswd.c:389
+#: ../mkpasswd.c:404
 #, c-format
 msgid "Method not supported by crypt(3).\n"
-msgstr "Functio crypt(3) ei tue toimintoa.\n"
+msgstr "crypt(3)-funktio ei tue menetelmää.\n"
 
-#: ../mkpasswd.c:497
+#: ../mkpasswd.c:512
 #, c-format
 msgid ""
 "Usage: mkpasswd [OPTIONS]... [PASSWORD [SALT]]\n"
 "Crypts the PASSWORD using crypt(3).\n"
 "\n"
 msgstr ""
-"Käyttö: mkpasswd [OPTIO] ... [SALASANA] [SUOLA]]\n"
-"Salaa SALASANA crypt(3) funktiolla.\n"
+"Käyttö: mkpasswd [VALITSIMET] ... [SALASANA] [SUOLA]]\n"
+"Salaa SALASANAn crypt(3)-funktiolla.\n"
 "\n"
 
-#: ../mkpasswd.c:500
+#: ../mkpasswd.c:515
 #, c-format
 msgid ""
 "      -m, --method=TYPE     select method TYPE\n"
 "      -5                    like --method=md5crypt\n"
 "      -S, --salt=SALT       use the specified SALT\n"
 msgstr ""
-"      -m, --method=TYPE     valitse toiminto TYPE\n"
+"      -m, --method=TYYPPI   valitse menetelmä TYYPPI\n"
 "      -5                    sama kuin --method=md5crypt\n"
 "      -S, --salt=SUOLA      suolan valinta\n"
 
-#: ../mkpasswd.c:505
+#: ../mkpasswd.c:520
 #, c-format
 msgid ""
 "      -R, --rounds=NUMBER   use the specified NUMBER of rounds\n"
@@ -320,12 +327,12 @@ msgid ""
 "                            instead of /dev/tty\n"
 "      -s, --stdin           like --password-fd=0\n"
 msgstr ""
-"      -R, --rounds=NUMERO   pyöristä numeroon\n"
-"      -P, --password-fd=NUM lue salasana avoimesta tiedostosta NUM\n"
-"                            äläkä terminaalista /dev/tty\n"
+"      -R, --rounds=MÄÄRÄ    käytä annettua kierrosMÄÄRÄä\n"
+"      -P, --password-fd=NUM lue salasana tiedostokahvasta NUM\n"
+"                            eikä terminaalista /dev/tty\n"
 "      -s, --stdin           sama kuin --password-fd=0\n"
 
-#: ../mkpasswd.c:511
+#: ../mkpasswd.c:526
 #, c-format
 msgid ""
 "      -h, --help            display this help and exit\n"
@@ -337,16 +344,17 @@ msgid ""
 "\n"
 "Report bugs to %s.\n"
 msgstr ""
-"      -h, --help            tulosta tämä ruutu\n"
-"      -V, --version         tulosta versio\n"
+"      -h, --help            näytä tämä ohje ja poistu\n"
+"      -V, --version         tulosta versiotiedot ja poistu\n"
 "\n"
-"Ellei salasanaa määritetä se kysytään.\n"
-"Ellei suolaa määritetä käytetään satunnaista.\n"
-"Jos tyyppi on 'help', tulostetaan toiminnot.\n"
+"Jos SALASANA puuttuu, sitä kysytään vuorovaikutteisesti.\n"
+"Jos SUOLAa ei anneta, luodaan satunnainen.\n"
+"Jos TYYPPI on ”help”, käytettävissä olevat menetelmät\n"
+"tulostetaan.\n"
 "\n"
 "Lähetä bugiraportit osoitteeseen %s.\n"
 
-#: ../mkpasswd.c:534
+#: ../mkpasswd.c:549
 #, c-format
 msgid "Available methods:\n"
-msgstr "Käytettävissä olevat toiminnot:\n"
+msgstr "Käytettävissä olevat menetelmät:\n"
