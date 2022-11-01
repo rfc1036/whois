@@ -43,6 +43,12 @@
 # define HAVE_BSDICRYPT
 #endif
 
+#if defined __midipix__
+# define HAVE_GETOPT_LONG
+# define HAVE_GETADDRINFO
+# define HAVE_SHA_CRYPT
+#endif
+
 #if defined __GLIBC__
 # define HAVE_GETOPT_LONG
 # if __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 1
@@ -103,7 +109,7 @@
 #endif
 
 /* or else getentropy(2) on Linux */
-#if defined __GLIBC__ && __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 25
+#if defined __GLIBC__ && __GLIBC__ >= 2 && __GLIBC_MINOR__ >= 25 || defined __midipix__
 # define HAVE_GETENTROPY
 #endif
 
