@@ -240,7 +240,7 @@
 .np	WEB https://register.com.np/whois-lookup
 .nr	WEB http://www.cenpac.net.nr/dns/whois.html
 .nu	whois.iis.nu
-.nz	whois.srs.net.nz
+.nz	whois.irs.net.nz
 .om	whois.registry.om
 .pa	WEB http://www.nic.pa/
 .pe	kero.yachay.pe
