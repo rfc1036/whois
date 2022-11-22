@@ -312,7 +312,7 @@
 .to	whois.tonic.to
 .tr	whois.nic.tr
 .tt	WEB http://www.nic.tt/cgi-bin/search.pl
-.tv	whois.nic.tv
+.tv	RECURSIVE whois.nic.tv
 .tw	whois.twnic.net.tw
 .tz	whois.tznic.or.tz
 .biz.ua	whois.biz.ua
