@@ -84,7 +84,7 @@
 .az	WEB http://whois.az/
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
-.bd	WEB http://www.registry.com.bd/whois.php
+.bd	WEB https://bdia.btcl.com.bd/
 .be	whois.dns.be
 .bf	whois.registre.bf	# http://www.arcep.bf/noms-de-domaine/
 .bg	whois.register.bg
