@@ -72,7 +72,7 @@ char *simple_recode(const iconv_t handle, const char *str)
 	size_t err = iconv(handle, &inp, &inbytes_remaining, &outp,
 		&outbytes_remaining);
 
-	if (err != -1)
+	if (err != (size_t) -1)
 	    break; /* success */
 
 	switch (errno) {

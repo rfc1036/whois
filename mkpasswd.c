@@ -553,7 +553,7 @@ void display_methods(void)
 }
 
 char *read_line(FILE *fp) {
-    int size = 128;
+    size_t size = 128;
     int ch;
     size_t pos = 0;
     char *password;
