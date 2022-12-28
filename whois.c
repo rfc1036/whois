@@ -346,7 +346,7 @@ int handle_query(const char *hserver, const char *hport,
 	    free(server);
 	    server = query_crsnic(sockfd, query);
 	    if (no_recursion)
-		server = "";
+		server[0] = '\0';
 	    break;
 	case 8:
 	    if (verb)
@@ -355,7 +355,7 @@ int handle_query(const char *hserver, const char *hport,
 	    free(server);
 	    server = query_afilias(sockfd, query);
 	    if (no_recursion)
-		server = "";
+		server[0] = '\0';
 	    break;
 	case 0x0A:
 	    p = convert_6to4(query);
