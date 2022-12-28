@@ -1,3 +1,17 @@
+whois (5.5.15) unstable; urgency=medium
+
+  * Updated the .bd, .nz and .tv TLD servers.
+  * Added the .llyw.cymru, .gov.scot and .gov.wales SLD servers.
+  * Updated the .ac.uk and .gov.uk SLD servers.
+  * Recursion has been enabled for whois.nic.tv.
+  * Updated the list of new gTLDs with four generic TLDs assigned in
+    October 2013 which were missing due to a bug.
+  * Removed 4 new gTLDs which are no longer active.
+  * Added the Georgian translation, contributed by Temuri Doghonadze.
+  * Updated the Finnish translation, contributed by Lauri Nurmi.
+
+ -- Marco d'Itri <md@linux.it>  Wed, 28 Dec 2022 20:44:11 +0100
+
 whois (5.5.14) unstable; urgency=medium
 
   * Added the .bf and .sd TLD servers.
