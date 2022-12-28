@@ -327,10 +327,10 @@
 .pp.ua	whois.pp.ua
 .ua	whois.ua
 .ug	whois.co.ug
-.ac.uk	whois.ja.net
+.ac.uk	whois.nic.ac.uk
 .bl.uk	NONE
 .british-library.uk NONE
-.gov.uk	whois.ja.net
+.gov.uk	whois.gov.uk
 .icnet.uk NONE
 .jet.uk	NONE
 .mod.uk	NONE
