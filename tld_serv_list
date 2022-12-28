@@ -37,6 +37,13 @@
 .za.org	whois.za.org
 .org	whois.pir.org
 
+# Technically these are SLDs of new gTLDs (hence listed in new_gtlds_list),
+# but the registrar (JISC) asked to add the servers for these
+# government-related domains.
+.llyw.cymru	whois.nic.llyw.cymru
+.gov.scot	whois.nic.gov.scot
+.gov.wales	whois.nic.gov.wales
+
 .edu	whois.educause.edu
 .gov	whois.dotgov.gov
 .int	whois.iana.org
