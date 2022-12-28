@@ -8,6 +8,10 @@ whois.lacnic.net	utf-8
 whois.museum		utf-8		-C UTF-8
 whois.ripe.net		iso-8859-1
 
+whois.nic.llyw.cymru	utf-8
+whois.nic.gov.scot	utf-8
+whois.nic.gov.wales	utf-8
+
 whois.aeda.net.ae	utf-8
 whois.nic.ar		utf-8
 whois.ax		utf-8
@@ -59,6 +63,8 @@ whois.thains.co.th	utf-8
 whois.ati.tn		utf-8
 whois.nic.tr		utf-8
 whois.twnic.net.tw	utf-8
+whois.nic.ac.uk		utf-8
+whois.gov.uk		utf-8
 whois.biz.ua		utf-8
 whois.co.ua		utf-8
 whois.pp.ua		utf-8
