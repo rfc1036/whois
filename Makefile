@@ -71,6 +71,8 @@ endif
 
 CPPFLAGS += $(DEFS) $(INCLUDES)
 
+BASHCOMPDIR ?= $(shell $(PKG_CONFIG) --variable=completionsdir bash-completion 2>/dev/null || echo /etc/bash_completion.d)
+
 ##############################################################################
 all: Makefile.depend whois mkpasswd pos
 
@@ -121,7 +123,7 @@ afl-run:
 	nice afl-fuzz -i ../afl_in -o ../afl_out -- ./whois
 
 ##############################################################################
-install: install-whois install-mkpasswd install-pos
+install: install-whois install-mkpasswd install-pos install-bashcomp
 
 install-whois: whois
 	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
@@ -139,6 +141,11 @@ install-mkpasswd: mkpasswd
 
 install-pos:
 	cd po && $(MAKE) install
+
+install-bashcomp:
+	$(INSTALL) -d $(BASEDIR)$(BASHCOMPDIR)
+	$(INSTALL) -m 0644 mkpasswd.bash $(BASEDIR)$(BASHCOMPDIR)/mkpasswd
+	$(INSTALL) -m 0644 whois.bash $(BASEDIR)$(BASHCOMPDIR)/whois
 
 distclean: clean
 	rm -f version.h po/whois.pot
