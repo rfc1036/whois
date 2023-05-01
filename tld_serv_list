@@ -113,7 +113,7 @@
 .co.ca	whois.co.ca
 .ca	whois.cira.ca
 .cc	VERISIGN ccwhois.verisign-grs.com
-.cd	NONE
+.cd	whois.nic.cd
 .cf	NONE
 .cg	NONE		# www.nic.cg
 .ch	whois.nic.ch
