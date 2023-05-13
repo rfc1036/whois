@@ -17,15 +17,16 @@ open(my $out, '>', 'ip_del_recovered.h');
 while (my $row = $csv->getline($in)) {
 	next if $row->[0] eq 'Start address';
 	next if $row->[5] ne 'ALLOCATED';
+	my ($first_ip, $last_ip, undef, undef, $server) = @$row;
 
-	print $out '/* ' . $row->[0] . ' - ' . $row->[1] . " */\n";
+	print $out "/* $first_ip - $last_ip */\n";
 	my @networks =
 		map { Net::IP->new($_) }
-		Net::CIDR::range2cidr($row->[0] . '-' . $row->[1]);
+		Net::CIDR::range2cidr($first_ip . '-' . $last_ip);
 	print $out sprintf(qq|{ %sUL, %sUL, "%s" },\n|,
 		$_->intip,
 		((~(0xffffffff >> $_->prefixlen)) & 0xffffffff),
-		$row->[4]
+		$server
 	) foreach @networks;
 }
 
