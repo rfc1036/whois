@@ -357,7 +357,7 @@
 .ye	NONE		# NIC? http://www.y.net.ye/services/domain_name.htm
 .yt	whois.nic.yt
 .ac.za	whois.ac.za
-.alt.za	whois.alt.za
+.alt.za	WEB https://whois.alt.za/
 .co.za	whois.registry.net.za
 .gov.za	whois.gov.za
 .net.za	net-whois.registry.net.za
