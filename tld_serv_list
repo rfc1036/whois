@@ -357,13 +357,16 @@
 .ye	NONE		# NIC? http://www.y.net.ye/services/domain_name.htm
 .yt	whois.nic.yt
 .ac.za	whois.ac.za
-.alt.za	whois.alt.za
+.alt.za	WEB https://whois.alt.za/
 .co.za	whois.registry.net.za
+.edu.za WEB https://whois.edu.za/
 .gov.za	whois.gov.za
 .net.za	net-whois.registry.net.za
+.nom.za NONE		# http://nom.za/
 .org.za	org-whois.registry.net.za
+.school.za NONE
 .web.za	web-whois.registry.net.za
-.za	NONE		# http://www.zadna.org.za/content/page/domain-information
+.za	NONE		# https://www.nic.za/za-domains/
 .zm	whois.zicta.zm
 .zw	NONE		# http://www.zispa.co.zw/
 
