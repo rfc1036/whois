@@ -132,6 +132,7 @@
 .cx	whois.nic.cx
 .cy	WEB https://www.nic.cy/cy-ui/home
 .cz	whois.nic.cz
+.com.de	whois.centralnic.net	# "unofficial" SLD
 .de	whois.denic.de
 .dj	NONE		# http://www.dj/
 .dk	whois.dk-hostmaster.dk
