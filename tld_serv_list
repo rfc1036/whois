@@ -285,6 +285,7 @@
 .sb	whois.nic.net.sb
 .sc	whois2.afilias-grs.net		# www.nic.sc
 .sd	whois.sdnic.sd
+.com.se	whois.centralnic.net	# "unofficial" SLD
 .se	whois.iis.se
 .sg	whois.sgnic.sg
 .sh	whois.nic.sh
