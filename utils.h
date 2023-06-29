@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
 #ifndef WHOIS_UTILS_H
 #define WHOIS_UTILS_H
 
