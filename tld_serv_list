@@ -116,7 +116,7 @@
 .cd	whois.nic.cd
 .cf	NONE
 .cg	NONE		# www.nic.cg
-.ch	whois.nic.ch
+.ch	WEB https://www.nic.ch/whois/
 .ci	whois.nic.ci
 .ck	NONE
 .cl	whois.nic.cl
