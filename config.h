@@ -1,4 +1,5 @@
 /* Configurable features */
+/* SPDX-License-Identifier: GPL-2.0-or-later */
 
 /* Always hide legal disclaimers */
 #undef ALWAYS_HIDE_DISCL

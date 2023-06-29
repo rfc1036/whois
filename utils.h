@@ -1,5 +1,6 @@
 #ifndef WHOIS_UTILS_H
 #define WHOIS_UTILS_H
+/* SPDX-License-Identifier: GPL-2.0-or-later */
 
 /* Convenience macros */
 #define streq(a, b) (strcmp(a, b) == 0)
