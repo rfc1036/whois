@@ -23,7 +23,7 @@ whois \- client for the whois directory service
 .BR \-T \~
 .IR TYPE [, TYPE ]...\~]
 .RB [\~ \-\-verbose \~]
-.RB [\~ \-\-no-recursion \~]
+.RB [\~ \-\-no\-recursion \~]
 .I OBJECT
 
 .B whois
@@ -42,7 +42,6 @@ whois \- client for the whois directory service
 
 .B whois \-\-version
 
-.PP
 .SH DESCRIPTION
 .B whois
 searches for an object in a
@@ -55,11 +54,10 @@ ask for the specified object. If no guess can be made it will connect to
 for NIC handles or
 .I whois.arin.net
 for IPv4 addresses and network names.
-.PP
 .SH OPTIONS
 .TP 8
 .B \-h \c
-.IR HOST ", "\c
+.IR HOST ,
 .BI \-\-host= HOST
 Connect to
 .IR HOST .
@@ -68,7 +66,7 @@ Connect to
 Do not display the legal disclaimers that some registries like to show you.
 .TP 8
 .B \-p \c
-.IR PORT ", "\c
+.IR PORT ,
 .BI \-\-port= PORT
 Connect to
 .IR PORT .
@@ -82,7 +80,7 @@ AS numbers and domains.
 .BR BEWARE :
 this implies that the IANA server will receive your complete query.
 .TP 8
-.B \-\-no-recursion
+.B \-\-no\-recursion
 Disable recursion from registry to registrar servers.
 .TP 8
 .B \-\-verbose
@@ -106,7 +104,8 @@ Also search all the mirrored databases.
 Return brief IP address ranges with abuse contact.
 .TP 8
 .B \-B
-Disable objects filtering. (Show the e-mail addresses.)
+Disable objects filtering.
+(Show the e-mail addresses.)
 .TP 8
 .B \-c
 Return the smallest IP address range with a reference to an irt object.
@@ -128,7 +127,7 @@ update serial number. It is useful to obtain Near Real Time Mirroring stream.
 Disable grouping of associated objects.
 .TP 8
 .B \-i \c
-.I ATTR[,ATTR]...
+.IR ATTR [, ATTR ]...
 Inverse-search objects having associated attributes.
 .I ATTR
 is the attribute name, while the positional
@@ -180,12 +179,12 @@ Disable following referrals and force showing the object from the local copy
 in the server.
 .TP 8
 .B \-s \c
-.I SOURCE[,SOURCE]...
+.IR SOURCE [, SOURCE ]...
 Request the server to search for objects mirrored from
 .IR SOURCE .
 Sources are delimited by comma, and the order is significant.
 Use the
-.I -q sources
+.I \-q sources
 parameter to obtain a list of valid sources.
 .TP 8
 .B \-t \c
@@ -194,7 +193,7 @@ Return the template for a object of
 .IR TYPE .
 .TP 8
 .B \-T \c
-.I TYPE[,TYPE]...
+.IR TYPE [, TYPE ]...
 Restrict the search to objects of
 .IR TYPE .
 Multiple types are separated by a comma.
@@ -207,7 +206,7 @@ Return the verbose template for a object of
 .B \-x
 Search for only exact match on network address prefix.
 .SH NOTES
-When querying the Verisign gTLDs (e.g. .com, .net...) thin registry servers
+When querying the Verisign gTLDs (e.g.\& \&.com, \&.net...\&) thin registry servers
 for a domain, the program will automatically prepend the
 .I domain
 keyword to only show domain records.  The
@@ -231,7 +230,7 @@ When querying
 .I whois.denic.de
 for domain names and no other
 flags have been specified, the program will automatically add the flag
-.IR "-T dn" .
+.IR "\-T dn" .
 .P
 When querying
 .I whois.dk\-hostmaster.dk
