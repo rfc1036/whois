@@ -1,3 +1,20 @@
+whois (5.5.18) unstable; urgency=medium
+
+  [ Marco d'Itri ]
+  * Updated the .ga TLD server. (Closes: #1037288)
+  * Added new recovered IPv4 allocations.
+  * Removed the delegation of 43.0.0.0/8 to JPNIC.
+  * Removed 12 new gTLDs which are no longer active.
+  * Improved the man page source, courtesy of Bjarni Ingi Gislason.
+    (Closes: #1040613)
+
+  [ Robert Scheck ]
+  * Added the .edu.za SLD server.
+  * Updated the .alt.za SLD server.
+  * Added the -ru and -su NIC handles servers.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 22 Jul 2023 17:56:56 +0200
+
 whois (5.5.17) unstable; urgency=medium
 
   [ Robert Scheck ]
