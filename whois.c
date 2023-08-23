@@ -808,6 +808,23 @@ char *do_query(const int sock, const char *query)
 		*p = '\0';
 	}
 
+        /*APNIC referrals and Inter-RIR transfers:
+         * descr: Transferred to the RIPE region on 2023-08-17T09:45:47Z.
+         * descr: Transferred to the ARIN region on 2023-08-17T09:45:47Z.
+         */
+        if (!referral_server && strneq(buf, "descr:", 6)) {
+            if ((p = strstr(buf, "Transferred to the RIPE region")))
+                referral_server = "whois.ripe.net";
+            else if ((p = strstr(buf, "Transferred to the ARIN region")))
+                referral_server = "whois.arine.net";
+            else if ((p = strstr(buf, "Transferred to the LACNIC region")))
+                referral_server = "whois.lacnic.net";
+            else if ((p = strstr(buf, "Transferred to the AFRINIC region")))
+                referral_server = "whois.afrinic.net";
+            if (referral_server && (p = strpbrk(referral_server, "/\r\n")))
+                *p = '\0';
+        }
+
 	if (hide_line(&hide, buf))
 	    continue;
 
