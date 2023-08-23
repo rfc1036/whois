@@ -354,7 +354,7 @@
 .vu	whois.dnrs.vu
 .wf	whois.nic.wf
 .ws	whois.website.ws
-.ye	NONE		# NIC? http://www.y.net.ye/services/domain_name.htm
+.ye	whois.y.net.ye
 .yt	whois.nic.yt
 .ac.za	whois.ac.za
 .alt.za	WEB https://whois.alt.za/
