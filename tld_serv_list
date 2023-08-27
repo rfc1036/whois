@@ -140,7 +140,7 @@
 .dz	whois.nic.dz
 .ec	whois.nic.ec
 .ee	whois.tld.ee
-.eg	NONE		# http://lookup.egregistry.eg/english.aspx
+.eg	NONE		# https://domain.eg/
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
 .es	WEB https://www.nic.es/
