@@ -143,7 +143,7 @@
 .eg	NONE		# https://domain.eg/
 #.eh
 .er	NONE		# http://www.afridns.org/er/tld_er.txt
-.es	WEB https://www.nic.es/
+.es	WEB https://www.dominios.es/en
 .et	NONE	# http://www.ethionet.et/
 .eu	whois.eu
 .fi	whois.fi
