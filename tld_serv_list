@@ -260,7 +260,7 @@
 .co.pl	whois.co.pl	# "unofficial" SLD
 .pl	whois.dns.pl
 .pm	whois.nic.pm
-.pn	WEB http://www.pitcairn.pn/PnRegistry/
+.pn	WEB http://www.pitcairn.pn/PnRegistry/whois.html
 .pr	whois.afilias-srs.net
 .ps	whois.pnina.ps
 .pt	whois.dns.pt
