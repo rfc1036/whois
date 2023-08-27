@@ -90,7 +90,7 @@
 .gov.az	WEB https://www.gov.az/
 .az	WEB https://whois.az/
 .ba	WEB https://nic.ba/
-.bb	WEB http://whois.telecoms.gov.bb/search_domain.php
+.bb	WEB https://whois.telecoms.gov.bb/
 .bd	WEB https://bdia.btcl.com.bd/
 .be	whois.dns.be
 .bf	whois.registre.bf	# http://www.arcep.bf/noms-de-domaine/
