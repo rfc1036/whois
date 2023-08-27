@@ -224,7 +224,7 @@
 .ml	whois.dot.ml	# www.point.ml
 .mm	whois.registry.gov.mm
 .mn	whois.nic.mn
-.mo	WEB http://www.monic.mo/	# whois.monic.mo is restricted
+.mo	WEB https://www.monic.mo/monic/faces/whois	# whois.monic.mo is restricted
 .mp	NONE		# get.mp
 .mq	whois.mediaserv.net
 .mr	whois.nic.mr
