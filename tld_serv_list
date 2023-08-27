@@ -89,7 +89,7 @@
 .ax	whois.ax	# www.ax
 .gov.az	WEB https://www.gov.az/
 .az	WEB https://whois.az/
-.ba	WEB http://www.nic.ba/stream/whois/
+.ba	WEB https://nic.ba/
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
 .bd	WEB https://bdia.btcl.com.bd/
 .be	whois.dns.be
