@@ -88,7 +88,7 @@
 .aw	whois.nic.aw
 .ax	whois.ax	# www.ax
 .gov.az	WEB https://www.gov.az/
-.az	WEB http://whois.az/
+.az	WEB https://whois.az/
 .ba	WEB http://www.nic.ba/stream/whois/
 .bb	WEB http://whois.telecoms.gov.bb/search_domain.php
 .bd	WEB https://bdia.btcl.com.bd/
@@ -126,7 +126,7 @@
 .uk.co	whois.uk.co
 .co	whois.nic.co
 .cr	whois.nic.cr
-.cu	WEB http://www.nic.cu/
+.cu	WEB https://www.nic.cu/
 .cv	WEB http://www.dns.cv/
 .cw	NONE		# https://www.uoc.cw/cw-registry
 .cx	whois.nic.cx
@@ -169,7 +169,7 @@
 .gs	whois.nic.gs
 .gt	WEB http://www.gt/
 .gu	NONE
-.gw	WEB http://nic.gw/en/whois/
+.gw	WEB https://nic.gw/en/whois/
 .gy	whois.registry.gy
 .hk	whois.hkirc.hk
 .hm	whois.registry.hm
@@ -241,11 +241,11 @@
 .ne	NONE		# NIC? http://www.intnet.ne
 .nf	whois.nic.nf
 .ng	whois.nic.net.ng
-.ni	WEB http://www.nic.ni/
+.ni	WEB https://www.nic.ni/
 .nl	whois.domain-registry.nl
 .no	whois.norid.no
 .np	WEB https://register.com.np/whois-lookup
-.nr	WEB http://www.cenpac.net.nr/dns/whois.html
+.nr	WEB https://www.cenpac.net.nr/dns/whois.html
 .nu	whois.iis.nu
 .nz	whois.irs.net.nz
 .om	whois.registry.om
@@ -253,7 +253,7 @@
 .pe	kero.yachay.pe
 .pf	whois.registry.pf
 .pg	NONE	# http://www.unitech.ac.pg/
-.edu.ph	WEB http://services.ph.net/dns/query.pl
+.edu.ph	WEB https://services.ph.net/dns/query.pl
 .gov.ph	NONE	# http://dns.gov.ph/
 .ph	WEB https://whois.dot.ph/
 .pk	whois.pknic.net.pk
@@ -318,7 +318,7 @@
 .tn	whois.ati.tn
 .to	whois.tonic.to
 .tr	whois.trabis.gov.tr
-.tt	WEB http://www.nic.tt/cgi-bin/search.pl
+.tt	WEB https://www.nic.tt/cgi-bin/search.pl
 .tv	RECURSIVE whois.nic.tv
 .tw	whois.twnic.net.tw
 .tz	whois.tznic.or.tz
