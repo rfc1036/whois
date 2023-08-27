@@ -167,7 +167,7 @@
 .gq	whois.dominio.gq
 .gr	WEB https://grweb.ics.forth.gr/public/whois
 .gs	whois.nic.gs
-.gt	WEB http://www.gt/
+.gt	WEB https://www.gt/sitio/?lang=en
 .gu	NONE
 .gw	WEB https://nic.gw/en/whois/
 .gy	whois.registry.gy
