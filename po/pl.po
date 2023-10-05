@@ -1,14 +1,14 @@
 # Polish translation for whois.
 # Michał 'CeFeK' Nazarewicz <cefek@career.pl>, 1999
 # Przemysław Knycz <djrzulf@pld.org.pl>, 2003
-# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2019
+# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2023
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: whois 5.5.1\n"
+"Project-Id-Version: whois 5.5.18\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-03 17:52+0100\n"
-"PO-Revision-Date: 2019-08-28 18:02+0200\n"
+"PO-Revision-Date: 2023-10-05 21:30+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "Language: pl\n"
@@ -149,7 +149,7 @@ msgstr ""
 "-H                     ukrycie oświadczeń prawnych\n"
 
 #: ../whois.c:1506
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "      --verbose        explain what is being done\n"
 "      --no-recursion   disable recursion from registry to registrar servers\n"
@@ -158,6 +158,7 @@ msgid ""
 "\n"
 msgstr ""
 "      --verbose        wyjaśnianie, co się dzieje\n"
+"      --no-recursion   wyłączenie rekurencji z serwerów rejestru do rejestratorów\n"
 "      --help           wyświetlenie tego opisu i zakończenie działania\n"
 "      --version        wyświetlenie informacji o wersji i zakończenie "
 "działania\n"
