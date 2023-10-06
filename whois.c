@@ -499,7 +499,7 @@ const char *match_config_file(const char *s)
  */
 char *guess_server(const char *s)
 {
-    unsigned long ip, as32;
+    unsigned long ip;
     unsigned int i;
     const char *colon, *tld;
 
@@ -556,10 +556,6 @@ char *guess_server(const char *s)
 	else
 	    return strdup("\x05"); /* probably a unknown kind of nic handle */
     }
-
-    /* ASN32? */
-    if (strncaseeq(s, "as", 2) && s[2] && (as32 = asn32_to_long(s + 2)) != 0)
-	return strdup(whereas32(as32));
 
     /* smells like an IP? */
     if ((ip = myinet_aton(s))) {
@@ -1474,20 +1470,6 @@ unsigned long myinet_aton(const char *s)
     if (a > 255 || b > 255 || c > 255 || d > 255)
 	return 0;
     return (a << 24) + (b << 16) + (c << 8) + d;
-}
-
-unsigned long asn32_to_long(const char *s)
-{
-    unsigned long a, b;
-    char junk;
-
-    if (!s)
-	return 0;
-    if (sscanf(s, "%lu.%lu%c", &a, &b, &junk) != 2)
-	return 0;
-    if (a > 65535 || b > 65535)
-	return 0;
-    return (a << 16) + b;
 }
 
 int isasciidigit(const char c)
