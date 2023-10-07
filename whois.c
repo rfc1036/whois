@@ -599,26 +599,19 @@ char *guess_server(const char *s)
     return strdup("\x05");
 }
 
-const char *whereas32(const unsigned long asn)
-{
-    int i;
-
-    for (i = 0; as32_assign[i].serv; i++)
-	if (asn >= as32_assign[i].first && asn <= as32_assign[i].last)
-	    return as32_assign[i].serv;
-    return "\x06";
-}
-
 const char *whereas(const unsigned long asn)
 {
     int i;
 
-    if (asn > 65535)
-	return whereas32(asn);
-
-    for (i = 0; as_assign[i].serv; i++)
-	if (asn >= as_assign[i].first && asn <= as_assign[i].last)
-	    return as_assign[i].serv;
+    if (asn > 65535) {
+	for (i = 0; as32_assign[i].serv; i++)
+	    if (asn >= as32_assign[i].first && asn <= as32_assign[i].last)
+		return as32_assign[i].serv;
+    } else {
+	for (i = 0; as_assign[i].serv; i++)
+	    if (asn >= as_assign[i].first && asn <= as_assign[i].last)
+		return as_assign[i].serv;
+    }
     return "\x06";
 }
 
