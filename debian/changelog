@@ -1,3 +1,18 @@
+whois (5.5.19) unstable; urgency=medium
+
+  * Fixed english support for Japanese queries to not add again the /e
+    argument if it had already been provided by the user. (Closes: #1050171)
+  * Added the .ye and .বাংলা (.xn--54b7fta0cc, Bangladesh) TLD servers.
+  * Updated the .ba, .bb, .dk, .es, .gt, .jo, .ml, .mo, .pa, .pn, .sv,
+    .uy, .ﺍﻻﺭﺪﻧ (.xn--mgbayh7gpa, Jordan) and .澳門 (.xn--mix891f, Macao)
+    TLD servers.
+  * Upgraded the TLD URLs to HTTPS whenever possible.
+  * Updated the charset for whois.jprs.jp.
+  * Removed 3 new gTLDs which are no longer active.
+  * Removed support for the obsolete as32 dot notation.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 08 Oct 2023 22:58:33 +0200
+
 whois (5.5.18) unstable; urgency=medium
 
   [ Marco d'Itri ]
