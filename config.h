@@ -14,7 +14,7 @@
 
 
 /* autoconf in cpp macros */
-#if defined __NetBSD__ || __OpenBSD__
+#if defined __NetBSD__ || defined __OpenBSD__
 # include <sys/param.h>
 #endif
 
