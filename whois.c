@@ -494,6 +494,46 @@ const char *match_config_file(const char *s)
 }
 #endif
 
+/*
+ * Check if the argument is an autonomous system number in the form "ASnnnn"
+ * or "AS nnnn".
+ */
+int is_asn(const char *s, int allow_space, const char *suffix_separators)
+{
+    const char *p;
+    int max_numbers = 6;
+    int seen_number = 0;
+
+    if (!strncaseeq(s, "as", 2))
+	return 0;	 /* does not start with "as" (case insensitive) */
+
+    /* skip a single optional space */
+    p = s + 2;
+    if (allow_space && *p == ' ')
+	p++;
+
+    /* all numbers, but not too many */
+    while (*p) {
+	if (*p < '0' || *p > '9') {	/* not a number */
+	    if (!seen_number)
+		return 0;		/* just "as" with no numbers */
+	    if (suffix_separators && strchr(suffix_separators, *p))
+		return 1;		/* has a trailing separator */
+	    return 0;			/* has trailing garbage */
+	}
+
+	seen_number = 1;
+	if (max_numbers-- == 0)
+	    return 0;			/* too many numbers */
+	p++;
+    }
+
+    if (seen_number)
+	return 1;			/* a real ASN */
+    else
+	return 0;			/* trailing garbage */
+}
+
 /* Parses an user-supplied string and tries to guess the right whois server.
  * Returns a dynamically allocated buffer.
  */
@@ -508,12 +548,8 @@ char *guess_server(const char *s)
 	unsigned long v6prefix, v6net;
 
 	/* RPSL hierarchical objects */
-	if (strncaseeq(s, "as", 2)) {
-	    if (isasciidigit(s[2]))
-		return strdup(whereas(atol(s + 2)));
-	    else
-		return strdup("");
-	}
+	if (is_asn(s, 0, ":"))
+	    return strdup(whereas(atol(s + 2)));
 
 	v6prefix = strtol(s, NULL, 16);
 
@@ -548,9 +584,8 @@ char *guess_server(const char *s)
 
     /* no dot and no hyphen means it's a NSI NIC handle or ASN (?) */
     if (!strpbrk(s, ".-")) {
-	if (strncaseeq(s, "as", 2) &&		/* it's an AS */
-		(isasciidigit(s[2]) || s[2] == ' '))
-	    return strdup(whereas(atol(s + 2)));
+	if (is_asn(s, 1, NULL))
+	    return strdup(whereas(atol(s + 2))); /* it's an AS */
 	if (*s == '!')	/* NSI NIC handle */
 	    return strdup("whois.networksolutions.com");
 	else
@@ -684,13 +719,13 @@ char *queryformat(const char *server, const char *flags, const char *query)
 
     /* mangle and add the query string */
     if (!isripe && streq(server, "whois.nic.ad.jp") &&
-	    strncaseeq(query, "AS", 2) && isasciidigit(query[2])) {
+	    is_asn(query, 1, NULL)) {
 	strcat(buf, "AS ");
 	strcat(buf, query + 2);
     }
     else if (!isripe && streq(server, "whois.arin.net") &&
 	    !strrchr(query, ' ')) {
-	if (strncaseeq(query, "AS", 2) && isasciidigit(query[2])) {
+	if (is_asn(query, 0, NULL)) {
 	    strcat(buf, "a ");
 	    strcat(buf, query + 2);
 	} else if (myinet_aton(query) || strchr(query, ':')) {

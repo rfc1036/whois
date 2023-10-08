@@ -9,6 +9,7 @@
 #define HIDE_NOT_STARTED -1
 
 /* prototypes */
+int is_asn(const char *, int, const char *);
 char *guess_server(const char *);
 const char *match_config_file(const char *);
 const char *whereas(const unsigned long);
