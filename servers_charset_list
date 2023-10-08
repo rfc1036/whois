@@ -37,7 +37,7 @@ whois.nic.hu		iso-8859-1
 whois.nic.ir		utf-8
 whois.isnic.is		iso-8859-1
 whois.nic.it		utf-8
-whois.jprs.jp		iso-2022-jp
+whois.jprs.jp		utf-8
 whois.nic.ad.jp		iso-2022-jp
 whois.kg		cp1251
 whois.nic.or.kr		utf-8
