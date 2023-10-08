@@ -17,8 +17,12 @@
 /* Portability macros */
 #ifdef __GNUC__
 # define NORETURN __attribute__((noreturn))
+# define MALLOC_FREE __attribute__((malloc(free)))
+# define NONNULL __attribute__((returns_nonnull))
 #else
 # define NORETURN
+# define MALLOC_FREE
+# define NONNULL
 #endif
 
 #ifndef AI_IDN
@@ -55,7 +59,8 @@
 #endif
 
 /* Prototypes */
-void *do_nofail(void *ptr, const char *file, const int line);
+void *MALLOC_FREE NONNULL do_nofail(void *ptr, const char *file, const int line)
+;
 char **merge_args(char *args, char *argv[], int *argc);
 
 void NORETURN err_quit(const char *fmt, ...);
