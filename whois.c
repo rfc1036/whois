@@ -742,8 +742,12 @@ char *queryformat(const char *server, const char *flags, const char *query)
 
     /* ask for english text */
     if (!isripe && (streq(server, "whois.nic.ad.jp") ||
-	    streq(server, "whois.jprs.jp")) && japanese_locale())
-	strcat(buf, "/e");
+	    streq(server, "whois.jprs.jp")) && japanese_locale()) {
+	/* but not if the user already added the /e flag */
+	char *flag = buf + strlen(buf) - 2;
+	if (!streq(flag, "/e"))
+	    strcat(buf, "/e");
+    }
 
     return buf;
 }
