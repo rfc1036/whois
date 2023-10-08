@@ -273,6 +273,7 @@ int main(int argc, char *argv[])
 
     if (!salt_prefix) {
 	/* NULL means that crypt_gensalt will choose one later */
+	rounds_str[0] = '\0';
     } else if (rounds_support == 2) {
 	/* bcrypt strings always contain the rounds number */
 	if (rounds <= 5)
@@ -325,6 +326,8 @@ int main(int argc, char *argv[])
 	 * Build the actual argument to crypt(3) by concatenating the
 	 * method prefix, the rounds metadata (if any) and the salt string.
 	 */
+	if (!salt_prefix)
+	    salt_prefix = "";
 	salt = NOFAIL(malloc(strlen(salt_prefix) + strlen(rounds_str)
 		+ strlen(salt_arg) + 1));
 	*salt = '\0';
