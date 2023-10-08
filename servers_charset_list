@@ -25,6 +25,7 @@ whois.nic.cz		utf-8
 whois.denic.de		utf-8
 whois.enum.denic.de	utf-8
 whois.dk-hostmaster.dk	utf-8		--charset=utf-8
+whois.punktum.dk	utf-8		--charset=utf-8
 whois.tld.ee		utf-8
 whois.eu		utf-8
 whois.fi		iso-8859-1

@@ -688,7 +688,9 @@ char *queryformat(const char *server, const char *flags, const char *query)
     else if (strchr(query, ' ') || *flags) { }
     else if (streq(server, "whois.denic.de") && in_domain(query, "de"))
 	strcat(buf, "-T dn" DENIC_PARAM_ACE DENIC_PARAM_CHARSET " ");
-    else if (streq(server, "whois.dk-hostmaster.dk") && in_domain(query, "dk"))
+    else if ((streq(server, "whois.punktum.dk") ||
+		streq(server, "whois.dk-hostmaster.dk"))
+	    && in_domain(query, "dk"))
 	strcat(buf, "--show-handles ");
 
     /* mangle and add the query string */
