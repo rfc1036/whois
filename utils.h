@@ -15,7 +15,11 @@
 #endif
 
 /* Portability macros */
-#ifdef __GNUC__
+#ifdef __clang__
+# define NORETURN __attribute__((noreturn))
+# define MALLOC_FREE __attribute__((malloc))
+# define NONNULL __attribute__((returns_nonnull))
+#elif __GNUC__
 # define NORETURN __attribute__((noreturn))
 # define MALLOC_FREE __attribute__((malloc(free)))
 # define NONNULL __attribute__((returns_nonnull))
