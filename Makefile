@@ -94,9 +94,6 @@ version.h: debian/changelog make_version_h.pl
 as_del.h: as_del_list make_as_del.pl
 	$(PERL) make_as_del.pl < $< > $@
 
-as32_del.h: as32_del_list make_as32_del.pl
-	$(PERL) make_as32_del.pl < $< > $@
-
 ip_del.h: ip_del_list make_ip_del.pl
 	$(PERL) make_ip_del.pl < $< > $@
 
@@ -152,7 +149,7 @@ distclean: clean
 	rm -f version.h po/whois.pot
 
 clean:
-	rm -f Makefile.depend as_del.h as32_del.h ip_del.h ip6_del.h \
+	rm -f Makefile.depend as_del.h ip_del.h ip6_del.h \
 		nic_handles.h new_gtlds.h tld_serv.h servers_charset.h \
 		*.o whois mkpasswd
 	rm -f po/*.mo

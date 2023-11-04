@@ -12,18 +12,22 @@ while (<>) {
 	s/^\s+//; s/\s+$//;
 	next if /^$/;
 
-	die "format error: $_" if not (/^([\d\.]+)\s+([\d\.]+)\s+([\w\.]+)$/);
-	my $f = $1; my $l = $2; my $s = $3;
+	my ($fh, $fl, $lh, $ll, $s, $f, $l);
+	my $comment = '';
+	if (($fh, $fl, $lh, $ll, $s) =
+			/^(\d+)\.(\d+)\s+(\d+)\.(\d+)\s+([\w\.-]+)$/) {
+		$f = ($fh << 16) + $fl;
+		$l = ($lh << 16) + $ll;
+		$comment = qq|\t/* $fh.$fl $lh.$ll */|;
+	} elsif (($f, $l, $s) = /^(\d+)\s+(\d+)\s+([\w\.-]+)$/) {
+	} else {
+		die "format error: $_";
+	}
 
 	die "constraint violated: $l < $last_l" if $l < $last_l;
 	$last_l = $l;
 
-	print "{ ${f}, ${l}, \"";
-	if ($s =~ /\./) {
-		print "$s";
-	} else {
-		print "whois.$s.net";
-	}
-	print qq(" },\n);
+	my $server = ($s =~ /\./) ? $s : "whois.$s.net";
+	print qq|{ ${f}u, ${l}u,\t"$server" },$comment\n|;
 }
 

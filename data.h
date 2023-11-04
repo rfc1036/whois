@@ -118,24 +118,13 @@ const struct ip6_del ip6_assign[] = {
 };
 
 struct as_del {
-    const unsigned short first;
-    const unsigned short last;
+    const unsigned long first;
+    const unsigned long last;
     const char          *serv;
 };
 
 const struct as_del as_assign[] = {
 #include "as_del.h"
-    { 0, 0, NULL }
-};
-
-struct as32_del {
-    const unsigned long first;
-    const unsigned long last;
-    const char         *serv;
-};
-
-const struct as32_del as32_assign[] = {
-#include "as32_del.h"
     { 0, 0, NULL }
 };
 
