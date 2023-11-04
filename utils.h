@@ -18,9 +18,11 @@
 #ifdef __GNUC__
 # define NORETURN __attribute__((noreturn))
 # define NONNULL __attribute__((returns_nonnull))
+# define UNUSED __attribute__((unused))
 #else
 # define NORETURN
 # define NONNULL
+# define UNUSED
 #endif
 #if defined __GNUC__ && !defined __clang__
 # define MALLOC_FREE __attribute__((malloc(free)))

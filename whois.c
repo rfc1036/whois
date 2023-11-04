@@ -1145,7 +1145,7 @@ int connect_with_timeout(int fd, const struct sockaddr *addr,
     return 0;
 }
 
-void NORETURN alarm_handler(int signum)
+void NORETURN alarm_handler(UNUSED int signum)
 {
     close(sockfd);
     err_quit(_("Timeout."));
