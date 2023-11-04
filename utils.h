@@ -17,12 +17,15 @@
 /* Portability macros */
 #ifdef __GNUC__
 # define NORETURN __attribute__((noreturn))
-# define MALLOC_FREE __attribute__((malloc(free)))
 # define NONNULL __attribute__((returns_nonnull))
 #else
 # define NORETURN
-# define MALLOC_FREE
 # define NONNULL
+#endif
+#if defined __GNUC__ && !defined __clang__
+# define MALLOC_FREE __attribute__((malloc(free)))
+#else
+# define MALLOC_FREE
 #endif
 
 #ifndef AI_IDN
