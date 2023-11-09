@@ -72,6 +72,7 @@
 
 /* Unknown versions of Solaris */
 #if defined __SVR4 && defined __sun
+# define HAVE_GETOPT_LONG
 # define HAVE_SHA_CRYPT
 # define HAVE_CRYPT_H
 # define HAVE_SOLARIS_CRYPT_GENSALT
