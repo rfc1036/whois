@@ -1,3 +1,11 @@
+whois (5.5.20) unstable; urgency=medium
+
+  * Added the .gn TLD server.
+  * Removed 6 new gTLDs which are no longer active.
+  * Enabled getopt_long(3) support on Solaris.
+
+ -- Marco d'Itri <md@linux.it>  Fri, 10 Nov 2023 15:26:02 +0100
+
 whois (5.5.19) unstable; urgency=medium
 
   * Fixed english support for Japanese queries to not add again the /e
