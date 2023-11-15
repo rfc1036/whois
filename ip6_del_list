@@ -1,4 +1,4 @@
-# http://www.iana.org/assignments/ipv6-unicast-address-assignments
+# https://www.iana.org/assignments/ipv6-unicast-address-assignments
 # The parser is very simple-minded and wants the two first components of
 # addresses. It does not deal with networks == 0 or > 24 bit.
 

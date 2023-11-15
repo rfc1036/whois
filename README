@@ -13,14 +13,13 @@ program, which can be used to encrypt a password with crypt(3).
 
 
 The canonical distribution point for releases of the program is
-http://ftp.debian.org/debian/pool/main/w/whois/ .
+https://ftp.debian.org/debian/pool/main/w/whois/ .
 
 
 Useful information sources:
-- http://www.ripe.net/ripe/docs/current-ripe-documents/ripe-database-documents
-- http://www.iana.org/domains/root/db/
-- http://www.icann.org/en/resources/idn/fast-track/string-evaluation-completion
-- http://www.aftld.org/
+- https://www.ripe.net/ripe/docs/current-ripe-documents/ripe-database-documents
+- https://www.iana.org/domains/root/db/
+- https://www.icann.org/en/resources/idn/fast-track/string-evaluation-completion
+- https://www.aftld.org/
 
 Marco d'Itri <md@linux.it>
-

@@ -4,7 +4,7 @@
 # unless they are very big and contains multiple assignments to different
 # customers documented in the whois database.
 #
-# http://www.iana.org/assignments/ipv4-address-space
+# https://www.iana.org/assignments/ipv4-address-space
 #
 0.0.0.0/8	UNKNOWN
 1.0.0.0/8	apnic
