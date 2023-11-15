@@ -1503,7 +1503,7 @@ int isasciidigit(const char c)
     return (c >= '0' && c <= '9') ? 1 : 0;
 }
 
-/* http://www.ripe.net/ripe/docs/databaseref-manual.html */
+/* https://www.ripe.net/ripe/docs/databaseref-manual.html */
 
 void NORETURN usage(int error)
 {

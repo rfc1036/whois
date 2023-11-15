@@ -20,13 +20,13 @@
 # los siguientes documentos:
 #
 #   - El proyecto de traducción de Debian al español
-#     http://www.debian.org/intl/spanish/
+#     https://www.debian.org/intl/spanish/
 #     especialmente las notas y normas de traducción en
-#     http://www.debian.org/intl/spanish/notas
+#     https://www.debian.org/intl/spanish/notas
 #
 #   - La guía de traducción de po's de debconf:
 #     /usr/share/doc/po-debconf/README-trans
-#     o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#     o https://www.debian.org/intl/l10n/po-debconf/README-trans
 #
 msgid ""
 msgstr ""
