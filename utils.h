@@ -24,7 +24,7 @@
 # define NONNULL
 # define UNUSED
 #endif
-#if defined __GNUC__ && !defined __clang__
+#if (defined __GNUC__ && __GNUC__ >= 11) && !defined __clang__
 # define MALLOC_FREE __attribute__((malloc(free)))
 #else
 # define MALLOC_FREE
