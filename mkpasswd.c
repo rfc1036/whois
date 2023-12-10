@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2021 Marco d'Itri <md@linux.it>.
+ * Copyright (C) Marco d'Itri <md@linux.it>.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -542,7 +542,7 @@ void NORETURN display_help(int error)
 void display_version(void)
 {
     printf("mkpasswd %s\n\n", VERSION);
-    puts("Copyright (C) 2001-2021 Marco d'Itri\n"
+    puts("Copyright (C) Marco d'Itri\n"
 "This is free software; see the source for copying conditions.  There is NO\n"
 "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.");
 }

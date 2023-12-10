@@ -1,5 +1,5 @@
 /*
- * Copyright 2009 by Marco d'Itri <md@linux.it>.
+ * Copyright (C) by Marco d'Itri <md@linux.it>.
  *
  * simple_recode was inspired by a similar function found in Simon
  * Josefsson's libidn.

@@ -1,9 +1,9 @@
 /*
- * Copyright 1999-2008 by Marco d'Itri <md@linux.it>.
+ * Copyright by Marco d'Itri <md@linux.it>.
  *
  * do_nofail and merge_args come from the module-init-tools package.
- * Copyright 2001 by Rusty Russell.
- * Copyright 2002, 2003 by Rusty Russell, IBM Corporation.
+ * Copyright by Rusty Russell.
+ * Copyright by Rusty Russell, IBM Corporation.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
