@@ -409,7 +409,7 @@ int handle_query(const char *hserver, const char *hport,
     }
 
     sockfd = openconn(server, port);
-
+    free(server);
     server = do_query(sockfd, query_string);
     free(query_string);
 
