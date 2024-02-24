@@ -424,6 +424,7 @@ int main(int argc, char *argv[])
  */
 inline void *get_random_bytes(const unsigned int count)
 {
+    (void)(count); /* suppress the "unused parameter" warning */
     return NULL;
 }
 
