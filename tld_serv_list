@@ -109,6 +109,7 @@
 .bv	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .by	whois.cctld.by
 .bw	whois.nic.net.bw
+.za.bz	whois.centralnic.net	# "unofficial" SLD
 .bz	RECURSIVE whois.afilias-grs.info
 .co.ca	whois.co.ca
 .ca	whois.cira.ca
