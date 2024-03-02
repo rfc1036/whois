@@ -10,26 +10,25 @@
 .de.com	whois.centralnic.net
 .eu.com	whois.centralnic.net
 .gb.com	whois.centralnic.net
-.gb.net	whois.centralnic.net
 .gr.com	whois.centralnic.net
 .hu.com	whois.centralnic.net
-.in.net	whois.centralnic.net
 .no.com	whois.centralnic.net
 .qc.com	whois.centralnic.net
 .ru.com	whois.centralnic.net
 .sa.com	whois.centralnic.net
 .se.com	whois.centralnic.net
-.se.net	whois.centralnic.net
 .uk.com	whois.centralnic.net
-.uk.net	whois.centralnic.net
 .us.com	whois.centralnic.net
 .uy.com	whois.centralnic.net
 .za.com	whois.centralnic.net
 .jpn.com whois.centralnic.net
 .web.com whois.centralnic.net
-
 .com	VERISIGN whois.verisign-grs.com
 
+.gb.net	whois.centralnic.net
+.in.net	whois.centralnic.net
+.se.net	whois.centralnic.net
+.uk.net	whois.centralnic.net
 .za.net	whois.za.net
 .net	VERISIGN whois.verisign-grs.com
 
