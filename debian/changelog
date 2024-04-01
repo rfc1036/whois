@@ -1,3 +1,11 @@
+whois (5.5.22) unstable; urgency=medium
+
+  * Fixed a segmentation fault with --no-recursion.
+  * Updated the .bm and .vi TLD servers.
+  * Removed 4 new gTLDs which are no longer active.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 01 Apr 2024 20:14:41 +0200
+
 whois (5.5.21) unstable; urgency=medium
 
   * Updated the .cv and .sd TLD servers.
