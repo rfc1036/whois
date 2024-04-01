@@ -347,7 +347,7 @@ int handle_query(const char *hserver, const char *hport,
 	    sockfd = openconn(server + 1, NULL);
 	    free(server);
 	    server = query_crsnic(sockfd, query);
-	    if (no_recursion)
+	    if (no_recursion && server)
 		server[0] = '\0';
 	    break;
 	case 8:
@@ -356,7 +356,7 @@ int handle_query(const char *hserver, const char *hport,
 	    sockfd = openconn(server + 1, NULL);
 	    free(server);
 	    server = query_afilias(sockfd, query);
-	    if (no_recursion)
+	    if (no_recursion && server)
 		server[0] = '\0';
 	    break;
 	case 0x0A:
