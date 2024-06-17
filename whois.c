@@ -801,6 +801,8 @@ char *do_query(const int sock, const char *query)
     strcat(temp, "\r\n");
 
     fi = fdopen(sock, "r");
+    if (!fi)
+	err_sys("fdopen");
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
     free(temp);
@@ -875,6 +877,8 @@ char *query_crsnic(const int sock, const char *query)
     strcat(temp, "\r\n");
 
     fi = fdopen(sock, "r");
+    if (!fi)
+	err_sys("fdopen");
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
     free(temp);
@@ -928,6 +932,8 @@ char *query_afilias(const int sock, const char *query)
     strcat(temp, "\r\n");
 
     fi = fdopen(sock, "r");
+    if (!fi)
+	err_sys("fdopen");
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
     free(temp);
@@ -980,6 +986,8 @@ char *query_iana(const int sock, const char *query)
     strcat(temp, "\r\n");
 
     fi = fdopen(sock, "r");
+    if (!fi)
+	err_sys("fdopen");
     if (write(sock, temp, strlen(temp)) < 0)
 	err_sys("write");
     free(temp);
