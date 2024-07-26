@@ -1,0 +1,10 @@
+[*]
+tab_width = 8
+
+[*.{c,h}]
+indent_style = tab
+indent_size = 4
+
+[*.{pl,bash}]
+indent_style = tab
+indent_size = 8

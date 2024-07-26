@@ -63,6 +63,7 @@ static const struct option longopts[] = {
     {"stdin",		no_argument,		NULL, 's'},
     {"salt",		required_argument,	NULL, 'S'},
     {"rounds",		required_argument,	NULL, 'R'},
+    {"prompts",		required_argument,	NULL, 'p'},
     {"version",		no_argument,		NULL, 'V'},
     {NULL,		0,			NULL, 0  }
 };
@@ -161,6 +162,7 @@ int main(int argc, char *argv[])
     const char *salt_prefix = NULL;
     const char *salt_arg = NULL;
     unsigned int rounds = 0;
+    unsigned int prompts = 1;
     char *salt = NULL;
     char rounds_str[30];
     char *password = NULL;
@@ -174,7 +176,7 @@ int main(int argc, char *argv[])
     /* prepend options from environment */
     argv = merge_args(getenv("MKPASSWD_OPTIONS"), argv, &argc);
 
-    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:5P:R:sS:V", longopts, NULL))
+    while ((ch = GETOPT_LONGISH(argc, argv, "hH:m:5p:P:R:sS:V", longopts, NULL))
 	    > 0) {
 	switch (ch) {
 	case '5':
@@ -208,6 +210,19 @@ int main(int argc, char *argv[])
 	    if (!salt_prefix) {
 		fprintf(stderr, _("Invalid method '%s'.\n"), optarg);
 		exit(1);
+	    }
+	    break;
+	case 'p':
+	    {
+		char *p;
+		long r;
+
+		r = strtol(optarg, &p, 10);
+		if (p == NULL || *p != '\0' || r < 0) {
+		    fprintf(stderr, _("Invalid number '%s'.\n"), optarg);
+		    exit(1);
+		}
+		prompts = r;
 	    }
 	    break;
 	case 'P':
@@ -255,9 +270,11 @@ int main(int argc, char *argv[])
 
     if (argc == 2 && !salt_arg) {
 	password = argv[0];
+	prompts = prompts > 0 ? prompts - 1 : prompts;
 	salt_arg = argv[1];
     } else if (argc == 1) {
 	password = argv[0];
+	prompts = prompts > 0 ? prompts - 1 : prompts;
     } else if (argc == 0) {
     } else {
 	display_help(EXIT_FAILURE);
@@ -370,27 +387,37 @@ int main(int argc, char *argv[])
     }
 
     if (password) {
-    } else if (password_fd != -1) {
-	FILE *fp;
-
-	if (isatty(password_fd))
-	    fprintf(stderr, _("Password: "));
-	fp = fdopen(password_fd, "r");
-	if (!fp) {
-	    perror("fdopen");
-	    exit(2);
-	}
-
-	password = read_line(fp);
-	if (!password) {
-	    perror("fgetc");
-	    exit(2);
-	}
     } else {
-	password = getpass(_("Password: "));
-	if (!password) {
-	    perror("getpass");
-	    exit(2);
+	FILE *fp = NULL;
+	if (password_fd != -1) {
+	    if (isatty(password_fd))
+		fprintf(stderr, _("Password: "));
+	    fp = fdopen(password_fd, "r");
+	    if (!fp) {
+		perror("fdopen");
+		exit(2);
+	    }
+	}
+
+	for (size_t prompt_no = 0; prompt_no < prompts; prompt_no++) {
+	    /* getpass will reuse the same buffer, so need to reallocate
+	       for multiple prompts */
+	    if (!fp && prompt_no == 1) {
+		password = NOFAIL(strdup(password));
+	    }
+	    char * password_n = fp
+		? read_line(fp)
+		: getpass(_("Password: "));
+	    if (!password_n) {
+		perror("fgetc");
+		exit(2);
+	    }
+	    if (!password) {
+		password = password_n;
+	    } else if (!streq(password_n, password)) {
+		fprintf(stderr, _("Password did not match.\n"));
+		exit(2);
+	    }
 	}
     }
 
@@ -527,6 +554,10 @@ void NORETURN display_help(int error)
 "      -P, --password-fd=NUM read the password from file descriptor NUM\n"
 "                            instead of /dev/tty\n"
 "      -s, --stdin           like --password-fd=0\n"
+    ));
+    fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
+"      -p  --prompts=NUMBER  prompt NUMBER of times for password.\n"
+"                            Useful to guard against typos.\n"
     ));
     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
 "      -h, --help            display this help and exit\n"
