@@ -261,7 +261,7 @@
 .pl	whois.dns.pl
 .pm	whois.nic.pm
 .pn	WEB http://www.pitcairn.pn/PnRegistry/whois.html
-.pr	whois.afilias-srs.net
+.pr	whois.nic.pr # identity digital
 .ps	whois.pnina.ps
 .pt	whois.dns.pt
 .pw	whois.nic.pw
