@@ -221,7 +221,7 @@
 .mg	whois.nic.mg
 .mh	NONE		# www.nic.net.mh
 .mk	whois.marnet.mk
-.ml	whois.nic.ml
+.ml	registre.nic.ml
 .mm	whois.registry.gov.mm
 .mn	whois.nic.mn
 .mo	WEB https://www.monic.mo/monic/faces/whois	# whois.monic.mo is restricted
