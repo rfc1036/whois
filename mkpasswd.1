@@ -12,28 +12,28 @@ encrypts the given password with the
 libc function, using the given salt.
 .SH OPTIONS
 .TP
-.BR \-S ", "\c
-.BI \-\-salt= STRING
+.BR \-S " STRING\fR, \fP" \-\-salt= \fISTRING\fP
 Use the
 .I STRING
-as salt. If it begins with
+as salt.
+If it begins with
 .I $
 then it will be passed straight to
 .BR crypt (3)
 without any checks.
 .TP
-.BR \-R ", "\c
-.BI \-\-rounds= NUMBER
+.BR \-R " NUMBER\fR, \fP" \-\-rounds= \fINUMBER\fP
 Use
 .I NUMBER
-rounds. This argument is ignored if the method chosen
-does not support variable rounds. For the OpenBSD Blowfish method this is
+rounds.
+This argument is ignored if the method chosen
+does not support variable rounds.
+For the OpenBSD Blowfish method this is
 the logarithm of the number of rounds.
 The behavior is undefined if this option is used without
 .IR \-\-method .
 .TP
-.BR \-m ", "\c
-.BI \-\-method= TYPE
+.BR \-m " TYPE\fR, \fP" \-\-method= \fITYPE\fP
 Compute the password using the
 .I TYPE
 method.
@@ -47,20 +47,18 @@ If
 begins and end with
 .I $
 characters then the string is passed to
-.IR crypt_gensalt (3)
+.BR crypt_gensalt (3)
 as-is.
 .TP
-.B -5
+.B \-5
 Like
 .IR \-\-method=md5crypt .
 .TP
-.B \-P \c
-.IR NUM ", "\c
-.BI \-\-password-fd= NUM
+.BI \-P " NUM\fR, \fP" \-\-password-fd= NUM
 Read the password from file descriptor
 .I NUM
 instead of using
-.IR getpass (3).
+.BR getpass (3).
 If the file descriptor is not connected to a tty then no other text
 than the hashed password is printed on stdout.
 .TP
@@ -79,16 +77,16 @@ characters may not be read correctly.
 .P
 This program suffers of a bad case of featuritis.
 .SH "SEE ALSO"
-.IR passwd (1),
-.IR passwd (5),
-.IR crypt (3),
-.IR crypt (5),
-.IR crypt_gensalt (3),
-.IR getpass (3).
+.BR passwd (1),
+.BR passwd (5),
+.BR crypt (3),
+.BR crypt (5),
+.BR crypt_gensalt (3),
+.BR getpass (3).
 .SH AUTHOR
 .B mkpasswd
 and this man page were written by Marco d'Itri
 .RI < md@linux.it >
 and are licensed under the terms of the GNU General Public License,
 version 2 or later.
-\" SPDX-License-Identifier: GPL-2.0-or-later
+.\" SPDX-License-Identifier: GPL-2.0-or-later

@@ -9,18 +9,16 @@ whois \- client for the whois directory service
 ] [
 .RB {\~ \-p \~|\~ \-\-port \~}
 .I PORT
-] [\~\c
-.B \-abBcdGHIKlLmMrRx
-] [\~\c
-.BI \-g \~SOURCE:FIRST\-LAST
-] [\~\c
-.BR \-i \~
+]
+.RB [\~ \-abBcdGHIKlLmMrRx
+]
+.RB [\~ \-g \fI\~SOURCE:FIRST\-LAST\fR
+]
+.RB [\~ \-i
 .IR ATTR [, ATTR ]...\~]
-[\~\c
-.BR \-s \~
+.RB [\~ \-s
 .IR SOURCE [, SOURCE ]...\~]
-[\~\c
-.BR \-T \~
+.RB [\~ \-T
 .IR TYPE [, TYPE ]...\~]
 .RB [\~ \-\-verbose \~]
 .RB [\~ \-\-no\-recursion \~]
@@ -49,14 +47,15 @@ searches for an object in a
 database.
 .P
 This version of the whois client tries to guess the right server to
-ask for the specified object. If no guess can be made it will connect to
+ask for the specified object.
+If no guess can be made it will connect to
 .I whois.networksolutions.com
 for NIC handles or
 .I whois.arin.net
 for IPv4 addresses and network names.
 .SH OPTIONS
 .TP 8
-.B \-h \c
+.B \-h
 .IR HOST ,
 .BI \-\-host= HOST
 Connect to
@@ -65,7 +64,7 @@ Connect to
 .B \-H
 Do not display the legal disclaimers that some registries like to show you.
 .TP 8
-.B \-p \c
+.B \-p
 .IR PORT ,
 .BI \-\-port= PORT
 Connect to
@@ -75,7 +74,8 @@ Connect to
 First query
 .I whois.iana.org
 and then follow its referral to the
-whois server authoritative for that request. This works for IP addresses,
+whois server authoritative for that request.
+This works for IP addresses,
 AS numbers and domains.
 .BR BEWARE :
 this implies that the IANA server will receive your complete query.
@@ -113,7 +113,7 @@ Return the smallest IP address range with a reference to an irt object.
 .B \-d
 Return the reverse DNS delegation object too.
 .TP 8
-.B \-g \c
+.B \-g
 .I SOURCE:FIRST\-LAST
 Search updates from
 .I SOURCE
@@ -121,12 +121,13 @@ database between
 .I FIRST
 and
 .I LAST
-update serial number. It is useful to obtain Near Real Time Mirroring stream.
+update serial number.
+It is useful to obtain Near Real Time Mirroring stream.
 .TP 8
 .B \-G
 Disable grouping of associated objects.
 .TP 8
-.B \-i \c
+.B \-i
 .IR ATTR [, ATTR ]...
 Inverse-search objects having associated attributes.
 .I ATTR
@@ -135,11 +136,13 @@ is the attribute name, while the positional
 argument is the attribute value.
 .TP 8
 .B \-K
-Return primary key attributes only. An exception is the
+Return primary key attributes only.
+An exception is the
 .I members
 attribute of
 .I set
-objects, which is always returned. Another exception are all
+objects, which is always returned.
+Another exception are all
 attributes of the objects
 .IR organisation ,
 .I person
@@ -159,7 +162,7 @@ Return all one level more specific objects.
 .B \-M
 Return all levels of more specific objects.
 .TP 8
-.B \-q \c
+.B \-q
 .I KEYWORD
 Return information about the server.
 .I KEYWORD
@@ -178,7 +181,7 @@ Disable recursive lookups for contact information.
 Disable following referrals and force showing the object from the local copy
 in the server.
 .TP 8
-.B \-s \c
+.B \-s
 .IR SOURCE [, SOURCE ]...
 Request the server to search for objects mirrored from
 .IR SOURCE .
@@ -187,18 +190,18 @@ Use the
 .I \-q sources
 parameter to obtain a list of valid sources.
 .TP 8
-.B \-t \c
+.B \-t
 .I TYPE
 Return the template for a object of
 .IR TYPE .
 .TP 8
-.B \-T \c
+.B \-T
 .IR TYPE [, TYPE ]...
 Restrict the search to objects of
 .IR TYPE .
 Multiple types are separated by a comma.
 .TP 8
-.B \-v \c
+.B \-v
 .I TYPE
 Return the verbose template for a object of
 .IR TYPE .
@@ -206,7 +209,9 @@ Return the verbose template for a object of
 .B \-x
 Search for only exact match on network address prefix.
 .SH NOTES
-When querying the Verisign gTLDs (e.g.\& \&.com, \&.net...\&) thin registry servers
+When querying the Verisign gTLDs
+(e.g.\& \&.com, \&.net...\&)
+thin registry servers
 for a domain, the program will automatically prepend the
 .I domain
 keyword to only show domain records.  The
@@ -239,7 +244,8 @@ flags have been specified, the program will automatically add the flag
 .IR "\-\-show\-handles" .
 .P
 RIPE-specific command line options are ignored when querying non-RIPE
-servers. This may or may not be the behaviour intended by the user.
+servers.
+This may or may not be the behaviour intended by the user.
 When using non-standard query parameters then the command line options
 which are not to be interpreted by the client must follow the
 .I \-\-
@@ -248,7 +254,8 @@ separator (which marks the beginning of the query string).
 If the
 .I /etc/whois.conf
 configuration file exists, it will be consulted
-to find a server before applying the normal rules. Each line of the
+to find a server before applying the normal rules.
+Each line of the
 file should contain a regular expression to be matched against the query
 text and the whois server to use, separated by white space.
 IDN domains must use the ACE format.
@@ -279,7 +286,8 @@ A list of options which will be evaluated before the ones specified on the
 command line.
 .IP "WHOIS_SERVER"
 This server will be queried if the program cannot guess where some kind
-of objects are located. If the variable does not exist then
+of objects are located.
+If the variable does not exist then
 .I whois.arin.net
 will be queried.
 .SH "SEE ALSO"
@@ -289,7 +297,7 @@ will be queried.
 WHOIS Protocol Specification.
 .P
 .IR "RIPE Database Query Reference Manual" :
-.RI < https://www.ripe.net/data\-tools/support/documentation/ripe\-database\-query\-reference\-manual >
+.RI < https://www.ripe.net/\:data\-tools/\:support/\:documentation/\:ripe\-database\-query\-reference\-manual >
 .SH BUGS
 The program may have buffer overflows in the command line parser:
 be sure to not pass untrusted data to it.
@@ -304,4 +312,4 @@ and this man page were written by Marco d'Itri
 .RI < md@linux.it >
 and are licensed under the terms of the GNU General Public License,
 version 2 or later.
-\" SPDX-License-Identifier: GPL-2.0-or-later
+.\" SPDX-License-Identifier: GPL-2.0-or-later
