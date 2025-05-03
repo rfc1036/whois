@@ -204,7 +204,7 @@
 .kz	whois.nic.kz
 .la	whois.nic.la
 .lb	whois.lbdr.org.lb
-.lc	whois2.afilias-grs.net
+.lc	RECURSIVE whois.identitydigital.services
 .li	whois.nic.li
 .lk	whois.nic.lk
 .lr	NONE		# http://www.psg.com/dns/lr/
