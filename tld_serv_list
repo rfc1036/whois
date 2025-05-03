@@ -261,7 +261,7 @@
 .pl	whois.dns.pl
 .pm	whois.nic.pm
 .pn	WEB https://www.nic.pn/
-.pr	whois.afilias-srs.net
+.pr	RECURSIVE whois.nic.pr		# whois.identitydigital.services
 .ps	whois.pnina.ps
 .pt	whois.dns.pt
 .pw	whois.nic.pw
