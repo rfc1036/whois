@@ -253,14 +253,14 @@
 .pe	kero.yachay.pe
 .pf	whois.registry.pf
 .pg	NONE	# http://www.unitech.ac.pg/
-.edu.ph	WEB https://services.ph.net/dns/query.pl
+.edu.ph	WEB https://services.ph.net/dnshosting/dnshostingquery.pl
 .gov.ph	NONE	# http://dns.gov.ph/
 .ph	WEB https://whois.dot.ph/
 .pk	whois.pknic.net.pk
 .co.pl	whois.co.pl	# "unofficial" SLD
 .pl	whois.dns.pl
 .pm	whois.nic.pm
-.pn	WEB http://www.pitcairn.pn/PnRegistry/whois.html
+.pn	WEB https://www.nic.pn/
 .pr	whois.afilias-srs.net
 .ps	whois.pnina.ps
 .pt	whois.dns.pt
