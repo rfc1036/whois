@@ -342,12 +342,9 @@
 #.um
 .fed.us	whois.nic.gov
 .us	whois.nic.us
-.edu.uy	WEB https://www.nic.uy/
 .gub.uy	WEB https://www.dominios.gub.uy/
 .mil.uy	WEB https://www.dominios.gub.uy/
-.net.uy	WEB https://www.nic.uy/
-.org.uy	WEB https://www.nic.uy/
-.uy	WEB https://nic.com.uy/v2/consulta-whois
+.uy	WEB https://www.nic.uy/
 .uz	whois.cctld.uz
 .va	NONE
 .vc	whois2.afilias-grs.net
