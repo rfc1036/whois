@@ -59,7 +59,7 @@
 .biz	whois.nic.biz
 .cat	whois.nic.cat
 .coop	whois.nic.coop
-.info	whois.afilias.net
+.info	RECURSIVE whois.nic.info	# whois.identitydigital.services
 .jobs	whois.nic.jobs
 .mobi	whois.afilias.net
 .museum	whois.nic.museum
