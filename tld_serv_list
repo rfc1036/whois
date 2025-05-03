@@ -71,7 +71,7 @@
 .xxx	whois.nic.xxx
 
 .ac	whois.nic.ac
-.ad	NONE		# www.nic.ad
+.ad	whois.nic.ad
 .ae	whois.aeda.net.ae
 .af	whois.nic.af
 .ag	whois.nic.ag
