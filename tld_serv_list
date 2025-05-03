@@ -109,7 +109,7 @@
 .bv	NONE		# http://www.norid.no/domenenavnbaser/bv-sj.html
 .by	whois.cctld.by
 .bw	whois.nic.net.bw
-.bz	RECURSIVE whois.afilias-grs.info
+.bz	RECURSIVE whois.identitydigital.services
 .co.ca	whois.co.ca
 .ca	whois.cira.ca
 .cc	VERISIGN ccwhois.verisign-grs.com
