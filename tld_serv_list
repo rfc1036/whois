@@ -347,7 +347,7 @@
 .uy	WEB https://www.nic.uy/
 .uz	whois.cctld.uz
 .va	NONE
-.vc	whois2.afilias-grs.net
+.vc	RECURSIVE whois.identitydigital.services
 .ve	whois.nic.ve
 .vg	whois.nic.vg
 .vi	whois.nic.vi
