@@ -33,7 +33,7 @@ const char *hide_strings[] = {
     "Please register your domains at; http://www.", NULL, /* key-systems.net */
     "%% NOTICE: Access to this information is provided", NULL, /* bookmyname.com */
     "NOTICE: Access to the domain name's information", NULL, /* CORE */
-    "The Data in MarkMonitor.com's", NULL, /* MarkMonitor */
+    "The data in MarkMonitor’s WHOIS", NULL,		/* MarkMonitor */
     "Corporation Service Company(c) (CSC)  The Trusted Partner", "Register your domain name at", /* CSC */
     "The data in Networksolutions.com's", NULL,		/* Networksolutions */
     "# Welcome to the OVH WHOIS Server", "", /* ovh */
@@ -72,8 +72,10 @@ const char *hide_strings[] = {
     "Access to .IN WHOIS information", NULL,			/* in */
     "access to .in whois information", NULL,		/* in registar */
     "% Use of CIRA's WHOIS service is governed by the Terms of Use in its Legal", NULL,	/* sx */
+    "Terms of Use: Access to WHOIS information", NULL,		/* vc */
     "The Service is provided so that you may look", "We may discontinue",/*vu*/
     "NeuStar, Inc., the Registry Administrator for .US", NULL,
+    "; This data is provided ", NULL,			/* whois.1api.net */
 
     NULL, NULL
 };
