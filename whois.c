@@ -1265,6 +1265,12 @@ char *normalize_domain(const char *dom)
     }
 
 #if defined HAVE_LIBIDN || defined HAVE_LIBIDN2
+    /* A leading ! means that this probably is a RADB query, so skip IDN
+     * processing because it would lower-case the command characters.
+     */
+    if (*ret == '!')
+	return ret;
+
     /* find the start of the last word if there are spaces in the query */
     for (p = ret; *p; p++)
 	if (*p == ' ')
