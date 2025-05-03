@@ -164,7 +164,7 @@
 .gm	WEB http://www.nic.gm/htmlpages/whois.htm
 .gn	whois.ande.gov.gn
 .gp	whois.nic.gp
-.gq	whois.dominio.gq
+.gq	WEB http://www.dominio.gq/en/whois.html
 .gr	WEB https://grweb.ics.forth.gr/public/whois
 .gs	whois.nic.gs
 .gt	WEB https://www.gt/sitio/?lang=en
