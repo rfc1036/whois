@@ -216,7 +216,7 @@
 .ma	whois.registre.ma
 .mc	NONE	# www.nic.mc
 .md	whois.nic.md
-.me	whois.nic.me	# afilias
+.me	RECURSIVE whois.nic.me	# afilias
 #.mf
 .mg	whois.nic.mg
 .mh	NONE		# www.nic.net.mh
