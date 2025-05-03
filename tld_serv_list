@@ -365,7 +365,7 @@
 .net.za	net-whois.registry.net.za
 .org.za	org-whois.registry.net.za
 .web.za	web-whois.registry.net.za
-.za	NONE		# https://www.nic.za/za-domains/
+.za	whois.nic.za
 .zm	whois.zicta.zm
 .zw	NONE		# http://www.zispa.co.zw/
 
