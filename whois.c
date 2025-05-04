@@ -410,12 +410,15 @@ int handle_query(const char *hserver, const char *hport,
 
     new_server = query_server(server, port, query_string);
     free(server);
+    if (port)
+	free(port);
     free(query_string);
 
     /* recursion is fun */
     if (!no_recursion && new_server && !strchr(query, ' ')) {
 	printf(_("\n\nFound a referral to %s.\n\n"), new_server);
 	handle_query(new_server, NULL, query, flags);
+	free(new_server);
     }
 
     return 0;
