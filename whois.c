@@ -44,6 +44,7 @@
 static void find_referral_server_6bone(char **, const char *);
 static void find_referral_server_arin(char **, const char *);
 static void find_referral_server_iana(char **, const char *);
+static void find_referral_server_recursive(char **, const char *);
 
 /* Application-specific */
 #include "version.h"
@@ -358,9 +359,9 @@ int handle_query(const char *hserver, const char *hport,
 	case 8:
 	    if (verb)
 		printf(_("Using server %s.\n"), server + 1);
-	    sockfd = openconn(server + 1, NULL);
-	    free(server);
-	    server = query_afilias(sockfd, query);
+	    char *old_server = server;
+	    server = query_server(server, NULL, query);
+	    free(old_server);
 	    if (no_recursion && server)
 		server[0] = '\0';
 	    break;
@@ -857,6 +858,26 @@ static void find_referral_server_iana(char **referral_server, const char *buf)
     *referral_server = strdup(p);
 }
 
+static void find_referral_server_recursive(char **referral_server, const char *buf)
+{
+    static int state = 0;
+    const char *p;
+
+    if (*referral_server)
+	return;
+
+    if (state == 0 && strneq(buf, "Domain Name:", 12))
+	state = 1;
+    else if (state == 1 && strneq(buf, "Domain Name:", 12))
+	state = 2;
+    else if (state == 1 && strneq(buf, "Registrar WHOIS Server:", 23)) {
+	p = buf + 23;				/* skip until the colon */
+	for (; *p && *p == ' '; p++);		/* skip the spaces */
+	*referral_server = strdup(p);
+	state = 2;
+    }
+}
+
 /* returns a string which should be freed by the caller, or NULL */
 char *query_server(const char *server, const char *port, const char *query)
 {
@@ -872,7 +893,15 @@ char *query_server(const char *server, const char *port, const char *query)
     strcat(temp, "\r\n");
 
     for (i = 0; server_referral_handlers[i].name; i++) {
-	if (streq(server_referral_handlers[i].name, server)) {
+	/* If the first character is not printable then it represents
+	 * a general category of servers in the list.
+	 */
+	if (server[0] < ' ' &&
+		   strneq(server_referral_handlers[i].name, server, 1)) {
+	    server++;
+	    referral_handler = server_referral_handlers[i].handler;
+	    break;
+	} else if (streq(server_referral_handlers[i].name, server)) {
 	    referral_handler = server_referral_handlers[i].handler;
 	    break;
 	}
@@ -971,60 +1000,6 @@ char *query_crsnic(const int sock, const char *query)
     if (ferror(fi))
 	err_sys("fgets");
     fclose(fi);
-
-    return referral_server;
-}
-
-char *query_afilias(const int sock, const char *query)
-{
-    char *temp, *p, buf[2000];
-    FILE *fi;
-    int hide = hide_discl;
-    char *referral_server = NULL;
-    int state = 0;
-
-    temp = malloc(strlen(query) + 2 + 1);
-    strcpy(temp, query);
-    strcat(temp, "\r\n");
-
-    fi = fdopen(sock, "r");
-    if (!fi)
-	err_sys("fdopen");
-    if (write(sock, temp, strlen(temp)) < 0)
-	err_sys("write");
-    free(temp);
-
-    while (fgets(buf, sizeof(buf), fi)) {
-	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
-	    *p = '\0';
-
-	/* If multiple attributes are returned then use the first result.
-	   This is not supposed to happen. */
-	if (state == 0 && strneq(buf, "Domain Name:", 12))
-	    state = 1;
-	if (state == 1 && strneq(buf, "Registrar WHOIS Server:", 23)) {
-	    p = buf + 23;			/* skip until the colon */
-	    for (; *p == ' '; p++);		/* skip the spaces */
-	    referral_server = strdup(p);
-	    state = 2;
-	}
-
-	/* the output must not be hidden or no data will be shown for
-	   host records and not-existing domains */
-	if (hide_line(&hide, buf))
-	    continue;
-
-	recode_fputs(buf, stdout);
-	fputc('\n', stdout);
-    }
-
-    if (ferror(fi))
-	err_sys("fgets");
-    fclose(fi);
-
-    if (hide > HIDE_NOT_STARTED && hide != HIDE_TO_THE_END)
-	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
-		   "Please upgrade this program.\n"));
 
     return referral_server;
 }
