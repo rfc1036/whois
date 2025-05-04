@@ -824,12 +824,15 @@ char *do_query(const int sock, const char *query)
 	/* ARIN referrals:
 	 * ReferralServer: rwhois://rwhois.fuse.net:4321/
 	 * ReferralServer: whois://whois.ripe.net
+	 * ReferralServer: whois.ripe.net
 	 */
 	if (!referral_server && strneq(buf, "ReferralServer:", 15)) {
 	    if ((p = strstr(buf, "rwhois://")))
 		referral_server = strdup(p + 9);
 	    else if ((p = strstr(buf, "whois://")))
 		referral_server = strdup(p + 8);
+	    else
+		referral_server = strdup(buf + 17);
 	    if (referral_server && (p = strpbrk(referral_server, "/\r\n")))
 		*p = '\0';
 	}
