@@ -351,9 +351,9 @@ int handle_query(const char *hserver, const char *hport,
 	case 4:
 	    if (verb)
 		printf(_("Using server %s.\n"), server + 1);
-	    sockfd = openconn(server + 1, NULL);
-	    free(server);
-	    server = query_crsnic(sockfd, query);
+	    old_server = server;
+	    server = query_verisign(server + 1, NULL, query);
+	    free(old_server);
 	    if (no_recursion && server)
 		server[0] = '\0';
 	    break;
@@ -1012,11 +1012,12 @@ char *query_server(const char *server, const char *port, const char *query)
     return referral_server;
 }
 
-char *query_crsnic(const int sock, const char *query)
+char *query_verisign(const char *server, const char *port, const char *query)
 {
     char *temp, *p, buf[2000];
     FILE *fi;
     int hide = hide_discl;
+    int sock;
     char *referral_server = NULL;
     int state = 0;
     int dotscount = 0;
@@ -1034,6 +1035,7 @@ char *query_crsnic(const int sock, const char *query)
     strcat(temp, query);
     strcat(temp, "\r\n");
 
+    sock = openconn(server, port);
     fi = fdopen(sock, "r");
     if (!fi)
 	err_sys("fdopen");

@@ -16,7 +16,7 @@ const char *whereas(const unsigned long);
 char *queryformat(const char *, const char *, const char *);
 int hide_line(int *hiding, const char *const line);
 char *query_server(const char *, const char *, const char *);
-char *query_crsnic(const int, const char *);
+char *query_verisign(const char *, const char *, const char *);
 int openconn(const char *, const char *);
 int connect_with_timeout(int, const struct sockaddr *, socklen_t, int);
 void NORETURN usage(int error);
