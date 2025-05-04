@@ -42,6 +42,7 @@
 
 /* prototypes referenced in data.h */
 static void find_referral_server_6bone(char **, const char *);
+static void find_referral_server_apnic(char **, const char *);
 static void find_referral_server_arin(char **, const char *);
 static void find_referral_server_iana(char **, const char *);
 static void find_referral_server_recursive(char **, const char *);
@@ -317,7 +318,7 @@ int handle_query(const char *hserver, const char *hport,
 	const char *query, const char *flags)
 {
     char *server = NULL, *port = NULL;
-    char *p, *query_string, *new_server;
+    char *p, *query_string, *old_server, *new_server;
 
     if (hport) {
 	server = strdup(hserver);
@@ -359,7 +360,7 @@ int handle_query(const char *hserver, const char *hport,
 	case 8:
 	    if (verb)
 		printf(_("Using server %s.\n"), server + 1);
-	    char *old_server = server;
+	    old_server = server;
 	    server = query_server(server, NULL, query);
 	    free(old_server);
 	    if (no_recursion && server)
@@ -812,6 +813,77 @@ static void find_referral_server_6bone(char **referral_server, const char *buf)
 	/* XXX we are ignoring the new query string */
 	*referral_server = malloc(strlen(nh) + 1 + strlen(np) + 1);
 	sprintf(*referral_server, "%s:%s", nh, np);
+    }
+}
+
+static void find_referral_server_apnic(char **referral_server, const char *buf)
+{
+    /* Possible states of this FSM:
+     * 0: searching for the descr or mnt-by attribute
+     * 1: searching for the mnt-by attribute (descr found)
+     * 2: searching for the descr attribute (mnt-by found)
+     * 3: searching for the end of the object (an empty line)
+     * 4: done: stop searching
+     *
+     * Since the descr attribute is user-provided, consider it only if it
+     * is in an object actually maintained by APNIC.
+     *
+     * If multiple records are returned then it users the referral in the
+     * first valid object found.
+     */
+    static int state = 0;
+    static char *rir_name = NULL;
+    char *p;
+
+    if (state == 4)
+	return;
+
+    if (state <= 2) {
+	if (strneq(buf, "descr:", 6)) {
+	    p = (char *)buf + 6;		/* skip until the colon */
+	    for (; *p == ' ' || *p == '\t'; p++);	/* skip white space */
+	    if (strneq(p, "Transferred to the ", 19)) {
+		rir_name = strdup(p + 19);
+		if ((p = strpbrk(rir_name, " ")))
+		    *p = '\0';
+		if (state == 0)
+		    state = 1;			/* still needs mnt-by */
+		else
+		    state = 3;
+	    }
+	} else if (strneq(buf, "mnt-by:", 7)) {
+	    p = (char *)buf + 7;		/* skip until the colon */
+	    for (; *p == ' ' || *p == '\t'; p++);	/* skip white space */
+	    if (streq(p, "APNIC-STUB")) {
+		if (state == 0)
+		    state = 2;			/* still needs descr */
+		else
+		    state = 3;
+	    }
+	} else if (streq(buf, "")) {
+	    if (state == 1)
+		free(rir_name);
+	    state = 0;			/* start again with a new object */
+	}
+	return;
+    }
+
+    if (state == 3 && streq(buf, "")) {
+	int i;
+	const char *rir_servers[] = {
+	    "AFRINIC",	"whois.afrinic.net",
+	    "ARIN",	"whois.arin.net",
+	    "LACNIC",	"whois.lacnic.net",
+	    "RIPE",	"whois.ripe.net",
+	    NULL,	NULL,
+	};
+
+	state = 4;
+
+	for (i = 0; rir_servers[i]; i += 2)
+	    if (streq(rir_name, rir_servers[i]))
+		*referral_server = strdup(rir_servers[i + 1]);
+	free(rir_name);
     }
 }
 
