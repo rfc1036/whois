@@ -15,7 +15,7 @@ const char *match_config_file(const char *);
 const char *whereas(const unsigned long);
 char *queryformat(const char *, const char *, const char *);
 int hide_line(int *hiding, const char *const line);
-char *do_query(const int, const char *);
+char *query_server(const char *, const char *, const char *);
 char *query_crsnic(const int, const char *);
 char *query_afilias(const int, const char *);
 char *query_iana(const int, const char *);

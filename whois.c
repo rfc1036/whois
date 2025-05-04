@@ -311,7 +311,7 @@ int handle_query(const char *hserver, const char *hport,
 	const char *query, const char *flags)
 {
     char *server = NULL, *port = NULL;
-    char *p, *query_string;
+    char *p, *query_string, *new_server;
 
     if (hport) {
 	server = strdup(hserver);
@@ -408,15 +408,14 @@ int handle_query(const char *hserver, const char *hport,
 	printf(_("Query string: \"%s\"\n\n"), query_string);
     }
 
-    sockfd = openconn(server, port);
+    new_server = query_server(server, port, query_string);
     free(server);
-    server = do_query(sockfd, query_string);
     free(query_string);
 
     /* recursion is fun */
-    if (!no_recursion && server && !strchr(query, ' ')) {
-	printf(_("\n\nFound a referral to %s.\n\n"), server);
-	handle_query(server, NULL, query, flags);
+    if (!no_recursion && new_server && !strchr(query, ' ')) {
+	printf(_("\n\nFound a referral to %s.\n\n"), new_server);
+	handle_query(new_server, NULL, query, flags);
     }
 
     return 0;
@@ -789,17 +788,19 @@ int hide_line(int *hiding, const char *const line)
 }
 
 /* returns a string which should be freed by the caller, or NULL */
-char *do_query(const int sock, const char *query)
+char *query_server(const char *server, const char *port, const char *query)
 {
     char *temp, *p, buf[2000];
     FILE *fi;
     int hide = hide_discl;
+    int sock;
     char *referral_server = NULL;
 
     temp = malloc(strlen(query) + 2 + 1);
     strcpy(temp, query);
     strcat(temp, "\r\n");
 
+    sock = openconn(server, port);
     fi = fdopen(sock, "r");
     if (!fi)
 	err_sys("fdopen");
