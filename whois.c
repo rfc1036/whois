@@ -900,8 +900,8 @@ char *query_crsnic(const int sock, const char *query)
 	    state = 2;
 	}
 	if (state == 1 && strneq(buf, "   Registrar WHOIS Server:", 26)) {
-	    for (p = buf; *p != ':'; p++);	/* skip until the colon */
-	    for (p++; *p == ' '; p++);		/* skip the spaces */
+	    p = buf + 26;			/* skip until the colon */
+	    for (; *p == ' '; p++);		/* skip the spaces */
 	    referral_server = strdup(p);
 	    state = 2;
 	}
@@ -950,8 +950,8 @@ char *query_afilias(const int sock, const char *query)
 	if (state == 0 && strneq(buf, "Domain Name:", 12))
 	    state = 1;
 	if (state == 1 && strneq(buf, "Registrar WHOIS Server:", 23)) {
-	    for (p = buf; *p != ':'; p++);	/* skip until colon */
-	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
+	    p = buf + 23;			/* skip until the colon */
+	    for (; *p == ' '; p++);		/* skip the spaces */
 	    referral_server = strdup(p);
 	    state = 2;
 	}
@@ -1001,8 +1001,8 @@ char *query_iana(const int sock, const char *query)
 	/* If multiple attributes are returned then use the first result.
 	   This is not supposed to happen. */
 	if (state == 0 && strneq(buf, "refer:", 6)) {
-	    for (p = buf; *p != ':'; p++);	/* skip until colon */
-	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
+	    p = buf + 6;			/* skip until the colon */
+	    for (; *p == ' ' || *p == '\t'; p++);	/* skip white space */
 	    referral_server = strdup(p);
 	    state = 2;
 	}
