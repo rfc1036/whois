@@ -19,6 +19,17 @@ const char *ripe_servers[] = {
     NULL
 };
 
+struct server_referral_handler {
+    const char *name;
+    void (*handler)(char **referral_server, const char *buf);
+};
+
+const struct server_referral_handler server_referral_handlers[] = {
+    { "whois.6bone.net",		find_referral_server_6bone },
+    { "whois.arin.net",			find_referral_server_arin },
+    { NULL, NULL }
+};
+
 const char *hide_strings[] = {
     "The data in Networksolutions.com's WHOIS database", NULL,
     /* Some registrars like .wang copied the first paragraph of this

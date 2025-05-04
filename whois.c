@@ -40,6 +40,10 @@
 #include <idna.h>
 #endif
 
+/* prototypes referenced in data.h */
+static void find_referral_server_6bone(char **, const char *);
+static void find_referral_server_arin(char **, const char *);
+
 /* Application-specific */
 #include "version.h"
 #include "data.h"
@@ -790,18 +794,71 @@ int hide_line(int *hiding, const char *const line)
 	return 0;
 }
 
+static void find_referral_server_6bone(char **referral_server, const char *buf)
+{
+    char nh[256], np[16], nq[1024];
+
+    if (*referral_server)
+	return;
+
+    /* 6bone-style referral:
+     * % referto: whois -h whois.arin.net -p 43 as 1
+     */
+    if (!strneq(buf, "% referto:", 10))
+	return;
+
+    if (sscanf(buf, REFERTO_FORMAT, nh, np, nq) == 3) {
+	/* XXX we are ignoring the new query string */
+	*referral_server = malloc(strlen(nh) + 1 + strlen(np) + 1);
+	sprintf(*referral_server, "%s:%s", nh, np);
+    }
+}
+
+static void find_referral_server_arin(char **referral_server, const char *buf)
+{
+    char *p;
+
+    if (*referral_server)
+	return;
+
+    /* ARIN referrals:
+     * ReferralServer: rwhois://rwhois.fuse.net:4321/
+     * ReferralServer: whois://whois.ripe.net
+     * ReferralServer: whois.ripe.net
+     */
+    if (!strneq(buf, "ReferralServer:", 15))
+	return;
+
+    if ((p = strstr(buf, "rwhois://")))
+	*referral_server = strdup(p + 9);
+    else if ((p = strstr(buf, "whois://")))
+	*referral_server = strdup(p + 8);
+    else
+	*referral_server = strdup(buf + 17);
+    if (*referral_server && (p = strpbrk(*referral_server, "/")))
+	*p = '\0';
+}
+
 /* returns a string which should be freed by the caller, or NULL */
 char *query_server(const char *server, const char *port, const char *query)
 {
     char *temp, *p, buf[2000];
     FILE *fi;
     int hide = hide_discl;
-    int sock;
+    int sock, i;
     char *referral_server = NULL;
+    void (*referral_handler)(char **referral_server, const char *buf) = NULL;
 
     temp = malloc(strlen(query) + 2 + 1);
     strcpy(temp, query);
     strcat(temp, "\r\n");
+
+    for (i = 0; server_referral_handlers[i].name; i++) {
+	if (streq(server_referral_handlers[i].name, server)) {
+	    referral_handler = server_referral_handlers[i].handler;
+	    break;
+	}
+    }
 
     sock = openconn(server, port);
     fi = fdopen(sock, "r");
@@ -815,34 +872,8 @@ char *query_server(const char *server, const char *port, const char *query)
 	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
 	    *p = '\0';
 
-	/* 6bone-style referral:
-	 * % referto: whois -h whois.arin.net -p 43 as 1
-	 */
-	if (!referral_server && strneq(buf, "% referto:", 10)) {
-	    char nh[256], np[16], nq[1024];
-
-	    if (sscanf(buf, REFERTO_FORMAT, nh, np, nq) == 3) {
-		/* XXX we are ignoring the new query string */
-		referral_server = malloc(strlen(nh) + 1 + strlen(np) + 1);
-		sprintf(referral_server, "%s:%s", nh, np);
-	    }
-	}
-
-	/* ARIN referrals:
-	 * ReferralServer: rwhois://rwhois.fuse.net:4321/
-	 * ReferralServer: whois://whois.ripe.net
-	 * ReferralServer: whois.ripe.net
-	 */
-	if (!referral_server && strneq(buf, "ReferralServer:", 15)) {
-	    if ((p = strstr(buf, "rwhois://")))
-		referral_server = strdup(p + 9);
-	    else if ((p = strstr(buf, "whois://")))
-		referral_server = strdup(p + 8);
-	    else
-		referral_server = strdup(buf + 17);
-	    if (referral_server && (p = strpbrk(referral_server, "/")))
-		*p = '\0';
-	}
+	if (referral_handler)
+	    referral_handler(&referral_server, buf);
 
 	if (hide_line(&hide, buf))
 	    continue;
