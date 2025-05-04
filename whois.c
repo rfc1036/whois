@@ -43,6 +43,7 @@
 /* prototypes referenced in data.h */
 static void find_referral_server_6bone(char **, const char *);
 static void find_referral_server_arin(char **, const char *);
+static void find_referral_server_iana(char **, const char *);
 
 /* Application-specific */
 #include "version.h"
@@ -392,9 +393,8 @@ int handle_query(const char *hserver, const char *hport,
 	case 0x0E:
 	    if (verb)
 		printf(_("Using server %s.\n"), "whois.iana.org");
-	    sockfd = openconn("whois.iana.org", NULL);
 	    free(server);
-	    server = query_iana(sockfd, query);
+	    server = query_server("whois.iana.org", NULL, query);
 	    break;
 	default:
 	    break;
@@ -839,6 +839,24 @@ static void find_referral_server_arin(char **referral_server, const char *buf)
 	*p = '\0';
 }
 
+static void find_referral_server_iana(char **referral_server, const char *buf)
+{
+    const char *p;
+
+    if (*referral_server)
+	return;
+
+    /* IANA referrals:
+     * refer:        whois.apnic.net
+     */
+    if (!strneq(buf, "refer:", 6))
+	return;
+
+    p = buf + 6;				/* skip until the colon */
+    for (; *p == ' ' || *p == '\t'; p++);	/* skip white space */
+    *referral_server = strdup(p);
+}
+
 /* returns a string which should be freed by the caller, or NULL */
 char *query_server(const char *server, const char *port, const char *query)
 {
@@ -1007,48 +1025,6 @@ char *query_afilias(const int sock, const char *query)
     if (hide > HIDE_NOT_STARTED && hide != HIDE_TO_THE_END)
 	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
 		   "Please upgrade this program.\n"));
-
-    return referral_server;
-}
-
-char *query_iana(const int sock, const char *query)
-{
-    char *temp, *p, buf[2000];
-    FILE *fi;
-    char *referral_server = NULL;
-    int state = 0;
-
-    temp = malloc(strlen(query) + 2 + 1);
-    strcpy(temp, query);
-    strcat(temp, "\r\n");
-
-    fi = fdopen(sock, "r");
-    if (!fi)
-	err_sys("fdopen");
-    if (write(sock, temp, strlen(temp)) < 0)
-	err_sys("write");
-    free(temp);
-
-    while (fgets(buf, sizeof(buf), fi)) {
-	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
-	    *p = '\0';
-
-	/* If multiple attributes are returned then use the first result.
-	   This is not supposed to happen. */
-	if (state == 0 && strneq(buf, "refer:", 6)) {
-	    p = buf + 6;			/* skip until the colon */
-	    for (; *p == ' ' || *p == '\t'; p++);	/* skip white space */
-	    referral_server = strdup(p);
-	    state = 2;
-	}
-
-	recode_fputs(buf, stdout);
-	fputc('\n', stdout);
-    }
-
-    if (ferror(fi))
-	err_sys("fgets");
-    fclose(fi);
 
     return referral_server;
 }

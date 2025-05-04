@@ -27,6 +27,7 @@ struct server_referral_handler {
 const struct server_referral_handler server_referral_handlers[] = {
     { "whois.6bone.net",		find_referral_server_6bone },
     { "whois.arin.net",			find_referral_server_arin },
+    { "whois.iana.org",			find_referral_server_iana },
     { NULL, NULL }
 };
 
