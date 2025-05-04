@@ -808,6 +808,9 @@ char *do_query(const int sock, const char *query)
     free(temp);
 
     while (fgets(buf, sizeof(buf), fi)) {
+	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
+	    *p = '\0';
+
 	/* 6bone-style referral:
 	 * % referto: whois -h whois.arin.net -p 43 as 1
 	 */
@@ -833,15 +836,13 @@ char *do_query(const int sock, const char *query)
 		referral_server = strdup(p + 8);
 	    else
 		referral_server = strdup(buf + 17);
-	    if (referral_server && (p = strpbrk(referral_server, "/\r\n")))
+	    if (referral_server && (p = strpbrk(referral_server, "/")))
 		*p = '\0';
 	}
 
 	if (hide_line(&hide, buf))
 	    continue;
 
-	if ((p = strpbrk(buf, "\r\n")))
-	    *p = '\0';
 	recode_fputs(buf, stdout);
 	fputc('\n', stdout);
     }
@@ -887,6 +888,9 @@ char *query_crsnic(const int sock, const char *query)
     free(temp);
 
     while (fgets(buf, sizeof(buf), fi)) {
+	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
+	    *p = '\0';
+
 	/* If there are multiple matches only the server of the first record
 	   is queried */
 	if (state == 0 && strneq(buf, "   Domain Name:", 15))
@@ -899,8 +903,6 @@ char *query_crsnic(const int sock, const char *query)
 	    for (p = buf; *p != ':'; p++);	/* skip until the colon */
 	    for (p++; *p == ' '; p++);		/* skip the spaces */
 	    referral_server = strdup(p);
-	    if ((p = strpbrk(referral_server, "\r\n ")))
-		*p = '\0';
 	    state = 2;
 	}
 
@@ -909,8 +911,6 @@ char *query_crsnic(const int sock, const char *query)
 	if (hide_line(&hide, buf))
 	    continue;
 
-	if ((p = strpbrk(buf, "\r\n")))
-	    *p = '\0';
 	recode_fputs(buf, stdout);
 	fputc('\n', stdout);
     }
@@ -942,6 +942,9 @@ char *query_afilias(const int sock, const char *query)
     free(temp);
 
     while (fgets(buf, sizeof(buf), fi)) {
+	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
+	    *p = '\0';
+
 	/* If multiple attributes are returned then use the first result.
 	   This is not supposed to happen. */
 	if (state == 0 && strneq(buf, "Domain Name:", 12))
@@ -950,8 +953,6 @@ char *query_afilias(const int sock, const char *query)
 	    for (p = buf; *p != ':'; p++);	/* skip until colon */
 	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
 	    referral_server = strdup(p);
-	    if ((p = strpbrk(referral_server, "\r\n ")))
-		*p = '\0';
 	    state = 2;
 	}
 
@@ -960,8 +961,6 @@ char *query_afilias(const int sock, const char *query)
 	if (hide_line(&hide, buf))
 	    continue;
 
-	if ((p = strpbrk(buf, "\r\n")))
-	    *p = '\0';
 	recode_fputs(buf, stdout);
 	fputc('\n', stdout);
     }
@@ -996,19 +995,18 @@ char *query_iana(const int sock, const char *query)
     free(temp);
 
     while (fgets(buf, sizeof(buf), fi)) {
+	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
+	    *p = '\0';
+
 	/* If multiple attributes are returned then use the first result.
 	   This is not supposed to happen. */
 	if (state == 0 && strneq(buf, "refer:", 6)) {
 	    for (p = buf; *p != ':'; p++);	/* skip until colon */
 	    for (p++; *p == ' '; p++);		/* skip colon and spaces */
 	    referral_server = strdup(p);
-	    if ((p = strpbrk(referral_server, "\r\n ")))
-		*p = '\0';
 	    state = 2;
 	}
 
-	if ((p = strpbrk(buf, "\r\n")))
-	    *p = '\0';
 	recode_fputs(buf, stdout);
 	fputc('\n', stdout);
     }
