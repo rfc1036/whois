@@ -892,9 +892,6 @@ static void find_referral_server_arin(char **referral_server, const char *buf)
 {
     char *p;
 
-    if (*referral_server)
-	return;
-
     /* ARIN referrals:
      * ReferralServer: rwhois://rwhois.fuse.net:4321/
      * ReferralServer: whois://whois.ripe.net
@@ -902,6 +899,16 @@ static void find_referral_server_arin(char **referral_server, const char *buf)
      */
     if (!strneq(buf, "ReferralServer:", 15))
 	return;
+
+    /* When whois.arin.net returns multiple NetRange records, they will
+     * appear from the less specific one to the most specific one.
+     * Since the range we care about is the most specific one then we
+     * need to use the last ReferralServer field found.
+     */
+    if (*referral_server) {
+	free(*referral_server);
+	*referral_server = NULL;
+    }
 
     if ((p = strstr(buf, "rwhois://")))
 	*referral_server = strdup(p + 9);
