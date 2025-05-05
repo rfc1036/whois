@@ -1,3 +1,20 @@
+whois (5.6.0) unstable; urgency=medium
+
+  * Fixed the mangling of RADB queries with commands.
+  * Implemented the parsing of more variants of ARIN's ReferralServer
+    field.
+  * Implemented following the APNIC pseudo-referrals.
+  * Added the .ad and .za TLD servers.
+  * Updated the .ao, .bz, .gi, .gq, .gr, .gw, .lc, .md, .pn, .pr, .uy, .vc,
+    .info, .mobi, .ελ (.xn--qxam, Greece) and .გე (.xn--node, Georgia) TLD
+    servers.
+  * Added 2410::/12.
+  * Removed 7 new gTLDs which are no longer active.
+  * Cleaned up the markup of the man pages, courtesy of Bjarni Ingi
+    Gislason. (Closes: #1036826, #1094208)
+
+ -- Marco d'Itri <md@linux.it>  Mon, 05 May 2025 02:57:37 +0200
+
 whois (5.5.23) unstable; urgency=medium
 
   * Updated the .sc, .新加坡 (.xn--yfro4i67o, Singapore) and .சிங்கப்பூர்
