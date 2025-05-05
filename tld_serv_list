@@ -252,7 +252,7 @@
 .pa	WEB http://www.nic.pa/en
 .pe	kero.yachay.pe
 .pf	whois.registry.pf
-.pg	NONE	# http://www.unitech.ac.pg/
+.pg	whois.nic.pg	# https://www.unitech.ac.pg/icts-dns/
 .edu.ph	WEB https://services.ph.net/dnshosting/dnshostingquery.pl
 .gov.ph	NONE	# http://dns.gov.ph/
 .ph	WEB https://whois.dot.ph/
