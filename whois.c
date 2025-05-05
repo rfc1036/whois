@@ -46,6 +46,7 @@ static void find_referral_server_apnic(char **, const char *);
 static void find_referral_server_arin(char **, const char *);
 static void find_referral_server_iana(char **, const char *);
 static void find_referral_server_recursive(char **, const char *);
+static void find_referral_server_verisign(char **, const char *);
 
 /* Application-specific */
 #include "version.h"
@@ -352,7 +353,7 @@ int handle_query(const char *hserver, const char *hport,
 	    if (verb)
 		printf(_("Using server %s.\n"), server + 1);
 	    old_server = server;
-	    server = query_verisign(server + 1, NULL, query);
+	    server = query_verisign(server, NULL, query);
 	    free(old_server);
 	    if (no_recursion && server)
 		server[0] = '\0';
@@ -950,6 +951,29 @@ static void find_referral_server_recursive(char **referral_server, const char *b
     }
 }
 
+static void find_referral_server_verisign(char **referral_server, const char *buf)
+{
+    static int state = 0;
+    const char *p;
+
+    if (*referral_server)
+	return;
+
+    /* If there are multiple matches only the server of the first record
+     * is queried */
+    if (state == 0 && strneq(buf, "   Domain Name:", 15)) {
+	state = 1;
+    } else if (state == 0 && strneq(buf, "   Server Name:", 15)) {
+	*referral_server = strdup("");
+	state = 2;
+    } else if (state == 1 && strneq(buf, "   Registrar WHOIS Server:", 26)) {
+	p = buf + 26;				/* skip until the colon */
+	for (; *p && *p == ' '; p++);		/* skip the spaces */
+	*referral_server = strdup(p);
+	state = 2;
+    }
+}
+
 /* returns a string which should be freed by the caller, or NULL */
 char *query_server(const char *server, const char *port, const char *query)
 {
@@ -1014,12 +1038,9 @@ char *query_server(const char *server, const char *port, const char *query)
 
 char *query_verisign(const char *server, const char *port, const char *query)
 {
-    char *temp, *p, buf[2000];
-    FILE *fi;
-    int hide = hide_discl;
+    char *temp, *p;
     int sock;
     char *referral_server = NULL;
-    int state = 0;
     int dotscount = 0;
 
     temp = malloc(strlen("domain ") + strlen(query) + 2 + 1);
@@ -1033,48 +1054,9 @@ char *query_verisign(const char *server, const char *port, const char *query)
     if (dotscount == 1 && !strpbrk(query, "=~ "))
 	strcpy(temp, "domain ");
     strcat(temp, query);
-    strcat(temp, "\r\n");
 
-    sock = openconn(server, port);
-    fi = fdopen(sock, "r");
-    if (!fi)
-	err_sys("fdopen");
-    if (write(sock, temp, strlen(temp)) < 0)
-	err_sys("write");
+    referral_server = query_server(server, port, temp);
     free(temp);
-
-    while (fgets(buf, sizeof(buf), fi)) {
-	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
-	    *p = '\0';
-
-	/* If there are multiple matches only the server of the first record
-	   is queried */
-	if (state == 0 && strneq(buf, "   Domain Name:", 15))
-	    state = 1;
-	if (state == 0 && strneq(buf, "   Server Name:", 15)) {
-	    referral_server = strdup("");
-	    state = 2;
-	}
-	if (state == 1 && strneq(buf, "   Registrar WHOIS Server:", 26)) {
-	    p = buf + 26;			/* skip until the colon */
-	    for (; *p == ' '; p++);		/* skip the spaces */
-	    referral_server = strdup(p);
-	    state = 2;
-	}
-
-	/* the output must not be hidden or no data will be shown for
-	   host records and not-existing domains */
-	if (hide_line(&hide, buf))
-	    continue;
-
-	recode_fputs(buf, stdout);
-	fputc('\n', stdout);
-    }
-
-    if (ferror(fi))
-	err_sys("fgets");
-    fclose(fi);
-
     return referral_server;
 }
 
