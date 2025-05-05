@@ -2,7 +2,7 @@ Source: whois
 Section: net
 Priority: standard
 Maintainer: Marco d'Itri <md@linux.it>
-Standards-Version: 4.6.2.0
+Standards-Version: 4.7.2.0
 Rules-Requires-Root: no
 Build-Depends: debhelper-compat (= 13), gettext, pkgconf,
  bash-completion,
