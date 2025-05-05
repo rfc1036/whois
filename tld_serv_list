@@ -60,7 +60,7 @@
 .cat	whois.nic.cat
 .coop	whois.nic.coop
 .info	RECURSIVE whois.nic.info	# whois.identitydigital.services
-.jobs	whois.nic.jobs
+.jobs	NONE
 .mobi	RECURSIVE whois.nic.mobi	# whois.identitydigital.services
 .museum	whois.nic.museum
 .name	whois.nic.name
