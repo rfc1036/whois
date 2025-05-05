@@ -1040,6 +1040,12 @@ char *query_server(const char *server, const char *port, const char *query)
 	err_quit(_("Catastrophic error: disclaimer text has been changed.\n"
 		   "Please upgrade this program.\n"));
 
+    /* defensive programming: make sure to avoid trivial referral loops */
+    if (referral_server && streq(server, referral_server)) {
+	free(referral_server);
+	referral_server = NULL;
+    }
+
     return referral_server;
 }
 
