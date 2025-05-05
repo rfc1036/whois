@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
 #ifndef SIMPLE_RECODE_H
 #define SIMPLE_RECODE_H
 

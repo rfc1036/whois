@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+
 /*
  * RIPE-like servers.
  * All of them do not understand -V2.0Md with the exception of RA and RIPN.
