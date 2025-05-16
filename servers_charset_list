@@ -6,7 +6,7 @@ whois.online.rs.corenic.net	utf-8	-C UTF-8
 whois.site.rs.corenic.net	utf-8	-C UTF-8
 whois.lacnic.net	utf-8
 whois.museum		utf-8		-C UTF-8
-whois.ripe.net		iso-8859-1
+whois.ripe.net		utf-8		--charset UTF-8
 
 whois.nic.llyw.cymru	utf-8
 whois.nic.gov.scot	utf-8
