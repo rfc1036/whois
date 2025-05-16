@@ -1,3 +1,18 @@
+whois (5.6.1) unstable; urgency=medium
+
+  * Added the .pg TLD server.
+  * Updated the .gov, .mu, .中国 (.xn--fiqs8s) and .中國 (.xn--fiqz9s)
+    TLD servers.
+  * Removed the .jobs TLD server.
+  * Added the encodings for whois.afrinic.net and whois.apnic.net.
+  * Enabled the UTF-8 encoding for whois.ripe.net.
+  * Use the last ReferralServer returned by the ARIN server instead of
+    the first, because we want to follow the referral for the most
+    specific record returned.
+  * Make sure to avoid trivial referral loops.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 17 May 2025 01:30:06 +0200
+
 whois (5.6.0) unstable; urgency=medium
 
   * Fixed the mangling of RADB queries with commands.
