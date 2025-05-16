@@ -1,4 +1,4 @@
-# server name		charset		optional parameters
+# server name		encoding	optional parameters
 whois.afrinic.net	utf-8
 whois.apnic.net		iso-8859-1
 whois.cat		utf-8		-C UTF-8
