@@ -1,4 +1,5 @@
 # server name		charset		optional parameters
+whois.afrinic.net	utf-8
 whois.cat		utf-8		-C UTF-8
 whois.conac.cn		utf-8
 whois.corenic.net	utf-8		-C UTF-8
