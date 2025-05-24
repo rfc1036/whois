@@ -1,3 +1,9 @@
+whois (5.6.1~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 24 May 2025 18:42:54 +0200
+
 whois (5.6.1) unstable; urgency=medium
 
   * Added the .pg TLD server.
