@@ -1,3 +1,11 @@
+whois (5.6.2) unstable; urgency=medium
+
+  * Updated the .post and .in (and related IDN TLDs) TLD servers.
+  * Removed 1 new gTLDs which is no longer active.
+  * Build-Depend on libcrypt-dev. (Closes: #1106977)
+
+ -- Marco d'Itri <md@linux.it>  Fri, 06 Jun 2025 18:22:04 +0200
+
 whois (5.6.1) unstable; urgency=medium
 
   * Added the .pg TLD server.
