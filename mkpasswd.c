@@ -47,6 +47,9 @@
 #ifdef HAVE_GETTIMEOFDAY
 #include <sys/time.h>
 #endif
+#ifdef HAVE_READPASSPHRASE
+#include <readpassphrase.h>
+#endif
 
 /* Application-specific */
 #include "version.h"
@@ -387,11 +390,21 @@ int main(int argc, char *argv[])
 	    exit(2);
 	}
     } else {
+#ifdef HAVE_READPASSPHRASE
+	const size_t size = 128;
+
+	password = NOFAIL(malloc(size));
+	if (!readpassphrase(_("Password: "), password, size, 0)) {
+	    perror("readpassphrase");
+	    exit(2);
+	}
+#else
 	password = getpass(_("Password: "));
 	if (!password) {
 	    perror("getpass");
 	    exit(2);
 	}
+#endif
     }
 
     {
