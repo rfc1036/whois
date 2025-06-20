@@ -1,3 +1,9 @@
+whois (5.6.2~bpo12+1) bookworm-backports; urgency=medium
+
+  * Rebuild for bookworm-backports.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 21 Jun 2025 01:07:12 +0200
+
 whois (5.6.2) unstable; urgency=medium
 
   * Updated the .post and .in (and related IDN TLDs) TLD servers.
