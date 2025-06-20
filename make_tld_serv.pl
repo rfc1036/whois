@@ -18,7 +18,7 @@ while (<>) {
 	$b = "\\x03" if $b eq 'NONE';
 	$b =~ s/^RECURSIVE\s+/\\x08" "/;
 	$b = "\\x08$b" if $b eq 'whois.flexireg.net';
-	$b = "\\x08$b" if $b eq 'whois.registry.in';
+	$b = "\\x08$b" if $b eq 'whois.nixiregistry.in';
 	$b = "\\x0C" if $b eq 'ARPA';
 	$b = "\\x0D" if $b eq 'IP6';
 	print qq|    "$a",\t"$b",\n|;

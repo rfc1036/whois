@@ -64,7 +64,7 @@
 .mobi	RECURSIVE whois.nic.mobi	# whois.identitydigital.services
 .museum	whois.nic.museum
 .name	whois.nic.name
-.post	whois.dotpostregistry.net
+.post	whois.nic.post
 .pro	whois.nic.pro
 .tel	whois.nic.tel
 .travel	whois.nic.travel
@@ -181,7 +181,7 @@
 .ie	whois.weare.ie
 .il	whois.isoc.org.il
 .im	whois.nic.im
-.in	whois.registry.in
+.in	whois.nixiregistry.in
 .io	whois.nic.io
 .iq	whois.cmc.iq		# http://www.cmc.iq/en/iq.html
 .ir	whois.nic.ir
@@ -371,11 +371,11 @@
 
 # AW means that I had to guess the whois server name, but I was not able
 # to find any registered subdomains to verify it.
-.xn--2scrj9c		whois.registry.in	# India
+.xn--2scrj9c		whois.nixiregistry.in	# India
 .xn--3e0b707e		whois.kr		# Korea, Republic of
-.xn--3hcrj9c		whois.registry.in	# India
-.xn--45br5cyl		whois.registry.in	# India
-.xn--45brj9c		whois.registry.in	# India, Bengali
+.xn--3hcrj9c		whois.nixiregistry.in	# India
+.xn--45br5cyl		whois.nixiregistry.in	# India
+.xn--45brj9c		whois.nixiregistry.in	# India, Bengali
 .xn--4dbrk0ce		whois.isoc.org.il	# Israel
 .xn--54b7fta0cc		WEB https://bdia.btcl.com.bd/ # Bangladesh
 .xn--80ao21a		whois.nic.kz		# Kazakhstan
@@ -387,12 +387,12 @@
 .xn--e1a4c		whois.eu		# European Union, Cyrillic
 .xn--fiqs8s		whois.cnnic.cn		# China, Simplified Chinese
 .xn--fiqz9s		whois.cnnic.cn		# China, Traditional Chinese
-.xn--fpcrj9c3d		whois.registry.in	# India, Telugu
+.xn--fpcrj9c3d		whois.nixiregistry.in	# India, Telugu
 .xn--fzc2c9e2c		whois.nic.lk		# Sri Lanka, Sinhala
-.xn--gecrj9c		whois.registry.in	# India, Gujarati
-.xn--h2breg3eve		whois.registry.in	# India
-.xn--h2brj9c8c		whois.registry.in	# India
-.xn--h2brj9c		whois.registry.in	# India, Hindi
+.xn--gecrj9c		whois.nixiregistry.in	# India, Gujarati
+.xn--h2breg3eve		whois.nixiregistry.in	# India
+.xn--h2brj9c8c		whois.nixiregistry.in	# India
+.xn--h2brj9c		whois.nixiregistry.in	# India, Hindi
 .xn--j1amh		whois.dotukr.com	# Ukraine
 .xn--j6w193g		whois.hkirc.hk		# Hong Kong
 .xn--kprw13d		whois.twnic.net.tw	# Taiwan, Simplified Chinese
@@ -405,12 +405,12 @@
 .xn--mgbah1a3hjkrd	whois.nic.mr		# Mauritania
 .xn--mgbai9azgqp6j	NONE			# Pakistan
 .xn--mgbayh7gpa		WEB https://www.domain.jo/FirstPageen.aspx # Jordan
-.xn--mgbbh1a71e		whois.registry.in	# India, Urdu
-.xn--mgbbh1a		whois.registry.in	# India
+.xn--mgbbh1a71e		whois.nixiregistry.in	# India, Urdu
+.xn--mgbbh1a		whois.nixiregistry.in	# India
 .xn--mgbc0a9azcg	NONE			# Morocco
 .xn--mgbcpq6gpa1a	NONE			# Bahrain
 .xn--mgberp4a5d4ar	whois.nic.net.sa	# Saudi Arabia
-.xn--mgbgu82a		whois.registry.in	# India
+.xn--mgbgu82a		whois.nixiregistry.in	# India
 .xn--mgbpl2fh		NONE			# Sudan
 .xn--mgbtx2b		whois.cmc.iq		# Iraq
 .xn--mgbx4cd0ab		whois.mynic.my		# Malaysia AW
@@ -423,12 +423,12 @@
 .xn--q7ce6a		whois.nic.la		# Lao
 .xn--qxa6a		whois.eu		# European Union, Greek
 .xn--qxam		WEB https://grweb.ics.forth.gr/public/whois?lang=en # Greece
-.xn--rvc1e0am3e		whois.registry.in	# India
-.xn--s9brj9c		whois.registry.in	# India, Punjabi
+.xn--rvc1e0am3e		whois.nixiregistry.in	# India
+.xn--s9brj9c		whois.nixiregistry.in	# India, Punjabi
 .xn--wgbh1c		whois.dotmasr.eg	# Egypt
 .xn--wgbl6a		whois.registry.qa	# Qatar
 .xn--xkc2al3hye2a	whois.nic.lk		# Sri Lanka, Tamil
-.xn--xkc2dl3a5ee0h	whois.registry.in	# India, Tamil
+.xn--xkc2dl3a5ee0h	whois.nixiregistry.in	# India, Tamil
 .xn--y9a3aq		whois.amnic.net		# Armenia
 .xn--yfro4i67o		whois.zh.sgnic.sg	# Singapore, Chinese
 .xn--ygbi2ammx		whois.pnina.ps		# Palestinian Territory
