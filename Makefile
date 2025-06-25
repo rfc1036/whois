@@ -72,7 +72,7 @@ endif
 
 CPPFLAGS += $(DEFS) $(INCLUDES)
 
-BASHCOMPDIR ?= $(shell $(PKG_CONFIG) --variable=completionsdir bash-completion 2>/dev/null || echo /etc/bash_completion.d)
+BASHCOMPDIR ?= $(BASEDIR)$(shell $(PKG_CONFIG) --variable=completionsdir bash-completion 2>/dev/null || echo /etc/bash_completion.d)
 
 ##############################################################################
 all: Makefile.depend whois mkpasswd pos
