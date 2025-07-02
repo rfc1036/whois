@@ -295,7 +295,7 @@
 .sm	whois.nic.sm
 .sn	whois.nic.sn
 .so	whois.nic.so
-.sr	NONE		# https://isp.datasur.sr/
+.sr	whois.sr	# https://isp.datasur.sr/
 .ss	whois.nic.ss
 .st	whois.nic.st
 .msk.su	whois.flexireg.net
