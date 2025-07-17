@@ -1,3 +1,10 @@
+whois (5.6.3) unstable; urgency=medium
+
+  * Added the .sr and .мон (.xn--l1acc, Mongolia) TLD servers.
+  * Use readpassphrase(3) on OpenBSD and FreeBSD.
+
+ -- Marco d'Itri <md@linux.it>  Thu, 17 Jul 2025 05:15:53 +0200
+
 whois (5.6.2) unstable; urgency=medium
 
   * Updated the .post and .in (and related IDN TLDs) TLD servers.
