@@ -8,8 +8,8 @@ Build-Depends: debhelper-compat (= 13), gettext, pkgconf,
  bash-completion,
  libcrypt-dev,
  libidn2-dev,
-Vcs-Git: https://github.com/rfc1036/whois.git
-Vcs-Browser: https://github.com/rfc1036/whois
+Vcs-Git: https://salsa.debian.org/md/whois.git
+Vcs-Browser: https://salsa.debian.org/md/whois
 
 Package: whois
 Architecture: any
