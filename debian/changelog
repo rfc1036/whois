@@ -1,3 +1,9 @@
+whois (5.6.4) unstable; urgency=medium
+
+  * Updated the .cm and .to TLD servers.
+
+ -- Marco d'Itri <md@linux.it>  Sat, 02 Aug 2025 01:13:07 +0200
+
 whois (5.6.3) unstable; urgency=medium
 
   * Added the .sr and .мон (.xn--l1acc, Mongolia) TLD servers.
