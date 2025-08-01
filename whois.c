@@ -797,26 +797,6 @@ int hide_line(int *hiding, const char *const line)
 	return 0;
 }
 
-static void find_referral_server_6bone(char **referral_server, const char *buf)
-{
-    char nh[256], np[16], nq[1024];
-
-    if (*referral_server)
-	return;
-
-    /* 6bone-style referral:
-     * % referto: whois -h whois.arin.net -p 43 as 1
-     */
-    if (!strneq(buf, "% referto:", 10))
-	return;
-
-    if (sscanf(buf, REFERTO_FORMAT, nh, np, nq) == 3) {
-	/* XXX we are ignoring the new query string */
-	*referral_server = malloc(strlen(nh) + 1 + strlen(np) + 1);
-	sprintf(*referral_server, "%s:%s", nh, np);
-    }
-}
-
 static void find_referral_server_apnic(char **referral_server, const char *buf)
 {
     /* Possible states of this FSM:
