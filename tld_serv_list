@@ -328,16 +328,11 @@
 .ua	whois.ua
 .ug	whois.co.ug
 .ac.uk	whois.nic.ac.uk
-.bl.uk	NONE
-.british-library.uk NONE
 .gov.uk	whois.gov.uk
-.icnet.uk NONE
-.jet.uk	NONE
+.mil.uk	NONE
 .mod.uk	NONE
 .nhs.uk	NONE
-.nls.uk	NONE
 .parliament.uk NONE
-.police.uk NONE
 .uk	whois.nic.uk
 #.um
 .fed.us	whois.nic.gov
