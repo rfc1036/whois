@@ -14,12 +14,19 @@ close($fh);
 my ($ver) = $line =~ /^whois \s+ \( ( [^\)]+ ) \) \s+ \S+/x;
 die "Version number not found in $changelog!\n" if not $ver;
 
-$ver =~ s/ ( ~bpo\d+\+\d+ | \+b\d+ | ~deb\d+.* | ubuntu\d+ | build\d+ | \+dyson\d+ ) $//x;
+$ver =~ s/ (
+	  build\d+
+	| ubuntu\d+
+	| ~bpo\d+\+\d+
+	| ~deb\d+.*
+	| \+b\d+
+	| \+dyson\d+
+) $//x;
 
 # The version number must not deviate from this format or the -V option
 # to RIPE-like servers will break. If needed, update the previous regexp.
 # This may not be true anymore in 2019.
-die "Invalid version number in $changelog!\n"
+die "Invalid version number in $changelog: '$ver'!\n"
 	unless $ver =~ /^ \d+\.\d+ ( \.\d+ )? $/x;
 
 # This is the version number used in the help messages.
