@@ -10,16 +10,20 @@
 1.0.0.0/8	apnic
 2.0.0.0/8	ripe
 5.0.0.0/8	ripe
+14.64.0.0/11	whois.nic.or.kr
 14.0.0.0/8	apnic
 24.132.0.0/14	ripe
+27.176.0.0/13	whois.nic.or.kr
 27.0.0.0/8	apnic
 31.0.0.0/8	ripe
 36.0.0.0/8	apnic
 37.0.0.0/8	ripe
 39.0.0.0/8	apnic
 41.0.0.0/8	afrinic
+42.32.0.0/12	whois.nic.or.kr
 42.0.0.0/7	apnic
 46.0.0.0/8	ripe
+49.8.0.0/14	whois.nic.or.kr
 49.0.0.0/8	apnic
 51.0.0.0/8	ripe
 # whois -r -K -h whois.apnic.net -i admin-c IM76-AP
