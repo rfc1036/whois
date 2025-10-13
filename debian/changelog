@@ -1,3 +1,13 @@
+whois (5.6.5) unstable; urgency=medium
+
+  * Updated the .co TLD server.
+  * Added some large KRNIC networks.
+  * Updated the second level .uk TLD servers.
+  * Removed the .pro TLD server.
+  * Removed 1 new gTLD which is no longer active.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 13 Oct 2025 03:37:20 +0200
+
 whois (5.6.4) unstable; urgency=medium
 
   * Updated the .cm and .to TLD servers.
