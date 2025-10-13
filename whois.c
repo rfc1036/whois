@@ -41,7 +41,6 @@
 #endif
 
 /* prototypes referenced in data.h */
-static void find_referral_server_6bone(char **, const char *);
 static void find_referral_server_apnic(char **, const char *);
 static void find_referral_server_arin(char **, const char *);
 static void find_referral_server_iana(char **, const char *);

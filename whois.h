@@ -1,9 +1,6 @@
 /* SPDX-License-Identifier: GPL-2.0-or-later */
 #include "utils.h"
 
-/* 6bone referto: extension */
-#define REFERTO_FORMAT	"%% referto: whois -h %255s -p %15s %1021[^\n\r]"
-
 #define HIDE_TO_THE_END  -3
 #define HIDE_DISABLED    -2
 #define HIDE_NOT_STARTED -1
