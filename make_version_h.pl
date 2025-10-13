@@ -21,6 +21,7 @@ $ver =~ s/ (
 	| ~deb\d+.*
 	| \+b\d+
 	| \+dyson\d+
+	| \+salsaci\+.+
 ) $//x;
 
 # The version number must not deviate from this format or the -V option
