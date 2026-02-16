@@ -111,7 +111,7 @@ static const struct crypt_method methods[] = {
 #endif
 #ifdef HAVE_BCRYPT
     { "bcrypt",		"$2b$", 22,	22,	2, "bcrypt" },
-    { "bcrypt-a",	"$2a$", 22,	22,	2, "bcrypt (obsolete $2a$ version)" },
+    { "bcrypt_a",	"$2a$", 22,	22,	2, "bcrypt (obsolete $2a$ version)" },
 #endif
 #if defined HAVE_SHA_CRYPT
     /* http://people.redhat.com/drepper/SHA-crypt.txt */
@@ -143,7 +143,7 @@ static const struct crypt_method methods[] = {
     { "sm3_yescrypt",	"$sm3y$", 0,	0,	1, "ShangMi 3 Yescrypt" },
 #endif
 #if XCRYPT_VERSION_NUM >= ((4 << 16) | 4)
-    { "gost-yescrypt",	"$gy$",	0,	0,	1, "GOST Yescrypt" },
+    { "gost_yescrypt",	"$gy$",	0,	0,	1, "GOST Yescrypt" },
 #endif
 #if defined FreeBSD || defined XCRYPT_VERSION_NUM
     { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
