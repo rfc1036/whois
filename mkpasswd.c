@@ -138,6 +138,10 @@ static const struct crypt_method methods[] = {
 #endif
     { "descrypt",	"",	2,	2,	0,
 	N_("standard 56 bit DES-based crypt(3)") },
+#if XCRYPT_VERSION_NUM >= ((4 << 16) | 5)
+    { "sm3crypt",	"$sm3$", 0,	0,	1, "ShangMi 3" },
+    { "sm3_yescrypt",	"$sm3y$", 0,	0,	1, "ShangMi 3 Yescrypt" },
+#endif
 #if XCRYPT_VERSION_NUM >= ((4 << 16) | 4)
     { "gost-yescrypt",	"$gy$",	0,	0,	1, "GOST Yescrypt" },
 #endif
