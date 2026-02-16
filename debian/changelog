@@ -1,3 +1,14 @@
+whois (5.6.6) unstable; urgency=medium
+
+  * Added the .mc TLD server.
+  * Updated the .ps TLD server.
+  * Removed the .info, .mobi, .travel and .فلسطين (.xn--ygbi2ammx,
+    Palestinian Territory) TLD servers.
+  * Removed 3 new gTLDs which are no longer active.
+  * mkpasswd: added support the Chinese SM3-based hashing algorithms.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 16 Feb 2026 02:46:51 +0100
+
 whois (5.6.5) unstable; urgency=medium
 
   * Updated the .co TLD server.
