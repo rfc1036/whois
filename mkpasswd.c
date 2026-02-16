@@ -103,9 +103,6 @@ static const struct crypt_method methods[] = {
     { "md5",		"$1$",	8,	8,	0, NULL },
 #if defined XCRYPT_VERSION_NUM
     { "yescrypt",	"$y$",	0,	0,	1, "Yescrypt" },
-#if XCRYPT_VERSION_NUM >= ((4 << 16) | 4)
-    { "gost-yescrypt",	"$gy$",	0,	0,	1, "GOST Yescrypt" },
-#endif
     { "scrypt",		"$7$",	0,	0,	1, "scrypt" },
 #endif
 #ifdef HAVE_BCRYPT_OBSOLETE
@@ -141,6 +138,9 @@ static const struct crypt_method methods[] = {
 #endif
     { "descrypt",	"",	2,	2,	0,
 	N_("standard 56 bit DES-based crypt(3)") },
+#if XCRYPT_VERSION_NUM >= ((4 << 16) | 4)
+    { "gost-yescrypt",	"$gy$",	0,	0,	1, "GOST Yescrypt" },
+#endif
 #if defined FreeBSD || defined XCRYPT_VERSION_NUM
     { "nt",		"$3$",  0,	0,	0, "NT-Hash" },
 #endif
