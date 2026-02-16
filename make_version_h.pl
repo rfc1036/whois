@@ -17,11 +17,8 @@ die "Version number not found in $changelog!\n" if not $ver;
 $ver =~ s/ (
 	  build\d+
 	| ubuntu\d+
-	| ~bpo\d+\+\d+
-	| ~deb\d+.*
-	| \+b\d+
-	| \+dyson\d+
-	| \+salsaci\+.+
+	| ~\S+
+	| \+\S+
 ) $//x;
 
 # The version number must not deviate from this format or the -V option
