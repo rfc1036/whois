@@ -262,7 +262,7 @@
 .pm	whois.nic.pm
 .pn	WEB https://www.nic.pn/
 .pr	RECURSIVE whois.nic.pr		# whois.identitydigital.services
-.ps	whois.pnina.ps
+.ps	WEB https://www.pnina.ps/
 .pt	whois.dns.pt
 .pw	whois.nic.pw
 .py	WEB https://www.nic.py/consultdompy.php
