@@ -214,7 +214,7 @@
 .lv	whois.nic.lv
 .ly	whois.nic.ly
 .ma	whois.registre.ma
-.mc	NONE	# www.nic.mc
+.mc	whois.nic.mc
 .md	whois.nic.md
 .me	RECURSIVE whois.nic.me	# whois.identitydigital.services
 #.mf
