@@ -61,7 +61,7 @@
 .coop	whois.nic.coop
 .info	NONE
 .jobs	NONE
-.mobi	RECURSIVE whois.nic.mobi	# whois.identitydigital.services
+.mobi	NONE
 .museum	whois.nic.museum
 .name	whois.nic.name
 .post	whois.nic.post
