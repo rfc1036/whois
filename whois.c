@@ -877,7 +877,8 @@ static void find_referral_server_apnic(char **referral_server, const char *buf)
 
 static void find_referral_server_arin(char **referral_server, const char *buf)
 {
-    char *p;
+    const char *p;
+    char *r;
 
     /* ARIN referrals:
      * ReferralServer: rwhois://rwhois.fuse.net:4321/
@@ -903,8 +904,8 @@ static void find_referral_server_arin(char **referral_server, const char *buf)
 	*referral_server = strdup(p + 8);
     else
 	*referral_server = strdup(buf + 17);
-    if (*referral_server && (p = strpbrk(*referral_server, "/")))
-	*p = '\0';
+    if (*referral_server && (r = strpbrk(*referral_server, "/")))
+	*r = '\0';
 }
 
 static void find_referral_server_iana(char **referral_server, const char *buf)
@@ -1039,7 +1040,6 @@ char *query_server(const char *server, const char *port, const char *query)
 char *query_verisign(const char *server, const char *port, const char *query)
 {
     char *temp, *p;
-    int sock;
     char *referral_server = NULL;
     int dotscount = 0;
 
@@ -1364,7 +1364,7 @@ char *normalize_domain(const char *dom)
 void split_server_port(const char *const input,
 	char **server, char **port)
 {
-    char *p;
+    const char *p;
 
     if (*input == '[' && (p = strchr(input, ']'))) {	/* IPv6 */
 	char *s;
@@ -1396,7 +1396,7 @@ void split_server_port(const char *const input,
     }
 
     /* change the server name to lower case */
-    for (p = (char *) *server; *p; p++)
+    for (char *p = *server; *p; p++)
 	*p = tolower(*p);
 }
 
@@ -1479,7 +1479,8 @@ char *convert_inaddr(const char *s)
 
 char *convert_in6arpa(const char *s)
 {
-    char *ip, *p;
+    char *ip;
+    const char *p;
     int character = 0;
     int digits = 1;
 
