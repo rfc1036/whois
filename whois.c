@@ -1040,7 +1040,6 @@ char *query_server(const char *server, const char *port, const char *query)
 char *query_verisign(const char *server, const char *port, const char *query)
 {
     char *temp, *p;
-    int sock;
     char *referral_server = NULL;
     int dotscount = 0;
 
