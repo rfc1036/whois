@@ -34,9 +34,3 @@ char *convert_in6arpa(const char *);
 int handle_query(const char *server, const char *port,
 		   const char *qstring, const char *fstring);
 void split_server_port(const char *const input, char **server, char **port);
-
-
-/* flags for RIPE-like servers */
-const char *ripeflags="abBcdFGKlLmMrRx";
-const char *ripeflagsp="gisTtvq";
-

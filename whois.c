@@ -78,15 +78,19 @@ static void find_referral_server_verisign(char **, const char *);
 #endif
 
 /* Global variables */
-int sockfd, verb = 0, no_recursion = 0;
+static int sockfd, verb = 0, no_recursion = 0;
+
+/* flags for RIPE-like servers */
+static const char *ripeflags="abBcdFGKlLmMrRx";
+static const char *ripeflagsp="gisTtvq";
 
 #ifdef ALWAYS_HIDE_DISCL
-int hide_discl = HIDE_NOT_STARTED;
+static int hide_discl = HIDE_NOT_STARTED;
 #else
-int hide_discl = HIDE_DISABLED;
+static int hide_discl = HIDE_DISABLED;
 #endif
 
-const char *client_tag = IDSTRING;
+static const char *client_tag = IDSTRING;
 
 #ifndef HAVE_GETOPT_LONG
 extern char *optarg;
