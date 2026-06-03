@@ -308,14 +308,14 @@ int main(int argc, char *argv[])
 	if (c < salt_minlen || c > salt_maxlen) {
 	    if (salt_minlen == salt_maxlen)
 		fprintf(stderr, ngettext(
-			"Wrong salt length: %d byte when %d expected.\n",
-			"Wrong salt length: %d bytes when %d expected.\n", c),
+			"Wrong salt length: %u byte when %u expected.\n",
+			"Wrong salt length: %u bytes when %u expected.\n", c),
 			c, salt_maxlen);
 	    else
 		fprintf(stderr, ngettext(
-			"Wrong salt length: %d byte when %d <= n <= %d"
+			"Wrong salt length: %u byte when %u <= n <= %u"
 			" expected.\n",
-			"Wrong salt length: %d bytes when %d <= n <= %d"
+			"Wrong salt length: %u bytes when %u <= n <= %u"
 			" expected.\n", c),
 			c, salt_minlen, salt_maxlen);
 	    exit(1);
