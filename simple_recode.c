@@ -76,6 +76,9 @@ char *simple_recode(const iconv_t handle, const char *str)
 	if (err != (size_t) -1)
 	    break; /* success */
 
+	if (outbytes_remaining == 0)
+	    errno = E2BIG;
+
 	switch (errno) {
 	case EINVAL:		/* incomplete multibyte sequence */
 	case EILSEQ:		/* invalid multibyte sequence */
