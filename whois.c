@@ -1132,6 +1132,7 @@ int openconn(const char *server, const char *port)
 	err_sys("connect");
 #endif
 
+    alarm(0);
     return fd;
 }
 
