@@ -1005,8 +1005,15 @@ char *query_server(const char *server, const char *port, const char *query)
 	err_sys("write");
     free(temp);
 
-    while (fgets(buf, sizeof(buf), fi)) {
+	while (fgets(buf, sizeof(buf), fi)) {
 	if ((p = strpbrk(buf, "\r\n")))		/* remove the trailing CR/LF */
+	    *p = '\0';
+
+	/* strip terminal control characters to prevent escape sequence injection */
+	for (p = buf; *p; p++)
+	    if ((unsigned char)*p < 0x20 && *p != '\t')
+		*p = '?';
+	if ((p = strchr(buf, '\x7f')))
 	    *p = '\0';
 
 	if (referral_handler)
