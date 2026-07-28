@@ -64,7 +64,7 @@ static void find_referral_server_verisign(char **, const char *);
 #ifdef HAVE_ICONV
 #include "simple_recode.h"
 #else
-#define recode_fputs(a, b) fputs(a, b)
+#define recode_fputs(a, b) fputs_sanitized(a, b)
 #endif
 
 /* hack */
@@ -430,7 +430,9 @@ int handle_query(const char *hserver, const char *hport,
 
     /* recursion is fun */
     if (!no_recursion && new_server && !strchr(query, ' ')) {
-	printf(_("\n\nFound a referral to %s.\n\n"), new_server);
+	fputs(_("\n\nFound a referral to "), stdout);
+	fputs_sanitized(new_server, stdout);
+	fputs(_(".\n\n"), stdout);
 	handle_query(new_server, NULL, query, flags);
 	free(new_server);
     }
@@ -968,6 +970,17 @@ static void find_referral_server_verisign(char **referral_server, const char *bu
     }
 }
 
+static int has_terminal_control(const char *s)
+{
+    const unsigned char *p;
+
+    for (p = (const unsigned char *) s; *p; p++)
+	if (*p < 0x20 || *p == 0x7f)
+	    return 1;
+
+    return 0;
+}
+
 /* returns a string which should be freed by the caller, or NULL */
 char *query_server(const char *server, const char *port, const char *query)
 {
@@ -1030,6 +1043,10 @@ char *query_server(const char *server, const char *port, const char *query)
 
     /* defensive programming: make sure to avoid trivial referral loops */
     if (referral_server && streq(server, referral_server)) {
+	free(referral_server);
+	referral_server = NULL;
+    }
+    if (referral_server && has_terminal_control(referral_server)) {
 	free(referral_server);
 	referral_server = NULL;
     }
@@ -1616,4 +1633,3 @@ void NORETURN usage(int error)
 ));
     exit(error);
 }
-

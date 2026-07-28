@@ -139,7 +139,7 @@ char *simple_recode(const iconv_t handle, const char *str)
  * Like fputs(3), but transparently recodes s using the global variable
  * simple_recode_input_charset as the input charset and the current locale
  * as the output charset.
- * If simple_recode_input_charset is NULL it just calls fputs(3).
+ * Terminal control characters are replaced before output.
  * Exits with an error if iconv(3) or iconv_open(3) fail.
  *
  * Assumes that setlocale(3) has already been called.
@@ -153,7 +153,7 @@ int recode_fputs(const char *s, FILE *stream)
     int result;
 
     if (simple_recode_input_charset == NULL)	/* no conversion is needed */
-	return fputs(s, stream);
+	return fputs_sanitized(s, stream);
 
     if (simple_recode_iconv_handle == NULL) {
 	simple_recode_iconv_handle = iconv_open(nl_langinfo(CODESET),
@@ -165,7 +165,7 @@ int recode_fputs(const char *s, FILE *stream)
     out = simple_recode(simple_recode_iconv_handle, s);
     if (!out)
 	err_sys("iconv");
-    result = fputs(out, stream);
+    result = fputs_sanitized(out, stream);
     free(out);
 
     return result;
@@ -180,4 +180,3 @@ void simple_recode_iconv_close(void)
     simple_recode_iconv_handle = NULL;
     simple_recode_input_charset = NULL;
 }
-

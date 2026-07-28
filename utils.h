@@ -2,6 +2,8 @@
 #ifndef WHOIS_UTILS_H
 #define WHOIS_UTILS_H
 
+#include <stdio.h>
+
 /* Convenience macros */
 #define streq(a, b) (strcmp(a, b) == 0)
 #define strcaseeq(a, b) (strcasecmp(a, b) == 0)
@@ -67,6 +69,8 @@
 void *MALLOC_FREE NONNULL do_nofail(void *ptr, const char *file, const int line)
 ;
 char **merge_args(char *args, char *argv[], int *argc);
+
+int fputs_sanitized(const char *s, FILE *stream);
 
 void NORETURN err_quit(const char *fmt, ...);
 void NORETURN err_sys(const char *fmt, ...);
