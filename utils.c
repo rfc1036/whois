@@ -73,6 +73,22 @@ char **merge_args(char *args, char *argv[], int *argc)
     return newargs;
 }
 
+/* Like fputs(3), but replace terminal control characters with '?'. */
+int fputs_sanitized(const char *s, FILE *stream)
+{
+    const unsigned char *p;
+
+    for (p = (const unsigned char *) s; *p; p++) {
+	if ((*p < 0x20 && *p != '\t') || *p == 0x7f) {
+	    if (fputc('?', stream) == EOF)
+		return EOF;
+	} else if (fputc(*p, stream) == EOF)
+	    return EOF;
+    }
+
+    return 0;
+}
+
 /* Error routines */
 void NORETURN err_sys(const char *fmt, ...)
 {
@@ -95,4 +111,3 @@ void NORETURN err_quit(const char *fmt, ...)
     va_end(ap);
     exit(2);
 }
-
