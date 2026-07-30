@@ -336,6 +336,7 @@
 .uk	whois.nic.uk
 #.um
 .fed.us	whois.nic.gov
+.ngo.us whois.ngo.us
 .us	whois.nic.us
 .com.uy	WEB https://nic.com.uy/consulta-whois
 .gub.uy	WEB https://www.dominios.gub.uy/
