@@ -1420,6 +1420,9 @@ char *convert_6to4(const char *s)
 	b = 0;
     }
 
+    if (a > 0xFFFF || b > 0xFFFF)
+	return strdup("0.0.0.0");
+
     new = malloc(sizeof("255.255.255.255"));
     sprintf(new, "%u.%u.%u.%u", a >> 8, a & 0xff, b >> 8, b & 0xff);
 
@@ -1436,6 +1439,10 @@ char *convert_teredo(const char *s)
 
     a ^= 0xffff;
     b ^= 0xffff;
+
+    if (a > 0xFFFF || b > 0xFFFF)
+	return strdup("0.0.0.0");
+
     new = malloc(sizeof("255.255.255.255"));
     sprintf(new, "%u.%u.%u.%u", a >> 8, a & 0xff, b >> 8, b & 0xff);
 
