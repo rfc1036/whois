@@ -223,6 +223,7 @@
 .mk	whois.marnet.mk
 .ml	whois.nic.ml
 .mm	whois.registry.gov.mm
+.nyc.mn whois.dot.nyc.mn
 .mn	whois.nic.mn
 .mo	WEB https://www.monic.mo/monic/faces/whois	# whois.monic.mo is restricted
 .mp	NONE		# get.mp
