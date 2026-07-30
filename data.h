@@ -6,7 +6,7 @@
  */
 
 /* servers which accept the new syntax (-V XXn.n) */
-const char *ripe_servers[] = {
+static const char *ripe_servers[] = {
     "whois.ripe.net",
     "whois.apnic.net",
     "whois.afrinic.net",
@@ -25,7 +25,7 @@ struct server_referral_handler {
     void (*handler)(char **referral_server, const char *buf);
 };
 
-const struct server_referral_handler server_referral_handlers[] = {
+static const struct server_referral_handler server_referral_handlers[] = {
     { "whois.apnic.net",		find_referral_server_apnic },
     { "whois.arin.net",			find_referral_server_arin },
     { "whois.iana.org",			find_referral_server_iana },
@@ -34,7 +34,7 @@ const struct server_referral_handler server_referral_handlers[] = {
     { NULL, NULL }
 };
 
-const char *hide_strings[] = {
+static const char *hide_strings[] = {
     "The data in Networksolutions.com's WHOIS database", NULL,
     /* Some registrars like .wang copied the first paragraph of this
      * disclaimer, so the detection here needs to be split in two parts. */
@@ -95,7 +95,7 @@ const char *hide_strings[] = {
     NULL, NULL
 };
 
-const char *nic_handles[] = {
+static const char *nic_handles[] = {
     "net-",	"whois.arin.net",
     "netblk-",	"whois.arin.net",
     "poem-",	"whois.ripe.net",
@@ -117,7 +117,7 @@ struct ip_del {
     const char         *serv;
 };
 
-const struct ip_del ip_assign[] = {
+static const struct ip_del ip_assign[] = {
 #include "ip_del_recovered.h"
 #include "ip_del.h"
     { 0, 0, NULL }
@@ -129,7 +129,7 @@ struct ip6_del {
     const char          *serv;
 };
 
-const struct ip6_del ip6_assign[] = {
+static const struct ip6_del ip6_assign[] = {
 #include "ip6_del.h"
     { 0, 0, NULL }
 };
@@ -140,22 +140,22 @@ struct as_del {
     const char          *serv;
 };
 
-const struct as_del as_assign[] = {
+static const struct as_del as_assign[] = {
 #include "as_del.h"
     { 0, 0, NULL }
 };
 
-const char *new_gtlds[] = {
+static const char *new_gtlds[] = {
 #include "new_gtlds.h"
     NULL
 };
 
-const char *tld_serv[] = {
+static const char *tld_serv[] = {
 #include "tld_serv.h"
     NULL,	NULL
 };
 
-const char *nic_handles_post[] = {
+static const char *nic_handles_post[] = {
 #include "nic_handles.h"
     NULL,	NULL
 };
@@ -167,7 +167,7 @@ struct server_charset {
     const char *options;
 };
 
-const struct server_charset servers_charset[] = {
+static const struct server_charset servers_charset[] = {
 #include "servers_charset.h"
     { NULL, NULL, NULL }
 };
